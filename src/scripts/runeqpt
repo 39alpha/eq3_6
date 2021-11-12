@@ -1,0 +1,498 @@
+# runeqpt
+#
+#     Runeqpt for EQ3/6, Version 8.0a
+#     Revised 09/02/11 by TJW
+#
+#     The person responsible for this software is:
+#
+#       Thomas J. Wolery, L-223
+#       Lawrence Livermore National Laboratory
+#       P.O. Box 808
+#       Livermore, CA  94550
+#
+#       Telephone: (925) 422-5789
+#       E-mail: wolery@llnl.gov
+#
+#-----------------------------------------------------------------------------
+#
+#     This is a shell script utility to run EQPT, the EQ3/6 data file
+#     preprocessor. It is written in C-shell UNIX.
+#
+#     To use this script, the data0 files must be in the "da0" directory.
+#     This is currently set to the current directory. To change this,
+#     set the shell variable da0dir (set below) to the desired directory.
+#
+#     The EQPT executable must be in the code directory defined in the
+#     environment variable "EQ36CO". The code directory on a UNIX
+#     platform should normally be:
+#
+#       ~\eq3_6v8.0a\bin
+#
+#     The EQ36CO variable should be set in your .cshrc file. Note that
+#     your .cshrc file will be sourced for the daughter shell which
+#     will be created when you execute this script.
+#
+#     The files produced by EQPT are renamed after the parent DATA0
+#     file and appear in the current directory, even if the DATA0 files
+#     are in another directory. All output files are also written in
+#     the current directory. Any trailing blanks on them are removed.
+#
+#     This script is always called as "runeqpt" to run EQPT. To support
+#     "runeqpt" is normally set up as a symbolic link to this script.
+#     However, it could be a hard link or even  a copy.
+#
+#-----------------------------------------------------------------------------
+#
+#     Unalias rm, mv, cp, ln, and wc. Any aliases will not be effective
+#     in the process run by this script. The aliases if any will
+#     remain in place outside this script.
+#
+      unalias rm mv cp ln wc
+#
+#     Alias wc to include the proper pathname, if possible, in case this
+#     isn't in the user's search path.
+#
+      if ( -e /usr/bin/wc ) then
+        alias wc /usr/bin/wc
+      else if ( -e /usr/ucb/wc ) then
+        alias wc /usr/ucb/wc
+      else if ( -e /bin/wc ) then
+        alias wc /bin/wc
+      endif
+#
+#-----------------------------------------------------------------------------
+#
+      unset noclobber
+#
+#-----------------------------------------------------------------------------
+#
+#     If there are no arguments or the first argument is "help", echo
+#     the proper usage.
+#
+      set help=false
+      if ( $#argv == 0 ) then
+        set help=true
+      else
+        if ( $argv[1] =~ help ) set help=true
+      endif
+      if ( $help =~ true ) then
+          echo "usage: runeqpt datafilekey(s)"
+          echo "         datafilekeys = cmp, sup, hmw, pit, and so forth"
+          echo '           "all" matches all datafilekeys'
+          exit 0
+        endif
+      endif
+      unset help
+#
+#-----------------------------------------------------------------------------
+#
+      echo " Running runeqpt"
+      echo ""
+#
+#-----------------------------------------------------------------------------
+#
+#     Get the code directory from the environment variable EQ36CO.
+#
+      set xcodir=`env | grep EQ36CO`
+      if !( $xcodir =~ "") then
+        set codir=$EQ36CO
+      else
+        echo " "
+        echo " * Error- The EQ36CO environment variable is not set."
+        echo "       This is normally set in your .cshrc file."
+        echo "       Please refer to the installation instructions."
+        exit 1
+      endif
+#
+#     Set the "da0" directory.
+#
+      set da0dir=.
+#
+#-----------------------------------------------------------------------------
+#
+      set dlist=empty
+#
+#     Search for file descriptors among the arguments.
+#
+      @ j = 0
+      foreach xx ( $argv )
+        @ j = $j + 1
+        set temp=`echo $dlist`
+        set dlist=`echo $temp $xx`
+      end
+      if ( $j >= 1) shift dlist
+#
+#     Search for an "all" among other file descriptors. If one or more
+#     is found, just do "all."
+#
+      if ( $#dlist >= 1 ) then
+        set allfl=false
+        foreach xx ( $dlist)
+          if ( $xx =~ all ) set allfl=true
+        end
+        if (allfl =~ true ) set dlist=all
+      endif
+#
+      echo "  The da0 directory is "$da0dir
+      echo "  The executable directory is "$codir
+      echo "  The current directory is "`pwd`
+#
+#     Find the relevant data0 files in the da0 directory.
+#
+      set dflist=""
+      if ($dlist[1] =~ all ) then
+#
+#       Case of no file descriptors specified. Do all files found.
+#
+        set dflistx=`/bin/ls $da0dir/data0.*`
+        set temp=`echo $dflist`
+        set dflist=`echo $temp $dflistx`
+      else
+#
+#       Case of file descriptors specified. First test the datafilekeys
+#       to make sure they contain no pathnames or extensions.
+#
+        set errtot=false
+        foreach ddx ( $dlist )
+#
+#         Check for pathname.
+#
+          set err=false
+          if !( $ddx:h =~ $ddx ) then
+            echo " "
+            echo " * Error- Have bad datafilekey "$ddx
+            set err=true
+            set errtot=true
+          endif
+#
+          if ( $err =~ false ) then
+#
+#           Check for extension.
+#
+            if !( $ddx:e =~ "" ) then
+              echo " "
+              echo " * Error- Have bad datafilekey "$ddx
+              set err=true
+              set errtot=true
+            endif
+          endif
+#
+          if ( $err =~ false ) then
+#
+#           Check for "data0".
+#
+            if ( $ddx =~ data0 ) then
+              echo " "
+              echo " * Error- Have bad datafilekey "$ddx
+              set err=true
+              set errtot=true
+            endif
+          endif
+        end
+        if ( $errtot =~ true ) exit 1
+        unset errtot
+#
+        foreach ddx ( $dlist )
+          set fd0=$da0dir/data0.$ddx
+          set temp=`echo $dflist`
+          set dflist=`echo $temp $fd0`
+        end
+      endif
+#
+      echo ""
+      echo "  Have "$#dflist" files to process."
+      if ( $#dflist == 0 ) exit 1
+      echo "  Files to process are:"
+      foreach dfxx ( $dflist )
+        echo "    "$dfxx
+      end
+#
+#-----------------------------------------------------------------------------
+#
+#     Get the EQPT executable code.
+#
+      echo "  The code directory is "$codir
+      if !( -d $codir) then
+        echo " "
+        echo " * Error- The code directory doesn't exist. Don't know where"
+        echo "       to find the EQPT executable."
+        exit 1
+      endif
+#
+      echo ""
+      set eqptcode=$codir/eqpt
+      rm -f $codir/eqpt*.trace >& /dev/null
+#
+      if !( -e $eqptcode ) then
+        if !( -e $eqptcode ) then
+          echo "  Don't have an executable named eqpt"
+          echo " "
+          echo " * Error- Can't find a version of the executable code"
+          echo "       in the code directory."
+          exit 1
+        endif
+      endif
+#
+      echo "  The executable file is "$eqptcode:t
+#
+#-----------------------------------------------------------------------------
+#
+#     Set counter for DATA0 files successfully processed with
+#     no errors or warnings.
+#
+      @ nfrun = 0
+      set ifrun=/usr/tmp/ifrun$$
+#
+#     Set counter for DATA0 files successfully processed with
+#     no errors, but with warnings.
+#
+      @ nfwarn = 0
+      set ifwarn=/usr/tmp/ifwarn$$
+#
+#     Set counter for DATA0 files that could not be successfully
+#     processed due to errors.
+#
+      @ nferr = 0
+      set iferr=/usr/tmp/iferr$$
+#
+#     Set counter for DATA0 files that could not be successfully
+#     processed because they don't exist.
+#
+      @ nfnoex = 0
+      set ifnoex=/usr/tmp/ifnoex$$
+#
+#-----------------------------------------------------------------------------
+#
+      rm -f data0 >& /dev/null
+      rm -f data0s >& /dev/null
+      rm -f data1 >& /dev/null
+      rm -f data1f >& /dev/null
+      rm -f output >& /dev/null
+      rm -f slist >& /dev/null
+#
+#-----------------------------------------------------------------------------
+#
+      echo ------------------------------------
+#
+#     Loop on data0 files.
+#
+      foreach dfxx ( $dflist )
+        echo ""
+        echo "    Processing "$dfxx
+        echo ""
+        if ( -e $dfxx ) then
+          ln -s $dfxx data0
+          set dfe=$dfxx:e
+          set dfh=$dfxx:r
+          set suf=$dfe
+
+          rm -f data1.$suf >& /dev/null
+          rm -f data1f.$suf >& /dev/null
+          rm -f output.$suf >& /dev/null
+          rm -f slist.$suf >& /dev/null
+#
+#         Run EQPT
+#
+          $eqptcode
+#
+#         Remove some files.
+#
+          rm -f data0 >& /dev/null
+#
+#         Remove any output files that are empty.
+#
+          if ( -e output ) then
+            set wclout=`wc -l output`
+            @ fsize=$wclout[1]
+            unset wclout
+            if ( $fsize == 0 ) rm -f output
+            unset fsize
+          endif
+          if ( -e slist ) then
+            set wclout=`wc -l slist`
+            @ fsize=$wclout[1]
+            unset wclout
+            if ( $fsize == 0 ) rm -f slist
+            unset fsize
+          endif
+          if ( -e data1 ) then
+            set wclout=`wc -l data1`
+            @ fsize=$wclout[1]
+            unset wclout
+            if ( $fsize == 0 ) rm -f data1
+            unset fsize
+          endif
+          if ( -e data1f ) then
+            set wclout=`wc -l data1f`
+            @ fsize=$wclout[1]
+            unset wclout
+            if ( $fsize == 0 ) rm -f data1f
+            unset fsize
+          endif
+#
+#         Check the output file for errors.
+#
+          set errflg=false
+          if ( -e output ) then
+            grep " \* error" output > /usr/tmp/errchk$$
+            grep " \* Error" output >> /usr/tmp/errchk$$
+            grep " \* ERROR" output >> /usr/tmp/errchk$$
+            if ( -e /usr/tmp/errchk$$ ) then
+              set wclout=`wc -l /usr/tmp/errchk$$`
+              @ fsize=$wclout[1]
+              unset wclout
+              if ( $fsize != 0 ) set errflg=true
+              unset fsize
+            endif
+            rm -f /usr/tmp/errchk$$ >& /dev/null
+          else
+            set errflg=true
+          endif
+          if !( -e data1 ) set errflg=true
+#
+          if ( $errflg =~ true ) then
+            rm -f data1 >& /dev/null
+            echo " "
+            echo " * Note- Errors were encountered while processing the"
+            echo "       current DATA0 file. The DATA1 file has been"
+            echo "       deleted to prevent possible misuse."
+          endif
+#
+#         Check the output file for warnings.
+#
+          set warflg=false
+          if ( -e output ) then
+            grep " \* warning" output > /usr/tmp/warchk$$
+            grep " \* Warning" output >> /usr/tmp/warchk$$
+            grep " \* WARNING" output >> /usr/tmp/warchk$$
+            if ( -e /usr/tmp/warchk$$ ) then
+              set wclout=`wc -l /usr/tmp/warchk$$`
+              @ fsize=$wclout[1]
+              unset wclout
+              if ( $fsize != 0 ) set warflg=true
+              unset fsize
+            endif
+            rm -f /usr/tmp/warchk$$ >& /dev/null
+          endif
+#
+          if ( $errflg =~ false ) then
+            if ( $warflg =~ false ) then
+              @ nfrun = $nfrun + 1
+              echo "    "$dfxx >> $ifrun
+            else
+              @ nfwarn = $nfwarn + 1
+              echo "    "$dfxx >> $ifwarn
+            endif
+          else
+            @ nferr = $nferr + 1
+            echo "    "$dfxx >> $iferr
+          endif
+#
+#         Rename the output files.
+#
+          if ( -e output) mv output output.$suf
+          if ( -e slist)  mv slist slist.$suf
+          if ( -e data1 ) mv data1 data1.$suf
+          if ( -e data1f) mv data1f data1f.$suf
+#
+          set fnolist="data1.$suf data1f.$suf output.$suf slist.$suf"
+          set ftblist="data1f.$suf output.$suf slist.$suf"
+#
+#         Remove trailing blanks from output files, except for the data1
+#         file. First pad to 132 characters per line, then trim.
+#
+          foreach fno ( $ftblist )
+            if ( -e $fno ) then
+              set pf=/usr/tmp/remtbpad$$
+              dd if=$fno of=$pf bs=132 cbs=132 conv=block >& /dev/null
+              dd if=$pf of=/usr/tmp/remtb$$ bs=132 cbs=132 conv=unblock \
+              >& /dev/null
+              rm -f $pf >& /dev/null
+              mv /usr/tmp/remtb$$ $fno
+            endif
+          end
+#
+          echo ""
+          echo "  The following output files were written:"
+          echo ""
+          foreach fno ( $fnolist )
+            if ( -e $fno ) echo "    "$fno
+          end
+          echo ""
+          unset fnolist
+#
+        else
+          @ nfnoex = $nfnoex + 1
+          echo "    "$dfxx >> $ifnoex
+          echo " "
+          echo " * Warning- This file doesn't exist. It won't be processed."
+          echo ""
+        endif
+        echo ------------------------------------
+      end
+#
+#-----------------------------------------------------------------------------
+#
+#     Write summary data.
+#
+      if ( $nfrun >= 1 ) then
+        echo ""
+        echo "  The following data files were successfully processed"
+        echo "  with no errors or warnings:"
+        echo ""
+        cat $ifrun
+        echo ""
+        echo ------------------------------------
+      endif
+#
+      if ( $nfwarn >= 1 ) then
+        echo ""
+        echo "  The following data files were successfully processed,"
+        echo "  with no errors, but with warnings:"
+        echo ""
+        cat $ifwarn
+        echo ""
+        echo "  (The warning messages are listed on the output files. You"
+        echo "  must evaluate the significance of these warnings.)"
+        echo ""
+        echo ------------------------------------
+      endif
+#
+      if ( $nferr >= 1 ) then
+        echo ""
+        echo "  The following data files could not be processed"
+        echo "  due to errors:"
+        echo ""
+        cat $iferr
+        echo ""
+        echo "  (The error messages are listed on the output files.)"
+        echo ""
+        echo ------------------------------------
+      endif
+#
+      if ( $nfnoex >= 1 ) then
+        echo ""
+        echo "  The following data files were not processed because"
+        echo "  they don't exist:"
+        echo ""
+        cat $ifnoex
+        echo ""
+        echo ------------------------------------
+      endif
+#
+#-----------------------------------------------------------------------------
+#
+#     Remove scratch files.
+#
+      rm -f $ifrun >& /dev/null
+      rm -f $ifwarn >& /dev/null
+      rm -f $iferr >& /dev/null
+      rm -f $ifnoex >& /dev/null
+#
+      echo "All done"
+      if ( $nferr >= 1 ) exit 1
+      if ( $nfnoex >= 1 ) exit 1
+      exit 0
+#
+# End of script
+#-----------------------------------------------------------------------------

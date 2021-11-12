@@ -1,0 +1,2049 @@
+
+ EQ3/6, Version 8.0a (EQ3/6-V8-REL-V8.0a-PC)
+ EQ3NR Speciation-Solubility Code (EQ3/6-V8-EQ3NR-EXE-R43a-PC)
+ Supported by the following EQ3/6 libraries:
+   EQLIB (EQ3/6-V8-EQLIB-LIB-R43a-PC)
+   EQLIBG (EQ3/6-V8-EQLIBG-LIB-R43a-PC)
+   EQLIBU (EQ3/6-V8-EQLIBU-LIB-R43a-PC)
+
+ Copyright (c) 1987, 1990-1993, 1995, 1997, 2002 The Regents of the
+ University of California, Lawrence Livermore National Laboratory.
+ All rights reserved.
+
+ This work is subject to additional statements and
+ disclaimers which may be found in the README.txt file
+ included in the EQ3/6 software transmittal package.
+
+
+ Run  13:15:15  07Sep2011
+
+
+ Reading the data1 file header section ...
+
+ Reading the rest of the DATA1 file ...
+
+   The data file title is:
+
+     data0.ymp.R5
+     
+     THERMODYNAMIC DATABASE
+     
+     This EQ3/6 database file is an update to the previous version of the
+     thermodynamic database data0.ymp.R2 DTN: MO0210SPATHDYN.000. The changes
+     result from both correcting errors and adding new data. The changes in
+     this version of the database (data0.ymp.R5) relative to the immediately
+     preceding version (data0.ymp.R4) are:
+     
+      1. The log K values were corrected for the following neptunium solids:
+           Na3NpF8, Np, Np2O5, NpBr3, NpBr4, NpC0.91, NpCl3, NpCl4, NpF3, NpF4,
+           NpF5, NpF6, NpI3,NpN, NpO2, NpOBr2, and NpOCl2.
+      2. The log K values were corrected for the following plutonium solids:
+           Cs3PuCl6, CsPu2Cl7, Pu, Pu2C3, Pu2O3,Pu3C2, PuBr3, PuC0.84, PuCl3, P
+           PuF6, PuI3, PuO1.61, PuO2, PuOBr, PuOCl, PuOF, and PuOI.
+      3. The log K values were corrected for the following minerals: Analcime,
+           Chabazite, Clinoptilolite, Erionite, Laumontite, Mesolite, Phillipsi
+           and Stellerite.
+      4. The log K values were corrected for HF2- [[DTN SN0410T0510404.001]
+           HF2-_Dissoc1_CFJC_fix.xls
+      5. The stoichiometry of the of the Pu solid species PuO2(OH)2:H2O which
+           was incorrectly labeled as PuO2(OH)2:2H2O in data0.ymp.R2
+           (DTN:MO0210SPATHDYN.000). The datablock with the updated Pu
+           stoichiometry was obtained from data0.ymp.R3 (DTN MO0312SPATDMIF.000
+           The corrected stoichiometry is consistent with that of the source
+           (01lem/nea).
+      6. The log K value at 25 deg.C for Syngenite was updated to -7.4484.
+           Source was data0.ypf.R0 (DTN: SN0302T0510102.002)
+      7. Updated the H2O stoichiometry for REE phosphate solids. Fixed the
+            misinterpretation of "xH2O" from 95spa/bru as "10H2O".
+      8. Replacement of NiCO3(s) data block by the updated one in data0.ypf.R2.
+      9. Updated PO2, PO3, PO4, P2O7, and PO3F species affected by the thermo-
+           dynamic key data discrepancy. Two PO2F2 species were added.
+     10. Eskolaite (Cr2O3) and CrO2 data were updated; reactions were written i
+           terms of Cr+++, not CrO4-- or other Cr basis species.
+     11. The reaction for the species CrO3Cl- was rewritten using CrO4-- instea
+           of Cr+++.
+     12. Addition of the phases Palygorskite, Amorphous Sepiolite, and
+           Antigorite(am)
+     13. The log K values of metal solids update tabulated in the R4 report but
+           not included in that version of the database were added in this vers
+     14. Addition of the phases NiMoO4 and Kogarkoite (Na3SO4F).
+     15. Addition of SnO2(am), Sn(OH)5- and Sn(OH)6--.
+     16. Reactions for P2O7 solids rewritten in terms of H2P2O7-- instead of
+           HPO4--.
+     17. PuCl++ data block removed, data de-selected by 03GUI/NEA errata and
+           corrigenda.
+     18. Update of 'azer0' values in accord with suggested values in
+           ANL-WIS-GS-000003 REV 01 report.
+     19. Update of aqueous species in 'azer0' list.
+     20. Updates that include additions and removal of aqueous Th species
+           consistent with the model of 05alt/nec.
+     21. Updates of uranyl phases that include the addition of Becquerelite,
+           Compreignacite, Weeksite, Boltwoodite, Dehydrated Schoepite,
+           Sklodowskite and Studtite.
+     22. Addition of the species CaSeO4(aq) and CaSeO4:2H2O.
+     23. Removed polynuclear species Ni2OH+++ and Ni4(OH)++++; updated log K
+           values for NiOH+, Ni(OH)2(aq), Ni(OH)3- using data from data.ypf.R2
+     24. Removed polynuclear species Cr3(OH)4(5+) and Cr2(OH)2++++; replaced
+           CrOH++ with log K values from 98Bal/Nor; added Cr(OH)3(aq) and
+           Cr(OH)3(am) using log K from 98Bal/Nor.
+     25. Adjusted formatting for compatibility with EQ3/6 v. 7 series code.
+           Cleaned up comment material in the data blocks.
+     26. Removed "500.000" values assigned to mineral volumes; assigned zeros.
+     27. Replacement of "UO3:.9H2O(alpha)" by "Schoepite(dehyd,0.9)".
+     28. Update of the phosphate solids whitlockite, hydroxyapatite, strengite,
+         and fluorapatite.
+
+   Continuing to read the DATA1 file ...
+
+   Done reading the DATA1 file.
+
+ The redox basis species is O2(g).
+
+
+ Reading problem   1 from the input file ...
+
+|------------------------------------------------------------------------------|
+| Title                  | (utitl(n))                                          |
+|------------------------------------------------------------------------------|
+|EQ3NR input file name= j13wsf.3i                                              |
+|Description= "J-13 well water, with traces of spent fuel components"          |
+|Version level= 8.0                                                            |
+|Revised 02/14/97    Revisor= T.J. Wolery                                      |
+|This is part of the EQ3/6 Test Case Library                                   |
+|                                                                              |
+|  Water from well J-13 at the Nevada Test Site, spiked with trace amounts of  |
+|spent nuclear fuel components. The composition is otherwise identical to that |
+|in the EQ3NR test case input file j13w.3i, which is based on data reported    |
+|by Harrar et al. (1990). Water from this well is commonly used to represent   |
+|the groundwater at the proposed high-level nuclear waste repository at Yucca  |
+|Mountain, Nevada.                                                             |
+|                                                                              |
+|  The solution contains NO3-, but not other forms of nitrogen. The strict     |
+|basis species on the input file is presumed to be NH3(aq). A special basis    |
+|switch is made to make NO3- the strict basis species for nitrogen. The basis  |
+|species NH3(aq), N2(aq), and N3- (azide), and the the master organic basis    |
+|species, Acetic_acid(aq), are not suppressed here, as they may be formed by   |
+|reactions involving the highly reducing spent fuel which appears in the       |
+|EQ6 simulation which this EQ3NR problem is designed to initialize.            |
+|                                                                              |
+|  Purpose: to initialize the EQ6 test case input file j13wsf.6i, which        |
+|simulates the interaction of J-13 well water with spent nuclear fuel. The     |
+|present input file also tests the ability of EQ3NR to handle a system         |
+|containing a large number of components.                                      |
+|                                                                              |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|Harrar, J.E., Carley, J.F., Isherwood, W.F., and Raber, E., 1990, Report of   |
+|  the Committee to Review the Use of J-13 Well Water in Nevada Nuclear Waste  |
+|  Storage Investigations: UCID-21867, Lawrence Livermore National Laboratory, |
+|  Livermore, California.                                                      |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |NH3(aq)                                         | (usbsw(1,n))       |
+|   with |NO3-                                            | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Temperature (C)         | 2.50000E+01| (tempc)                                |
+|------------------------------------------------------------------------------|
+|Pressure option (jpres3):                                                     |
+|  [x] ( 0) Data file reference curve value                                    |
+|  [ ] ( 1) 1.013-bar/steam-saturation curve value                             |
+|  [ ] ( 2) Value (bars) | 0.00000E+00| (press)                                |
+|------------------------------------------------------------------------------|
+|Density (g/cm3)         | 1.00000E+00| (rho)                                  |
+|------------------------------------------------------------------------------|
+|Total dissolved solutes option (itdsf3):                                      |
+|  [x] ( 0) Value (mg/kg.sol) | 0.00000E+00| (tdspkg)                          |
+|  [ ] ( 1) Value (mg/L)      | 0.00000E+00| (tdspl)                           |
+|------------------------------------------------------------------------------|
+|Electrical balancing option (iebal3):                                         |
+|  [x] ( 0) No balancing is done                                               |
+|  [ ] ( 1) Balance on species |None                    | (uebal)              |
+|------------------------------------------------------------------------------|
+|Default redox constraint (irdxc3):                                            |
+|  [ ] (-3) Use O2(g) line in the aqueous basis species block                  |
+|  [ ] (-2) pe (pe units)      | 0.00000E+00| (pei)                            |
+|  [x] (-1) Eh (volts)         | 3.40000E-01| (ehi)                            |
+|  [ ] ( 0) Log fO2 (log bars) | 0.00000E+00| (fo2lgi)                         |
+|  [ ] ( 1) Couple (aux. sp.)  |None                    | (uredox)             |
+|------------------------------------------------------------------------------|
+|Aqueous Basis Species/Constraint Species        |Conc., etc. |Units/Constraint|
+| (uspeci(n)/ucospi(n))                          | (covali(n))|(ujf3(jflgi(n)))|
+|------------------------------------------------------------------------------|
+|Na+                                             | 4.58000E+01|mg/L            |
+|SiO2(aq)                                        | 6.09700E+01|mg/L            |
+|Ca++                                            | 1.30000E+01|mg/L            |
+|K+                                              | 5.04000E+00|mg/L            |
+|Mg++                                            | 2.01000E+00|mg/L            |
+|Li+                                             | 4.80000E-02|mg/L            |
+|H+                                              | 7.41000E+00|pH              |
+|HCO3-                                           | 1.40400E+02|mg/L            |
+|O2(aq)                                          | 5.60000E+00|mg/L            |
+|F-                                              | 2.18000E+00|mg/L            |
+|Cl-                                             | 7.14000E+00|mg/L            |
+|NO3-                                            | 8.78000E+00|mg/L            |
+|SO4--                                           | 1.84000E+01|mg/L            |
+|B(OH)3(aq)                                      | 7.66000E-01|mg/L            |
+|Al+++                                           | 8.00000E-03|mg/L            |
+|Mn++                                            | 1.20000E-02|mg/L            |
+|Fe++                                            | 4.00000E-02|mg/L            |
+|Sr++                                            | 4.00000E-02|mg/L            |
+|HPO4--                                          | 1.20000E-01|mg/L            |
+|Am+++                                           | 1.00000E-12|Molality        |
+|Cs+                                             | 1.00000E-12|Molality        |
+|Cu++                                            | 1.00000E-12|Molality        |
+|I-                                              | 1.00000E-12|Molality        |
+|Np++++                                          | 1.00000E-12|Molality        |
+|Ni++                                            | 1.00000E-12|Molality        |
+|Pb++                                            | 1.00000E-12|Molality        |
+|Pu++++                                          | 1.00000E-12|Molality        |
+|Ra++                                            | 1.00000E-12|Molality        |
+|SeO3--                                          | 1.00000E-12|Molality        |
+|Sn++                                            | 1.00000E-12|Molality        |
+|TcO4-                                           | 1.00000E-12|Molality        |
+|Th++++                                          | 1.00000E-12|Molality        |
+|UO2++                                           | 1.00000E-12|Molality        |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf3(jflgi(n))) are:                                    *
+*    Suppressed          Molality            Molarity                          *
+*    mg/L                mg/kg.sol           Alk., eq/kg.H2O                   *
+*    Alk., eq/L          Alk., eq/kg.sol     Alk., mg/L CaCO3                  *
+*    Alk., mg/L HCO3-    Log activity        Log act combo                     *
+*    Log mean act        pX                  pH                                *
+*    pHCl                pmH                 pmX                               *
+*    Hetero. equil.      Homo. equil.        Make non-basis                    *
+*------------------------------------------------------------------------------*
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: no exchanger creation blocks follow on this file.                   |
+|Option: on further processing (writing a PICKUP file or running XCON3 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Ion Exchanger Compositions      | (neti)                                      |
+|------------------------------------------------------------------------------|
+|Exchanger phase |None                    | (ugexpi(n))                        |
+|------------------------------------------------------------------------------|
+|->|Moles/kg.H2O    |  0.0000    | (cgexpi(n))                                 |
+|------------------------------------------------------------------------------|
+|->|Exchange site   |None    | (ugexji(j,n))                                   |
+|------------------------------------------------------------------------------|
+|--->|Exchange species        |Eq. frac.   | (this is a table header)          |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.00000E+00| (ugexsi(i,j,n), egexsi(i,j,n))    |
+|------------------------------------------------------------------------------|
+|Solid Solution Compositions     | (nxti)                                      |
+|------------------------------------------------------------------------------|
+|Solid Solution          |None                    | (usoli(n))                 |
+|------------------------------------------------------------------------------|
+|->|Component               |Mole frac.  | (this is a table header)            |
+|------------------------------------------------------------------------------|
+|->|None                    | 0.00000E+00| (umemi(i,n), xbari(i,n))            |
+|------------------------------------------------------------------------------|
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|None                                            |None            | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopt Model Option Switches ("( 0)" marks default choices)                     |
+|------------------------------------------------------------------------------|
+|iopt(4) - Solid Solutions:                                                    |
+|  [x] ( 0) Ignore                                                             |
+|  [ ] ( 1) Permit                                                             |
+|------------------------------------------------------------------------------|
+|iopt(11) - Auto Basis Switching in pre-N-R Optimization:                      |
+|  [x] ( 0) Turn off                                                           |
+|  [ ] ( 1) Turn on                                                            |
+|------------------------------------------------------------------------------|
+|iopt(17) - PICKUP File Options:                                               |
+|  [ ] (-1) Don't write a PICKUP file                                          |
+|  [x] ( 0) Write a PICKUP file                                                |
+|------------------------------------------------------------------------------|
+|iopt(19) - Advanced EQ3NR PICKUP File Options:                                |
+|  [x] ( 0) Write a normal EQ3NR PICKUP file                                   |
+|  [ ] ( 1) Write an EQ6 INPUT file with Quartz dissolving, relative rate law  |
+|  [ ] ( 2) Write an EQ6 INPUT file with Albite dissolving, TST rate law       |
+|  [ ] ( 3) Write an EQ6 INPUT file with Fluid 1 set up for fluid mixing       |
+|------------------------------------------------------------------------------|
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [x] ( 0) The B-dot equation                                                 |
+|  [ ] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [ ] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [x] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Iopr Print Option Switches ("( 0)" marks default choices)                     |
+|------------------------------------------------------------------------------|
+|iopr(1) - Print All Species Read from the Data File:                          |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(2) - Print All Reactions:                                                |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print the reactions                                                |
+|  [ ] ( 2) Print the reactions and log K values                               |
+|  [ ] ( 3) Print the reactions, log K values, and associated data             |
+|------------------------------------------------------------------------------|
+|iopr(3) - Print the Aqueous Species Hard Core Diameters:                      |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(4) - Print a Table of Aqueous Species Concentrations, Activities, etc.:  |
+|  [ ] (-3) Omit species with molalities < 1.e-8                               |
+|  [ ] (-2) Omit species with molalities < 1.e-12                              |
+|  [ ] (-1) Omit species with molalities < 1.e-20                              |
+|  [x] ( 0) Omit species with molalities < 1.e-100                             |
+|  [ ] ( 1) Include all species                                                |
+|------------------------------------------------------------------------------|
+|iopr(5) - Print a Table of Aqueous Species/H+ Activity Ratios:                |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print cation/H+ activity ratios only                               |
+|  [ ] ( 2) Print cation/H+ and anion/H+ activity ratios                       |
+|  [ ] ( 3) Print ion/H+ activity ratios and neutral species activities        |
+|------------------------------------------------------------------------------|
+|iopr(6) - Print a Table of Aqueous Mass Balance Percentages:                  |
+|  [ ] (-1) Don't print                                                        |
+|  [x] ( 0) Print those species comprising at least 99% of each mass balance   |
+|  [ ] ( 1) Print all contributing species                                     |
+|------------------------------------------------------------------------------|
+|iopr(7) - Print Tables of Saturation Indices and Affinities:                  |
+|  [ ] (-1) Don't print                                                        |
+|  [x] ( 0) Print, omitting those phases undersaturated by more than 10 kcal   |
+|  [ ] ( 1) Print for all phases                                               |
+|------------------------------------------------------------------------------|
+|iopr(8) - Print a Table of Fugacities:                                        |
+|  [ ] (-1) Don't print                                                        |
+|  [x] ( 0) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(9) - Print a Table of Mean Molal Activity Coefficients:                  |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(10) - Print a Tabulation of the Pitzer Interaction Coefficients:         |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print a summary tabulation                                         |
+|  [ ] ( 2) Print a more detailed tabulation                                   |
+|------------------------------------------------------------------------------|
+|iopr(17) - PICKUP file format ("W" or "D"):                                   |
+|  [x] ( 0) Use the format of the INPUT file                                   |
+|  [ ] ( 1) Use "W" format                                                     |
+|  [ ] ( 2) Use "D" format                                                     |
+|------------------------------------------------------------------------------|
+|Iodb Debugging Print Option Switches ("( 0)" marks default choices)           |
+|------------------------------------------------------------------------------|
+|iodb(1) - Print General Diagnostic Messages:                                  |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print Level 1 diagnostic messages                                  |
+|  [ ] ( 2) Print Level 1 and Level 2 diagnostic messages                      |
+|------------------------------------------------------------------------------|
+|iodb(3) - Print Pre-Newton-Raphson Optimization Information:                  |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information (including the beta and del vectors)    |
+|  [ ] ( 3) Print more detailed information (including matrix equations)       |
+|  [ ] ( 4) Print most detailed information (including activity coefficients)  |
+|------------------------------------------------------------------------------|
+|iodb(4) - Print Newton-Raphson Iteration Information:                         |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information (including the beta and del vectors)    |
+|  [ ] ( 3) Print more detailed information (including the Jacobian)           |
+|  [ ] ( 4) Print most detailed information (including activity coefficients)  |
+|------------------------------------------------------------------------------|
+|iodb(6) - Print Details of Hypothetical Affinity Calculations:                |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information                                         |
+|------------------------------------------------------------------------------|
+|Numerical Parameters                                                          |
+|------------------------------------------------------------------------------|
+| Beta convergence tolerance      | 0.00000E+00| (tolbt)                       |
+| Del convergence tolerance       | 0.00000E+00| (toldl)                       |
+| Max. Number of N-R Iterations   |   0        | (itermx)                      |
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Sat. flag tolerance     | 0.00000E+00| (tolspf)                               |
+|------------------------------------------------------------------------------|
+|Aq. Phase Scale Factor  | 1.00000E+00| (scamas)                               |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|
+
+   Done reading problem   1.
+
+
+ Making a special basis switch: replacing NH3(aq) with NO3-.
+
+
+      1.000  NO3-
+  +   1.000  H+
+  +   1.000  H2O
+          ==
+      1.000  NH3(aq)
+  +   2.000  O2(g)
+
+      1.000  NH3(aq)
+  +   2.000  O2(g)
+          ==
+      1.000  NO3-
+  +   1.000  H+
+  +   1.000  H2O
+
+ Preserving the following basis species in the model
+ to maintain linkage to strict basis species associated
+ one-to-one with active chemical elements:
+
+   NpO2+
+   PuO2+
+
+ The auxiliary basis species Np++++ is active even though
+   it is a dependent species of NpO2+, which is not
+   present in the current model. This detached auxililary basis species
+   will behave much like a strict basis species.
+
+ The auxiliary basis species Pu++++ is active even though
+   it is a dependent species of PuO2+, which is not
+   present in the current model. This detached auxililary basis species
+   will behave much like a strict basis species.
+
+ The redox basis species is O2(g).
+
+ The activity coefficients of aqueous species will be
+ calculated using the B-dot equation.
+
+
+ Temperature=  25.00 C
+
+
+ jpres3=    0 (Pressure option switch)
+
+   Pressure=   1.0132     bars (data file reference curve value)
+
+
+       --- Numbers of Phases, Species, and Groups Thereof---
+
+       Entity               Date Base    Dimension   Current Problem
+
+   Chemical Elements             86          86          33
+   Basis Species                189         199          94
+   Phases                      1169        1193         632
+   Species                     2535        3027        1199
+   Aqueous Species             1219        1219         488
+   Pure Minerals               1156        1156         629
+   Pure Liquids                   1           3           1
+   Gas Species                  128         128          81
+   Solid Soutions                10          10           0
+
+
+ iopt(1)=   0 (Used only by EQ6)
+ iopt(2)=   0 (Used only by EQ6)
+ iopt(3)=   0 (Used only by EQ6)
+ iopt(4)=   0 (Solid solutions)
+ iopt(5)=   0 (Used only by EQ6)
+ iopt(6)=   0 (Used only by EQ6)
+ iopt(7)=   0 (Not used)
+ iopt(8)=   0 (Not used)
+ iopt(9)=   0 (Not used)
+ iopt(10)=  0 (Not used)
+ iopt(11)=  0 (Auto basis switching, in pre-Newton-Raphson optimization)
+ iopt(12)=  0 (Used only by EQ6)
+ iopt(13)=  0 (Not used)
+ iopt(14)=  0 (Not used)
+ iopt(15)=  0 (Used only by EQ6)
+ iopt(16)=  0 (Not used)
+ iopt(17)=  0 (pickup file options)
+ iopt(18)=  0 (Used only by EQ6)
+ iopt(19)= 
+
+   iopg(1)=   0 (Aqueous species activity coefficient model)
+   iopg(2)=   0 (pH scale)
+
+
+ iopr(1)=   0 (List all species)
+ iopr(2)=   0 (List all reactions)
+ iopr(3)=   0 (List HC diameters)
+ iopr(4)=   0 (Aqueous species concentration print cut-off)
+ iopr(5)=   0 (Ion/H+ activity ratios)
+ iopr(6)=   0 (Mass balance percentages)
+ iopr(7)=   0 (Affinity print cut-off)
+ iopr(8)=   0 (Fugacities)
+ iopr(9)=   0 (Mean molal activity coefficients)
+ iopr(10)=  0 (Pitzer coefficients tabulation)
+ iopr(11)=  0 (Not used)
+ iopr(12)=  0 (Not used)
+ iopr(13)=  0 (Not used)
+ iopr(14)=  0 (Not used)
+ iopr(15)=  0 (Not used)
+ iopr(16)=  0 (Not used)
+ iopr(17)=  0 (pickup file format)
+
+
+   iodb(1)=   0 (General diagnostics)
+   iodb(2)=   0 (Used only by EQ6)
+   iodb(3)=   0 (pre-Newton-Raphson optimization iterations)
+   iodb(4)=   0 (Newton-Raphson iterations)
+   iodb(5)=   0 (Used only by EQ6)
+   iodb(6)=   0 (Hypothetical affinity iterations)
+   iodb(7)=   0 (Used only by EQ6)
+
+
+ irdxc3=   -1 (Default redox constraint switch)
+
+   The default redox state is constrained by Eh =  0.34000 volts.
+
+
+ iebal3=    0 (Electrical balancing option switch)
+
+   No electrical balancing adjustment will be made.
+   The imbalance will be calculated.
+
+
+ Solution density =  1.00000 g/ml
+
+
+ itdsf3=    0 (Total dissolved solutes option switch)
+
+   Total dissolved salts =       0.00 mg/kg.sol
+
+
+ tolbt  =  1.00000E-06 (convergence tolerance on residual functions)
+ toldl  =  1.00000E-06 (convergence tolerance on correction terms)
+ tolspf =  5.00000E-05 (saturation print flag tolerance, does not affect
+                         convergence)
+
+
+ itermx = 200 (maximum number of iterations)
+
+
+ scamas =  1.00000E+00 (scale factor for aqueous solution
+                         mass written on the pickup file)
+
+
+                     --- Original Input Constraints ---
+
+     Species                    coval   jflag   Type of Input
+
+  Na+                        4.58000E+01   2  Total mg/L
+  SiO2(aq)                   6.09700E+01   2  Total mg/L
+  Ca++                       1.30000E+01   2  Total mg/L
+  K+                         5.04000E+00   2  Total mg/L
+  Mg++                       2.01000E+00   2  Total mg/L
+  Li+                        4.80000E-02   2  Total mg/L
+  H+                         7.41000E+00  20  pH
+  HCO3-                      1.40400E+02   2  Total mg/L
+  O2(aq)                     5.60000E+00   2  Total mg/L
+  F-                         2.18000E+00   2  Total mg/L
+  Cl-                        7.14000E+00   2  Total mg/L
+  NO3-                       8.78000E+00   2  Total mg/L
+  SO4--                      1.84000E+01   2  Total mg/L
+  B(OH)3(aq)                 7.66000E-01   2  Total mg/L
+  Al+++                      8.00000E-03   2  Total mg/L
+  Mn++                       1.20000E-02   2  Total mg/L
+  Fe++                       4.00000E-02   2  Total mg/L
+  Sr++                       4.00000E-02   2  Total mg/L
+  HPO4--                     1.20000E-01   2  Total mg/L
+  Am+++                      1.00000E-12   0  Total molality
+  Cs+                        1.00000E-12   0  Total molality
+  Cu++                       1.00000E-12   0  Total molality
+  I-                         1.00000E-12   0  Total molality
+  Np++++                     1.00000E-12   0  Total molality
+  Ni++                       1.00000E-12   0  Total molality
+  Pb++                       1.00000E-12   0  Total molality
+  Pu++++                     1.00000E-12   0  Total molality
+  Ra++                       1.00000E-12   0  Total molality
+  SeO3--                     1.00000E-12   0  Total molality
+  Sn++                       1.00000E-12   0  Total molality
+  TcO4-                      1.00000E-12   0  Total molality
+  Th++++                     1.00000E-12   0  Total molality
+  UO2++                      1.00000E-12   0  Total molality
+  H2(aq)                                  27  Homogenous equilibrium
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+                     --- Modified Input Constraints ---
+
+     Species                    coval   jflag   Type of Input
+
+  H2O                        0.00000E+00   0  Total molality
+  Al+++                      2.96499E-07   0  Total molality
+  Am+++                      1.00000E-12   0  Total molality
+  B(OH)3(aq)                 1.23882E-05   0  Total molality
+  Ca++                       3.24367E-04   0  Total molality
+  Cl-                        2.01395E-04   0  Total molality
+  Cs+                        1.00000E-12   0  Total molality
+  Cu++                       1.00000E-12   0  Total molality
+  F-                         1.14747E-04   0  Total molality
+  Fe++                       7.16268E-07   0  Total molality
+  H+                         7.41000E+00  20  pH
+  HCO3-                      2.30100E-03   0  Total molality
+  HPO4--                     1.25027E-06   0  Total molality
+  I-                         1.00000E-12   0  Total molality
+  K+                         1.28906E-04   0  Total molality
+  Li+                        6.91543E-06   0  Total molality
+  Mg++                       8.26990E-05   0  Total molality
+  Mn++                       2.18428E-07   0  Total molality
+  NO3-                       1.41602E-04   0  Total molality
+  Na+                        1.99219E-03   0  Total molality
+  Ni++                       1.00000E-12   0  Total molality
+  Pb++                       1.00000E-12   0  Total molality
+  Ra++                       1.00000E-12   0  Total molality
+  SO4--                      1.91540E-04   0  Total molality
+  SeO3--                     1.00000E-12   0  Total molality
+  SiO2(aq)                   1.01474E-03   0  Total molality
+  Sn++                       1.00000E-12   0  Total molality
+  Sr++                       4.56517E-07   0  Total molality
+  TcO4-                      1.00000E-12   0  Total molality
+  Th++++                     1.00000E-12   0  Total molality
+  UO2++                      1.00000E-12   0  Total molality
+  O2(g)                      0.00000E+00   0  Log fO2
+  HS-                                     30  Make non-basis
+  Acetic_acid(aq)                         30  Make non-basis
+  Formic_acid(aq)                         30  Make non-basis
+  S2--                                    30  Make non-basis
+  Am++                                    30  Make non-basis
+  Am++++                                  30  Make non-basis
+  AmO2+                                   30  Make non-basis
+  AmO2++                                  30  Make non-basis
+  BH4-                                    30  Make non-basis
+  CN-                                     30  Make non-basis
+  ClO-                                    30  Make non-basis
+  ClO2-                                   30  Make non-basis
+  ClO3-                                   30  Make non-basis
+  ClO4-                                   30  Make non-basis
+  Cu+                                     30  Make non-basis
+  Ethane(aq)                              30  Make non-basis
+  Fe+++                                   30  Make non-basis
+  Formaldehyde(aq)                        30  Make non-basis
+  H2(aq)                                  27  Homogenous equilibrium
+  H2O2(aq)                                30  Make non-basis
+  H2P2O7--                                30  Make non-basis
+  H2PO2-                                  30  Make non-basis
+  HPO3--                                  30  Make non-basis
+  HSO5-                                   30  Make non-basis
+  HSe-                                    30  Make non-basis
+  I3-                                     30  Make non-basis
+  IO-                                     30  Make non-basis
+  IO3-                                    30  Make non-basis
+  IO4-                                    30  Make non-basis
+  Methane(aq)                             30  Make non-basis
+  Methanol(aq)                            30  Make non-basis
+  Mn+++                                   30  Make non-basis
+  MnO4--                                  30  Make non-basis
+  N2(aq)                                  30  Make non-basis
+  N2O2--                                  30  Make non-basis
+  N3-                                     30  Make non-basis
+  NO2-                                    30  Make non-basis
+  NH3(aq)                                 30  Make non-basis
+  Np++++                     1.00000E-12   0  Total molality
+  O2(aq)                     1.75007E-04   0  Total molality
+  Pu++++                     1.00000E-12   0  Total molality
+  S2O3--                                  30  Make non-basis
+  S2O4--                                  30  Make non-basis
+  S2O6--                                  30  Make non-basis
+  S2O8--                                  30  Make non-basis
+  S3--                                    30  Make non-basis
+  S3O6--                                  30  Make non-basis
+  S4--                                    30  Make non-basis
+  S4O6--                                  30  Make non-basis
+  S5--                                    30  Make non-basis
+  S5O6--                                  30  Make non-basis
+  SCN-                                    30  Make non-basis
+  SO3--                                   30  Make non-basis
+  SeO4--                                  30  Make non-basis
+  Sn++++                                  30  Make non-basis
+  TcO++                                   30  Make non-basis
+  TcO4--                                  30  Make non-basis
+  U+++                                    30  Make non-basis
+  U++++                                   30  Make non-basis
+  UO2+                                    30  Make non-basis
+
+
+                     --- Inactive Species ---
+
+    NpO2+
+    PuO2+
+
+ - - BEGIN ITERATIVE CALCULATIONS  - - - - - - - - - - - - - - - - - - - - - -
+
+
+ Starting Pre-Newton-Raphson Optimization.
+
+             Completed pass   1 in   5 cycles.
+
+   Done. Optimization ended within requested limits.
+
+
+ Starting hybrid Newton-Raphson iteration.
+
+   Done. Hybrid Newton-Raphson iteration converged in   3 iterations.
+
+
+ * Warning - (EQ3NR/eq3nr) The calculated TDS of 300.73 mg/kg.sol
+       differs from the input file/default value of 0.0000 mg/kg.sol.
+       The calculated value will be used in subsequent calculations.
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+           --- Elemental Composition of the Aqueous Solution ---
+
+   Element        mg/L       mg/kg.sol    Molarity     Molality
+
+     O         8.89017E+05  8.87993E+05  5.55656E+01  5.55184E+01
+     Al        8.00681E-03  7.99759E-03  2.96752E-07  2.96499E-07
+     Am        2.43207E-07  2.42927E-07  1.00085E-12  1.00000E-12
+     B         1.34043E-01  1.33889E-01  1.23988E-05  1.23882E-05
+     Ca        1.30111E+01  1.29961E+01  3.24644E-04  3.24367E-04
+     Cl        7.14608E+00  7.13785E+00  2.01567E-04  2.01395E-04
+     Cs        1.33019E-07  1.32865E-07  1.00085E-12  1.00000E-12
+     Cu        6.36001E-08  6.35269E-08  1.00085E-12  1.00000E-12
+     F         2.18186E+00  2.17934E+00  1.14844E-04  1.14747E-04
+     Fe        4.00341E-02  3.99880E-02  7.16878E-07  7.16268E-07
+     H         1.11996E+05  1.11867E+05  1.11114E+02  1.11019E+02
+     C         2.76602E+01  2.76284E+01  2.30296E-03  2.30100E-03
+     P         3.87585E-02  3.87139E-02  1.25133E-06  1.25027E-06
+     I         1.27013E-07  1.26866E-07  1.00085E-12  1.00000E-12
+     K         5.04429E+00  5.03848E+00  1.29016E-04  1.28906E-04
+     Li        4.80409E-02  4.79856E-02  6.92132E-06  6.91543E-06
+     Mg        2.01171E+00  2.00940E+00  8.27695E-05  8.26990E-05
+     Mn        1.20102E-02  1.19964E-02  2.18614E-07  2.18428E-07
+     N         1.98507E+00  1.98278E+00  1.41722E-04  1.41602E-04
+     Na        4.58390E+01  4.57862E+01  1.99389E-03  1.99219E-03
+     Ni        5.87434E-08  5.86757E-08  1.00085E-12  1.00000E-12
+     Np        2.37202E-07  2.36929E-07  1.00085E-12  1.00000E-12
+     Pb        2.07376E-07  2.07138E-07  1.00085E-12  1.00000E-12
+     Pu        2.44208E-07  2.43927E-07  1.00085E-12  1.00000E-12
+     Ra        2.26192E-07  2.25932E-07  1.00085E-12  1.00000E-12
+     S         6.14715E+00  6.14007E+00  1.91703E-04  1.91540E-04
+     Se        7.90272E-08  7.89363E-08  1.00085E-12  1.00000E-12
+     Si        2.85238E+01  2.84909E+01  1.01561E-03  1.01474E-03
+     Sn        1.18811E-07  1.18674E-07  1.00085E-12  1.00000E-12
+     Sr        4.00341E-02  3.99880E-02  4.56906E-07  4.56517E-07
+     Tc        9.80835E-08  9.79705E-08  1.00085E-12  1.00000E-12
+     Th        2.32236E-07  2.31968E-07  1.00085E-12  1.00000E-12
+     U         2.38232E-07  2.37957E-07  1.00085E-12  1.00000E-12
+
+
+           --- Numerical Composition of the Aqueous Solution ---
+
+   Species                    mg/L       mg/kg.sol    Molarity     Molality
+
+ H2O                       1.00085E+06  9.99695E+05  5.55555E+01  5.55082E+01
+ Al+++                     8.00681E-03  7.99759E-03  2.96752E-07  2.96499E-07
+ Am+++                     2.43207E-07  2.42927E-07  1.00085E-12  1.00000E-12
+ B(OH)3(aq)                7.66652E-01  7.65770E-01  1.23988E-05  1.23882E-05
+ Ca++                      1.30111E+01  1.29961E+01  3.24644E-04  3.24367E-04
+ Cl-                       7.14608E+00  7.13785E+00  2.01567E-04  2.01395E-04
+ Cs+                       1.33019E-07  1.32865E-07  1.00085E-12  1.00000E-12
+ Cu++                      6.36001E-08  6.35269E-08  1.00085E-12  1.00000E-12
+ F-                        2.18186E+00  2.17934E+00  1.14844E-04  1.14747E-04
+ Fe++                      4.00341E-02  3.99880E-02  7.16878E-07  7.16268E-07
+ H+                        2.99683E-01  2.99338E-01  2.97322E-04  2.97069E-04
+ HCO3-                     1.40520E+02  1.40358E+02  2.30296E-03  2.30100E-03
+ HPO4--                    1.20102E-01  1.19964E-01  1.25133E-06  1.25027E-06
+ I-                        1.27013E-07  1.26866E-07  1.00085E-12  1.00000E-12
+ K+                        5.04429E+00  5.03848E+00  1.29016E-04  1.28906E-04
+ Li+                       4.80409E-02  4.79856E-02  6.92132E-06  6.91543E-06
+ Mg++                      2.01171E+00  2.00940E+00  8.27695E-05  8.26990E-05
+ Mn++                      1.20102E-02  1.19964E-02  2.18614E-07  2.18428E-07
+ NO3-                      8.78748E+00  8.77736E+00  1.41722E-04  1.41602E-04
+ Na+                       4.58390E+01  4.57862E+01  1.99389E-03  1.99219E-03
+ Ni++                      5.87434E-08  5.86757E-08  1.00085E-12  1.00000E-12
+ NpO2+                     0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+ Pb++                      2.07376E-07  2.07138E-07  1.00085E-12  1.00000E-12
+ PuO2+                     0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+ Ra++                      2.26192E-07  2.25932E-07  1.00085E-12  1.00000E-12
+ SO4--                     1.84157E+01  1.83945E+01  1.91703E-04  1.91540E-04
+ SeO3--                    1.27066E-07  1.26920E-07  1.00085E-12  1.00000E-12
+ SiO2(aq)                  6.10219E+01  6.09517E+01  1.01561E-03  1.01474E-03
+ Sn++                      1.18811E-07  1.18674E-07  1.00085E-12  1.00000E-12
+ Sr++                      4.00341E-02  3.99880E-02  4.56906E-07  4.56517E-07
+ TcO4-                     1.62136E-07  1.61949E-07  1.00085E-12  1.00000E-12
+ Th++++                    2.32236E-07  2.31968E-07  1.00085E-12  1.00000E-12
+ UO2++                     2.70258E-07  2.69946E-07  1.00085E-12  1.00000E-12
+ O2(g)                    -5.66295E+00 -5.65643E+00 -1.76974E-04 -1.76823E-04
+ H2(aq)                    7.66461E-27  7.65578E-27  3.80211E-30  3.79888E-30
+ Np++++                    2.37202E-07  2.36929E-07  1.00085E-12  1.00000E-12
+ O2(aq)                    5.60477E+00  5.59832E+00  1.75156E-04  1.75007E-04
+ Pu++++                    2.44208E-07  2.43927E-07  1.00085E-12  1.00000E-12
+
+   Some of the above data may not be physically significant.
+
+
+           --- Sensible Composition of the Aqueous Solution ---
+
+   Species                    mg/L       mg/kg.sol    Molarity     Molality
+
+ Al+++                     8.00681E-03  7.99759E-03  2.96752E-07  2.96499E-07
+ Am+++                     2.43207E-07  2.42927E-07  1.00085E-12  1.00000E-12
+ B(OH)3(aq)                7.66652E-01  7.65770E-01  1.23988E-05  1.23882E-05
+ Ca++                      1.30111E+01  1.29961E+01  3.24644E-04  3.24367E-04
+ Cl-                       7.14608E+00  7.13785E+00  2.01567E-04  2.01395E-04
+ Cs+                       1.33019E-07  1.32865E-07  1.00085E-12  1.00000E-12
+ Cu++                      6.36001E-08  6.35269E-08  1.00085E-12  1.00000E-12
+ F-                        2.18186E+00  2.17934E+00  1.14844E-04  1.14747E-04
+ Fe++                      4.00341E-02  3.99880E-02  7.16878E-07  7.16268E-07
+ H+                        2.99683E-01  2.99338E-01  2.97322E-04  2.97069E-04
+ HCO3-                     1.40520E+02  1.40358E+02  2.30296E-03  2.30100E-03
+ HPO4--                    1.20102E-01  1.19964E-01  1.25133E-06  1.25027E-06
+ I-                        1.27013E-07  1.26866E-07  1.00085E-12  1.00000E-12
+ K+                        5.04429E+00  5.03848E+00  1.29016E-04  1.28906E-04
+ Li+                       4.80409E-02  4.79856E-02  6.92132E-06  6.91543E-06
+ Mg++                      2.01171E+00  2.00940E+00  8.27695E-05  8.26990E-05
+ Mn++                      1.20102E-02  1.19964E-02  2.18614E-07  2.18428E-07
+ NO3-                      8.78748E+00  8.77736E+00  1.41722E-04  1.41602E-04
+ Na+                       4.58390E+01  4.57862E+01  1.99389E-03  1.99219E-03
+ Ni++                      5.87434E-08  5.86757E-08  1.00085E-12  1.00000E-12
+ NpO2+                     0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+ Pb++                      2.07376E-07  2.07138E-07  1.00085E-12  1.00000E-12
+ PuO2+                     0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+ Ra++                      2.26192E-07  2.25932E-07  1.00085E-12  1.00000E-12
+ SO4--                     1.84157E+01  1.83945E+01  1.91703E-04  1.91540E-04
+ SeO3--                    1.27066E-07  1.26920E-07  1.00085E-12  1.00000E-12
+ SiO2(aq)                  6.10219E+01  6.09517E+01  1.01561E-03  1.01474E-03
+ Sn++                      1.18811E-07  1.18674E-07  1.00085E-12  1.00000E-12
+ Sr++                      4.00341E-02  3.99880E-02  4.56906E-07  4.56517E-07
+ TcO4-                     1.62136E-07  1.61949E-07  1.00085E-12  1.00000E-12
+ Th++++                    2.32236E-07  2.31968E-07  1.00085E-12  1.00000E-12
+ UO2++                     2.70258E-07  2.69946E-07  1.00085E-12  1.00000E-12
+ H2(aq)                    7.66461E-27  7.65578E-27  3.80211E-30  3.79888E-30
+ Np++++                    2.37202E-07  2.36929E-07  1.00085E-12  1.00000E-12
+ O2(aq)                    5.60477E+00  5.59832E+00  1.75156E-04  1.75007E-04
+ Pu++++                    2.44208E-07  2.43927E-07  1.00085E-12  1.00000E-12
+
+   The above data have physical significance, but some may be
+   inconsistent with certain analytical methods or reporting schemes.
+
+
+
+                    Oxygen fugacity= 3.34858E-31 bars
+                Log oxygen fugacity= -30.475
+
+                  Activity of water= 0.99988
+              Log activity of water= -5.05149E-05
+
+             Mole fraction of water= 0.99988
+         Log mole fraction of water= -5.16134E-05
+
+      Activity coefficient of water= 1.0000
+  Log activity coefficient of water= 1.09847E-06
+
+                Osmotic coefficient= 0.97866
+ Stoichiometric osmotic coefficient= 0.92400
+
+                  Sum of molalities= 6.59725E-03
+   Sum of stoichiometric molalities= 6.98751E-03
+
+                 Ionic strength (I)= 3.44482E-03 molal
+      Stoichiometric ionic strength= 3.79574E-03 molal
+
+                Ionic asymmetry (J)= 2.21375E-04 molal
+     Stoichiometric ionic asymmetry= 2.33280E-04 molal
+
+                       Solvent mass= 1000.0 g
+                 Solutes (TDS) mass= 0.30082 g
+              Aqueous solution mass= 1000.3 g
+
+            Aqueous solution volume= 0.99915 L
+
+                   Solvent fraction= 0.99970 kg.H2O/kg.sol
+                    Solute fraction= 3.00732E-04 kg.tds/kg.sol
+
+      Total dissolved solutes (TDS)= 300.73 mg/kg.sol
+                                TDS= 301.08 mg/L
+                                TDS= 0.30108 g/L
+
+                   Solution density= 1.0012 g/mL
+                   Solution density= 1001.2 g/L
+
+                  Molarity/molality= 1.0009 kg.H2O/L
+                  Molality/molarity= 0.99915 L/kg.H2O
+
+
+           --- The pH, Eh, pe-, and Ah on various pH scales ---
+
+                               pH     Eh, volts        pe-       Ah, kcal
+
+ NBS pH scale                7.4100     0.3400     5.7475E+00      7.8412
+ Mesmer pH (pmH) scale       7.3821     0.3416     5.7753E+00      7.8792
+
+
+      pcH=      7.3818
+     pHCl=     11.1337
+
+
+   The single ion activities and activity coefficients listed below
+   are consistent with the NBS pH scale.
+
+
+           --- HCO3-CO3-OH Total Alkalinity ---
+
+                 2.13521E-03 eq/kg.H2O
+                 2.13703E-03 eq/L
+                  106.73     mg/kg.sol CaCO3
+                  130.12     mg/kg.sol HCO3-
+                  106.85     mg/L CaCO3
+                  130.27     mg/L HCO3-
+
+
+           --- Extended Total Alkalinity ---
+
+                 2.13627E-03 eq/kg.H2O
+                 2.13809E-03 eq/L
+                  106.78     mg/kg.sol CaCO3
+                  130.19     mg/kg.sol HCO3-
+                  106.90     mg/L CaCO3
+                  130.34     mg/L HCO3-
+
+
+           --- Electrical Balance Totals ---
+
+                                  eq/kg.H2O
+
+        Sigma(mz) cations=     2.9134458067E-03
+         Sigma(mz) anions=    -2.8148872566E-03
+             Total charge=     5.7283330633E-03
+              Mean charge=     2.8641665317E-03
+         Charge imbalance=     9.8558550106E-05
+
+
+         The electrical imbalance is:
+
+              1.7205 per cent of the total charge
+              3.4411 per cent of the mean charge
+
+
+
+                --- Distribution of Aqueous Solute Species ---
+
+    Species                  Molality    Log Molality   Log Gamma  Log Activity
+
+ HCO3-                      2.1136E-03      -2.6750      -0.0276      -2.7026
+ Na+                        1.9846E-03      -2.7023      -0.0279      -2.7302
+ SiO2(aq)                   1.0067E-03      -2.9971       0.0000      -2.9971
+ Ca++                       3.1270E-04      -3.5049      -0.1106      -3.6155
+ Cl-                        2.0130E-04      -3.6962      -0.0276      -3.7237
+ SO4--                      1.8402E-04      -3.7351      -0.1110      -3.8462
+ O2(aq)                     1.7501E-04      -3.7569       0.0004      -3.7566
+ CO2(aq)                    1.7054E-04      -3.7682       0.0004      -3.7678
+ K+                         1.2877E-04      -3.8902      -0.0279      -3.9181
+ F-                         1.1443E-04      -3.9415      -0.0276      -3.9691
+ Mg++                       7.9446E-05      -4.0999      -0.1106      -4.2105
+ N2(aq)                     7.0801E-05      -4.1500       0.0000      -4.1500
+ B(OH)3(aq)                 1.2194E-05      -4.9139       0.0000      -4.9139
+ HSiO3-                     7.1637E-06      -5.1449      -0.0276      -5.1724
+ Li+                        6.9096E-06      -5.1605      -0.0279      -5.1884
+ CaHCO3+                    5.7086E-06      -5.2435      -0.0279      -5.2713
+ NaHCO3(aq)                 5.2643E-06      -5.2787       0.0000      -5.2787
+ CaSO4(aq)                  4.4611E-06      -5.3506       0.0000      -5.3506
+ CO3--                      3.0880E-06      -5.5103      -0.1110      -5.6214
+ MgSO4(aq)                  1.4896E-06      -5.8269       0.0000      -5.8269
+ NaSO4-                     1.4165E-06      -5.8488      -0.0276      -5.8764
+ MgHCO3+                    1.4140E-06      -5.8495      -0.0279      -5.8774
+ CaCO3(aq)                  1.2310E-06      -5.9097       0.0000      -5.9097
+ NaHSiO3(aq)                8.4792E-07      -6.0716       0.0000      -6.0716
+ HPO4--                     7.4793E-07      -6.1261      -0.1110      -6.2372
+ HFeO2(aq)                  6.4760E-07      -6.1887       0.0000      -6.1887
+ Sr++                       4.3416E-07      -6.3624      -0.1106      -6.4730
+ H2PO4-                     3.9121E-07      -6.4076      -0.0276      -6.4352
+ OH-                        2.7697E-07      -6.5576      -0.0276      -6.5852
+ AlO2-                      2.5757E-07      -6.5891      -0.0276      -6.6167
+ Mn++                       2.1523E-07      -6.6671      -0.1106      -6.7777
+ BO2-                       1.9005E-07      -6.7211      -0.0276      -6.7487
+ MgF+                       1.5873E-07      -6.7993      -0.0279      -6.8272
+ MgCO3(aq)                  1.4028E-07      -6.8530       0.0000      -6.8530
+ KSO4-                      1.3898E-07      -6.8571      -0.0276      -6.8846
+ CaF+                       1.3336E-07      -6.8750      -0.0279      -6.9028
+ CaHPO4(aq)                 7.7153E-08      -7.1126       0.0000      -7.1126
+ FeO+                       6.2722E-08      -7.2026      -0.0279      -7.2304
+ NaCl(aq)                   5.8758E-08      -7.2309       0.0000      -7.2309
+ H+                         4.1482E-08      -7.3821      -0.0279      -7.4100
+ HAlO2(aq)                  3.7628E-08      -7.4245       0.0000      -7.4245
+ MgHPO4(aq)                 2.8993E-08      -7.5377       0.0000      -7.5377
+ CaCl+                      2.4897E-08      -7.6038      -0.0279      -7.6317
+ NaF(aq)                    2.0097E-08      -7.6969       0.0000      -7.6969
+ CaHSiO3+                   1.7785E-08      -7.7500      -0.0279      -7.7778
+ NaCO3-                     1.5500E-08      -7.8097      -0.0276      -7.8373
+ SrHCO3+                    1.2088E-08      -7.9177      -0.0279      -7.9455
+ SrSO4(aq)                  9.5688E-09      -8.0191       0.0000      -8.0191
+ MgCl+                      9.0927E-09      -8.0413      -0.0279      -8.0692
+ MgHSiO3+                   8.0331E-09      -8.0951      -0.0279      -8.1230
+ HF(aq)                     6.3101E-09      -8.2000       0.0000      -8.2000
+ LiSO4-                     5.7942E-09      -8.2370      -0.0276      -8.2646
+ CaPO4-                     4.9481E-09      -8.3056      -0.0276      -8.3331
+ FeO2-                      4.4319E-09      -8.3534      -0.0276      -8.3810
+ MgOH+                      3.5057E-09      -8.4552      -0.0279      -8.4831
+ CaB(OH)4+                  3.0639E-09      -8.5137      -0.0279      -8.5416
+ MnSO4(aq)                  1.9463E-09      -8.7108       0.0000      -8.7108
+ MnHCO3+                    9.7586E-10      -9.0106      -0.0279      -9.0385
+ CaOH+                      9.7509E-10      -9.0110      -0.0279      -9.0388
+ Fe++                       9.4052E-10      -9.0266      -0.1106      -9.1372
+ MgB(OH)4+                  9.2621E-10      -9.0333      -0.0279      -9.0611
+ NaB(OH)4(aq)               6.1928E-10      -9.2081       0.0000      -9.2081
+ SrCO3(aq)                  5.9017E-10      -9.2290       0.0000      -9.2290
+ HSO4-                      5.6299E-10      -9.2495      -0.0276      -9.2771
+ AlF3(aq)                   5.4957E-10      -9.2600       0.0000      -9.2600
+ FeCO3(aq)                  4.9136E-10      -9.3086       0.0000      -9.3086
+ AlF2+                      4.3346E-10      -9.3631      -0.0279      -9.3909
+ NaOH(aq)                   2.9858E-10      -9.5249       0.0000      -9.5249
+ AlO+                       2.8394E-10      -9.5468      -0.0279      -9.5746
+ MnF+                       1.4501E-10      -9.8386      -0.0279      -9.8665
+ MnOH+                      1.0978E-10      -9.9595      -0.0279      -9.9874
+ KCl(aq)                    6.6482E-11     -10.1773       0.0000     -10.1773
+ SrF+                       5.3106E-11     -10.2749      -0.0279     -10.3027
+ FeHCO3+                    4.5505E-11     -10.3419      -0.0279     -10.3698
+ SrCl+                      3.8253E-11     -10.4173      -0.0279     -10.4452
+ LiCl(aq)                   3.7701E-11     -10.4236       0.0000     -10.4236
+ MnCl+                      2.4430E-11     -10.6121      -0.0279     -10.6399
+ SrHPO4(aq)                 2.2380E-11     -10.6501       0.0000     -10.6501
+ FeSO4(aq)                  1.6466E-11     -10.7834       0.0000     -10.7834
+ AlF4-                      1.5796E-11     -10.8015      -0.0276     -10.8290
+ AlF++                      1.2267E-11     -10.9113      -0.1106     -11.0219
+ PO4---                     1.1821E-11     -10.9274      -0.2502     -11.1776
+ KOH(aq)                    1.1306E-11     -10.9467       0.0000     -10.9467
+ FeOH+                      9.6778E-12     -11.0142      -0.0279     -11.0421
+ FeOH++                     8.2273E-12     -11.0847      -0.1106     -11.1953
+ LiOH(aq)                   3.7363E-12     -11.4276       0.0000     -11.4276
+ AlOH++                     2.9333E-12     -11.5326      -0.1106     -11.6432
+ HF2-                       2.4522E-12     -11.6104      -0.0276     -11.6380
+ FeF+                       2.2324E-12     -11.6512      -0.0279     -11.6791
+ H3PO4(aq)                  1.9702E-12     -11.7055       0.0000     -11.7055
+ CaCl2(aq)                  1.9654E-12     -11.7065       0.0000     -11.7065
+ TcO4-                      1.0000E-12     -12.0000      -0.0276     -12.0276
+ Ra++                       1.0000E-12     -12.0000      -0.1106     -12.1106
+ Np(OH)4(aq)                9.9999E-13     -12.0000       0.0000     -12.0000
+ I-                         9.9995E-13     -12.0000      -0.0276     -12.0276
+ Cs+                        9.9987E-13     -12.0001      -0.0279     -12.0279
+ Ni++                       9.7375E-13     -12.0116      -0.1106     -12.1222
+ PbOH+                      9.3008E-13     -12.0315      -0.0279     -12.0593
+ AmCO3+                     8.2593E-13     -12.0831      -0.0279     -12.1109
+ Pu(CO3)5------             8.1005E-13     -12.0915      -1.0022     -13.0936
+ UO2(CO3)2--                7.6728E-13     -12.1150      -0.1110     -12.2261
+ Sn(OH)4(aq)                6.1976E-13     -12.2078       0.0000     -12.2078
+ SeO3--                     6.1638E-13     -12.2102      -0.1110     -12.3212
+ Th(OH)3CO3-                5.7548E-13     -12.2400      -0.0276     -12.2676
+ Cu++                       4.8460E-13     -12.3146      -0.1106     -12.4252
+ SrOH+                      4.5968E-13     -12.3375      -0.0279     -12.3654
+ HSeO3-                     3.8237E-13     -12.4175      -0.0276     -12.4451
+ Sn(OH)5-                   3.7998E-13     -12.4202      -0.0276     -12.4478
+ CuO(aq)                    3.7899E-13     -12.4214       0.0000     -12.4214
+ CaP2O7--                   2.4693E-13     -12.6074      -0.1110     -12.7185
+ Th(OH)2(CO3)2--            2.0289E-13     -12.6927      -0.1110     -12.8038
+ Th(OH)4(aq)                1.8563E-13     -12.7313       0.0000     -12.7313
+ UO2(CO3)3----              1.7502E-13     -12.7569      -0.4451     -13.2021
+ PuF2++                     1.6942E-13     -12.7710      -0.1106     -12.8816
+ MgP2O7--                   1.5758E-13     -12.8025      -0.1110     -12.9135
+ AlHPO4+                    1.3737E-13     -12.8621      -0.0279     -12.8900
+ CuOH+                      1.2212E-13     -12.9132      -0.0279     -12.9411
+ FeCl+                      1.0148E-13     -12.9936      -0.0279     -13.0215
+ PO3F--                     8.7287E-14     -13.0591      -0.1110     -13.1701
+ Fe(CO3)2--                 7.7818E-14     -13.1089      -0.1110     -13.2200
+ AmOH++                     6.8928E-14     -13.1616      -0.1106     -13.2722
+ Pb++                       6.8157E-14     -13.1665      -0.1106     -13.2771
+ Am(CO3)2-                  6.0353E-14     -13.2193      -0.0276     -13.2469
+ UO3(aq)                    4.2169E-14     -13.3750       0.0000     -13.3750
+ Th(OH)2CO3(aq)             3.2930E-14     -13.4824       0.0000     -13.4824
+ Am(OH)2+                   2.8728E-14     -13.5417      -0.0279     -13.5696
+ HP2O7---                   2.4357E-14     -13.6134      -0.2502     -13.8636
+ BF2(OH)2-                  2.4157E-14     -13.6170      -0.0276     -13.6445
+ PuOH+++                    2.0196E-14     -13.6947      -0.2466     -13.9414
+ NiCO3(aq)                  1.8050E-14     -13.7435       0.0000     -13.7435
+ Al+++                      1.5626E-14     -13.8062      -0.2466     -14.0528
+ UO2CO3(aq)                 1.3816E-14     -13.8596       0.0000     -13.8596
+ CuSO4(aq)                  1.2263E-14     -13.9114       0.0000     -13.9114
+ Am+++                      9.3687E-15     -14.0283      -0.2466     -14.2750
+ MnO(aq)                    6.9366E-15     -14.1589       0.0000     -14.1589
+ NiOH+                      6.5412E-15     -14.1843      -0.0279     -14.2122
+ FeF++                      5.5036E-15     -14.2594      -0.1106     -14.3700
+ AmSO4+                     4.7535E-15     -14.3230      -0.0279     -14.3508
+ H2P2O7--                   3.0763E-15     -14.5120      -0.1110     -14.6230
+ Th(OH)3+                   3.0316E-15     -14.5183      -0.0279     -14.5462
+ FeO(aq)                    1.8946E-15     -14.7225       0.0000     -14.7225
+ AmF++                      1.6853E-15     -14.7733      -0.1106     -14.8839
+ CuF+                       1.4252E-15     -14.8461      -0.0279     -14.8740
+ AlSO4+                     1.3768E-15     -14.8611      -0.0279     -14.8890
+ HUO4-                      1.3453E-15     -14.8712      -0.0276     -14.8988
+ SeO4--                     1.2209E-15     -14.9133      -0.1110     -15.0244
+ NiF+                       1.1393E-15     -14.9434      -0.0279     -14.9712
+ NaHP2O7--                  7.3763E-16     -15.1322      -0.1110     -15.2432
+ PbF+                       6.9408E-16     -15.1586      -0.0279     -15.1865
+ Mn2(OH)3+                  6.3431E-16     -15.1977      -0.0279     -15.2256
+ Ni(OH)2(aq)                4.9860E-16     -15.3023       0.0000     -15.3023
+ PbO(aq)                    4.4541E-16     -15.3512       0.0000     -15.3512
+ P2O7----                   3.9042E-16     -15.4085      -0.4451     -15.8536
+ Cu+                        3.8513E-16     -15.4144      -0.0279     -15.4423
+ PuF+++                     3.2633E-16     -15.4863      -0.2466     -15.7330
+ PbCl+                      2.9136E-16     -15.5356      -0.0279     -15.5634
+ Pb(OH)2(aq)                2.8354E-16     -15.5474       0.0000     -15.5474
+ Sn(OH)6--                  2.5892E-16     -15.5868      -0.1110     -15.6979
+ UO2OH+                     2.1740E-16     -15.6628      -0.0279     -15.6906
+ CuCl+                      1.9015E-16     -15.7209      -0.0279     -15.7488
+ Am(CO3)3---                1.8509E-16     -15.7326      -0.2502     -15.9829
+ HPO3F-                     1.7697E-16     -15.7521      -0.0276     -15.7797
+ CsCl(aq)                   1.2878E-16     -15.8902       0.0000     -15.8902
+ UO2OSi(OH)3+               1.1923E-16     -15.9236      -0.0279     -15.9515
+ FeF2+                      1.0941E-16     -15.9610      -0.0279     -15.9888
+ HFeO2-                     8.1894E-17     -16.0867      -0.0276     -16.1143
+ NaP2O7---                  8.0728E-17     -16.0930      -0.2502     -16.3432
+ Fe+++                      7.0152E-17     -16.1540      -0.2466     -16.4006
+ NaI(aq)                    5.0373E-17     -16.2978       0.0000     -16.2978
+ PbHPO4(aq)                 3.8524E-17     -16.4143       0.0000     -16.4143
+ Mn2OH+++                   3.4768E-17     -16.4588      -0.2466     -16.7055
+ AmF2+                      3.4291E-17     -16.4648      -0.0279     -16.4927
+ CaSeO4(aq)                 2.2917E-17     -16.6398       0.0000     -16.6398
+ Th(OH)4CO3--               2.2821E-17     -16.6417      -0.1110     -16.7527
+ KHSO4(aq)                  2.1402E-17     -16.6695       0.0000     -16.6695
+ Am(SO4)2-                  1.9997E-17     -16.6990      -0.0276     -16.7266
+ UO2F+                      1.6400E-17     -16.7852      -0.0279     -16.8130
+ NiCl+                      1.5338E-17     -16.8142      -0.0279     -16.8421
+ Al(SO4)2-                  1.5220E-17     -16.8176      -0.0276     -16.8452
+ CuCl(aq)                   1.4595E-17     -16.8358       0.0000     -16.8358
+ AmCl++                     1.4103E-17     -16.8507      -0.1106     -16.9613
+ SrP2O7--                   1.3648E-17     -16.8649      -0.1110     -16.9760
+ UO2HPO4(aq)                1.2268E-17     -16.9112       0.0000     -16.9112
+ Th(OH)2++                  8.9034E-18     -17.0504      -0.1106     -17.1610
+ Np(CO3)4----               6.3985E-18     -17.1939      -0.4451     -17.6391
+ Pu(SO4)2(aq)               5.3359E-18     -17.2728       0.0000     -17.2728
+ H2SeO3(aq)                 5.2204E-18     -17.2823       0.0000     -17.2823
+ UO2F2(aq)                  5.1052E-18     -17.2920       0.0000     -17.2920
+ KP2O7---                   3.7893E-18     -17.4214      -0.2502     -17.6717
+ PuSO4++                    3.2523E-18     -17.4878      -0.1106     -17.5984
+ KI(aq)                     2.8598E-18     -17.5437       0.0000     -17.5437
+ CuCl2-                     2.7381E-18     -17.5625      -0.0276     -17.5901
+ AmH2PO4++                  2.5146E-18     -17.5995      -0.1106     -17.7101
+ PbP2O7--                   2.3656E-18     -17.6261      -0.1110     -17.7371
+ HCuO2-                     1.8658E-18     -17.7291      -0.0276     -17.7567
+ Am(OH)3(aq)                1.7104E-18     -17.7669       0.0000     -17.7669
+ UO2++                      1.6879E-18     -17.7727      -0.1106     -17.8833
+ PbF2(aq)                   1.6032E-18     -17.7950       0.0000     -17.7950
+ Fe(OH)3-                   1.3189E-18     -17.8798      -0.0276     -17.9074
+ Na2P2O7--                  1.1159E-18     -17.9524      -0.1110     -18.0634
+ Th(OH)(CO3)4(5-)           1.0825E-18     -17.9656      -0.6958     -18.6614
+ NiO(aq)                    9.8175E-19     -18.0080       0.0000     -18.0080
+ UO2PO4-                    8.9196E-19     -18.0497      -0.0276     -18.0772
+ PbH2PO4+                   6.5417E-19     -18.1843      -0.0279     -18.2122
+ FeSO4+                     5.1130E-19     -18.2913      -0.0279     -18.3192
+ BF3OH-                     3.7751E-19     -18.4231      -0.0276     -18.4507
+ ThF3+                      3.5729E-19     -18.4470      -0.0279     -18.4748
+ FeCl++                     2.9253E-19     -18.5338      -0.1106     -18.6444
+ UO2SO4(aq)                 2.1377E-19     -18.6700       0.0000     -18.6700
+ MnCl3-                     2.0252E-19     -18.6935      -0.0276     -18.7211
+ PbCl2(aq)                  1.8969E-19     -18.7220       0.0000     -18.7220
+ HPbO2-                     1.1574E-19     -18.9365      -0.0276     -18.9641
+ UO2F3-                     1.0159E-19     -18.9932      -0.0276     -19.0208
+ ThF4(aq)                   9.3713E-20     -19.0282       0.0000     -19.0282
+ ThF2++                     9.0705E-20     -19.0424      -0.1106     -19.1530
+ Pb(OH)3-                   7.8550E-20     -19.1049      -0.0276     -19.1324
+ HMnO2-                     4.7861E-20     -19.3200      -0.0276     -19.3476
+ MnSeO4(aq)                 4.2455E-20     -19.3721       0.0000     -19.3721
+ Ni(OH)3-                   2.7245E-20     -19.5647      -0.0276     -19.5923
+ H2SO4(aq)                  2.0555E-20     -19.6871       0.0000     -19.6871
+ H3P2O7-                    1.7546E-20     -19.7558      -0.0276     -19.7834
+ Th(OH)+++                  1.1769E-20     -19.9293      -0.2466     -20.1759
+ Sn(OH)3+                   1.0923E-20     -19.9617      -0.0279     -19.9895
+ (UO2)2CO3(OH)3-            8.9857E-21     -20.0464      -0.0276     -20.0740
+ FeH2PO4+                   8.7790E-21     -20.0566      -0.0279     -20.0844
+ Pu++++                     7.4208E-21     -20.1295      -0.4346     -20.5641
+ CsOH(aq)                   4.9812E-21     -20.3027       0.0000     -20.3027
+ Fe2(OH)2++++               3.1863E-21     -20.4967      -0.4346     -20.9313
+ HSeO4-                     3.1551E-21     -20.5010      -0.0276     -20.5286
+ Al2(OH)2++++               2.8754E-21     -20.5413      -0.4346     -20.9759
+ CuCl2(aq)                  2.7385E-21     -20.5625       0.0000     -20.5625
+ CuCl3--                    1.5757E-21     -20.8025      -0.1110     -20.9136
+ NiP2O7--                   1.5166E-21     -20.8191      -0.1110     -20.9302
+ Fe(SO4)2-                  1.4071E-21     -20.8517      -0.0276     -20.8793
+ HNiO2-                     1.3569E-21     -20.8675      -0.0276     -20.8951
+ UO2H2PO4+                  8.6840E-22     -21.0613      -0.0279     -21.0891
+ B2O(OH)5-                  8.4090E-22     -21.0753      -0.0276     -21.1028
+ ThF+++                     7.0296E-22     -21.1531      -0.2466     -21.3997
+ UO4--                      6.9468E-22     -21.1582      -0.1110     -21.2693
+ UO2Cl+                     3.6912E-22     -21.4328      -0.0279     -21.4607
+ UO2(SO4)2--                3.1997E-22     -21.4949      -0.1110     -21.6059
+ Th(OH)4PO4---              2.6400E-22     -21.5784      -0.2502     -21.8286
+ NiHP2O7-                   7.7522E-23     -22.1106      -0.0276     -22.1382
+ UO2F4--                    7.6089E-23     -22.1187      -0.1110     -22.2297
+ UO2+                       7.4210E-23     -22.1295      -0.0279     -22.1574
+ PuCl+++                    5.7383E-23     -22.2412      -0.2466     -22.4879
+ H2PO3F(aq)                 2.2563E-23     -22.6466       0.0000     -22.6466
+ PbCl3-                     1.8509E-23     -22.7326      -0.0276     -22.7602
+ CsI(aq)                    8.4465E-24     -23.0733       0.0000     -23.0733
+ PbI+                       4.8180E-24     -23.3171      -0.0279     -23.3450
+ Np(CO3)5(6-)               4.5397E-24     -23.3430      -1.0022     -24.3451
+ Th(SO4)2(aq)               4.1791E-24     -23.3789       0.0000     -23.3789
+ ThSO4++                    1.8853E-24     -23.7246      -0.1106     -23.8352
+ NpF2++                     1.2347E-24     -23.9084      -0.1106     -24.0190
+ CuO2--                     8.1382E-25     -24.0895      -0.1110     -24.2005
+ NpOH+++                    3.8520E-25     -24.4143      -0.2466     -24.6610
+ NiSeO4(aq)                 3.3380E-25     -24.4765       0.0000     -24.4765
+ AlH2PO4++                  3.2407E-25     -24.4894      -0.1106     -24.6000
+ FeCl2(aq)                  1.7526E-25     -24.7563       0.0000     -24.7563
+ UO2(aq)                    1.2816E-25     -24.8922       0.0000     -24.8922
+ Th++++                     1.1062E-25     -24.9562      -0.4346     -25.3907
+ BF4-                       1.0292E-25     -24.9875      -0.0276     -25.0151
+ Fe3(OH)4(5+)               6.4726E-26     -25.1889      -0.6731     -25.8620
+ Pb2OH+++                   5.0970E-26     -25.2927      -0.2466     -25.5393
+ MnO2--                     4.8544E-26     -25.3139      -0.1110     -25.4249
+ Fe(OH)4--                  4.1078E-26     -25.3864      -0.1110     -25.4974
+ Al3(OH)4(5+)               1.8802E-26     -25.7258      -0.6731     -26.3989
+ FeH2PO4++                  1.7093E-26     -25.7672      -0.1106     -25.8778
+ CuCl3-                     1.3844E-26     -25.8587      -0.0276     -25.8863
+ UO2(H2PO4)2(aq)            1.3058E-26     -25.8841       0.0000     -25.8841
+ H4P2O7(aq)                 6.4031E-27     -26.1936       0.0000     -26.1936
+ Mn+++                      5.1024E-27     -26.2922      -0.2466     -26.5389
+ Th(SO4)3--                 4.6885E-27     -26.3290      -0.1110     -26.4400
+ HIO(aq)                    3.9858E-27     -26.3995       0.0000     -26.3995
+ NiO2--                     3.9182E-27     -26.4069      -0.1110     -26.5180
+ UO2Cl2(aq)                 3.4124E-27     -26.4669       0.0000     -26.4669
+ (UO2)2(OH)2++              3.2172E-27     -26.4925      -0.1106     -26.6031
+ Mg4(OH)4++++               3.0356E-27     -26.5178      -0.4346     -26.9523
+ NpF+++                     2.6114E-27     -26.5831      -0.2466     -26.8298
+ PbCl4--                    2.3394E-27     -26.6309      -0.1110     -26.7419
+ PO2F2-                     2.4270E-28     -27.6149      -0.0276     -27.6425
+ ThCl+++                    1.4909E-28     -27.8265      -0.2466     -28.0732
+ Sn(OH)2++                  1.0149E-28     -27.9936      -0.1106     -28.1042
+ TcO4--                     3.4349E-29     -28.4641      -0.1110     -28.5751
+ Np(SO4)2(aq)               2.6328E-29     -28.5796       0.0000     -28.5796
+ NpSO4++                    1.8006E-29     -28.7446      -0.1106     -28.8552
+ UO2H3PO4++                 1.7843E-29     -28.7485      -0.1106     -28.8591
+ Formate                    1.6084E-29     -28.7936      -0.0276     -28.8212
+ H2(aq)                     3.7989E-30     -29.4203       0.0004     -29.4200
+ PuH3PO4++++                3.5057E-30     -29.4552      -0.4346     -29.8898
+ HUO3-                      3.4119E-30     -29.4670      -0.0276     -29.4946
+ TcO(OH)2(aq)               3.3600E-30     -29.4737       0.0000     -29.4737
+ IO-                        2.5675E-30     -29.5905      -0.0276     -29.6181
+ SiF6--                     8.6011E-31     -30.0654      -0.1110     -30.1765
+ TcCO3(OH)2(aq)             2.1381E-31     -30.6700       0.0000     -30.6700
+ (UO2)2OH+++                1.4487E-31     -30.8390      -0.2466     -31.0857
+ UO2(CO3)3(5-)              1.0869E-31     -30.9638      -0.6958     -31.6596
+ NO2-                       9.2742E-32     -31.0327      -0.0276     -31.0603
+ Np++++                     4.5047E-32     -31.3463      -0.4346     -31.7809
+ AmO2+                      3.1775E-32     -31.4979      -0.0279     -31.5258
+ TcCO3(OH)3-                2.8911E-32     -31.5389      -0.0276     -31.5665
+ CuCl4--                    1.5877E-32     -31.7992      -0.1110     -31.9103
+ Th(SO4)4----               1.4383E-32     -31.8422      -0.4451     -32.2873
+ ThCl2++                    1.0869E-32     -31.9638      -0.1106     -32.0744
+ (UO2)3(OH)5+               6.4377E-33     -32.1913      -0.0279     -32.2191
+ UO2(H2PO4)(H3PO4)+         5.5416E-33     -32.2564      -0.0279     -32.2842
+ Formic_acid(aq)            3.3251E-33     -32.4782       0.0000     -32.4782
+ NO3-                       3.2765E-33     -32.4846      -0.0276     -32.5122
+ (UO2)3(CO3)6(6-)           3.1914E-33     -32.4960      -1.0022     -33.4982
+ HUO2+                      1.9312E-33     -32.7142      -0.0279     -32.7420
+ (UO2)3(OH)7-               1.4583E-33     -32.8361      -0.0276     -32.8637
+ UO2OH(aq)                  1.2313E-33     -32.9097       0.0000     -32.9097
+ TcO(OH)3-                  1.1394E-33     -32.9433      -0.0276     -32.9709
+ H2O2(aq)                   4.8762E-34     -33.3119       0.0000     -33.3119
+ NH4+                       3.8318E-34     -33.4166      -0.0279     -33.4445
+ SO3--                      2.1195E-34     -33.6738      -0.1101     -33.7838
+ NpCl+++                    1.7458E-34     -33.7580      -0.2466     -34.0046
+ HSO3-                      1.0944E-34     -33.9608      -0.0276     -33.9884
+ Pb3(OH)4++                 1.0935E-34     -33.9612      -0.1106     -34.0718
+ TcOOH+                     4.4818E-35     -34.3485      -0.0279     -34.3764
+ SnOH+++                    3.3699E-35     -34.4724      -0.2466     -34.7190
+ PbI2(aq)                   2.6865E-35     -34.5708       0.0000     -34.5708
+ HPO2F2(aq)                 1.7595E-35     -34.7546       0.0000     -34.7546
+ ThCl3+                     1.1257E-35     -34.9486      -0.0279     -34.9765
+ HNO2(aq)                   5.6871E-36     -35.2451       0.0000     -35.2451
+ NH3(aq)                    5.3033E-36     -35.2755       0.0000     -35.2755
+ HClO(aq)                   4.2471E-36     -35.3719       0.0000     -35.3719
+ CaNO3+                     3.9830E-36     -35.3998      -0.0279     -35.4276
+ ClO-                       3.2785E-36     -35.4843      -0.0276     -35.5119
+ (UO2)3(OH)4++              1.3766E-36     -35.8612      -0.1106     -35.9718
+ Th2(OH)3(5+)               1.0506E-36     -35.9786      -0.6731     -36.6516
+ (UO2)3O(OH)2(HCO3)+        3.7125E-37     -36.4303      -0.0279     -36.4582
+ U(CO3)4----                1.1090E-37     -36.9551      -0.4451     -37.4002
+ UO++                       9.0138E-38     -37.0451      -0.1106     -37.1557
+ HO2-                       2.7642E-38     -37.5584      -0.0276     -37.5860
+ SrNO3+                     6.9619E-39     -38.1573      -0.0279     -38.1851
+ MnNO3+                     8.6691E-40     -39.0620      -0.0279     -39.0899
+ ThCl4(aq)                  7.5060E-40     -39.1246       0.0000     -39.1246
+ H2SO3(aq)                  4.0680E-40     -39.3906       0.0000     -39.3906
+ SO2(aq)                    2.8962E-40     -39.5382       0.0000     -39.5382
+ TcO++                      6.7849E-41     -40.1685      -0.1106     -40.2791
+ UF3+                       4.2162E-41     -40.3751      -0.0279     -40.4029
+ UF4(aq)                    3.8735E-41     -40.4119       0.0000     -40.4119
+ Am(CO3)5(6-)               2.4809E-41     -40.6054      -1.0022     -41.6075
+ HPO3--                     2.0222E-41     -40.6942      -0.1110     -40.8052
+ HNO3(aq)                   5.9596E-42     -41.2248       0.0000     -41.2248
+ SnO(aq)                    5.8532E-42     -41.2326       0.0000     -41.2326
+ Th2(OH)2(6+)               4.0506E-42     -41.3925      -0.9691     -42.3616
+ (UO2)4(OH)7+               2.3435E-42     -41.6301      -0.0279     -41.6580
+ UF2++                      2.2209E-42     -41.6535      -0.1106     -41.7641
+ NpI+++                     8.6721E-43     -42.0619      -0.2466     -42.3085
+ H2PO3-                     8.5699E-43     -42.0670      -0.0276     -42.0946
+ Sn++++                     5.0199E-43     -42.2993      -0.4346     -42.7339
+ MnO4--                     1.8134E-43     -42.7415      -0.1110     -42.8525
+ I3-                        1.4650E-43     -42.8342      -0.0276     -42.8617
+ UOH+++                     1.4026E-43     -42.8531      -0.2466     -43.0997
+ Al13O4(OH)24(7+)           1.0503E-43     -42.9787      -1.3189     -44.2976
+ UF5-                       1.0395E-43     -42.9832      -0.0276     -43.0108
+ AmNO2++                    7.5048E-44     -43.1247      -0.1106     -43.2353
+ U(CO3)5(6-)                5.5692E-44     -43.2542      -1.0022     -44.2564
+ HSnO2-                     4.8410E-44     -43.3151      -0.0276     -43.3427
+ CuNH3++                    2.8179E-44     -43.5501      -0.1106     -43.6607
+ UO3-                       1.5949E-44     -43.7973      -0.0276     -43.8249
+ Pb4(OH)4++++               1.2182E-44     -43.9143      -0.4346     -44.3488
+ FeNO2++                    6.3052E-45     -44.2003      -0.1106     -44.3109
+ NiNO3+                     6.2163E-45     -44.2065      -0.0279     -44.2343
+ IO3-                       4.1751E-45     -44.3793      -0.0276     -44.4069
+ UF+++                      3.4788E-45     -44.4586      -0.2466     -44.7052
+ PbNO3+                     2.9221E-45     -44.5343      -0.0279     -44.5622
+ UF6--                      1.4502E-45     -44.8386      -0.1110     -44.9496
+ UO2SO3(aq)                 1.1888E-45     -44.9249       0.0000     -44.9249
+ SnOH+                      1.1229E-45     -44.9496      -0.0279     -44.9775
+ HSO5-                      6.2824E-46     -45.2019      -0.0276     -45.2295
+ AmNO3++                    4.3039E-46     -45.3661      -0.1106     -45.4767
+ NH4SO4-                    2.7286E-46     -45.5641      -0.0276     -45.5916
+ PbI3-                      1.0073E-46     -45.9968      -0.0276     -46.0244
+ MnO4-                      3.4672E-47     -46.4600      -0.0276     -46.4876
+ HSe-                       3.2711E-47     -46.4853      -0.0276     -46.5129
+ USO4++                     6.1415E-48     -47.2117      -0.1106     -47.3223
+ U(SO4)2(aq)                4.8071E-48     -47.3181       0.0000     -47.3181
+ H3PO3(aq)                  1.9556E-48     -47.7087       0.0000     -47.7087
+ FeNO3++                    1.5770E-48     -47.8022      -0.1106     -47.9128
+ SnF+                       1.4637E-49     -48.8346      -0.0279     -48.8624
+ Sn++                       1.3717E-49     -48.8628      -0.1106     -48.9734
+ U++++                      2.9223E-50     -49.5343      -0.4346     -49.9688
+ SnSO4++                    2.6372E-50     -49.5789      -0.1106     -49.6895
+ UO2NO3+                    7.9803E-51     -50.0980      -0.0279     -50.1258
+ H2Se(aq)                   7.6632E-51     -50.1156       0.0000     -50.1156
+ SnF2(aq)                   5.8683E-51     -50.2315       0.0000     -50.2315
+ AmO2(CO3)3----             5.7387E-51     -50.2412      -0.4451     -50.6863
+ PuNO3+++                   1.3193E-51     -50.8797      -0.2466     -51.1263
+ HIO3(aq)                   9.7585E-52     -51.0106       0.0000     -51.0106
+ Sn(SO4)2(aq)               5.8418E-52     -51.2335       0.0000     -51.2335
+ SnF3-                      4.0461E-52     -51.3930      -0.0276     -51.4205
+ SnCl+                      2.4031E-52     -51.6192      -0.0279     -51.6471
+ UCl+++                     1.7937E-52     -51.7462      -0.2466     -51.9929
+ Am++++                     4.9987E-53     -52.3011      -0.4346     -52.7357
+ AmO2++                     2.2567E-53     -52.6465      -0.1106     -52.7571
+ SnCl2(aq)                  1.9461E-55     -54.7108       0.0000     -54.7108
+ S2O6--                     7.3365E-58     -57.1345      -0.1110     -57.2456
+ PbI4--                     6.1761E-58     -57.2093      -0.1110     -57.3203
+ SnCl3-                     3.7413E-59     -58.4270      -0.0276     -58.4546
+ Am++                       1.6196E-59     -58.7906      -0.1106     -58.9012
+ ClO2-                      6.6437E-61     -60.1776      -0.0276     -60.2052
+ UI+++                      2.8680E-61     -60.5424      -0.2466     -60.7890
+ UO2IO3+                    2.6933E-61     -60.5697      -0.0279     -60.5976
+ S2O8--                     2.5825E-62     -61.5880      -0.1110     -61.6990
+ NpNO3+++                   7.1376E-63     -62.1464      -0.2466     -62.3931
+ UO+                        6.6135E-64     -63.1796      -0.0279     -63.2074
+ Formaldehyde(aq)           4.8806E-64     -63.3115       0.0000     -63.3115
+ Pb6(OH)8++++               3.0977E-64     -63.5090      -0.4346     -63.9435
+ HN2O2-                     2.2040E-64     -63.6568      -0.0276     -63.6844
+ UOH++                      1.0398E-64     -63.9830      -0.1106     -64.0936
+ H2N2O2(aq)                 8.7603E-65     -64.0575       0.0000     -64.0575
+ HUO2(aq)                   5.1135E-65     -64.2913       0.0000     -64.2913
+ U+++                       8.4714E-66     -65.0720      -0.2466     -65.3187
+ HClO2(aq)                  2.3117E-66     -65.6361       0.0000     -65.6361
+ N2O2--                     6.9432E-68     -67.1584      -0.1110     -67.2695
+ UO2-                       4.6164E-68     -67.3357      -0.0276     -67.3633
+ N3-                        6.8085E-69     -68.1669      -0.0276     -68.1945
+ HN3(aq)                    1.2461E-71     -70.9044       0.0000     -70.9044
+ ClO3-                      9.6126E-72     -71.0172      -0.0276     -71.0447
+ Mn(NO3)2(aq)               6.2796E-72     -71.2021       0.0000     -71.2021
+ IO4-                       1.6413E-72     -71.7848      -0.0276     -71.8124
+ S2O5--                     2.0737E-73     -72.6832      -0.1110     -72.7943
+ Cu(NH3)2++                 3.8519E-76     -75.4143      -0.1106     -75.5249
+ N2H5+                      3.8383E-76     -75.4159      -0.0279     -75.4437
+ Ni(NO3)2(aq)               1.1051E-77     -76.9566       0.0000     -76.9566
+ CN-                        4.8511E-78     -77.3142      -0.0276     -77.3417
+ Ni(NH3)2++                 3.1437E-78     -77.5026      -0.1106     -77.6132
+ Methanol(aq)               1.1041E-78     -77.9570       0.0000     -77.9570
+ AmN3++                     2.0465E-81     -80.6890      -0.1106     -80.7996
+ UNO3+++                    1.6163E-81     -80.7915      -0.2466     -81.0381
+ HS-                        1.5899E-83     -82.7986      -0.0276     -82.8262
+ H2S(aq)                    5.6427E-84     -83.2485       0.0000     -83.2485
+ UO2N3+                     3.3042E-84     -83.4809      -0.0279     -83.5088
+ N2H6++                     1.7009E-84     -83.7693      -0.1106     -83.8799
+ PbClO3+                    3.0565E-85     -84.5148      -0.0279     -84.5426
+ H2PO2-                     3.6868E-86     -85.4334      -0.0276     -85.4609
+ ClO4-                      7.0448E-87     -86.1521      -0.0276     -86.1797
+ Methane(aq)                3.1125E-88     -87.5069       0.0000     -87.5069
+ S--                        5.7495E-89     -88.2404      -0.1110     -88.3514
+ UO2ClO3+                   3.8094E-89     -88.4191      -0.0279     -88.4470
+ S2O3--                     6.4002E-90     -89.1938      -0.1110     -89.3048
+ S2O4--                     1.5941E-91     -90.7975      -0.1110     -90.9085
+ H3PO2(aq)                  1.2828E-91     -90.8918       0.0000     -90.8918
+ HS2O3-                     9.9710E-96     -95.0013      -0.0276     -95.0288
+ Acetic_acid(aq)            3.3849E-96     -95.4705       0.0000     -95.4705
+ HS2O4-                     1.5895E-96     -95.7987      -0.0276     -95.8263
+
+    Species with molalities less than  1.000-100 are not listed.
+
+
+
+      --- Major Species by Contribution to Aqueous Mass Balances ---
+
+
+ Species Accounting for 99% or More of Aqueous Al+++
+
+     Species                   Factor    Molality     Per Cent
+
+   AlO2-                        1.00    2.5757E-07     86.87
+   HAlO2(aq)                    1.00    3.7628E-08     12.69
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             2.9520E-07     99.56
+
+
+ Species Accounting for 99% or More of Aqueous Am+++
+
+     Species                   Factor    Molality     Per Cent
+
+   AmCO3+                       1.00    8.2593E-13     82.59
+   AmOH++                       1.00    6.8928E-14      6.89
+   Am(CO3)2-                    1.00    6.0353E-14      6.04
+   Am(OH)2+                     1.00    2.8728E-14      2.87
+   Am+++                        1.00    9.3687E-15    9.369E-01
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9330E-13     99.33
+
+
+ Species Accounting for 99% or More of Aqueous B(OH)3(aq)
+
+     Species                   Factor    Molality     Per Cent
+
+   B(OH)3(aq)                   1.00    1.2194E-05     98.43
+   BO2-                         1.00    1.9005E-07      1.53
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.2384E-05     99.96
+
+
+ Species Accounting for 99% or More of Aqueous Ca++
+
+     Species                   Factor    Molality     Per Cent
+
+   Ca++                         1.00    3.1270E-04     96.40
+   CaHCO3+                      1.00    5.7086E-06      1.76
+   CaSO4(aq)                    1.00    4.4611E-06      1.38
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             3.2287E-04     99.54
+
+
+ Species Accounting for 99% or More of Aqueous Cl-
+
+     Species                   Factor    Molality     Per Cent
+
+   Cl-                          1.00    2.0130E-04     99.95
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             2.0130E-04     99.95
+
+
+ Species Accounting for 99% or More of Aqueous Cs+
+
+     Species                   Factor    Molality     Per Cent
+
+   Cs+                          1.00    9.9987E-13     99.99
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9987E-13     99.99
+
+
+ Species Accounting for 99% or More of Aqueous Cu++
+
+     Species                   Factor    Molality     Per Cent
+
+   Cu++                         1.00    4.8460E-13     48.46
+   CuO(aq)                      1.00    3.7899E-13     37.90
+   CuOH+                        1.00    1.2212E-13     12.21
+   CuSO4(aq)                    1.00    1.2263E-14      1.23
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9798E-13     99.80
+
+
+ Species Accounting for 99% or More of Aqueous F-
+
+     Species                   Factor    Molality     Per Cent
+
+   F-                           1.00    1.1443E-04     99.72
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.1443E-04     99.72
+
+
+ Species Accounting for 99% or More of Aqueous Fe++
+
+     Species                   Factor    Molality     Per Cent
+
+   HFeO2(aq)                    1.00    6.4760E-07     90.41
+   FeO+                         1.00    6.2722E-08      8.76
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             7.1032E-07     99.17
+
+
+ Species Accounting for 99% or More of Aqueous HCO3-
+
+     Species                   Factor    Molality     Per Cent
+
+   HCO3-                        1.00    2.1136E-03     91.86
+   CO2(aq)                      1.00    1.7054E-04      7.41
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             2.2841E-03     99.27
+
+
+ Species Accounting for 99% or More of Aqueous HPO4--
+
+     Species                   Factor    Molality     Per Cent
+
+   HPO4--                       1.00    7.4793E-07     59.82
+   H2PO4-                       1.00    3.9121E-07     31.29
+   CaHPO4(aq)                   1.00    7.7153E-08      6.17
+   MgHPO4(aq)                   1.00    2.8993E-08      2.32
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.2453E-06     99.60
+
+
+ Species Accounting for 99% or More of Aqueous I-
+
+     Species                   Factor    Molality     Per Cent
+
+   I-                           1.00    9.9995E-13     99.99
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9995E-13     99.99
+
+
+ Species Accounting for 99% or More of Aqueous K+
+
+     Species                   Factor    Molality     Per Cent
+
+   K+                           1.00    1.2877E-04     99.89
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.2877E-04     99.89
+
+
+ Species Accounting for 99% or More of Aqueous Li+
+
+     Species                   Factor    Molality     Per Cent
+
+   Li+                          1.00    6.9096E-06     99.92
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             6.9096E-06     99.92
+
+
+ Species Accounting for 99% or More of Aqueous Mg++
+
+     Species                   Factor    Molality     Per Cent
+
+   Mg++                         1.00    7.9446E-05     96.07
+   MgSO4(aq)                    1.00    1.4896E-06      1.80
+   MgHCO3+                      1.00    1.4140E-06      1.71
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             8.2349E-05     99.58
+
+
+ Species Accounting for 99% or More of Aqueous Mn++
+
+     Species                   Factor    Molality     Per Cent
+
+   Mn++                         1.00    2.1523E-07     98.53
+   MnSO4(aq)                    1.00    1.9463E-09    8.910E-01
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             2.1717E-07     99.43
+
+
+ Species Accounting for 99% or More of Aqueous NO3-
+
+     Species                   Factor    Molality     Per Cent
+
+   N2(aq)                       2.00    7.0801E-05    100.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.4160E-04    100.00
+
+
+ Species Accounting for 99% or More of Aqueous Na+
+
+     Species                   Factor    Molality     Per Cent
+
+   Na+                          1.00    1.9846E-03     99.62
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.9846E-03     99.62
+
+
+ Species Accounting for 99% or More of Aqueous Ni++
+
+     Species                   Factor    Molality     Per Cent
+
+   Ni++                         1.00    9.7375E-13     97.38
+   NiCO3(aq)                    1.00    1.8050E-14      1.81
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9180E-13     99.18
+
+
+ Species Accounting for 99% or More of Aqueous Pb++
+
+     Species                   Factor    Molality     Per Cent
+
+   PbOH+                        1.00    9.3008E-13     93.01
+   Pb++                         1.00    6.8157E-14      6.82
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9824E-13     99.82
+
+
+ Species Accounting for 99% or More of Aqueous Ra++
+
+     Species                   Factor    Molality     Per Cent
+
+   Ra++                         1.00    1.0000E-12    100.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.0000E-12    100.00
+
+
+ Species Accounting for 99% or More of Aqueous SO4--
+
+     Species                   Factor    Molality     Per Cent
+
+   SO4--                        1.00    1.8402E-04     96.07
+   CaSO4(aq)                    1.00    4.4611E-06      2.33
+   MgSO4(aq)                    1.00    1.4896E-06    7.777E-01
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.8997E-04     99.18
+
+
+ Species Accounting for 99% or More of Aqueous SeO3--
+
+     Species                   Factor    Molality     Per Cent
+
+   SeO3--                       1.00    6.1638E-13     61.64
+   HSeO3-                       1.00    3.8237E-13     38.24
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9875E-13     99.88
+
+
+ Species Accounting for 99% or More of Aqueous SiO2(aq)
+
+     Species                   Factor    Molality     Per Cent
+
+   SiO2(aq)                     1.00    1.0067E-03     99.21
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.0067E-03     99.21
+
+
+ Species Accounting for 99% or More of Aqueous Sn++
+
+     Species                   Factor    Molality     Per Cent
+
+   Sn(OH)4(aq)                  1.00    6.1976E-13     61.98
+   Sn(OH)5-                     1.00    3.7998E-13     38.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9974E-13     99.97
+
+
+ Species Accounting for 99% or More of Aqueous Sr++
+
+     Species                   Factor    Molality     Per Cent
+
+   Sr++                         1.00    4.3416E-07     95.10
+   SrHCO3+                      1.00    1.2088E-08      2.65
+   SrSO4(aq)                    1.00    9.5688E-09      2.10
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             4.5581E-07     99.85
+
+
+ Species Accounting for 99% or More of Aqueous TcO4-
+
+     Species                   Factor    Molality     Per Cent
+
+   TcO4-                        1.00    1.0000E-12    100.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.0000E-12    100.00
+
+
+ Species Accounting for 99% or More of Aqueous Th++++
+
+     Species                   Factor    Molality     Per Cent
+
+   Th(OH)3CO3-                  1.00    5.7548E-13     57.55
+   Th(OH)2(CO3)2--              1.00    2.0289E-13     20.29
+   Th(OH)4(aq)                  1.00    1.8563E-13     18.56
+   Th(OH)2CO3(aq)               1.00    3.2930E-14      3.29
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9694E-13     99.69
+
+
+ Species Accounting for 99% or More of Aqueous UO2++
+
+     Species                   Factor    Molality     Per Cent
+
+   UO2(CO3)2--                  1.00    7.6728E-13     76.73
+   UO2(CO3)3----                1.00    1.7502E-13     17.50
+   UO3(aq)                      1.00    4.2169E-14      4.22
+   UO2CO3(aq)                   1.00    1.3816E-14      1.38
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9828E-13     99.83
+
+
+ Species Accounting for 99% or More of Aqueous H2(aq)
+
+     Species                   Factor    Molality     Per Cent
+
+   H2(aq)                       1.00    3.7989E-30    100.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             3.7989E-30    100.00
+
+
+ Species Accounting for 99% or More of Aqueous Np++++
+
+     Species                   Factor    Molality     Per Cent
+
+   Np(OH)4(aq)                  1.00    9.9999E-13    100.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9999E-13    100.00
+
+
+ Species Accounting for 99% or More of Aqueous O2(aq)
+
+     Species                   Factor    Molality     Per Cent
+
+   O2(aq)                       1.00    1.7501E-04    100.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.7501E-04    100.00
+
+
+ Species Accounting for 99% or More of Aqueous Pu++++
+
+     Species                   Factor    Molality     Per Cent
+
+   Pu(CO3)5------               1.00    8.1005E-13     81.01
+   PuF2++                       1.00    1.6942E-13     16.94
+   PuOH+++                      1.00    2.0196E-14      2.02
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             9.9967E-13     99.97
+
+
+
+                --- Aqueous Redox Reactions ---
+
+   Couple                           Eh, volts      pe-      log fO2   Ah, kcal
+
+ DEFAULT                              0.340    5.7475E+00   -30.475     7.841
+ Np++++/NpO2+                         0.340    5.7475E+00   -30.475     7.841
+ O2(aq)/H2O                           0.778    1.3152E+01    -0.858    17.943
+ Pu++++/PuO2+                         0.340    5.7475E+00   -30.475     7.841
+
+    Couples required to satisfy the default redox constraint are not listed.
+
+
+
+      --- Saturation States of Aqueous Reactions Not Fixed at Equilibrium ---
+
+   Reaction                           Log Q/K    Affinity, kcal
+
+ O2(aq)/O2(g)                        -29.61686    -40.40584
+
+
+
+           --- Saturation States of Pure Solids ---
+
+       Phase                      Log Q/K    Affinity, kcal
+
+     Alamosite                    -7.12754     -9.72399
+     Albite                        1.01612      1.38628     SSATD
+     Albite_high                  -0.30258     -0.41280
+     Albite_low                    1.01612      1.38628     SSATD
+     Alunite                      -6.90729     -9.42352
+     Am(OH)3                      -7.26700     -9.91427
+     AmOHCO3                      -5.30957     -7.24377
+     AmPO4(am)                    -0.66223     -0.90348
+     Amesite-14A                  -2.38686     -3.25636
+     Amesite-7A                   -4.56678     -6.23039
+     Analcime                      0.22281      0.30398     SSATD
+     Analcime-dehy                -6.13994     -8.37663
+     Andalusite                   -1.47462     -2.01180
+     Andradite                     2.17602      2.96871     SSATD
+     Anhydrite                    -3.15525     -4.30467
+     Anorthite                    -4.15734     -5.67179
+     Aragonite                    -0.90113     -1.22940
+     Bassanite                    -3.80018     -5.18453
+     Beidellite-Ca                 4.96687      6.77623     SSATD
+     Beidellite-H                  4.07602      5.56086     SSATD
+     Beidellite-K                  4.55346      6.21222     SSATD
+     Beidellite-Mg                 4.90679      6.69426     SSATD
+     Beidellite-Na                 4.60656      6.28466     SSATD
+     Berlinite                    -6.25717     -8.53656
+     Boehmite                     -0.42429     -0.57885
+     Boric_acid                   -4.75557     -6.48795
+     Brucite                      -5.68863     -7.76091
+     Brushite                     -3.30275     -4.50589
+     CaSO4:0.5H2O(beta)           -3.96828     -5.41387
+     Calcite                      -0.75673     -1.03240
+     Cassiterite                  -4.67587     -6.37923
+     SnO2(am)                     -4.74767     -6.47718
+     Celadonite                    2.45283      3.34636     SSATD
+     Celestite                    -4.64204     -6.33307
+     Cerussite                    -5.36055     -7.31332
+     Chabazite                    15.96285     21.77788     SSATD
+     Chalcedony                    0.47440      0.64722     SSATD
+     Chrysotile                   -5.80454     -7.91904
+     Clinochlore-14A              -6.22962     -8.49898
+     Clinoptilolite-Ca             9.81862     13.39539     SSATD
+     Clinoptilolite-K              6.44123      8.78767     SSATD
+     Clinoptilolite-Na             6.74724      9.20516     SSATD
+     Clinoptilolite-Sr             5.00486      6.82806     SSATD
+     Clinozoisite                 -4.02364     -5.48939
+     Coesite                      -0.06430     -0.08772
+     Corundum                     -3.03902     -4.14609
+     Cristobalite(alpha)           0.19510      0.26617     SSATD
+     Cristobalite(beta)           -0.24830     -0.33875
+     Cronstedtite-7A               2.65130      3.61713     SSATD
+     Dawsonite                    -0.91745     -1.25166
+     Diaspore                      0.42011      0.57315     SSATD
+     Diopside                     -5.65769     -7.71871
+     Dolomite                     -0.92463     -1.26145
+     Dolomite-dis                 -2.46903     -3.36846
+     Dolomite-ord                 -0.92463     -1.26145
+     Enstatite                    -3.97118     -5.41782
+     Epidote                       3.27126      4.46293     SSATD
+     Epidote-ord                   3.27126      4.46293     SSATD
+     Epsomite                     -6.09477     -8.31501
+     Erionite                     17.34668     23.66582     SSATD
+     Eucryptite                   -5.52439     -7.53685
+     Fe(OH)3                       0.17116      0.23351     SSATD
+     Ferrite-Ca                    1.26865      1.73080     SSATD
+     Ferrite-Cu                    4.52680      6.17584     SSATD
+     Ferrite-Mg                    1.28729      1.75622     SSATD
+     Ferrite-Ni                    4.56056      6.22191     SSATD
+     Ferroaluminoceladonite        0.78883      1.07619     SSATD
+     Ferroceladonite               6.06192      8.27019     SSATD
+     Ferrosilite                  -5.01808     -6.84609
+     Fluorapatite                  6.61306      9.02210     SSATD
+     Fluorite                     -1.51650     -2.06893
+     Gibbsite                      1.21046      1.65142     SSATD
+     Gismondine-Na                -2.14016     -2.91979
+     Gismondine-Ca                 0.69576      0.94922     SSATD
+     Goethite                      5.29461      7.22335     SSATD
+     Gypsum                       -2.97946     -4.06483
+     Hematite                     11.55006     15.75758     SSATD
+     Hercynite                    -0.38371     -0.52348
+     Hexahydrite                  -6.33022     -8.63623
+     Hydroxylapatite               1.26208      1.72183     SSATD
+     Ice                          -0.13875     -0.18930
+     Illite                        4.69443      6.40454     SSATD
+     Jadeite                      -1.35458     -1.84803
+     Jarosite                     -6.98191     -9.52532
+     K-Feldspar                    2.86806      3.91286     SSATD
+     Kalicinite                   -6.90432     -9.41946
+     Kalsilite                    -1.79864     -2.45386
+     Kaolinite                     4.40608      6.01115     SSATD
+     Kyanite                      -1.20412     -1.64277
+     Lansfordite                  -4.34425     -5.92679
+     Laumontite                   16.26807     22.19429     SSATD
+     Lawsonite                     0.20736      0.28290     SSATD
+     Magnesite                    -1.79670     -2.45120
+     Magnetite                     6.86898      9.37125     SSATD
+     Manganite                    -4.65747     -6.35411
+     Margarite                    -0.92161     -1.25734
+     Maximum_Microcline            2.86806      3.91286     SSATD
+     Mesolite                      4.74698      6.47624     SSATD
+     Monohydrocalcite             -1.59048     -2.16987
+     Montmorillonite-Ca            4.61483      6.29594     SSATD
+     Montmorillonite-H             3.72398      5.08057     SSATD
+     Montmorillonite-K             4.20142      5.73193     SSATD
+     Montmorillonite-Mg            4.55474      6.21397     SSATD
+     Montmorillonite-Na            4.25451      5.80437     SSATD
+     Mordenite                     1.99642      2.72368     SSATD
+     Muscovite                     6.73049      9.18231     SSATD
+     Nahcolite                    -4.72666     -6.44851
+     Natrolite                    -1.19846     -1.63504
+     Nepheline                    -3.51278     -4.79243
+     Nesquehonite                 -4.49875     -6.13757
+     NiCO3                        -6.54352     -8.92722
+     Nontronite-Ca                16.30656     22.24680     SSATD
+     Nontronite-H                 15.41571     21.03143     SSATD
+     Nontronite-K                 15.89315     21.68279     SSATD
+     Nontronite-Mg                16.24647     22.16482     SSATD
+     Nontronite-Na                15.94625     21.75523     SSATD
+     Np(OH)4(am)                  -3.64110     -4.96750
+     NpO2                          7.59880     10.36693     SSATD
+     NpO2(am,hyd)                 -1.46420     -1.99759
+     Okenite                      -5.68461     -7.75544
+     Paragonite                    3.98205      5.43265     SSATD
+     PbHPO4                       -3.88347     -5.29816
+     Pentahydrite                 -6.66977     -9.09947
+     Petalite                      2.91031      3.97050     SSATD
+     Phillipsite                  17.07986     23.30181     SSATD
+     Phlogopite                   -3.01903     -4.11882
+     Prehnite                     -2.55910     -3.49134
+     Pseudowollastonite           -5.82701     -7.94971
+     Pu(HPO4)2(am,hyd)            -2.58848     -3.53142
+     PuO1.61                      -5.58077     -7.61376
+     PuO2                         17.09308     23.31984     SSATD
+     PuO2(hyd,aged)               11.05608     15.08365     SSATD
+     Pyrophyllite                  4.26913      5.82432     SSATD
+     Quartz                        0.75300      1.02731     SSATD
+     RaSO4                        -5.50689     -7.51297
+     Rhodochrosite                -2.31727     -3.16142
+     Rhodonite                    -5.12475     -6.99163
+     Sanidine_high                 1.66886      2.27680     SSATD
+     Saponite-Ca                  -1.62715     -2.21989
+     Saponite-H                   -2.51799     -3.43526
+     Saponite-K                   -2.04055     -2.78390
+     Saponite-Mg                  -1.68723     -2.30186
+     Saponite-Na                  -1.98746     -2.71146
+     Scolecite                     3.29011      4.48865     SSATD
+     Sellaite                     -2.76436     -3.77137
+     Sepiolite                    -5.98916     -8.17093
+     Palygorskite                 -4.72622     -6.44792
+     SiO2(am)                     -0.28350     -0.38677
+     Siderite                     -4.23780     -5.78157
+     Sillimanite                  -1.83812     -2.50772
+     Smectite-high-Fe-Mg          -0.07344     -0.10019
+     Smectite-low-Fe-Mg            1.58175      2.15796     SSATD
+     Smectite_Reykjanes            4.14045      5.64876     SSATD
+     Spodumene                    -1.90809     -2.60318
+     SrF2                         -5.87108     -8.00983
+     Starkeyite                   -7.05702     -9.62779
+     Stellerite                   21.94184     29.93492     SSATD
+     Stilbite                      8.14855     11.11695     SSATD
+     Strengite                    -2.98627     -4.07413
+     Strontianite                 -1.45182     -1.98070
+     Talc                         -2.32478     -3.17167
+     Tenorite                     -5.26127     -7.17787
+     Th.75PO4                     -2.22074     -3.02972
+     ThO2:2H2O(am)                -3.93134     -5.36347
+     ThO2(am)                     -3.06084     -4.17586
+     Thorianite                    2.47466      3.37614     SSATD
+     Trevorite                     4.56056      6.22191     SSATD
+     Tridymite                     0.83070      1.13331     SSATD
+     Wairakite                    -2.16283     -2.95072
+     Whitlockite                  -2.43496     -3.32198
+     Wollastonite                 -5.80971     -7.92611
+     Wustite                      -7.01423     -9.56940
+     Zoisite                      -4.06834     -5.55037
+
+        Phases with affinities less than -10 kcal are not listed.
+
+
+
+           --- Saturation States of Pure Liquids ---
+
+       Phase                      Log Q/K    Affinity, kcal
+
+     H2O                          -0.00005     -0.00007
+
+        Phases with affinities less than -10 kcal are not listed.
+
+
+           --- Summary of Saturated and Supersaturated Phases ---
+
+                There are no saturated phases.
+                There are   72 supersaturated phases.
+
+
+                     --- Fugacities ---
+
+     Gas                     Log Fugacity    Fugacity
+
+   Nitrogen                     -0.96356    1.08752E-01
+   H2O(g)                       -1.49995    3.16264E-02
+   CO2(g)                       -2.29892    5.02441E-03
+   HF(g)                       -12.62386    2.37758E-13
+   HCl(g)                      -17.44014    3.62963E-18
+   H2(g)                       -26.31518    4.83971E-27
+   HI(g)                       -28.80741    1.55808E-29
+   O2(g)                       -30.47514    3.34858E-31
+   NO(g)                       -30.89090    1.28558E-31
+   CO(g)                       -32.11925    7.59896E-33
+   SiF4(g)                     -33.32016    4.78457E-34
+   I2(g)                       -34.13874    7.26543E-35
+   N2O(g)                      -34.45133    3.53727E-35
+   BF3(g)                      -36.08451    8.23165E-37
+   FeF3(g)                     -37.01399    9.68308E-38
+   NH3(g)                      -37.07945    8.32814E-38
+   H2O2(g)                     -38.31702    4.81925E-39
+   SO2(g)                      -39.70817    1.95808E-40
+   NO2(g)                      -39.93772    1.15420E-40
+   Chlorine                    -41.95460    1.11021E-42
+   HNO3(g)                     -46.39408    4.03571E-47
+   FeCl2(g)                    -51.36281    4.33702E-52
+   FeCl3(g)                    -56.17471    6.68796E-57
+   Pb(g)                       -57.37937    4.17477E-58
+   NiCl2(g)                    -58.88413    1.30579E-59
+   UO2F2(g)                    -60.49979    3.16381E-61
+   FeF2(g)                     -61.74106    1.81526E-62
+   Tc2O7(g)                    -62.14272    7.19908E-63
+   Cu(g)                       -64.58030    2.62847E-65
+   NiF2(g)                     -65.87448    1.33512E-66
+   NO3(g)                      -66.52744    2.96866E-67
+   Na(g)                       -67.84083    1.44266E-68
+   K(g)                        -69.74620    1.79392E-70
+   N2O3(g)                     -71.11327    7.70423E-72
+   UOF4(g)                     -72.87517    1.33300E-73
+   UO2Cl2(g)                   -73.30474    4.95752E-74
+   UO3(g)                      -74.02221    9.50145E-75
+   AmF3(g)                     -76.04525    9.01056E-77
+   Cs(g)                       -77.55516    2.78512E-78
+   UF5(g)                      -78.02312    9.48148E-79
+   N2O4(g)                     -79.04564    9.00243E-80
+   UF4(g)                      -80.45070    3.54243E-81
+   H2S(g)                      -82.26031    5.49149E-83
+   Li(g)                       -84.37735    4.19423E-85
+   CH4(g)                      -84.65664    2.20476E-85
+   UF6(g)                      -89.60205    2.50007E-90
+   Fluorine                    -95.16455    6.84622E-96
+   N2O5(g)                     -97.82671    1.49036E-98
+   UCl4(g)                    -111.27039    5.36547-112
+   Sn(g)                      -111.92464    1.18950-112
+   UO2(g)                     -111.99024    1.02273-112
+   Mg(g)                      -114.95331    1.11350-115
+   UF3(g)                     -124.23837    5.77598-125
+   UCl5(g)                    -124.94749    1.12852-125
+   U2F10(g)                   -130.99725    1.00636-131
+   UCl6(g)                    -133.35579    4.40770-134
+   TcO(g)                     -134.86674    1.35914-135
+   UCl3(g)                    -134.88169    1.31312-135
+   Ca(g)                      -137.18665    6.50659-138
+   S2(g)                      -137.54241    2.86808-138
+   C(g)                       -158.51138    3.08052-159
+   UI4(g)                     -162.41418    3.85320-163
+   UF2(g)                     -164.81515    1.53056-165
+   Al(g)                      -166.73401    1.84499-167
+   Tc(g)                      -167.49477    3.20061-168
+   UCl2(g)                    -175.75940    1.74022-176
+   UI3(g)                     -176.76301    1.72580-177
+   Am(g)                      -178.80147    1.57952-179
+   B(g)                       -180.72664    1.87655-181
+   UO(g)                      -181.35937    4.37149-182
+   Si(g)                      -189.57456    2.66343-190
+   UF(g)                      -199.02173    9.51206-200
+   UI2(g)                     -203.11544    7.66585-204
+   TcS(g)                     -205.00530    9.87878-206
+   U2Cl8(g)                   -212.14898    7.09604-213
+   UCl(g)                     -214.29670    5.05011-215
+   U2Cl10(g)                  -223.59478    2.54226-224
+   UI(g)                      -231.62807    2.35467-232
+   TcC(g)                     -232.03924    9.13600-233
+   U(g)                       -251.35820    4.38328-252
+   Th(g)                      -270.13080    7.39941-271
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+ The pickup file has been written.
+
+ No further input found.
+
+
+          Start time = 13:15:15  07Sep2011
+            End time = 13:15:16  07Sep2011
+
+           Run time =  0.172     seconds
+
+ Normal exit

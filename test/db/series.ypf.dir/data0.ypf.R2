@@ -1,0 +1,20109 @@
+data0.ypf.R2
+PITZER THERMODYNAMIC DATABASE INCLUDING ACTINIDES AND TRANSITION METALS
+(09/28/2006)
+ 
+This database file represents a combination of the Pitzer parameters for
+major cations and anions found in data0.ypf (renamed data0.ypf.R0)(DTN:
+SN0302T0510102.002) and added Pitzer parameters for actinide and transition
+metal species. However, the listed solid and aqueous species in this
+data0.ypf.R2 database are somewhat different from those in data0.ypf.R0.
+Some log K values for solids and aqueous species were actually taken from
+the data0.ymp.R4 database source (DTN: SN0410T0510404.002 ) or its updated
+version data0.ymp.R5 (DTN: MO0608SPAYMPR5.000), but log K data for some solids
+and aqueous species were obtained from other sources in so far as to maintain
+consistency with the newly-acquired Pitzer parameters. Also, additional log K
+data for some solids was estimated based on the agreement between model
+predictions and reported solubility data. Documentation of this database can
+be found in ANL-WIS-GS-000001 and ANL-EBS-MD-000045. This version supersedes
+the preliminary version data0.ypf.R2 (DTN: MO0608SPAYPFR2.000). Since this
+database incorporates data from data0.ypf.R0(DTN: SN0302T0510102.002),
+calculations using data valid to elevated temperatures are possible. However,
+the user must be aware of the database limitations regarding the valid range
+of temperatures and pressures as well as ionic strength for the Pitzer
+parameters assigned to the species in this database. Therefore, the user
+must be familiar with these limitations and should consult the reports
+associated with the database development and/or relevant sources for these
+parameters. Use of these parameters outside their respective ranges of
+validity is inadvisable and is not permitted for applications on the Yucca
+Mountain Project unless specific justification is provided.
+ 
+This datafile uses the standard form of Pitzer's equations relevant to
+the temperature range. Details on the compilation of these Pitzer
+parameters are given in the document 'In-Drift Precipitates/Salts Model'
+(ANL-EBS-MD-000045) and 'Pitzer Thermodynamic Database for some Actinides and
+Transition Metal Species (data0.ypf.R1)' (ANL-WIS-GS-000001).
+ 
+Pitzer parameters are represented by the 25C-centric four-term temperature
+function given by:
+ 
+x(T) = a1 + a2*(1/T - 1/298.15) + a3*ln(T/298.15) + a4*(T - 298.15)
+ 
+where T is temperature in Kelvin and a1 through a4 denote the temperature
+function fitting coefficients for the temperature-dependent Pitzer
+parameters. The conversion of non-standard or expanded forms of Pitzer
+interaction parameters recently adopted by several workers for highly
+soluble salts to the standard form currently embedded in EQ3/6 Version 8.0
+was conducted using the approach described in 02Rard/Wij.  This conversion
+imposes usage limits on these parameters within a valid range of temperature
+and ionic strength.
+ 
+Some data blocks provide comments on the gathered Pitzer parameters and
+solid phase solubility data to make the user aware of any convention
+adopted in the data extraction/compilation process. DTN numbers for some
+sources are given at the bottom of this file within the references section.
+Also, spreadsheet and/or other types of source files are includes within 
+brackets '[]'.  
+ 
+Below is a list of current corrections to this database in addition to those
+made for the version data0.ypf.R1:
+ 
+ (1) Adding a zero to the beta(2) a1 parameter for K+ - F- ca pair.
+ (2) Adding a space after the '=' symbol and the corresponding value
+       of the a1 constant in some of the ca parameters for Mn-Br, Ba-Cl,
+       Ba-Br, Ba-I, Ba-ClO4, Ba-NO3, Ca-ClO4, Co-Br, Co-I, Co-NO3, Co-SO4,
+       Cr-Cl, Cr-NO3, Na-Cr(OH)4, Na-Cr2O2(OH)4, K-Cr2O7, Cu-Cl, Cu-SO4,
+       Cu-Br, Fe-Cl, K-CrO4, K-PO4, Mn-Cl, Mn-SO4, Na-ClO4, Na-PO4, Na-CrO4,
+       Ni-Cl, Ni-Br, Ni-SO4, Zn-Cl, Zn-Br, Zn-I, Zn-NO3, Gd-NO3 and Zn-SO4.
+ (3) Similar fixes to those described in (2) for some cation-cation and
+       anion-anion interaction (theta) parameters: Al-Na, Cr-Na, Cr-K, Cu-K,
+       and Br-Cr2O7.
+ (4) Correction to the Beta(0) and Beta(1) parameters Cs-ClO4
+ (5) Correction to the C(phi) parameter for Cr-NO3
+ (6) Correction to the C(phi) parameter for Na-CrO4
+ (7) Correction to the C(phi) parameter for Fe-SO4
+ (8) Correction to the Beta(0)parameter for Zn-ClO4
+ (9) Correction to the theta parameter for Na-Co
+(10) Correction to the psi parameter for Na+/B4O5(OH)4--/Cl-
+(11) Correction to the C(phi) parameter for Na-PO4
+(12) Updates/corrections to several references
+(13) Correction to the log K for Th6(OH)15(9+) aqueous complexation reaction
+(14) Correction to the log K for Th4(OH)12++++ aqueous complexation reaction
+(15) Correction to the sign of the log K value for NpO2(CO3)3(5-),
+       NpO2(CO3)2---, and NpO2CO3-
+(16) Corrections to the log K values for Fe(OH)2(aq), NiOH+, NiCO3(aq),
+       NiHCO3+, and NiPO4-
+(17) Correction to the C(phi) parameter for Co-NO3
+(18) Log K values for Np, U, and Pu solids from data0.ymp.R4 (Np and Pu)
+       and DTN SN0410T0510404.001 (U only): Neptunium, Np2O5, NpOCl2, NpCl4,
+       NpF4, NpF5, Na3NpF8, Plutonium, Pu2O3, Pu2C3, Pu3C2, PuC0.84, PuF3,
+       PuF6, PuO1.61, PuOCl, PuOF, uranium, U(SO4)2, UCl4, UCl6, UF4, UF6,
+       UI4, UO2Cl2, UO2F2, UO2SO4, UO3(gamma), and UOCl2.
+(19) Log K values for some zeolite phases: Analcime, Chabazite,
+       Na-Clinoptilolite, Erionite, Laumontite, Mesolite, Phillipsite, and
+       Stellerite from data0.ymp.R4
+(20) Log K values obtained from DTN SN0410T0510404.001 for the solid phases
+       NiCr2O4, CrF3, CrO3, Iron, Fe(OH)2, FeF2, Ferrite-Ca, Ferrite_Cu,
+       Ferrite-Dicalcium, Ferrite-Mg, Ferrite-Ni, Co(OH)2, CoCl2, CoCr2O4,
+       CoF2, CoFe2O4, CoO, MnSO4, MoO2Cl2, and Witherite
+(21) Correction of the Pu phase PuO2(OH)2:H2O stoichiometry using the
+       formula of Lemire (2001 [DIRS 159027]). Corrected data block obtained
+       from data0.ymp.R4
+(22) Correction to the log K value at 25C for the aqueous species for
+       Cr2O2(OH)4-- to the value of 51.9302 from the previous value of 4.05.
+(23) Removal of ternary parameters (theta) for Cr3+ - Na+ and Al3+ - Na+
+       (source 02Chr(2))
+(24) Removal of the phases Cr2(SO4)3.Na2SO4:24H2O and Cr2(SO4)3.K2SO4:24H2O
+       (source 02Chr(1))
+(25) Addition of the psi parameter for Ni++ - Na+ - SO4-- from 02Chr(2),
+       Table 4.
+(26) Replace Pitzer parameters for 2-2 electrolytes (NiSO4, CuSO4, ZnSO4,
+       and MnSO4) by 03Gue/Mou by those in Table I of 74Pit/May.
+(27) Add the recommended beta(2) value of -40.0 by 74Pit/May to the above
+       datablocks for which beta(2) is not given in the source Table I
+       (see Section 6.2.6.1 of ANL-WIS-GS-000001 model report. Also, the
+       source pointer was updated to 74Pit/May instead of 91Pit.
+(28) The binary parameters from 98Alb/Riz for Cu-NO3 were replaced by those
+       listed in 88Kim/Fre (Table III)
+(29) Addition of the gas species CH4(g).
+(30) Addition of binary Ni-NO3 Pitzer parameters.
+(31) Removal of the aqueous species Ni(NO3)2(aq), NaF(aq), UO2Cl2(aq),
+       and FeCl2(aq).
+(32) Change of the UO3(aq) log K value to 12.15 using data given by 03Gui.
+(33) Correction: addition of a negative sign  to the C(phi) parameter for
+       Cu-SO4.
+(34) Replaced all the Pitzer lambda parameters for CO2(aq) with those based
+     on the work by 90Cor/dePab, 93Rum/Mau, and 94rum/nic. These new lambda
+     parameters are valid to temperatures up to 250 deg.C.
+(35) The lambda (CO2(aq)-K) and lambda (CO2(aq)-HSO4-)Pitzer parameters
+     sourced to data0.ypf.R0 were deleted from the database.
+(36) Modified log K value for Calcite solubility.
+(37) Replaced zetas for CO2(aq)-Na-Cl and CO2(aq)-Na-SO4.
+(38) Deleted remaining zeta parameters for CO2(aq) sourced to data0.ypf.R0.
+(39) Removal of Ca-HCO3 binary Pitzer parameters that were based on the work
+       by 93He/Mor.
+(40) Added/updated high order parameters from 82pei/pit and 99kon/kon for
+       Cl-CO3, Cl-HCO3, Na-Cl-HCO3, and Na-CO3-Cl.
+(41) Update/addition of CaCl2 Pitzer parameter and ion-pair log K values
+       after Model 3 of 98ste/fel. Adoption of this model also includes the
+       addition of the ion pair CaCl+ and CaCl2(aq).
+(42) Update of log K values for Soda Niter, Thermonatrite, Antarcticite,
+       CaCl2:4H2O, CaCl2:2H2O.
+(43) Editorial changes the involve formatting and fixing two entries in the 
+     'references' section.
+ 
+BEGIN CONFIGURATION DATA BLOCK
+Do not change the data in this block unless you know what you
+are doing.
+INTERPRET 500 AS NO DATA= YES
+* YES or NO
+SPARSE GRID RANGE CONDITION=IGNORE
+* IGNORE, WARN, or ERROR
+Pitzer data parameters:
+   PITZER DATA BLOCK ORG.= NEW
+   PITZER TEMP FUNCTION= LIVERMORE
+   NO. OF PITZER TEMP FUNC TERMS= 4
+END CONFIGURATION DATA
++--------------------------------------------------------------------
+Miscellaneous parameters
++--------------------------------------------------------------------
+Temperature limits (degC)
+         0.0000  200.0000
+temperatures
+         0.0000   25.0000   60.0000  100.0000
+       150.0000  200.0000  250.0000  300.0000
+pressures
+         1.0132    1.0132    1.0132    1.0132
+         4.7572   15.5365   39.7365   85.8378
+debye huckel aphi
+         0.3767    0.3915    0.4190    0.4605
+         0.5295    0.6228    0.7535    0.9594
+* Calculated from 89Gre/Mol
+* Alternate data for comparison purposes only:
+*        0.3791    0.3920    0.4195    0.4602
+*        0.5261    0.6135    0.7363    0.9345
+* from data0.sup.R6
+log k for eh reaction
+       -91.0448  -83.1049  -74.0534  -65.8641
+       -57.8929  -51.6848  -46.7256  -42.6828
++--------------------------------------------------------------------
+ca combinations: beta(n)(ca) and Cphi(ca) [optional: alpha(n)(ca)]
++--------------------------------------------------------------------
+Ca++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3816
+    a2 = 0.
+    a3 = 0.
+    a4 = 0.
+  beta(1):
+    a1 = 1.6133
+    a2 = 0.
+    a3 = 0.
+    a4 = 0.
+  beta(2):
+    a1 = 0.
+    a2 = 0.
+    a3 = 0.
+    a4 = 0.
+  Cphi:
+    a1 = -2.5721E-03
+    a2 = 0.
+    a3 = 0.
+    a4 = 0.
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Ca++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 3.038220E-01
+    a2 = 7.817855E+01
+    a3 = 1.455192E-11
+    a4 = 3.570225E-04
+  beta(1):
+    a1 = 1.701430E+00
+    a2 = -1.483249E+02
+    a3 = 1.164153E-10
+    a4 = 5.057894E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 1.175850E-03
+    a2 = -2.499438E+00
+    a3 = -2.273737E-13
+    a4 = -3.436910E-05
+* Source: 98ste/fel (Model 3) 
+* [FitPitzerNC_MX_CaCl_CFJC_Model3_Sterner_et_al_1998.xls]
++---------------------------------------------------------------
+CaCl+                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 3.568405E-01
+    a2 = 2.235810E+01
+    a3 = 1.455192E-11
+    a4 = -8.390611E-04
+  beta(1):
+    a1 = 4.812351E+00
+    a2 = 3.865294E+03
+    a3 = 4.656613E-10
+    a4 = 1.123323E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -6.770881E-03
+    a2 = -1.412518E+00
+    a3 = 1.136868E-13
+    a4 = 1.456780E-05
+* Source: 98ste/fel (Model 3) 
+* [FitPitzerNC_MX_CaCl_CFJC_Model3_Sterner_et_al_1998.xls]
++---------------------------------------------------------------
+Ca++                      NO3-
+  alpha(1) = 0.87
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.25912046E-01
+    a2 = 1.44214055E+02
+    a3 = 5.20995994E-01
+    a4 = -4.77654569E-04
+  beta(1):
+    a1 = 4.02370513E-01
+    a2 = -3.21915009E+03
+    a3 = -8.98837868E+00
+    a4 = 3.73058736E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -2.60819813E-03
+    a2 = -2.96872307E+01
+    a3 = -1.62394447E-01
+    a4 = 2.20404842E-04
+* Source: 05wij/rar
+* [FitPitzerNC_MX_Ca(NO3)2_CFJC.xls]
++---------------------------------------------------------------
+Ca++                      HSO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2145
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.5275
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0000E+00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Ca++                      I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4379
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.8068
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -8.3792E-04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Ca++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.50000000E-01
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.00000000E+00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 89Gre/Mol[FitPitzerNC_MX_CaSO4.xls]
++---------------------------------------------------------------
+Cs+                       Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.55603000E-02
+    a2 = -3.44283000E+01
+    a3 = -3.63797881E-12
+    a4 = 1.06581410E-14
+  beta(1):
+    a1 = 2.84193000E-02
+    a2 = -3.38671000E+02
+    a3 = -1.45519152E-11
+    a4 = 5.68434189E-14
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 9.49400985E-04
+    a2 = 5.26758099E+01
+    a3 = 2.33350267E-01
+    a4 = -2.65599864E-04
+* Source: refit of 98Hol/Mes [FitPitzerNC_MX_CsBr.xls]
++---------------------------------------------------------------
+Cs+                       Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 3.29800647E-02
+    a2 = -5.39760530E+02
+    a3 = -2.42136256E+00
+    a4 = 2.72851702E-03
+  beta(1):
+    a1 = 4.29000000E-02
+    a2 = -3.80000000E+01
+    a3 = 1.45519152E-11
+    a4 = 1.30600000E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -1.83801488E-04
+    a2 = 4.84732577E+01
+    a3 = 2.16076707E-01
+    a4 = -2.39735714E-04
+* Source: refit of 83Hol/Mes [FitPitzerNC_MX_CsCl.xls]
++---------------------------------------------------------------
+Cs+                       F-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1306
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2570
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -4.3e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+Cs+                       I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0244
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0262
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -3.65e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+Cs+                       NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0758
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.0669
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+Cs+                       OH-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.150
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.30
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+Cs+                       SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0714
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.2008
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 2.9115E-03
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 106; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+H+                        Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2085
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.3477
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 1.52e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+H+                        Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.77000779E-01
+    a2 = -3.34777082E+01
+    a3 = -2.62214535E-01
+    a4 = 1.25778302E-04
+  beta(1):
+    a1 = 2.92922504E-01
+    a2 = 3.40247027E+03
+    a3 = 1.97936248E+01
+    a4 = -2.79388381E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 3.62000000E-04
+    a2 = -2.91038305E-11
+    a3 = 0.00000000E+00
+    a4 = -3.03600000E-05
+* Source: refit of 87Hol/Bus [FitPitzerNC_MX_HCl.xls]
++---------------------------------------------------------------
+H+                        HSO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.09088541E-01
+    a2 = 1.05453606E+03
+    a3 = 5.95728263E+00
+    a4 = -8.77591957E-03
+  beta(1):
+    a1 = 4.40921659E-01
+    a2 = 2.96437457E+02
+    a3 = 2.37332579E+00
+    a4 = -4.63168109E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: refit of 94Hol/Mes [FitPitzerNC_MX_HHSO4.xls]
++---------------------------------------------------------------
+H+                        I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2211
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.4907
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 4.82e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+H+                        NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.125585222
+    a2 = 560.1201816
+    a3 = 4.916033806
+    a4 = -0.009950899
+  beta(1):
+    a1 = 0.28778174
+    a2 = 2.71242E-07
+    a3 = 1.58606E-09
+    a4 = 0.0013396
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.005596266
+    a2 = -6.576375081
+    a3 = -0.057719188
+    a4 = 0.000110405
+* Source: refit of 94Fel/Sch [FitPitzerNC_MX_H_HNO3.xls]
++---------------------------------------------------------------
+H+                        SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 9.86192479E-02
+    a2 = -6.70344441E+03
+    a3 = -4.16861778E+01
+    a4 = 6.36776572E-02
+  beta(1):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 5.93003463E-02
+    a2 = -3.02954834E+03
+    a3 = -1.60719978E+01
+    a4 = 2.02174821E-02
+* Source: refit of 87Pab/Pit [FitPitzerNC_MX_H2SO4.xls]
++---------------------------------------------------------------
+K+                        Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 5.26048630E-02
+    a2 = -9.38817459E+02
+    a3 = -4.43030029E+00
+    a4 = 5.24878644E-03
+  beta(1):
+    a1 = 2.35352574E-01
+    a2 = 2.48976260E+03
+    a3 = 1.25419548E+01
+    a4 = -1.34150439E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -1.47497663E-05
+    a2 = 2.55457648E+02
+    a3 = 1.25575455E+00
+    a4 = -1.52465437E-03
+* Source: refit of 98Hol/Mes [FitPitzerNC_MX_KBr.xls]
++---------------------------------------------------------------
+K+                        Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 4.77811552E-02
+    a2 = -3.43299275E+02
+    a3 = -1.38219467E+00
+    a4 = 1.34298267E-03
+  beta(1):
+    a1 = 2.15510997E-01
+    a2 = -5.76387856E+02
+    a3 = -2.88016901E+00
+    a4 = 4.64483346E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -7.48604891E-04
+    a2 = 3.65327730E+01
+    a3 = 1.48205482E-01
+    a4 = -1.47224869E-04
+* Source: refit of 89Gre/Mol [FitPitzerNC_MX_KCl.xls]
++---------------------------------------------------------------
+K+                        CO3--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1288
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.4333
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 4.9851E-04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+K+                        F-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.08089
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2021
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 9.3e-4
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+K+                        HCO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0107
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0478
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+K+                        HPO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0248
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.2743
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 1.6387E-02
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+K+                        HSO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0003
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.1735
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+K+                        I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0746
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2517
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -4.14e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+K+                        NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0816
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0494
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 6.60e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+K+                        OH-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1298
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.320
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 4.1e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+K+                        SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 5.55358045E-02
+    a2 = -1.41842998E+03
+    a3 = -6.74728848E+00
+    a4 = 8.26906675E-03
+  beta(1):
+    a1 = 7.96384696E-01
+    a2 = 2.06712594E+03
+    a3 = 2.32830644E-10
+    a4 = 2.35793239E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -1.88000000E-02
+    a2 = 0.00000000E+00
+    a3 = 9.09494702E-13
+    a4 = -2.66453526E-15
+* Source: refit of 89Gre/Mol [FitPitzerNC_MX_K2SO4.xls]
++---------------------------------------------------------------
+Li+                       Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.72803000E-01
+    a2 = 3.72529030E-09
+    a3 = 1.45519152E-11
+    a4 = -1.06042000E-04
+  beta(1):
+    a1 = 2.97759370E-01
+    a2 = 9.90383242E+02
+    a3 = 5.60772784E+00
+    a4 = -6.97050835E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 4.76300519E-03
+    a2 = -9.25666981E+01
+    a3 = -4.62631648E-01
+    a4 = 5.24228867E-04
+* Source: refit of 98Hol/Mes [FitPitzerNC_MX_LiBr.xls]
++---------------------------------------------------------------
+Li+                       Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.48470000E-01
+    a2 = 1.86264515E-09
+    a3 = 0.00000000E+00
+    a4 = -1.54600000E-04
+  beta(1):
+    a1 = 3.07000000E-01
+    a2 = 7.45058060E-09
+    a3 = 2.91038305E-11
+    a4 = 6.36000000E-04
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 3.70970517E-03
+    a2 = 4.52467125E+00
+    a3 = 3.27989372E-03
+    a4 = -8.61317327E-06
+* Source: refit of 83Hol/Mes [FitPitzerNC_MX_LiCl.xls]
++---------------------------------------------------------------
+Li+                       I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2104
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.373
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+Li+                       NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1420
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2780
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -5.51e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+Li+                       OH-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.015
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.14
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+Li+                       SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1363
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.2705
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -3.9934E-03
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 106; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Mg++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4327
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.7528
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 3.1236E-03
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Mg++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 3.51135695E-01
+    a2 = -6.55821840E+01
+    a3 = -5.25061476E-01
+    a4 = 4.47185031E-04
+  beta(1):
+    a1 = 1.65325488E+00
+    a2 = -2.87287764E+03
+    a3 = -2.30007188E+01
+    a4 = 4.94572964E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 6.52610922E-03
+    a2 = -2.67038299E+01
+    a3 = -2.13795142E-01
+    a4 = 3.11488279E-04
+* Source: refit of 87Pab/Pit [FitPitzerNC_MX_MgCl2.xls]
++---------------------------------------------------------------
+Mg++                      HCO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0330
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.8498
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0000E+00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Mg++                      HSO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4746
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.7288
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0000E+00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Mg++                      I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4902
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.8041
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 7.9337E-03
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Mg++                      NO3-
+  alpha(1) = 1.55
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.306728
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.257451
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -3.32923E-03
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 04Rar/Wij
+* [FitPitzerNC_MX_Mg(NO3)2_CFJC.xls]
++---------------------------------------------------------------
+Mg++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.22817832E-01
+    a2 = -5.68819179E+03
+    a3 = -3.28401402E+01
+    a4 = 4.73379023E-02
+  beta(1):
+    a1 = 3.37712501E+00
+    a2 = -2.31839681E+04
+    a3 = -1.39335072E+02
+    a4 = 2.17921221E-01
+  beta(2):
+    a1 = -3.52587546E+01
+    a2 = 2.17038608E+06
+    a3 = 1.39982555E+04
+    a4 = -2.28322526E+01
+  Cphi:
+    a1 = 2.43650418E-02
+    a2 = 1.89483775E+03
+    a3 = 1.08446198E+01
+    a4 = -1.56340004E-02
+* Source: refit of 87Pab/Pit [FitPitzerNC_MX_MgSO4.xls]
++---------------------------------------------------------------
+Mn++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.44655
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.34477
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.02269
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Mn++                      ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.50957
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.16209
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.01144
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+MgOH+                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.658
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+Na+                       AlO2-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 4.52319011E-02
+    a2 = -1.54572558E+03
+    a3 = -8.31360114E+00
+    a4 = 1.10572297E-02
+  beta(1):
+    a1 = 3.06659949E-01
+    a2 = -4.91332570E+03
+    a3 = -2.85581274E+01
+    a4 = 4.16055219E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -3.03687700E-04
+    a2 = 2.05885396E+02
+    a3 = 1.07578286E+00
+    a4 = -1.43736990E-03
+* Source: refit of 94Felm/Rus [FitPitzerNC_MX_Na_AlO2.xls]
+* Comment: Refit only valid to 100C.
++---------------------------------------------------------------
+Na+                       Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 9.73867360E-02
+    a2 = -2.10646372E+02
+    a3 = -3.95938745E-01
+    a4 = -2.83573987E-04
+  beta(1):
+    a1 = 2.97014694E-01
+    a2 = -6.33518181E+03
+    a3 = -3.75076549E+01
+    a4 = 5.58803500E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 7.49485905E-04
+    a2 = -1.42958589E+01
+    a3 = -1.65395266E-01
+    a4 = 3.05237332E-04
+* Source: refit of 98Hol/Mes [FitPitzerNC_MX_NaBr.xls]
++---------------------------------------------------------------
+Na+                       Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 7.45618073E-02
+    a2 = -4.70789056E+02
+    a3 = -1.85114134E+00
+    a4 = 1.65564633E-03
+  beta(1):
+    a1 = 2.75240690E-01
+    a2 = -5.21117635E+02
+    a3 = -2.88035999E+00
+    a4 = 4.71462791E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 1.53693372E-03
+    a2 = 4.80725476E+01
+    a3 = 1.74679979E-01
+    a4 = -1.56268596E-04
+* Source: refit of 89Gre/Mol [FitPitzerNC_MX_NaCl.xls]
++---------------------------------------------------------------
+Na+                       CO3--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 3.62048087E-02
+    a2 = 1.10837605E+03
+    a3 = 1.11985553E+01
+    a4 = -2.33016550E-02
+  beta(1):
+    a1 = 1.51206913E+00
+    a2 = 4.41251197E+03
+    a3 = 4.45820703E+01
+    a4 = -9.98912100E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 5.20000000E-03
+    a2 = 0.00000000E+00
+    a3 = 0.00000000E+00
+    a4 = 8.88178420E-16
+* Source: refit of 93He/Mor [FitPitzerNC_MX_Na2CO3.xls]
++---------------------------------------------------------------
+Na+                       F-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0215
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2107
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+Na+                       HCO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.80020550E-02
+    a2 = 6.82885977E+02
+    a3 = 6.89958570E+00
+    a4 = -1.44593200E-02
+  beta(1):
+    a1 = 4.40052263E-02
+    a2 = 1.12938915E+03
+    a3 = 1.14108589E+01
+    a4 = -2.44673400E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: refit of 93He/Mor [FitPitzerNC_MX_NaHCO3.xls]
++---------------------------------------------------------------
+Na+                       HPO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0583
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.4655
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 2.9380E-02
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Na+                       H2PO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0533
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0396
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00795
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Rai/Fel (Table IV)
++---------------------------------------------------------------
+Na+                       HSO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 7.34348730E-02
+    a2 = 5.25606010E+01
+    a3 = 4.20808596E-01
+    a4 = -8.21232054E-04
+  beta(1):
+    a1 = 2.99942504E-01
+    a2 = 4.69811737E+03
+    a3 = 2.68474688E+01
+    a4 = -3.73911853E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -4.62067000E-03
+    a2 = -5.82076609E-11
+    a3 = -2.27373675E-13
+    a4 = 6.82142000E-06
+* Source: refit of 94Hol/Mes [FitPitzerNC_MX_NaHSO4.xls]
++---------------------------------------------------------------
+Na+                       I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1195
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.3439
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 1.8e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 100; 25C values only)
++---------------------------------------------------------------
+Na+                       NO3-
+  alpha(1) = 1.43
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -1.29331176E-03
+    a2 = -4.82730419E+02
+    a3 = -2.21015765E+00
+    a4 = 2.54083532E-03
+  beta(1):
+    a1 = 1.41301486E-01
+    a2 = -2.75935929E+03
+    a3 = -1.33527356E+01
+    a4 = 1.80628696E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 3.20511150E-04
+    a2 = 4.69542364E+01
+    a3 = 2.24386774E-01
+    a4 = -2.63787772E-04
+* Source: Wijesinghe and Rard (2005);
+* [FitPitzerNC_MX_NaNO3_CFJC.xls]
++---------------------------------------------------------------
+Na+                       OH-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 8.83443913E-02
+    a2 = -1.19784571E+03
+    a3 = -6.10983033E+00
+    a4 = 7.43325156E-03
+  beta(1):
+    a1 = 2.44421177E-01
+    a2 = 1.62702502E+03
+    a3 = 9.48250496E+00
+    a4 = -1.15788697E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 3.99943679E-03
+    a2 = 8.82475511E+01
+    a3 = 4.06876285E-01
+    a4 = -4.75666912E-04
+* Source: refit of 93He/Mor [FitPitzerNC_MX_NaOH.xls]
++---------------------------------------------------------------
+Na+                       SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.20596369E-02
+    a2 = -2.18942621E+03
+    a3 = -1.01447681E+01
+    a4 = 1.19724161E-02
+  beta(1):
+    a1 = 1.11537757E+00
+    a2 = -1.27442345E+04
+    a3 = -6.71934490E+01
+    a4 = 8.91223370E-02
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 6.57125396E-03
+    a2 = 3.38749374E+02
+    a3 = 1.48133893E+00
+    a4 = -1.64184593E-03
+* Source: refit of 89Gre/Mol [FitPitzerNC_MX_Na2SO4.xls]
++---------------------------------------------------------------
+NH4+                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0624
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.1947
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -4.36e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+NH4+                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 5.24920619E-02
+    a2 = -2.16412775E+02
+    a3 = -9.73041353E-01
+    a4 = 1.06114993E-03
+  beta(1):
+    a1 = 1.87339293E-01
+    a2 = 0.00000000E+00
+    a3 = -1.42555000E-01
+    a4 = 1.09395000E-03
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -3.07437349E-03
+    a2 = 7.39922482E+00
+    a3 = 2.30711678E-02
+    a4 = -1.76252500E-05
+* Source: refit of 90Thi/Sim [FitPitzerNC_MX_NH4Cl.xls]
++---------------------------------------------------------------
+NH4+                      HCO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.038
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.070
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+NH4+                      I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0570
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.3157
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -3.08e-3
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+NH4+                      NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0154
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.1120
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -3.e-5
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 101; 25C values only)
++---------------------------------------------------------------
+NH4+                      SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 3.91672883E-02
+    a2 = 3.13414349E+02
+    a3 = 2.51504017E+00
+    a4 = -4.47419501E-03
+  beta(1):
+    a1 = 6.62846757E-01
+    a2 = 3.77087920E+04
+    a3 = 2.55814178E+02
+    a4 = -4.22217880E-01
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -7.57091057E-04
+    a2 = -1.14018787E+02
+    a3 = -7.56210265E-01
+    a4 = 1.20646877E-03
+* Source: refit of 96Cle/Mil [ConPitzerNC_MX_(NH4)2SO4.xls]
++---------------------------------------------------------------
+Sr++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3311
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.7115
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 1.2251E-03
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Sr++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2834
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6256
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -8.9095E-04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
+* Note: the second of two entries from 91Pit is used here. It
+*   carries a smaller reported standard deviation (0.002 vs. 0.003
+*   in the fitted osmotic coefficient, while the concentration
+*   range is very similar (3.8 vs. 4 molal).
++---------------------------------------------------------------
+Sr++                      I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4013
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.8600
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 2.6570E-03
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
++---------------------------------------------------------------
+Sr++                      NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1346
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.3800
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -1.9925E-02
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: Calculated from data in 91Pit (p. 105; 25C values only)
+* [Some2-1Salts25C_TJW.xls]
+****************************************************************
+* Binary parameters primarily for additional transition metals.*
+* Nov 2003-Jan 2004, Russell Jarek and Carlos Jove-Colon.      *
+****************************************************************
++---------------------------------------------------------------
+Al+++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.6993
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.8447
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00273
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VIII, Similar to 01Chr.1 Values
++---------------------------------------------------------------
+Ba++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2628
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.4963
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01938
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Ba++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3146
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.5698
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01596
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Ba++                      I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4219
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6868
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01743
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Ba++                      OH-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1718
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.200
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Ba++                      ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3614
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.5758
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.03126
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Ba++                      NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0323
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.8025
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+CaB(OH)4+                 Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.12
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+Ca++                      ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4511
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.757
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00500
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Kon/Kon (Table 3; 25C value)
++---------------------------------------------------------------
+Ca++                      MoO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.20
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.1973
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -54.24
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 92Fel/Rai, Table I
++---------------------------------------------------------------
+Co++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.37351
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.25999
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01803
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Co++                      ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.50409
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.96664
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.01349
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Co++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4270
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6598
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00067
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Co++                      I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5213
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6725
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00467
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Co++                      NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3119
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6905
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00762
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Co++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.20
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.70
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -30.7
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 74Pit/May, Table I.
++---------------------------------------------------------------
+Cr+++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.72234
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.5989
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.04141
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 03Chr, Table 3
+* Similar to 73Pit/May (.7364/5.2553/0/-.04511)
++---------------------------------------------------------------
+Cr+++                     NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.7040
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.1847
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.05901
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VIII
++---------------------------------------------------------------
+Na+                       Cr(OH)4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.045
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.31
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.003
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Rai/Hes, Table IV
++---------------------------------------------------------------
+Na+                       Cr2O2(OH)4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.41
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.7
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.03768
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Rai/Hes, Table IV
++---------------------------------------------------------------
+K+                        Cr2O7--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -2.12390
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 6.34430
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 25.91830
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 1.66820
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Chr, Table 1
++---------------------------------------------------------------
+Cu++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.23052
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.20897
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01639
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Cu++                      NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.28124
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.72906
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00842
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Cu++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2358
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.485
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -47.35
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0012
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 74Pit/May (Table I)
++---------------------------------------------------------------
+Cu++                      HSO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4755
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.428
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 93Bae/Rea, Table V, parameter set 11
++---------------------------------------------------------------
+Cu++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.41247
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.66270
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.04262
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Cu++                      ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.48984
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.90361
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00839
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Fe++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3359
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.5323
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00861
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+H+                        ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1747
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2931
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00819
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table I
++---------------------------------------------------------------
+K+                        CrO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0791
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.1130
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0012
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Chr/Iva, Table 3
+* Similar to 73Pit/May (.0758/1.239/-.00078)
++---------------------------------------------------------------
+K+                        PO4---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3729
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.9720
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.08679
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VIII
++---------------------------------------------------------------
+K+                        B(OH)4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.035
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.14
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+K+                        B3O3(OH)4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.13
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+K+                        B4O5(OH)4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.022
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+Mn++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.29486
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.01251
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01528
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Mn++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.201
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.980
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -40.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0182
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 74Pit/May (Table I); recommended Beta(2) value
+*   of -40.0 by 74Pit/May.
++---------------------------------------------------------------
+MgB(OH)4+                 Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.16
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+Na+                       ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0554
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2755
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00118
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table I
++---------------------------------------------------------------
+Na+                       B(OH)4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0427
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.089
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0114
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+Na+                       B3O3(OH)4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.056
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.910
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+Na+                       B4O5(OH)4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.11
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.40
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea, Table 3
++---------------------------------------------------------------
+Na+                       PO4---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1781
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.8513
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.051538
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VIII
++---------------------------------------------------------------
+Na+                       MoO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.116
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.287
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 92Gra/Mul, p. 75
++---------------------------------------------------------------
+Na+                       CrO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0645
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.5974
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0094
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Chr/Iva, Table 3
+* Updated from 73Pit/May (.0938/1.3695/-.00216)
++---------------------------------------------------------------
+Ni++                      ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.49285
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.98517
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.01679
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Ni++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.34990
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.5300
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00471
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 87Rar (Table V)
+*   Very similar to 73Pit/May, (.347925/1.581/0/-.00372292
+*   after conversion)
++---------------------------------------------------------------
+Ni++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4451
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.49
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00626
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 00Roy/Cof, Table 2
++---------------------------------------------------------------
+Ni++                      NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.30978
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.10644
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.00394
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+Ni++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1702
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.907
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -40.06
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0366
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 74Pit/May (Table I)
++---------------------------------------------------------------
+Fe++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2568
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.063
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -42.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0209
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Mil/Yao, Table 3
++---------------------------------------------------------------
+Fe+++                     ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.412
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.989
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.462
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Mil/Yao, Table 3
++---------------------------------------------------------------
+Zn++                      Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2602
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6425
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.08798
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Zn++                      Br-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4660
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6343
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.10792
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Zn++                      I-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4821
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.9455
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01427
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Zn++                      NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3481
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6913
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.01567
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Zn++                      ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5060
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.7970
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.01132
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May, Table VI; converted in
+*   [Pitzer Conversions.xls]
++---------------------------------------------------------------
+Zn++                      SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1949
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.883
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -32.81
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0290
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 74Pit/May (Table I)
+****************************************************************
+*         ACTINIDE BINARY PARAMETERS                           *
+*       Compiled by Carlos F. Jove Colon (SNL)                 *
+****************************************************************
+* Trivalent Actinides - Pitzer Binary Parameters
++---------------------------------------------------------------
+Na+                       Pu(CO3)4(5-)
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.022
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 19.22
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.305
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Nd(CO3)4(5-)
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.022
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 19.22
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.305
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Cm(CO3)4(5-)
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.022
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 19.22
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.305
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Am(CO3)4(5-)
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.022
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 19.22
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.305
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Pu(CO3)3---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.125
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 4.730
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0007
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Nd(CO3)3---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.125
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 4.730
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0007
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Cm(CO3)3---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.125
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 4.730
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0007
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Am(CO3)3---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.125
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 4.730
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0007
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Pu(CO3)2-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.240
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.224
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0284
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Nd(CO3)2-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.240
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.224
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0284
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Cm(CO3)2-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.240
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.224
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0284
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Am(CO3)2-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.240
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.224
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0284
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Pu+++                     H2PO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -92.9
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table I).
++---------------------------------------------------------------
+Nd+++                     H2PO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -92.9
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table I).
++---------------------------------------------------------------
+Cm+++                     H2PO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -92.9
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table I).
++---------------------------------------------------------------
+Am+++                     H2PO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -92.9
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table I).
++---------------------------------------------------------------
+Pu+++                     SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.792
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 15.04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -2500.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table I); 99Fel/Rai (Table I)
++---------------------------------------------------------------
+Nd+++                     SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.792
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 15.04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -2500.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table I); 99Fel/Rai (Table I)
++---------------------------------------------------------------
+Cm+++                     SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.792
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 15.04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -2500.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table I); 99Fel/Rai (Table I)
++---------------------------------------------------------------
+Am+++                     SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.792
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 15.04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -2500.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table I); 99Fel/Rai (Table I)
++---------------------------------------------------------------
+Pu(OH)2+                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.616
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.45
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Nd(OH)2+                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.616
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.45
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Cm(OH)2+                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.616
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.45
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table I) and 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Am(OH)2+                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.616
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.45
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Pu(OH)++                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.055
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Nd(OH)++                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.055
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Cm(OH)++                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.055
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Am(OH)++                  Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.055
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+PuCl2+                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.516
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.75
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+NdCl2+                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.516
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.75
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+CmCl2+                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.516
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.75
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+AmCl2+                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.516
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.75
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+PuCl++                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.593
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.15
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+NdCl++                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.593
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.15
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+CmCl++                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.593
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.15
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+AmCl++                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.593
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 3.15
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Gd+++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5856
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.60
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0166
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 00Roy/Gre (Table III)
++---------------------------------------------------------------
+Pu+++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5856
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.60
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0166
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Nd+++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5856
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.60
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0166
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Cm+++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5856
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.60
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0166
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Am+++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5856
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.60
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0166
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Gd+++                     NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.5173
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 5.1333
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.06543
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 78Pit/Pet, Table II
++---------------------------------------------------------------
+Gd+++                     ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.780
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 6.5333
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00539
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 78Pit/Pet, Table III
++---------------------------------------------------------------
+Am+++                     ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.754
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 6.53
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0075
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Rai/Fel, Table IV; assume to be similar to
+*   Nd+++ - ClO4- binary parameters.
++---------------------------------------------------------------
+Nd+++                     ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.7533
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 6.5333
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.007313
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 78Pit/Pet, Table III
+*---------------------------------------------------------------
+* Tetravalent Actinides - Pitzer Binary Parameters
++---------------------------------------------------------------
+Na+                       Th(CO3)5(6-)
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.31
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 30.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table III).
++---------------------------------------------------------------
+K+                        Th(SO4)3--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.90
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table III).
++---------------------------------------------------------------
+Na+                       Th(SO4)3--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.12
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table III).
++---------------------------------------------------------------
+H+                        Th(SO4)3--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.84
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table III).
++---------------------------------------------------------------
+Th++++                    SO4--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.56
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table III).
++---------------------------------------------------------------
+Th++++                    NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.96625
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 11.3875
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.1846
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 78Pit/May (Table IX)
++---------------------------------------------------------------
+Th++++                    HSO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.44
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table III).
++---------------------------------------------------------------
+Th++++                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.092
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 13.7
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -160.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.112
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 92Roy/Vog (Table II).
++---------------------------------------------------------------
+Np++++                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.644
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 15.5
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 03Rai/Hes (Table I).
++---------------------------------------------------------------
+Np++++                    ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.26
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 17.53
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0995
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 03Rai/Hes (Table I).
++---------------------------------------------------------------
+NpOH+++                   Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 7.856
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 03Rai/Hes (Table I).
++---------------------------------------------------------------
+NpOH+++                   ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.4
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 9.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 03Rai/Hes (Table I).
++---------------------------------------------------------------
+UOH+++                    Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 7.856
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Rai/Fel (Table 3).
++---------------------------------------------------------------
+U++++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.644
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 15.5
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Rai/Fel (Table 3).
+*---------------------------------------------------------------
+* Pentavalent Actinides - Pitzer Binary Parameters
++---------------------------------------------------------------
+PuO2+                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1415
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2810
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 01Rai/Moo (Table 1), NpO2+ parameters applied here.
++---------------------------------------------------------------
+NpO2+                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.1415
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.2810
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Nec/Fan, Table 4
++---------------------------------------------------------------
+NpO2+                     ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.257
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.180
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0081
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Nec/Fan, Table 4
++---------------------------------------------------------------
+PuO2+                     ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.257
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.180
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0081
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 01Rai/Moo (Table 1), same as NpO2+ parameters
++---------------------------------------------------------------
+K+                        NpO2(CO3)3(5-)
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 2.34
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 22.7
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -96.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.22
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Mah/Nov (Table 5)
++---------------------------------------------------------------
+K+                        NpO2(CO3)2---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.48
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 4.4
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Mah/Nov (Table 5)
++---------------------------------------------------------------
+K+                        NpO2CO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.34
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Mah/Nov (Table 5)
++---------------------------------------------------------------
+Na+                       NpO2(CO3)3(5-)
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.80
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 22.7
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Mah/Nov (Table 5)
++---------------------------------------------------------------
+Na+                       NpO2(CO3)2---
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.48
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 4.4
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Mah/Nov (Table 5)
++---------------------------------------------------------------
+Na+                       NpO2CO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.34
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Mah/Nov (Table 5)
+*---------------------------------------------------------------
+* Heptavalent Tc (TcO4- form) and Cs+ - Pitzer Binary Parameters
++---------------------------------------------------------------
+Ca++                      TcO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.2964
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.661
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Cs+                       TcO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.1884
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.1588
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Kon/Nec (p. 567)
++---------------------------------------------------------------
+Cs+                       ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.1652
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = -0.15
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Kon/Nec (p. 571)
++---------------------------------------------------------------
+Mg++                      TcO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.3138
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.840
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0114
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+K+                        TcO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = -0.0578
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon (Table IV)
++---------------------------------------------------------------
+Na+                       TcO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.01111
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 0.1595
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.00236
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
+*---------------------------------------------------------------
+* Hexavalent Actnides - Pitzer Binary Parameters
++---------------------------------------------------------------
+Na+                       PuO2(CO3)3----
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.25
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 11.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+Na+                       UO2(CO3)3----
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 1.25
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 11.6
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+Na+                       PuO2(CO3)2--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.212
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.5
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+Na+                       UO2(CO3)2--
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.212
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 2.5
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+PuO2++                    ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.62346
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.97357
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.02084
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Pas/Czer (Table 6); Original source:88Kim/Fre.
++---------------------------------------------------------------
+UO2++                     ClO4-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.62346
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.97357
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = 0.02084
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Pas/Czer (Table 6); Original source:88Kim/Fre.
++---------------------------------------------------------------
+UO2++                     NO3-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.47803
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.59530
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.03971
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre (Table III)
++---------------------------------------------------------------
+UO2++                     Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4273
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.644
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.03686
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 73Pit/May (Table VI)
++---------------------------------------------------------------
+UO2++                     SO4--
+  alpha(1) = 1.4
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.322
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.827
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = -40.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.0176
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 74Pit/May, Table I; recommended Beta(2) value
+*   of -40.0 by 74Pit/May
++---------------------------------------------------------------
+(UO2)2(OH)2++             Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4270
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.644
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.03690
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Rai/Fel (Table 4); Parameters equivalent to
+*   UO2++ - Cl- from 91Pit after 02Rai/Fel (Table 3)
++---------------------------------------------------------------
+(UO2)3(OH)4++             Cl-
+  alpha(1) = 2.0
+  alpha(2) = 12.0
+  beta(0):
+    a1 = 0.4270
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(1):
+    a1 = 1.644
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  beta(2):
+    a1 = 0.00
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  Cphi:
+    a1 = -0.03690
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Rai/Fel (Table 4); Parameters equivalent to UO2++ - Cl-
+*   from 91Pit. Same as UO2++ - Cl- and (UO2)2(OH)2++ - Cl- after
+*   02Rai/Fel (Table 3)
++---------------------------------------------------------------
+cc' and aa' combinations: theta(cc') and theta(aa')
++---------------------------------------------------------------
+* Note: constant values of theta often seem to be satisfactory.
+*   Therefore, extrapolating the use of 25C values to other
+*   temperatures in the absence of any other data is not considered
+*   to be very problematic. The optimum constant value over a
+*   temperature range may well not be identical to the 25C value.
+*---------------------------------------------------------------
+* cc' combinations first, then aa' combinations
+*---------------------------------------------------------------
+Ca++                      H+
+  theta:
+    a1 = 0.092
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+Ca++                      K+
+  theta:
+    a1 = 1.15600000E-01
+    a2 = 9.31322575E-10
+    a3 = 0.00000000E+00
+    a4 = 1.42108547E-14
+* Source: refit of 89Gre/Mol [FitPitzerNC_MM_K_Ca.xls]
++---------------------------------------------------------------
+Ca++                      Na+
+  theta:
+    a1 = 5.00000000E-02
+    a2 = 1.86264515E-09
+    a3 = 7.27595761E-12
+    a4 = 0.00000000E+00
+* Source: refit of 89Gre/Mol [FitPitzerNC_MM_Na_Ca.xls]
++---------------------------------------------------------------
+Ca++                      Mg++
+  theta:
+    a1 = 0.007
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+Cs+                       H+
+  theta:
+    a1 = -0.044
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 116; 25C value)
++---------------------------------------------------------------
+Cs+                       K+
+  theta:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 116; 25C value)
++---------------------------------------------------------------
+Cs+                       Li+
+  theta:
+    a1 = -0.1242
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+Cs+                       Na+
+  theta:
+    a1 = -0.03886
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+Cs+                       Mg++
+  theta:
+    a1 = -0.078
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+H+                        K+
+  theta:
+    a1 = 0.005
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+H+                        Li+
+  theta:
+    a1 = 0.015
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 116; 25C value)
++---------------------------------------------------------------
+H+                        Mg++
+  theta:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+H+                        Na+
+  theta:
+    a1 = 0.036
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+H+                        NH4+
+  theta:
+    a1 = -0.019
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 116; 25C value)
++---------------------------------------------------------------
+H+                        Sr++
+  theta:
+    a1 = 0.0642
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+K+                        Li+
+  theta:
+    a1 = -0.0563
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+K+                        Mg++
+  theta:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 87Pab/Pit
++---------------------------------------------------------------
+K+                        Na+
+  theta:
+    a1 = -3.20349317E-03
+    a2 = 1.40213141E+01
+    a3 = 9.09494702E-13
+    a4 = -2.66453526E-15
+* Source: refit of 89Gre/Mol [FitPitzerNC_MM_Na_K.xls]
++---------------------------------------------------------------
+Li+                       Na+
+  theta:
+    a1 = 0.0029
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+* cc' combinations for actinides and other species
+*---------------------------------------------------------------
+Na+                       Pu+++
+  theta:
+    a1 = 0.1
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Nd+++
+  theta:
+    a1 = 0.1
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Cm+++
+  theta:
+    a1 = 0.1
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       Am+++
+  theta:
+    a1 = 0.1
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      Pu+++
+  theta:
+    a1 = 0.2
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      Nd+++
+  theta:
+    a1 = 0.2
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      Cm+++
+  theta:
+    a1 = 0.2
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      Am+++
+  theta:
+    a1 = 0.2
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      PuCl++
+  theta:
+    a1 = -0.014
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      NdCl++
+  theta:
+    a1 = -0.014
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      CmCl++
+  theta:
+    a1 = -0.014
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      AmCl++
+  theta:
+    a1 = -0.014
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      PuCl2+
+  theta:
+    a1 = -0.196
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      NdCl2+
+  theta:
+    a1 = -0.196
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      CmCl2+
+  theta:
+    a1 = -0.196
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Ca++                      AmCl2+
+  theta:
+    a1 = -0.196
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Na+                       PuO2++
+  theta:
+    a1 = 0.0231
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Pas/Cze (Table 6).
++---------------------------------------------------------------
+H+                        Th++++
+  theta:
+    a1 = 0.60
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 92Roy/Vog (Table II)
++---------------------------------------------------------------
+Na+                       Th++++
+  theta:
+    a1 = 0.42
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Rai/Fel (Table 3)
++---------------------------------------------------------------
+Mg++                      Th++++
+  theta:
+    a1 = 0.60
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Rai/Fel (Table 3)
++---------------------------------------------------------------
+H+                        UO2++
+  theta:
+    a1 = 0.1377
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Na+                       UO2++
+  theta:
+    a1 = 0.0231
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
+* Also adopted by 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+H+                        Gd+++
+  theta:
+    a1 = 0.07
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 00Roy/Gre (Table III)
++---------------------------------------------------------------
+Ba++                      H+
+  theta:
+    a1 = 0.0991
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Na+                       Co++
+  theta:
+    a1 = 0.0382
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Ca++                      Co++
+  theta:
+    a1 = 0.1722
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Co++                      H+
+  theta:
+    a1 = 0.0829
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Co++                      K+
+  theta:
+    a1 = 0.0559
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Sar/Ana, Table II
++---------------------------------------------------------------
+Cr+++                     K+
+  theta:
+    a1 = -0.07
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 03Chr, p. 916.
++---------------------------------------------------------------
+Cu++                      K+
+  theta:
+    a1 = -0.16
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Chr, Table 4
++---------------------------------------------------------------
+Cu++                      Na+
+  theta:
+    a1 = 0.037
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Cu++                      H+
+  theta:
+    a1 = 0.084
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 93Bae/Rea, Table V, parameter set 11.
++---------------------------------------------------------------
+Mg++                      Na+
+  theta:
+    a1 = 0.070
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 87Pab/Pit
++---------------------------------------------------------------
+Na+                       Mn++
+  theta:
+    a1 = 0.0907
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Ni++                      H+
+  theta:
+    a1 = 0.069
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 00Roy/Cof, Table 2
++---------------------------------------------------------------
+Ni++                      K+
+  theta:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Chr, Table 4
++---------------------------------------------------------------
+Ni++                      Na+
+  theta:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Chr(2), Table 4
++---------------------------------------------------------------
+* aa' combinations
+*---------------------------------------------------------------
+AlO2-                     NO3-
+  theta:
+    a1 = 0.038
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 94Fel/Rus
++---------------------------------------------------------------
+AlO2-                     OH-
+  theta:
+    a1 = 0.014
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 94Fel/Rus
++---------------------------------------------------------------
+Br-                       Cl-
+  theta:
+    a1 = 0.0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+Br-                       OH-
+  theta:
+    a1 = -0.065
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+Cl-                       ClO4-
+  theta:
+    a1 = 0.0341
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Kon/Nec (Table I))
++---------------------------------------------------------------
+Cl-                       CO3--
+  theta:
+    a1 = -0.092
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 82pei/pit
++---------------------------------------------------------------
+Cl-                       HCO3-
+  theta:
+    a1 = 0.0359
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 82pei/pit
++---------------------------------------------------------------
+Cl-                       HSO4-
+  theta:
+    a1 = -0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+Cl-                       NO3-
+  theta:
+    a1 = 0.016
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 116; 25C value)
++---------------------------------------------------------------
+Cl-                       OH-
+  theta:
+    a1 = -0.050
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 87Pab/Pit
++---------------------------------------------------------------
+ClO4-                     OH-
+  theta:
+    a1 = -0.032
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Kon/Kon (Table 4; 25C value)
++---------------------------------------------------------------
+Cl-                       SO4--
+  theta:
+    a1 = 7.03278797E-02
+    a2 = 1.82513459E+02
+    a3 = 1.32573055E+00
+    a4 = -2.33222702E-03
+* Source: refit of 89Gre/Mol [FitPitzerNC_XX_Cl_SO4.xls]
++---------------------------------------------------------------
+ClO4-                     SO4--
+  theta:
+    a1 = 0.02
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Rai/Fel (Table IV)
++---------------------------------------------------------------
+CO3--                     HCO3-
+  theta:
+    a1 = -0.04
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+CO3--                     OH-
+  theta:
+    a1 = 0.1
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+CO3--                     SO4--
+  theta:
+    a1 = 0.02
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+CO3--                     ClO4-
+  theta:
+    a1 = 0.07
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Kon/Kon (Table 4; 25C value)
++---------------------------------------------------------------
+HCO3-                     SO4--
+  theta:
+    a1 = 0.01
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (p. 118; 25C value)
++---------------------------------------------------------------
+HCO3-                     ClO4-
+  theta:
+    a1 = 0.081
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Kon/Kon (Table 4; 25C value)
++---------------------------------------------------------------
+HSO4-                     SO4--
+  theta:
+    a1 = -1.16842489E-01
+    a2 = -3.09083341E+03
+    a3 = -1.40020408E+01
+    a4 = 1.54028230E-02
+* Source: refit of 94Hol/Mes [FitPitzerNC_XX_HSO4_SO4.xls]
++---------------------------------------------------------------
+OH-                       SO4--
+  theta:
+    a1 = -0.013
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 87Pab/Pit
++---------------------------------------------------------------
+OH-                       Cr(OH)4-
+  theta:
+    a1 = 0.014
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Rai/Hes, p. 359.
++---------------------------------------------------------------
+Cl-                       CrO4--
+  theta:
+    a1 = 0.02
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Chr/Iva, p. 992
++---------------------------------------------------------------
+Cl-                       Cr2O7--
+  theta:
+    a1 = 0.1
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Chr, Table 3
++---------------------------------------------------------------
+Br-                       Cr2O7--
+  theta:
+    a1 = -0.05
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Chr, Table 3
++---------------------------------------------------------------
+Cl-                       MoO4--
+  theta:
+    a1 = 0.035
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 92Gra/Mul, p.75
++---------------------------------------------------------------
+* aa' combinations for actinides and other species
+*---------------------------------------------------------------
+Cl-                       TcO4-
+  theta:
+    a1 = 0.067
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+SO4--                     TcO4-
+  theta:
+    a1 = 0.179
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+SO4--                     B(OH)4-
+  theta:
+    a1 = -0.012
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+SO4--                     B3O3(OH)4-
+  theta:
+    a1 = 0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+SO4--                     B4O5(OH)4--
+  theta:
+    a1 = 0.12
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+Cl-                       B(OH)4-
+  theta:
+    a1 = -0.065
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+Cl-                       B3O3(OH)4-
+  theta:
+    a1 = 0.12
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+Cl-                       B4O5(OH)4--
+  theta:
+    a1 = 0.074
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+Cl-                       NpO2(OH)2-
+  theta:
+    a1 = -0.24
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table VI) and 95Fan/Nec (Table 3)
++---------------------------------------------------------------
+Cl-                       NpO2CO3-
+  theta:
+    a1 = -0.21
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table VI)and 95Fan/Nec (Table 3)
++---------------------------------------------------------------
+Cl-                       NpO2(CO3)2---
+  theta:
+    a1 = -0.26
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table VI)and 95Fan/Nec (Table 3)
++---------------------------------------------------------------
+Cl-                       NpO2(CO3)3(5-)
+  theta:
+    a1 = -0.26
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Fel/Rai (Table VI)and 95Fan/Nec (Table 3)
++---------------------------------------------------------------
+ClO4-                     Th(CO3)5(6-)
+  theta:
+    a1 = 5.5
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Fel/Rai (Table I)
++---------------------------------------------------------------
+CO3--                     NpO2(CO3)3(5-)
+  theta:
+    a1 = -1.9
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Mah/Nov (Table 5)
++---------------------------------------------------------------
+HCO3-                     B3O3(OH)4-
+  theta:
+    a1 = -0.10
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+HCO3-                     B4O5(OH)4--
+  theta:
+    a1 = -0.087
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 86Fel/Wea(Table 4)
++---------------------------------------------------------------
+nc and na combinations: lambda(nc) and lambda(na)
++---------------------------------------------------------------
+* Note 1: for each neutral n, lambda(n,i) must be set to zero
+*   for some ion i. All instances of lambdas for that neutral
+*   must be consistent with that convention. Usually this ion is
+*   H+ (Harvie-Moller-Weare convention), but sometimes it is
+*   Cl- (Clegg-Brimblecombe convention). At some future point,
+*   the same reference ion may be required for all neutrals.
+* Note 2: the use of lambda values that are constant with
+*   respect to temperature is often satisfactory.
+*---------------------------------------------------------------
+* nc combinations first, then na combinations
+*---------------------------------------------------------------
+CO2(aq)                   Ca++
+  lambda:
+    a1 = 2.30880472E-01
+    a2 = 5.54029976E+02
+    a3 = 2.36156590E+00
+    a4 = -2.53647159E-03
+* Source: 90Cor/dePab
+* [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+CO2(aq)                   H+
+  lambda:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 93He/Mor (Table 4, p. 3546; thermodynamic convention)
++---------------------------------------------------------------
+CO2(aq)                   K+
+  lambda:
+    a1 = 1.15440236E-01
+    a2 = 2.77014988E+02
+    a3 = 1.18078295E+00
+    a4 = -1.26823580E-03
+* Source: Same as CO2(aq)-Na+; 90Cor/dePab
+* [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+CO2(aq)                   Mg++
+  lambda:
+    a1 = 2.30880472E-01
+    a2 = 5.54029976E+02
+    a3 = 2.36156590E+00
+    a4 = -2.53647159E-03
+* Source: 90Cor/dePab
+* [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+CO2(aq)                   Na+
+  lambda:
+    a1 = 1.15440236E-01
+    a2 = 2.77014988E+02
+    a3 = 1.18078295E+00
+    a4 = -1.26823580E-03
+* Source: 90Cor/dePab
+* [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+O2(aq)                    Al+++
+  lambda:
+    a1 = 0.3095
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Ba++
+  lambda:
+    a1 = 0.285
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Ca++
+  lambda:
+    a1 = 0.2497
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    H+
+  lambda:
+    a1 = 0.035284639
+    a2 = 81.44999999
+    a3 = -8.09461E-11
+    a4 = 1.21206E-13
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    K+
+  lambda:
+    a1 = 1.51915E-01
+    a2 = 1.99431E+02
+    a3 = 7.64677E-10
+    a4 = -1.14341E-12
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Li+
+  lambda:
+    a1 = 0.149
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Mg++
+  lambda:
+    a1 = 2.29806E-01
+    a2 = 3.05513E+02
+    a3 = -2.15815E-10
+    a4 = 3.23403E-13
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+
+  lambda:
+    a1 = 1.60236E-01
+    a2 = 7.28644E+01
+    a3 = -6.16311E-01
+    a4 = 1.84620E-03
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    NH4+
+  lambda:
+    a1 = 0.0751
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+SiO2(aq)                  H+
+  lambda:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 94Fel/Sch (thermodynamic convention)
++---------------------------------------------------------------
+SiO2(aq)                  Mg++
+  lambda:
+    a1 = 0.082109605
+    a2 = -3.83318E-09
+    a3 = -2.32691E-11
+    a4 = -0.0018133
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+SiO2(aq)                  Na+
+  lambda:
+    a1 = -7.88994E-02
+    a2 = -1.43923E-07
+    a3 = -8.63577E-10
+    a4 = 1.18667E-04
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+H3PO4(aq)                 H+
+  lambda:
+    a1 = 0.29
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 95Rai/Fel (Table IV)
++---------------------------------------------------------------
+* nc combinations for actinide species
+*---------------------------------------------------------------
+Pu(OH)3(aq)               Na+
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Nd(OH)3(aq)               Na+
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Cm(OH)3(aq)               Na+
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Am(OH)3(aq)               Na+
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+UO2CO3(aq)                Na+
+  lambda:
+    a1 = 0.05
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+PuO2CO3(aq)               Na+
+  lambda:
+    a1 = 0.05
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+NpO2OH(aq)                Na+
+  lambda:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 95Fan/Nec (Table 3)
++---------------------------------------------------------------
+* na combinations
+*---------------------------------------------------------------
+CO2(aq)                   Cl-
+  lambda:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Cor/dePab
+*   [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
+*   Note: The adopted convention for the lambda (CO2(aq)-Cl) value
+*   in 90Cor/dePab is zero; consistent with that of Clegg and
+*   Brimblecombe (1990).
++---------------------------------------------------------------
+CO2(aq)                   SO4--
+  lambda:
+    a1 = 9.38550573E-02
+    a2 = 6.40651636E+02
+    a3 = 2.19629464E+00
+    a4 = -1.83326325E-03
+* Source: 93Rum/Mau
+* [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+O2(aq)                    Cl-
+  lambda:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
+* Note: this lamda is zero by thermodynamic convention.
++---------------------------------------------------------------
+O2(aq)                    Br-
+  lambda:
+    a1 = -0.0347
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    CO3--
+  lambda:
+    a1 = 0.09648925
+    a2 = -277.074
+    a3 = 2.030064E-10
+    a4 = -3.034302E-13
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    HCO3-
+  lambda:
+    a1 = 0.0854
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    I-
+  lambda:
+    a1 = -0.0744
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    NO3-
+  lambda:
+    a1 = -0.0377
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    OH-
+  lambda:
+    a1 = 5.222539E-02
+    a2 = 1.557100E+01
+    a3 = -2.740323E-10
+    a4 = 4.101025E-13
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    SO4--
+  lambda:
+    a1 = 0.087774406
+    a2 = -2.74085000E+02
+    a3 = 1.32906590E-09
+    a4 = -1.98727658E-12
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+CO2(aq)                   ClO4-
+  lambda:
+    a1 = -0.07
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Kon/Kon (Table 4; 25C value)
++---------------------------------------------------------------
+SiO2(aq)                  Cl-
+  lambda:
+    a1 = 1.42309E-01
+    a2 = 1.67356E+02
+    a3 = 1.50701E+00
+    a4 = -3.21903E-03
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+SiO2(aq)                  NO3-
+  lambda:
+    a1 = 1.34079E-01
+    a2 = 6.30150E+03
+    a3 = 3.55262E+01
+    a4 = -5.02191E-02
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+SiO2(aq)                  SO4--
+  lambda:
+    a1 = 0.07759934
+    a2 = 1.55517E-07
+    a3 = 9.33172E-10
+    a4 = 0.00055333
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+H3PO4(aq)                 H2PO4-
+  lambda:
+    a1 = -0.4
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 95Rai/Fel (Table IV)
++---------------------------------------------------------------
+* na combinations for actinide species
+*---------------------------------------------------------------
+Pu(OH)3(aq)               Cl-
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Nd(OH)3(aq)               Cl-
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Cm(OH)3(aq)               Cl-
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+Am(OH)3(aq)               Cl-
+  lambda:
+    a1 = -0.2
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1).
++---------------------------------------------------------------
+UO2CO3(aq)                ClO4-
+  lambda:
+    a1 = 0.05
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+PuO2CO3(aq)               ClO4-
+  lambda:
+    a1 = 0.05
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Pas/Czer (Table 6)
++---------------------------------------------------------------
+Th(SO4)2(aq)              Cl-
+  lambda:
+    a1 = 0.29
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 99Fel/Rai (Table III)
++---------------------------------------------------------------
+Th(SO4)2(aq)              HSO4-
+  lambda:
+    a1 = 0.68
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 99Fel/Rai (Table III)
++---------------------------------------------------------------
+NpO2OH(aq)                Cl-
+  lambda:
+    a1 = -0.19
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 95Fan/Nec (Table 3)
++---------------------------------------------------------------
+nn combinations: lambda(nn) and mu(nnn)
++---------------------------------------------------------------
+CO2(aq)
+  lambda:
+    a1 = -1.14856224E-02
+    a2 = 1.17299112E+03
+    a3 = 5.62470009E+00
+    a4 = -6.80012749E-03
+  mu:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Cor/dePab
+*   [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+CaCl2(aq)
+  lambda:
+    a1 = 3.7093994
+    a2 = 5485.617426
+    a3 = -1.01905E-10
+    a4 = 0.019903147
+  mu:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98ste/fel (Model 3) 
+* [FitPitzerNC_MX_CaCl_CFJC_Model3_Sterner_et_al_1998.xls]
++---------------------------------------------------------------
+H3PO4(aq)
+  lambda:
+    a1 = 0.0503
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  mu:
+    a1 = 0.0109
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Rai/Fel (Table IV)
++---------------------------------------------------------------
+SiO2(aq)
+  lambda:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+  mu:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: None [template only]
++---------------------------------------------------------------
+nn' combinations: lambda(nn')
++---------------------------------------------------------------
+CO2(aq)                   SiO2(aq)
+  lambda:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: None [template only]
++---------------------------------------------------------------
+cc'a and aa'c combinations: psi(cc'a) and psi(aa'c)
++---------------------------------------------------------------
+* Note: The uncertainties in psi values are often relatively
+*   high. Constant psi values may suffice over a temperature
+*   range. However, the use of 25C values at higher temperatures
+*   can be problematic. This is especially true if the concentration
+*   ranges permitted by mineral solubilities increase signficantly
+*   limited concentration ranges increase significantly with
+*   with temperature. Because the psi parameter is third-order
+*   in concentration, the usual high relative error can lead
+*   to catastrophic results at high concentration at higher
+*   temperature. If a psi parameter is not constrained by real
+*   data at higher temperature, it is often better to ignore
+*   the parameter than to try to use the 25C value.
+*---------------------------------------------------------------
+* cc'a combinations
+*---------------------------------------------------------------
+Ca++                      K+                        Cl-
+  psi:
+    a1 = -4.31889754E-02
+    a2 = -2.70770507E+01
+    a3 = -3.63797881E-12
+    a4 = 3.55271368E-15
+* Source: refit of 89Gre/Mol [FitPitzerNC_MMX_K_Ca_Cl.xls]
++---------------------------------------------------------------
+Ca++                      Na+                       Cl-
+  psi:
+    a1 = -3.00000000E-03
+    a2 = 0.
+    a3 = 1.13686838E-13
+    a4 = -6.66133815E-16
+* Source: refit of 89Gre/Mol [FitPitzerNC_MMX_Na_Ca_Cl.xls]
++---------------------------------------------------------------
+Ca++                      Na+                       SO4--
+  psi:
+    a1 = -1.20000000E-02
+    a2 = 0.00000000E+00
+    a3 = 4.54747351E-13
+    a4 = -2.66453526E-15
+* Source: refit of 89Gre/Mol [FitPitzerNC_MMX_Na_Ca_SO4.xls]
++---------------------------------------------------------------
+K+                        Mg++                      Cl-
+  psi:
+    a1 = -0.022
+    a2 = -14.27
+    a3 = 0.0
+    a4 = 0.0
+* Source: conversion of 87Pab/Pit data to 25C-centric form
+* [Pabalan_icf_TJW.xls]
++---------------------------------------------------------------
+K+                        Na+                       Cl-
+  psi:
+    a1 = -3.69149429E-03
+    a2 = -5.10212917E+00
+    a3 = -3.41060513E-13
+    a4 = 6.66133815E-16
+* Source: refit of 89Gre/Mol [FitPitzerNC_MMX_Na_K_Cl.xls]
++---------------------------------------------------------------
+K+                        Na+                       SO4--
+  psi:
+    a1 = 7.32101065E-03
+    a2 = -7.16090806E+01
+    a3 = -3.94156322E-01
+    a4 = 6.06678643E-04
+* Source: refit of 89Gre/Mol [FitPitzerNC_MMX_Na_K_SO4.xls]
++---------------------------------------------------------------
+Mg++                      Na+                       Cl-
+  psi:
+    a1 = -0.012
+    a2 = -9.51
+    a3 = 0.0
+    a4 = 0.0
+* Source: conversion of 87Pab/Pit data to 25C-centric form
+* [Pabalan_icf_TJW.xls]
++---------------------------------------------------------------
+* cc'a combinations for actinides and other species
+*---------------------------------------------------------------
+H+                        Na+                       HSO4-
+  psi:
+    a1 = -0.0129
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 95Rai/Fel (Table IV)
++---------------------------------------------------------------
+H+                        Na+                       ClO4-
+  psi:
+    a1 = -0.016
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 01Rai/Moo (Table 1)
++---------------------------------------------------------------
+Ca++                      Na+                       ClO4-
+  psi:
+    a1 = -0.02
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 99Kon/Kon (Table 4)
++---------------------------------------------------------------
+Na+                       HCO3-                     ClO4-
+  psi:
+    a1 = -0.019
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 99Kon/Kon (Table 4)
++---------------------------------------------------------------
+Na+                       PuO2++                    ClO4-
+  psi:
+    a1 = -0.0437
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Pas/Cze (Table 6)
++---------------------------------------------------------------
+H+                        UO2++                     ClO4-
+  psi:
+    a1 = -0.0319
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 88Kim/Fre(2) Table IV
++---------------------------------------------------------------
+Cr+++                     Na+                       Cl-
+  psi:
+    a1 = 0.01
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 03Chr, p. 916.
++---------------------------------------------------------------
+Cr+++                     K+                        Cl-
+  psi:
+    a1 = -0.01
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 03Chr, p. 916.
++---------------------------------------------------------------
+Cs+                       Na+                       ClO4-
+  psi:
+    a1 = 0.0026
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Kon/Nec Table I
++---------------------------------------------------------------
+Cs+                       Na+                       Cl-
+  psi:
+    a1 = -0.00135
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+Cs+                       Na+                       SO4--
+  psi:
+    a1 = 0.0023
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+Cs+                       K+                        Cl-
+  psi:
+    a1 = -0.0013
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+Cs+                       K+                        SO4--
+  psi:
+    a1 = -0.0042
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+Cs+                       Mg++                      Cl-
+  psi:
+    a1 = -0.044
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+Cs+                       Mg++                      SO4--
+  psi:
+    a1 = -0.080
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Nec/Kon(2) (Table 2)
++---------------------------------------------------------------
+H+                        Th++++                    Cl-
+  psi:
+    a1 = 0.37
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 92Roy/Vog (Table II)
++---------------------------------------------------------------
+Na+                       Pu+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Nd+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Cm+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Am+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      Pu+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      Nd+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      Cm+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      Am+++                     Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      PuCl++                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      NdCl++                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      CmCl++                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      AmCl++                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      PuCl2+                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      NdCl2+                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      CmCl2+                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Ca++                      AmCl2+                    Cl-
+  psi:
+    a1 = 0.0
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Fan/Kim (Table 1)
++---------------------------------------------------------------
+Na+                       Th++++                    Cl-
+  psi:
+    a1 = 0.21
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Rai/Fel(1) (Table 3)
++---------------------------------------------------------------
+Na+                       UO2++                     ClO4-
+  psi:
+    a1 = -0.0437
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source 88Kim/Fre(2)
++---------------------------------------------------------------
+Mg++                      Th++++                    Cl-
+  psi:
+    a1 = 0.21
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 97Rai/Fel (Table 3)
++---------------------------------------------------------------
+H+                        Gd+++                     Cl-
+  psi:
+    a1 = 0.14
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 00Roy/Gre (Table III)
++---------------------------------------------------------------
+Al+++                     K+                        Cl-
+  psi:
+    a1 = -0.060
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 01Chr.2, Table 4
++---------------------------------------------------------------
+Al+++                     Mg++                      Cl-
+  psi:
+    a1 = -0.024
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 01Chr.2, Table 4
++---------------------------------------------------------------
+Ba++                      H+                        Cl-
+  psi:
+    a1 = -0.0081
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 88Kim/Fre(2) Table IV
++---------------------------------------------------------------
+Na+                       Co++                      Cl-
+  psi:
+    a1 = -0.0056
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 88Kim/Fre(2) Table IV
++---------------------------------------------------------------
+Ca++                      Co++                      Cl-
+  psi:
+    a1 = -0.0332
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 88Kim/Fre(2) (Table IV)
++---------------------------------------------------------------
+Co++                      K+                        Cl-
+  psi:
+    a1 = -0.0315
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Sar/Ana, Table II
++---------------------------------------------------------------
+Co++                      H+                        Cl-
+  psi:
+    a1 = 0.0075
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) Table IV
++---------------------------------------------------------------
+Cu++                      Na+                       Cl-
+  psi:
+    a1 = -0.0129
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2), Table IV
++---------------------------------------------------------------
+Cu++                      Na+                       SO4--
+  psi:
+    a1 = -0.0235
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 00Chr, Table 4
++---------------------------------------------------------------
+Cu++                      K+                        Cl-
+  psi:
+    a1 = -0.001
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Chr, Table 4
++---------------------------------------------------------------
+Cu++                      K+                        SO4--
+  psi:
+    a1 = 0.060
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Chr, Table 4
++---------------------------------------------------------------
+Cu++                      H+                        HSO4-
+  psi:
+    a1 = -0.019
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 93Bae/Rea, Table V, parameter set 11
++---------------------------------------------------------------
+Mg++                      Na+                       TcO4-
+  psi:
+    a1 = -0.020
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Mg++                      H+                        Cl-
+  psi:
+    a1 = -0.011
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 84Har/Mol/Wea as quoted in 03Alt/Met, Table 1
++---------------------------------------------------------------
+Mg++                      MgOH+                     Cl-
+  psi:
+    a1 = 0.028
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 84Har/Mol/Wea as quoted in 03Alt/Met, Table 1
++---------------------------------------------------------------
+Na+                       Mn++                      Cl-
+  psi:
+    a1 = -0.0190
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 88Kim/Fre(2) Table IV
++---------------------------------------------------------------
+Ni++                      H+                        Cl-
+  psi:
+    a1 = 0.0044
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 88Kim/Fre(2) Table IV
++---------------------------------------------------------------
+Ni++                      K+                        Cl-
+  psi:
+    a1 = -0.031
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Christov, Table 4
++---------------------------------------------------------------
+Ni++                      K+                        SO4--
+  psi:
+    a1 = -0.069
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 99Christov, Table 4
++---------------------------------------------------------------
+Ni++                      Na+                       SO4--
+  psi:
+    a1 = -0.015
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Chr(2), Table 4
++---------------------------------------------------------------
+Ni++                      H+                        Br-
+  psi:
+    a1 = 0.06
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 00Roy/Cof, Table 2
++---------------------------------------------------------------
+* caa' combinations
+*---------------------------------------------------------------
+Ca++                      Cl-                       SO4--
+  psi:
+    a1 = -1.80000000E-02
+    a2 = -6.98491931E-10
+    a3 = -2.72848411E-12
+    a4 = 1.77635684E-15
+* Source: refit of 89Gre/Mol [FitPitzerNC_MXX_Ca_Cl_SO4.xls]
++---------------------------------------------------------------
+K+                        Cl-                       SO4--
+  psi:
+    a1 = -1.61523116E-03
+    a2 = 3.75619614E+01
+    a3 = 2.89901436E-12
+    a4 = 2.84698333E-04
+* Source: refit of 89Gre/Mol [FitPitzerNC_MXX_K_Cl_SO4.xls]
++---------------------------------------------------------------
+Mg++                      Cl-                       SO4--
+  psi:
+    a1 = -0.00796
+    a2 = 32.63
+    a3 = 0.
+    a4 = 0.
+* Source: conversion of 87Pab/Pit data to 25C-centric form
+* [Pabalan_icf_TJW.xls]
++---------------------------------------------------------------
+Na+                       AlO2-                     NO3-
+  psi:
+    a1 = 0.0066
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 94Fel/Rus 
++---------------------------------------------------------------
+Na+                       Cl-                       NO3-
+  psi:
+    a1 = -0.006
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 91Pit (Table 16, p. 116)
++---------------------------------------------------------------
+Na+                       HCO3-                     Cl-
+  psi:
+    a1 = -0.0143
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 82pei/pit
++---------------------------------------------------------------
+Na+                       CO3--                     Cl-
+  psi:
+    a1 = 0.016
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 99kon/kon
++---------------------------------------------------------------
+Na+                       AlO2-                     OH-
+  psi:
+    a1 = -0.0048
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 94Fel/Rus
++---------------------------------------------------------------
+Na+                       Cl-                       OH-
+  psi:
+    a1 = -0.00601
+    a2 = -9.93
+    a3 = 0.0
+    a4 = 0.0
+* Source: conversion of 87Pab/Pit data to 25C-centric form
+* [Pabalan_icf_TJW.xls]
++---------------------------------------------------------------
+Na+                       Cl-                       SO4--
+  psi:
+    a1 = -9.08854947E-03
+    a2 = -7.86141517E+01
+    a3 = -5.51999137E-01
+    a4 = 9.46106050E-04
+* * Source: refit of 89Gre/Mol [FitPitzerNC_MXX_Na_Cl_SO4.xls]
++---------------------------------------------------------------
+Na+                       HSO4-                     SO4--
+  psi:
+    a1 = 1.43652661E-02
+    a2 = 2.58084011E+02
+    a3 = 1.16443706E+00
+    a4 = -1.25523553E-03
+* Source: refit of 94Hol/Mes [FitPitzerNC_MXX_Na_HSO4_SO4.xls]
++---------------------------------------------------------------
+Na+                       OH-                       SO4--
+  psi:
+    a1 = -0.0091
+    a2 = -11.69
+    a3 = 0.0
+    a4 = 0.0
+* Source: conversion of 87Pab/Pit data to 25C-centric form
+* [Pabalan_icf_TJW.xls]
++---------------------------------------------------------------
+* caa' combinations for actinides and other species
+*---------------------------------------------------------------
+H+                        HSO4-                     SO4--
+  psi:
+    a1 = 0.02781
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 93Bae/Rea, Table I. (same as 93Hov/Pit).
++---------------------------------------------------------------
+Na+                       ClO4-                     SO4--
+  psi:
+    a1 = 0.0014
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 95Rai/Fel (Table IV)
++---------------------------------------------------------------
+Na+                       B(OH)4-                   Cl-
+  psi:
+    a1 = -0.0073
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 86Fel/Wea (Table 4)
++---------------------------------------------------------------
+Cs+                       TcO4-                     Cl-
+  psi:
+    a1 = -0.0011
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Kon/Nec (p. 567)
++---------------------------------------------------------------
+Cs+                       ClO4-                     Cl-
+  psi:
+    a1 = 0.0023
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Kon/Nec (p. 571)
++---------------------------------------------------------------
+Na+                       ClO4-                     Cl-
+  psi:
+    a1 = -0.0057
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Na+                       TcO4-                     Cl-
+  psi:
+    a1 = -0.0085
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 97Kon/Nec (Table I)
++---------------------------------------------------------------
+K+                        TcO4-                     Cl-
+  psi:
+    a1 = -0.011
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Mg++                      TcO4-                     Cl-
+  psi:
+    a1 = -0.0115
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Ca++                      TcO4-                     Cl-
+  psi:
+    a1 = -0.033
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Na+                       B3O3(OH)4-                Cl-
+  psi:
+    a1 = -0.024
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 86Fel/Wea (Table 4)
++---------------------------------------------------------------
+Na+                       B4O5(OH)4--               Cl-
+  psi:
+    a1 = 0.026
+    a2 = 0.0
+    a3 = 0.0
+    a4 = 0.0
+* Source: 86Fel/Wea (Table 4)
++---------------------------------------------------------------
+Na+                       TcO4-                     SO4--
+  psi:
+    a1 = -0.003
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+K+                        TcO4-                     SO4--
+  psi:
+    a1 = 0.002
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Mg++                      TcO4-                     SO4--
+  psi:
+    a1 = -0.030
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Cs+                       TcO4-                     SO4--
+  psi:
+    a1 = 0.024
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(2) (Table 3)
++---------------------------------------------------------------
+Ca++                      TcO4-                     SO4--
+  psi:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Nec/Kon(1) (Table IV)
++---------------------------------------------------------------
+Na+                       OH-                       Cr(OH)4-
+  psi:
+    a1 = -0.0048
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Rai/Hes, Table IV
++---------------------------------------------------------------
+K+                        Cl-                       CrO4--
+  psi:
+    a1 = 0.035
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Chr/Iva, p. 993
++---------------------------------------------------------------
+Na+                       Cl-                       CrO4--
+  psi:
+    a1 = -0.004
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 02Chr/Iva, p. 992
++---------------------------------------------------------------
+K+                        Cl-                       Cr2O7--
+  psi:
+    a1 = -0.70
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Chr, Table 3
++---------------------------------------------------------------
+K+                        Br-                       Cr2O7--
+  psi:
+    a1 = -0.70
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Chr, Table 3
++---------------------------------------------------------------
+K+                        SO4--                     Cr2O7--
+  psi:
+    a1 = -0.70
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 98Chr, Table 3
++---------------------------------------------------------------
+Cu++                      Cl-                       SO4--
+  psi:
+    a1 = 0.01
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 00Chr, Table 4
++---------------------------------------------------------------
+Na+                       Cl-                       MoO4--
+  psi:
+    a1 = 0.0032
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 92Gra/Mul, p.75
++---------------------------------------------------------------
+nca combinations: zeta(nca)
++---------------------------------------------------------------
+CO2(aq)                   Na+                       Cl-
+  zeta:
+    a1 = -7.56938326E-03
+    a2 = 0
+    a3 = 0
+    a4 = 6.05286344E-06
+* Source: 90Cor/dePab
+* [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+CO2(aq)                   Na+                       SO4--
+  zeta:
+    a1 = -1.0500E-02
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 93Rum/Mau
+* [FitPitzerMX_Ca-HCO3_NMX_CO2_CFJC2.xls]
++---------------------------------------------------------------
+O2(aq)                    Ba++                      Cl-
+  zeta:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Ca++                      Cl-
+  zeta:
+    a1 = -0.0169
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Ca++                      NO3-
+  zeta:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    H+                        Cl-
+  zeta:
+    a1 = -0.0077
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    K+                        Br-
+  zeta:
+    a1 = -0.00541
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    K+                        Cl-
+  zeta:
+    a1 = -0.0211
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    K+                        OH-
+  zeta:
+    a1 = -7.06411904E-03
+    a2 = -1.50750433E+01
+    a3 = -4.52071983E-02
+    a4 = 4.50984598E-05
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    K+                        NO3-
+  zeta:
+    a1 = -0.0281
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    K+                        SO4--
+  zeta:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Li+                       Cl-
+  zeta:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+                       Br-
+  zeta:
+    a1 = -0.00909
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+                       Cl-
+  zeta:
+    a1 = -9.18665101E-03
+    a2 = -2.73899999E+00
+    a3 = 3.25992090E-11
+    a4 = -4.87958604E-14
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+                       CO3--
+  zeta:
+    a1 = -0.0181
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+                       HCO3-
+  zeta:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+                       NO3-
+  zeta:
+    a1 = -0.012
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+                       OH-
+  zeta:
+    a1 = -0.0125
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    Na+                       SO4--
+  zeta:
+    a1 = -0.046
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
++---------------------------------------------------------------
+O2(aq)                    NH4+                      SO4--
+  zeta:
+    a1 = 0.
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 90Clegg/Brimb [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
+* NOTE: The above value for a1 is actually -0.028 per [FitPitzerNC_lambdas_zetas_O2_CFJC.xls]
+* See also ANL-EBS-MD-000045 Rev 03
++---------------------------------------------------------------
+SiO2(aq)                  H+                        NO3-
+  zeta:
+    a1 = -0.0033
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+SiO2(aq)                  Mg++                      Cl-
+  zeta:
+    a1 = -0.051469246
+    a2 = 1.49594E-08
+    a3 = 8.98686E-11
+    a4 = 0.000594133
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+SiO2(aq)                  Na+                       Cl-
+  zeta:
+    a1 = -8.47766E-15
+    a2 = -1.84314E-08
+    a3 = -1.10633E-10
+    a4 = -0.0002
+* Source: 94Fel/Sch [Pitzer_NMX_SiO2.xls]
+* Comment: refit valid to 100C.
++---------------------------------------------------------------
+nnn' combinations: mu(nnn')
++---------------------------------------------------------------
+CO2(aq)                   CO2(aq)                   SiO2(aq)
+  mu:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: None [template]
++---------------------------------------------------------------
+SiO2(aq)                  SiO2(aq)                  CO2(aq)
+  mu:
+    a1 = 0
+    a2 = 0
+    a3 = 0
+    a4 = 0
+* Source: None [template]
++--------------------------------------------------------------------
+elements
++--------------------------------------------------------------------
+O         15.99940
+Al        26.98154
+Ba       137.32700
+Br        79.90400
+C         12.01100
+Ca        40.07800
+Cl        35.45270
+Cr        51.99610
+Cs       132.90543
+F         18.99840
+Fe        55.84700
+H          1.00794
+I        126.90447
+K         39.09830
+Li         6.94100
+Mg        24.30500
+Mn        54.93805
+Mo        95.94000
+N         14.00674
+Na        22.98977
+P         30.97376
+Rb        85.46780
+S         32.06600
+Si        28.08550
+Sr        87.62000
+B         10.81100
+Am       243.
+Cm       247.
+Gd       157.25000
+Nd       144.24000
+Np       237.
+Pu       244.
+Tc       99.
+Th       232.03810
+U        238.02890
+Co        58.93320
+Cu        63.54600
+Ni        58.69340
+Zn        65.39000
+Zr        91.22400
++--------------------------------------------------------------------
+basis species
++--------------------------------------------------------------------
+H2O
+     charge  =   0.0
+****
+     2 element(s):
+      2.0000 H              1.0000 O
+****
++--------------------------------------------------------------------
+Al+++
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Al
+****
++--------------------------------------------------------------------
+Ba++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Ba
+****
++--------------------------------------------------------------------
+Br-
+     charge  =  -1.0
+****
+     1 element(s):
+      1.0000 Br
+****
++--------------------------------------------------------------------
+HCO3-
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 C              1.0000 H              3.0000 O
+****
++--------------------------------------------------------------------
+Ca++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Ca
+****
++--------------------------------------------------------------------
+Cl-
+     charge  =  -1.0
+****
+     1 element(s):
+      1.0000 Cl
+****
++--------------------------------------------------------------------
+Cr+++
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Cr
+****
++--------------------------------------------------------------------
+Cs+
+     charge  =   1.0
+****
+     1 element(s):
+      1.0000 Cs
+****
++--------------------------------------------------------------------
+F-
+     charge  =  -1.0
+****
+     1 element(s):
+      1.0000 F
+****
++--------------------------------------------------------------------
+Fe++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Fe
+****
++--------------------------------------------------------------------
+H+
+     charge  =   1.0
+****
+     1 element(s):
+      1.0000 H
+****
++--------------------------------------------------------------------
+I-
+     charge  =  -1.0
+****
+     1 element(s):
+      1.0000 I
+****
++--------------------------------------------------------------------
+K+
+     charge  =   1.0
+****
+     1 element(s):
+      1.0000 K
+****
++--------------------------------------------------------------------
+Li+
+     charge  =   1.0
+****
+     1 element(s):
+      1.0000 Li
+****
++--------------------------------------------------------------------
+Mg++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Mg
+****
++--------------------------------------------------------------------
+Mn++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Mn
+****
++--------------------------------------------------------------------
+MoO4--
+     charge  =  -2.0
+****
+     2 element(s):
+      1.0000 Mo             4.0000 O
+****
++--------------------------------------------------------------------
+NO3-
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 N              3.0000 O
+****
++--------------------------------------------------------------------
+Na+
+     charge  =   1.0
+****
+     1 element(s):
+      1.0000 Na
+****
++--------------------------------------------------------------------
+HPO4--
+     charge  =  -2.0
+****
+     3 element(s):
+      1.0000 H              4.0000 O              1.0000 P
+****
++--------------------------------------------------------------------
+Rb+
+     charge  =   1.0
+****
+     1 element(s):
+      1.0000 Rb
+****
++--------------------------------------------------------------------
+SO4--
+     charge  =  -2.0
+****
+     2 element(s):
+      4.0000 O              1.0000 S
+****
++--------------------------------------------------------------------
+SiO2(aq)
+     charge  =   0.0
+****
+     2 element(s):
+      2.0000 O              1.0000 Si
+****
++--------------------------------------------------------------------
+Sr++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Sr
+****
++--------------------------------------------------------------------
+B(OH)3(aq)
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 B              3.0000 H              3.0000 O
+****
++--------------------------------------------------------------------
+Am+++
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Am
+****
++--------------------------------------------------------------------
+Cm+++
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Cm
+****
++--------------------------------------------------------------------
+Gd+++
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Gd
+****
++--------------------------------------------------------------------
+Nd+++
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Nd
+****
++--------------------------------------------------------------------
+NpO2+
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Np             2.0000 O
+****
++--------------------------------------------------------------------
+PuO2+
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Pu             2.0000 O
+****
++--------------------------------------------------------------------
+TcO4-
+     charge  =  -1.0
+****
+     2 element(s):
+      4.0000 O              1.0000 Tc
+****
++--------------------------------------------------------------------
+Th++++
+     charge  =   4.0
+****
+     1 element(s):
+      1.0000 Th
+****
++--------------------------------------------------------------------
+UO2++
+     charge  =   2.0
+****
+     2 element(s):
+      2.0000 O              1.0000 U
+****
++--------------------------------------------------------------------
+Co++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Co
+****
++--------------------------------------------------------------------
+Cu++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Cu
+****
++--------------------------------------------------------------------
+Ni++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Ni
+****
++--------------------------------------------------------------------
+Zn++
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Zn
+****
++--------------------------------------------------------------------
+Zr++++
+     charge  =   4.0
+****
+     1 element(s):
+      1.0000 Zr
+****
++--------------------------------------------------------------------
+O2(g)
+     charge  =   0.0
+****
+     1 element(s):
+      2.0000 O
+****
++--------------------------------------------------------------------
+auxiliary basis species
++--------------------------------------------------------------------
+ClO4-
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 Cl             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  ClO4-                        1.0000  Cl-
+     2.0000  O2(g)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        22.1034   21.5057   20.7973   20.1214
+        19.4174   18.8212   18.2962   17.8103
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CrO4--
+     sp.type =  aux
+     charge  =  -2.0
+****
+     2 element(s):
+      1.0000 Cr             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  CrO4--                      -5.0000  H+
+     0.7500  O2(g)                        1.0000  Cr+++
+     2.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.3037   11.8888   10.4704    9.3902
+         8.5746    8.1635    8.0620    8.2996
+* Source: data0.ymp.R2; reversed sign
++--------------------------------------------------------------------
+Fe+++
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Fe
+****
+     5 species in reaction:
+    -1.0000  Fe+++                       -0.5000  H2O
+     0.2500  O2(g)                        1.0000  Fe++
+     1.0000  H+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -9.3693   -7.7654   -5.9151   -4.2176
+        -2.5286   -1.1656   -0.0198    0.9786
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+H2(aq)
+     charge  =   0.0
+****
+     1 element(s):
+      2.0000 H
+****
+     3 species in reaction:
+    -1.0000  H2(aq)                      -0.5000  O2(g)
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        49.1500   44.6575   39.4400   34.6224
+        29.8242   25.9892   22.8409   20.1881
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HPO3--
+     sp.type =  aux
+     charge  =  -2.0
+****
+     3 element(s):
+      1.0000 H              3.0000 O              1.0000 P
+****
+     3 species in reaction:
+    -1.0000  HPO3--                      -0.5000  O2(g)
+     1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        53.7617   48.6057   42.6351   37.1358
+        31.6711   27.3143   23.7497   20.7711
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HS-
+     sp.type =  aux
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 H              1.0000 S
+****
+     4 species in reaction:
+    -1.0000  HS-                         -2.0000  O2(g)
+     1.0000  H+                           1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       146.7859  132.5203  116.0105  100.8144
+        85.7147   73.6540   63.7280   55.2988
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Mn+++
+     sp.type =  aux
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Mn
+****
+     5 species in reaction:
+    -1.0000  Mn+++                       -0.5000  H2O
+     0.2500  O2(g)                        1.0000  H+
+     1.0000  Mn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.9465    4.7324    5.6681    6.5533
+         7.4678    8.2424    8.9310    9.5653
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+MnO4--
+     sp.type =  aux
+*    revised =  11-jul-2000
+     charge  =  -2.0
+****
+     2 element(s):
+      1.0000 Mn             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  MnO4--                      -4.0000  H+
+     1.0000  Mn++                         1.0000  O2(g)
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        37.5469   35.2396   32.8320   30.8816
+        29.2557   28.2614   27.7523   27.7201
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NH4+
+     charge  =   1.0
+****
+     2 element(s):
+      4.0000 H              1.0000 N
+****
+     5 species in reaction:
+    -1.0000  NH4+                         2.0000  H+
+     1.0000  H2O                          1.0000  NO3-
+    -2.0000  O2(g)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        52.7954   47.0625   40.4141   34.2836
+        28.1770   23.2805   19.2218   15.7197
+* Source: data0.ymp.R2
+* (Obtained by combining the reactions on data0.ymp.R2 for NH4+ and NH3(aq))
+* [AuxBasisSpecies.xls]
++--------------------------------------------------------------------
+NO2-
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 N              2.0000 O
+****
+     3 species in reaction:
+    -1.0000  NO2-                        -0.5000  O2(g)
+     1.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        15.4265   13.7857   11.9100   10.2042
+         8.5327    7.2212    6.1674    5.3062
+* Source: data0.ymp.R2
+* (Obtained by combining the reactions on data0.ymp.R2 for NO2- and NO3-)
+* [AuxBasisSpecies.xls]
++--------------------------------------------------------------------
+SO3--
+     sp.type =  aux
+     charge  =  -2.0
+****
+     2 element(s):
+      3.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  SO3--                       -0.5000  O2(g)
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        49.5676   45.1752   40.1313   35.5297
+        31.0086   27.4518   24.5835   22.2231
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Am++
+     sp.type =  aux
+     charge  =   2.0
+****
+     1 element(s):
+      1.0000 Am
+****
+     5 species in reaction:
+    -1.0000  Am++                        -1.0000  H+
+    -0.2500  O2(g)                        0.5000  H2O
+     1.0000  Am+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        66.1230   59.6550   52.1783   45.3165
+        38.5253   33.1271   28.7110   25.0128
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Am++++
+     sp.type =  aux
+     charge  =   4.0
+****
+     1 element(s):
+      1.0000 Am
+****
+     5 species in reaction:
+    -1.0000  Am++++                      -0.5000  H2O
+     0.2500  O2(g)                        1.0000  Am+++
+     1.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        24.4899   23.4320   22.1496   20.9176
+        19.6484   18.6122   17.7614   17.0643
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmO2+
+     sp.type =  aux
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Am             2.0000 O
+****
+     5 species in reaction:
+    -1.0000  AmO2+                       -2.0000  H+
+     0.5000  O2(g)                        1.0000  Am+++
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        18.4277   16.8332   15.0507   13.4700
+        11.9471   10.7457    9.7386    8.8443
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmO2++
+     sp.type =  aux
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Am             2.0000 O
+****
+     5 species in reaction:
+    -1.0000  AmO2++                      -1.0000  H+
+     0.5000  H2O                          0.7500  O2(g)
+     1.0000  Am+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        24.7620   23.0358   21.0145   19.1413
+        17.2626   15.7368   14.4484   13.3263
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+BH4-
+     sp.type =  aux
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 B              4.0000 H
+****
+     5 species in reaction:
+    -1.0000  BH4-                        -2.0000  O2(g)
+    -1.0000  H+                           1.0000  B(OH)3(aq)
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       253.9170  231.3073  205.4201  181.8507
+       158.7428  140.6243  126.1057  114.3374
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Np+++
+     sp.type =  aux
+*    EQ3/6   =  ymp.R0, ymp.R2
+     YMP Qualification status = Q
+*    mol.wt. = 237.000 g/mol
+*    DHazero =   9.0
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Np
+****
+     5 species in reaction:
+    -1.0000  Np+++                       -1.0000  H2O
+    -0.5000  O2(g)                        2.0000  H+
+     1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        30.2579   27.6311   24.5634   21.7116
+        18.8682   16.6225   14.8388   13.4272
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Np++++
+     sp.type =  aux
+     charge  =   4.0
+****
+     1 element(s):
+      1.0000 Np
+****
+     5 species in reaction:
+    -1.0000  Np++++                      -1.5000  H2O
+    -0.2500  O2(g)                        3.0000  H+
+     1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        10.3964   10.5500   10.6102   10.5572
+        10.4156   10.2690   10.1733   10.1622
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NpO2++
+     sp.type =  aux
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Np             2.0000 O
+****
+     5 species in reaction:
+    -1.0000  NpO2++                      -0.5000  H2O
+     0.2500  O2(g)                        1.0000  H+
+     1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -1.6314   -1.1851   -0.7603   -0.4470
+        -0.2064   -0.0606    0.0386    0.1247
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+PO4---
+     charge  =  -3.0
+****
+     2 element(s):
+      4.0000 O              1.0000 P
+****
+     3 species in reaction:
+    -1.0000  PO4---                      -1.0000  H+
+     1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        12.6143   12.3218   12.1388   12.1176
+        12.2727   12.5798   13.0291   13.6570
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Pu+++
+     sp.type =  aux
+     charge  =   3.0
+****
+     1 element(s):
+      1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  Pu+++                       -1.0000  H2O
+    -0.5000  O2(g)                        2.0000  H+
+     1.0000  PuO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         6.8918    6.3912    5.7651    5.1429
+         4.4937    3.9785    3.5945    3.3384
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Pu++++
+     sp.type =  aux
+     charge  =   4.0
+****
+     1 element(s):
+      1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  Pu++++                      -1.5000  H2O
+    -0.2500  O2(g)                        3.0000  H+
+     1.0000  PuO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         2.3229    3.3087    4.3247    5.1444
+         5.8616    6.3924    6.8445    7.2858
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+PuO2++
+     sp.type =  aux
+     charge  =   2.0
+****
+     2 element(s):
+      2.0000 O              1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  PuO2++                      -0.5000  H2O
+     0.2500  O2(g)                        1.0000  H+
+     1.0000  PuO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -5.8743   -4.9576   -3.9924   -3.1857
+        -2.4595   -1.9308   -1.5218   -1.1800
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+TcO++
+     sp.type =  aux
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 O              1.0000 Tc
+****
+     5 species in reaction:
+    -1.0000  TcO++                       -1.5000  H2O
+    -0.7500  O2(g)                        1.0000  TcO4-
+     3.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   28.8779  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+U++++
+     sp.type =  aux
+     charge  =   4.0
+****
+     1 element(s):
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  U++++                       -1.0000  H2O
+    -0.5000  O2(g)                        1.0000  UO2++
+     2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        34.7704   32.5032   29.8712   27.4343
+        25.0144   23.1150   21.6202   20.4500
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+O2(aq)
+     charge  =   0.0
+****
+     1 element(s):
+      2.0000 O
+****
+     2 species in reaction:
+    -1.0000  O2(aq)                       1.0000  O2(g)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         2.6567    2.8983    3.0633    3.1076
+         3.0354    2.8742    2.6488    2.3537
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+OH-
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 H              1.0000 O
+****
+     3 species in reaction:
+    -1.0000  OH-                         -1.0000  H+
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        14.9398   13.9951   13.0272   12.2551
+        11.6308   11.2836   11.1675   11.3002
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CO3--
+     charge  =  -2.0
+****
+     2 element(s):
+      1.0000 C              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  CO3--                       -1.0000  H+
+     1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        10.6241   10.3288   10.1304   10.0836
+        10.2003   10.4648   10.8707   11.4638
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+aqueous species
++--------------------------------------------------------------------
+AlO2-
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 Al             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  AlO2-                       -4.0000  H+
+     1.0000  Al+++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   22.8790  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table 5.1.1
++--------------------------------------------------------------------
+AlOH++
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Al             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  AlOH++                      -1.0000  H+
+     1.0000  Al+++                        1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.9570  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table 5.1.1
++--------------------------------------------------------------------
+AlO+
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Al             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  AlO+                        -2.0000  H+
+     1.0000  Al+++                        1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   10.5940  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table 5.1.1
++--------------------------------------------------------------------
+HAlO2(aq)
+     charge  =  0.0
+****
+     3 element(s):
+      1.0000 Al             2.0000 O              1.0000 H
+****
+     4 species in reaction:
+    -1.0000  HAlO2(aq)                   -3.0000  H+
+     1.0000  Al+++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   16.4320  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table 5.1.1
++--------------------------------------------------------------------
+AlF++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Al             1.0000 F
+****
+     3 species in reaction:
+    -1.0000  AlF++                        1.0000  Al+++
+     1.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -7.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AlF2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Al             2.0000 F
+****
+     3 species in reaction:
+    -1.0000  AlF2+                        1.0000  Al+++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -12.6000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AlF3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     2 element(s):
+      1.0000 Al             3.0000 F
+****
+     3 species in reaction:
+    -1.0000  AlF3(aq)                     1.0000  Al+++
+     3.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -16.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AlF4-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     2 element(s):
+      1.0000 Al             4.0000 F
+****
+     3 species in reaction:
+    -1.0000  AlF4-                        1.0000  Al+++
+     4.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -19.4000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
+* data0.ymp.R2 = -19.1
++--------------------------------------------------------------------
+B(OH)4-
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 B              4.0000 H              4.0000 O
+****
+     4 species in reaction:
+    -1.0000  B(OH)4-                      1.0000  H2O
+    -1.0000  H+                           1.0000  B(OH)3(aq)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.2390  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+B3O3(OH)4-
+     charge  =  -1.0
+****
+     3 element(s):
+      3.0000 B              4.0000 H              7.0000 O
+****
+     4 species in reaction:
+    -1.0000  B3O3(OH)4-                  -2.0000  H2O
+    -1.0000  H+                           3.0000  B(OH)3(aq)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.6188  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+B4O5(OH)4--
+     charge  =  -2.0
+****
+     3 element(s):
+      4.0000 B              4.0000 H              9.0000 O
+****
+     4 species in reaction:
+    -1.0000  B4O5(OH)4--                 -3.0000  H2O
+    -2.0000  H+                           4.0000  B(OH)3(aq)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   16.2554  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+CaB(OH)4+
+     charge  =   1.0
+****
+     4 element(s):
+      1.0000 Ca             1.0000 B              4.0000 H
+      4.0000 O
+****
+     5 species in reaction:
+    -1.0000  CaB(OH)4+                    1.0000  Ca++
+    -1.0000  H+                           1.0000  B(OH)3(aq)
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.5886  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+CaCO3(aq)
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 C              1.0000 Ca             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  CaCO3(aq)                   -1.0000  H+
+     1.0000  Ca++                         1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         7.5046    7.0017    6.4546    5.9746
+         5.4924    5.0570    4.5885    3.9784
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CaOH+
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Ca             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  CaOH+                       -1.0000  H+
+     1.0000  Ca++                         1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        14.0851   12.8333   11.4163   10.1423
+         8.9034    7.9283    7.1264    6.4342
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CaSO4(aq)
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Ca             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  CaSO4(aq)                    1.0000  Ca++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -1.2151   -1.6503   -2.1498   -2.6059
+        -3.0548   -3.7203   -4.6901   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Cm(OH)3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Cm             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cm(OH)3(aq)                 -3.0000  H+
+     1.0000  Cm+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   25.7218  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2; same as Am(OH)3(aq)
++--------------------------------------------------------------------
+CaCl+
+     sp.type =  aqueous
+     YMP Qualification status = un-Q
+*    mol.wt. =  75.531 g/mol
+*    DHazero =   4.0
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Ca             1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  CaCl+                        1.0000  Ca++
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.7865    0.7659    0.6105    0.3008
+        -0.2261   -0.8623   -1.5765  500.0000
+*
+* Source: 98ste/fel (Model 3) 
+* [FitPitzerNC_MX_CaCl_CFJC_Model3_Sterner_et_al_1998.xls]
++--------------------------------------------------------------------
+CaCl2(aq)
+     sp.type =  aqueous
+*    EQ3/6   =
+     YMP Qualification status = un-Q
+*    mol.wt. = 110.983 g/mol
+*    DHazero =   3.0
+     charge  =   0.0
+****
+     2 element(s):
+      1.0000 Ca             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  CaCl2(aq)                    1.0000  Ca++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        20.3922   16.4677   12.1405    8.4156
+         5.0495    2.6927    1.0556  500.0000
+*
+* Source: 98ste/fel (Model 3) 
+* [FitPitzerNC_MX_CaCl_CFJC_Model3_Sterner_et_al_1998.xls]
++--------------------------------------------------------------------
+CO2(aq)
+     charge  =   0.0
+****
+     2 element(s):
+      1.0000 C              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  CO2(aq)                     -1.0000  H2O
+     1.0000  H+                           1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -6.5804   -6.3447   -6.2684   -6.3882
+        -6.7235   -7.1969   -7.7868   -8.5280
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Cr2O7--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     2 element(s):
+      2.0000 Cr             7.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cr2O7--                     -1.0000  H2O
+     2.0000  CrO4--                       2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -14.9370  -14.7024  -14.6961  -14.9431
+       -15.4932  -16.2543  -17.2399  -18.5679
+*
+* In excellent agreement with 98Bal/Nor -14.7(0.1), Table 9
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+FeCl+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Cl             1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeCl+                        1.0000  Cl-
+     1.0000  Fe++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.1522    0.1605    0.0364   -0.2061
+        -0.6047   -1.0921   -1.6835   -2.4419
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+FeHCO3+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     4 element(s):
+      1.0000 C              1.0000 Fe             1.0000 H
+      3.0000 O
+****
+     3 species in reaction:
+    -1.0000  FeHCO3+                      1.0000  Fe++
+     1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.4700  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+FeCO3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 C              1.0000 Fe             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  FeCO3(aq)                   -1.0000  H+
+     1.0000  Fe++                         1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.8788  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Fe(CO3)2--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     3 element(s):
+      2.0000 C              1.0000 Fe             6.0000 O
+****
+     3 species in reaction:
+    -1.0000  Fe(CO3)2--                   1.0000  Fe++
+     2.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -7.1600  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao (Table 1)
++--------------------------------------------------------------------
+FeOH+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Fe             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  FeOH+                       -1.0000  H+
+     1.0000  Fe++                         1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.5100  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao (Table 1)
++--------------------------------------------------------------------
+Fe(OH)2(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Fe             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Fe(OH)2(aq)                 -2.0000  H+
+     1.0000  Fe++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   20.6100  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao (Table 1)
++--------------------------------------------------------------------
+FeOH++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Fe             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  FeOH++                      -1.0000  H+
+     1.0000  Fe+++                        1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.1000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 99Liu/Mil
++--------------------------------------------------------------------
+Fe(OH)2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Fe             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Fe(OH)2+                    -2.0000  H+
+     1.0000  Fe+++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    6.3000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 99Liu/Mil
++--------------------------------------------------------------------
+Fe(OH)3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Fe             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Fe(OH)3(aq)                 -3.0000  H+
+     1.0000  Fe+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   14.3000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 99Liu/Mil
++--------------------------------------------------------------------
+Fe(OH)4-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Fe             4.0000 H              4.0000 O
+****
+     4 species in reaction:
+    -1.0000  Fe(OH)4-                    -4.0000  H+
+     1.0000  Fe+++                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   22.3000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 99Liu/Mil
++--------------------------------------------------------------------
+FeSO4+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Fe             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  FeSO4+                       1.0000  Fe+++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -4.2700  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao
++--------------------------------------------------------------------
+Fe(SO4)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Fe             8.0000 O              2.0000 S
+****
+     3 species in reaction:
+    -1.0000  Fe(SO4)2-                    1.0000  Fe+++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -6.1100  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao
++--------------------------------------------------------------------
+FeCl++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Cl             1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeCl++                       1.0000  Cl-
+     1.0000  Fe+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.2800  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao
++--------------------------------------------------------------------
+FeCl2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      2.0000 Cl             1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeCl2+                       2.0000  Cl-
+     1.0000  Fe+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.1600  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao
++--------------------------------------------------------------------
+FeF+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 F              1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeF+                         1.0000  F-
+     1.0000  Fe++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -1.4631   -1.4272   -1.5151   -1.7150
+        -2.0595   -2.4951   -3.0404   -3.7621
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+FeF++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 F              1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeF++                        1.0000  F-
+     1.0000  Fe+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -6.0300  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao
++--------------------------------------------------------------------
+FeF2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      2.0000 F              1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeF2+                        1.0000  Fe+++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -10.6600  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 95Mil/Yao
++--------------------------------------------------------------------
+HSO4-
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 H              4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  HSO4-                        1.0000  H+
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -1.7193   -1.9791   -2.4371   -3.0002
+        -3.7234   -4.4683   -5.2633   -6.1799
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HSiO3-
+     sp.type =  aqueous
+*    EQ3/6   =
+     YMP Qualification status = un-Q
+*    mol.wt. =  77.092 g/mol
+*    DHazero =   4.0
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 H              3.0000 O              1.0000 Si
+****
+     4 species in reaction:
+    -1.0000  HSiO3-                      -1.0000  H+
+     1.0000  H2O                          1.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        10.2895    9.8419    9.3658    9.0315
+         8.8598    8.8949    9.0985    9.4741
+*
+* Source: 97sve/sho 
+* [Silicic_acid_data0_ymp_R5.xls and file HSiO3_aq_species.kxy]
++--------------------------------------------------------------------
+H2PO4-
+     charge  =  -1.0
+****
+     3 element(s):
+      2.0000 H              4.0000 O              1.0000 P
+****
+     3 species in reaction:
+    -1.0000  H2PO4-                       1.0000  H+
+     1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -7.3231   -7.2054   -7.1888   -7.2876
+        -7.5259   -7.8671   -8.3189   -8.9357
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+H3PO4(aq)
+     charge  =   0.0
+****
+     3 element(s):
+      3.0000 H              4.0000 O              1.0000 P
+****
+     3 species in reaction:
+    -1.0000  H3PO4(aq)                    1.0000  HPO4--
+     2.0000  H+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -9.3933   -9.3751   -9.5434   -9.8805
+       -10.4425  -11.1429  -12.0169  -13.1928
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+MgCO3(aq)
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 C              1.0000 Mg             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  MgCO3(aq)                   -1.0000  H+
+     1.0000  HCO3-                        1.0000  Mg++
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         7.7424    7.3499    6.9292    6.5742
+         6.2284    5.9109    5.5428    5.0192
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+MgHCO3+
+     charge  =   1.0
+****
+     4 element(s):
+      1.0000 C              1.0000 H              1.0000 Mg
+      3.0000 O
+****
+     3 species in reaction:
+    -1.0000  MgHCO3+                      1.0000  HCO3-
+     1.0000  Mg++
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -1.0770   -1.0357   -1.1604   -1.4229
+        -1.8523   -2.3688   -2.9844   -3.7577
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+MgOH+
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 H              1.0000 Mg             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  MgOH+                       -1.0000  H+
+     1.0000  H2O                          1.0000  Mg++
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        12.6741   11.6825   10.5017    9.3988
+         8.2907    7.3921    6.6344    5.9667
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NH3(aq)
+     charge  =   0.0
+****
+     2 element(s):
+      1.0000 N              3.0000 H
+****
+     3 species in reaction:
+    -1.0000  NH3(aq)                     -1.0000  H+
+     1.0000  NH4+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        10.0691    9.2410    8.2847    7.4010
+         6.5156    5.7992    5.1995    4.6767
+* Source: data0.ymp.R2
+* (reversed the reaction and data  for NH4+ as given in data0.ymp.R2)
++--------------------------------------------------------------------
+MgB(OH)4+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     4 element(s):
+      1.0000 Mg             1.0000 B              4.0000 H
+      4.0000 O
+****
+     5 species in reaction:
+    -1.0000  MgB(OH)4+                    1.0000  Mg++
+    -1.0000  H+                           1.0000  B(OH)3(aq)
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.8397  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 86Fel/Wea [Minerals_Aq_Species_Solid_Boron_Actn.xls]
+*--------------------------------------------------------------------
+* Newly Added Actinide and Transition Metal Species
++--------------------------------------------------------------------
+Am(CO3)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Am             1.0000 C              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Am(CO3)+                     1.0000  Am+++
+     1.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.1000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(CO3)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Am             2.0000 C              6.0000 O
+****
+     3 species in reaction:
+    -1.0000  Am(CO3)2-                    1.0000  Am+++
+     2.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(CO3)3---
+     sp.type =  aqueous
+     charge  =  -3.0
+****
+     3 element(s):
+      1.0000 Am             3.0000 C              9.0000 O
+****
+     3 species in reaction:
+    -1.0000  Am(CO3)3---                  1.0000  Am+++
+     3.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.2000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(CO3)4(5-)
+     sp.type =  aqueous
+     charge  =  -5.0
+****
+     3 element(s):
+      1.0000 Am             4.0000 C             12.0000 O
+****
+     3 species in reaction:
+    -1.0000  Am(CO3)4(5-)                 1.0000  Am+++
+     4.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(OH)2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Am             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Am(OH)2+                    -2.0000  H+
+     2.0000  H2O                          1.0000  Am+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.6902  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(OH)++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Am             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Am(OH)++                    -1.0000  H+
+     1.0000  H2O                          1.0000  Am+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.5551  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(SO4)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Am             8.0000 O              2.0000 S
+****
+     3 species in reaction:
+    -1.0000  Am(SO4)2-                    1.0000  Am+++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(SO4)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Am             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Am(SO4)+                     1.0000  Am+++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.2500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+AmCl++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Am             1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  AmCl++                       1.0000  Am+++
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.2400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+AmCl2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Am             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  AmCl2+                       1.0000  Am+++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.7400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Am(OH)3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Am             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Am(OH)3(aq)                 -3.0000  H+
+     1.0000  Am+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   25.7218  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmF++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Am             1.0000 F
+****
+     3 species in reaction:
+    -1.0000  AmF++                        1.0000  Am+++
+     1.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.3601  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmF2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Am             2.0000 F
+****
+     3 species in reaction:
+    -1.0000  AmF2+                        1.0000  Am+++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -5.7204  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmH2PO4++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     4 element(s):
+      1.0000 Am             2.0000 H              4.0000 O
+      1.0000 P
+****
+     4 species in reaction:
+    -1.0000  AmH2PO4++                    1.0000  Am+++
+     1.0000  H+                           1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -11.4119  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmNO3++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Am             1.0000 N              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  AmNO3++                      1.0000  Am+++
+     1.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.3104  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Cm(CO3)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Cm             1.0000 C              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Cm(CO3)+                     1.0000  Cm+++
+     1.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.1000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Cm(CO3)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Cm             2.0000 C              6.0000 O
+****
+     3 species in reaction:
+    -1.0000  Cm(CO3)2-                    1.0000  Cm+++
+     2.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Cm(CO3)3---
+     sp.type =  aqueous
+     charge  =  -3.0
+****
+     3 element(s):
+      1.0000 Cm             3.0000 C              9.0000 O
+****
+     3 species in reaction:
+    -1.0000  Cm(CO3)3---                  1.0000  Cm+++
+     3.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.2000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Cm(CO3)4(5-)
+     sp.type =  aqueous
+     charge  =  -5.0
+****
+     3 element(s):
+      1.0000 Cm             4.0000 C             12.0000 O
+****
+     3 species in reaction:
+    -1.0000  Cm(CO3)4(5-)                 1.0000  Cm+++
+     4.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Cm(OH)2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Cm             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cm(OH)2+                    -2.0000  H+
+     2.0000  H2O                          1.0000  Cm+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.6902  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Cm(OH)++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Cm             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cm(OH)++                    -1.0000  H+
+     1.0000  H2O                          1.0000  Cm+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.5551  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Cm(SO4)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Cm             8.0000 O              2.0000 S
+****
+     3 species in reaction:
+    -1.0000  Cm(SO4)2-                    1.0000  Cm+++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Cm(SO4)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Cm             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Cm(SO4)+                     1.0000  Cm+++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.2500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+CmCl++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Cm             1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  CmCl++                       1.0000  Cm+++
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.2400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+CmCl2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Cm             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  CmCl2+                       1.0000  Cm+++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.7400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+NpOH+++
+     sp.type =  aqueous
+     charge  =   3.0
+****
+     3 element(s):
+      1.0000 H              1.0000 O              1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  NpOH+++                     -1.0000  H+
+     1.0000  H2O                          1.0000  Np++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.5049  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+* Source: 01Nec/Kim
++--------------------------------------------------------------------
+Np(OH)2++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      2.0000 H              2.0000 O              1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  Np(OH)2++                   -2.0000  H+
+     2.0000  H2O                          1.0000  Np++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.3098  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim
++--------------------------------------------------------------------
+Nd(CO3)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Nd             1.0000 C              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Nd(CO3)+                     1.0000  Nd+++
+     1.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.1000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Nd(CO3)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Nd             2.0000 C              6.0000 O
+****
+     3 species in reaction:
+    -1.0000  Nd(CO3)2-                    1.0000  Nd+++
+     2.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Nd(CO3)3---
+     sp.type =  aqueous
+     charge  =  -3.0
+****
+     3 element(s):
+      1.0000 Nd             3.0000 C              9.0000 O
+****
+     3 species in reaction:
+    -1.0000  Nd(CO3)3---                  1.0000  Nd+++
+     3.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.2000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Nd(CO3)4(5-)
+     sp.type =  aqueous
+     charge  =  -5.0
+****
+     3 element(s):
+      1.0000 Nd             4.0000 C             12.0000 O
+****
+     3 species in reaction:
+    -1.0000  Nd(CO3)4(5-)                 1.0000  Nd+++
+     4.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Nd(OH)3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      3.0000 H              1.0000 Nd             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd(OH)3(aq)                 -3.0000  H+
+     1.0000  Nd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   26.3852  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nd(OH)2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Nd             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd(OH)2+                    -2.0000  H+
+     2.0000  H2O                          1.0000  Nd+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.6902  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Nd(OH)++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Nd             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd(OH)++                    -1.0000  H+
+     1.0000  H2O                          1.0000  Nd+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.5551  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Nd(SO4)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Nd             8.0000 O              2.0000 S
+****
+     3 species in reaction:
+    -1.0000  Nd(SO4)2-                    1.0000  Nd+++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1); table I
++--------------------------------------------------------------------
+Nd(SO4)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Nd             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Nd(SO4)+                     1.0000  Nd+++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.2500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+NdCl++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Nd             1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  NdCl++                       1.0000  Nd+++
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.2400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+NdCl2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Nd             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  NdCl2+                       1.0000  Nd+++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.7400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Np(OH)3+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      3.0000 H              3.0000 O              1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  Np(OH)3+                    -3.0000  H+
+     3.0000  H2O                          1.0000  Np++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.7853  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim; table (11)
++--------------------------------------------------------------------
+Np(OH)4(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      4.0000 H              4.0000 O              1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  Np(OH)4(aq)                 -4.0000  H+
+     4.0000  H2O                          1.0000  Np++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    8.2804  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source: 01Nec/Kim
++--------------------------------------------------------------------
+Pu(CO3)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Pu             1.0000 C              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Pu(CO3)+                     1.0000  Pu+++
+     1.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.1000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Pu(CO3)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Pu             2.0000 C              6.0000 O
+****
+     3 species in reaction:
+    -1.0000  Pu(CO3)2-                    1.0000  Pu+++
+     2.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Pu(CO3)3---
+     sp.type =  aqueous
+     charge  =  -3.0
+****
+     3 element(s):
+      1.0000 Pu             3.0000 C              9.0000 O
+****
+     3 species in reaction:
+    -1.0000  Pu(CO3)3---                  1.0000  Pu+++
+     3.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.2000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Pu(CO3)4(5-)
+     sp.type =  aqueous
+     charge  =  -5.0
+****
+     3 element(s):
+      1.0000 Pu             4.0000 C             12.0000 O
+****
+     3 species in reaction:
+    -1.0000  Pu(CO3)4(5-)                 1.0000  Pu+++
+     4.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Pu(OH)3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Pu             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Pu(OH)3(aq)                 -3.0000  H+
+     1.0000  Pu+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   25.7218  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2; same as Am(OH)3(aq)
++--------------------------------------------------------------------
+Pu(OH)2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Pu             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Pu(OH)2+                    -2.0000  H+
+     2.0000  H2O                          1.0000  Pu+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.6902  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Pu(OH)++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Pu             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Pu(OH)++                    -1.0000  H+
+     1.0000  H2O                          1.0000  Pu+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.5551  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Pu(SO4)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Pu             8.0000 O              2.0000 S
+****
+     3 species in reaction:
+    -1.0000  Pu(SO4)2-                    1.0000  Pu+++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+Pu(SO4)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Pu             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Pu(SO4)+                     1.0000  Pu+++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.2500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+PuCl++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Pu             1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  PuCl++                       1.0000  Pu+++
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.2400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+PuCl2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Pu             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  PuCl2+                       1.0000  Pu+++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.7400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source = 98Fan/Kim (Table 1)
++--------------------------------------------------------------------
+PuOH+++
+     sp.type =  aqueous
+     charge  =   3.0
+****
+     3 element(s):
+      1.0000 H              1.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  PuOH+++                     -1.0000  H+
+     1.0000  H2O                          1.0000  Pu++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.6049  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+Pu(OH)2++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      2.0000 H              2.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  Pu(OH)2++                   -2.0000  H+
+     2.0000  H2O                          1.0000  Pu++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.6098  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+Pu(OH)3+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      3.0000 H              3.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  Pu(OH)3+                    -3.0000  H+
+     3.0000  H2O                          1.0000  Pu++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.2853  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+Pu(OH)4(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      4.0000 H              4.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  Pu(OH)4(aq)                 -4.0000  H+
+     4.0000  H2O                          1.0000  Pu++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.8804  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+ThOH+++
+     sp.type =  aqueous
+     charge  =   3.0
+****
+     3 element(s):
+      1.0000 H              1.0000 O              1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  ThOH+++                     -1.0000  H+
+     1.0000  H2O                          1.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.2000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th(OH)2++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      2.0000 H              2.0000 O              1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th(OH)2++                   -2.0000  H+
+     2.0000  H2O                          1.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    6.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th(OH)3+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      3.0000 H              3.0000 O              1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th(OH)3+                    -3.0000  H+
+     3.0000  H2O                          1.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th(OH)4(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      4.0000 H              4.0000 O              1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th(OH)4(aq)                 -4.0000  H+
+     4.0000  H2O                          1.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   17.5000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th2(OH)2(6+)
+     sp.type =  aqueous
+     charge  =   6.0
+****
+     3 element(s):
+      2.0000 H              2.0000 O              2.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th2(OH)2(6+)                -2.0000  H+
+     2.0000  H2O                          2.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th4(OH)8(8+)
+     sp.type =  aqueous
+     charge  =   8.0
+****
+     3 element(s):
+      8.0000 H              8.0000 O              4.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th4(OH)8(8+)                -8.0000  H+
+     8.0000  H2O                          4.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   20.4000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th4(OH)12++++
+     sp.type =  aqueous
+     charge  =   4.0
+****
+     3 element(s):
+     12.0000 H             12.0000 O              4.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th4(OH)12++++              -12.0000  H+
+    12.0000  H2O                          4.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   26.6000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th6(OH)15(9+)
+     sp.type =  aqueous
+     charge  =   9.0
+****
+     3 element(s):
+     15.0000 H             15.0000 O              6.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th6(OH)15(9+)              -15.0000  H+
+    15.0000  H2O                          6.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   33.9000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*Source: 02Nec/Mul  (Table 1)
++--------------------------------------------------------------------
+Th(CO3)5(6-)
+     sp.type =  aqueous
+*    EQ3/6   =  ymp, com
+     YMP Qualification status = Q
+*    mol.wt. = 532.083 g/mol
+*    DHazero =   4.0
+     charge  =  -6.0
+****
+     3 element(s):
+      5.0000 C             15.0000 O              1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  Th(CO3)5(6-)                -5.0000  H+
+     1.0000  Th++++                       5.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   19.3140  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Th(SO4)2(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      8.0000 O              2.0000 S              1.0000 Th
+****
+     3 species in reaction:
+    -1.0000  Th(SO4)2(aq)                 1.0000  Th++++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -11.5900  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 99Fel/Rai (Table IV)
++--------------------------------------------------------------------
+Th(SO4)3--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     3 element(s):
+     12.0000 O              3.0000 S              1.0000 Th
+****
+     3 species in reaction:
+    -1.0000  Th(SO4)3--                   1.0000  Th++++
+     3.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -12.4200  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 99Fel/Rai (Table IV)
++--------------------------------------------------------------------
+Th(SO4)4----
+     sp.type =  aqueous
+     charge  =  -4.0
+****
+     3 element(s):
+     16.0000 O              4.0000 S              1.0000 Th
+****
+     3 species in reaction:
+    -1.0000  Th(SO4)4----                 1.0000  Th++++
+     4.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.4882  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UOH+++
+     sp.type =  aqueous
+     charge  =   3.0
+****
+     3 element(s):
+      1.0000 H              1.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UOH+++                      -1.0000  H+
+     1.0000  H2O                          1.0000  U++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.3951  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+U(OH)2++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      2.0000 H              2.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  U(OH)2++                    -2.0000  H+
+     2.0000  H2O                          1.0000  U++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    1.0902  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+U(OH)3+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      3.0000 H              3.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  U(OH)3+                     -3.0000  H+
+     3.0000  H2O                          1.0000  U++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.6853  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+U(OH)4(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      4.0000 H              4.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  U(OH)4(aq)                  -4.0000  H+
+     4.0000  H2O                          1.0000  U++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.9804  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+*Source: 01Nec/Kim   (Table 11)
++--------------------------------------------------------------------
+NiCrO4(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Cr             1.0000 Ni             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  NiCrO4(aq)                   1.0000  CrO4--
+     1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.4000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 94Cas/Ola, Table 1; uncertainty 0.04
++--------------------------------------------------------------------
+H2CrO4(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Cr             2.0000 H              4.0000 O
+****
+     3 species in reaction:
+    -1.0000  H2CrO4(aq)                   1.0000  CrO4--
+     2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -6.3100  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 98Bal/Nor, Table 10
++--------------------------------------------------------------------
+HCrO4-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Cr             1.0000 H              4.0000 O
+****
+     3 species in reaction:
+    -1.0000  HCrO4-                       1.0000  CrO4--
+     1.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -6.5276   -6.5238   -6.6671   -6.9386
+        -7.3746   -7.8968   -8.5190   -9.3091
+* Within error to 98Bal/Nor, Table 10, -6.55(0.04)
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CrBr++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     2 element(s):
+      1.0000 Br             1.0000 Cr
+****
+     3 species in reaction:
+    -1.0000  CrBr++                       1.0000  Br-
+     1.0000  Cr+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.4088    4.7427    3.8137    2.8184
+         1.6618    0.5582   -0.5523   -1.7586
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CrOH++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      1.0000 Cr             1.0000 H              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  CrOH++                      -1.0000  H+
+     1.0000  Cr+++                        1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    3.5700  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Bal/Nor (Table 10), stated uncertainty 0.08
++--------------------------------------------------------------------
+Cr(OH)2+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Cr             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cr(OH)2+                    -2.0000  H+
+     1.0000  Cr+++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.8400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Bal/Nor (Table 10)
++--------------------------------------------------------------------
+Cr(OH)3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 Cr             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cr(OH)3(aq)                 -3.0000  H+
+     1.0000  Cr+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   16.1900  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 98Bal/Nor (Table 10)
++--------------------------------------------------------------------
+Cr(OH)4-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+****
+     3 element(s):
+      1.0000 Cr             4.0000 H              4.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cr(OH)4-                    -4.0000  H+
+     1.0000  Cr+++                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   27.6500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 98Bal/Nor (Table 10), stated uncertainty 0.12
++--------------------------------------------------------------------
+Cr2O2(OH)4--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+****
+     3 element(s):
+      2.0000 Cr             4.0000 H              6.0000 O
+****
+     4 species in reaction:
+    -1.0000  Cr2O2(OH)4--                -8.0000  H+
+     2.0000  Cr+++                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   51.9302  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 02Rai/Hes, Table IV (modified reaction), uncertainty 0.24
++--------------------------------------------------------------------
+NiOH+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 H              1.0000 Ni             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  NiOH+                       -1.0000  H+
+     1.0000  H2O                          1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.5000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 98Ply/Zha (Table 1), also used NAGRA NTB 02-16, Table B1
+*         Uncertainty stated +/-0.36
++--------------------------------------------------------------------
+Ni(OH)2(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      2.0000 H              1.0000 Ni             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Ni(OH)2(aq)                 -2.0000  H+
+     1.0000  Ni++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   18.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 98Ply/Zha (Table 1), also used NAGRA NTB 02-16, Table B1
+*         Uncertainty stated +/-1.4
++--------------------------------------------------------------------
+Ni(OH)3-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      3.0000 H              1.0000 Ni             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Ni(OH)3-                    -3.0000  H+
+     1.0000  Ni++                         3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   29.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 98Ply/Zha (Table 1), also used NAGRA NTB 02-16, Table B1
+*         Uncertainty stated +/-2.0
++--------------------------------------------------------------------
+Ni(OH)4--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     3 element(s):
+      4.0000 H              1.0000 Ni             4.0000 O
+****
+     4 species in reaction:
+    -1.0000  Ni(OH)4--                   -4.0000  H+
+     1.0000  Ni++                         4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   44.9600  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 98Ply/Zha (Table 1), also used NAGRA NTB 02-16, Table B1
+*         Uncertainty stated +/-0.88
++--------------------------------------------------------------------
+NiBr+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 Br             1.0000 Ni
+****
+     3 species in reaction:
+    -1.0000  NiBr+                        1.0000  Br-
+     1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.3700  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NiCO3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 C              1.0000 Ni             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  NiCO3(aq)                   -1.0000  H+
+     1.0000  Ni++                         1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    6.3288  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source: NAGRA NTB 02-16, Table B1 (= 4.0 +/-0.3)
+*    Reaction expressed on HCO3- basis using the log K value of 10.3288
+*    for the reaction CO3-- + H+ = HCO3-. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
++--------------------------------------------------------------------
+NiF+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     2 element(s):
+      1.0000 F              1.0000 Ni
+****
+     3 species in reaction:
+    -1.0000  NiF+                         1.0000  F-
+     1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -1.1222   -1.1200   -1.2364   -1.4527
+        -1.8036   -2.2359   -2.7722   -3.4825
+*
+* Source: data0.ymp.R2
+* Fairly consistent with NAGRA NTB 02-16 value (25C) = -1.3
++--------------------------------------------------------------------
+NiHCO3+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     4 element(s):
+      1.0000 C              1.0000 Ni             3.0000 O
+      1.0000 H
+****
+     3 species in reaction:
+    -1.0000  NiHCO3+                      1.0000  HCO3-
+     1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: NAGRA NTB 02-16, Table B1, (an approximate value)
++--------------------------------------------------------------------
+NiHPO4(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     4 element(s):
+      1.0000 H              1.0000 Ni             4.0000 O
+      1.0000 P
+****
+     3 species in reaction:
+    -1.0000  NiHPO4(aq)                   1.0000  Ni++
+     1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.9340  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+NiH2PO4+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     4 element(s):
+      2.0000 H              1.0000 Ni             4.0000 O
+      1.0000 P
+****
+     4 species in reaction:
+    -1.0000  NiH2PO4+                     1.0000  Ni++
+     1.0000  HPO4--                       1.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.7494  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1 - log K expressed using H2PO4- in reaction.
++--------------------------------------------------------------------
+NiPO4-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 Ni             4.0000 O              1.0000 P
+****
+     3 species in reaction:
+    -1.0000  NiPO4-                       1.0000  Ni++
+     1.0000  PO4---
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.3740  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+NiHP2O7-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     4 element(s):
+      1.0000 H              1.0000 Ni             7.0000 O
+      2.0000 P
+****
+     5 species in reaction:
+    -1.0000  NiHP2O7-                    -1.0000  H2O
+     1.0000  H+                           1.0000  Ni++
+     2.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -9.2680  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* data0.ymp.R2 Consistent with NAGRA NTP 02-16 value of -9.258
++--------------------------------------------------------------------
+NiP2O7--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     3 element(s):
+      2.0000 P              1.0000 Ni             7.0000 O
+****
+     4 species in reaction:
+    -1.0000  NiP2O7--                    -1.0000  H2O
+     2.0000  HPO4--                       1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.0880  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+NiNO3+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 N              1.0000 Ni             3.0000 O
+****
+     3 species in reaction:
+    -1.0000  NiNO3+                       1.0000  NO3-
+     1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.4000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+NpO2OH(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 H              1.0000 Np             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  NpO2OH(aq)                  -1.0000  H+
+     1.0000  H2O                          1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   16.6851  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+* Source: 95Fan/Nec (Table 5)
++--------------------------------------------------------------------
+NpO2(OH)2-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      2.0000 H              1.0000 Np             4.0000 O
+****
+     4 species in reaction:
+    -1.0000  NpO2(OH)2-                  -2.0000  H+
+     2.0000  H2O                          1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   32.4502  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*    Reaction expressed on H+ basis using the log K value of 13.9951
+*    for the reaction OH- + H+ = H2O. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
+* Source: 95Fan/Nec (Table 5)
++--------------------------------------------------------------------
+NpO2(CO3)3(5-)
+     sp.type =  aqueous
+     charge  =  -5.0
+****
+     3 element(s):
+      3.0000 C              1.0000 Np            11.0000 O
+****
+     3 species in reaction:
+    -1.0000  NpO2(CO3)3(5-)               1.0000  NpO2+
+     3.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -5.3700  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source 99Fel/Rai (Table VI)
++--------------------------------------------------------------------
+NpO2(CO3)2---
+     sp.type =  aqueous
+     charge  =  -3.0
+****
+     3 element(s):
+      2.0000 C              1.0000 Np             8.0000 O
+****
+     3 species in reaction:
+    -1.0000  NpO2(CO3)2---                1.0000  NpO2+
+     2.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -6.4700  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source 99Fel/Rai (Table VI)
++--------------------------------------------------------------------
+NpO2CO3-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 C              1.0000 Np             5.0000 O
+****
+     3 species in reaction:
+    -1.0000  NpO2CO3-                     1.0000  NpO2+
+     1.0000  CO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -5.0300  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source 99Fel/Rai (Table VI)
++--------------------------------------------------------------------
+PuO2(CO3)3----
+     sp.type =  aqueous
+     charge  =  -4.0
+****
+     3 element(s):
+      3.0000 C             11.0000 O              1.0000 Pu
+****
+     3 species in reaction:
+    -1.0000  PuO2(CO3)3----               3.0000  CO3--
+     1.0000  PuO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -17.5300  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 97Pas/Cze (p.59)
++--------------------------------------------------------------------
+PuO2(CO3)2--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     3 element(s):
+      2.0000 C              8.0000 O              1.0000 Pu
+****
+     3 species in reaction:
+    -1.0000  PuO2(CO3)2--                 2.0000  CO3--
+     1.0000  PuO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 97Pas/Cze (p.59)
++--------------------------------------------------------------------
+PuO2CO3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 C              5.0000 O              1.0000 Pu
+****
+     3 species in reaction:
+    -1.0000  PuO2CO3(aq)                  1.0000  CO3--
+     1.0000  PuO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -9.5600  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 97Pas/Cze (p.59)
++--------------------------------------------------------------------
+UO2CO3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     3 element(s):
+      1.0000 C              5.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2CO3(aq)                   1.0000  CO3--
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -9.6800  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 97Pas/Cze (p.58)
++--------------------------------------------------------------------
+UO2(CO3)2--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     3 element(s):
+      2.0000 C              8.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2(CO3)2--                  2.0000  CO3--
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -16.9400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 97Pas/Cze (p.58)
++--------------------------------------------------------------------
+UO2(CO3)3----
+     sp.type =  aqueous
+     charge  =  -4.0
+****
+     3 element(s):
+      3.0000 C             11.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2(CO3)3----                3.0000  CO3--
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -21.3000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 97Pas/Cze (p.58)
++--------------------------------------------------------------------
+(UO2)2CO3(OH)3-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     4 element(s):
+      1.0000 C              3.0000 H             10.0000 O
+      2.0000 U
+****
+     5 species in reaction:
+    -1.0000  (UO2)2CO3(OH)3-             -4.0000  H+
+     1.0000  HCO3-                        2.0000  UO2++
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.2448  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)11(CO3)6(OH)12--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     4 element(s):
+      6.0000 C             12.0000 H             52.0000 O
+     11.0000 U
+****
+     5 species in reaction:
+    -1.0000  (UO2)11(CO3)6(OH)12--      -18.0000  H+
+     6.0000  HCO3-                       11.0000  UO2++
+    12.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   25.8549  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)3(CO3)6(6-)
+     sp.type =  aqueous
+     charge  =  -6.0
+****
+     3 element(s):
+      6.0000 C             24.0000 O              3.0000 U
+****
+     4 species in reaction:
+    -1.0000  (UO2)3(CO3)6(6-)            -6.0000  H+
+     3.0000  UO2++                        6.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         8.5924    8.0930    7.7089    7.5275
+         7.4843    7.4990    7.4593    7.2623
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)3O(OH)2(HCO3)+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     4 element(s):
+      1.0000 C              3.0000 H             12.0000 O
+      3.0000 U
+****
+     5 species in reaction:
+    -1.0000  (UO2)3O(OH)2(HCO3)+         -4.0000  H+
+     1.0000  HCO3-                        3.0000  H2O
+     3.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.7457  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)2NpO2(CO3)6(6-)
+     sp.type =  aqueous
+*    EQ3/6   =  ymp.R2
+     YMP Qualification status = Q
+*    mol.wt. =
+     charge  =  -6.0
+****
+     4 element(s):
+      2.0000 U             24.0000 O              1.0000 Np
+      6.0000 C
+****
+     5 species in reaction:
+    -1.0000  (UO2)2NpO2(CO3)6(6-)        -6.0000  H+
+     2.0000  UO2++                        1.0000  NpO2++
+     6.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    8.4965  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)2(PuO2)(CO3)6(6-)
+     sp.type =  aqueous
+     charge  =  -6.0
+****
+     4 element(s):
+      2.0000 U             24.0000 O              1.0000 Pu
+      6.0000 C
+****
+     5 species in reaction:
+    -1.0000  (UO2)2(PuO2)(CO3)6(6-)      -6.0000  H+
+     2.0000  UO2++                        1.0000  PuO2++
+     6.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.3821  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2OH+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 H              3.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2OH+                      -1.0000  H+
+     1.0000  H2O                          1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.9334    5.2173    4.4467    3.7912
+         3.1893    2.7386    2.3762    2.0587
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)2(OH)2++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      2.0000 H              6.0000 O              2.0000 U
+****
+     4 species in reaction:
+    -1.0000  (UO2)2(OH)2++               -2.0000  H+
+     2.0000  H2O                          2.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         6.2899    5.6565    4.9922    4.4421
+         3.9459    3.5707    3.2501    2.9307
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)3(OH)4++
+     sp.type =  aqueous
+     charge  =   2.0
+****
+     3 element(s):
+      4.0000 H             10.0000 O              3.0000 U
+****
+     4 species in reaction:
+    -1.0000  (UO2)3(OH)4++               -4.0000  H+
+     3.0000  UO2++                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.9618  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)2OH+++
+     sp.type =  aqueous
+     charge  =   3.0
+****
+     3 element(s):
+      1.0000 H              5.0000 O              2.0000 U
+****
+     4 species in reaction:
+    -1.0000  (UO2)2OH+++                 -1.0000  H+
+     1.0000  H2O                          2.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.7291  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)3(OH)5+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      5.0000 H             11.0000 O              3.0000 U
+****
+     4 species in reaction:
+    -1.0000  (UO2)3(OH)5+                -5.0000  H+
+     3.0000  UO2++                        5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        17.2568   15.6191   13.9164   12.5227
+        11.2846   10.3646    9.5883    8.8195
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)3(OH)7-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      7.0000 H             13.0000 O              3.0000 U
+****
+     4 species in reaction:
+    -1.0000  (UO2)3(OH)7-                -7.0000  H+
+     3.0000  UO2++                        7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   31.0836  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+(UO2)4(OH)7+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      7.0000 H             15.0000 O              4.0000 U
+****
+     4 species in reaction:
+    -1.0000  (UO2)4(OH)7+                -7.0000  H+
+     4.0000  UO2++                        7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   21.9946  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO3(aq)
+     sp.type =  aqueous
+     charge  =   0.0
+****
+     2 element(s):
+      3.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO3(aq)                     -2.0000  H+
+     1.0000  H2O                          1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   12.1500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source 03Gui
+*
+* ALTERNATE DATA
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+*       11.1590   10.3117    9.4020    8.6276
+*        7.9106    7.3615    6.9000    6.4644
+*
+*    COMMENT: UO3(aq) is the nonconventional equivalent of
+*    UO2(OH)2(aq); the delG0f value adopted for UO3(aq) is
+*    consistent with those given for UO2(OH)2(aq) and H2O by
+*    92gre/fug and 91joh/nor, respectively. See data0.ymp.R2
+*    for more information on these sources.
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HUO4-
+     sp.type =  aqueous
+     charge  =  -1.0
+****
+     3 element(s):
+      1.0000 H              4.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  HUO4-                       -3.0000  H+
+     1.0000  UO2++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        20.4249   19.2454   17.9434   16.8200
+        15.7991   15.0824   14.5986   14.3352
+*
+*    COMMENT: HUO4- is the nonconventional equivalent of
+*    UO2(OH)3-; the delG0f value adopted for HUO4- is
+*    consistent with those given for UO2(OH)3- and H2O by
+*    92gre/fug and 91joh/nor, respectively.  See data0.ymp.R2
+*    for more information on these sources.
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO4--
+     sp.type =  aqueous
+     charge  =  -2.0
+****
+     2 element(s):
+      4.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO4--                       -4.0000  H+
+     1.0000  UO2++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        35.3913   33.0259   30.5152   28.4318
+        26.6347   25.4776   24.8227   24.6639
+*
+* Source: data0.ymp.R2
+*    COMMENT: UO4-- is the nonconventional equivalent of
+*    UO2(OH)4--; the delG0f value adopted for UO4-- is
+*    consistent with those given for UO2(OH)4-- and H2O by
+*    92gre/fug and 91joh/nor, respectively.
++--------------------------------------------------------------------
+UO2Cl+
+     sp.type =  aqueous
+     charge  =   1.0
+****
+     3 element(s):
+      1.0000 Cl             2.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2Cl+                       1.0000  Cl-
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -0.0446   -0.1463   -0.3285   -0.5583
+        -0.8768   -1.2492   -1.7129   -2.3428
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+solids
++--------------------------------------------------------------------
+Albite                  NaAlSi3O8
+     V0PrTr  =   100.250 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      1.0000 Al             1.0000 Na             8.0000 O
+      3.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Albite                      -4.0000  H+
+     1.0000  Al+++                        1.0000  Na+
+     2.0000  H2O                          3.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.9014    2.8495    1.4033    0.0345
+        -1.2965   -2.3537   -3.2926   -4.2839
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Alunite                 KAl3(OH)6(SO4)2
+     V0PrTr  =   293.600 cm**3/mol [source: 78hel/del]
+****
+     5 element(s):
+      3.0000 Al             6.0000 H              1.0000 K
+     14.0000 O              2.0000 S
+****
+     6 species in reaction:
+    -1.0000  Alunite                     -6.0000  H+
+     1.0000  K+                           2.0000  SO4--
+     3.0000  Al+++                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.7320   -2.4018   -6.4727  -10.6430
+       -15.3731  -19.8693  -24.4474  -29.5161
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Amesite-7A              Mg2Al2SiO5(OH)4
+     V0PrTr  =   103.000 cm**3/mol [source: SUPCRT speq02.dat]
+****
+     5 element(s):
+      2.0000 Al             4.0000 H              2.0000 Mg
+      9.0000 O              1.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Amesite-7A                 -10.0000  H+
+     1.0000  SiO2(aq)                     2.0000  Al+++
+     2.0000  Mg++                         7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        45.5694   39.1427   31.6777   24.8682
+        18.1455   12.7178    8.0675    3.8149
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Amesite-14A             Mg4Al4Si2O10(OH)8
+     V0PrTr  =   205.400 cm**3/mol [source: SUPCRT speq02.dat]
+****
+     5 element(s):
+      4.0000 Al             8.0000 H              4.0000 Mg
+     18.0000 O              2.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Amesite-14A                -20.0000  H+
+     2.0000  SiO2(aq)                     4.0000  Al+++
+     4.0000  Mg++                        14.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        83.8687   71.5387   57.1989   44.1066
+        31.1666   20.6994   11.7058    3.4494
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Analcime                Na.96Al.96Si2.04O6:H2O
+     V0PrTr  =   000.000 [null]
+****
+     5 element(s):
+      0.9600 Al             2.0000 H              0.9600 Na
+      7.0000 O              2.0400 Si
+****
+     6 species in reaction:
+    -1.0000  Analcime                    -3.8400  H+
+     0.9600  Al+++                        0.9600  Na+
+     2.0400  SiO2(aq)                     2.9200  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         7.3411    6.0057    4.3207    2.7687
+         1.2666    0.0739   -0.9734   -2.0317
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Analcime-dehy           Na.96Al.96Si2.04O6
+     V0PrTr  =    89.100 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      0.9600 Al             0.9600 Na             6.0000 O
+      2.0400 Si
+****
+     6 species in reaction:
+    -1.0000  Analcime-dehy               -3.8400  H+
+     0.9600  Al+++                        0.9600  Na+
+     1.9200  H2O                          2.0400  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        14.3700   12.3685    9.9558    7.7943
+         5.7799    4.2869    3.1077    2.0570
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Anhydrite               CaSO4
+     V0PrTr  =    45.940 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     3 element(s):
+      1.0000 Ca             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Anhydrite                    1.0000  Ca++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -4.1258   -4.3193   -4.7307   -5.3507
+        -6.2957   -7.2880   -8.4114   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Antarcticite            CaCl2:6H2O
+     V0PrTr  =   000.000 cm**3/mol [source:                       ]
+****
+     4 element(s):
+      1.0000 Ca             2.0000 Cl            12.0000 H
+      6.0000 O
+****
+     4 species in reaction:
+    -1.0000  Antarcticite                 1.0000  Ca++
+     2.0000  Cl-                          6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]CALIBRATED :
+         3.4916    4.0875    4.1676   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: Calibrated to Pitzer & Shi (1993) solubility data to new
+*   CaCl2 Pitzer parameters by 98ste/fel (Model 3) - See spreadsheet
+*   [cacl2_hydrates_min_cal_CFJC2.xls]
++--------------------------------------------------------------------
+Antigorite(am)              Mg3Si2O5(OH)4
+     sp.type =  solid
+*    EQ3/6   =
+     YMP Qualification status = un-Q
+*    mol.wt. =   277.112 g/mol
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      4.0000 H              3.0000 Mg             9.0000 O
+      2.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Antigorite(am)              -6.0000  H+
+     2.0000  SiO2(aq)                     3.0000  Mg++
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        37.3589   34.5025   31.2224   28.2271
+        25.2793   22.9545   21.0741   19.5218
+*
+* Source: 05gun/arn [Solids_j_Mg_Silicates_CFJC_KBH1.xls]
++--------------------------------------------------------------------
+Aragonite               CaCO3
+     V0PrTr  =    34.150 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     3 element(s):
+      1.0000 C              1.0000 Ca             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Aragonite                   -1.0000  H+
+     1.0000  Ca++                         1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         2.3715    1.9931    1.4762    0.9179
+         0.2467   -0.4315   -1.1673   -2.0495
+* Source: data0.ymp.R2, equivalent to Nagra = 1.993
++--------------------------------------------------------------------
+Arcanite                K2SO4
+     V0PrTr  =    65.500 cm**3/mol [source: 79Rob/Hem]
+****
+     3 element(s):
+      2.0000 K              4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Arcanite                     1.0000  SO4--
+     2.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -2.1629   -1.7916   -1.4973   -1.3970
+        -1.5208   -1.8398   -2.2979   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Artinite                Mg2CO3(OH)2:3H2O
+     V0PrTr  =    96.900 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      1.0000 C              8.0000 H              2.0000 Mg
+      8.0000 O
+****
+     5 species in reaction:
+    -1.0000  Artinite                    -3.0000  H+
+     1.0000  HCO3-                        2.0000  Mg++
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        21.7371   19.6560   17.2642   15.1018
+        12.9693   11.2206    9.6546    8.0823
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Barite                  BaSO4
+     sp.type =  solid
+     V0PrTr  =    52.100 cm**3/mol [source: 78hel/del]
+****
+     3 element(s):
+      1.0000 Ba             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Barite                       1.0000  Ba++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -10.4859   -9.9711   -9.6122   -9.5108
+        -9.6963  -10.1581  -10.8987  -12.0273
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Beidellite-Mg           Mg.165Al2.33Si3.67O10(OH)2
+     V0PrTr  =   128.725 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     5 element(s):
+      2.3300 Al             2.0000 H              0.1650 Mg
+     12.0000 O              3.6700 Si
+****
+     6 species in reaction:
+    -1.0000  Beidellite-Mg               -7.3200  H+
+     0.1650  Mg++                         2.3300  Al+++
+     3.6700  SiO2(aq)                     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         7.6307    4.8971    1.3296   -2.1202
+        -5.6543   -8.6151  -11.2835  -13.9303
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Beidellite-Ca           Ca.165Al2.33Si3.67O10(OH)2
+     V0PrTr  =   129.766 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     5 element(s):
+      2.3300 Al             0.1650 Ca             2.0000 H
+     12.0000 O              3.6700 Si
+****
+     6 species in reaction:
+    -1.0000  Beidellite-Ca               -7.3200  H+
+     0.1650  Ca++                         2.3300  Al+++
+     3.6700  SiO2(aq)                     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         7.6185    4.9352    1.4241   -1.9769
+        -5.4668   -8.3955  -11.0397  -13.6677
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Beidellite-K            K.33Al2.33Si3.67O10(OH)2
+     V0PrTr  =   134.152 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     5 element(s):
+      2.3300 Al             2.0000 H              0.3300 K
+     12.0000 O              3.6700 Si
+****
+     6 species in reaction:
+    -1.0000  Beidellite-K                -7.3200  H+
+     0.3300  K+                           2.3300  Al+++
+     3.6700  SiO2(aq)                     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         7.1513    4.6522    1.3538   -1.8507
+        -5.1429   -7.9101  -10.4166  -12.9220
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Beidellite-Na           Na.33Al2.33Si3.67O10(OH)2
+     V0PrTr  =   130.727 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     5 element(s):
+      2.3300 Al             2.0000 H              0.3300 Na
+     12.0000 O              3.6700 Si
+****
+     6 species in reaction:
+    -1.0000  Beidellite-Na               -7.3200  H+
+     0.3300  Na+                          2.3300  Al+++
+     3.6700  SiO2(aq)                     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         7.5710    4.9911    1.6049   -1.6729
+        -5.0287   -7.8389  -10.3752  -12.9025
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Beidellite-H            H.33Al2.33Si3.67O10(OH)2
+     V0PrTr  =   128.913 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     4 element(s):
+      2.3300 Al             2.3300 H             12.0000 O
+      3.6700 Si
+****
+     5 species in reaction:
+    -1.0000  Beidellite-H                -6.9900  H+
+     2.3300  Al+++                        3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         6.5291    3.9773    0.6217   -2.6329
+        -5.9722   -8.7737  -11.3044  -13.8242
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Bischofite              MgCl2:6H2O
+     V0PrTr  =   129.570 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      2.0000 Cl            12.0000 H              1.0000 Mg
+      6.0000 O
+****
+     4 species in reaction:
+    -1.0000  Bischofite                   1.0000  Mg++
+     2.0000  Cl-                          6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         4.5811    4.3570    4.0253    3.6643
+         3.2042    2.6742    1.9838    0.9732
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Bloedite                Na2Mg(SO4)2:4H2O
+* Also known as Astrakanite
+     V0PrTr  =   149.980 cm**3/mol [source: 89wea/lid]
+****
+     5 element(s):
+      8.0000 H              1.0000 Mg             2.0000 Na
+     12.0000 O              2.0000 S
+****
+     5 species in reaction:
+    -1.0000  Bloedite                     1.0000  Mg++
+     2.0000  Na+                          2.0000  SO4--
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -2.3469   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Boehmite                AlOOH
+     V0PrTr  =    19.535 cm**3/mol [source: 78hel/del]
+****
+     3 element(s):
+      1.0000 Al             1.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Boehmite                    -3.0000  H+
+     1.0000  Al+++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        10.4913    8.6014    6.4055    4.3826
+         2.3539    0.6866   -0.7620   -2.0895
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Borax                   Na2B4O7:10H2O
+     sp.type =  solid
+     V0PrTr  =   000.000 [null]
+****
+     4 element(s):
+      4.0000 B             20.0000 H              2.0000 Na
+     17.0000 O
+****
+     5 species in reaction:
+    -1.0000  Borax                       -2.0000  H+
+     2.0000  Na+                          4.0000  B(OH)3(aq)
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   12.4640  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+Boric_acid              B(OH)3
+     sp.type =  solid
+     V0PrTr  =   000.000 [null]
+****
+     3 element(s):
+      1.0000 B              3.0000 H              3.0000 O
+****
+     2 species in reaction:
+    -1.0000  Boric_acid                   1.0000  B(OH)3(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.0304  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+KB5O8:4H2O
+     sp.type =  solid
+     V0PrTr  =   000.000 [null]
+****
+     4 element(s):
+      5.0000 B              8.0000 H              1.0000 K
+     12.0000 O
+****
+     5 species in reaction:
+    -1.0000  KB5O8:4H2O                  -1.0000  H+
+     1.0000  K+                           5.0000  B(OH)3(aq)
+    -3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.6715  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 86Fel/Wea (Table 2)
+*   [Minerals_Aq_Species_Solid_Boron_Actn.xls]; data at 30C.
++--------------------------------------------------------------------
+K2B4O7:4H2O
+     sp.type =  solid
+     V0PrTr  =   000.000 [null]
+****
+     4 element(s):
+      4.0000 B              8.0000 H              2.0000 K
+     11.0000 O
+****
+     5 species in reaction:
+    -1.0000  K2B4O7:4H2O                 -2.0000  H+
+     2.0000  K+                           4.0000  B(OH)3(aq)
+    -1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   13.9063  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 86Fel/Wea (Table 2)
+*   [Minerals_Aq_Species_Solid_Boron_Actn.xls]; data at 30C.
++--------------------------------------------------------------------
+NaBO2:4H2O
+     sp.type =  solid
+     V0PrTr  =   000.000 [null]
+****
+     4 element(s):
+      1.0000 B              8.0000 H              1.0000 Na
+      6.0000 O
+****
+     5 species in reaction:
+    -1.0000  NaBO2:4H2O                  -1.0000  H+
+     1.0000  Na+                          1.0000  B(OH)3(aq)
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.5682  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+NaB5O8:5H2O
+     sp.type =  solid
+     V0PrTr  =   000.000 [null]
+****
+     4 element(s):
+      5.0000 B             10.0000 H              1.0000 Na
+     13.0000 O
+****
+     5 species in reaction:
+    -1.0000  NaB5O8:5H2O                 -1.0000  H+
+     1.0000  Na+                          5.0000  B(OH)3(aq)
+    -2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.8951  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 86Fel/Wea (Table 2) [Minerals_Aq_Species_Solid_Boron_Actn.xls]
++--------------------------------------------------------------------
+NaBO2:NaCl:2H2O
+     sp.type =  solid
+     V0PrTr  =   000.000 [null]
+****
+     5 element(s):
+      1.0000 B              4.0000 H              2.0000 Na
+      4.0000 O              1.0000 Cl
+****
+     6 species in reaction:
+    -1.0000  NaBO2:NaCl:2H2O             -1.0000  H+
+     2.0000  Na+                          1.0000  B(OH)3(aq)
+     1.0000  H2O                          1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   10.8402  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 86Fel/Wea (Table 2)
+*   [Minerals_Aq_Species_Solid_Boron_Actn.xls]; data at 20C.
++--------------------------------------------------------------------
+Brushite                CaHPO4:2H2O
+     V0PrTr  =    74.630 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      1.0000 Ca             5.0000 H              1.0000 P
+      6.0000 O
+****
+     4 species in reaction:
+    -1.0000  Brushite                     1.0000  Ca++
+     1.0000  HPO4--                       2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -6.7577   -6.7334   -6.8839   -7.2007
+        -7.7580   -8.4892   -9.4410  -10.7493
+* Source: 95Bar/Pla [Solids_j_Ca_TJW_1.xls]
++--------------------------------------------------------------------
+Burkeite                Na6CO3(SO4)2
+     V0PrTr  =   151.190 cm**3/mol [source: 73Don    ]
+****
+     4 element(s):
+      1.0000 C              6.0000 Na            11.0000 O
+      2.0000 S
+****
+     5 species in reaction:
+    -1.0000  Burkeite                    -1.0000  H+
+     1.0000  HCO3-                        2.0000  SO4--
+     6.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data    9.5671   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+CaBr2                   CaBr2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Ca             2.0000 Br
+****
+     3 species in reaction:
+    -1.0000  CaBr2                        1.0000  Ca++
+     2.0000  Br-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        18.5084   16.9439   14.9480   12.9261
+        10.6770    8.6097    6.5864    4.4113
+* Source: 95Bar/Pla [Solids_j_Ca_TJW_1.xls]
++--------------------------------------------------------------------
+Ca2Cl2(OH)2:H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      2.0000 Ca             2.0000 Cl             4.0000 H
+      3.0000 O
+****
+     5 species in reaction:
+    -1.0000  Ca2Cl2(OH)2:H2O             -2.0000  H+
+     2.0000  Ca++                         2.0000  Cl-
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   26.5313   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Ca4Cl2(OH)6:13H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      4.0000 Ca             2.0000 Cl            32.0000 H
+     19.0000 O
+****
+     5 species in reaction:
+    -1.0000  Ca4Cl2(OH)6:13H2O           -6.0000  H+
+     2.0000  Cl-                          4.0000  Ca++
+    19.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   68.7343   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+CaCl2                   CaCl2
+* Hydrophilite
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Ca             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  CaCl2                        1.0000  Ca++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        13.1770   11.9420   10.3250    8.6490
+        6.7380    4.9350    3.1240    1.1260
+* reference-state data source: 95Rob/Hem
++--------------------------------------------------------------------
+CaCl2:2H2O              CaCl2:2H2O
+     V0PrTr  =   000.000 cm**3/mol [source:                       ]
+****
+     4 element(s):
+      1.0000 Ca             2.0000 Cl             4.0000 H
+      2.0000 O
+****
+     4 species in reaction:
+    -1.0000  CaCl2:2H2O                   1.0000  Ca++
+     2.0000  Cl-                          2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]CALIBRATED:
+        No_Data    8.1163    7.6115    6.4875
+         4.9255   No_Data   No_Data   No_Data
+* Source: Calibrated to Pitzer & Oakes (1994) solubility data to new
+*   CaCl2 Pitzer parameters by 98ste/fel (Model 3) - See spreadsheet
+*   [cacl2_hydrates_min_cal_CFJC2.xls]
++--------------------------------------------------------------------
+CaCl2:4H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Ca             2.0000 Cl             8.0000 H
+      4.0000 O
+****
+     4 species in reaction:
+    -1.0000  CaCl2:4H2O                   1.0000  Ca++
+     2.0000  Cl-                          4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]CALIBRATED:
+        No_Data    5.7588    5.9465   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: Calibrated to Pitzer & Shi (1993) solubility data to new
+*   CaCl2 Pitzer parameters by 98ste/fel (Model 3) - See spreadsheet
+*   [cacl2_hydrates_min_cal_CFJC2.xls]
++--------------------------------------------------------------------
+CaI2                    CaI2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Ca             2.0000 I
+****
+     3 species in reaction:
+    -1.0000  CaI2                         1.0000  Ca++
+     2.0000  I-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        23.4814   21.6357   19.3260   17.0182
+        14.4841   12.1888    9.9799    7.6538
+* Source: 95Bar/Pla [Solids_j_Ca_TJW_1.xls]
++--------------------------------------------------------------------
+Calcite                 CaCO3
+     V0PrTr  =    36.934 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     3 element(s):
+      1.0000 C              1.0000 Ca             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Calcite                     -1.0000  H+
+     1.0000  Ca++                         1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]CALIBRATED:
+         2.2257    1.8187    1.3297    0.6012
+        -0.1814   -1.1393   -2.1462   -2.8805
+* Source: Modified log K from data0.ymp.R4 to better fit
+* low and high temperature solubility data using 98ste/fel Model 3 for CaCl2.
++--------------------------------------------------------------------
+Ca(NO3)2                Ca(NO3)2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Ca             2.0000 N              6.0000 O
+****
+     3 species in reaction:
+    -1.0000  Ca(NO3)2                     1.0000  Ca++
+     2.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         5.7482    5.5269    5.0984    4.5333
+         3.7473    2.8627    1.8277    0.5123
+* Source: 95Bar/Pla [Solids_j_Ca_TJW_1.xls]
++--------------------------------------------------------------------
+Ca(NO3)2:2H2O           Ca(NO3)2:2H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Ca             2.0000 N              8.0000 O
+      4.0000 H
+****
+     4 species in reaction:
+    -1.0000  Ca(NO3)2:2H2O                1.0000  Ca++
+     2.0000  NO3-                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         3.2389    3.4941    3.6502    3.6622
+         3.4941    3.1414    2.5723    1.6704
+* Source: 95Bar/Pla [Solids_j_Ca_TJW_1.xls]
++--------------------------------------------------------------------
+Ca(NO3)2:3H2O           Ca(NO3)2:3H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Ca             2.0000 N              9.0000 O
+      6.0000 H
+****
+     4 species in reaction:
+    -1.0000  Ca(NO3)2:3H2O                1.0000  Ca++
+     2.0000  NO3-                         3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         2.1248    2.5539    2.9315    3.1709
+         3.2556    3.1282    2.7619    2.0444
+* Source: 95Bar/Pla [Solids_j_Ca_TJW_1.xls]
++--------------------------------------------------------------------
+Ca(NO3)2:4H2O           Ca(NO3)2:4H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Ca             2.0000 N             10.0000 O
+      8.0000 H
+****
+     4 species in reaction:
+    -1.0000  Ca(NO3)2:4H2O                1.0000  Ca++
+     2.0000  NO3-                         4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         1.2398    1.7958    2.3419    2.7615
+         3.0541    3.1180    2.9283    2.3743
+* Source: 95Bar/Pla [Solids_j_Ca_TJW_1.xls]
++--------------------------------------------------------------------
+Carnallite              KMgCl3:6H2O
+     V0PrTr  =   172.580 cm**3/mol [source: 89wea/lid]
+****
+     5 element(s):
+      3.0000 Cl            12.0000 H              1.0000 K
+      1.0000 Mg             6.0000 O
+****
+     5 species in reaction:
+    -1.0000  Carnallite                   1.0000  K+
+     1.0000  Mg++                         3.0000  Cl-
+     6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         4.1065    4.2296    4.2157    4.1032
+         3.8828    3.5632    3.0560    2.1450
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Carobbite               KF
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 K              1.0000 F
+****
+     3 species in reaction:
+    -1.0000  Carobbite                    1.0000  K+
+     1.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         4.6948    4.4286    4.0375    3.6004
+         3.0661    2.5218    1.9273    1.2057
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+Celadonite              KMgAlSi4O10(OH)2
+     V0PrTr  =   157.100 cm**3/mol [source: SUPCRT speq02.dat]
+****
+     6 element(s):
+      1.0000 Al             2.0000 H              1.0000 K
+      1.0000 Mg            12.0000 O              4.0000 Si
+****
+     7 species in reaction:
+    -1.0000  Celadonite                  -6.0000  H+
+     1.0000  Al+++                        1.0000  K+
+     1.0000  Mg++                         4.0000  H2O
+     4.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         9.3867    7.8372    5.7794    3.8829
+         2.0909    0.7097   -0.4913   -1.7540
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Celestite               SrSO4
+     V0PrTr  =    46.250 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     3 element(s):
+      4.0000 O              1.0000 S              1.0000 Sr
+****
+     3 species in reaction:
+    -1.0000  Celestite                    1.0000  SO4--
+     1.0000  Sr++
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -6.6320  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+Chabazite               K0.6Na0.2Ca1.55Al3.8Si8.2O24:10.0H2O
+     V0PrTr  =   499.400 cm**3/mol [source: 95Chi/Bis]
+****
+     7 element(s):
+      3.8000 Al             1.5000 Ca             0.2000 Na
+     20.0000 H             34.0000 O              8.2000 Si
+      0.6000 K
+****
+     8 species in reaction:
+    -1.0000  Chabazite                  -15.2000  H+
+     0.2000  Na+                          1.5000  Ca++
+     3.8000  Al+++                        8.2000  SiO2(aq)
+    17.6000  H2O                          0.6000  K+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        14.9395   10.3714    4.5581   -0.7982
+        -5.9745  -10.0955  -13.7420  -17.4773
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Chamosite-7A            Fe2Al2SiO5(OH)4
+     V0PrTr  =   106.200 cm**3/mol [source: SUPCRT sprons96.dat]
+****
+     5 element(s):
+      2.0000 Al             2.0000 Fe             4.0000 H
+      9.0000 O              1.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Chamosite-7A               -10.0000  H+
+     1.0000  SiO2(aq)                     2.0000  Al+++
+     2.0000  Fe++                         7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        38.3852   32.6174   25.8845   19.7095
+        13.5709    8.5699    4.2401    0.2323
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Chloromagnesite         MgCl2
+     V0PrTr  =   000.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Mg             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  Chloromagnesite              1.0000  Mg++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        24.3195   21.8541   18.8350   15.8931
+        12.7525    9.9893    7.4034    4.7607
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Clinoptilolite          Na.954K.543Ca.761Mg.124Sr.036Ba.062Mn.002Al3.45F
+     V0PrTr  =   632.050 cm**3/mol [source: 92Via/Bru]
+****
+    12 element(s):
+      3.4500 Al             0.0620 Ba             0.7610 Ca
+      0.0170 Fe            21.8440 H              0.5430 K
+      0.1240 Mg             0.0020 Mn             0.9540 Na
+     46.9220 O             14.5330 Si             0.0360 Sr
+****
+    13 species in reaction:
+    -1.0000  Clinoptilolite             -13.8680  H+
+     0.0020  Mn++                         0.0170  Fe+++
+     0.0360  Sr++                         0.0620  Ba++
+     0.1240  Mg++                         0.5430  K+
+     0.7610  Ca++                         0.9540  Na+
+     3.4500  Al+++                       14.5330  SiO2(aq)
+    17.8560  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -6.7954   -8.4187  -11.3963  -14.3663
+       -17.2881  -19.7134  -22.1498  -25.2382
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Clinoptilolite-dehy     Sr.036Mg.124Ca.761Mn.002Ba.062K.543Na.954Al3.45F
+     V0PrTr  =   000.000 [null]
+****
+    11 element(s):
+      3.4500 Al             0.0620 Ba             0.7610 Ca
+      0.0170 Fe             0.5430 K              0.1240 Mg
+      0.0020 Mn             0.9540 Na            36.0000 O
+     14.5330 Si             0.0360 Sr
+****
+    13 species in reaction:
+    -1.0000  Clinoptilolite-dehy        -13.8680  H+
+     0.0020  Mn++                         0.0170  Fe+++
+     0.0360  Sr++                         0.0620  Ba++
+     0.1240  Mg++                         0.5430  K+
+     0.7610  Ca++                         0.9540  Na+
+     3.4500  Al+++                        6.9340  H2O
+    14.5330  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        32.8947   27.2165   19.4921   12.1056
+         4.7793   -1.1392   -6.3869  -11.7610
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Clinoptilolite-Ca       Ca1.7335Al3.45Fe.017Si14.533O36:10.922H2O
+     V0PrTr  =   632.050 cm**3/mol [source: 92Via/Bru]
+****
+     6 element(s):
+      3.4500 Al             1.7335 Ca             0.0170 Fe
+     21.8440 H             46.9220 O             14.5330 Si
+****
+     7 species in reaction:
+    -1.0000  Clinoptilolite-Ca          -13.8680  H+
+     0.0170  Fe+++                        1.7335  Ca++
+     3.4500  Al+++                       14.5330  SiO2(aq)
+    17.8560  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -3.3234   -5.6428   -9.8999  -14.7214
+       -20.4488  -26.1649  -32.3164  -39.4939
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Clinoptilolite-Cs       Cs3.467Al3.45Fe.017Si14.533O36:10.922H2O
+     V0PrTr  =   632.050 cm**3/mol [source: 92Via/Bru]
+****
+     6 element(s):
+      3.4500 Al             3.4670 Cs             0.0170 Fe
+     21.8440 H             46.9220 O             14.5330 Si
+****
+     7 species in reaction:
+    -1.0000  Clinoptilolite-Cs          -13.8680  H+
+     0.0170  Fe+++                        3.4500  Al+++
+     3.4670  Cs+                         14.5330  SiO2(aq)
+    17.8560  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -12.1520  -11.6912  -12.8071  -14.7666
+       -17.6478  -21.0608  -25.2702  -30.7396
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Clinoptilolite-K        K3.467Al3.45Fe.017Si14.533O36:10.922H2O
+     V0PrTr  =   632.050 cm**3/mol [source: 92Via/Bru]
+****
+     6 element(s):
+      3.4500 Al             0.0170 Fe            21.8440 H
+      3.4670 K             46.9220 O             14.5330 Si
+****
+     7 species in reaction:
+    -1.0000  Clinoptilolite-K           -13.8680  H+
+     0.0170  Fe+++                        3.4500  Al+++
+     3.4670  K+                          14.5330  SiO2(aq)
+    17.8560  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -9.5409   -9.5819  -11.2158  -13.6232
+       -16.9382  -20.6995  -25.2043  -30.9401
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Clinoptilolite-NH4      (NH4)3.467Al3.45Fe.017Si14.533O36:10.922H2O
+     V0PrTr  =   000.000 [null]
+****
+     6 element(s):
+      3.4500 Al             0.0170 Fe            35.7120 H
+      3.4670 N             46.9220 O             14.5330 Si
+****
+     7 species in reaction:
+    -1.0000  Clinoptilolite-NH4         -13.8680  H+
+     0.0170  Fe+++                        3.4500  Al+++
+     3.4670  NH4+                        14.5330  SiO2(aq)
+    17.8560  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -9.0742  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Clinoptilolite-Na       Na3.467Al3.45Fe.017Si14.533O36:10.922H2O
+     V0PrTr  =   632.050 cm**3/mol [source: 92Via/Bru]
+****
+     6 element(s):
+      3.4500 Al             0.0170 Fe            21.8440 H
+      3.4670 Na            46.9220 O             14.5330 Si
+****
+     7 species in reaction:
+    -1.0000  Clinoptilolite-Na          -13.8680  H+
+     0.0170  Fe+++                        3.4500  Al+++
+     3.4670  Na+                         14.5330  SiO2(aq)
+    17.8560  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -4.6593   -5.7696   -8.5612  -11.9362
+       -16.0971  -20.4363  -25.3442  -31.3726
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Clinoptilolite-Sr       Sr1.7335Al3.45Fe.017Si14.533O36:10.922H2O
+     V0PrTr  =   632.050 cm**3/mol [source: 92Via/Bru]
+****
+     6 element(s):
+      3.4500 Al             0.0170 Fe            21.8440 H
+     46.9220 O             14.5330 Si             1.7335 Sr
+****
+     7 species in reaction:
+    -1.0000  Clinoptilolite-Sr          -13.8680  H+
+     0.0170  Fe+++                        1.7335  Sr++
+     3.4500  Al+++                       14.5330  SiO2(aq)
+    17.8560  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -3.6061   -5.7825   -9.8870  -14.5695
+       -20.1523  -25.7427  -31.7793  -38.8489
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Cristobalite(alpha)     SiO2
+     V0PrTr  =    25.740 cm**3/mol [source: 78hel/del]
+****
+     2 element(s):
+      2.0000 O              1.0000 Si
+****
+     2 species in reaction:
+    -1.0000  Cristobalite(alpha)          1.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -3.5423   -3.1922   -2.8670   -2.5887
+        -2.3064   -2.0706   -1.8770   -1.7420
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Cronstedtite-7A         Fe2Fe2SiO5(OH)4
+     V0PrTr  =   110.900 cm**3/mol [source: SUPCRT speq02.dat ]
+****
+     4 element(s):
+      4.0000 Fe             4.0000 H              9.0000 O
+      1.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Cronstedtite-7A            -10.0000  H+
+     1.0000  SiO2(aq)                     2.0000  Fe++
+     2.0000  Fe+++                        7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        21.4814   17.3756   12.5812    8.2074
+         3.8785    0.3407   -2.7751   -5.7609
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Cryolite                Na3AlF6
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      3.0000 Na             1.0000 Al             6.0000 F
+****
+     4 species in reaction:
+    -1.0000  Cryolite                     3.0000  Na+
+     1.0000  Al+++                        6.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       -33.3544  -32.4002  -31.8118  -31.7411
+       -32.2984  -33.5077  -35.4754  -38.5707
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Daphnite-14A            Fe5AlAlSi3O10(OH)8
+     V0PrTr  =   213.420 cm**3/mol [source: SUPCRT speq02.dat]
+****
+     5 element(s):
+      2.0000 Al             5.0000 Fe             8.0000 H
+     18.0000 O              3.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Daphnite-14A               -16.0000  H+
+     2.0000  Al+++                        3.0000  SiO2(aq)
+     5.0000  Fe++                        12.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        60.0171   51.6383   41.7694   32.7295
+        23.8005   16.5785   10.3389    4.4998
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Daphnite-7A             Fe5AlAlSi3O10(OH)8
+     V0PrTr  =   221.200 cm**3/mol [source: SUPCRT speq02.dat]
+****
+     5 element(s):
+      2.0000 Al             5.0000 Fe             8.0000 H
+     18.0000 O              3.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Daphnite-7A                -16.0000  H+
+     2.0000  Al+++                        3.0000  SiO2(aq)
+     5.0000  Fe++                        12.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        63.6316   55.0117   44.8770   35.6047
+        26.4563   19.0674   12.6966    6.7515
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Dawsonite               NaAlCO3(OH)2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      1.0000 Al             1.0000 C              2.0000 H
+      1.0000 Na             5.0000 O
+****
+     6 species in reaction:
+    -1.0000  Dawsonite                   -3.0000  H+
+     1.0000  Al+++                        1.0000  HCO3-
+     1.0000  Na+                          2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    3.6618  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Dolomite                Camg(CO3)2
+     V0PrTr  =    64.365 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     4 element(s):
+      2.0000 C              1.0000 Ca             1.0000 Mg
+      6.0000 O
+****
+     5 species in reaction:
+    -1.0000  Dolomite                    -2.0000  H+
+     1.0000  Ca++                         1.0000  Mg++
+     2.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         3.4063    2.5135    1.3314    0.0944
+        -1.3493   -2.7744   -4.2968   -6.1006
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Epsomite                MgSO4:7H2O
+     V0PrTr  =   146.800 cm**3/mol [source: 79Rob/Hem]
+****
+     4 element(s):
+     14.0000 H              1.0000 Mg            11.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Epsomite                     1.0000  Mg++
+     1.0000  SO4--                        7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -2.1850   -1.9715   -1.8139   -1.7404
+        -1.8025   -2.0663   -2.6012   -3.5518
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Erionite                K1.5Na0.9Ca0.9Al4.2Si13.8O36:13.0H2O
+     V0PrTr  =   672.000 cm**3/mol [source: 95Chi/Bis]
+****
+     7 element(s):
+      4.2000 Al             0.9000 Ca             1.5000 K
+     26.0000 H             49.0000 O             13.8000 Si
+      0.9000 Na
+****
+     8 species in reaction:
+    -1.0000  Erionite                   -16.8000  H+
+     1.5000  K+                           4.2000  Al+++
+     0.9000  Ca++                        13.8000  SiO2(aq)
+    21.4000  H2O                          0.9000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -2.4264   -4.8296   -8.5254  -11.9726
+       -15.1353  -17.5303  -19.7298  -22.3994
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Ferroaluminoceladonite  KFeAlSi4O10(OH)2
+     V0PrTr  =   153.678 cm**3/mol [source: Clays_TJW_1_Rev1a.xls]
+****
+     6 element(s):
+      1.0000 Al             2.0000 H              1.0000 K
+      1.0000 Fe            12.0000 O              4.0000 Si
+****
+     7 species in reaction:
+    -1.0000  Ferroaluminoceladonite      -6.0000  H+
+     1.0000  Al+++                        1.0000  K+
+     1.0000  Fe++                         4.0000  H2O
+     4.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.6657    4.5745    2.9253    1.2797
+        -0.3933   -1.7825   -3.0649   -4.4541
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Ferroceladonite         KFeFeSi4O10(OH)2
+     V0PrTr  =   156.720 cm**3/mol [source: Clays_TJW_1_Rev1a.xls]
+****
+     5 element(s):
+      2.0000 Fe             2.0000 H              1.0000 K
+     12.0000 O              4.0000 Si
+****
+     7 species in reaction:
+    -1.0000  Ferroceladonite             -6.0000  H+
+     1.0000  Fe+++                        1.0000  K+
+     1.0000  Fe++                         4.0000  H2O
+     4.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -2.7737   -3.0464   -3.7219   -4.4443
+        -5.1715   -5.7824   -6.4098   -7.2406
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Fe2(MoO4)3
+     V0PrTr  =   131.850 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     3 element(s):
+      2.0000 Fe             3.0000 Mo            12.0000 O
+****
+     3 species in reaction:
+    -1.0000  Fe2(MoO4)3                   3.0000  MoO4--
+     2.0000  Fe+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -38.5200  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+FeF3
+     V0PrTr  =    32.060 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      3.0000 F              1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeF3                         1.0000  Fe+++
+     3.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -19.1368  -19.2386  -19.6397  -20.2803
+       -21.2782  -22.5050  -24.0432  -26.0946
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Fe2(SO4)3
+     V0PrTr  =   130.770 cm**3/mol [source: 79Rob/Hem]
+****
+     3 element(s):
+      2.0000 Fe            12.0000 O              3.0000 S
+****
+     3 species in reaction:
+    -1.0000  Fe2(SO4)3                    2.0000  Fe+++
+     3.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         4.5147    0.8936   -3.9957   -9.1664
+       -15.1498  -20.8688  -26.6630  -33.0596
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Fluorapatite            Ca5(PO4)3F
+     V0PrTr  =   160.000 cm**3/mol [source: 504.302/3.2 90Rob/Cam]
+****
+     4 element(s):
+      5.0000 Ca             1.0000 F             12.0000 O
+      3.0000 P
+****
+     5 species in reaction:
+    -1.0000  Fluorapatite                -3.0000  H+
+     1.0000  F-                           3.0000  HPO4--
+     5.0000  Ca++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -23.8548  -24.9940  -27.0651  -29.7302
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Fluorite                CaF2
+     V0PrTr  =    24.542 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      1.0000 Ca             2.0000 F
+****
+     3 species in reaction:
+    -1.0000  Fluorite                     1.0000  Ca++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       -10.3098  -10.0371   -9.9067   -9.9670
+       -10.2653  -10.7841  -11.5550  -12.7028
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Gaylussite              CaNa2(CO3)2:5H2O
+     V0PrTr  =   148.150 cm**3/mol [source: 73Don    ]
+****
+     5 element(s):
+      2.0000 C              1.0000 Ca            10.0000 H
+      2.0000 Na            11.0000 O
+****
+     6 species in reaction:
+    -1.0000  Gaylussite                  -2.0000  H+
+     1.0000  Ca++                         2.0000  HCO3-
+     2.0000  Na+                          5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   11.2576   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Gibbsite                Al(OH)3
+     V0PrTr  =    31.956 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     3 element(s):
+      1.0000 Al             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Gibbsite                    -3.0000  H+
+     1.0000  Al+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.7560  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+Glaserite               NaK3(SO4)2
+* Also known as "Glasserite" and Aphthitalite
+     V0PrTr  =   246.230 cm**3/mol [source: 86Jen    ]
+****
+     4 element(s):
+      1.0000 Na             3.0000 K              8.0000 O
+      2.0000 S
+****
+     4 species in reaction:
+    -1.0000  Glaserite                    1.0000  Na+
+     2.0000  SO4--                        3.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -3.8027   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Glauberite              Na2Ca(SO4)2
+     V0PrTr  =   101.120 cm**3/mol [source: 73Don    ]
+****
+     4 element(s):
+      1.0000 Ca             2.0000 Na             8.0000 O
+      2.0000 S
+****
+     4 species in reaction:
+    -1.0000  Glauberite                   1.0000  Ca++
+     2.0000  Na+                          2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -4.7768   -5.1827   -5.7677   -6.5632
+        -7.8550   -9.8619  -12.7194   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Goethite                FeOOH
+     V0PrTr  =    20.820 cm**3/mol [source: 79Rob/Hem]
+****
+     3 element(s):
+      1.0000 Fe             1.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Goethite                    -3.0000  H+
+     1.0000  Fe+++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         1.5251    0.5347   -0.6066   -1.6494
+        -2.7014   -3.5942   -4.4184   -5.2402
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Greenalite              Fe3Si2O5(OH)4
+     V0PrTr  =   115.000 cm**3/mol [source: SUPCRT speq02.dat]
+****
+     4 element(s):
+      3.0000 Fe             4.0000 H              9.0000 O
+      2.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Greenalite                  -6.0000  H+
+     2.0000  SiO2(aq)                     3.0000  Fe++
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        26.0534   23.1624   19.7179   16.5850
+        13.5453   11.1388    9.0868    7.1439
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Gypsum                  CaSO4:2H2O
+     V0PrTr  =    74.690 cm**3/mol [source: 79Rob/Hem]
+****
+     4 element(s):
+      1.0000 Ca             4.0000 H              6.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Gypsum                       1.0000  Ca++
+     1.0000  SO4--                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -4.5436   -4.5199   -4.6536   -4.9448
+        -5.3130   -5.4993   -5.3650   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Halite                  NaCl
+     V0PrTr  =    27.015 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      1.0000 Cl             1.0000 Na
+****
+     3 species in reaction:
+    -1.0000  Halite                       1.0000  Cl-
+     1.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         1.5012    1.5857    1.6084    1.5690
+         1.4423    1.2137    0.8264   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Hematite                Fe2O3
+     V0PrTr  =    30.274 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      2.0000 Fe             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Hematite                    -6.0000  H+
+     2.0000  Fe+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         2.1715    0.1086   -2.2815   -4.4731
+        -6.6792   -8.5315  -10.2124  -11.8565
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Hemihydrate             CaSO4:0.5H2O
+* Also known as Bassanite (which is probably more proper)
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Ca             1.0000 H              4.5000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Hemihydrate                  1.0000  Ca++
+     1.0000  SO4--                        0.5000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -3.4301   -3.7773   -4.2698   -4.9372
+        -5.8587   -6.7479   -7.6614   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Heulandite              Ba.065Sr.175Ca.585K.132Na.383Al2.165Si6.835O18:6
+     V0PrTr  =   000.000 [null]
+****
+     9 element(s):
+      2.1650 Al             0.0650 Ba             0.5850 Ca
+     12.0000 H              0.1320 K              0.3830 Na
+     24.0000 O              6.8350 Si             0.1750 Sr
+****
+    10 species in reaction:
+    -1.0000  Heulandite                  -8.6600  H+
+     0.0650  Ba++                         0.1320  K+
+     0.1750  Sr++                         0.3830  Na+
+     0.5850  Ca++                         2.1650  Al+++
+     6.8350  SiO2(aq)                    10.3300  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.7184    3.6220    0.6905   -2.0963
+        -4.8363   -7.0706   -9.1445  -11.4378
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Hexahydrite             MgSO4:6H2O
+     V0PrTr  =   132.580 cm**3/mol [source: 67rob/bet]
+****
+     4 element(s):
+     12.0000 H              1.0000 Mg            10.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Hexahydrite                  1.0000  Mg++
+     1.0000  SO4--                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -1.6462   -1.6712   -1.8055   -2.0168
+        -2.3767   -2.8875   -3.6286   -4.7521
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Huntite                 Camg3(CO3)4
+     V0PrTr  =   122.900 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     4 element(s):
+      4.0000 C              1.0000 Ca             3.0000 Mg
+     12.0000 O
+****
+     5 species in reaction:
+    -1.0000  Huntite                     -4.0000  H+
+     1.0000  Ca++                         3.0000  Mg++
+     4.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        12.9081   10.3010    7.0008    3.6895
+         0.0002   -3.4647   -6.9953  -10.9953
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Hydroxylapatite         Ca5(OH)(PO4)3
+     V0PrTr  =   163.000 cm**3/mol [source: 502.311/3.08 90rob/cAm]
+****
+     4 element(s):
+      5.0000 Ca             1.0000 H             13.0000 O
+      3.0000 P
+****
+     5 species in reaction:
+    -1.0000  Hydroxylapatite             -4.0000  H+
+     1.0000  H2O                          3.0000  HPO4--
+     5.0000  Ca++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -0.2733   -3.0746   -6.9553  -11.1770
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Hydromagnesite          Mg5(CO3)4(OH)2:4H2O
+     V0PrTr  =   208.800 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     4 element(s):
+      4.0000 C             10.0000 H              5.0000 Mg
+     18.0000 O
+****
+     5 species in reaction:
+    -1.0000  Hydromagnesite              -6.0000  H+
+     4.0000  HCO3-                        5.0000  Mg++
+     6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        35.5731   30.8539   25.2242   19.9126
+        14.3962    9.5952    5.0396    0.2069
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Illite                  K0.6Mg0.25Al1.8Al0.5Si3.5O10(OH)2
+     V0PrTr  =   139.346 cm**3/mol [source: Clays_TJW_1_Rev1a.xls]
+****
+     6 element(s):
+      2.3000 Al             2.0000 H              0.6000 K
+      0.2500 Mg            12.0000 O              3.5000 Si
+****
+     7 species in reaction:
+    -1.0000  Illite                      -8.0000  H+
+     0.2500  Mg++                         0.6000  K+
+     2.3000  Al+++                        3.5000  SiO2(aq)
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        11.1913    8.3706    4.7199    1.2042
+        -2.3885   -5.3930   -8.0973  -10.7757
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Jarosite                KFe3(SO4)2(OH)6
+     V0PrTr  =   156.750 cm**3/mol [source: 73Don/Ond]
+****
+     5 element(s):
+      3.0000 Fe             6.0000 H              1.0000 K
+     14.0000 O              2.0000 S
+****
+     6 species in reaction:
+    -1.0000  Jarosite                    -6.0000  H+
+     1.0000  K+                           2.0000  SO4--
+     3.0000  Fe+++                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -9.3706  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Jarosite-Na             NaFe3(SO4)2(OH)6
+     V0PrTr  =   168.420 cm**3/mol [source: 74rob/rap]
+****
+     5 element(s):
+      3.0000 Fe             6.0000 H              1.0000 Na
+     14.0000 O              2.0000 S
+****
+     6 species in reaction:
+    -1.0000  Jarosite-Na                 -6.0000  H+
+     1.0000  Na+                          2.0000  SO4--
+     3.0000  Fe+++                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -5.4482  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+K-Feldspar              KAlSi3O8
+     V0PrTr  =   108.870 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      1.0000 Al             1.0000 K              8.0000 O
+      3.0000 Si
+****
+     6 species in reaction:
+    -1.0000  K-Feldspar                  -4.0000  H+
+     1.0000  Al+++                        1.0000  K+
+     2.0000  H2O                          3.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.4117   -0.1903   -1.1255   -2.0445
+        -2.9603   -3.7177   -4.4359   -5.2567
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+K2CO3                   K2CO3
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      2.0000 K              1.0000 C              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  K2CO3                       -1.0000  H+
+     2.0000  K+                           1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        15.9754   15.3005   14.4517   13.6060
+        12.6772   11.8278   10.9900   10.0667
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+K2CO3:1.5H2O
+     V0PrTr  =    80.880 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      1.0000 C              3.0000 H              2.0000 K
+      4.5000 O
+****
+     5 species in reaction:
+    -1.0000  K2CO3:1.5H2O                -1.0000  H+
+     1.0000  HCO3-                        1.5000  H2O
+     2.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   13.3720   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+K2O                     K2O
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      2.0000 K              1.0000 O
+****
+     4 species in reaction:
+    -1.0000  K2O                         -2.0000  H+
+     2.0000  K+                           1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        90.8494   83.9772   76.0947   68.9151
+        61.8692   56.3234   51.8348   48.1070
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+K2Si4O9                 K2Si4O9
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      2.0000 K              4.0000 Si             9.0000 O
+****
+     5 species in reaction:
+    -1.0000  K2Si4O9                     -2.0000  H+
+     2.0000  K+                           4.0000  SiO2(aq)
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        14.7406   14.5138   13.9301   13.3185
+        12.7462   12.3381   11.9945   11.5627
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+K3H(SO4)2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 H              3.0000 K              8.0000 O
+      2.0000 S
+****
+     4 species in reaction:
+    -1.0000  K3H(SO4)2                    1.0000  H+
+     2.0000  SO4--                        3.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -3.5425   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+K8H4(CO3)6:3H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      6.0000 C             10.0000 H              8.0000 K
+     21.0000 O
+****
+     5 species in reaction:
+    -1.0000  K8H4(CO3)6:3H2O             -2.0000  H+
+     3.0000  H2O                          6.0000  HCO3-
+     8.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   27.6874   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Kainite                 KMgClSO4:3H2O
+     V0PrTr  =   115.300 cm**3/mol [source: 73Don    ]
+****
+     6 element(s):
+      1.0000 Cl             6.0000 H              1.0000 K
+      1.0000 Mg             7.0000 O              1.0000 S
+****
+     6 species in reaction:
+    -1.0000  Kainite                      1.0000  Cl-
+     1.0000  K+                           1.0000  Mg++
+     1.0000  SO4--                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -0.1926   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+KAlCl4                  KAlCl4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 K              1.0000 Al             4.0000 Cl
+****
+     4 species in reaction:
+    -1.0000  KAlCl4                       1.0000  K+
+     1.0000  Al+++                        4.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        38.3867   34.4833   29.5755   24.6624
+        19.2624   14.3665    9.6565    4.7242
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+K2HPO4                  K2HPO4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      2.0000 K              1.0000 H              1.0000 P
+      4.0000 O
+****
+     3 species in reaction:
+    -1.0000  K2HPO4                       2.0000  K+
+     1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         3.3133    3.0685    2.5835    1.9386
+         1.0417    0.0399   -1.1181   -2.5689
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+K3AlCl6                 K3AlCl6
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      3.0000 K              1.0000 Al             6.0000 Cl
+****
+     4 species in reaction:
+    -1.0000  K3AlCl6                      3.0000  K+
+     1.0000  Al+++                        6.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        34.5222   31.6052   27.6525   23.4370
+        18.4990   13.7142    8.7875    3.2221
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+K3AlF6                  K3AlF6
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      3.0000 K              1.0000 Al             6.0000 F
+****
+     4 species in reaction:
+    -1.0000  K3AlF6                       3.0000  K+
+     1.0000  Al+++                        6.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       -25.5229  -24.8505  -24.6381  -24.9796
+       -26.0252  -27.6893  -30.0741  -33.5435
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+K3PO4                   K3PO4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      3.0000 K              1.0000 P              4.0000 O
+****
+     4 species in reaction:
+    -1.0000  K3PO4                       -1.0000  H+
+     3.0000  K+                           1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        14.4681   13.5920   12.3738   11.0575
+         9.5009    7.9790    6.3959    4.5815
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+Kalicinite              KHCO3
+     V0PrTr  =    46.140 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      1.0000 C              1.0000 H              1.0000 K
+      3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Kalicinite                   1.0000  HCO3-
+     1.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data    0.2814   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+KAl(SO4)2               KAl(SO4)2
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 K              1.0000 Al             2.0000 S
+      8.0000 O
+****
+     4 species in reaction:
+    -1.0000  KAl(SO4)2                    1.0000  K+
+     1.0000  Al+++                        2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         4.6073    2.6929    0.0249   -2.8654
+        -6.2930   -9.6536  -13.1447  -17.0973
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+KAl(SO4)2:3H2O          KAl(SO4)2:3H2O
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      1.0000 K              1.0000 Al             2.0000 S
+      6.0000 H             11.0000 O
+****
+     5 species in reaction:
+    -1.0000  KAl(SO4)2:3H2O               1.0000  K+
+     1.0000  Al+++                        2.0000  SO4--
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -0.3136   -1.3959   -3.0511   -4.9506
+        -7.3269   -9.7903  -12.5013  -15.7659
+* Source: 95Bar/Pla 	[Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+KAl(SO4)2:12H2O         KAl(SO4)2:12H2O
+* Also known as Alum-K
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      1.0000 K              1.0000 Al             2.0000 S
+     24.0000 H             20.0000 O
+****
+     5 species in reaction:
+    -1.0000  KAl(SO4)2:12H2O              1.0000  K+
+     1.0000  Al+++                        2.0000  SO4--
+    12.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -7.4823   -6.9137   -6.4929   -6.3701
+        -6.7333   -7.7110   -9.4137  -12.0982
+* Source: 95Bar/Pla 	[Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+Kaolinite               Al2Si2O5(OH)4
+     V0PrTr  =    99.520 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     4 element(s):
+      2.0000 Al             4.0000 H              9.0000 O
+      2.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Kaolinite                   -6.0000  H+
+     2.0000  Al+++                        2.0000  SiO2(aq)
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         8.3594    5.9539    3.0170    0.2885
+        -2.4351   -4.6801   -6.6856   -8.6532
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+KBr                     KBr
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 K              1.0000 Br
+****
+     3 species in reaction:
+    -1.0000  KBr                          1.0000  K+
+     1.0000  Br-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         0.7037    1.0666    1.3888    1.5926
+         1.6788    1.6195    1.4186    1.0275
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+KClO4                   KClO4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 K              1.0000 Cl             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  KClO4                        1.0000  K+
+     1.0000  ClO4-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -2.4359   -1.6258   -0.7668   -0.0514
+         0.5597    0.9338    1.1045    1.0509
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+KH2PO4                  KH2PO4
+* Note: Archerite is approximately K(0.75)(NH4)(0.25)H2PO4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 K              2.0000 H              1.0000 P
+      4.0000 O
+****
+     4 species in reaction:
+    -1.0000  KH2PO4                       1.0000  K+
+     1.0000  H+                           1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -8.1968   -7.7296   -7.3877   -7.2706
+        -7.4081   -7.7993   -8.4480   -9.4559
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+KI                      KI
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 K              1.0000 I
+****
+     3 species in reaction:
+    -1.0000  KI                           1.0000  K+
+     1.0000  I-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         1.6508    1.9904    2.2907    2.4753
+         2.5413    2.4648    2.2499    1.8484
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+Kieserite               MgSO4:H2O
+     V0PrTr  =    56.600 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      2.0000 H              1.0000 Mg             5.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Kieserite                    1.0000  H2O
+     1.0000  Mg++                         1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         0.7200   -0.0239   -1.0716   -2.2058
+        -3.5575   -4.9071   -6.3552   -8.0716
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+KMgCl3:2H2O             KMgCl3:2H2O
+* This is a less hydrous relative of Carnallite, KMgCl3:6H2O
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      3.0000 Cl             4.0000 H              1.0000 K
+      1.0000 Mg             2.0000 O
+****
+     5 species in reaction:
+    -1.0000  KMgCl3:2H2O                  1.0000  K+
+     1.0000  Mg++                         2.0000  H2O
+     3.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   13.9755  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2 [82Wag/Eva]
++--------------------------------------------------------------------
+KNaCO3:6H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      1.0000 C             12.0000 H              1.0000 K
+      1.0000 Na             9.0000 O
+****
+     6 species in reaction:
+    -1.0000  KNaCO3:6H2O                 -1.0000  H+
+     1.0000  HCO3-                        1.0000  K+
+     1.0000  Na+                          6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   10.2233   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+KOH                     KOH
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 K              1.0000 O              1.0000 H
+****
+     4 species in reaction:
+    -1.0000  KOH                         -1.0000  H+
+     1.0000  K+                           1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        26.4841   24.6647   22.5853   20.7013
+        18.8618   17.4194   16.2516   15.2751
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+Labile_Salt             Na2Ca5(SO4)6:3H2O
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      2.0000 Na             5.0000 Ca             6.0000 S
+     27.0000 O              6.0000 H
+****
+     5 species in reaction:
+    -1.0000  Labile_Salt                  2.0000  Na+
+     5.0000  Ca++                         6.0000  SO4--
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        18.2726    8.4195    6.7359    7.3639
+        22.1880   62.5432  135.5774   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Lansfordite             MgCO3:5H2O
+     V0PrTr  =   100.800 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      1.0000 C             10.0000 H              1.0000 Mg
+      8.0000 O
+****
+     5 species in reaction:
+    -1.0000  Lansfordite                 -1.0000  H+
+     1.0000  HCO3-                        1.0000  Mg++
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.8409  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Laumontite              K0.2Na0.2Ca1.8Al4Si8.0O24:8.0H2O
+     V0PrTr  =   406.400 cm**3/mol [source: 95Chi/Bis]
+****
+     7 element(s):
+      4.0000 Al             0.2000 Na            16.0000 H
+      0.2000 K             32.0000 O              8.0000 Si
+      1.8000 Ca
+****
+     8 species in reaction:
+    -1.0000  Laumontite                 -16.0000  H+
+     1.8000  Ca++                         4.0000  Al+++
+     0.2000  K+                           8.0000  SiO2(aq)
+    16.0000  H2O                          0.2000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        19.4704   14.2657    7.6939    1.6028
+        -4.3587   -9.1673  -13.4421  -17.7733
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Leonhardtite            MgSO4:4H2O
+* Also known as Starkeyite (which is probably more proper)
+     V0PrTr  =    95.740 cm**3/mol [source: 86Jen    ]
+****
+     4 element(s):
+      1.0000 Mg             1.0000 S              8.0000 O
+      8.0000 H
+****
+     4 species in reaction:
+    -1.0000  Leonhardtite                 1.0000  Mg++
+     1.0000  SO4--                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -0.7446   -1.0359   -1.5115   -2.0704
+        -2.8064   -3.6369   -4.6484   -5.9991
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Leonite                 K2Mg(SO4)2:4H2O
+     V0PrTr  =   166.300 cm**3/mol [source: 73Don    ]
+****
+     5 element(s):
+      8.0000 H              2.0000 K              1.0000 Mg
+     12.0000 O              2.0000 S
+****
+     5 species in reaction:
+    -1.0000  Leonite                      1.0000  Mg++
+     2.0000  K+                           2.0000  SO4--
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -3.9790   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Lime                    CaO
+     V0PrTr  =    16.764 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      1.0000 Ca             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Lime                        -2.0000  H+
+     1.0000  Ca++                         1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        35.6809   32.5761   29.0106   25.7563
+        22.5452   19.9878   17.8747   16.0584
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Magnesite               MgCO3
+     V0PrTr  =    28.018 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     3 element(s):
+      1.0000 C              1.0000 Mg             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Magnesite                   -1.0000  H+
+     1.0000  HCO3-                        1.0000  Mg++
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         2.9734    2.2936    1.4383    0.5875
+        -0.3520   -1.2275   -2.1152   -3.1178
+* Source: data0.ymp.R2
+* Nagra = 2.041
++--------------------------------------------------------------------
+Magnetite               Fe3O4
+     sp.type =  solid
+     V0PrTr  =    44.524 cm**3/mol [source: 78hel/del]
+****
+     2 element(s):
+      3.0000 Fe             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  Magnetite                   -8.0000  H+
+     1.0000  Fe++                         2.0000  Fe+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.9293   10.4724    6.4783    2.8254
+        -0.8248   -3.8413   -6.5132   -9.0533
+* Source: data0.ymp.R2
+* Nagra = 10.02
++--------------------------------------------------------------------
+Maximum_Microcline      KAlSi3O8
+     V0PrTr  =   108.741 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      1.0000 Al             1.0000 K              8.0000 O
+      3.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Maximum_Microcline          -4.0000  H+
+     1.0000  Al+++                        1.0000  K+
+     2.0000  H2O                          3.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.4073   -0.1903   -1.1298   -2.0573
+        -2.9804   -3.7384   -4.4505   -5.2601
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Mercallite              KHSO4
+     V0PrTr  =    58.590 cm**3/mol [source: 73Don    ]
+****
+     4 element(s):
+      1.0000 H              1.0000 K              4.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Mercallite                   1.0000  H+
+     1.0000  K+                           1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -1.4015   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Mesolite                Na.676Ca.657Al1.99Si3.01O10:2.647H2O
+     V0PrTr  =   171.700 cm**3/mol [source: 387.783/2.259 90rob/cam]
+****
+     6 element(s):
+      1.9900 Al             0.6570 Ca             5.2940 H
+      0.6760 Na            12.6470 O              3.0100 Si
+****
+     7 species in reaction:
+    -1.0000  Mesolite                    -7.9600  H+
+     0.6570  Ca++                         0.6760  Na+
+     1.9900  Al+++                        3.0100  SiO2(aq)
+     6.6270  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        16.0131   13.0290    9.3709    5.9953
+         2.6630   -0.0574   -2.4907   -4.9270
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+MgBr2                   MgBr2
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Mg             2.0000 Br
+****
+     3 species in reaction:
+    -1.0000  MgBr2                        1.0000  Mg++
+     2.0000  Br-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        30.5647   27.6871   24.1891   20.8105
+        17.2451   14.1542   11.3116    8.4666
+* Source: 95Bar/Pla [Solids_j_Mg_TJW_1.xls]
++--------------------------------------------------------------------
+MgCl2:H2O               MgCl2:H2O
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Mg             2.0000 Cl             2.0000 H
+      1.0000 O
+****
+     4 species in reaction:
+    -1.0000  MgCl2:H2O                    1.0000  Mg++
+     2.0000  Cl-                          1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        17.9425   16.1034   13.8206   11.5702
+         9.1311    6.9385    4.8264    2.5834
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+MgCl2:2H2O              MgCl2:2H2O
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Mg             2.0000 Cl             4.0000 H
+      2.0000 O
+****
+     4 species in reaction:
+    -1.0000  MgCl2:2H2O                   1.0000  Mg++
+     2.0000  Cl-                          2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        14.1587   12.7500   10.9786    9.2142
+         7.2745    5.4934    3.7276    1.7805
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+MgCl2:4H2O              MgCl2:4H2O
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Mg             2.0000 Cl             8.0000 H
+      4.0000 O
+****
+     4 species in reaction:
+    -1.0000  MgCl2:4H2O                   1.0000  Mg++
+     2.0000  Cl-                          4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         7.9750    7.3158    6.4425    5.5400
+         4.4947    3.4584    2.3245    0.9217
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+MgI2                    MgI2
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Mg             2.0000 I
+****
+     3 species in reaction:
+    -1.0000  MgI2                         1.0000  Mg++
+     2.0000  I-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        37.7752   34.4420   30.4300   26.5829
+        22.5529   19.0925   15.9499   12.8597
+* Source: 95Bar/Pla [Solids_j_Mg_TJW_1.xls]
++--------------------------------------------------------------------
+MgMoO4                  MgMoO4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Mg             1.0000 Mo             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  MgMoO4                       1.0000  Mg++
+     1.0000  MoO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         0.2823   -0.6290   -1.8596   -3.1637
+        -4.6893   -6.1798   -7.7405   -9.5439
+* Source: 95Bar/Pla [Solids_j_Mg_TJW_1.xls]
++--------------------------------------------------------------------
+Mg(NO3)2                Mg(NO3)2
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Mg             2.0000 N              6.0000 O
+****
+     3 species in reaction:
+    -1.0000  Mg(NO3)2                     1.0000  Mg++
+     2.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        16.5292   15.1741   13.4524   11.7254
+         9.8189    8.0672    6.3389    4.4551
+* Source: 95Bar/Pla [Solids_j_Mg_TJW_1.xls]
++--------------------------------------------------------------------
+MgOHCl
+     V0PrTr  =    33.230 cm**3/mol [source: 73Don    ]
+****
+     4 element(s):
+      1.0000 Cl             1.0000 H              1.0000 Mg
+      1.0000 O
+****
+     5 species in reaction:
+    -1.0000  MgOHCl                      -1.0000  H+
+     1.0000  Cl-                          1.0000  H2O
+     1.0000  Mg++
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        17.8133   15.9370   13.7021   11.5892
+         9.4058    7.5465    5.8562    4.1784
+* Source: 95Bar/Pla [Solids_j_Mg_TJW_1.xls]
++--------------------------------------------------------------------
+MgSO4                   MgSO4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Mg             1.0000 S              4.0000 O
+****
+     3 species in reaction:
+    -1.0000  MgSO4                        1.0000  Mg++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         6.2191    4.8599    3.0854    1.2669
+        -0.7786   -2.6896   -4.5999   -6.7016
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Minnesotaite            Fe3Si4O10(OH)2
+     V0PrTr  =   147.860 cm**3/mol [source: SUPCRT speq02.dat]
+****
+     4 element(s):
+      3.0000 Fe             2.0000 H             12.0000 O
+      4.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Minnesotaite                -6.0000  H+
+     3.0000  Fe++                         4.0000  H2O
+     4.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        17.1553   15.0002   12.2222    9.6380
+         7.1347    5.1629    3.4582    1.7440
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Mirabilite              Na2SO4:10H2O
+     V0PrTr  =   219.800 cm**3/mol [source: 79Rob/Hem]
+****
+     4 element(s):
+     20.0000 H              2.0000 Na            14.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Mirabilite                   1.0000  SO4--
+     2.0000  Na+                         10.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -2.5060   -1.2185    2.1568   13.7989
+        45.1980   97.6877  171.5797   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Misenite                K8H6(SO4)7
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      6.0000 H              8.0000 K             28.0000 O
+      7.0000 S
+****
+     4 species in reaction:
+    -1.0000  Misenite                     6.0000  H+
+     7.0000  SO4--                        8.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data  -10.8061   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Molysite                FeCl3
+     V0PrTr  =    55.855 [source: 162.203/2.904 90rob/cam]
+****
+     2 element(s):
+      3.0000 Cl             1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  Molysite                     1.0000  Fe+++
+     3.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        15.8514   13.5217   10.5451    7.5206
+         4.1357    0.9961   -2.1068   -5.4602
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Montmorillonite-H       H0.33Mg0.33Al1.67Si4O10(OH)2
+     V0PrTr  =   132.216 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     5 element(s):
+      1.6700 Al             0.3300 Mg            12.0000 O
+      4.0000 Si             2.3300 H
+****
+     6 species in reaction:
+    -1.0000  Montmorillonite-H           -5.6700  H+
+     0.3300  Mg++                         4.0000  SiO2(aq)
+     1.6700  Al+++                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.1333    1.4445   -0.9146   -3.2347
+        -5.6069   -7.5864   -9.3859  -11.2358
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Montmorillonite-Na      Na0.33Mg0.33Al1.67Si4O10(OH)2
+     V0PrTr  =   134.030 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      1.6700 Al             0.3300 Mg            12.0000 O
+      4.0000 Si             2.0000 H              0.3300 Na
+****
+     7 species in reaction:
+    -1.0000  Montmorillonite-Na          -6.0000  H+
+     0.3300  Mg++                         4.0000  SiO2(aq)
+     1.6700  Al+++                        4.0000  H2O
+     0.3300  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         4.1752    2.4583    0.0686   -2.2746
+        -4.6636   -6.6516   -8.4568  -10.3142
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Montmorillonite-K       K0.33Mg0.33Al1.67Si4O10(OH)2
+     V0PrTr  =   137.455 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      1.6700 Al             0.3300 Mg            12.0000 O
+      4.0000 Si             2.0000 H              0.3300 K
+****
+     7 species in reaction:
+    -1.0000  Montmorillonite-K           -6.0000  H+
+     0.3300  Mg++                         4.0000  SiO2(aq)
+     1.6700  Al+++                        4.0000  H2O
+     0.3300  K+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.7554    2.1194   -0.1824   -2.4524
+        -4.7777   -6.7228   -8.4982  -10.3337
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Montmorillonite-Ca      Ca0.165Mg0.33Al1.67Si4O10(OH)2
+     V0PrTr  =   133.070 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      1.6700 Al             0.3300 Mg            12.0000 O
+      4.0000 Si             2.0000 H              0.1650 Ca
+****
+     7 species in reaction:
+    -1.0000  Montmorillonite-Ca          -6.0000  H+
+     0.3300  Mg++                         4.0000  SiO2(aq)
+     1.6700  Al+++                        4.0000  H2O
+     0.1650  Ca++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         4.2226    2.4024   -0.1121   -2.5786
+        -5.1015   -7.2081   -9.1212  -11.0793
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Montmorillonite-Mg      Mg0.495Al1.67Si4O10(OH)2
+     V0PrTr  =   132.029 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     5 element(s):
+      1.6700 Al             0.4950 Mg            12.0000 O
+      4.0000 Si             2.0000 H
+****
+     6 species in reaction:
+    -1.0000  Montmorillonite-Mg          -6.0000  H+
+     0.4950  Mg++                         4.0000  SiO2(aq)
+     1.6700  Al+++                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         4.2348    2.3643   -0.2067   -2.7218
+        -5.2890   -7.4277   -9.3650  -11.3418
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Mordenite               Ca.2895Na.361Al.94Si5.06O12:3.468H2O
+     V0PrTr  =   000.000 [null]
+****
+     6 element(s):
+      0.9400 Al             0.2895 Ca             6.9360 H
+      0.3610 Na            15.4680 O              5.0600 Si
+****
+     7 species in reaction:
+    -1.0000  Mordenite                   -3.7600  H+
+     0.2895  Ca++                         0.3610  Na+
+     0.9400  Al+++                        5.0600  SiO2(aq)
+     5.3480  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -4.3249   -4.5423   -5.1668   -5.8036
+        -6.3837   -6.8167   -7.2523   -7.8972
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NaBr                    NaBr
+     V0PrTr  =    32.120 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      1.0000 Br             1.0000 Na
+****
+     3 species in reaction:
+    -1.0000  NaBr                         1.0000  Br-
+     1.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         2.8928    2.9204    2.8741    2.7631
+         2.5659    2.3051    1.9570    1.4534
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+NaClO4                  NaClO4
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Na             1.0000 Cl             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  NaClO4                       1.0000  Na+
+     1.0000  ClO4-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         2.6003    2.8350    3.0499    3.1996
+         3.2815    3.2618    3.1311    2.8393
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+NaI                     NaI
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Na             1.0000 I
+****
+     3 species in reaction:
+    -1.0000  NaI                          1.0000  I-
+     1.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         5.2490    5.1306    4.9213    4.6621
+         4.3173    3.9386    3.4946    2.9131
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+NaNO2                   NaNO2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Na             1.0000 N              2.0000 O
+****
+     3 species in reaction:
+    -1.0000  NaNO2                        1.0000  Na+
+     1.0000  NO2-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         0.4463    0.7016    0.9233    1.0645
+         1.1223    1.0668    0.8883    0.5311
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+NaOH                    NaOH
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Na             1.0000 O              1.0000 H
+****
+     4 species in reaction:
+    -1.0000  NaOH                        -1.0000  H+
+     1.0000  Na+                          1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        22.5215   20.9050   19.0778   17.4498
+        15.8934   14.7001   13.7517   12.9665
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Na2CO3:7H2O             Na2CO3:7H2O
+     V0PrTr  =   153.710 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      1.0000 C             14.0000 H              2.0000 Na
+     10.0000 O
+****
+     5 species in reaction:
+    -1.0000  Na2CO3:7H2O                 -1.0000  H+
+     1.0000  HCO3-                        2.0000  Na+
+     7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data    9.8791   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Na2CrO4                 Na2CrO4
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      2.0000 Na             1.0000 Cr             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  Na2CrO4                      2.0000  Na+
+     1.0000  CrO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         3.8174    3.5616    3.0863    2.4888
+         1.6926    0.8211   -0.1898   -1.4884
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Na2MoO4                 Na2MoO4
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      2.0000 Na             1.0000 Mo             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  Na2MoO4                      2.0000  Na+
+     1.0000  MoO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         1.3433    1.2688    1.0365    0.6932
+         0.1815   -0.4363   -1.2190   -2.3110
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Na2O                    Na2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      2.0000 Na             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Na2O                        -2.0000  H+
+     2.0000  Na+                          1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        72.4983   66.8982   60.5118   54.7439
+        49.1413   44.7785   41.2780   38.3839
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Na2SO4(Sol-3)           Na2SO4(Sol-3)
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      2.0000 Na             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Na2SO4(Sol-3)                1.0000  SO4--
+     2.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -0.0350   -0.0439   -0.2316   -0.5596
+        -1.0835   -1.7360   -2.5684   -3.7205
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Na3H(SO4)2              Na3H(SO4)2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 H              3.0000 Na             8.0000 O
+      2.0000 S
+****
+     4 species in reaction:
+    -1.0000  Na3H(SO4)2                   1.0000  H+
+     2.0000  SO4--                        3.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -0.8143   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Kogarkoite              Na3SO4F
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      3.0000 Na             1.0000 F              1.0000 S
+      4.0000 O
+****
+     4 species in reaction:
+    -1.0000  Kogarkoite                   3.0000  Na+
+     1.0000  SO4--                        1.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -2.2018   -2.0247   -2.0694   -2.3260
+        -2.8603   -3.6269   -4.6979   -6.2783
+* Source: 01fel/mac, 94fel/rus, and 99gur/gor 
+* [Solids_j_Kogarkoite_TJW.xls]
++--------------------------------------------------------------------
+Na4Ca(SO4)3:2H2O        Na4Ca(SO4)3:2H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      1.0000 Ca             4.0000 H              4.0000 Na
+     14.0000 O              3.0000 S
+****
+     5 species in reaction:
+    -1.0000  Na4Ca(SO4)3:2H2O             1.0000  Ca++
+     2.0000  H2O                          3.0000  SO4--
+     4.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -5.6723   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Nahcolite               NaHCO3
+     V0PrTr  =    38.620 cm**3/mol [source: 73Don    ]
+****
+     4 element(s):
+      1.0000 C              1.0000 H              1.0000 Na
+      3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Nahcolite                    1.0000  HCO3-
+     1.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -1.0560   -0.7061   -0.3518   -0.0700
+         0.1454    0.2296    0.1749   -0.0740
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Natrite                 Na2CO3
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      2.0000 Na             1.0000 C              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Natrite                     -1.0000  H+
+     2.0000  Na+                          1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        11.6028   10.9840   10.2336    9.5237
+         8.7835    8.1278    7.4770    6.7236
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Natron                  Na2CO3:10H2O
+     V0PrTr  =   195.990 cm**3/mol [source: 73Don    ]
+****
+     4 element(s):
+      1.0000 C             20.0000 H              2.0000 Na
+     13.0000 O
+****
+     5 species in reaction:
+    -1.0000  Natron                      -1.0000  H+
+     1.0000  HCO3-                        2.0000  Na+
+    10.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data    9.5145   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Natrolite               Na2Al2Si3O10:2H2O
+     V0PrTr  =   000.000 [null]
+****
+     5 element(s):
+      2.0000 Al             4.0000 H              2.0000 Na
+     12.0000 O              3.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Natrolite                   -8.0000  H+
+     2.0000  Al+++                        2.0000  Na+
+     3.0000  SiO2(aq)                     6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        21.0240   17.9209   14.1477   10.7013
+         7.3511    4.6742    2.3348    0.0358
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nesquehonite            MgCO3:3H2O
+     V0PrTr  =    74.790 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     4 element(s):
+      1.0000 C              6.0000 H              1.0000 Mg
+      6.0000 O
+****
+     5 species in reaction:
+    -1.0000  Nesquehonite                -1.0000  H+
+     1.0000  HCO3-                        1.0000  Mg++
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         6.4163    4.9955    4.8188    4.7099
+         4.5592    4.3500    4.0310    3.5189
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NH4Cl                   NH4Cl
+* Sal Ammoniac
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 N              4.0000 H              1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  NH4Cl                        1.0000  NH4+
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         1.0768    1.3355    1.5536    1.6687
+         1.6663    1.5295    1.2549    0.7898
+* Source: 95Bar/Pla [Solids_j_NH4_TJW_1.xls]
++--------------------------------------------------------------------
+NH4ClO4                 NH4ClO4
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 N              4.0000 H              1.0000 Cl
+      4.0000 O
+****
+     3 species in reaction:
+    -1.0000  NH4ClO4                      1.0000  NH4+
+     1.0000  ClO4-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -0.6588   -0.1071    0.4788    0.9693
+         1.3870    1.6322    1.7164    1.6054
+* Source: 95Bar/Pla [Solids_j_NH4_TJW_1.xls]
++--------------------------------------------------------------------
+NH4I                    NH4I
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 N              4.0000 H              1.0000 I
+****
+     3 species in reaction:
+    -1.0000  NH4I                         1.0000  NH4+
+     1.0000  I-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         3.1806    3.4008    3.5803    3.6670
+         3.6470    3.5096    3.2494    2.8137
+* Source: 95Bar/Pla [Solids_j_NH4_TJW_1.xls]
++--------------------------------------------------------------------
+(NH4)2SO4               (NH4)2SO4
+* Mascagnite
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      2.0000 N              8.0000 H              1.0000 S
+      4.0000 O
+****
+     3 species in reaction:
+    -1.0000  (NH4)2SO4                    2.0000  NH4+
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         0.1596    0.3081    0.3010    0.1227
+        -0.2793   -0.8600   -1.6532   -2.7831
+* Source: 95Bar/Pla [Solids_j_NH4_TJW_1.xls]
++--------------------------------------------------------------------
+Niter                   KNO3
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 K              1.0000 N              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Niter                        1.0000  K+
+     1.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -0.8418   -0.2344    0.3772    0.8541
+         1.2188    1.3891    1.3856    1.1754
+* Source: 95Bar/Pla [Solids_j_K_TJW_1.xls]
++--------------------------------------------------------------------
+Nontronite-Mg           Mg.165Fe2Al.33Si3.67H2O12
+     V0PrTr  =   134.809 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      0.3300 Al             2.0000 Fe             2.0000 H
+      0.1650 Mg            12.0000 O              3.6700 Si
+****
+     7 species in reaction:
+    -1.0000  Nontronite-Mg               -7.3200  H+
+     0.1650  Mg++                         0.3300  Al+++
+     2.0000  Fe+++                        3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -10.1162  -11.1382  -12.6726  -14.1977
+       -15.7631  -17.1067  -18.4161  -19.9055
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nontronite-Ca           Ca.165Fe2Al.33Si3.67H2O12
+     V0PrTr  =   135.850 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      0.3300 Al             0.1650 Ca             2.0000 Fe
+      2.0000 H             12.0000 O              3.6700 Si
+****
+     7 species in reaction:
+    -1.0000  Nontronite-Ca               -7.3200  H+
+     0.1650  Ca++                         0.3300  Al+++
+     2.0000  Fe+++                        3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -10.1283  -11.1001  -12.5781  -14.0546
+       -15.5758  -16.8873  -18.1725  -19.6432
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nontronite-K            K.33Fe2Al.33Si3.67H2O12
+     V0PrTr  =   140.235 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      0.3300 Al             2.0000 Fe             2.0000 H
+      0.3300 K             12.0000 O              3.6700 Si
+****
+     7 species in reaction:
+    -1.0000  Nontronite-K                -7.3200  H+
+     0.3300  Al+++                        0.3300  K+
+     2.0000  Fe+++                        3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -10.5953  -11.3831  -12.6486  -13.9288
+       -15.2526  -16.4027  -17.5503  -18.8986
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nontronite-Na           Na.33Fe2Al.33Si3.67H2O12
+     V0PrTr  =   136.810 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      0.3300 Al             2.0000 Fe             2.0000 H
+      0.3300 Na            12.0000 O              3.6700 Si
+****
+     7 species in reaction:
+    -1.0000  Nontronite-Na               -7.3200  H+
+     0.3300  Al+++                        0.3300  Na+
+     2.0000  Fe+++                        3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -10.1759  -11.0442  -12.3972  -13.7502
+       -15.1373  -16.3301  -17.5073  -18.8772
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nontronite-H            H.33Fe2Al.33Si3.67H2O12
+     V0PrTr  =   000.000 [null]
+****
+     5 element(s):
+      0.3300 Al             2.0000 Fe             2.3300 H
+     12.0000 O              3.6700 Si
+****
+     6 species in reaction:
+    -1.0000  Nontronite-H                -6.9900  H+
+     0.3300  Al+++                        2.0000  Fe+++
+     3.6700  SiO2(aq)                     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -12.7075  -12.7660  -13.5802  -14.6291
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Oxychloride-Mg          Mg2Cl(OH)3:4H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Cl            11.0000 H              2.0000 Mg
+      7.0000 O
+****
+     5 species in reaction:
+    -1.0000  Oxychloride-Mg              -3.0000  H+
+     1.0000  Cl-                          2.0000  Mg++
+     7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   26.0297   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Pentahydrite            MgSO4:5H2O
+     V0PrTr  =   000.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      1.0000 Mg             1.0000 S              9.0000 O
+     10.0000 H
+****
+     4 species in reaction:
+    -1.0000  Pentahydrite                 1.0000  Mg++
+     1.0000  SO4--                        5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -1.2981   -1.4274   -1.6993   -2.0544
+        -2.5729   -3.2204   -4.0780   -5.2997
+* Source: 87Pab/Pit [Solids_j_Pabalan_TJW_1.xls]
++--------------------------------------------------------------------
+Pentasalt               K2Ca5(SO4)6:H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      2.0000 K              5.0000 Ca             6.0000 S
+     25.0000 O              2.0000 H
+****
+     5 species in reaction:
+    -1.0000  Pentasalt                    2.0000  K+
+     5.0000  Ca++                         6.0000  SO4--
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       -23.9466  -24.5549  -26.5842  -29.0537
+       -31.7819  -36.0309  -43.9591   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Periclase               MgO
+     V0PrTr  =    11.248 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      1.0000 Mg             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Periclase                   -2.0000  H+
+     1.0000  H2O                          1.0000  Mg++
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        23.7416   21.3354   18.5799   16.0822
+        13.6375   11.7016   10.1014    8.7162
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Phillipsite             K0.7Na0.7Ca1.1Al3.6Si12.4O32:12.6H2O
+     V0PrTr  =   609.200 cm**3/mol [source: 95Chi/Bis]
+****
+     7 element(s):
+      3.6000 Al             0.7000 K             25.2000 H
+      0.7000 Na            44.6000 O             12.4000 Si
+      1.1000 Ca
+****
+     8 species in reaction:
+    -1.0000  Phillipsite                -14.4000  H+
+     1.1000  Ca++                         3.6000  Al+++
+     0.7000  K+                          12.4000  SiO2(aq)
+    19.8000  H2O                          0.7000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -4.7708   -6.7617   -9.8737  -12.7688
+       -15.3984  -17.3689  -19.1824  -21.4273
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Picromerite             K2Mg(SO4)2:6H2O
+* Also known as Schoenite
+     V0PrTr  =   197.500 cm**3/mol [source: 73Don    ]
+****
+     5 element(s):
+     12.0000 H              2.0000 K              1.0000 Mg
+     14.0000 O              2.0000 S
+****
+     5 species in reaction:
+    -1.0000  Picromerite                  1.0000  Mg++
+     2.0000  K+                           2.0000  SO4--
+     6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   -4.3277   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Pirssonite              Na2Ca(CO3)2:2H2O
+     V0PrTr  =   102.300 cm**3/mol [source: 73Don    ]
+****
+     5 element(s):
+      2.0000 C              1.0000 Ca             4.0000 H
+      2.0000 Na             8.0000 O
+****
+     6 species in reaction:
+    -1.0000  Pirssonite                  -2.0000  H+
+     1.0000  Ca++                         2.0000  H2O
+     2.0000  HCO3-                        2.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   11.4354   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Polyhalite              K2MgCa2(SO4)4:2H2O
+     V0PrTr  =   218.100 cm**3/mol [source: 78don    ]
+****
+     6 element(s):
+      2.0000 Ca             4.0000 H              2.0000 K
+      1.0000 Mg            18.0000 O              4.0000 S
+****
+     6 species in reaction:
+    -1.0000  Polyhalite                   1.0000  Mg++
+     2.0000  Ca++                         2.0000  H2O
+     2.0000  K+                           4.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data  -13.7441   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Portlandite             Ca(OH)2
+     sp.type =  solid
+     V0PrTr  =    33.056 cm**3/mol [source: 79rob/hem]
+****
+     3 element(s):
+      1.0000 Ca             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Portlandite                 -2.0000  H+
+     1.0000  Ca++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        24.6086   22.5444   20.1812   18.0331
+        15.9215   14.2416   12.8472   11.6332
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Pyrolusite              MnO2
+     V0PrTr  =    17.181 cm**3/mol  [source:74rob/rap]
+****
+     2 element(s):
+      1.0000 Mn             2.0000 O
+****
+     5 species in reaction:
+    -1.0000  Pyrolusite                   1.0000  Mn++
+    -2.0000  H+                           0.5000  O2(g)
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.2712    0.4763    0.7151    0.9395
+         1.1554    1.3004    1.3692    1.3491
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Pyrophyllite            Al2Si4O10(OH)2
+     V0PrTr  =   126.600 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      2.0000 Al             2.0000 H             12.0000 O
+      4.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Pyrophyllite                -6.0000  H+
+     2.0000  Al+++                        4.0000  H2O
+     4.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         1.9327    0.0967   -2.3647   -4.7189
+        -7.0780   -9.0241  -10.7931  -12.6248
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Quartz                  SiO2
+     V0PrTr  =    22.688 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      2.0000 O              1.0000 Si
+****
+     2 species in reaction:
+    -1.0000  Quartz                       1.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -4.1605   -3.7501   -3.3553   -3.0132
+        -2.6679   -2.3823   -2.1490   -1.9822
+* Soure: data0.ymp.R2
+*    COMMENT: These values were computed from the Quartz(Rimstidt) and
+*    SiO2(aq)(Rimstidt) properties and represent the newer "Rimstidt"
+*    paradigm.
+*    Nagra = -3.746
++--------------------------------------------------------------------
+Ripidolite-7A           Mg3Fe2Al2Si3O10(OH)8
+     V0PrTr  =   215.380 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      2.0000 Al             2.0000 Fe             8.0000 H
+      3.0000 Mg            18.0000 O              3.0000 Si
+****
+     7 species in reaction:
+    -1.0000  Ripidolite-7A              -16.0000  H+
+     2.0000  Al+++                        2.0000  Fe++
+     3.0000  Mg++                         3.0000  SiO2(aq)
+    12.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        71.9986   62.5511   51.3031   40.8781
+        30.4819   22.0378   14.7716    8.0641
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Ripidolite-14A          Mg3Fe2Al2Si3O10(OH)8
+     V0PrTr  =   209.634 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      2.0000 Al             2.0000 Fe             8.0000 H
+      3.0000 Mg            18.0000 O              3.0000 Si
+****
+     7 species in reaction:
+    -1.0000  Ripidolite-14A             -16.0000  H+
+     2.0000  Al+++                        2.0000  Fe++
+     3.0000  Mg++                         3.0000  SiO2(aq)
+    12.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        68.4043   59.1778   48.1896   38.0078
+        27.8567   19.6105   12.5078    5.9378
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Saponite-H              H.33Mg3Al.33Si3.67O10(OH)2
+     V0PrTr  =   133.506 cm**3/mol [source: Clays_TJW_1_Rev1.xls ]
+****
+     5 element(s):
+      0.3300 Al             2.3300 H              3.0000 Mg
+     12.0000 O              3.6700 Si
+****
+     6 species in reaction:
+    -1.0000  Saponite-H                  -6.9900  H+
+     0.3300  Al+++                        3.0000  Mg++
+     3.6700  SiO2(aq)                     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        29.6074   26.0453   21.6364   17.5487
+        13.5495   10.3777    7.6756    5.1115
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Saponite-Na             Na.33Mg3Al.33Si3.67O10(OH)2
+     V0PrTr  =   135.320 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      0.3300 Al             2.0000 H              3.0000 Mg
+      0.3300 Na            12.0000 O              3.6700 Si
+****
+     7 species in reaction:
+    -1.0000  Saponite-Na                 -7.3200  H+
+     0.3300  Al+++                        0.3300  Na+
+     3.0000  Mg++                         3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        30.6491   27.0591   22.6199   18.5093
+        14.4935   11.3133    8.6058    6.0343
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Saponite-K              K.33Mg3Al.33Si3.67O10(OH)2
+     V0PrTr  =   138.745 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      0.3300 Al             2.0000 H              0.3300 K
+      3.0000 Mg            12.0000 O              3.6700 Si
+****
+     7 species in reaction:
+    -1.0000  Saponite-K                  -7.3200  H+
+     0.3300  Al+++                        0.3300  K+
+     3.0000  Mg++                         3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        30.2295   26.7202   22.3686   18.3310
+        14.3787   11.2413    8.5634    6.0136
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Saponite-Ca             Ca.165Mg3Al.33Si3.67O10(OH)2
+     V0PrTr  =   134.359 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     6 element(s):
+      0.3300 Al             0.1650 Ca             2.0000 H
+      3.0000 Mg            12.0000 O              3.6700 Si
+****
+     7 species in reaction:
+    -1.0000  Saponite-Ca                 -7.3200  H+
+     0.1650  Ca++                         0.3300  Al+++
+     3.0000  Mg++                         3.6700  SiO2(aq)
+     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        30.6968   27.0032   22.4387   18.2045
+        14.0545   10.7554    7.9397    5.2674
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Saponite-Mg             Mg3.165Al.33Si3.67O10(OH)2
+     V0PrTr  =   132.602 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     5 element(s):
+      0.3300 Al             2.0000 H              3.1650 Mg
+     12.0000 O              3.6700 Si
+****
+     6 species in reaction:
+    -1.0000  Saponite-Mg                 -7.3200  H+
+     0.3300  Al+++                        3.1650  Mg++
+     3.6700  SiO2(aq)                     4.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        30.7058   26.9651   22.3479   18.0685
+        13.8775   10.5490    7.7110    5.0214
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Scolecite               CaAl2Si3O10:3H2O
+     V0PrTr  =   000.000 [null]
+****
+     5 element(s):
+      2.0000 Al             1.0000 Ca             6.0000 H
+     13.0000 O              3.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Scolecite                   -8.0000  H+
+     1.0000  Ca++                         2.0000  Al+++
+     3.0000  SiO2(aq)                     7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        18.6599   15.2772   11.1522    7.3339
+         3.5403    0.4265   -2.3557   -5.1117
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Sellaite                MgF2
+     V0PrTr  =    19.610 cm**3/mol [source: 79Rob/Hem]
+****
+     2 element(s):
+      2.0000 F              1.0000 Mg
+****
+     3 species in reaction:
+    -1.0000  Sellaite                     1.0000  Mg++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -9.2699   -9.3939   -9.7091  -10.1577
+       -10.8170  -11.6053  -12.5872  -13.9059
+* Source: 95Bar/Pla [Solids_j_Mg_TJW_1.xls]
++--------------------------------------------------------------------
+Sepiolite               Mg4Si6O15(OH)2:6H2O
+     V0PrTr  =   285.600 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+     14.0000 H              4.0000 Mg            23.0000 O
+      6.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Sepiolite                   -8.0000  H+
+     4.0000  Mg++                         6.0000  SiO2(aq)
+    11.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        32.3876   30.4439   27.1710   23.8968
+        20.7229   18.3323   16.4142   14.6659
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Sepiolite(am)               Mg4Si6O15(OH)2:6H2O
+     sp.type =  solid
+*    EQ3/6   =
+     YMP Qualification status = un-Q
+*    mol.wt. =   647.830 g/mol
+     V0PrTr  =   285.600 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+     14.0000 H              4.0000 Mg            23.0000 O
+      6.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Sepiolite(am)               -8.0000  H+
+     4.0000  Mg++                         6.0000  SiO2(aq)
+    11.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        39.5037   37.5600   34.2871   31.0129
+       500.0000  500.0000  500.0000  500.0000
+*
+*    Source: 68wol/mac
+*    Comment: The log K values at temperatures other than 25 deg.C
+*    were obtained by adding the difference in log K between the
+*    the sepiolite and sepiolite(am) phases at 25 deg.C (delta logK = 7.1161)
+*    to the log K values of the sepiolite phase.
++--------------------------------------------------------------------
+Palygorskite               Mg2.84Al1.8Si7.73O20(OH)2(OH2)4:4H2O
+     V0PrTr  =   000.000 [null]
+****
+     5 element(s):
+     18.0000 H              2.8400 Mg            30.0000 O
+      7.7300 Si             1.8000 Al
+****
+     6 species in reaction:
+    -1.0000  Palygorskite               -11.0800  H+
+     2.8400  Mg++                         7.7300  SiO2(aq)
+    14.5400  H2O                          1.8000  Al+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   26.4078  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: Birsoy (2002)approach using data0.ymp.R4;
+* [Solids_j_Mg_Silicates_CFJC_KBH1.xls]
++--------------------------------------------------------------------
+SiO2(am)
+     V0PrTr  =    29.000 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      2.0000 O              1.0000 Si
+****
+     2 species in reaction:
+    -1.0000  SiO2(am)                     1.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -3.1240   -2.7136   -2.4067   -2.1843
+        -1.9796   -1.8190   -1.6928   -1.6042
+* Source: data0.ymp.R2
+* Nagra = 2.714
++--------------------------------------------------------------------
+Smectite-high-Fe-Mg     Ca.025Na.1K.2Fe++.5Fe+++.2Mg1.15Al1.25Si3.5H2O12
+     V0PrTr  =   139.510 cm**3/mol [source: Clays_TJW_1_Rev1a.xls]
+****
+     9 element(s):
+      1.2500 Al             0.1000 Na            12.0000 O
+      0.0250 Ca             1.1500 Mg             0.7000 Fe
+      3.5000 Si             0.2000 K              2.0000 H
+****
+    11 species in reaction:
+    -1.0000  Smectite-high-Fe-Mg         -8.0000  H+
+     0.0250  Ca++                         0.1000  Na+
+     0.2000  Fe+++                        0.2000  K+
+     0.5000  Fe++                         1.1500  Mg++
+     1.2500  Al+++                        3.5000  SiO2(aq)
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        20.8773   17.4595   13.1723    9.1326
+         5.0925    1.7976   -1.0908   -3.8865
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Smectite-low-Fe-Mg       Ca.02Na.15K.2Fe++.29Fe+++.16Mg.9Al1.25Si3.75H2O1
+     V0PrTr  =   139.602 cm**3/mol [source: Clays_TJW_1_Rev1a.xls ]
+****
+     9 element(s):
+      1.2500 Al             0.0200 Ca             0.4500 Fe
+      2.0000 H              0.2000 K              0.9000 Mg
+      0.1500 Na            12.0000 O              3.7500 Si
+****
+    11 species in reaction:
+    -1.0000  Smectite-low-Fe-Mg          -7.0000  H+
+     0.0200  Ca++                         0.1500  Na+
+     0.1600  Fe+++                        0.2000  K+
+     0.2900  Fe++                         0.9000  Mg++
+     1.2500  Al+++                        3.7500  SiO2(aq)
+     4.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.7198   11.1541    7.8261    4.6537
+         1.4698   -1.1361   -3.4437   -5.7296
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Soda Niter              NaNO3
+     V0PrTr  =   000.000 cm**3/mol [source: ]
+****
+     3 element(s):
+      1.0000 Na             1.0000 N              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Soda Niter                   1.0000  NO3-
+     1.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]CALIBRATED:
+         0.7192    1.0915    1.4321    1.6649
+         1.8721   No_Data   No_Data   No_Data
+*
+* Source: log K values calibrated to fit solubility data given by 00arc
++--------------------------------------------------------------------
+Strontianite            SrCO3
+     sp.type =  solid
+     V0PrTr  =    39.010 cm**3/mol [source: 78hel/del]
+****
+     3 element(s):
+      1.0000 C              3.0000 O              1.0000 Sr
+****
+     4 species in reaction:
+    -1.0000  Strontianite                -1.0000  H+
+     1.0000  HCO3-                        1.0000  Sr++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -0.2367   -0.3137   -0.4909   -0.7393
+        -1.1013   -1.5291   -2.0545   -2.7546
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+SrBr2                   SrBr2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Sr             2.0000 Br
+****
+     3 species in reaction:
+    -1.0000  SrBr2                        1.0000  Sr++
+     2.0000  Br-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        13.9488   12.8191   11.3157    9.7438
+         7.9428    6.2364    4.5133    2.5940
+* Source: 95Bar/Pla [Solids_j_Sr_TJW_1.xls]
++--------------------------------------------------------------------
+SrCl2                   SrCl2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Sr             2.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  SrCl2                        1.0000  Sr++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         8.9570    8.1397    7.0004    5.7597
+         4.2788    2.8168    1.2823   -0.4916
+* Source: 95Bar/Pla [Solids_j_Sr_TJW_1.xls]
++--------------------------------------------------------------------
+SrF2                    SrF2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Sr             2.0000 F
+****
+     3 species in reaction:
+    -1.0000  SrF2                         1.0000  Sr++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -6.5275   -6.5188   -6.6968   -7.0378
+        -7.6083   -8.3365   -9.2720  -10.5525
+* Source: 95Bar/Pla [Solids_j_Sr_TJW_1.xls]
++--------------------------------------------------------------------
+SrI2                    SrI2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Sr             2.0000 I
+****
+     3 species in reaction:
+    -1.0000  SrI2                         1.0000  Sr++
+     2.0000  I-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        20.8399   19.2679   17.2661   15.2399
+        12.9880   10.9223    8.9068    6.7480
+* Source: 95Bar/Pla [Solids_j_Sr_TJW_1.xls]
++--------------------------------------------------------------------
+SrMoO4                  SrMoO4
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Sr             1.0000 Mo             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  SrMoO4                       1.0000  Sr++
+     1.0000  MoO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -6.5063   -6.4216   -6.5223   -6.8110
+        -7.3531   -8.0768   -9.0191  -10.3116
+* Source: 95Bar/Pla [Solids_j_Sr_TJW_1.xls]
++--------------------------------------------------------------------
+SrO                     SrO
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Sr             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  SrO                         -2.0000  H+
+     1.0000  Sr++                         1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        45.8955   41.9787   37.4736   33.3608
+        29.3087   26.0938   23.4543   21.2080
+* Source: 95Bar/Pla [Solids_j_Sr_TJW_1.xls]
++--------------------------------------------------------------------
+Sr(OH)2                 Sr(OH)2
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Sr             2.0000 O              2.0000 H
+****
+     4 species in reaction:
+    -1.0000  Sr(OH)2                     -2.0000  H+
+     1.0000  Sr++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        29.9912   27.5229   24.7061   22.1616
+        19.6807   17.7264   16.1207   14.7367
+* Source: 95Bar/Pla [Solids_j_Sr_TJW_1.xls]
++--------------------------------------------------------------------
+Stellerite              Ca2.0Al4.0Si14.0O36:14.0H2O
+     V0PrTr  =   665.500 cm**3/mol [source: 95Chi/Bis]
+****
+     5 element(s):
+      4.0000 Al             2.0000 Ca            28.0000 H
+     50.0000 O             14.0000 Si
+****
+     6 species in reaction:
+    -1.0000  Stellerite                 -16.0000  H+
+     2.0000  Ca++                         4.0000  Al+++
+    22.0000  H2O                         14.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -6.1718   -8.7844  -12.7407  -16.4486
+       -19.8970  -22.5474  -24.9839  -27.8839
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Stilbite                Ca1.019Na.136K.006Al2.18Si6.82O18:7.33H2O
+     V0PrTr  =   000.000 [null]
+****
+     7 element(s):
+      2.1800 Al             1.0190 Ca            14.6600 H
+      0.0060 K              0.1360 Na            25.3300 O
+      6.8200 Si
+****
+     8 species in reaction:
+    -1.0000  Stilbite                    -8.7200  H+
+     0.0060  K+                           0.1360  Na+
+     1.0190  Ca++                         2.1800  Al+++
+     6.8200  SiO2(aq)                    11.6900  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.1884    1.3118   -1.3340   -3.8211
+        -6.2218   -8.1485   -9.9375  -11.9568
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Sylvite                 KCl
+     V0PrTr  =    37.524 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      1.0000 Cl             1.0000 K
+****
+     3 species in reaction:
+    -1.0000  Sylvite                      1.0000  Cl-
+     1.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         0.6012    0.9148    1.1871    1.3418
+         1.3747    1.2602    0.9844   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Syngenite               K2Ca(SO4)2:H2O
+     V0PrTr  =   124.200 cm**3/mol [source: 73Don    ]
+****
+     5 element(s):
+      1.0000 Ca             2.0000 H              2.0000 K
+      9.0000 O              2.0000 S
+****
+     5 species in reaction:
+    -1.0000  Syngenite                    1.0000  Ca++
+     1.0000  H2O                          2.0000  K+
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -7.5463   -7.2618   -7.1520   -7.2929
+        -7.7579   -8.6663  -10.6136   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Tachyhydrite            Mg2CaCl6:12H2O
+     V0PrTr  =   203.780 cm**3/mol [source: 86Jen    ]
+****
+     5 element(s):
+      1.0000 Ca             6.0000 Cl            24.0000 H
+      2.0000 Mg            12.0000 O
+****
+     5 species in reaction:
+    -1.0000  Tachyhydrite                 1.0000  Ca++
+     2.0000  Mg++                         6.0000  Cl-
+    12.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   17.3839   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Talc                    Mg3Si4O10(OH)2
+     V0PrTr  =   136.250 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      2.0000 H              3.0000 Mg            12.0000 O
+      4.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Talc                        -6.0000  H+
+     3.0000  Mg++                         4.0000  H2O
+     4.0000  SiO2(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        25.0261   22.1646   18.6126   15.3725
+        12.2841    9.9014    7.9002    5.9696
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Thenardite              Na2SO4
+     V0PrTr  =    53.330 cm**3/mol [source: 79Rob/Hem]
+****
+     3 element(s):
+      2.0000 Na             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  Thenardite                   1.0000  SO4--
+     2.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -0.1329   -0.2547   -0.4272   -0.6877
+        -1.1778   -1.8153   -2.6255   No_Data
+* Source: 89Gre/Mol [Minerals_gmo.xls]
++--------------------------------------------------------------------
+Thermonatrite           Na2CO3:H2O
+     V0PrTr  =    54.920 cm**3/mol [source: 73Don/Ond]
+****
+     4 element(s):
+      1.0000 C              2.0000 H              2.0000 Na
+      4.0000 O
+****
+     5 species in reaction:
+    -1.0000  Thermonatrite               -1.0000  H+
+     1.0000  H2O                          1.0000  HCO3-
+     2.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]CALIBRATED:
+        No_Data   10.7669   10.6610    9.7984
+         8.1164   No_Data   No_Data   No_Data
+* spreadsheet: [thermonatrite_solubility_2_CFJC.xls]
++--------------------------------------------------------------------
+Trona                   Na3H(CO3)2:2H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     4 element(s):
+      2.0000 C              5.0000 H              3.0000 Na
+      8.0000 O
+****
+     5 species in reaction:
+    -1.0000  Trona                       -1.0000  H+
+     2.0000  H2O                          2.0000  HCO3-
+     3.0000  Na+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data    9.2948   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Trona-K                 K2NaH(CO3)2:2H2O
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     5 element(s):
+      2.0000 C              5.0000 H              2.0000 K
+      1.0000 Na             8.0000 O
+****
+     6 species in reaction:
+    -1.0000  Trona-K                     -1.0000  H+
+     1.0000  Na+                          2.0000  H2O
+     2.0000  HCO3-                        2.0000  K+
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        No_Data   11.5757   No_Data   No_Data
+        No_Data   No_Data   No_Data   No_Data
+* Source: 84Har/Mol [Minerals_hmw.xls]
++--------------------------------------------------------------------
+Villiaumite             NaF
+     V0PrTr  =   000.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Na             1.0000 F
+****
+     3 species in reaction:
+    -1.0000  Villiaumite                  1.0000  Na+
+     1.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -0.2797   -0.2538   -0.2923   -0.3848
+        -0.5531   -0.7861   -1.1129   -1.6039
+* Source: 95Bar/Pla [Solids_j_Na_TJW_1.xls]
++--------------------------------------------------------------------
+Whitlockite             Ca3(PO4)2
+     V0PrTr  =   000.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      3.0000 Ca             8.0000 O              2.0000 P
+****
+     4 species in reaction:
+    -1.0000  Whitlockite                 -2.0000  H+
+     2.0000  HPO4--                       3.0000  Ca++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -2.5427   -4.2249   -6.6066   -9.2377
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
+*--------------------------------------------------------------------
+*      Newly Added/Updated Actinide and Transition Metal Solid Species
++--------------------------------------------------------------------
+Americium               Am
+     sp.type =  solid   refstate
+     V0PrTr  =    17.710 cm**3/mol [source: 73don/ond]
+****
+     1 element(s):
+      1.0000 Am
+****
+     5 species in reaction:
+    -1.0000  Americium                   -3.0000  H+
+    -0.7500  O2(g)                        1.0000  Am+++
+     1.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       182.5035  167.2171  149.6725  133.6742
+       117.9391  105.5044   95.3809   86.9199
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Am(OH)3
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Am             3.0000 H              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  Am(OH)3                      3.0000  OH-
+     1.0000  Am+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -27.5000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Fan/Kim (p.737)
++--------------------------------------------------------------------
+Am(OH)3(am)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Am             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Am(OH)3(am)                 -3.0000  H+
+     1.0000  Am+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        19.3393   17.0218   14.3626   11.9470
+         9.5664    7.6523    6.0294    4.5792
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Am2(CO3)3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Am             3.0000 C              9.0000 O
+****
+     4 species in reaction:
+    -1.0000  Am2(CO3)3                   -3.0000  H+
+     2.0000  Am+++                        3.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -0.8493   -2.3699   -4.4022   -6.5495
+        -9.0744  -11.5713  -14.2171  -17.2721
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Am2O3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 Am             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Am2O3                       -6.0000  H+
+     2.0000  Am+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        56.6597   51.7908   46.1583   40.9880
+        35.8295   31.6288   28.0295   24.7887
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmCl3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.0000 Am             3.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  AmCl3                        1.0000  Am+++
+     3.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   14.3513  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmF3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.0000 Am             3.0000 F
+****
+     3 species in reaction:
+    -1.0000  AmF3                         1.0000  Am+++
+     3.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.1190  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmF4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.0000 Am             4.0000 F
+****
+     3 species in reaction:
+    -1.0000  AmF4                         1.0000  Am++++
+     4.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -25.1354  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmO2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.0000 Am             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  AmO2                        -4.0000  H+
+     1.0000  Am++++                       2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -8.6735   -9.4204  -10.2313  -10.9260
+       -11.5914  -12.1512  -12.6959  -13.2889
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmOCl
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Am             1.0000 Cl             1.0000 O
+****
+     5 species in reaction:
+    -1.0000  AmOCl                       -2.0000  H+
+     1.0000  Am+++                        1.0000  Cl-
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.1941   11.3230    9.0586    6.8791
+         4.5741    2.5549    0.6662   -1.2460
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmOHCO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 Am             1.0000 C              1.0000 H
+      4.0000 O
+****
+     5 species in reaction:
+    -1.0000  AmOHCO3                     -2.0000  H+
+     1.0000  Am+++                        1.0000  H2O
+     1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         4.2073    3.1520    1.8474    0.5652
+        -0.8331   -2.1156   -3.3861   -4.7621
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+AmPO4(am)               AmPO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Am             4.0000 O              1.0000 P
+****
+     4 species in reaction:
+    -1.0000  AmPO4(am)                   -1.0000  H+
+     1.0000  Am+++                        1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -11.9415  -12.4683  -13.3169  -14.3338
+       -15.6548  -17.0676  -18.6503  -20.5543
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Brucite                 Mg(OH)2
+     sp.type =  solid
+     V0PrTr  =    24.630 cm**3/mol [source: 78hel/del]
+****
+     3 element(s):
+      2.0000 H              1.0000 Mg             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Brucite                     -2.0000  H+
+     1.0000  Mg++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   17.1000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 03Alt/Met, p. 3599 (+/- 0.2)
++--------------------------------------------------------------------
+Chromium                Cr
+     sp.type =  solid   refstate
+     V0PrTr  =     7.231 cm**3/mol [source: 79rob/hem]
+****
+     1 element(s):
+      1.0000 Cr
+****
+     5 species in reaction:
+    -1.0000  Chromium                    -3.0000  H+
+    -0.7500  O2(g)                        1.0000  Cr+++
+     1.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       109.3505   98.4659   85.9500   74.5124
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Eskolaite               Cr2O3
+     sp.type =  solid
+     V0PrTr  =    29.090 cm**3/mol [source: 79rob/hem]
+****
+     2 element(s):
+      2.0000 Cr             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Eskolaite                   -6.0000  H+
+     3.0000  H2O                          2.0000  Cr+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    8.5200  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Bal/Nor, Table 8
++--------------------------------------------------------------------
+Cr(OH)3(am)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Cr             3.0000 O              3.0000 H
+****
+     4 species in reaction:
+    -1.0000  Cr(OH)3(am)                 -3.0000  H+
+     1.0000  Cr+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    9.3500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*  Source: 98Bal/Nor, Table 8.
++--------------------------------------------------------------------
+CrCl3:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 Cr             3.0000 Cl             6.0000 O
+     12.0000 H
+****
+     4 species in reaction:
+    -1.0000  CrCl3:6H2O                   1.0000  Cr+++
+     3.0000  Cl-                          6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.9060  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 03Chr, Table 4; converted from ln (13.6) to log10.
++--------------------------------------------------------------------
+CrF3
+     sp.type =  solid
+     V0PrTr  =    28.680 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      1.0000 Cr             3.0000 F
+****
+     3 species in reaction:
+    -1.0000  CrF3                         1.0000  Cr+++
+     3.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -7.8740   -9.0957  -10.7847  -12.6037
+       -14.7665  -16.9197  -19.2158  -21.8988
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_3_DS_fix.xls)
++--------------------------------------------------------------------
+KFe3(CrO4)2(OH)6        Chromate_Jarosite
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     5 element(s):
+      2.0000 Cr            14.0000 O              6.0000 H
+      1.0000 K              3.0000 Fe
+****
+     6 species in reaction:
+    -1.0000  KFe3(CrO4)2(OH)6            -6.0000  H+
+     2.0000  CrO4--                       1.0000  K+
+     3.0000  Fe+++                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -18.4000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*  Source: 98Bal/Nor, Table 8.
++--------------------------------------------------------------------
+Na2CrO4:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol
+****
+     4 element(s):
+      1.0000 Cr             2.0000 Na             8.0000 O
+      8.0000 H
+****
+     4 species in reaction:
+    -1.0000  Na2CrO4:4H2O                 1.0000  CrO4--
+     2.0000  Na+                          4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    1.0100  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*  Source: 02Chr/Iva, Table 4 as converted from ln(2.32) to log10
++--------------------------------------------------------------------
+Tarapacaite             K2CrO4
+     sp.type =  solid
+     V0PrTr  =    69.430 cm**3/mol [source: 86jen    ]
+****
+     3 element(s):
+      1.0000 Cr             2.0000 K              4.0000 O
+****
+     3 species in reaction:
+    -1.0000  Tarapacaite                  1.0000  CrO4--
+     2.0000  K+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.0408  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 02Chr/Iva, Table 4 as converted from ln(0.094) to log10
++--------------------------------------------------------------------
+Lopezite                K2Cr2O7
+     sp.type =  solid
+     V0PrTr  =   109.930 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      2.0000 Cr             2.0000 K              7.0000 O
+****
+     5 species in reaction:
+    -1.0000  Lopezite                    -1.0000  H2O
+     2.0000  CrO4--                       2.0000  K+
+     2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -16.0660  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Chr, Table 2. Converted with (Cr2O7--/CrO4--) logK=-14.7
+* from ln(-3.140) = log10(-1.364) [-14.702 = -16.066]
++--------------------------------------------------------------------
+CrO3
+     sp.type =  solid
+     V0PrTr  =    35.140 cm**3/mol [source: 73don/ond]
+****
+     2 element(s):
+      1.0000 Cr             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  CrO3                        -1.0000  H2O
+     1.0000  CrO4--                       2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -3.2012   -3.2201   -3.4714   -3.9351
+        -4.6827   -5.5804   -6.6462   -7.9877
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_3_DS_fix.xls)
++--------------------------------------------------------------------
+CuCr2O4
+     sp.type =  solid
+     V0PrTr  =    42.740 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      2.0000 Cr             1.0000 Cu             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  CuCr2O4                     -8.0000  H+
+     1.0000  Cu++                         2.0000  Cr+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   20.1400  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Copper                  Cu
+     sp.type =  solid   refstate
+     V0PrTr  =     7.113 cm**3/mol [source: 78hel/del]
+****
+     1 element(s):
+      1.0000 Cu
+****
+     5 species in reaction:
+    -1.0000  Copper                      -2.0000  H+
+    -0.5000  O2(g)                        1.0000  Cu++
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        33.5942   30.0626   26.0211   22.3532
+        18.7607   15.9235   13.5981   11.6174
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CuCl2:2H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol
+****
+     4 element(s):
+      2.0000 Cl             4.0000 H              1.0000 Cu
+      2.0000 O
+****
+     4 species in reaction:
+    -1.0000  CuCl2:2H2O                   1.0000  Cu++
+     2.0000  Cl-                          2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    1.9413  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 94Chr, Table 5. ln (4.47) converted to log10.
++--------------------------------------------------------------------
+CuSO4:5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol
+****
+     4 element(s):
+      1.0000 S             10.0000 H              1.0000 Cu
+      9.0000 O
+****
+     4 species in reaction:
+    -1.0000  CuSO4:5H2O                   1.0000  Cu++
+     1.0000  SO4--                        5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.6460  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 93Bae/Rea, Table VI, set 11.
++--------------------------------------------------------------------
+CuSO4.Na2SO4:2H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol
+****
+     5 element(s):
+      2.0000 S              4.0000 H              1.0000 Cu
+     10.0000 O              2.0000 Na
+****
+     5 species in reaction:
+    -1.0000  CuSO4.Na2SO4:2H2O            1.0000  Cu++
+     2.0000  SO4--                        2.0000  H2O
+     2.0000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.9170  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 00Chr, Table 3. ln (-9.020) converted to log10.
++--------------------------------------------------------------------
+CuSO4.K2SO4:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol
+****
+     5 element(s):
+      2.0000 S             12.0000 H              1.0000 Cu
+     14.0000 O              2.0000 K
+****
+     5 species in reaction:
+    -1.0000  CuSO4.K2SO4:6H2O             1.0000  Cu++
+     2.0000  SO4--                        6.0000  H2O
+     2.0000  K+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -5.7590  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 99Chr, Table 3. ln (-13.26) converted to log10.
++--------------------------------------------------------------------
+Cu3(PO4)2
+     sp.type =  solid
+     V0PrTr  =    84.517 cm**3/mol [source: 77sho/and]
+****
+     3 element(s):
+      3.0000 Cu             8.0000 O              2.0000 P
+****
+     4 species in reaction:
+    -1.0000  Cu3(PO4)2                   -2.0000  H+
+     2.0000  HPO4--                       3.0000  Cu++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -12.2247  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Iron                    Fe
+     sp.type =  solid   refstate
+     V0PrTr  =     7.092 cm**3/mol [source: 78hel/del]
+****
+     1 element(s):
+      1.0000 Fe
+****
+     5 species in reaction:
+    -1.0000  Iron                        -2.0000  H+
+    -0.5000  O2(g)                        1.0000  Fe++
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        63.6419   57.5836   50.6273   44.2830
+        38.0396   33.0967   29.0558   25.6483
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_9_DS_fix.xls)
++--------------------------------------------------------------------
+Fe(OH)2
+     sp.type =  solid
+     V0PrTr  =    26.430 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      1.0000 Fe             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Fe(OH)2                     -2.0000  H+
+     1.0000  Fe++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        15.3477   13.8214   12.0849   10.5217
+         8.9974    7.7876    6.7751    5.8759
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_4_DS_fix.xls)
++--------------------------------------------------------------------
+Fe(OH)3
+     sp.type =  solid
+     V0PrTr  =    34.360 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      1.0000 Fe             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Fe(OH)3                     -3.0000  H+
+     1.0000  Fe+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.1000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 99Liu/Mil (Table 3)
++--------------------------------------------------------------------
+Siderite                FeCO3
+     sp.type =  solid
+     V0PrTr  =    29.378 cm**3/mol [source: 78hel/del]
+****
+     3 element(s):
+      1.0000 C              1.0000 Fe             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Siderite                    -1.0000  H+
+     1.0000  Fe++                         1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.2914   -0.1920   -0.8309   -1.4966
+        -2.2680   -3.0227   -3.8214   -4.7582
+* Source data0.ymp.R2
++--------------------------------------------------------------------
+FeF2
+     sp.type =  solid
+     V0PrTr  =    22.940 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      2.0000 F              1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  FeF2                         1.0000  Fe++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -0.5943   -1.4320   -2.5761   -3.7949
+        -5.2267   -6.6351   -8.1241   -9.8639
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_4_DS_fix.xls)
++--------------------------------------------------------------------
+FeO
+     sp.type =  solid
+     V0PrTr  =    12.000 cm**3/mol [source: 78hel/del]
+****
+     2 element(s):
+      1.0000 Fe             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  FeO                         -2.0000  H+
+     1.0000  Fe++                         1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        15.2277   13.5318   11.5797    9.7986
+         8.0389    6.6262    5.4368    4.3806
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+FeSO4
+     sp.type =  solid
+     V0PrTr  =    41.580 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      1.0000 Fe             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  FeSO4                        1.0000  Fe++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.0160    1.9396    0.4818   -1.0620
+        -2.8537   -4.5771   -6.3409   -8.3212
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_4_DS_fix.xls)
++--------------------------------------------------------------------
+Melanterite             FeSO4:7H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol
+****
+     4 element(s):
+      1.0000 Fe            11.0000 O              1.0000 S
+     14.0000 H
+****
+     4 species in reaction:
+    -1.0000  Melanterite                  1.0000  Fe++
+     1.0000  SO4--                        7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.2090  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+Ferrite-Ca              CaFe2O4
+     sp.type =  solid
+     V0PrTr  =    44.980 cm**3/mol [source: 79rob/hem]
+****
+     3 element(s):
+      1.0000 Ca             2.0000 Fe             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  Ferrite-Ca                  -8.0000  H+
+     1.0000  Ca++                         2.0000  Fe+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        25.8315   21.5945   16.7047   12.2304
+         7.7701    4.1185    0.9419   -2.0036
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_4_DS_fix.xls)
++--------------------------------------------------------------------
+Ferrite-Cu              CuFe2O4
+     sp.type =  solid
+     V0PrTr  =    44.530 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      1.0000 Cu             2.0000 Fe             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  Ferrite-Cu                  -8.0000  H+
+     1.0000  Cu++                         2.0000  Fe+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        12.8745    9.5266    5.6722    2.1613
+        -1.3333   -4.2134   -6.7633   -9.1921
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_9_DS_fix.xls)
++--------------------------------------------------------------------
+Ferrite-Dicalcium       Ca2Fe2O5
+     sp.type =  solid
+     V0PrTr  =    67.180 cm**3/mol [source: 79rob/hem]
+****
+     3 element(s):
+      2.0000 Ca             2.0000 Fe             5.0000 O
+****
+     5 species in reaction:
+    -1.0000  Ferrite-Dicalcium          -10.0000  H+
+     2.0000  Ca++                         2.0000  Fe+++
+     5.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        64.4136   56.8114   48.0584   40.0564
+        32.1116   25.6815   20.2076   15.2897
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_8_DS_fix.xls)
++--------------------------------------------------------------------
+Ferrite-Mg              MgFe2O4
+     sp.type =  solid
+     V0PrTr  =    44.570 cm**3/mol [source: 79rob/hem]
+****
+     3 element(s):
+      2.0000 Fe             1.0000 Mg             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  Ferrite-Mg                  -8.0000  H+
+     1.0000  Mg++                         2.0000  Fe+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        25.4526   20.9808   15.8346   11.1482
+         6.5052    2.7292   -0.5359   -3.5453
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_4_DS_fix.xls)
++--------------------------------------------------------------------
+Ferrite-Ni              NiFe2O4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Ni             2.0000 Fe             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  Ferrite-Ni                  -8.0000  H+
+     1.0000  Ni++                         2.0000  Fe+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.2008    9.7959    5.8487    2.2265
+        -1.4072   -4.4224   -7.1037   -9.6613
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_4_DS_fix.xls)
++--------------------------------------------------------------------
+Ferrite-Zn              ZnFe2O4
+     sp.type =  solid
+     V0PrTr  =    45.230 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      2.0000 Fe             4.0000 O              1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Ferrite-Zn                  -8.0000  H+
+     1.0000  Zn++                         2.0000  Fe+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        15.3546   11.7342    7.5582    3.7491
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Gadolinium              Gd
+     sp.type =  solid   refstate
+     V0PrTr  =    19.890 cm**3/mol [source: 79rob/hem]
+****
+     1 element(s):
+      1.0000 Gd
+****
+     5 species in reaction:
+    -1.0000  Gadolinium                  -3.0000  H+
+    -0.7500  O2(g)                        1.0000  Gd+++
+     1.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  178.6000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Gd(OH)3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Gd             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Gd(OH)3                     -3.0000  H+
+     1.0000  Gd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.5852  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Gd(OH)3(am)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Gd             3.0000 H              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Gd(OH)3(am)                 -3.0000  H+
+     1.0000  Gd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   17.9852  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Gd2(CO3)3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 C              2.0000 Gd             9.0000 O
+****
+     4 species in reaction:
+    -1.0000  Gd2(CO3)3                   -3.0000  H+
+     2.0000  Gd+++                        3.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.7136  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Gd2O3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 Gd             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Gd2O3                       -6.0000  H+
+     2.0000  Gd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   53.8000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+GdF3:.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      3.0000 F              1.0000 Gd             1.0000 H
+      0.5000 O
+****
+     4 species in reaction:
+    -1.0000  GdF3:.5H2O                   0.5000  H2O
+     1.0000  Gd+++                        3.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -16.9000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+GdPO4:10H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 Gd            20.0000 H             14.0000 O
+      1.0000 P
+****
+     5 species in reaction:
+    -1.0000  GdPO4:10H2O                 -1.0000  H+
+     1.0000  Gd+++                        1.0000  HPO4--
+    10.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -11.9782  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Hausmannite             Mn3O4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      3.0000 Mn             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  Hausmannite                 -8.0000  H+
+     1.0000  Mn++                         2.0000  Mn+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        15.4472   11.6746    7.3001    3.2862
+        -0.7313   -4.0455   -6.9624   -9.7021
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Hydrozincite            Zn5(OH)6(CO3)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 C              6.0000 H             12.0000 O
+      5.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Hydrozincite                -8.0000  H+
+     2.0000  HCO3-                        5.0000  Zn++
+     6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   30.3076  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Lawrencite              FeCl2
+     sp.type =  solid   idealized
+     V0PrTr  =    40.085 [source: 126.750/3.162 90rob/cam]
+****
+     2 element(s):
+      2.0000 Cl             1.0000 Fe
+****
+     3 species in reaction:
+    -1.0000  Lawrencite                   1.0000  Fe++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        10.3376    9.0646    7.4040    5.6877
+         3.7361    1.8968    0.0484   -1.9931
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Cobalt                  Co
+     sp.type =  solid   refstate
+     V0PrTr  =     6.670 cm**3/mol [source: 79rob/hem]
+****
+     1 element(s):
+      1.0000 Co
+****
+     5 species in reaction:
+    -1.0000  Cobalt                      -2.0000  H+
+    -0.5000  O2(g)                        1.0000  Co++
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        56.5922   51.0816   44.7545   38.9850
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Co(OH)2
+     sp.type =  solid
+     V0PrTr  =    24.740 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      1.0000 Co             2.0000 H              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Co(OH)2                     -2.0000  H+
+     1.0000  Co++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        14.5818   13.0671   11.3386    9.7790
+         8.2566    7.0476    6.0355    5.1363
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_7_DS_fix.xls)
++--------------------------------------------------------------------
+Co2SiO4
+     sp.type =  solid
+     V0PrTr  =    44.520 cm**3/mol [source: 67rob/bet]
+****
+     3 element(s):
+      2.0000 Co             4.0000 O              1.0000 Si
+****
+     5 species in reaction:
+    -1.0000  Co2SiO4                     -4.0000  H+
+     1.0000  SiO2(aq)                     2.0000  Co++
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    6.6808  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Co3(PO4)2
+     sp.type =  solid
+     V0PrTr  =   141.760 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      3.0000 Co             8.0000 O              2.0000 P
+****
+     4 species in reaction:
+    -1.0000  Co3(PO4)2                   -2.0000  H+
+     2.0000  HPO4--                       3.0000  Co++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -10.0123  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CoCl2
+     sp.type =  solid
+     V0PrTr  =    38.690 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      2.0000 Cl             1.0000 Co
+****
+     3 species in reaction:
+    -1.0000  CoCl2                        1.0000  Co++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         9.4861    8.2904    6.7200    5.0870
+         3.2193    1.4485   -0.3404   -2.3262
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_7_DS_fix.xls)
++--------------------------------------------------------------------
+CoCl2:2H2O
+     sp.type =  solid
+     V0PrTr  =    66.610 cm**3/mol [source: 73don/ond]
+****
+     4 element(s):
+      2.0000 Cl             1.0000 Co             4.0000 H
+      2.0000 O
+****
+     4 species in reaction:
+    -1.0000  CoCl2:2H2O                   1.0000  Co++
+     2.0000  Cl-                          2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.6661  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CoCl2:6H2O
+     sp.type =  solid
+     V0PrTr  =   123.660 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      2.0000 Cl             1.0000 Co            12.0000 H
+      6.0000 O
+****
+     4 species in reaction:
+    -1.0000  CoCl2:6H2O                   1.0000  Co++
+     2.0000  Cl-                          6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.6033  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CoCr2O4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Cr             1.0000 Co             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  CoCr2O4                     -8.0000  H+
+     1.0000  Co++                         2.0000  Cr+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        19.2812   15.0442   10.1319    5.6202
+         1.1016   -2.6209   -5.8826   -8.9219
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_7_DS_fix.xls)
++--------------------------------------------------------------------
+CoF2
+     sp.type =  solid
+     V0PrTr  =    21.730 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      1.0000 Co             2.0000 F
+****
+     3 species in reaction:
+    -1.0000  CoF2                         1.0000  Co++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -0.6789   -1.5187   -2.6656   -3.8880
+        -5.3257   -6.7418   -8.2402   -9.9907
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_7_DS_fix.xls)
++--------------------------------------------------------------------
+CoFe2O4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Co             2.0000 Fe             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  CoFe2O4                     -8.0000  H+
+     1.0000  Co++                         2.0000  Fe+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.4446   10.0104    6.0420    2.4107
+        -1.2228   -4.2310   -6.9018   -9.4475
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_7_DS_fix.xls)
++--------------------------------------------------------------------
+CoHPO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 Co             1.0000 H              4.0000 O
+      1.0000 P
+****
+     3 species in reaction:
+    -1.0000  CoHPO4                       1.0000  Co++
+     1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -6.7223  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CoO
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.0000 Co             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  CoO                         -2.0000  H+
+     1.0000  Co++                         1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        15.2495   13.5557   11.6031    9.8196
+         8.0552    6.6368    5.4402    4.3753
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_7_DS_fix.xls)
++--------------------------------------------------------------------
+CoSO4:3Co(OH)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      4.0000 Co             6.0000 H             10.0000 O
+      1.0000 S
+****
+     5 species in reaction:
+    -1.0000  CoSO4:3Co(OH)2              -6.0000  H+
+     1.0000  SO4--                        4.0000  Co++
+     6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   33.2193  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+CoSO4:6H2O
+     sp.type =  solid
+     V0PrTr  =   130.300 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      1.0000 Co            12.0000 H             10.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  CoSO4:6H2O                   1.0000  Co++
+     1.0000  SO4--                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -2.4190   -2.3512   -2.3856   -2.4992
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Bieberite               CoSO4:7H2O
+     sp.type =  solid
+     V0PrTr  =   144.300 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      1.0000 Co            14.0000 H             11.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  Bieberite                    1.0000  Co++
+     1.0000  SO4--                        7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -2.7295   -2.5051   -2.3388   -2.2449
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Malachite               Cu2CO3(OH)2
+     sp.type =  solid
+     V0PrTr  =    54.860 cm**3/mol [source: 78hel/del]
+****
+     4 element(s):
+      1.0000 C              2.0000 Cu             2.0000 H
+      5.0000 O
+****
+     5 species in reaction:
+    -1.0000  Malachite                   -3.0000  H+
+     1.0000  HCO3-                        2.0000  Cu++
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         7.1407    5.9399    4.5217    3.1992
+         1.8337    0.6354   -0.5305   -1.8132
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Mg2(OH)3Cl:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol
+****
+     4 element(s):
+     11.0000 H              2.0000 Mg             7.0000 O
+      1.0000 Cl
+****
+     5 species in reaction:
+    -1.0000  Mg2(OH)3Cl:4H2O             -3.0000  H+
+     2.0000  Mg++                         7.0000  H2O
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   26.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 03Alt/Met, p. 3600 (+/- 0.2)
++--------------------------------------------------------------------
+Manganite               MnO(OH)
+     sp.type =  solid
+     V0PrTr  =    20.450 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      1.0000 H              1.0000 Mn             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Manganite                   -3.0000  H+
+     1.0000  Mn+++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.3485  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Manganosite             MnO
+     sp.type =  solid
+     V0PrTr  =    13.221 cm**3/mol [source: 78hel/del]
+****
+     2 element(s):
+      1.0000 Mn             1.0000 O
+****
+     4 species in reaction:
+    -1.0000  Manganosite                 -2.0000  H+
+     1.0000  H2O                          1.0000  Mn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        20.3195   18.3638   16.1247   14.0926
+        12.0979   10.5104    9.1880    8.0287
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+MgUO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Mg             4.0000 O              1.0000 U
+****
+     5 species in reaction:
+    -1.0000  MgUO4                       -4.0000  H+
+     1.0000  Mg++                         1.0000  UO2++
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        26.2153   23.0133   19.3558   16.0423
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Manganese               Mn
+     sp.type =  solid   refstate
+     V0PrTr  =     7.354 cm**3/mol [source: 79rob/hem]
+****
+     1 element(s):
+      1.0000 Mn
+****
+     5 species in reaction:
+    -1.0000  Manganese                   -2.0000  H+
+    -0.5000  O2(g)                        1.0000  H2O
+     1.0000  Mn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        90.0718   81.9411   72.6131   64.1102
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Mn(OH)2(am)             Pyrochroite
+     sp.type =  solid   polymorph
+     V0PrTr  =    22.360 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      2.0000 H              1.0000 Mn             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Mn(OH)2(am)                 -2.0000  H+
+     1.0000  Mn++                         2.0000  H2O
+* Source: data0.ymp.R2
+* Nagra = 15.2
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.7500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Rhodochrosite           MnCO3
+     sp.type =  solid
+     V0PrTr  =    31.075 cm**3/mol [source: 78hel/del]
+****
+     3 element(s):
+      1.0000 C              1.0000 Mn             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Rhodochrosite               -1.0000  H+
+     1.0000  HCO3-                        1.0000  Mn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.5687    0.2470   -0.1971   -0.6777
+        -1.2599   -1.8588   -2.5254   -3.3476
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+MnCl2:4H2O
+     sp.type =  solid
+     V0PrTr  =    98.460 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      2.0000 Cl             8.0000 H              1.0000 Mn
+      4.0000 O
+****
+     4 species in reaction:
+    -1.0000  MnCl2:4H2O                   1.0000  Mn++
+     2.0000  Cl-                          4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    3.1961  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+MnSO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Mn             4.0000 O              1.0000 S
+****
+     3 species in reaction:
+    -1.0000  MnSO4                        1.0000  Mn++
+     1.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         4.0732    3.1105    1.7919    0.3831
+        -1.2693   -2.8789   -4.5504   -6.4586
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_8_DS_fix.xls)
++--------------------------------------------------------------------
+Molybdite               MoO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.0000 Mo             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Molybdite                   -1.0000  H2O
+     1.0000  MoO4--                       2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -12.0550  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+Powellite               CaMoO4
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Ca             1.0000 Mo             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  Powellite                    1.0000  Ca++
+     1.0000  MoO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -7.9300  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 92Fel/Rai, p. 531
++--------------------------------------------------------------------
+MoO2Cl2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Cl             2.0000 O              1.0000 Mo
+****
+     5 species in reaction:
+    -1.0000  MoO2Cl2                      2.0000  Cl-
+    -2.0000  H2O                          1.0000  MoO4--
+     4.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         1.0114    0.5936   -0.2737   -1.4682
+        -3.1562   -5.0424   -7.2005   -9.8704
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+Sodium                  Na
+     sp.type =  solid   refstate
+     V0PrTr  =    23.812 cm**3/mol [source: 79rob/hem]
+****
+     1 element(s):
+      1.0000 Na
+****
+     5 species in reaction:
+    -1.0000  Sodium                      -1.0000  H+
+    -0.2500  O2(g)                        0.5000  H2O
+     1.0000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        72.8044   66.6559   59.6168   53.2260
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Neodymium               Nd
+     sp.type =  solid   refstate
+*    EQ3/6   =  ymp, ree
+     YMP Qualification status = Q
+*    mol.wt. =   144.240 g/mol
+     V0PrTr  =    20.570 cm**3/mol [source: 79rob/hem]
+****
+     1 element(s):
+      1.0000 Nd
+****
+     5 species in reaction:
+    -1.0000  Neodymium                   -3.0000  H+
+    -0.7500  O2(g)                        1.0000  Nd+++
+     1.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  180.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nd(OH)3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 H              1.0000 Nd             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd(OH)3                     -3.0000  H+
+     1.0000  Nd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   18.0852  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nd(OH)3(am)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 H              1.0000 Nd             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd(OH)3(am)                 -3.0000  H+
+     1.0000  Nd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   20.4852  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nd(OH)3(c)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 H              1.0000 Nd             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd(OH)3(c)                  -3.0000  H+
+     1.0000  Nd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.7852  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nd2(CO3)3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 C              2.0000 Nd             9.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd2(CO3)3                   -3.0000  H+
+     2.0000  Nd+++                        3.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.6636  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nd2O3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 Nd             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nd2O3                       -6.0000  H+
+     2.0000  Nd+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   58.6000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NdF3:.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      3.0000 F              1.0000 H              1.0000 Nd
+      0.5000 O
+****
+     4 species in reaction:
+    -1.0000  NdF3:.5H2O                   0.5000  H2O
+     1.0000  Nd+++                        3.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -18.6000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NdOHCO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 C              1.0000 H              1.0000 Nd
+      4.0000 O
+****
+     5 species in reaction:
+    -1.0000  NdOHCO3                     -2.0000  H+
+     1.0000  H2O                          1.0000  HCO3-
+     1.0000  Nd+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.8239  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NdPO4:10H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+     20.0000 H              1.0000 Nd            14.0000 O
+      1.0000 P
+****
+     5 species in reaction:
+    -1.0000  NdPO4:10H2O                 -1.0000  H+
+     1.0000  HPO4--                       1.0000  Nd+++
+    10.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -12.1782  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nickel                  Ni
+     sp.type =  solid   refstate
+     V0PrTr  =     6.588 cm**3/mol [source: 78hel/del]
+****
+     1 element(s):
+      1.0000 Ni
+****
+     5 species in reaction:
+    -1.0000  Nickel                      -2.0000  H+
+    -0.5000  O2(g)                        1.0000  H2O
+     1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        54.9833   49.5423   43.2856   37.5716
+        31.9384   27.4677   23.8010   20.6965
+* Source: data0.ymp.R2
+*
+*   Note: Based upon discussions in NAGRA NTB 02-16 (pp. 226-235) the
+*   following nickel solids have been removed from inclusion here:
+*     NiO (Bunsenite, not ambient temp species)
+*     nickel sulfates: NiSO4, NiSO4:6H2O(alpha), NiSO4:7H2O (Morenosite)
+*     nickel sulfides: NiS (Millerite) & Ni3S2 (Heazelwoodite)
+*     nickel phosphates: these are not expected in the repository environment
+*     NiCO3:6H2O
+*     NiFe2O4 - "hypothetical end-member of...spinel solid solution system."
+*                and "is not found in nature" (NAGRA p. 228)
+*
++--------------------------------------------------------------------
+NiCO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 C              1.0000 Ni             3.0000 O
+****
+     4 species in reaction:
+    -1.0000  NiCO3                       -1.0000  H+
+     1.0000  HCO3-                        1.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.8712  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*  Source: NAGRA NTB 02-16 (2002) = -11.2, p. 230
+*    Reaction expressed on HCO3- basis using the log K value of 10.3288
+*    for the reaction CO3-- + H+ = HCO3-. Source data0.ymp.R2
+*    See spreadsheet [Minerals_Aq_Species_Solids_Boron_Actn.xls]
++--------------------------------------------------------------------
+NiCl2:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Cl             8.0000 H              1.0000 Ni
+      4.0000 O
+****
+     4 species in reaction:
+    -1.0000  NiCl2:4H2O                   1.0000  Ni++
+     2.0000  Cl-                          4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    3.8561  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Nickelbischofite        NiCl2:6H2O
+     sp.type =  solid
+     V0PrTr  =   123.150 cm**3/mol [source: 86jen    ]
+****
+     4 element(s):
+      2.0000 Cl            12.0000 H              1.0000 Ni
+      6.0000 O
+****
+     4 species in reaction:
+    -1.0000  Nickelbischofite             1.0000  Ni++
+     2.0000  Cl-                          6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    3.0620  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 99Chr, Table 3. ln (7.05) converted to log10.
++--------------------------------------------------------------------
+NiMoO4
+     V0PrTr  =    00.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 Ni             1.0000 Mo             4.0000 O
+****
+     3 species in reaction:
+    -1.0000  NiMoO4                       1.0000  Ni++
+     1.0000  MoO4--
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -6.1822   -6.5033   -7.0706   -7.7878
+        -8.7575   -9.8273  -11.0601  -12.6017
+* Source: Morishita and Navrotsky (2003) 
+* [Solids_j_NiMoO4_CFJC.xls]
++--------------------------------------------------------------------
+Ni(OH)2                 Theophrastite
+     sp.type =  solid
+     V0PrTr  =    22.340 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      2.0000 H              1.0000 Ni             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  Ni(OH)2                     -2.0000  H+
+     1.0000  Ni++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   10.5200  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Ply/Zha, Table 1.
+* Uncertainty reported as +/- 0.59.
++--------------------------------------------------------------------
+Ni2P2O7
+     sp.type =  solid
+     V0PrTr  =    70.730 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      2.0000 Ni             7.0000 O              2.0000 P
+****
+     4 species in reaction:
+    -1.0000  Ni2P2O7                     -1.0000  H2O
+     2.0000  HPO4--                       2.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.8991  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Ni3(PO4)2
+     sp.type =  solid
+     V0PrTr  =    83.361 cm**3/mol [source: 75cal/fag]
+****
+     3 element(s):
+      3.0000 Ni             8.0000 O              2.0000 P
+****
+     4 species in reaction:
+    -1.0000  Ni3(PO4)2                   -2.0000  H+
+     2.0000  HPO4--                       3.0000  Ni++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -6.6414  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Ni4CrO4(OH)6            NiCrO4*3Ni(OH)2
+     sp.type =  solid
+     V0PrTr  =   500.000 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+      4.0000 Ni             1.0000 Cr            10.0000 O
+      6.0000 H
+****
+     5 species in reaction:
+    -1.0000  Ni4CrO4(OH)6                -6.0000  H+
+     4.0000  Ni++                         1.0000  CrO4--
+     6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   32.9000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 94Cas/Ola, p. 1229-30; or logK = -51.1 using OH- as product
+* Uncertainty reported as +/- 0.2.
++--------------------------------------------------------------------
+NiSO4:7H2O
+     sp.type =  solid   polymorph
+     V0PrTr  =   126.600 cm**3/mol [source: 79rob/hem]
+****
+     4 element(s):
+     14.0000 H              1.0000 Ni            11.0000 O
+      1.0000 S
+****
+     4 species in reaction:
+    -1.0000  NiSO4:7H2O                   1.0000  Ni++
+     1.0000  SO4--                        7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.2060  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 02Chr(2), Table 2; converted from ln (-5.08) to log10.
++--------------------------------------------------------------------
+NiCr2O4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null] [source: ]
+****
+     3 element(s):
+      2.0000 Cr             1.0000 Ni             4.0000 O
+****
+     5 species in reaction:
+    -1.0000  NiCr2O4                     -8.0000  H+
+     1.0000  Ni++                         2.0000  Cr+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        28.7818   23.6681   17.7445   12.3055
+         6.8699    2.4200   -1.4337   -4.9644
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_6_DS_fix.xls)
++--------------------------------------------------------------------
+NiF2:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 F              8.0000 H              1.0000 Ni
+      4.0000 O
+****
+     4 species in reaction:
+    -1.0000  NiF2:4H2O                    1.0000  Ni++
+     2.0000  F-                           4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -4.0588  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Neptunium               Np
+     sp.type =  solid
+*    mol.wt. =   237.000 g/mol
+     V0PrTr  =   500.000 [null]
+****
+     1 element(s):
+      1.0000 Np
+****
+     5 species in reaction:
+    -1.0000  Neptunium                   -3.0000  H+
+     1.0000  Np+++                        1.5000  H2O
+    -0.7500  O2(g)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       167.5129  152.1799  134.5579  118.4599
+       102.5893   90.0115   79.7396   71.1257
+*
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+NpO2(cr)
+     sp.type =  solid
+     V0PrTr  =    24.220 cm**3/mol [source: 79wea/ast]
+****
+     2 element(s):
+      2.0000 O              1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  NpO2(cr)                     4.0000  OH-
+     1.0000  Np++++                      -2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -63.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source:  01Nec/Kim (Table 11)
+* Previous data0.ymp.R2 log K (25C, H+ based rxn) = -9.74
++--------------------------------------------------------------------
+Np2O5
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 Np             5.0000 O
+****
+     4 species in reaction:
+    -1.0000  Np2O5                       -2.0000  H+
+     1.0000  H2O                          2.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         4.9214    3.7031    2.1757    0.6695
+        -0.9387   -2.3319   -3.5852   -4.7609
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Np(OH)4(am)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Np             4.0000 O              4.0000 H
+****
+     3 species in reaction:
+    -1.0000  Np(OH)4(am)                  4.0000  OH-
+     1.0000  Np++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -56.7000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source:  01Nec/Kim (Table 11)
+* Previous data0.ymp.R2 logK (25C, H+ based rxn) = 1.50
++--------------------------------------------------------------------
+NpOCl2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Cl             1.0000 O              1.0000 Np
+****
+     5 species in reaction:
+    -1.0000  NpOCl2                       2.0000  Cl-
+     1.0000  H2O                          1.0000  Np++++
+    -2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         7.6917    5.4117    2.6473   -0.0317
+        -2.9041   -5.4784   -7.9642  -10.5985
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+NpCl4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      4.0000 Cl             1.0000 Np
+****
+     3 species in reaction:
+    -1.0000  NpCl4                        4.0000  Cl-
+     1.0000  Np++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        24.9771   21.2634   16.6608   12.1047
+         7.1338    2.6337   -1.7192   -6.3314
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+NpF4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      4.0000 F              1.0000 Np
+****
+     3 species in reaction:
+    -1.0000  NpF4                         4.0000  F-
+     1.0000  Np++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -28.6681  -28.9106  -29.5043  -30.3588
+       -31.6397  -33.1997  -35.1650  -37.8092
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+NpF5
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      5.0000 F              1.0000 Np
+****
+     5 species in reaction:
+    -1.0000  NpF5                         5.0000  F-
+    -2.0000  H2O                          1.0000  NpO2+
+     4.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.4150    1.3534   -1.5354   -4.6820
+        -8.4205  -12.0804  -15.8728  -20.1758
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+NpO2(NO3)2:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null] [source:     ]
+****
+     4 element(s):
+      1.0000 Np            14.0000 O             12.0000 H
+      2.0000 N
+****
+     4 species in reaction:
+    -1.0000  NpO2(NO3)2:6H2O              2.0000  NO3-
+     1.0000  NpO2++                       6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.2370  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NpO2CO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 C              5.0000 O              1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  NpO2CO3                     -1.0000  H+
+     1.0000  NpO2++                       1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  242.0251  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NpO2OH(am)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 H              1.0000 Np             3.0000 O
+****
+     3 species in reaction:
+    -1.0000  NpO2OH(am)                   1.0000  OH-
+     1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.7800  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 95Nec/Fan (Table 5)
++--------------------------------------------------------------------
+NpO2OH(am,aged)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 H              1.0000 Np             3.0000 O
+****
+     3 species in reaction:
+    -1.0000  NpO2OH(am,aged)              1.0000  OH-
+     1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -9.4800  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 95Nec/Fan (Table 5)
++--------------------------------------------------------------------
+NpO3:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 H              1.0000 Np             4.0000 O
+****
+     4 species in reaction:
+    -1.0000  NpO3:H2O                    -2.0000  H+
+     2.0000  H2O                          1.0000  NpO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.4844  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Na3NpF8
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 Na             8.0000 F              1.0000 Np
+****
+     6 species in reaction:
+    -1.0000  Na3NpF8                      4.0000  H+
+     1.0000  NpO2+                       -2.0000  H2O
+     3.0000  Na+                          8.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -7.2110   -8.4426  -10.5811  -13.2128
+       -16.6747  -20.4159  -24.6880  -30.0499
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Na3NpO2(CO3)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 C              3.0000 Na             1.0000 Np
+      8.0000 O
+****
+     4 species in reaction:
+    -1.0000  Na3NpO2(CO3)2                1.0000  NpO2+
+     2.0000  CO3--                        3.0000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -14.1800  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 95Nec/Fan (Table 5)
++--------------------------------------------------------------------
+NaNpO2CO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 C              5.0000 O              1.0000 Na
+      1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  NaNpO2CO3                    1.0000  Na+
+     1.0000  CO3--                        1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -10.9300  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 95Nec/Fan (Table 5)
++--------------------------------------------------------------------
+NaNpO2CO3:3.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     5 element(s):
+      1.0000 C              7.0000 H              1.0000 Na
+      1.0000 Np             8.5000 O
+****
+     5 species in reaction:
+    -1.0000  NaNpO2CO3:3.5H2O             1.0000  CO3--
+     1.0000  Na+                          1.0000  NpO2+
+     3.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -11.0900  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 95Nec/Fan (Table 5)
++--------------------------------------------------------------------
+KNpO2CO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 C              5.0000 O              1.0000 K
+      1.0000 Np
+****
+     4 species in reaction:
+    -1.0000  KNpO2CO3                     1.0000  K+
+     1.0000  CO3--                        1.0000  NpO2+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.6000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Mah/Nov (Table 4)
++--------------------------------------------------------------------
+K3NpO2(CO3)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 C              3.0000 K              1.0000 Np
+      8.0000 O
+****
+     4 species in reaction:
+    -1.0000  K3NpO2(CO3)2                 1.0000  NpO2+
+     2.0000  CO3--                        3.0000  K+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.9000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Mah/Nov (Table 4)
++--------------------------------------------------------------------
+Plutonium               Pu
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     1 element(s):
+      1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  Plutonium                   -4.0000  H+
+     1.0000  Pu++++                       2.0000  H2O
+    -1.0000  O2(g)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       184.6805  166.8458  146.4150  127.8093
+       109.5241   95.0752   83.3017   73.4433
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuO2(cr)
+     sp.type =  solid
+     V0PrTr  =    23.830 cm**3/mol [source: 73don/ond    ]
+****
+     2 element(s):
+      2.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  PuO2(cr)                     4.0000  OH-
+     1.0000  Pu++++                      -2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -64.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source:  01Nec/Kim (Table 11)
++--------------------------------------------------------------------
+Pu(OH)4(am)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Pu             4.0000 O              4.0000 H
+****
+     3 species in reaction:
+    -1.0000  Pu(OH)4(am)                  4.0000  OH-
+     1.0000  Pu++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -58.5000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source:  01Nec/Kim (Table 11)
++--------------------------------------------------------------------
+Pu(HPO4)2(am,hyd)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 P              8.0000 O              1.0000 Pu
+      2.0000 H
+****
+     3 species in reaction:
+    -1.0000  Pu(HPO4)2(am,hyd)            2.0000  HPO4--
+     1.0000  Pu++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -32.8499  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Pu(OH)3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 H              3.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  Pu(OH)3                     -3.0000  H+
+     1.0000  Pu+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.8218  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Pu2O3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      3.0000 O              2.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  Pu2O3                       -6.0000  H+
+     2.0000  Pu+++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        56.8079   50.6550   43.5537   37.0502
+        30.5909   25.3763   20.9682   17.0707
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Pu2C3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      3.0000 C              2.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  Pu2C3                       -3.0000  H+
+     2.0000  Pu+++                       -4.5000  O2(g)
+     3.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       533.5625  483.9329  426.6540  374.0675
+       321.9198  280.3062  246.0339  216.8757
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+Pu3C2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 C              3.0000 Pu
+****
+     6 species in reaction:
+    -1.0000  Pu3C2                       -7.0000  H+
+     3.0000  Pu+++                       -4.2500  O2(g)
+     2.0000  HCO3-                        2.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       652.3246  592.2086  522.9512  459.5030
+       396.7466  346.8247  305.8727  271.2665
+*
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuC0.84
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      0.8400 C              1.0000 Pu
+****
+     6 species in reaction:
+    -1.0000  PuC0.84                     -2.1600  H+
+     1.0000  Pu+++                       -1.5900  O2(g)
+     0.8400  HCO3-                        0.6600  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       227.5412  206.5054  182.2628  160.0451
+       138.0603  120.5633  106.2012   94.0495
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuCl3:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+     12.0000 H              6.0000 O              1.0000 Pu
+      3.0000 Cl
+****
+     4 species in reaction:
+    -1.0000  PuCl3:6H2O                   3.0000  Cl-
+     1.0000  Pu+++                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.3599  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+PuCl4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      4.0000 Cl             1.0000 Pu
+****
+     3 species in reaction:
+    -1.0000  PuCl4                        4.0000  Cl-
+     1.0000  Pu++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   21.6853  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+PuF3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      3.0000 F              1.0000 Pu
+****
+     3 species in reaction:
+    -1.0000  PuF3                         3.0000  F-
+     1.0000  Pu+++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -16.2599  -16.3164  -16.6688  -17.2675
+       -18.2297  -19.4362  -20.9682  -23.0240
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuF6
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      6.0000 F              1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  PuF6                         6.0000  F-
+    -2.0000  H2O                          1.0000  PuO2++
+     4.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        49.7680   43.5597   35.8984   28.3650
+        20.2382   13.0028    6.1526   -0.9311
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuO1.61
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.6100 O              1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  PuO1.61                     -4.0000  H+
+     1.0000  Pu++++                       2.0000  H2O
+    -0.1950  O2(g)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        24.4008   20.5992   16.2807   12.3845
+         8.5714    5.5327    2.9861    0.7435
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuO2(NO3)2:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 Pu            14.0000 O             12.0000 H
+      2.0000 N
+****
+     4 species in reaction:
+    -1.0000  PuO2(NO3)2:6H2O              2.0000  NO3-
+     1.0000  PuO2++                       6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.4443  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+PuO2(OH)2:H2O
+     sp.type =  solid
+*    EQ3/6   =  ymp.R2
+     YMP Qualification status = Q
+*    mol.wt. =   500.000 g/mol
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      4.0000 H              5.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  PuO2(OH)2:H2O               -2.0000  H+
+     1.0000  PuO2++                       3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.5000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuO2CO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 C              5.0000 O              1.0000 Pu
+****
+     3 species in reaction:
+    -1.0000  PuO2CO3                      1.0000  CO3--
+     1.0000  PuO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -14.8500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 97Pas/Czer (p.59)
++--------------------------------------------------------------------
+PuOCl
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Cl             1.0000 O              1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  PuOCl                        1.0000  Cl-
+     1.0000  H2O                          1.0000  Pu+++
+    -2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.1696   11.3957    9.2450    7.1719
+         4.9750    3.0439    1.2289   -0.6210
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuOF
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 F              1.0000 O              1.0000 Pu
+****
+     5 species in reaction:
+    -1.0000  PuOF                         1.0000  F-
+     1.0000  H2O                          1.0000  Pu+++
+    -2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         2.2342    1.1116   -0.2852   -1.6594
+        -3.1564   -4.5278   -5.8875   -7.3622
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+PuPO4(s,hyd)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 P              4.0000 O              1.0000 Pu
+****
+     4 species in reaction:
+    -1.0000  PuPO4(s,hyd)                -1.0000  H+
+     1.0000  Pu+++                        1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -13.4500  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Technetium              Tc
+     sp.type =  solid   refstate
+     V0PrTr  =   500.000 [null]
+****
+     1 element(s):
+      1.0000 Tc
+****
+     5 species in reaction:
+    -1.0000  Technetium                  -1.7500  O2(g)
+    -0.5000  H2O                          1.0000  H+
+     1.0000  TcO4-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       100.2623   90.8931   80.0630   70.1144
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Tc2O7
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      7.0000 O              2.0000 Tc
+****
+     4 species in reaction:
+    -1.0000  Tc2O7                       -1.0000  H2O
+     2.0000  H+                           2.0000  TcO4-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        15.9853   15.3032   14.3742   13.4037
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Tc2O7:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 H              8.0000 O              2.0000 Tc
+****
+     3 species in reaction:
+    -1.0000  Tc2O7:H2O                    2.0000  H+
+     2.0000  TcO4-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   14.1058  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+TcO2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 O              1.0000 Tc
+****
+     5 species in reaction:
+    -1.0000  TcO2                        -0.7500  O2(g)
+    -0.5000  H2O                          1.0000  H+
+     1.0000  TcO4-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   20.4915  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+TcO2:1.6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.2000 H              3.6000 O              1.0000 Tc
+****
+     5 species in reaction:
+    -1.0000  TcO2:1.6H2O                 -0.7500  O2(g)
+     1.0000  H+                           1.0000  TcO4-
+     1.1000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   24.4966  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NaTcO4:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      8.0000 H              1.0000 Na             8.0000 O
+      1.0000 Tc
+****
+     4 species in reaction:
+    -1.0000  NaTcO4:4H2O                  1.0000  Na+
+     1.0000  TcO4-                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.8066  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+KTcO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 K              4.0000 O              1.0000 Tc
+****
+     3 species in reaction:
+    -1.0000  KTcO4                        1.0000  K+
+     1.0000  TcO4-
+*
+* Data from Neck et al. (1998) Jour. of Sol. Chem., V. 27, No. 2
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.2390  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 98Nec/Kon(1) (p.114)
++--------------------------------------------------------------------
+CsTcO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Cs             4.0000 O              1.0000 Tc
+****
+     3 species in reaction:
+    -1.0000  CsTcO4                       1.0000  Cs+
+     1.0000  TcO4-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.6070  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 97Kon/Nec (Table V)
++--------------------------------------------------------------------
+CsClO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Cs             4.0000 O              1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  CsClO4                       1.0000  Cs+
+     1.0000  ClO4-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.4060  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 97Kon/Nec (p.571)
++--------------------------------------------------------------------
+Thorium                 Th
+     sp.type =  solid   refstate
+     V0PrTr  =    19.830 cm**3/mol [source: 89wea/lid]
+****
+     1 element(s):
+      1.0000 Th
+****
+     5 species in reaction:
+    -1.0000  Thorium                     -4.0000  H+
+    -1.0000  O2(g)                        1.0000  Th++++
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       228.1154  206.6166  181.9778  159.5294
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Th(OH)4(am)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Th             4.0000 O              4.0000 H
+****
+     3 species in reaction:
+    -1.0000  Th(OH)4(am)                  4.0000  OH-
+     1.0000  Th++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -47.0000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: 01Nec/Kim  (Table 11)
++--------------------------------------------------------------------
+ThO2(cr)                Thorianite
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 O              1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  ThO2(cr)                    -2.0000  H2O
+     1.0000  Th++++                       4.0000  OH-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -54.2000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source:  01Nec/Kim (Table 11)
++--------------------------------------------------------------------
+ThO2(am)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 O              1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  ThO2(am)                    -2.0000  H2O
+     1.0000  Th++++                       4.0000  OH-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -45.5000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source:  97Rai/Fel; p. 246.
++--------------------------------------------------------------------
+Th(SO4)2
+     sp.type =  solid
+     V0PrTr  =   100.390 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      8.0000 O              2.0000 S              1.0000 Th
+****
+     3 species in reaction:
+    -1.0000  Th(SO4)2                     1.0000  Th++++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -20.3885  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Th.75PO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      4.0000 O              1.0000 P              0.7500 Th
+****
+     4 species in reaction:
+    -1.0000  Th.75PO4                    -1.0000  H+
+     0.7500  Th++++                       1.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.6782  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ThF4
+     sp.type =  solid
+     V0PrTr  =    48.740 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      4.0000 F              1.0000 Th
+****
+     3 species in reaction:
+    -1.0000  ThF4                         1.0000  Th++++
+     4.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -30.0201  -30.0826  -30.4691  -31.1337
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ThF4:2.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      4.0000 F              5.0000 H              2.5000 O
+      1.0000 Th
+****
+     4 species in reaction:
+    -1.0000  ThF4:2.5H2O                  1.0000  Th++++
+     2.5000  H2O                          4.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -31.9447  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Uranium                 U
+     sp.type =  solid   refstate
+     V0PrTr  =   500.000 [null]
+****
+     1 element(s):
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  Uranium                     -2.0000  H+
+    -1.5000  O2(g)                        1.0000  H2O
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       229.3698  208.4445  184.4380  162.5359
+       140.9867  123.9744  110.1697   98.6979
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UO2(cr)                 Uraninite
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2(cr)                     -2.0000  H2O
+     1.0000  U++++                        4.0000  OH-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -60.8600  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source:  01Nec/Kim (Table 11)
++--------------------------------------------------------------------
+U(OH)4(am)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      4.0000 H              4.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  U(OH)4(am)                   4.0000  OH-
+     1.0000  U++++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -54.5000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source:  01Nec/Kim (Table 11)
++--------------------------------------------------------------------
+Schoepite               UO3:2H2O
+     sp.type =  solid
+*    EQ3/6   =  ymp, com, ree, alt, pit
+     YMP Qualification status = Q
+*    mol.wt. =   322.058 g/mol
+     V0PrTr  =    66.080 cm**3/mol [source: 73don/ond]
+****
+     3 element(s):
+      4.0000 H              5.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  Schoepite                   -2.0000  H+
+     1.0000  UO2++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.6756    4.8443    3.9389    3.1556
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Ca(UO2)6O4(OH)6:8H2O
+     sp.type =  solid
+     V0PrTr  =    66.080 cm**3/mol [source: 73don/ond]
+****
+     4 element(s):
+     22.0000 H             30.0000 O              6.0000 U
+      1.0000 Ca
+****
+     5 species in reaction:
+    -1.0000  Ca(UO2)6O4(OH)6:8H2O       -14.0000  H+
+     6.0000  UO2++                        1.0000  Ca++
+    18.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   41.4000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 02Rai/Fel (Table 3): phase also known as becquerelite
++--------------------------------------------------------------------
+Boltwoodite-Na          NaUO2SiO3OH:1.5H2O
+     sp.type =  solid
+     V0PrTr  =    97.040 cm**3/mol [source: 81str/ten ]
+****
+     5 element(s):
+      4.0000 H              1.0000 Na             7.5000 O
+      1.0000 Si             1.0000 U
+****
+     6 species in reaction:
+    -1.0000  Boltwoodite-Na              -3.0000  H+
+     1.0000  Na+                          1.0000  SiO2(aq)
+     1.0000  UO2++                        3.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         6.7139    5.9649    5.0994    4.3697
+         3.7353    3.2886    2.9273    2.5534
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2CO3                  Rutherfordine
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 C              5.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2CO3                       1.0000  CO3--
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -14.4700  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: 97Pas/Czer (p.58)
++--------------------------------------------------------------------
+U(HPO4)2:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+     10.0000 H             12.0000 O              2.0000 P
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  U(HPO4)2:4H2O                1.0000  U++++
+     2.0000  HPO4--                       4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -33.2627  -32.8574  -32.7494  -33.0083
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+U(OH)2SO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 H              6.0000 O              1.0000 S
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  U(OH)2SO4                   -2.0000  H+
+     1.0000  SO4--                        1.0000  U++++
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -3.0654  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+U(SO3)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      6.0000 O              2.0000 S              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  U(SO3)2                      1.0000  U++++
+     2.0000  SO3--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -36.7421  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+U(SO4)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      8.0000 O              2.0000 S              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  U(SO4)2                      1.0000  U++++
+     2.0000  SO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -10.6470  -11.9785  -13.8994  -16.0361
+       -18.6520  -21.3227  -24.2285  -27.6849
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+U(SO4)2:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      8.0000 H             12.0000 O              2.0000 S
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  U(SO4)2:4H2O                 1.0000  U++++
+     2.0000  SO4--                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -11.5208  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+U(SO4)2:8H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+     16.0000 H             16.0000 O              2.0000 S
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  U(SO4)2:8H2O                 1.0000  U++++
+     2.0000  SO4--                        8.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -12.5479  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+U2O3F6
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      6.0000 F              3.0000 O              2.0000 U
+****
+     5 species in reaction:
+    -1.0000  U2O3F6                      -1.0000  H2O
+     2.0000  H+                           2.0000  UO2++
+     6.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.4845  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+U3O5F8
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      8.0000 F              5.0000 O              3.0000 U
+****
+     5 species in reaction:
+    -1.0000  U3O5F8                      -1.0000  H2O
+     2.0000  H+                           3.0000  UO2++
+     8.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         1.2061   -2.7107   -7.8607  -13.2183
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UCl2F2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Cl             2.0000 F              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UCl2F2                       1.0000  U++++
+     2.0000  Cl-                          2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -1.5529   -3.5008   -6.0662   -8.7423
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UCl3F
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      3.0000 Cl             1.0000 F              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UCl3F                        1.0000  F-
+     1.0000  U++++                        3.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.1519   10.3277    6.7516    3.1438
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UCl4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      4.0000 Cl             1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UCl4                         1.0000  U++++
+     4.0000  Cl-
+* Source: data0.ymp.R2
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        25.6371   21.9229   17.3189   12.7604
+         7.7844    3.2769   -1.0866   -5.7135
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UCl6
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      6.0000 Cl             1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UCl6                        -2.0000  H2O
+     1.0000  UO2++                        4.0000  H+
+     6.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        58.6513   53.1432   46.2515   39.3626
+        31.8081   24.9939   18.4876   11.7108
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UClF3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.0000 Cl             3.0000 F              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UClF3                        1.0000  Cl-
+     1.0000  U++++                        3.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -16.4488  -17.5044  -19.0407  -20.7685
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UF4
+     sp.type =  solid
+     V0PrTr  =    46.880 cm**3/mol [source: 79rob/hem]
+****
+     2 element(s):
+      4.0000 F              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UF4                          1.0000  U++++
+     4.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -30.3003  -30.3553  -30.7351  -31.3960
+       -32.4872  -33.8977  -35.7404  -38.2800
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UF4:2.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      4.0000 F              5.0000 H              2.5000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UF4:2.5H2O                   1.0000  U++++
+     2.5000  H2O                          4.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -33.8735  -33.3607  -33.0661  -33.0839
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UF6
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      6.0000 F              1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UF6                         -2.0000  H2O
+     1.0000  UO2++                        4.0000  H+
+     6.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        21.5553   17.5678   12.4557    7.2463
+         1.3981   -4.0509   -9.4686  -15.3832
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UI4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      4.0000 I              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UI4                          1.0000  U++++
+     4.0000  I-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        45.2721   40.4934   34.6706   28.9961
+        22.9161   17.5379   12.4777    7.2943
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UO2(NO3)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 N              8.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2(NO3)2                    1.0000  UO2++
+     2.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.9709  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2(NO3)2:2H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      4.0000 H              2.0000 N             10.0000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2(NO3)2:2H2O               1.0000  UO2++
+     2.0000  H2O                          2.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.3176    4.9556    4.4156    3.8028
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2(NO3)2:3H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      6.0000 H              2.0000 N             11.0000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2(NO3)2:3H2O               1.0000  UO2++
+     2.0000  NO3-                         3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.8425    3.7272    3.4887    3.1721
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2(NO3)2:6H2O
+     sp.type =  solid
+     V0PrTr  =   178.880 cm**3/mol [source: 89wea/lid]
+****
+     4 element(s):
+     12.0000 H              2.0000 N             14.0000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2(NO3)2:6H2O               1.0000  UO2++
+     2.0000  NO3-                         6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         1.9893    2.3300    2.6581    2.9081
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2(NO3)2:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 H              2.0000 N              9.0000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2(NO3)2:H2O                1.0000  H2O
+     1.0000  UO2++                        2.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    8.5214  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2(OH)2(beta)
+     sp.type =  solid   polymorph
+     V0PrTr  =    51.310 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      2.0000 H              4.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2(OH)2(beta)              -2.0000  H+
+     1.0000  UO2++                        2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.8811    4.9567    3.9205    2.9970
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2.3333(beta)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.3333 O              1.0000 U
+****
+     5 species in reaction:
+    -2.0000  UO2.3333(beta)              -8.0000  H+
+     0.3333  O2(g)                        2.0000  U++++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -26.0327  -26.7364  -27.4546  -28.0234
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2.6667
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.6667 O              1.0000 U
+****
+     5 species in reaction:
+    -2.0000  UO2.6667                    -8.0000  H+
+     0.6667  O2(g)                        2.0000  U++++
+     4.0000  H2O
+* Source: data0.ymp.R2
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -42.5450  -41.6576  -40.5521  -39.4597
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2Cl2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Cl             2.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2Cl2                       1.0000  UO2++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        13.7870   12.1037    9.9956    7.8820
+         5.5426    3.3955    1.2934   -0.9651
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UO2Cl2:3H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Cl             6.0000 H              5.0000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2Cl2:3H2O                  1.0000  UO2++
+     2.0000  Cl-                          3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.6275  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2Cl2:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Cl             2.0000 H              3.0000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2Cl2:H2O                   1.0000  H2O
+     1.0000  UO2++                        2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    8.2990  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2ClOH:2H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 Cl             5.0000 H              5.0000 O
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UO2ClOH:2H2O                -1.0000  H+
+     1.0000  Cl-                          1.0000  UO2++
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    2.3174  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2F2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 F              2.0000 O              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2F2                        1.0000  UO2++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -5.6625   -6.2647   -7.1190   -8.0669
+        -9.2359  -10.4458  -11.7863  -13.4186
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UO2F2:3H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 F              6.0000 H              5.0000 O
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2F2:3H2O                   1.0000  UO2++
+     2.0000  F-                           3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -7.3580  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2FOH:2H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 F              5.0000 H              5.0000 O
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UO2FOH:2H2O                 -1.0000  H+
+     1.0000  F-                           1.0000  UO2++
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.6497  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2FOH:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 F              3.0000 H              4.0000 O
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UO2FOH:H2O                  -1.0000  H+
+     1.0000  F-                           1.0000  UO2++
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -2.2729  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2HPO4:4H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      9.0000 H             10.0000 O              1.0000 P
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2HPO4:4H2O                 1.0000  HPO4--
+     1.0000  UO2++                        4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -13.3143  -13.0122  -12.8015  -12.7469
+       -12.8912  -13.2544  -13.8718  -14.8691
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2SO3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      5.0000 O              1.0000 S              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2SO3                       1.0000  SO3--
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -15.9702  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2SO4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      6.0000 O              1.0000 S              1.0000 U
+****
+     3 species in reaction:
+    -1.0000  UO2SO4                       1.0000  SO4--
+     1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         3.6829    2.4282    0.7802   -0.9327
+        -2.8940   -4.7579   -6.6467   -8.7462
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2SO4:2.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      5.0000 H              8.5000 O              1.0000 S
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2SO4:2.5H2O                1.0000  SO4--
+     1.0000  UO2++                        2.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.4803  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2SO4:3.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      7.0000 H              9.5000 O              1.0000 S
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2SO4:3.5H2O                1.0000  SO4--
+     1.0000  UO2++                        3.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.4695  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO2SO4:3H2O
+     sp.type =  solid
+     V0PrTr  =   108.340 cm**3/mol [source: 82hem    ]
+****
+     4 element(s):
+      6.0000 H              9.0000 O              1.0000 S
+      1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO2SO4:3H2O                  1.0000  SO4--
+     1.0000  UO2++                        3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.3919  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO3(alpha)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      3.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO3(alpha)                  -2.0000  H+
+     1.0000  H2O                          1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        10.0588    8.6501    7.0488    5.5987
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO3(beta)
+     sp.type =  solid   polymorph
+     V0PrTr  =    34.460 cm**3/mol [source: 82hem    ]
+****
+     2 element(s):
+      3.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO3(beta)                   -2.0000  H+
+     1.0000  H2O                          1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         9.6847    8.3205    6.7706    5.3656
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UO3(gamma)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      3.0000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO3(gamma)                  -2.0000  H+
+     1.0000  H2O                          1.0000  UO2++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         9.2004    7.8659    6.3502    4.9769
+         3.6191    2.5193    1.5758    0.7124
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UO3:.9H2O(alpha)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      1.8000 H              3.9000 O              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UO3:.9H2O(alpha)            -2.0000  H+
+     1.0000  UO2++                        1.9000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         5.9334    5.0276    4.0093    3.0976
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UOCl2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Cl             1.0000 O              1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UOCl2                       -2.0000  H+
+     1.0000  H2O                          1.0000  U++++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         8.1388    5.8869    3.1534    0.5015
+        -2.3463   -4.9033   -7.3783  -10.0079
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_10_DS_fix.xls)
++--------------------------------------------------------------------
+UOF2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 F              1.0000 O              1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UOF2                        -2.0000  H+
+     1.0000  H2O                          1.0000  U++++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -18.1396  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UOF2:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 F              2.0000 H              2.0000 O
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UOF2:H2O                    -2.0000  H+
+     1.0000  U++++                        2.0000  F-
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000  -18.6942  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UOFOH
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 F              1.0000 H              2.0000 O
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  UOFOH                       -3.0000  H+
+     1.0000  F-                           1.0000  U++++
+     2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -8.9196  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UOFOH:.5H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 F              2.0000 H              2.5000 O
+      1.0000 U
+****
+     6 species in reaction:
+    -1.0000  UOFOH:.5H2O                 -1.0000  H+
+    -0.5000  O2(g)                        1.0000  F-
+     1.0000  UO2++                        1.5000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   23.1287  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+UP2O7
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      7.0000 O              2.0000 P              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  UP2O7                       -1.0000  H2O
+     1.0000  U++++                        2.0000  HPO4--
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -32.5528  -32.9847  -33.8896  -35.1362
+       -36.9263  -38.9928  -41.4463  -44.5544
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+US2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 S              1.0000 U
+****
+     4 species in reaction:
+    -1.0000  US2                         -2.0000  H+
+     1.0000  U++++                        2.0000  HS-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        -0.7331   -2.3248   -4.2990   -6.2522
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+US3
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      3.0000 S              1.0000 U
+****
+     5 species in reaction:
+    -1.0000  US3                         -2.0000  H2O
+     1.0000  H+                           1.0000  UO2++
+     3.0000  HS-
+* Source: data0.ymp.R2
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       -17.4367  -16.6260  -15.9670  -15.6489
+       500.0000  500.0000  500.0000  500.0000
+*
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Uranophane(alpha)       Ca(UO2SiO3OH)2:5H2O
+     sp.type =  solid
+     V0PrTr  =   251.336 cm**3/mol [source: Usilicates_YC_TLS.xls ]
+****
+     5 element(s):
+      1.0000 Ca            12.0000 H             17.0000 O
+      2.0000 Si             2.0000 U
+****
+     6 species in reaction:
+    -1.0000  Uranophane(alpha)           -6.0000  H+
+     1.0000  Ca++                         2.0000  SiO2(aq)
+     2.0000  UO2++                        9.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        14.1555   11.6981    8.8512    6.3454
+         4.0071    2.2290    0.7521   -0.6545
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Na2U2O7
+     sp.type =  solid
+     V0PrTr  =    95.340 cm**3/mol [source: 82hem    ]
+****
+     3 element(s):
+      2.0000 Na             7.0000 O              2.0000 U
+****
+     5 species in reaction:
+    -1.0000  Na2U2O7                     -6.0000  H+
+     2.0000  Na+                          2.0000  UO2++
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        25.4084   22.6135   19.4843   16.7150
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Na2UO4(alpha)
+     sp.type =  solid   polymorph
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 Na             4.0000 O              1.0000 U
+****
+     5 species in reaction:
+    -1.0000  Na2UO4(alpha)               -4.0000  H+
+     1.0000  UO2++                        2.0000  H2O
+     2.0000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        32.8398   30.0341   26.8753   24.0679
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Na4UO2(CO3)3
+     sp.type =  solid
+     V0PrTr  =   149.314 cm**3/mol [source: 56dou]
+****
+     4 element(s):
+      3.0000 C              4.0000 Na            11.0000 O
+      1.0000 U
+****
+     5 species in reaction:
+    -1.0000  Na4UO2(CO3)3                -3.0000  H+
+     1.0000  UO2++                        3.0000  HCO3-
+     4.0000  Na+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    4.0504  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Witherite               BaCO3
+     sp.type =  solid
+     V0PrTr  =    45.810 cm**3/mol [source: 78hel/del]
+****
+     3 element(s):
+      1.0000 Ba             1.0000 C              3.0000 O
+****
+     4 species in reaction:
+    -1.0000  Witherite                   -1.0000  H+
+     1.0000  Ba++                         1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         1.9041    1.7639    1.5062    1.1717
+         0.7100    0.1917   -0.4144   -1.1855
+* Source: DTN: SN0410T0510404.001 (Minerals_j_psd_8_DS_fix.xls)
++--------------------------------------------------------------------
+Zinc                    Zn
+     sp.type =  solid   refstate
+     V0PrTr  =     9.162 cm**3/mol [source: 79rob/hem]
+****
+     1 element(s):
+      1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Zinc                        -2.0000  H+
+    -0.5000  O2(g)                        1.0000  H2O
+     1.0000  Zn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        74.3944   67.3543   59.2756   51.9145
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zincite                 ZnO
+     sp.type =  solid   idealized
+     V0PrTr  =    14.338 cm**3/mol [source: 78hel/del]
+****
+     2 element(s):
+      1.0000 O              1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  Zincite                     -2.0000  H+
+     1.0000  H2O                          1.0000  Zn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        12.6321   11.2089    9.5803    8.1080
+         6.6679    5.5211    4.5577    3.6973
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn(BO2)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 B              4.0000 O              1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Zn(BO2)2                    -2.0000  H+
+    -2.0000  H2O                          1.0000  Zn++
+     2.0000  B(OH)3(aq)
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    8.3130  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn(ClO4)2:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Cl            12.0000 H             14.0000 O
+      1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  Zn(ClO4)2:6H2O               1.0000  Zn++
+     2.0000  ClO4-                        6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.6474  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn(NO3)2:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+     12.0000 H              2.0000 N             12.0000 O
+      1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  Zn(NO3)2:6H2O                1.0000  Zn++
+     2.0000  NO3-                         6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    3.4102  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn(OH)2(beta)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 H              2.0000 O              1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  Zn(OH)2(beta)               -2.0000  H+
+     1.0000  Zn++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.9341  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn(OH)2(epsilon)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 H              2.0000 O              1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  Zn(OH)2(epsilon)            -2.0000  H+
+     1.0000  Zn++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.6625  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn(OH)2(gamma)
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      2.0000 H              2.0000 O              1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  Zn(OH)2(gamma)              -2.0000  H+
+     1.0000  Zn++                         2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.8832  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn2(OH)3Cl
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 Cl             3.0000 H              3.0000 O
+      2.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Zn2(OH)3Cl                  -3.0000  H+
+     1.0000  Cl-                          2.0000  Zn++
+     3.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   15.2921  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn2SO4(OH)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 H              6.0000 O              1.0000 S
+      2.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Zn2SO4(OH)2                 -2.0000  H+
+     1.0000  SO4--                        2.0000  H2O
+     2.0000  Zn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.5816  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn3O(SO4)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     3 element(s):
+      9.0000 O              2.0000 S              3.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Zn3O(SO4)2                  -2.0000  H+
+     1.0000  H2O                          2.0000  SO4--
+     3.0000  Zn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   19.1188  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+Zn5(NO3)2(OH)8
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      8.0000 H              2.0000 N             14.0000 O
+      5.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  Zn5(NO3)2(OH)8              -8.0000  H+
+     2.0000  NO3-                         5.0000  Zn++
+     8.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   42.6674  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnBr2:2H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Br             4.0000 H              2.0000 O
+      1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  ZnBr2:2H2O                   1.0000  Zn++
+     2.0000  Br-                          2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    5.2999  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnCO3:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      1.0000 C              2.0000 H              4.0000 O
+      1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  ZnCO3:H2O                   -1.0000  H+
+     1.0000  H2O                          1.0000  HCO3-
+     1.0000  Zn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    0.1398  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnCl2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      2.0000 Cl             1.0000 Zn
+****
+     3 species in reaction:
+    -1.0000  ZnCl2                        1.0000  Zn++
+     2.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000    7.0880  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnCl2(NH3)2
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Cl             6.0000 H              2.0000 N
+      1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  ZnCl2(NH3)2                  1.0000  Zn++
+     2.0000  Cl-                          2.0000  NH4+
+    -2.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.4864  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
+* log K calculated by combining the above dissolution reaction on the
+* basis of NH3(aq) with the dissociation of NH3(aq):
+* -6.996 + (2*(9.2410))= 11.4864
++--------------------------------------------------------------------
+ZnCl2(NH3)4
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Cl            12.0000 H              4.0000 N
+      1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  ZnCl2(NH3)4                  1.0000  Zn++
+     2.0000  Cl-                          4.0000  NH4+
+    -4.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   30.2685  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
+* log K calculated by combining the above dissolution reaction on the
+* basis of NH3(aq) with the dissociation of NH3(aq):
+* -6.695 + (4*(9.2410))= 30.2685
++--------------------------------------------------------------------
+ZnCl2(NH3)6
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 Cl            18.0000 H              6.0000 N
+      1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  ZnCl2(NH3)6                  1.0000  Zn++
+     2.0000  Cl-                          6.0000  NH4+
+    -6.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   50.7149  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
+* log K calculated by combining the above dissolution reaction on the
+* basis of NH3(aq) with the dissociation of NH3(aq):
+* -4.7311 + (6*9.2410)= 50.7149
++--------------------------------------------------------------------
+ZnCr2O4
+     sp.type =  solid
+     V0PrTr  =    44.030 cm**3/mol [source: 89wea/lid]
+****
+     3 element(s):
+      2.0000 Cr             4.0000 O              1.0000 Zn
+****
+     5 species in reaction:
+    -1.0000  ZnCr2O4                     -8.0000  H+
+     1.0000  Zn++                         2.0000  Cr+++
+     4.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   11.8387  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnF2
+     sp.type =  solid
+     V0PrTr  =    20.880 cm**3/mol [source: 89wea/lid]
+****
+     2 element(s):
+      2.0000 F              1.0000 Zn
+****
+     3 species in reaction:
+    -1.0000  ZnF2                         1.0000  Zn++
+     2.0000  F-
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         0.4427   -0.4418   -1.6332   -2.8847
+        -4.3346   -5.7441   -7.2233   -8.9461
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnSO4:6H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+     12.0000 H             10.0000 O              1.0000 S
+      1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  ZnSO4:6H2O                   1.0000  SO4--
+     1.0000  Zn++                         6.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.6846  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnSO4:7H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+     14.0000 H             11.0000 O              1.0000 S
+      1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  ZnSO4:7H2O                   1.0000  SO4--
+     1.0000  Zn++                         7.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.8683  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZnSO4:H2O
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     4 element(s):
+      2.0000 H              5.0000 O              1.0000 S
+      1.0000 Zn
+****
+     4 species in reaction:
+    -1.0000  ZnSO4:H2O                    1.0000  H2O
+     1.0000  SO4--                        1.0000  Zn++
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -0.5383  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+ZrO2                    Baddeleyite
+     sp.type =  solid
+     V0PrTr  =   500.000 [null]
+****
+     2 element(s):
+      1.0000 Zr             2.0000 O
+****
+     4 species in reaction:
+    -1.0000  ZrO2                        -4.0000  H+
+     1.0000  Zr++++                       2.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+       500.0000   -1.9000  500.0000  500.0000
+       500.0000  500.0000  500.0000  500.0000
+* Source: NAGRA NTB 02-16, Table B1
++--------------------------------------------------------------------
+liquids
++--------------------------------------------------------------------
+gases
++--------------------------------------------------------------------
+CH4(g)
+     sp.type =  gas
+*    mol.wt. =    16.043 g/mol
+     V0PrTr  =     0.000 cm**3/mol [source: supcrt92 [see 92joh/oel]]
+****
+     2 element(s):
+      1.0000 C              4.0000 H
+****
+     5 species in reaction:
+    -1.0000  CH4(g)                      -2.0000  O2(g)
+     1.0000  H+                           1.0000  H2O
+     1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+       149.9223  135.4943  118.8953  103.7097
+        88.7199   76.8337   67.1233   58.9401
+* Source: data0.ymp.R4
++--------------------------------------------------------------------
+CO2(g)                  CO2(g)
+     V0PrTr  =     0.000 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     2 element(s):
+      1.0000 C              2.0000 O
+****
+     4 species in reaction:
+    -1.0000  CO2(g)                      -1.0000  H2O
+     1.0000  H+                           1.0000  HCO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        -7.6765   -7.8136   -8.0527   -8.3574
+        -8.7692   -9.2165   -9.7202  -10.3394
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+H2(g)                   H2(g)
+     V0PrTr  =     0.000 cm**3/mol [source: supcrt92 [see 92Joh/Oel]]
+****
+     1 element(s):
+      2.0000 H
+****
+     3 species in reaction:
+    -1.0000  H2(g)                       -0.5000  O2(g)
+     1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        46.1412   41.5527   36.3008   31.5249
+        26.8473   23.1783   20.2265   17.8024
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+H2O(g)                  H2O(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      2.0000 H              1.0000 O
+****
+     2 species in reaction:
+    -1.0000  H2O(g)                       1.0000  H2O
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+         2.2146    1.4999    0.7020   -0.0003
+        -0.6614   -1.1562   -1.5353   -1.8314
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HBr(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 Br             1.0000 H
+****
+     3 species in reaction:
+    -1.0000  HBr(g)                       1.0000  Br-
+     1.0000  H+
+*
+**** logK grid [0-25-60-100C @1bar; 150-200-250-300C @Psat-H2O]:
+        10.1946    8.8660    7.2542    5.6973
+         4.0579    2.6470    1.3661    0.1039
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HCl(g)                  HCl(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 H              1.0000 Cl
+****
+     3 species in reaction:
+    -1.0000  HCl(g)                       1.0000  H+
+     1.0000  Cl-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         7.4707    6.3064    4.8855    3.5021
+         2.0304    0.7477   -0.4338   -1.6189
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HF(g)                   HF(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 H              1.0000 F
+****
+     3 species in reaction:
+    -1.0000  HF(g)                        1.0000  H+
+     1.0000  F-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         2.2184    1.2448    0.0478   -1.1216
+        -2.3719   -3.4734   -4.5066   -5.5707
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+HNO3(g)                  HNO3(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     3 element(s):
+      1.0000 H              1.0000 N              3.0000 O
+****
+     3 species in reaction:
+    -1.0000  HNO3(g)                      1.0000  H+
+     1.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         7.6066    6.4719    5.1020    3.7874
+         2.4111    1.2316    0.1617   -0.8975
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+N2O5(g)                  N2O5(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      2.0000 N              5.0000 O
+****
+     4 species in reaction:
+    -1.0000  N2O5(g)                     -1.0000  H2O
+     2.0000  H+                           2.0000  NO3-
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        20.1428   17.9824   15.3326   12.7454
+         9.9892    7.5886    5.3857    3.1923
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+NO3(g)                   NO3(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     2 element(s):
+      1.0000 N              3.0000 O
+****
+     5 species in reaction:
+    -1.0000  NO3(g)                      -0.5000  H2O
+     1.0000  H+                           1.0000  NO3-
+     0.2500  O2(g)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+        21.1117   18.9865   16.4496   14.0349
+        11.5358    9.4348    7.5903    5.8674
+* Source: data0.ymp.R2
++--------------------------------------------------------------------
+O2(g)                   O2(g)
+     V0PrTr  =     0.000 cm**3/mol [source:          ]
+****
+     1 element(s):
+      2.0000 O
+****
+     2 species in reaction:
+    -1.0000  O2(g)                        1.0000  O2(g)
+*
+**** logK grid [0-25-60-100C @1.0132bar; 150-200-250-300C @Psat-H2O]:
+         0.0000    0.0000    0.0000    0.0000
+         0.0000    0.0000    0.0000    0.0000
+* Source: SUPCRT92 95Bar/Pla [Gases_j_TJW_2.xls]
+*   Note: all values are zero by definition
++--------------------------------------------------------------------
+solid solutions
++--------------------------------------------------------------------
+references
++--------------------------------------------------------------------
+DTN sources:
+  Supporting spreadsheets for data0.ypf.R2:
+MO0701SPAPTZER.001
+SN0302T0510102.002
+data0.ymp.R2: MO0302SPATHDYN.000
+data0.ymp.R4: SN0410T0510404.002
+Supporting spreadsheets for data0.ymp.R4: SN0410T0510404.001
+ 
+98Alb/Riz
+Albright, JG; Rizzo, P; Rard, JA, 1998. J. Chem. Thermodynamics,
+  30, 327-352.
+ 
+00arc
+Archer, D.G. 2000. "Thermodynamic Properties of the NaNO{subscript 3}+
+  H{subscript 2}O System." Journal of Physical and Chemical Reference Data,
+  29, (5), 1141-1156. [New York, New York]: American Chemical Society.
+  TIC: 253379.
+ 
+03Alt/Net
+Altmaier, M., Metz, V., Neck, V., Muller, R., Fanghänel, Th., 2003.
+  Solid-liquid equilibria of Mg(OH)2(cr) and Mg2(OH)3Cl*4H2O(cr) in
+  the system Mg-Na-H-OH-Cl-H2O at 25 deg.C, Geochimica Cosmochimica Acta,
+  v. 67, No. 19, p. 3595-3601.
+ 
+93Bae/Rea
+Baes, C.F.; Reardon E.J.; Moyer, B.A., 1993.  "Ion Interaction Model
+  Applied to the CuSO4-H2SO4-H2O System at 25 deg. C." J. Phys. Chem.,
+  97, 12343-12348.
+ 
+98Bal/Nor
+Ball, J.W. and Nordstrom, D.K, 1998, "Critical evaluation and selection of
+  standard state thermodynamic properties for chromium metal and its aqueous
+  ions, hydrolysis species, oxides, and hydroxides", Journal of Chemical and
+  Engineering Data; v.43, no.6, p.895-918
+ 
+94Cas/Ola
+Castano, R.; Olazabal, M.A.; Borge, G.; Madariaga, J.M.; 1994.
+  "Complexation and Precipitation Equilibria in the System Ni(II)-Cr(VI)-H2O".
+  J. Chem. Soc. Faraday Trans., 90(9), 1227-1231.
+ 
+94Chr
+Christov, C, 1994. J. Chem. Thermodynamics, 26, 1071-1080.
+ 
+98Chr
+Christov, C, 1998. Thermodynamic study of the KCl-K2SO4-K2Cr2O7-H2O
+  system at the temperature of 298.15 K, Calphad, 22(4), 449-457.
+ 
+01Chr.1
+Christov, C, 2001. Calphad, 25(1), 11-17.
+ 
+01Chr.2
+Christov, C, 2001. Calphad, 25(3), 445-454.
+ 
+02Chr/Iva
+Christov, C., Ivanova, K., Velikova, S., and Taney, S., 2002.
+  Thermodynamic study of aqueous sodium and potassium chloride and chromate
+  systems at the temperature 298.15 K, J. Chem. Thermodynamics, 34, 987-994.
+ 
+02Chr(1)
+Christov, C, 2002a. "Thermodyanamics of formation of ammonium, sodium and
+  potassium alums and chromium alums", Calphad, 26(1), 85-94.
+ 
+02Chr(2)
+Christov, C, 2002.  "Thermodynamic Study of Quaternary Systems with
+  Participation of Ammonium and Sodium Alums and Chromium Alums." Calphad,
+  26(3), 341-352.
+ 
+03Chr
+Christov, C, 2003. J. Chem. Thermodynamics, 35, 909-917.
+ 
+90cor/depab
+Corti, H.R., de Pablo, J.J., and Prausnitz, J.M. 1990, Phase equilibria
+  for aqueous systems containing salts and carbon dioxide. Application to
+  Pitzer's theory for electrolyte solutions. Journal of Physical Chemistry,
+  1990, Vol. 94, p. 7876-7880.
+ 
+95Fan/Nec
+Fanghänel, Th.; Neck, V.; and Kim, J.I. 1995. "Thermodynamics of Neptunium(V)
+  in Concentrated Salt Solutions: II. Ion Interaction (Pitzer) Parameters for
+  Np(V) Hydrolysis Species and Carbonate Complexes." Radiochimica Acta, 69,
+  (3), 169-176. München, Germany: R. Oldenbourg Verlag. TIC: 255832.
+ 
+98Fan/Kim
+Fanghänel, Th. and Kim J-I, 1998.  Spectroscopic evaluation of
+  thermodynamics of trivalent actinides in brines, Journal of Alloys and
+  Compounds, 271-273, p. 728-737.
+ 
+01fel/mac
+Felmy, A.R.; MacLean, G.T. 2001. Development of an Enhanced Thermodynamic
+  Database for the Pitzer Model in ESP: The Fluoride and Phosphate Components.
+  PNWD-3120; WTP-RPT-018. Richland, Washington: Battelle Pacific Northwest
+  Division.
+ 
+86Fel/Wea
+Felmy, A.R. and Weare, J.H., 1986.  The prediction of borate mineral
+  equilibria in natural waters: Application to Searles Lake, California,
+  Geochimica Cosmochimica Acta, Vol. 50, p. 2771-2783.
+ 
+92Fel/Rai
+  Felmy, AR; Rai, D; Mason, MJ, 1992. J. Solution Chem., 21(6), 525-532.
+ 
+97Fel/Rai
+Felmy, A.R., Rai, D., Sterner, M., Mason, M.J., Hess, N.J., and Conradson,
+  S.D., 1997. Thermodynamic models for highly charged aqueous species:
+  solubility of Th(IV) hydrous oxide in concentrated NaHCO3 and Na2CO3
+  solutions, Journal of Solution Chemistry, Vol. 26, No. 3, p. 233-248.
+ 
+99Fel/Rai
+Felmy, A.R. and Rai D., 1999. Application of Pitzer's equations for
+  modeling the aqueous thermodynamics of actinide species in natural waters:
+  a review, Journal of Solution Chemistry, Vol. 28, No. 5, p. 533-553.
+ 
+94fel/rus
+Felmy, A.R.; Rustad, J.R.; Mason, M.J.; and de la Bretonne, R. 1994.
+  A Chemical Model for the Major Electrolyte Components of the Hanford
+  Waste Tanks: The Binary Electrolytes in the System: Na-NO{subscript 3}-
+  NO{subscript 2}-SO{subscript 4}-CO{subscript 3}-F-PO{subscript 4}-OH-
+  AI(OH){subscript 4}-H{subscript 2}O. PNL-SA-23952. Richland, Washington:
+  Pacific Northwest Laboratory. TIC: 253271.
+ 
+92Gra/Mul
+Grambow, B; Muller, R; Rother, A, 1992. Radiochimica Acta, 58/59,
+  71-77.
+ 
+03Gue/Mou
+Guendouzi, M.E.; Mounir, A.; Dinane, A., 2003. J. Chem.
+  Thermodynamics 35, 209-220.
+ 
+03Gui
+Guillaumont, R.; Fanghänel, T.; Fuger, J.; Grenthe, I.; Neck, V.; Palmer,
+  D.A.; and Rand, M.H. 2003. Update on the Chemical Thermodynamics of
+  Uranium, Neptunium, Plutonium, Americium and Technetium. Mompean, F.J.;
+  Illemassene, M.; Domenech-Orti, C.; and Ben Said, K., eds. Chemical
+  Thermodynamics 5. Amsterdam, The Netherlands: Elsevier. TIC: 255230.
+ 
+05gun/arn
+Gunnarsson, I.; Arnorsson, S.; and Jakobsson, S. 2005. "Precipitation of
+  Poorly Crystalline Antigorite Under Hydrothermal Conditions." Geochimica
+  et Cosmochimica Acta, 69, (11), 2813-2828. New York, New York]: Elsevier.
+  TIC: 258287. [Solids_j_Mg_Silicates_CFJC.xls]
+ 
+99gur/gor
+Gurevich, V.M.; Gorbunov, V.E.; Gavrichev, K.S.; and Khodakovskii, I.L.
+  1999. "A Calorimeter for Heat Capacity Measurements from 50 to 300 K:
+  The Heat Capacities of Kogarkoite Na{subscript 3}SO{subscript 4}F(cr)
+  at Low Temperatures." Geochemistry International, 37, (4), 367-377.
+  Moscow, Russia: MAHK Nauka/Interperiodica. TIC: 258290.
+ 
+93He/Mor
+He, S. and Morse, J.W., 1993, The carbonic acid system and calcite
+  solubility in aqueous Na-K-Ca-Mg-Cl-SO4 solutions from 0 to 90 deg.C.
+  Geochimica Cosmochimica Acta, Vol. 57, p. 3533-3554.TIC: 253894.
+ 
+88Kim/Fre
+Kim, H-T, Frederick, W.J., 1988. Evaluation of Pitzer ion interaction
+  parameters of aqueous electrolytes at 25 deg.C 1. Single salt parameters,
+  Journal of Chemical and Engineering Data, 33, p. 177-184.
+ 
+88Kim/Fre(2)
+Kim, H-T, Frederick, W.J., 1988. Evaluation of Pitzer ion interaction
+  parameters of aqueous mixed electrolyte solutions at 25 deg.C 2.
+  Ternary mixing parameters, Journal of Chemical and Engineering Data,
+  33, p. 278-283.
+ 
+99Kon/Kon
+Konigsberger, E., Konigsberger, L-C, and Gamsjager, H., 1999. Low-temperature
+  thermodynamic model for the system Na2CO3-MgCO3-CaCO3-H2O, Geochimica
+  Cosmochimica Acta, Vol. 63, No. 19/20, p. 3105-3119.
+ 
+97Kon/Nec
+Konnecke, Th., Neck, V., Fanghänel, Th., and Kim, J.I., 1997. Activity
+  coefficients in the systems Na+/Cs+/Cl-/TcO4- or ClO4-/H2O at 25 deg.C,
+  Journal of Solution Chemistry, Vol. 26, No. 6, p. 561-577.
+ 
+99Liu/Mil
+Liu, X. and Millero, F.J., 1999.  "The solubility of iron hydroxide on
+  sodium chloride solutions, Geochimica Cosmochimica Acta, Vol. 63,
+  No. 19/20, p. 3487-3497.
+ 
+98Mah/Nov
+Al Mahamid, I., Novak, C.F., Becraft, K.A., Carpenter, S.A., and
+  Hakem, N., 1998.  Solubility of Np(V) in K-Cl-CO3 and Na-K-Cl-CO3 solutions
+  to high concentrations: measurements and thermodynamic model predictions,
+  Radiochimica Acta, 93, p. 93-101.
+ 
+95Mil/Yao
+Millero, F.J.; Yao, W.; and Aicher, J. 1995. "The Speciation of
+  Fe(II) and Fe(III) in Natural Waters." Marine Chemistry, 50, 21-39.
+  [Amsterdam, The Netherlands]: Elsevier. TIC: 248303.
+ 
+NAGRA
+Hummel, W., Berner, U., Curti, E., Pearson, F.J., Thoenen, T., 2002.
+  Nagra/PSI Chemical Thermodynamic Data Base 01/01, NAGRA Technical
+  Report 02-16.
+ 
+95Nec/Fan
+Neck, V; Fanghänel, TH; Rudolph, G; Kim, JI, 1995.
+  "Thermodynamics of Neptunium(V) in Concentrated Salt Solutions: Chloride
+  Complexation and Ion INteraction (Pitzer) Paramters for the NpO2+ Ion."
+  Radiochimica Acta 69, p. 39-47. TIC: 246366.
+ 
+98Nec/Kon(1)
+Neck, V., Konnecke, Th., Fanghänel, Th., and Kim J-I, 1998.  Pitzer
+  parameters for the pertechnetate ion in the system Na+/K+/Mg2+/Ca2+/
+  TcO4-/H2O at 25 deg.C, Journal of Solution Chemistry, Vol. 27, No. 2,
+  p. 107-120.
+ 
+98Nec/Kon(2)
+Neck, V., Konnecke, Th., Fanghänel, Th., and Kim J-I, 1998.  Activity
+  coefficients for the fission product ions Cs+ and TcO4- in the system
+  Cs+/Na+/K+/Mg2+/Cl-/SO42-/TcO4-/H2O at 25 deg.C, Radiochimica Acta,
+  Vol. 83, No. 2, p. 75-80.
+ 
+01Nec/Kim
+Neck, V and Kim, JI, 2001. "Solubility and hydrolysis of tetravalent
+  actinidies", Radiochimica Acta 89, p. 1-16. TIC: 250728.
+ 
+02Nec/Mul
+Neck, V.; Muller, R.; Bouby, M.; Altmaier, M.; Denecke, M.A.; Kim, J.I.
+  2002. "Solubility of amorphous Th(IV) hydroxide - application of LIBD
+  to determine the solubility product and EXAFS for aqueous speciation,
+  Radiochimica Acta 90, p. 485-494.
+ 
+87Pab/Pit
+Pabalan, R.T., and Pitzer, K.S., 1987, Thermodynamics of NaOH(aq) in
+  hydrothermal solutions. Geochimica et Cosmochimica Acta, v. 51,
+  p. 829-837. TIC:  253383.
+ 
+97Pas/Czer
+Pashalidis, I., Czerwinski, K.R., Fanghänel, Th., and Kim, J.I., 1997.
+  Solid-liquid phase equilibria of Pu(VI) and U(VI) in aqueous carbonate
+  systems. Determination of stability constants, Radiochimica Acta, 76,
+  p. 55-62.
+ 
+82pei/pit
+Peiper, J.C. and Pitzer, K.S. 1982. Thermodynamics of aqueous carbonate
+  solutions including mixtures of sodium carbonate, bicarbonate, and
+  chloride, Jour. Chem. Thermodynamics, Vol. 14, p. 613-638.
+ 
+73Pit/May
+Pitzer, KS; Mayorga, G, 1973. "Thermodynamics of Electrolytes. II.
+  Activity and Osmotic Coefficients for Strong Electrolytes with One or
+  Both Ions Univalent." J. Phys. Chem. 77, p. 2300.
+ 
+74Pit/May
+Pitzer, KS; Mayorga, G, 1974. "Thermodynamics of Electrolytes. III.
+  Activity and Osmotic Coefficients for 2:2 electrolytes, Journal of
+  Solution Chemistry, Vol. 3, No. 7, p.539-546.
+ 
+78Pit/May
+Pitzer, KS; Mayorga, G, 1978. "Thermodynamics of Electrolytes.
+  II. Activity and Osmotic Coefficients for Strong Electrolytes with One or
+  Both Ions Univalent." Journal of Physical Chemistry. 77, p. 2300.
+ 
+78Pit/Pet
+Pitzer, KS; Peterson, J.R., and Silvester, L.F., 1978. "Thermodynamics
+  of electrolytes. IX. Rare earths chlorides, nitrates, and perchlorates."
+  Journal of Physical Chemistry. Vol. 7, No. 1, p. 45-56.
+ 
+91Pit
+Pitzer, K. S. 1991. "Ion Interaction Approach: Theory and Data
+  Correlation." Pages 75-153 of Activity Coefficients in Electrolyte
+  Solutions. 2nd Edition. Pitzer, K. S., ed. Boca Raton, Florida:
+  CRC Press. TIC: 251799.
+ 
+98Ply/Zha
+Plyasunova, N.V., Zhang, Y., and Muhammed, M., 1998. Critical evaluation
+  of thermodynamics of complex formation of metal ions in aqueous solutions.
+  IV. Hydrolysis and hydroxo-complexes of Ni2+ at 298.15 K, Hydrometallurgy,
+  48, p. 43-63.
+ 
+97Rai/Fel
+Rai, D., Felmy, A.R., Sterner, S.M., Moore, D.A., Mason, M.J., and
+  Novak, C.F., 1997. The solubility of Th(IV) and U(IV) hydrous oxides
+  in concentrated NaCl and MgCl2 solutions, Radiochimica Acta, 79,
+  p. 239-247.
+ 
+01Rai/Moo
+Rai, D; Moore, DA; Felmy, AR; Choppin, GR; Moore, RC, 2001.
+  Thermodynamics of the PuO2+-Na+-OH--Cl--ClO4--H2O System: use of NpO2+
+  Pitzer Parameters for PuO2+, Radiochimica Acta, 89,491-498.
+ 
+95Rai/Fel
+Rai, D., Felmy, A.R., Fulton, R.W., 1995. "Nd+++ and Am+++ ion interactions
+  with sulfate and their influence on NdPO4(c) solubility, Journal of
+  Solution Chemistry, Vol. 24, No. 9, p. 879-895
+ 
+02Rai/Fel
+Rai, D., Felmy, A.R., Hess, LeGore, V.L., and McCready, D.E., 2002.
+  Thermodynamics of the U(VI)-Ca2+-Cl--OH--H2O system: solubility product of
+  becquerelite, Radiochimica Acta, 90, p. 495-503. TIC: 247014.
+ 
+02Rai/Hes
+Rai, D.; Hess, N.J.; Roa, L.; Zhang, Z.; Felmy, A.R.; Moore, D.A.;
+  Clark, S.B.; Lumetta, G.J, 2002. "Thermodynamic model for the solubility
+  of Cr(OH)3(am) in concentrated NaOH and NaOH-NaNO3 solutions, J. Solution
+  Chem., 31(5), 343-367.
+ 
+03Rai/Hes
+Rai, D.; Hess, N.J.; Xia, Y.; Rao, L.; Cho, H.; Moore, R.C.; Van Loon, R.R.,
+  2002. "Comprehensive thermodynamic model applicable to highly acidic to
+  basic conditions for isosaccharinate reactions with Ca(II) and Np(IV),
+  J. Solution Chem., 32(8), 343-367.
+ 
+04rar/wij
+Rard, J.A.; Wijesinghe, A.M.; and Wolery, T.J. 2004. "Review of the
+  Thermodynamic Properties of Mg(NO{subscript 3}){subscript 2}(aq) and
+  Their Representation with the Standard and Extended Ion-Interaction
+  (Pitzer) Models at 298.15 K." Journal of Chemical Engineering Data,
+  49, (5), 1127-1140. [Washington, D.C.]: American Chemical Society.
+  TIC: 257020.
+ 
+92Roy/Vog
+Roy, R.N., Vogel, K.M., Good, C.E., Davis, W.B., Roy, L.N.,
+  Johnson, D.A., Felmy, A.R., Pitzer, K.S., 1992. Activity coefficients in
+  electrolyte mixtures: HCl + ThCl4 + H2O for 5-55 deg.C, Journal of Physical
+  Chemistry, 96, p. 11065-11072.
+ 
+00Roy/Cof
+Roy, R.N., Coffman, N.A., Bell, M.D., Lakshmi, N., Pierrot, D., and Millero,
+  F.J., 2000.  Thermodynamics of the HBr + NiBr2 + H2O system from 5 deg.C
+  to 55 deg.C, Marine Chemistry, Vol. 70, p. 37-48.
+ 
+00Roy/Gre
+Roy, R.N., Gregory, D.R., Lashkimi, R.N., Pierrot, D., and Millero, F.J.,
+  2000.  Activity coefficients of HCl + GdCl3 + H2O system from 5 to 55
+  deg.C. Application of Pitzer formalism, Journal of Solution Chemistry,
+  Vol. 29, No. 7, p. 619-631.
+ 
+93rum/mau
+Rumpf, B. and Maurer, G. 1993, An experimental and theoretical
+  investigation on the solubility of carbon dioxide in aqueous solutions
+  of strong electrolytes Berichte Der Bunsen-Gesellschaft-Physical Chemistry
+  Chemical Physics 97 (1): p. 85-97.
+ 
+94rum/nic
+Rumpf, B., Nicolaisen, H., Ocal, C., and Maurer, G. 1994, Solubility of
+  carbon dioxide in aqueous solutions of sodium chloride: Experimental
+  results and correlations Journal of Solution Chemistry, Vol. 23, No. 3,
+  p. 431-447.
+ 
+91Sar/Ana
+Sarada, S. and Ananthaswamy, J., 1991. "Thermodynamic properties of
+  electrolyte solutions - An EMF study of the system KCl-CoCl2-H2O at
+  25 degrees C", Journal of Solution Chemistry, v. 20, no. 8, p. 841-847.
+ 
+98ste/fel
+Sterner, S.M.; Felmy, A.R.; Oakes, C.S.; and Pitzer, K.S. 1998. "Correlation
+  of Thermodynamic Data for Aqueous Electrolyte Solutions to Very High Ionic
+  Strength Using INSIGHT: Vapor Saturated Water Activity in the System
+  CaCl{subscript 2}-H {subscript 2}O to 250°C and Solid Saturation."
+  International Journal of Thermophysics, 19, (3), 761-770. [New York,
+  New York]: Plenum Publishing. TIC: 253387.
+ 
+94Tor/Cas
+Torrero, M.E.; Casas, I.; de Pablo, J.; Sandino, M.C.A.; and Grambow, B.
+  1994. "A Comparison Between Unirradiated UO{subscript 2}(s) and Schoepite
+  Solubilities in 1 M NaCl Medium." Radiochimica Acta, 66/67, 29-35.
+  München, Germany: R. Oldenbourg Verlag. TIC: 255835.
+ 
+05wij/rar
+Wijesinghe, A.M. and Rard, J.A. 2005. "Conversion and Optimization of the
+  Parameters from an Extended Form of the Ion-Interaction Model for
+  Ca(NO{subscript 3}){subscript 2}(aq) and NaNO{subscript 3}(aq) to Those
+  of the Standard Pitzer Model, and an Assessment of the Accuracy of the
+  Parameter Temperature Representations." Journal of Chemical Thermodynamics,
+  37, 1196-1218. [New York, New York]: Elsevier. TIC: 258288.
+ 
+68 wol/mac
+Wollast, R.; Mackenzie, F.T.; and Bricker, O.P. 1968. "Experimental
+  Precipitation and Genesis of Sepiolite at Earth-Surface Conditions."
+  American Mineralogist, 53, 1645-1662. [Washington, D.C.: Mineralogical
+  Society of America]. TIC: 253980
+ 
+stop.
++--------------------------------------------------------------------
+Miscellaneous Notes
+ 
+ 
+endit.
+ 
++--------------------------------------------------------------------

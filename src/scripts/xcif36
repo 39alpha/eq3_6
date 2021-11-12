@@ -1,0 +1,518 @@
+# xcif36
+#
+#     Xcif36 for EQ3/6, Version 8.0a
+#     Last revised 09/02/11 by TJW
+#
+#     The person responsible for this software is:
+#
+#       Thomas J. Wolery, L-223
+#       Lawrence Livermore National Laboratory
+#       P.O. Box 808
+#       Livermore, CA  94550
+#
+#       Telephone: (925) 422-5789
+#       E-mail: wolery@llnl.gov
+#
+#-----------------------------------------------------------------------------
+#
+#     This is a shell script utility to run the following codes:
+#
+#       XCON3: reformatter code for EQ3NR input files
+#       XCON6: reformatter code for EQ6 input files
+#
+#     This script is written in C-shell UNIX.
+#
+#     The XCON3 or XCON6 executable should be in the code directory
+#     defined in the environment variable "EQ36CO". The code directory
+#     on a UNIX platform should normally be:
+#
+#       ~\eq3_6v8.0a\bin
+#
+#     The EQ36CO variable should be set in your .cshrc file. Note that
+#     your .cshrc file will be sourced for the daughter shell which
+#     will be created when you execute this script.
+#
+#     In running XCON3 and XCON6, this script acts as a control interface,
+#     making the necessary alterations in the IXCON control file (to which
+#     both XCON3 and XCON6 respond) to pass on the desired version level
+#     (e.g., '6.0', '7.0', 7.2', or 8.0') and format (compact "W" or
+#     menu-style "D").
+#
+#     If the IXCON file doesn't exist, it will be created. If it does
+#     exist, it may be changed.
+#
+#     This script is always called as "xcif3" to run XCON3 or as
+#     "xcif6" to run XCON6. To support this, "xcif3" and "xcif6" are
+#     normally set up as symbolic links to this script. However, they
+#     could be hard links or even copies.
+#
+#-----------------------------------------------------------------------------
+#
+#     Unalias rm, mv, cp, ln, and wc. Any aliases will not be effective
+#     in the process run by this script. The aliases if any will
+#     remain in place outside this script.
+#
+      unalias rm mv cp ln wc
+#
+#     Alias wc to include the proper pathname, if possible, in case this
+#     isn't in the user's search path.
+#
+      if ( -e /usr/bin/wc ) then
+        alias wc /usr/bin/wc
+      else if ( -e /usr/ucb/wc ) then
+        alias wc /usr/ucb/wc
+      else if ( -e /bin/wc ) then
+        alias wc /bin/wc
+      endif
+#
+#-----------------------------------------------------------------------------
+#
+      unset noclobber
+#
+#-----------------------------------------------------------------------------
+#
+#     Test the number of arguments.
+#
+      if ( $#argv == 0 ) then
+        echo "usage: xcif[36] oldversion newversion newformat inputfile(s)"
+        echo "  oldversion = old version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newversion = new version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newformat = format, W (compact) or D (menu-style)"
+        echo "  each inputfile must end in .3i for a call to xcif3,"
+        echo "  in .6i for a call to xcif6"
+        exit 1
+      else if ( $#argv < 4 ) then
+        echo " xcif36 - EQ3/6 input file conversion script"
+        echo " Running $0"
+        echo " "
+        echo " * Error - Not enough arguments."
+        echo "usage: xcif[36] oldversion newversion newformat inputfile(s)"
+        echo "  oldversion = old version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newversion = new version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newformat = format, W (compact) or D (menu-style)"
+        echo "  each inputfile must end in .3i for a call to xcif3,"
+        echo "  in .6i for a call to xcif6"
+        exit 1
+      else
+        echo " xcif36 - EQ3/6 input file conversion script"
+        echo " Running $0"
+        echo " The current directory is "`pwd`
+        @ n = $#argv - 3
+        echo " Have "$n" files to process."
+      endif
+#
+#-----------------------------------------------------------------------------
+#
+#     Get the code directory from the environment variable EQ36CO.
+#
+      set xcodir=`env | grep EQ36CO`
+      if !( $xcodir =~ "") then
+        set codir=$EQ36CO
+      else
+        echo " "
+        echo " * Error- The EQ36CO environment variable is not set."
+        echo "       This is normally set in your .cshrc file."
+        echo "       Please refer to the installation instructions."
+        exit 1
+      endif
+#
+#-----------------------------------------------------------------------------
+#
+#     Get the generic code name (XCON3 or XCON6).
+#
+      set za0=$0
+      set za=$za0:t
+      unset za0
+      if ( $za =~ xcif3 ) then
+        set gcode=xcon3
+        set ucode=XCON3
+      else if ( $za =~ xcif6 ) then
+        set gcode=xcon6
+        set ucode=XCON6
+      else if ( $za =~ xcif36 ) then
+        echo " "
+        echo ' * Error- You must call this script as "xcif3" or "xcif6".'
+        exit 1
+      else
+        echo " "
+        echo " * Error- Don't recognize what kind of code to run."
+        echo "        This script was called as "$za"."
+        echo '        It must be called as "xcif3" or "xcif6".'
+        exit 1
+      endif
+      echo "  Generic code name is $ucode."
+#
+#-----------------------------------------------------------------------------
+#
+#     Get the XCON3 or XCON6 executable code.
+#
+      echo "  The code directory is "$codir
+      if !( -d $codir) then
+        echo " "
+        echo " * Error- The code directory doesn't exist. Don't know where"
+        echo "       to find the XCON3 and XCON6 executables."
+        exit 1
+      endif
+#
+      echo ""
+      set xcode=$codir/$gcode
+      rm -f $codir/${xcode}*.trace >& /dev/null
+#
+      if !( -e $xcode ) then
+        echo "  Don't have an executable named {$gcode}"
+        echo " "
+        echo " * Error- Can't find a version of the executable code"
+        echo "       in the code directory."
+        exit 1
+      endif
+#
+      echo "  The executable file is "$xcode:t
+#
+#-----------------------------------------------------------------------------
+#
+#     Get and test the default for the old  version level.
+#
+      set ver=$argv[1]
+      if ($ver =~ '6.0' ) then
+        set oldver=6.0
+      else if ( $ver =~ 6 ) then
+        set oldver=6.0
+      else if ( $ver =~ '7.0' ) then
+        set oldver=7.0
+      else if ( $ver =~ 7 ) then
+        set oldver=7.0
+      else if ( $ver =~ '7.2' ) then
+        set oldver=7.2
+      else if ( $ver =~ '8.0' ) then
+        set oldver=8.0
+      else if ( $ver =~ 8 ) then
+        set oldver=8.0
+      else
+        echo " "
+        echo " * Error - Don't recognize default old version level "$ver"."
+        echo "usage: xcif[36] oldversion newversion newformat inputfile(s)"
+        echo "  oldversion = old version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newversion = new version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newformat = format, W (compact) or D (menu-style)"
+        echo "  each inputfile must end in .3i for a call to xcif3,"
+        echo "  in .6i for a call to xcif6"
+        exit 1
+      endif
+      shift
+#
+#     Get and test the new version level.
+#
+      set ver=$argv[1]
+      if ( $ver =~ '6.0' ) then
+        set newver=6.0
+      else if ( $ver =~ 6 ) then
+        set newver=6.0
+      else if ( $ver =~ '7.0' ) then
+        set newver=7.0
+      else if ( $ver =~ 7 ) then
+        set newver=7.0
+      else if ( $ver =~ '7.2' ) then
+        set newver=7.2
+      else if ( $ver =~ '8.0' ) then
+        set newver=8.0
+      else if ( $ver =~ 8 ) then
+        set newver=8.0
+      else
+        echo " "
+        echo " * Error - Don't recognize new version level "$ver"."
+        echo "usage: xcif[36] oldversion newversion newformat inputfile(s)"
+        echo "  oldversion = old version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newversion = new version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newformat = format, W (compact) or D (menu-style)"
+        echo "  each inputfile must end in .3i for a call to xcif3,"
+        echo "  in .6i for a call to xcif6"
+        exit 1
+      endif
+      shift
+      unset ver
+#
+#     Get and test the new format.
+#
+      set for=$argv[1]
+      if ( $for =~ W ) then
+        set newfor = W
+      else if ($for =~ D ) then
+        set newfor = D
+      else
+        echo " "
+        echo " * Error - Don't recognize new format "$for"."
+        echo "usage: xcif[36] oldversion newversion newformat inputfile(s)"
+        echo "  oldversion = old version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newversion = new version level, '6.0', '7.0', '7.2', or '8.0'"
+        echo "  newformat = format, W (compact) or D (menu-style)"
+        echo "  each inputfile must end in .3i for a call to xcif3,"
+        echo "  in .6i for a call to xcif6"
+        exit 1
+      endif
+      shift
+      unset for
+#
+#-----------------------------------------------------------------------------
+#
+#     Set up the desired new version level and new format in the
+#     IXCON file.
+#
+#     If there is no existing IXCON file, create one.
+#
+      if !( -e ixcon ) then
+        echo "IXCON" > ixcon
+        echo "" >> ixcon
+        echo "  This file contains the user-controlled options for" >> ixcon
+        echo "  the EQ3/6 input file reformatters XCON3 and XCON6." >> ixcon
+        echo "  The code will scan the old input file to determine" >> ixcon
+        echo "  its format. It will also try to determine its" >> ixcon
+        echo "  version level. If it can't do so, the version level" >> ixcon
+        echo "  must be set using the default in this control file." >> ixcon
+        echo "" >> ixcon
+        echo "OLD INPUT FILE VERSION LEVEL (DEFAULT ONLY)" >> ixcon
+        echo " | | 6.0 (versions 6.0-6.1)" >> ixcon
+        echo " |X| 7.0 (versions 7.0-7.1)" >> ixcon
+        echo " | | 7.2 (version 7.2)" >> ixcon
+        echo " | | 8.0 (version 8.0)" >> ixcon
+        echo "NEW INPUT FILE FORMAT" >> ixcon
+        echo " | | W   (compact)" >> ixcon
+        echo " |X| D   (menu-style)" >> ixcon
+        echo "NEW INPUT FILE VERSION LEVEL" >> ixcon
+        echo " | | 6.0 (versions 6.0-6.1)" >> ixcon
+        echo " | | 7.0 (versions 7.0-7.1)" >> ixcon
+        echo " |X| 7.2 (version 7.2)" >> ixcon
+        echo " | | 8.0 (version 8.0)" >> ixcon
+        echo "END" >> ixcon
+      endif
+#
+#     Create a copy with no options selected.
+#
+      sed -e "s/|X|/| |/" ixcon > /tmp/ixcon.blk$$
+#
+#     Create a sed command file to finish creating the new IXCON file.
+#
+      echo "/DEFAULT/,/FORMAT/ s/| | $oldver/|X| $oldver/" > /tmp/ixcon.sed$$
+      echo "/FORMAT/,/NEW INPUT FILE VERSION/s/| | $newfor/|X| $newfor/" >>\
+      /tmp/ixcon.sed$$
+      echo "/NEW INPUT FILE VERSION/,/END/s/| | $newver/|X| $newver/" >>\
+      /tmp/ixcon.sed$$
+#
+#     Create the modified IXCON file, using the sed command file.
+#
+      sed -f /tmp/ixcon.sed$$ /tmp/ixcon.blk$$ > ixcon
+#
+      rm -f /tmp/ixcon.blk$$ >& /dev/null
+      rm -f /tmp/ixcon.sed$$ >& /dev/null
+#
+#----------------------------------------------------------------------------
+#
+#     Set counter for the specified input files which exist and were
+#     successfully reformatted.
+#
+      @ nfref = 0
+      set ifref=/usr/tmp/ifref$$
+#
+#     Set counter for the specified input files which exist but don't
+#     have the correct file name extension (.3i or .6i).
+#
+      @ nfwrext = 0
+      set ifwrext=/usr/tmp/ifwrext$$
+#
+#     Set counter for the specified input files which don't exist.
+#
+      @ nfnoex = 0
+      set ifnoex=/usr/tmp/ifnoex$$
+#
+#     Set counter for the specified input files which exist but were
+#     not reformatted because of a reformatter (XCON3 or XCON6) error.
+#
+      @ nferr = 0
+      set iferr=/usr/tmp/iferr$$
+#
+      echo ------------------------------------
+#
+#----------------------------------------------------------------------------
+#
+#     Loop on old input files.
+#
+      foreach ff ($*)
+        echo ""
+        echo "Reformatting "$ff" to "$newver" "$newfor
+        echo ""
+#
+#       Get the file name extension ("3i" or "6i").
+#
+        set fn=$ff:t
+        set fe=$fn:e
+#
+#       Check the file name extension against the code.
+#
+        set extchk=true
+        if ( $gcode =~ xcon3 && $fe != 3i) then
+          echo " "
+          echo " * Error- Can't run xcif3 on input file "$ff
+          echo "       because it doesn't have a .3i file name extension."
+          if ( $fe =~ 6i) echo "       It's an EQ6 input file."
+          @ nfwrext = $nfwrext + 1
+          echo "    "$ff >> $ifwrext
+          set extchk=false
+        endif
+#
+        if ( $gcode =~ xcon6 && $fe != 6i) then
+          echo " "
+          echo " * Error- Can't run xcif6 on input file "$ff"."
+          echo "       because it doesn't have a .3i file name extension."
+          if ( $fe =~ 3i) echo "       It's an EQ3NR input file."
+          @ nfwrext = $nfwrext + 1
+          echo "    "$ff >> $ifwrext
+          set extchk=false
+        endif
+#
+        if ( $extchk =~ true ) then
+#
+#         Does the old input file exist?
+#
+          if ( -e $ff ) then
+            rm -f input >& /dev/null
+            rm -f inputs >& /dev/null
+            rm -f newin >& /dev/null
+            cp $ff input
+#
+#           Run the appropriate reformatter.
+#
+            $xcode
+#
+#           Remove the input file (the copy of the original file to
+#           be reformatted).
+#
+            rm -f input >& /dev/null
+#
+#           Remove the newin file if it is empty.
+#
+              if ( -e newin ) then
+                set wclout=`wc -l newin`
+                @ fsize=$wclout[1]
+                unset wclout
+                if ( $fsize == 0 ) rm -f newin
+                unset fsize
+              endif
+#
+#           Did the reformatting work? If so, the newin file exists and
+#           it contains no XCON3 or XCON6 error messages.
+#
+            if ( -e newin ) then
+              set errflg=false
+              grep " \* error" newin > /usr/tmp/errchk$$
+              grep " \* Error" newin >> /usr/tmp/errchk$$
+              grep " \* ERROR" newin >> /usr/tmp/errchk$$
+              if ( -e /usr/tmp/errchk$$ ) then
+                set wclout=`wc -l /usr/tmp/errchk$$`
+                @ fsize=$wclout[1]
+                unset wclout
+                if ( $fsize != 0 ) set errflg=true
+                unset fsize
+              endif
+              rm -f /usr/tmp/errchk$$ >& /dev/null
+            else
+              set errflg=true
+            endif
+#
+#           Complete processing.
+#
+            if ( $errflg =~ false ) then
+              @ nfref = $nfref + 1
+              echo "    "$ff >> $ifref
+#
+#             Remove trailing blanks from the updated file. First pad to
+#             132 characters per line, then trim.
+#
+              set pf=/usr/tmp/remtbpad$$
+              dd if=newin of=$pf bs=132 cbs=132 conv=block >& /dev/null
+              dd if=$pf of=/usr/tmp/remtb$$ bs=132 cbs=132 conv=unblock \
+              >& /dev/null
+              rm -f $pf >& /dev/null
+              mv /usr/tmp/remtb$$ ${ff}
+              rm -f newin >& /dev/null
+#
+            else
+              @ nferr = $nferr + 1
+              echo "    "$ff >> $iferr
+              echo " "
+              echo " * Note- Couldn't reformat the input file "$ff
+              echo "       The executable "$xcode
+              echo "       was unable to generate a reformatted file."
+            endif
+          else
+            @ nfnoex = $nfnoex + 1
+            echo "    "$ff >> $ifnoex
+            echo " "
+            echo " * Warning- This file doesn't exist."
+          endif
+        endif
+        echo ""
+        echo ------------------------------------
+      end
+#
+#     Remove the IXCON file.
+#
+      rm -f ixcon >& /dev/null
+#
+#----------------------------------------------------------------------------
+#
+#     Write summary data.
+#
+      if ( $nfref >= 1 ) then
+        echo ""
+        echo "  The following input files were converted:"
+        echo ""
+        cat $ifref
+        echo ""
+        echo ------------------------------------
+      endif
+#
+      if ( $nfwrext >= 1 ) then
+        echo ""
+        echo "  The following input files were not converted because"
+        echo "  they have the wrong file name extension:"
+        echo ""
+        cat $ifwrext
+        echo ""
+        echo ------------------------------------
+      endif
+#
+      if ( $nferr >= 1 ) then
+        echo ""
+        echo "  The following input files were not converted due to"
+        echo "  errors encountered while running "$ucode":"
+        echo ""
+        cat $iferr
+        echo ""
+        echo ------------------------------------
+      endif
+#
+      if ( $nfnoex >= 1 ) then
+        echo ""
+        echo "  The following input files don't exist:"
+        echo ""
+        cat $ifnoex
+        echo ""
+        echo ------------------------------------
+      endif
+#
+#----------------------------------------------------------------------------
+#
+#     Remove scratch files.
+#
+      rm -f $ifref >& /dev/null
+      rm -f $ifwrext >& /dev/null
+      rm -f $ifnoex >& /dev/null
+      rm -f $iferr >& /dev/null
+#
+      echo "All done"
+      if ( $nfwrext >= 1 ) exit 1
+      if ( $nfnoex >= 1 ) exit 1
+      if ( $nferr >= 1 ) exit 1
+      exit 0
+#
+# End of script
+#-----------------------------------------------------------------------------

@@ -1,0 +1,73 @@
+# Configure to run EQ3/6
+
+echo Warning - This script must be sourced, not just run, to set the environment variables:
+echo "        "\"source eq36cfg\"
+
+# Set the directory that holds the EQ3/6 directory
+
+setenv EQ36DR $HOME
+
+echo  EQ36DR is $EQ36DR
+
+# Set the EQ3/6 version number
+
+setenv EQ36VN 8.0a
+
+echo  EQ36VN is $EQ36VN
+
+# Set the EQ3/6 directory
+
+setenv EQ36MD $EQ36DR/EQ3_6v$EQ36VN
+
+echo  EQ36MD is $EQ36MD
+
+# Set the EQ3/6 code and datafile directories
+
+setenv EQ36CO $EQ36MD/bin
+setenv EQ36DA $EQ36MD/db
+
+echo  EQ36CO is $EQ36CO
+echo  EQ36DA is $EQ36DA
+
+# Append the EQ3/6 code directory to the search path
+
+setenv PATH {$PATH}:{$EQ36CO}
+
+echo  PATH is $PATH
+
+@ nbad = 0
+
+if !( -e $EQ36CO/runeqpt )   @ nbad = $nbad + 1
+if !( -e $EQ36CO/runeq3 )    @ nbad = $nbad + 1
+if !( -e $EQ36CO/runeq6 )    @ nbad = $nbad + 1
+if !( -e $EQ36CO/xcif3 )     @ nbad = $nbad + 1
+if !( -e $EQ36CO/xcif6 )     @ nbad = $nbad + 1
+
+if !( -e $EQ36CO/eqpt )  @ nbad = $nbad + 1
+if !( -e $EQ36CO/eq3nr ) @ nbad = $nbad + 1
+if !( -e $EQ36CO/eq6 )   @ nbad = $nbad + 1
+if !( -e $EQ36CO/xcon3 ) @ nbad = $nbad + 1
+if !( -e $EQ36CO/xcon6 ) @ nbad = $nbad + 1
+
+if ( $nbad >> 0 ) then
+
+echo   Warning - "("$0")": The following codes or scripts are 
+echo      missing from the $EQ36CO directory:
+
+if !( -e $EQ36CO/runeqpt )    echo     runeqpt
+if !( -e $EQ36CO/runeq3 )     echo     runeq3
+if !( -e $EQ36CO/runeq6 )     echo     runeq6
+if !( -e $EQ36CO/xcif3 )      echo     xcif3
+if !( -e $EQ36CO/xcif6 )      echo     xcif6
+
+if !( -e $EQ36CO/eqpt )   echo     eqpt
+if !( -e $EQ36CO/eq3nr )  echo     eq3nr
+if !( -e $EQ36CO/eq6 )    echo     eq6
+if !( -e $EQ36CO/xcon3 )  echo     xcon3
+if !( -e $EQ36CO/xcon6 )  echo     xcon6
+
+echo      You "won't" be able to run them.
+
+endif
+
+exit
