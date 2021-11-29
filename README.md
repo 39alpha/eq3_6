@@ -1,6 +1,12 @@
 # eq3_6
 A Software Package for Geochemical Modeling
 
+This is a slightly updated version of
+[EQ3/6 Version 8.0a](https://www-gs.llnl.gov/energy-homeland-security/geochemistry)
+developed at Lawrence Livermore National Laboratories. At this point, the only changes made have
+been to directory structure and adding a Make-based build system for easy building and installation.
+Further changes will be made to address bug fixes and enhancements.
+
 ## Installation
 ```bash
 $ make
@@ -24,3 +30,7 @@ Of course, if you don't have write access to the install location, you will need
 ## Dependencies
 
 - `gfortran` (pretty much any version as far as we can tell)
+
+## References
+
+[NEED REFERENCE FOR ORIGINAL EQ3/6 
