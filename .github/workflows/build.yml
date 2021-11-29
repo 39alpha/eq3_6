@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: make
-      run: make
+    - name: make -j8
+      run: make -j8
     - name: make install
       run: sudo make install
     - name: make PREFIX=/usr/local install
