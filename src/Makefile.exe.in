@@ -18,3 +18,5 @@ obj/%.o: src/%.f $(MODOBJECTS)
 
 clean:
 	@rm -rf obj mod
+
+.PHONY: clean

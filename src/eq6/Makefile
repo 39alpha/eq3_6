@@ -6,4 +6,4 @@ MODOBJECTS=$(subst src/,obj/,$(MODSOURCES:.f=.o))
 LIBRARIES=../../lib/libeqlib.a ../../lib/libeqlibg.a ../../lib/libeqlibu.a 
 INCLUDES=-I../../include
 
-include ../Makefile.in
+include ../Makefile.exe.in

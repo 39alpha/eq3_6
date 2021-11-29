@@ -4,4 +4,4 @@ OBJECTS=$(subst src/,obj/,$(SOURCES:.f=.o))
 LIBRARIES=../../lib/libeqlibu.a
 INCLUDES=-I../../include
 
-include ../Makefile.in
+include ../Makefile.exe.in

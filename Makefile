@@ -24,3 +24,5 @@ install:
 	cp -R bin/* $(PREFIX)/bin
 	cp -R lib/* $(PREFIX)/lib
 	cp -R include/* $(PREFIX)/include
+
+.PHONY: clean install
