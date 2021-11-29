@@ -1,3 +1,5 @@
+PREFIX:=/usr
+
 all:
 	@mkdir -p bin lib
 	+make -C src/eq3nr
@@ -16,3 +18,9 @@ clean:
 	+make -C src/eqpt clean
 	+make -C src/xcon3 clean
 	+make -C src/xcon6 clean
+
+install:
+	mkdir -p $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include
+	cp -R bin/* $(PREFIX)/bin
+	cp -R lib/* $(PREFIX)/lib
+	cp -R include/* $(PREFIX)/include
