@@ -1,0 +1,23 @@
+name: Eq3/6
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on:
+      - ubuntu-18.04
+      - ubuntu-latest
+      - macos-11
+      - macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+    - name: make install
+      run: make install
+    - name: make PREFIX=/usr/local install
+      run: make PREFIX=/usr/local install
