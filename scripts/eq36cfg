@@ -51,7 +51,7 @@ if !( -e $EQ36CO/xcon6 ) @ nbad = $nbad + 1
 
 if ( $nbad >> 0 ) then
 
-echo   Warning - "("$0")": The following codes or scripts are 
+echo   Warning - "("$0")": The following codes or scripts are
 echo      missing from the $EQ36CO directory:
 
 if !( -e $EQ36CO/runeqpt )    echo     runeqpt

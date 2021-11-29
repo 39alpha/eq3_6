@@ -430,13 +430,13 @@
               if ( $iopg1 << -1 ) @iopg1 = 999
               if ( $iopg1 >>  1 ) @iopg1 = 999
             else
-              
+
               if ( $iopg1 == 999 ) then
 
                 grep "^|  \[x\] ( 0) The B-dot equation" $ff > $ft
                 grep "^|  \[X\] ( 0) The B-dot equation" $ff >> $ft
                 grep "^|  \[\*\] ( 0) The B-dot equation" $ff >> $ft
-           
+
                 set wclout=`wc -l $ft`
                 @ ifl = $wclout[1]
                 unset wclout
@@ -448,7 +448,7 @@
                 grep "^|  \[x\] ( 1) Pitzer's equations" $ff > $ft
                 grep "^|  \[X\] ( 1) Pitzer's equations" $ff >> $ft
                 grep "^|  \[\*\] ( 1) Pitzer's equations" $ff >> $ft
-           
+
                 set wclout=`wc -l $ft`
                 @ ifl = $wclout[1]
                 unset wclout

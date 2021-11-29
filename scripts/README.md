@@ -8,7 +8,7 @@ file used on Windows systems.
 The shell scripts runeq36, runeqpt, and xcif36 respective run EQ3NR and EQ6, RUNEQPT, and
 XCON3 and XCON6. To use runeq36 to run EQ3NR, use a symbolic link named runeq3. To use
 it to run EQ6, use a symbolic link named runeq6. Similarly, use symbolic links to xcif36
-named xcif3 and xcif6 to run, respectively, XCON3 and XCON6. The equivalent Fortran programs 
+named xcif3 and xcif6 to run, respectively, XCON3 and XCON6. The equivalent Fortran programs
 found in the icodes folder may be used instead. They are the programs used on Windows
 systems.
 
