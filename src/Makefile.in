@@ -1,0 +1,20 @@
+all: $(TARGET)
+
+$(TARGET): $(MODOBJECTS) $(OBJECTS) $(LIBRARIES)
+	gfortran -Jmod -o $(TARGET) $^
+
+obj/%.o: src/%.f $(MODOBJECTS)
+	@mkdir -p mod obj
+	gfortran -Jmod -c -o $@ $<
+
+../../lib/libeqlib.a:
+	+make -C ../eqlib
+
+../../lib/libeqlibu.a:
+	+make -C ../eqlibu
+
+../../lib/libeqlibg.a:
+	+make -C ../eqlibg
+
+clean:
+	@rm -rf obj mod

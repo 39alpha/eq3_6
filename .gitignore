@@ -12,6 +12,7 @@
 *.pch
 
 # Compiled Dynamic libraries
+lib/
 *.so
 *.dylib
 *.dll
@@ -27,6 +28,7 @@
 *.lib
 
 # Executables
+bin/
 *.exe
 *.out
 *.app
