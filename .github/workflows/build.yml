@@ -29,15 +29,28 @@ jobs:
     - name: make PREFIX=/usr/local install
       run: sudo make PREFIX=/usr/local install
       
+  macos-10-build:
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: brew install gcc
+      run: brew install gcc
+    - name: make -j3
+      run: make -j3
+    - name: make install
+      run: sudo make install
+    - name: make PREFIX=/usr/local install
+      run: sudo make PREFIX=/usr/local install
+      
   macos-11-build:
     runs-on: macos-11
     steps:
     - uses: actions/checkout@v2
-    - name: brew update
-      run: brew update
-    - name: brew info gcc
-      run: brew info gcc
     - name: brew install gcc
       run: brew install gcc
-    - name: gfortran
-      run: gfortran
+    - name: make -j3
+      run: make -j3
+    - name: make install
+      run: sudo make install
+    - name: make PREFIX=/usr/local install
+      run: sudo make PREFIX=/usr/local install
