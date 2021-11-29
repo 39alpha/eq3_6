@@ -1,3 +1,5 @@
+# Scripts
+
 The shell script eq36cfg configures the user environment to run this version of EQ3/6 by
 making necessary path changes and setting required enviroment variables. It can be run from
 a user's .cshrc file. This shell script is functionally equivalent to the eq36cfg.bat batch
