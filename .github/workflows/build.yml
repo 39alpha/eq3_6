@@ -28,25 +28,10 @@ jobs:
       run: sudo make install
     - name: make PREFIX=/usr/local install
       run: sudo make PREFIX=/usr/local install
-
-  macos-10-build:
-    runs-on: macos-10.15
-    steps:
-    - uses: actions/checkout@v2
-    - name: make -j3
-      run: make -j3
-    - name: make install
-      run: sudo make install
-    - name: make PREFIX=/usr/local install
-      run: sudo make PREFIX=/usr/local install
       
-  macos-1-build:
+  macos-11-build:
     runs-on: macos-11
     steps:
     - uses: actions/checkout@v2
-    - name: make -j3
-      run: make -j3
-    - name: make install
-      run: sudo make install
-    - name: make PREFIX=/usr/local install
-      run: sudo make PREFIX=/usr/local install
+    - name: brew?
+      run: brew
