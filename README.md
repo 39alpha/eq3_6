@@ -18,8 +18,8 @@ This will build all of the executables and libraries and install the following d
 - `include` - contains the various header files you may need to use the libraries
 - `share` - contains various data files and the like
 
-By default `make install` will place all installation files in `/usr`, e.g. `/usr/bin/eq3nr`. If you
-wish to change that, you may specify an installation prefix:
+By default `make install` will place all installation files in `/usr/local`, e.g.
+`/usr/local/bin/eq3nr`. If you wish to change that, you may specify an installation prefix:
 ```bash
 $ make PREFIX=/opt/eq3_6 install
 ```
@@ -33,4 +33,4 @@ Of course, if you don't have write access to the install location, you will need
 
 ## References
 
-[NEED REFERENCE FOR ORIGINAL EQ3/6 
+[NEED REFERENCE FOR ORIGINAL EQ3/6]

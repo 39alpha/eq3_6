@@ -1,4 +1,4 @@
-PREFIX:=/usr
+PREFIX:=/usr/local
 
 all:
 	@mkdir -p bin lib
