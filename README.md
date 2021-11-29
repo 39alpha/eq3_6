@@ -20,3 +20,7 @@ $ make PREFIX=/opt/eq3_6 install
 which will place the files in `/opt/eq3_6`, e.g. `/opt/eq3_6/bin/eq3nr`.
 
 Of course, if you don't have write access to the install location, you will need to `sudo`.
+
+## Dependencies
+
+- `gfortran` (pretty much any version as far as we can tell)
