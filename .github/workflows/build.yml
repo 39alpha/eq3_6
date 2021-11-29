@@ -35,8 +35,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: brew update
       run: brew update
-    - name: brew upgrade
-      run: brew upgrade
     - name: brew info gcc
       run: brew info gcc
     - name: brew install gcc
