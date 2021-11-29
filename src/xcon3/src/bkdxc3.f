@@ -8,17 +8,17 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../inc/x3op7.h'
+      include 'xcon3/x3op7.h'
 c
-      include '../../eqlib/inc/eqlj8.h'
-      include '../../eqlib/inc/eqlo8.h'
+      include 'eqlib/eqlj8.h'
+      include 'eqlib/eqlo8.h'
 c
 c-----------------------------------------------------------------------
 c
-      include '../inc/x3op7d.h'
+      include 'xcon3/x3op7d.h'
 c
-      include '../../eqlib/inc/eqlj8d.h'
-      include '../../eqlib/inc/eqlo8d.h'
+      include 'eqlib/eqlj8d.h'
+      include 'eqlib/eqlo8d.h'
 c
 c-----------------------------------------------------------------------
 c

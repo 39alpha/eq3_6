@@ -8,21 +8,21 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../../eqlib/inc/eql1s.h'
+      include 'eqlib/eql1s.h'
 c
-      include '../../eqlib/inc/eqlwd.h'
+      include 'eqlib/eqlwd.h'
 c
-      include '../../eqlib/inc/eqlk8.h'
-      include '../../eqlib/inc/eqlo8.h'
+      include 'eqlib/eqlk8.h'
+      include 'eqlib/eqlo8.h'
 c
 c-----------------------------------------------------------------------
 c
-      include '../../eqlib/inc/eql1sd.h'
+      include 'eqlib/eql1sd.h'
 c
-      include '../../eqlib/inc/eqlwdd.h'
+      include 'eqlib/eqlwdd.h'
 c
-      include '../../eqlib/inc/eqlk8d.h'
-      include '../../eqlib/inc/eqlo8d.h'
+      include 'eqlib/eqlk8d.h'
+      include 'eqlib/eqlo8d.h'
 c
 c-----------------------------------------------------------------------
 c

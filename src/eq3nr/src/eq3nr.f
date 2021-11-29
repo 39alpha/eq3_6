@@ -12,18 +12,18 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../../eqlib/inc/eqldef.h'
-      include '../../eqlib/inc/eqlpar.h'
-      include '../../eqlib/inc/eqldv.h'
-      include '../../eqlib/inc/eqlge.h'
-      include '../../eqlib/inc/eql1s.h'
-      include '../../eqlib/inc/eqlwd.h'
+      include 'eqlib/eqldef.h'
+      include 'eqlib/eqlpar.h'
+      include 'eqlib/eqldv.h'
+      include 'eqlib/eqlge.h'
+      include 'eqlib/eql1s.h'
+      include 'eqlib/eqlwd.h'
 c
-      include '../../eqlib/inc/eqlj8.h'
-      include '../../eqlib/inc/eqlk8.h'
-      include '../../eqlib/inc/eqlo8.h'
+      include 'eqlib/eqlj8.h'
+      include 'eqlib/eqlk8.h'
+      include 'eqlib/eqlo8.h'
 c
-c-----------------------------------------------------------------------
+c-----------------------------------------------------------------
 c
 c
 c     Array allocation size variables used in EQ3NR.
@@ -437,12 +437,12 @@ c
 c     Special data base of coefficients for the HCO3-CO3-OH total
 c     alkalinity.
 c
-      include '../../eqlib/inc/eqltf1.h'
+      include 'eqlib/eqltf1.h'
 c
 c     Special data base of coefficients for the extended total
 c     alkalinity.
 c
-      include '../../eqlib/inc/eqltf2.h'
+      include 'eqlib/eqltf2.h'
 c
 c-----------------------------------------------------------------------
 c

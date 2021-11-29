@@ -139,9 +139,9 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../../eqlib/inc/eqlpar.h'
-      include '../../eqlib/inc/eqldv.h'
-      include '../../eqlib/inc/eqlge.h'
+      include 'eqlib/eqlpar.h'
+      include 'eqlib/eqldv.h'
+      include 'eqlib/eqlge.h'
 c
 c-----------------------------------------------------------------------
 c

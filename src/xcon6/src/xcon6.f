@@ -12,8 +12,8 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../inc/x6op7.h'
-      include '../../eqlib/inc/eqlo8.h'
+      include 'xcon6/x6op7.h'
+      include 'eqlib/eqlo8.h'
 c
 c-----------------------------------------------------------------------
 c
@@ -177,7 +177,7 @@ c     END_MACHINE_DEPENDENT_CODE
 c
 c-----------------------------------------------------------------------
 c
-      include '../inc/x6sbsp.h'
+      include 'xcon6/x6sbsp.h'
 c
       data ninpt  /9/,ninpts /10/,newin /11/,nxcon /12/
 c

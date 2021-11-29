@@ -162,11 +162,11 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../../eqlib/inc/eqlpar.h'
-      include '../../eqlib/inc/eqldv.h'
-      include '../../eqlib/inc/eqlge.h'
-      include '../../eqlib/inc/eql1s.h'
-      include '../../eqlib/inc/eqlwd.h'
+      include 'eqlib/eqlpar.h'
+      include 'eqlib/eqldv.h'
+      include 'eqlib/eqlge.h'
+      include 'eqlib/eql1s.h'
+      include 'eqlib/eqlwd.h'
 c
 c-----------------------------------------------------------------------
 c

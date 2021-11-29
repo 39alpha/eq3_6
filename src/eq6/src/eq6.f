@@ -26,13 +26,13 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../../eqlib/inc/eqlpar.h'
+      include 'eqlib/eqlpar.h'
 c
-      include '../../eqlib/inc/eqldv.h'
-      include '../../eqlib/inc/eqlge.h'
-      include '../../eqlib/inc/eql1s.h'
+      include 'eqlib/eqldv.h'
+      include 'eqlib/eqlge.h'
+      include 'eqlib/eql1s.h'
 c
-      include '../../eqlib/inc/eqlo8.h'
+      include 'eqlib/eqlo8.h'
 c
 c-----------------------------------------------------------------------
 c
@@ -363,12 +363,12 @@ c
 c     Special data base of coefficients for the HCO3-CO3-OH total
 c     alkalinity.
 c
-      include '../../eqlib/inc/eqltf1.h'
+      include 'eqlib/eqltf1.h'
 c
 c     Special data base of coefficients for the extended total
 c     alkalinity.
 c
-      include '../../eqlib/inc/eqltf2.h'
+      include 'eqlib/eqltf2.h'
 c
 c-----------------------------------------------------------------------
 c

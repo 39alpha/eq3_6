@@ -8,15 +8,15 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../inc/x6op7.h'
-      include '../../eqlib/inc/eqlk8.h'
-      include '../../eqlib/inc/eqlo8.h'
+      include 'xcon6/x6op7.h'
+      include 'eqlib/eqlk8.h'
+      include 'eqlib/eqlo8.h'
 c
 c-----------------------------------------------------------------------
 c
-      include '../inc/x6op7d.h'
-      include '../../eqlib/inc/eqlk8d.h'
-      include '../../eqlib/inc/eqlo8d.h'
+      include 'xcon6/x6op7d.h'
+      include 'eqlib/eqlk8d.h'
+      include 'eqlib/eqlo8d.h'
 c
 c-----------------------------------------------------------------------
 c

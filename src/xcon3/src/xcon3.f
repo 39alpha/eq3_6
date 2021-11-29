@@ -12,10 +12,10 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../inc/x3op7.h'
+      include 'xcon3/x3op7.h'
 c
-      include '../../eqlib/inc/eqlj8.h'
-      include '../../eqlib/inc/eqlo8.h'
+      include 'eqlib/eqlj8.h'
+      include 'eqlib/eqlo8.h'
 c
 c-----------------------------------------------------------------------
 c

@@ -7,7 +7,7 @@ all:
 	+make -C src/xcon6
 
 clean:
-	@rm -r bin/* lib/*
+	@rm -rf bin/* lib/*
 	+make -C src/eqlib clean
 	+make -C src/eqlibu clean
 	+make -C src/eqlibg clean

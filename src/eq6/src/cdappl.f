@@ -42,8 +42,8 @@ c
 c
 c-----------------------------------------------------------------------
 c
-      include '../../eqlib/inc/eqlpar.h'
-      include '../../eqlib/inc/eqldv.h'
+      include 'eqlib/eqlpar.h'
+      include 'eqlib/eqldv.h'
 c
 c-----------------------------------------------------------------------
 c
