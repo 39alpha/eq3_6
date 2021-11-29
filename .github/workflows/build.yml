@@ -33,8 +33,12 @@ jobs:
     runs-on: macos-10.15
     steps:
     - uses: actions/checkout@v2
+    - name: brew update
+      run: brew update
     - name: brew install gcc
       run: brew install gcc
+    - name: which gfortran
+      run: which gfortran
     - name: make -j3
       run: make -j3
     - name: make install
@@ -46,8 +50,12 @@ jobs:
     runs-on: macos-11
     steps:
     - uses: actions/checkout@v2
+    - name: brew update
+      run: brew update
     - name: brew install gcc
       run: brew install gcc
+    - name: which gfortran
+      run: which gfortran
     - name: make -j3
       run: make -j3
     - name: make install
