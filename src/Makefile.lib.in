@@ -5,7 +5,7 @@ $(TARGET): $(OBJECTS)
 
 obj/%.o: src/%.f
 	@mkdir -p obj
-	gfortran $(INCLUDES) -c -o $@ $^
+	gfortran $(FFLAGS) $(INCLUDES) -c -o $@ $^
 
 clean:
 	@rm -rf obj

@@ -1,11 +1,11 @@
 all: $(TARGET)
 
 $(TARGET): $(MODOBJECTS) $(OBJECTS) $(LIBRARIES)
-	gfortran -Jmod -o $(TARGET) $^
+	gfortran $(FFLAGS) -Jmod -o $(TARGET) $^
 
 obj/%.o: src/%.f $(MODOBJECTS)
 	@mkdir -p mod obj
-	gfortran -Jmod -c $(INCLUDES) -o $@ $<
+	gfortran $(FFLAGS) -Jmod -c $(INCLUDES) -o $@ $<
 
 ../../lib/libeqlib.a:
 	+make -C ../eqlib
