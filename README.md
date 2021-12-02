@@ -27,12 +27,18 @@ which will place the files in `/opt/eq3_6`, e.g. `/opt/eq3_6/bin/eq3nr`.
 
 Of course, if you don't have write access to the install location, you will need to `sudo`.
 
+By default, `make` will compile all of the targets with optimimization level-3 `-O3`. If you'd like
+to change the compilation flags, e.g. to enable debugging `-g` or change the level `-O0`, you can do
+that with the `FFLAGS` option:
+```bash
+$ make FFLAGS=-g
+```
+
 ## Dependencies
 
 - `gfortran` (pretty much any version as far as we can tell)
 
 ## References
 
-Wolery, T. J., and USDOE. EQ3/6 A Software Package for Geochemical Modeling. Computer software. December 13, 2010. https://www.osti.gov//servlets/purl/1231666. doi:https://doi.org/10.11578/dc.20210416.44.
-
-Wolery, T. J. and R. L. Jarek. Software User's Manual EQ36, Version 8.0. U.S. Tech. Rep. 2003. Department of Energy, Office of Civilian Radioactive Waste Management, Office of Repository Development. 10813-UM-8.0-00.
+- Wolery, T. J., and USDOE. EQ3/6 A Software Package for Geochemical Modeling. Computer software. December 13, 2010. https://www.osti.gov//servlets/purl/1231666. doi:https://doi.org/10.11578/dc.20210416.44.
+- Wolery, T. J. and R. L. Jarek. Software User's Manual EQ36, Version 8.0. U.S. Tech. Rep. 2003. Department of Energy, Office of Civilian Radioactive Waste Management, Office of Repository Development. 10813-UM-8.0-00.
