@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 
 EXPECTED_FILES=(output data1 data1f slist)
-TIMING_REGEX='\s\+\(\(Start\|End\|Run\)\stime\|Run\s\+[0-9]\{2\}\)'
+TIMING_REGEX='((Start|End|Run)[[:space:]]+time|Run[[:space:]]+[[:digit:]]{3})'
 
 failures=0
 tests=0
 failedtests=()
+
+function compare() {
+    if [ $# -eq 3 ]; then
+        awk "!/$3/{print}" $1 > out.a
+        awk "!/$3/{print}" $2 > out.b
+        diff out.a out.b
+    else
+        diff $1 $2
+    fi
+}
 
 EQPT=../../bin/eqpt
 if ! stat $EQPT >/dev/null 2>/dev/null; then
@@ -26,7 +36,7 @@ for dir in data/*; do
     for file in "${EXPECTED_FILES[@]}"; do
         groundtruth=$(realpath ../$dir/$file.$dataset)
         if [ $file == "output" ]; then
-            OUTPUT=$(diff -I"$TIMING_REGEX" $file $groundtruth)
+            OUTPUT=$(compare $groundtruth $file $TIMING_REGEX)
             if [ $? -ne 0 ]; then
                 echo "FAILED: checking \"$file\" against \"$groundtruth\" ignoring dates and times"
                 echo -e "$OUTPUT\n"
@@ -34,7 +44,7 @@ for dir in data/*; do
                 failedtests+=($groundtruth)
             fi
         else
-            OUTPUT=$(diff $file $groundtruth)
+            OUTPUT=$(compare $groundtruth $file)
             if [ $? -ne 0 ]; then
                 echo "FAILED: checking \"$file\" against \"$groundtruth\""
                 echo -e "$OUTPUT\n"

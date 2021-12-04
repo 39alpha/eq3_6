@@ -40,7 +40,7 @@ jobs:
     - name: make install
       run: sudo make install
     - name: test
-      run: cd test; ./test.sh
+      run: cd test; ./test.sh; echo $?
       
   macos-11-build:
     runs-on: macos-11
@@ -53,4 +53,4 @@ jobs:
     - name: make install
       run: sudo make install
     - name: test
-      run: cd test; ./test.sh
+      run: cd test; ./test.sh; echo $?
