@@ -20,6 +20,9 @@ clean:
 	+make -C src/xcon3 clean
 	+make -C src/xcon6 clean
 
+test:
+	make -C test
+
 install:
 	mkdir -p $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include
 	mkdir -p $(PREFIX)/share/eq3_6
@@ -28,4 +31,4 @@ install:
 	cp -R include/* $(PREFIX)/include
 	cp -R share/* $(PREFIX)/share/eq3_6
 
-.PHONY: clean install
+.PHONY: clean install test

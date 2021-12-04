@@ -17,12 +17,10 @@ function compare() {
     fi
 }
 
-EQPT=../../bin/eqpt
-if ! stat $EQPT >/dev/null 2>/dev/null; then
+EQPT=$(realpath -m ../../bin/eqpt)
+if ! [ -f $EQPT ]; then
     echo "eqpt binary not found at $EQPT; perhaps you should run make?"
     exit -1
-else
-    EQPT=$(realpath $EQPT)
 fi
 
 echo "Running tests for $EQPT"
