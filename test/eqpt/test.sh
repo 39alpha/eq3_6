@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 EXPECTED_FILES=(output data1 data1f slist)
-TIMING_REGEX='((Start|End|Run)[[:space:]]+time|Run[[:space:]]+[[:digit:]]{3})'
+TIMING_REGEX='((Start|End|Run)[[:space:]]+time|Run[[:space:]]+[[:digit:]]{2})'
 
 failures=0
 tests=0

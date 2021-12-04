@@ -1,2 +1,2 @@
 all:
-	./test.sh
+	@./test.sh
