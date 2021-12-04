@@ -10,6 +10,7 @@ Further changes will be made to address bug fixes and enhancements.
 ## Installation
 ```bash
 $ make
+$ make test
 $ make install
 ```
 This will build all of the executables and libraries and install the following directories:
@@ -32,11 +33,11 @@ to change the compilation flags, e.g. to enable debugging `-g` or change the lev
 that with the `FFLAGS` option:
 ```bash
 $ make FFLAGS=-g
-```
 
 ## Dependencies
 
 - `gfortran` (pretty much any version as far as we can tell)
+- `coreutils` (MacOS, testing only - `brew install coreutils`)
 
 ## References
 
