@@ -15,6 +15,8 @@ jobs:
       run: make -j2
     - name: make install
       run: sudo make install
+    - name: test
+      run: cd test; ./test.sh
 
   ubuntu-20-build:
     runs-on: ubuntu-20.04
@@ -24,6 +26,8 @@ jobs:
       run: make -j2
     - name: make install
       run: sudo make install
+    - name: test
+      run: cd test; ./test.sh
       
   macos-10-build:
     runs-on: macos-10.15
@@ -37,6 +41,8 @@ jobs:
       run: make -j3
     - name: make install
       run: sudo make install
+    - name: test
+      run: cd test; ./test.sh
       
   macos-11-build:
     runs-on: macos-11
@@ -50,3 +56,5 @@ jobs:
       run: make -j3
     - name: make install
       run: sudo make install
+    - name: test
+      run: cd test; ./test.sh
