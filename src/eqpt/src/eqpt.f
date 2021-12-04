@@ -9,6 +9,14 @@ c
 c-----------------------------------------------------------------------
 c
       implicit none
+
+
+c-----------------------------------------------------------------------
+c     File path parameters
+c-----------------------------------------------------------------------
+      integer :: numargs
+      character(100) :: temppath
+      character(:), allocatable :: data0path
 c
 c-----------------------------------------------------------------------
 c
@@ -278,11 +286,21 @@ c
 c
 c     Open all output files.
 c
+      numargs = COMMAND_ARGUMENT_COUNT()
+      if (numargs.eq.1) then
+          call GET_COMMAND_ARGUMENT(1,temppath)
+          data0path = TRIM(temppath)
+      else
+          write (0, *) 'usage: eqpt <data0>'
+          stop
+      end if
+
+      call openin(noutpt,nttyo,data0path,'formatted',ndata0)
+
       call openou(noutpt,nttyo,'output','formatted',nrecl,noutpt)
       call openou(noutpt,nttyo,'data1','unformatted',nrecl,ndata1)
       call openou(noutpt,nttyo,'data1f','formatted',nrecl,ndat1f)
       call openou(noutpt,nttyo,'slist','formatted',nrecl,nslist)
-      call openin(noutpt,nttyo,'data0','formatted',ndata0)
       call openou(noutpt,nttyo,'data0s','formatted',nrecl,ndat0s)
 c
 c     Make a copy of the DATA0 file, stripped of comments.
