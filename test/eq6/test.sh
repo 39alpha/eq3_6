@@ -17,26 +17,26 @@ function compare() {
     fi
 }
 
-EQ3NR=$(realpath -m ../../bin/eq3nr)
-if ! [ -f $EQ3NR ]; then
-    echo "eq3nr binary not found at $EQ3NR; perhaps you should run make?"
+EQ6=$(realpath -m ../../bin/eq6)
+if ! [ -f $EQ6 ]; then
+    echo "eq6 binary not found at $EQ6; perhaps you should run make?"
     exit -1
 fi
 
-echo "Running tests for $EQ3NR"
+echo "Running tests for $EQ6"
 rm -rf tmp
 for dir in data/*; do
     dataset=$(basename $dir)
-    for threei in $dir/*.3i; do
-        problem=$(basename $threei .3i)
+    for sixi in $dir/*.6i; do
+        problem=$(basename $sixi .6i)
         mkdir tmp
         cp $dir/data1.$dataset tmp
-        cp $threei tmp
+        cp $sixi tmp
         cd tmp
-        $EQ3NR data1.$dataset $problem.3i >/dev/null 2>&1
+        $EQ6 data1.$dataset $problem.6i >/dev/null 2>&1
         for file in "${EXPECTED_FILES[@]}"; do
             if [ $file == "output" ]; then
-                groundtruth=$(realpath ../$dir/$problem.3o)
+                groundtruth=$(realpath ../$dir/$problem.6o)
                 OUTPUT=$(compare $groundtruth $file $TIMING_REGEX)
                 if [ $? -ne 0 ]; then
                     echo "FAILED: checking \"$file\" against \"$groundtruth\" ignoring dates and times"
@@ -45,7 +45,7 @@ for dir in data/*; do
                     failedtests+=($groundtruth)
                 fi
             elif [ $file == "pickup" ]; then
-                groundtruth=$(realpath ../$dir/$problem.3p)
+                groundtruth=$(realpath ../$dir/$problem.6p)
                 OUTPUT=$(compare $groundtruth $file)
                 if [ $? -ne 0 ]; then
                     echo "FAILED: checking \"$file\" against \"$groundtruth\""
