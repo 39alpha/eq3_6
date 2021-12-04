@@ -65,6 +65,4 @@ if (($failures != 0)); then
 fi
 echo "  $failures of $tests tests failed"
 
-if (($failures != 0)); then
-    exit 1
-fi
+exit $failures
