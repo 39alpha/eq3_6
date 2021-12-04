@@ -22,6 +22,14 @@ c
       include 'eqlib/eqlj8.h'
       include 'eqlib/eqlk8.h'
       include 'eqlib/eqlo8.h'
+
+c-----------------------------------------------------------------------
+c     File path parameters
+c-----------------------------------------------------------------------
+      integer :: numargs
+      character(100) :: temppath
+      character(:), allocatable :: data1path
+      character(:), allocatable :: threeipath
 c
 c-----------------------------------------------------------------
 c
@@ -550,9 +558,22 @@ c
 c
 c     Open all files execpt pickup.
 c
+      numargs = COMMAND_ARGUMENT_COUNT()
+      if (numargs.eq.2) then
+          call GET_COMMAND_ARGUMENT(1,temppath)
+          data1path = TRIM(temppath)
+          temppath(:)='\0'
+          call GET_COMMAND_ARGUMENT(2,temppath)
+          threeipath = TRIM(temppath)
+      else
+          write (0, *) 'usage: eq3nr <data1> <3i>'
+          stop
+      end if
+
+      call openin(noutpt,nttyo,data1path,'unformatted',nad1)
+      call openin(noutpt,nttyo,threeipath,'formatted',ninpt)
+
       call openou(noutpt,nttyo,'output','formatted',nrecl,noutpt)
-      call openin(noutpt,nttyo,'data1','unformatted',nad1)
-      call openin(noutpt,nttyo,'input','formatted',ninpt)
       call openou(noutpt,nttyo,'inputs','formatted',nrecl,ninpts)
 c
 c     Make a copy of the input file, stripped of comments.
