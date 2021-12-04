@@ -1,0 +1,840 @@
+
+ EQ3/6, Version 8.0a (EQ3/6-V8-REL-V8.0a-PC)
+ EQPT Data File Preprocessor Code (EQ3/6-V8-EQPT-EXE-R43a-PC)
+ Supported by the following EQ3/6 libraries:
+   EQLIBU (EQ3/6-V8-EQLIBU-LIB-R43a-PC)
+
+ Copyright (c) 1987, 1990-1993, 1995, 1997, 2002 The Regents of the
+ University of California, Lawrence Livermore National Laboratory.
+ All rights reserved.
+
+ This work is subject to additional statements and
+ disclaimers which may be found in the README.txt file
+ included in the EQ3/6 software transmittal package.
+
+
+ Run  10:35:00  04Dec2021
+
+
+           Number of elements =    26
+           Number of basis species =    33
+
+ data0.nh4
+ PITZER THERMODYNAMIC DATABASE (02/21/2005)
+ Ammonia/ammonium additions per report ANL-EBS-MD-000074 REV 00.
+ 
+ This version is primarily the data0.ypf Pitzer database file
+ (DTN: SN0302T0510102.002), but includes the data from the file
+ Pitzer_database_NH4_additions.txt in the same DTN as this is contained.
+ These data allow for the modeling of high concentration ammonia/ammonium
+ species, primarily at 25C. Some high temperature parameters are included,
+ specifically the NH4-NO3 binary. -Russell Jarek, SNL
+ 
+ This datafile uses the standard form of Pitzer's equations relevant to
+ the temperature range. Details on the compilation of these Pitzer
+ parameters are given in the document 'In-Drift Precipitates and Salts Model'
+ (ANL-EBS-MD-000045 Rev. 01).
+ 
+ Pitzer parameters are represented by the 25C-centric four-term temperature
+ function given by:
+ 
+ x(T) = a1 + a2*(1/T - 1/298.15) + a3*ln(T/298.15) + a4*(T - 298.15)
+ 
+ where T is temperature in Kelvin and a1 through a4 denote the temperature
+ function fitting coefficients for the temperature-dependent Pitzer
+ parameters. The conversion of non-standard or expanded forms of Pitzer
+ interaction parameters recently adopted by several workers for highly
+ soluble salts to the standard form currently embedded in EQ3/6 Version 8.0
+ was conducted using the approach described in 02Rard/Wij.  This conversion
+ imposes usage limits on these parameters within a valid range of temperature
+ and ionic strength.
+ 
+ Some data blocks provide comments on the gathered Pitzer parameters and
+ solid phase solubility data to make the user aware of any convention
+ adopted in the data extraction/compilation process.
+ 
+ BEGIN CONFIGURATION DATA BLOCK
+ Do not change the data in this block unless you know what you
+ are doing.
+ INTERPRET 500 AS NO DATA= YES
+ SPARSE GRID RANGE CONDITION=IGNORE
+ Pitzer data parameters:
+    PITZER DATA BLOCK ORG.= NEW
+    PITZER TEMP FUNCTION= LIVERMORE
+    NO. OF PITZER TEMP FUNC TERMS= 4
+ END CONFIGURATION DATA
+ +--------------------------------------------------------------------
+
+ Number of logK temperature grid ranges= 2
+
+ Enthalpy functions flag= -1 (Not present)
+ Volume functions flag  = -1 (Not present)
+
+
+ element = O       , atwt =   15.99940
+ element = Al      , atwt =   26.98154
+ element = Ba      , atwt =  137.32700
+ element = Br      , atwt =   79.90400
+ element = C       , atwt =   12.01100
+ element = Ca      , atwt =   40.07800
+ element = Cl      , atwt =   35.45270
+ element = Cr      , atwt =   51.99610
+ element = Cs      , atwt =  132.90543
+ element = F       , atwt =   18.99840
+ element = Fe      , atwt =   55.84700
+ element = H       , atwt =    1.00794
+ element = I       , atwt =  126.90447
+ element = K       , atwt =   39.09830
+ element = Li      , atwt =    6.94100
+ element = Mg      , atwt =   24.30500
+ element = Mn      , atwt =   54.93805
+ element = Mo      , atwt =   95.94000
+ element = N       , atwt =   14.00674
+ element = Na      , atwt =   22.98977
+ element = P       , atwt =   30.97376
+ element = Rb      , atwt =   85.46780
+ element = S       , atwt =   32.06600
+ element = Si      , atwt =   28.08550
+ element = Sr      , atwt =   87.62000
+ element = W       , atwt =  183.85000
+
+
+ The minimum temperature is      0.000C
+ The maximum temperature is    200.000C
+
+ The maximum temperatures (C) by range are:
+      100.000
+      300.000
+
+
+       presg
+       aphi
+       xlke
+
+
+ aqueous
+
+     1 H2O
+     2 Al+++
+     3 Ba++
+     4 Br-
+     5 HCO3-
+     6 Ca++
+     7 Cl-
+     8 CrO4--
+     9 Cs+
+    10 F-
+    11 Fe++
+    12 H+
+    13 I-
+    14 K+
+    15 Li+
+    16 Mg++
+    17 Mn++
+    18 MoO4--
+    19 NO3-
+    20 Na+
+    21 HPO4--
+    22 Rb+
+    23 SO4--
+    24 SiO2(aq)
+    25 Sr++
+    26 WO4--
+    27 O2(g)
+    28 ClO4-
+    29 Fe+++
+    30 H2(aq)
+    31 NH4+
+    32 NO2-
+    33 O2(aq)
+    34 AlO2-
+    35 AlOH++
+    36 AlO+
+    37 CaCO3(aq)
+    38 CaHCO3+
+    39 CaOH+
+    40 CaSO4(aq)
+    41 CO2(aq)
+    42 CO3--
+    43 HSO4-
+    44 HSiO3-
+    45 H2PO4-
+    46 H3PO4(aq)
+    47 MgCO3(aq)
+    48 MgHCO3+
+    49 MgOH+
+    50 NH3(aq)
+    51 NaF(aq)
+    52 OH-
+    53 PO4---
+
+
+ minerals
+
+     1 Albite
+     2 Alunite
+     3 Amesite-7A
+     4 Amesite-14A
+     5 Analcime
+     6 Analcime-dehy
+     7 Anhydrite
+     8 Antarcticite
+     9 Aragonite
+    10 Arcanite
+    11 Artinite
+    12 Beidellite-Mg
+    13 Beidellite-Ca
+    14 Beidellite-K
+    15 Beidellite-Na
+    16 Beidellite-H
+    17 Bischofite
+    18 Bloedite
+    19 Boehmite
+    20 Brucite
+    21 Brushite
+    22 Burkeite
+    23 CaBr2
+    24 Ca2Cl2(OH)2:H2O
+    25 Ca4Cl2(OH)6:13H2O
+    26 CaCl2
+    27 CaCl2:2H2O
+    28 CaCl2:4H2O
+    29 CaI2
+    30 Calcite
+    31 Ca(NO3)2
+    32 Ca(NO3)2:2H2O
+    33 Ca(NO3)2:3H2O
+    34 Ca(NO3)2:4H2O
+    35 CaOHCl
+    36 Carnallite
+    37 Carobbite
+    38 CaWO4
+    39 Celadonite
+    40 Celestite
+    41 Chabazite
+    42 Chamosite-7A
+    43 Chloromagnesite
+    44 Clinoptilolite
+    45 Clinoptilolite-dehy
+    46 Clinoptilolite-Ca
+    47 Clinoptilolite-Cs
+    48 Clinoptilolite-K
+    49 Clinoptilolite-NH4
+    50 Clinoptilolite-Na
+    51 Clinoptilolite-Sr
+    52 Corundum
+    53 Cristobalite(alpha)
+    54 Cronstedtite-7A
+    55 Cryolite
+    56 Daphnite-14A
+    57 Daphnite-7A
+    58 Darapskite
+    59 Dawsonite
+    60 Dolomite
+    61 Epsomite
+    62 Erionite
+    63 Ferroaluminoceladonite
+    64 Ferroceladonite
+    65 Fe2(MoO4)3
+    66 FeF3
+    67 Fe(OH)3
+    68 Fe2(SO4)3
+    69 Fluorapatite
+    70 Fluorite
+    71 Gaylussite
+    72 Gibbsite
+    73 Glaserite
+    74 Glauberite
+    75 Goethite
+    76 Greenalite
+    77 Gypsum
+    78 Halite
+    79 Hematite
+    80 Hemihydrate
+    81 Heulandite
+    82 Hexahydrite
+    83 Huntite
+    84 Hydroxylapatite
+    85 Hydromagnesite
+    86 Illite
+    87 Jarosite
+    88 Jarosite-Na
+    89 K-Feldspar
+    90 K2CO3
+    91 K2CO3:1.5H2O
+    92 K2O
+    93 K2Si4O9
+    94 K3H(SO4)2
+    95 K8H4(CO3)6:3H2O
+    96 Kainite
+    97 KAlCl4
+    98 K2HPO4
+    99 K3AlCl6
+   100 K3AlF6
+   101 K3PO4
+   102 Kalicinite
+   103 KAl(SO4)2
+   104 KAl(SO4)2:3H2O
+   105 KAl(SO4)2:12H2O
+   106 Kaolinite
+   107 KBr
+   108 KClO4
+   109 KH2PO4
+   110 KI
+   111 Kieserite
+   112 KMgCl3:2H2O
+   113 KNaCO3:6H2O
+   114 KOH
+   115 Labile_Salt
+   116 Lansfordite
+   117 Laumontite
+   118 Leonhardtite
+   119 Leonite
+   120 Lime
+   121 Magnesite
+   122 Maximum_Microcline
+   123 Mercallite
+   124 Mesolite
+   125 MgBr2
+   126 MgCl2:H2O
+   127 MgCl2:2H2O
+   128 MgCl2:4H2O
+   129 MgI2
+   130 MgMoO4
+   131 Mg(NO3)2
+   132 MgOHCl
+   133 MgSO4
+   134 MgWO4
+   135 Minnesotaite
+   136 Mirabilite
+   137 Misenite
+   138 MoO2Cl2
+   139 Molysite
+   140 Montmorillonite-H
+   141 Montmorillonite-Na
+   142 Montmorillonite-K
+   143 Montmorillonite-Ca
+   144 Montmorillonite-Mg
+   145 Mordenite
+   146 NaBr
+   147 NaClO4
+   148 NaI
+   149 NaNO2
+   150 NaOH
+   151 Na2CO3:7H2O
+   152 Na2CrO4
+   153 Na2MoO4
+   154 Na2WO4
+   155 Na2O
+   156 Na2SO4(Sol-3)
+   157 Na3H(SO4)2
+   158 Na4Ca(SO4)3:2H2O
+   159 Nahcolite
+   160 Natrite
+   161 Natron
+   162 Natrolite
+   163 Nesquehonite
+   164 NH4Cl
+   165 NH4ClO4
+   166 NH4I
+   167 NH4NO3
+   168 (NH4)2SO4
+   169 NH4HSO4
+   170 (NH4)3H(SO4)2
+   171 NaHSO4:H2O
+   172 NaHSO4
+   173 NaH3(SO4)2:H2O
+   174 NH4HSO4:NH4NO3
+   175 (NH4)2SO4:2NH4NO3
+   176 (NH4)2SO4:3NH4NO3
+   177 (NH4)2SO4:Na2SO4:4H2O
+   178 Na2SO4:NaNO3:H2O
+   179 Niter
+   180 Nontronite-Mg
+   181 Nontronite-Ca
+   182 Nontronite-K
+   183 Nontronite-Na
+   184 Nontronite-H
+   185 Oxychloride-Mg
+   186 Pentahydrite
+   187 Pentasalt
+   188 Periclase
+   189 Phillipsite
+   190 Picromerite
+   191 Pirssonite
+   192 Polyhalite
+   193 Portlandite
+   194 Powellite
+   195 Pyrolusite
+   196 Pyrophyllite
+   197 Quartz
+   198 Ripidolite-7A
+   199 Ripidolite-14A
+   200 Saponite-H
+   201 Saponite-Na
+   202 Saponite-K
+   203 Saponite-Ca
+   204 Saponite-Mg
+   205 Scolecite
+   206 Sellaite
+   207 Sepiolite
+   208 SiO2(am)
+   209 Smectite-high-Fe-Mg
+   210 Smectite-low-Fe-Mg
+   211 Soda Niter
+   212 SrBr2
+   213 SrCl2
+   214 SrF2
+   215 SrI2
+   216 SrMoO4
+   217 SrO
+   218 Sr(OH)2
+   219 SrWO4
+   220 Stellerite
+   221 Stilbite
+   222 Strontianite
+   223 Sylvite
+   224 Syngenite
+   225 Tachyhydrite
+   226 Talc
+   227 Tarapacaite
+   228 Thenardite
+   229 Thermonatrite
+   230 Trona
+   231 Trona-K
+   232 Villiaumite
+   233 Whitlockite
+   234 Afwillite
+   235 Allite_(C3S)
+   236 Bellite_(C2S)
+   237 (C12A7)
+   238 (C2AH8)
+   239 (C3A)
+   240 (C4AF)
+   241 (C4AH13)
+   242 (C4AH19)
+   243 (CA)
+   244 (CA2)
+   245 (CAH10)
+   246 CSH:1.7
+   247 Ettringite
+   248 Ferrite-Ca
+   249 Ferrite-Dicalcium
+   250 Ferrite-Mg
+   251 Foshagite
+   252 Friedl_salt
+   253 Gehlenate_Hydrate
+   254 Gismondine-Na
+   255 Gismondine-Ca
+   256 Gyrolite
+   257 Hemicarboaluminate
+   258 Hillebrandite
+   259 Hydrogarnet
+   260 Hydrotalcite
+   261 Monocarboaluminate
+   262 Monosulphate
+   263 Okenite
+   264 Plombierite
+   265 Riversideite
+   266 Tobermorite
+   267 Xonotlite
+
+
+ liquids
+
+     0 none
+
+ * Note - (EQPT/pcrsg) The pure liquids block has
+       not been written on the DATA1 and DATA1F files,
+       because the EQ3NR and EQ6 codes presently do not
+       treat non-aqeuous liquids.
+
+
+ gases
+
+     1 CO2(g)
+     2 H2(g)
+     3 H2O(g)
+     4 HBr(g)
+     5 HCl(g)
+     6 HF(g)
+     7 HNO3(g)
+     8 N2O5(g)
+     9 NO3(g)
+    10 O2(g)
+
+
+ solid solutions
+
+     0  none
+
+ * Warning - (EQPT/tprca) Did not find a data block on the DATA0 file
+       for any of the following ca pairs:
+
+         Al+++, Br-
+         Al+++, HCO3-
+         Al+++, Cl-
+         Al+++, CrO4--
+         Al+++, F-
+         Al+++, I-
+         Al+++, MoO4--
+         Al+++, NO3-
+         Al+++, HPO4--
+         Al+++, SO4--
+         Al+++, WO4--
+         Al+++, ClO4-
+         Al+++, NO2-
+         Al+++, AlO2-
+         Al+++, CO3--
+         Al+++, HSO4-
+         Al+++, HSiO3-
+         Al+++, H2PO4-
+         Al+++, OH-
+         Al+++, PO4---
+
+         plus 331 others
+
+
+ * Warning - (EQPT/tprcc) Did not find a data block on the DATA0 file
+       for any of the following cc' pairs:
+
+         Al+++, Ba++
+         Al+++, Ca++
+         Al+++, Cs+
+         Al+++, Fe++
+         Al+++, H+
+         Al+++, K+
+         Al+++, Li+
+         Al+++, Mg++
+         Al+++, Mn++
+         Al+++, Na+
+         Al+++, Rb+
+         Al+++, Sr++
+         Al+++, Fe+++
+         Al+++, NH4+
+         Al+++, AlOH++
+         Al+++, AlO+
+         Al+++, CaHCO3+
+         Al+++, CaOH+
+         Al+++, MgHCO3+
+         Al+++, MgOH+
+
+         plus 169 others
+
+
+ * Warning - (EQPT/tpraa) Did not find a data block on the DATA0 file
+       for any of the following aa' pairs:
+
+         Br-, HCO3-
+         Br-, CrO4--
+         Br-, F-
+         Br-, I-
+         Br-, MoO4--
+         Br-, NO3-
+         Br-, HPO4--
+         Br-, SO4--
+         Br-, WO4--
+         Br-, ClO4-
+         Br-, NO2-
+         AlO2-, Br-
+         Br-, CO3--
+         Br-, HSO4-
+         Br-, HSiO3-
+         Br-, H2PO4-
+         Br-, PO4---
+         CrO4--, HCO3-
+         F-, HCO3-
+         HCO3-, I-
+
+         plus 152 others
+
+
+ * Warning - (EQPT/tprn2) Did not find a data block on the DATA0 file
+       for any of the following nn pairs:
+
+         H2(aq), H2(aq)
+         O2(aq), O2(aq)
+         CaCO3(aq), CaCO3(aq)
+         CaSO4(aq), CaSO4(aq)
+         H3PO4(aq), H3PO4(aq)
+         MgCO3(aq), MgCO3(aq)
+         NaF(aq), NaF(aq)
+
+
+ * Warning - (EQPT/tprnn) Did not find a data block on the DATA0 file
+       for any of the following nn' pairs:
+
+         H2(aq), SiO2(aq)
+         O2(aq), SiO2(aq)
+         CaCO3(aq), SiO2(aq)
+         CaSO4(aq), SiO2(aq)
+         H3PO4(aq), SiO2(aq)
+         MgCO3(aq), SiO2(aq)
+         NH3(aq), SiO2(aq)
+         NaF(aq), SiO2(aq)
+         H2(aq), O2(aq)
+         CaCO3(aq), H2(aq)
+         CaSO4(aq), H2(aq)
+         CO2(aq), H2(aq)
+         H2(aq), H3PO4(aq)
+         H2(aq), MgCO3(aq)
+         H2(aq), NH3(aq)
+         H2(aq), NaF(aq)
+         CaCO3(aq), O2(aq)
+         CaSO4(aq), O2(aq)
+         CO2(aq), O2(aq)
+         H3PO4(aq), O2(aq)
+
+         plus 24 others
+
+
+ * Warning - (EQPT/tprnc) Did not find a data block on the DATA0 file
+       for any of the following nc pairs:
+
+         SiO2(aq), Al+++
+         SiO2(aq), Ba++
+         SiO2(aq), Ca++
+         SiO2(aq), Cs+
+         SiO2(aq), Fe++
+         SiO2(aq), K+
+         SiO2(aq), Li+
+         SiO2(aq), Mn++
+         SiO2(aq), Rb+
+         SiO2(aq), Sr++
+         SiO2(aq), Fe+++
+         SiO2(aq), NH4+
+         SiO2(aq), AlOH++
+         SiO2(aq), AlO+
+         SiO2(aq), CaHCO3+
+         SiO2(aq), CaOH+
+         SiO2(aq), MgHCO3+
+         SiO2(aq), MgOH+
+         H2(aq), Al+++
+         H2(aq), Ba++
+
+         plus 166 others
+
+
+ * Warning - (EQPT/tprna) Did not find a data block on the DATA0 file
+       for any of the following na pairs:
+
+         SiO2(aq), Br-
+         SiO2(aq), HCO3-
+         SiO2(aq), CrO4--
+         SiO2(aq), F-
+         SiO2(aq), I-
+         SiO2(aq), MoO4--
+         SiO2(aq), HPO4--
+         SiO2(aq), WO4--
+         SiO2(aq), ClO4-
+         SiO2(aq), NO2-
+         SiO2(aq), AlO2-
+         SiO2(aq), CO3--
+         SiO2(aq), HSO4-
+         SiO2(aq), HSiO3-
+         SiO2(aq), H2PO4-
+         SiO2(aq), OH-
+         SiO2(aq), PO4---
+         H2(aq), Br-
+         H2(aq), HCO3-
+         H2(aq), Cl-
+
+         plus 157 others
+
+
+ * Warning - (EQPT/tprcca) Did not find a data block on the DATA0 file
+       for any of the following cc'a triplets:
+
+         Al+++, Ba++, Br-
+         Al+++, Ba++, HCO3-
+         Al+++, Ba++, Cl-
+         Al+++, Ba++, CrO4--
+         Al+++, Ba++, F-
+         Al+++, Ba++, I-
+         Al+++, Ba++, MoO4--
+         Al+++, Ba++, NO3-
+         Al+++, Ba++, HPO4--
+         Al+++, Ba++, SO4--
+         Al+++, Ba++, WO4--
+         Al+++, Ba++, ClO4-
+         Al+++, Ba++, NO2-
+         Al+++, Ba++, AlO2-
+         Al+++, Ba++, CO3--
+         Al+++, Ba++, HSO4-
+         Al+++, Ba++, HSiO3-
+         Al+++, Ba++, H2PO4-
+         Al+++, Ba++, OH-
+         Al+++, Ba++, PO4---
+
+         plus 4167 others
+
+
+ * Warning - (EQPT/tpraac) Did not find a data block on the DATA0 file
+       for any of the following aa'c triplets:
+
+         Br-, HCO3-, Al+++
+         Br-, HCO3-, Ba++
+         Br-, HCO3-, Ca++
+         Br-, HCO3-, Cs+
+         Br-, HCO3-, Fe++
+         Br-, HCO3-, H+
+         Br-, HCO3-, K+
+         Br-, HCO3-, Li+
+         Br-, HCO3-, Mg++
+         Br-, HCO3-, Mn++
+         Br-, HCO3-, Na+
+         Br-, HCO3-, Rb+
+         Br-, HCO3-, Sr++
+         Br-, HCO3-, Fe+++
+         Br-, HCO3-, NH4+
+         Br-, HCO3-, AlOH++
+         Br-, HCO3-, AlO+
+         Br-, HCO3-, CaHCO3+
+         Br-, HCO3-, CaOH+
+         Br-, HCO3-, MgHCO3+
+
+         plus 3953 others
+
+
+ * Warning - (EQPT/tprn2n) Did not find a data block on the DATA0 file
+       for any of the following nnn' triplets:
+
+         H2(aq), H2(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), H2(aq)
+         O2(aq), O2(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), O2(aq)
+         CaCO3(aq), CaCO3(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), CaCO3(aq)
+         CaSO4(aq), CaSO4(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), CaSO4(aq)
+         H3PO4(aq), H3PO4(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), H3PO4(aq)
+         MgCO3(aq), MgCO3(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), MgCO3(aq)
+         NH3(aq), NH3(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), NH3(aq)
+         NaF(aq), NaF(aq), SiO2(aq)
+         SiO2(aq), SiO2(aq), NaF(aq)
+         H2(aq), H2(aq), O2(aq)
+         O2(aq), O2(aq), H2(aq)
+
+
+ * Warning - (EQPT/tprnca) Did not find a data block on the DATA0 file
+       for any of the following nca triplets:
+
+         SiO2(aq), Al+++, Br-
+         SiO2(aq), Al+++, HCO3-
+         SiO2(aq), Al+++, Cl-
+         SiO2(aq), Al+++, CrO4--
+         SiO2(aq), Al+++, F-
+         SiO2(aq), Al+++, I-
+         SiO2(aq), Al+++, MoO4--
+         SiO2(aq), Al+++, NO3-
+         SiO2(aq), Al+++, HPO4--
+         SiO2(aq), Al+++, SO4--
+         SiO2(aq), Al+++, WO4--
+         SiO2(aq), Al+++, ClO4-
+         SiO2(aq), Al+++, NO2-
+         SiO2(aq), Al+++, AlO2-
+         SiO2(aq), Al+++, CO3--
+         SiO2(aq), Al+++, HSO4-
+         SiO2(aq), Al+++, HSiO3-
+         SiO2(aq), Al+++, H2PO4-
+         SiO2(aq), Al+++, OH-
+         SiO2(aq), Al+++, PO4---
+
+         plus 4147 others
+
+
+
+  Cation-anion (ca) pair coverage:
+
+       69 pairs have Pitzer parameters specified on the data file
+      420 pairs can be constructed from the species present on this file
+    Coverage is 16.43 per cent
+
+
+  Cation-distinct cation (cc') pair coverage:
+
+       21 pairs have Pitzer parameters specified on the data file
+      210 pairs can be constructed from the species present on this file
+    Coverage is 10.00 per cent
+
+
+  Anion-distinct anion (aa') pair coverage:
+
+       18 pairs have Pitzer parameters specified on the data file
+      190 pairs can be constructed from the species present on this file
+    Coverage is 9.47 per cent
+
+
+  Repeated-neutral (nn) pair coverage:
+
+        3 pairs have Pitzer parameters specified on the data file
+       10 pairs can be constructed from the species present on this file
+    Coverage is 30.00 per cent
+
+
+  Neutral-distinct neutral (nn') pair coverage:
+
+        1 pairs have Pitzer parameters specified on the data file
+       45 pairs can be constructed from the species present on this file
+    Coverage is 2.22 per cent
+
+
+  Neutral-cation (nc) pair coverage:
+
+       24 pairs have Pitzer parameters specified on the data file
+      210 pairs can be constructed from the species present on this file
+    Coverage is 11.43 per cent
+
+
+  Neutral-anion (na) pair coverage:
+
+       23 pairs have Pitzer parameters specified on the data file
+      200 pairs can be constructed from the species present on this file
+    Coverage is 11.50 per cent
+
+
+  Cation-distinct cation-anion (cc'a) triplet coverage:
+
+       13 triplets have Pitzer parameters specified on the data file
+     4200 triplets can be constructed from the species present on this file
+    Coverage is 0.31 per cent
+
+
+  Anion-distinct anion-cation (aa'c) triplet coverage:
+
+       17 triplets have Pitzer parameters specified on the data file
+     3990 triplets can be constructed from the species present on this file
+    Coverage is 0.43 per cent
+
+
+  Repeated neutral-distinct neutral (nnn') triplet coverage:
+
+        2 triplets have Pitzer parameters specified on the data file
+       20 triplets can be constructed from the species present on this file
+    Coverage is 10.00 per cent
+
+
+  Neutral-cation-anion (nca) triplet coverage:
+
+       33 triplets have Pitzer parameters specified on the data file
+     4200 triplets can be constructed from the species present on this file
+    Coverage is 0.79 per cent
+
+
+ Completed processing the Pitzer data file data0.nh4.
+
+
+ No errors were encountered.
+
+ 11 warning(s) were encountered.
+
+
+          Start time = 10:35:00  04Dec2021
+            End time = 10:35:00  04Dec2021
+
+           Run time =  0.312E-01 seconds
+
+ Normal exit
