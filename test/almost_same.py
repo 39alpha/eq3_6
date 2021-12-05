@@ -61,8 +61,12 @@ def checkblock(inblock, outblock):
         return False
 
     for (was, now) in zip(inblock, outblock):
-        for (wasfield, nowfield) in zip(fieldregex.split(was), fieldregex.split(now)):
+        wasfields, nowfields = fieldregex.split(was), fieldregex.split(now)
+        for (wasfield, nowfield) in zip(wasfields, nowfields):
             if not checkfield(wasfield, nowfield):
+                print(wasfield)
+                print(nowfield)
+                print()
                 return False
 
     return True
