@@ -41,6 +41,16 @@ c-----------------------------------------------------------------------
       character(100) :: temppath
       character(:), allocatable :: data1path
       character(:), allocatable :: sixipath
+      integer :: pathindices(2)
+      character(:), allocatable :: basename
+      character(:), allocatable :: ofile
+      character(:), allocatable :: pfile
+      character(:), allocatable :: bafile
+      character(:), allocatable :: bbfile
+      character(:), allocatable :: ifile
+      character(:), allocatable :: tfile
+      character(:), allocatable :: txfile
+      character(:), allocatable :: tsfile
 c
 c-----------------------------------------------------------------------
 c
@@ -445,11 +455,23 @@ c
           stop
       end if
 
+      call getbasename(sixipath, pathindices)
+      basename = sixipath(pathindices(1):pathindices(2))
+
+      ofile = basename // '.6o'
+      pfile = basename // '.6p'
+      bafile = basename // '.6ba'
+      bbfile = basename // '.6bb'
+      ifile = basename // '.6ib'
+      tfile = basename // '.6t'
+      txfile = basename // '.6tx'
+      tsfile = basename // '.6ts'
+
       call openin(noutpt,nttyo,data1path,'unformatted',nad1)
       call openin(noutpt,nttyo,sixipath,'formatted',ninpt)
 
-      call openou(noutpt,nttyo,'output','formatted',nrecl,noutpt)
-      call openou(noutpt,nttyo,'inputs','formatted',nrecl,ninpts)
+      call openou(noutpt,nttyo,ofile,'formatted',nrecl,noutpt)
+      call openou(noutpt,nttyo,ifile,'formatted',nrecl,ninpts)
 c
 c     Make a copy of the input file, stripped of comments.
 c
@@ -1835,27 +1857,27 @@ c
 c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 c
       if (iopt(16) .ge. 0) then
-        inquire(file='bakupa',opened=qop)
-        if (.not.qop) call openou(noutpt,nttyo,'bakupa','formatted',
+        inquire(file=bafile,opened=qop)
+        if (.not.qop) call openou(noutpt,nttyo,bafile,'formatted',
      $  nrecl,nbkupa)
         if (iopt(16) .eq. 0) then
-          inquire(file='bakupb',opened=qop)
-          if (.not.qop) call openou(noutpt,nttyo,'bakupb','formatted',
+          inquire(file=bbfile,opened=qop)
+          if (.not.qop) call openou(noutpt,nttyo,bbfile,'formatted',
      $    nrecl,nbkupb)
         endif
       endif
 c
       if (iopt(17) .ge. 0) then
-        inquire(file='pickup',opened=qop)
-        if (.not.qop) call openou(noutpt,nttyo,'pickup','formatted',
+        inquire(file=pfile,opened=qop)
+        if (.not.qop) call openou(noutpt,nttyo,pfile,'formatted',
      $  nrecl,newin)
       endif
 c
       if (nprob.gt.1 .and. iopt(18).ge.1) iopt(18) = 0
       if (iopt(18) .ge. 1) then
-        inquire(file='tabx',exist=qex)
+        inquire(file=txfile,exist=qex)
         if (qex) then
-          call openin(noutpt,nttyo,'tabx','formatted',ntabx)
+          call openin(noutpt,nttyo,txfile,'formatted',ntabx)
           do i = 1,10000
             read (ntabx,1200,end=200) ux8
  1200       format(a8)
@@ -1883,13 +1905,13 @@ c
         nrecl = nllnmx + 10
         if (qtatxt) nrecl = 128
 c
-        inquire(file='tab',opened=qop)
-        if (.not.qop) call openou(noutpt,nttyo,'tab','formatted',
+        inquire(file=tfile,opened=qop)
+        if (.not.qop) call openou(noutpt,nttyo,tfile,'formatted',
      $  nrecl,ntab)
 c
-        inquire(file='tabs',opened=qop)
+        inquire(file=tsfile,opened=qop)
         if (.not.qop) then
-          call openou(noutpt,nttyo,'tabs','formatted',nrecl,ntabs)
+          call openou(noutpt,nttyo,tsfile,'formatted',nrecl,ntabs)
         else
           rewind ntabs
         endif
@@ -1897,9 +1919,9 @@ c
         nrecl = nllnmx + 10
         if (qtatxt) nrecl = 129
 c
-        inquire(file='tabx',opened=qop)
+        inquire(file=txfile,opened=qop)
         if (.not.qop) then
-          call openou(noutpt,nttyo,'tabx','formatted',nrecl,ntabx)
+          call openou(noutpt,nttyo,txfile,'formatted',nrecl,ntabx)
         endif
         if (iopt(18) .eq. 0) rewind ntabx
 c

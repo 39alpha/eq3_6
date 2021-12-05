@@ -10,6 +10,8 @@ if ! [ -f $EQ3NR ]; then
     exit -1
 fi
 
+echo "Running tests for $EQ3NR"
+
 echo "  [TEST] Correctly names files"
 for name in acidmwb.3i acidwmb; do
     rm -rf tmp
@@ -46,7 +48,7 @@ for name in acidmwb.3i acidwmb; do
     cd ..
 done
 
-echo "Running tests for $EQ3NR"
+echo "  [TEST] Generates correct output"
 for dir in data/*; do
     dataset=$(basename $dir)
     for threei in $dir/*.3i; do
