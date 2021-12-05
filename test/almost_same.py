@@ -5,7 +5,7 @@ from math import fabs
 lineregex = re.compile(r'^\d+(,\d+)?c\d+(,\d+)?$')
 wasregex = re.compile(r'^< ')
 nowregex = re.compile(r'^> ')
-fieldregex = re.compile(r'(\s+\|?|\|?\s+)')
+fieldregex = re.compile(r'[\s\|]+')
 sepregex = re.compile(r'^---$')
 emptyregex = re.compile(r'^$')
 
@@ -42,9 +42,7 @@ def positiveish(n):
 def isclose(was, now):
     try:
         w, n = float(was), float(now)
-        d = fabs(w - n) <= 1e-3 * max(fabs(w), fabs(n))
-        print(w, n, d)
-        return d
+        return fabs(w - n) <= 1e-3 * max(fabs(w), fabs(n))
     except ValueError:
         return False
 
