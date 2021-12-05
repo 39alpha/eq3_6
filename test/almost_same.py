@@ -5,7 +5,7 @@ from math import fabs
 lineregex = re.compile(r'^\d+(,\d+)?c\d+(,\d+)?$')
 wasregex = re.compile(r'^< ')
 nowregex = re.compile(r'^> ')
-wsregex = re.compile(r'\s+')
+fieldregex = re.compile(r'(\s+\|?|\|?\s+)')
 sepregex = re.compile(r'^---$')
 emptyregex = re.compile(r'^$')
 
@@ -61,7 +61,7 @@ def checkblock(inblock, outblock):
         return False
 
     for (was, now) in zip(inblock, outblock):
-        for (wasfield, nowfield) in zip(wsregex.split(was), wsregex.split(now)):
+        for (wasfield, nowfield) in zip(fieldregex.split(was), fieldregex.split(now)):
             if not checkfield(wasfield, nowfield):
                 return False
 
