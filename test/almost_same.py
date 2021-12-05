@@ -75,7 +75,7 @@ def checkblock(inblock, outblock, errors):
         for (wasfield, nowfield) in zip(wasfields, nowfields):
             valid, message = checkfield(wasfield, nowfield)
             if not valid:
-                template = 'Line: {}\n< {}\n> {}\nError: {}\n\n'
+                template = 'Line: {}\n< {}\n> {}\nError: {}\n'
                 message = template.format(linenum, was, now, message)
                 errors.append(message)
                 return False
