@@ -30,6 +30,11 @@ c-----------------------------------------------------------------------
       character(100) :: temppath
       character(:), allocatable :: data1path
       character(:), allocatable :: threeipath
+      integer :: pathindices(2)
+      character(:), allocatable :: basename
+      character(:), allocatable :: ofile
+      character(:), allocatable :: ifile
+      character(:), allocatable :: pfile
 c
 c-----------------------------------------------------------------
 c
@@ -570,11 +575,18 @@ c
           stop
       end if
 
+      call getbasename(threeipath, pathindices)
+      basename = threeipath(pathindices(1):pathindices(2))
+
+      ofile = basename // '.3o'
+      ifile = basename // '.3ib'
+      pfile = basename // '.3p'
+
       call openin(noutpt,nttyo,data1path,'unformatted',nad1)
       call openin(noutpt,nttyo,threeipath,'formatted',ninpt)
 
-      call openou(noutpt,nttyo,'output','formatted',nrecl,noutpt)
-      call openou(noutpt,nttyo,'inputs','formatted',nrecl,ninpts)
+      call openou(noutpt,nttyo,ofile,'formatted',nrecl,noutpt)
+      call openou(noutpt,nttyo,ifile,'formatted',nrecl,ninpts)
 c
 c     Make a copy of the input file, stripped of comments.
 c
@@ -1900,8 +1912,8 @@ c
 c     Open the pickup file if this is to be used.
 c
       if (iopt(17) .ne. -1) then
-        inquire(file='pickup',opened=qop)
-        if (.not.qop) call openou(noutpt,nttyo,'pickup','formatted',
+        inquire(file=pfile,opened=qop)
+        if (.not.qop) call openou(noutpt,nttyo,pfile,'formatted',
      $  nrecl,newin)
       endif
 c
