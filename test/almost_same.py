@@ -5,7 +5,7 @@ from math import fabs
 lineregex = re.compile(r'^\d+(,\d+)?c\d+(,\d+)?$')
 wasregex = re.compile(r'^< ')
 nowregex = re.compile(r'^> ')
-fieldregex = re.compile(r'[\s\|]+')
+fieldregex = re.compile(r'[\s\|,]+')
 sepregex = re.compile(r'^---$')
 emptyregex = re.compile(r'^$')
 
