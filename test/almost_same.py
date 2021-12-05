@@ -32,7 +32,7 @@ def isempty(line):
 
 def fail(content):
     if isinstance(content, list):
-        content = content.join('\n')
+        content = '\n'.join(content)
     sys.stdout.write(content)
     sys.exit(1)
 
