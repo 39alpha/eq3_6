@@ -33,6 +33,7 @@ to change the compilation flags, e.g. to enable debugging `-g` or change the lev
 that with the `FFLAGS` option:
 ```bash
 $ make FFLAGS=-g
+```
 
 ## Dependencies
 
