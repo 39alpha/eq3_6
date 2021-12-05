@@ -2,12 +2,17 @@ import re
 import sys
 from math import fabs
 
+lineregex = re.compile(r'^(\d+)')
 changeregex = re.compile(r'^\d+(,\d+)?[cd]\d+(,\d+)?$')
 wasregex = re.compile(r'^< ')
 nowregex = re.compile(r'^> ')
-fieldregex = re.compile(r'[\s\|,]+')
+fieldregex = re.compile(r'[\s\|,\(\)]+')
 sepregex = re.compile(r'^---$')
 emptyregex = re.compile(r'^$')
+
+
+def getlinenum(line):
+    return int(lineregex.match(line).group(1))
 
 
 def ischange(line):
@@ -65,12 +70,13 @@ def checkblock(inblock, outblock, errors):
     if len(inblock) != len(outblock):
         return False
 
-    for (was, now) in zip(inblock, outblock):
+    for ((linenum, was), now) in zip(inblock, outblock):
         wasfields, nowfields = fieldregex.split(was), fieldregex.split(now)
         for (wasfield, nowfield) in zip(wasfields, nowfields):
             valid, message = checkfield(wasfield, nowfield)
             if not valid:
-                message = '< {}\n> {}Error: {}\n\n'.format(was, now, message)
+                template = 'Line: {}\n< {}\n> {}Error: {}\n\n'
+                message = template.format(linenum, was, now, message)
                 errors.append(message)
                 return False
 
@@ -78,17 +84,20 @@ def checkblock(inblock, outblock, errors):
 
 
 def main():
+    linenum = 0
     wasblock = []
     nowblock = []
     errors = []
 
     for line in sys.stdin.readlines():
         if ischange(line):
+            linenum = getlinenum(line)
             checkblock(wasblock, nowblock, errors)
             wasblock = []
             nowblock = []
         elif iswas(line):
-            wasblock.append(line[1:].strip())
+            wasblock.append((linenum, line[1:].strip()))
+            linenum += 1
         elif isnow(line):
             nowblock.append(line[1:].strip())
         elif isseparator(line) or isempty(line):
