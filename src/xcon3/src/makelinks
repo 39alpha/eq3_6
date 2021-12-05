@@ -1,3 +1,0 @@
-ln -s $HOME/EQ3_6v8.0a/eqlibu/src/eqlibu.a eqlibu.a
-ln -s $HOME/EQ3_6v8.0a/eqlibg/src/eqlibg.a eqlibg.a
-ln -s $HOME/EQ3_6v8.0a/eqlib/src/eqlib.a eqlib.a
