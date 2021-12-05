@@ -73,15 +73,13 @@ def checkblock(inblock, outblock, errors):
 
 
 def main():
-    content = sys.stdin.read()
-
     wasblock = []
     nowblock = []
     errors = []
-    for line in content.split('\n'):
+
+    for line in sys.stdin.readlines():
         if ischange(line):
-            if not checkblock(wasblock, nowblock, errors):
-                fail(errors)
+            checkblock(wasblock, nowblock, errors)
             wasblock = []
             nowblock = []
         elif iswas(line):
@@ -93,6 +91,11 @@ def main():
         else:
             print(line)
             fail('error: ill-formed diff output\n')
+
+    checkblock(wasblock, nowblock, errors)
+
+    if len(errors) != 0:
+        fail(errors)
 
 
 if __name__ == '__main__':
