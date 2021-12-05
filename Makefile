@@ -29,6 +29,5 @@ install:
 	cp -R bin/* $(PREFIX)/bin
 	cp -R lib/* $(PREFIX)/lib
 	cp -R include/* $(PREFIX)/include
-	cp -R share/* $(PREFIX)/share/eq3_6
 
 .PHONY: clean install test
