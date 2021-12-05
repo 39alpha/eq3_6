@@ -42,7 +42,9 @@ def positiveish(n):
 def isclose(was, now):
     try:
         w, n = float(was), float(now)
-        return fabs(w - n) <= 1e-3 * max(fabs(w), fabs(n))
+        d = fabs(w - n) <= 1e-3 * max(fabs(w), fabs(n))
+        print(w, n, d)
+        return d
     except ValueError:
         return False
 
