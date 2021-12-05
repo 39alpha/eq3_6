@@ -70,7 +70,8 @@ def checkblock(inblock, outblock, errors):
         for (wasfield, nowfield) in zip(wasfields, nowfields):
             valid, message = checkfield(wasfield, nowfield)
             if not valid:
-                errors.append('<{}\n>{}Error: {}\n\n'.format(was, now, message))
+                message = '< {}\n> {}Error: {}\n\n'.format(was, now, message)
+                errors.append(message)
                 return False
 
     return True
@@ -87,9 +88,9 @@ def main():
             wasblock = []
             nowblock = []
         elif iswas(line):
-            wasblock.append(line[1:])
+            wasblock.append(line[1:].strip())
         elif isnow(line):
-            nowblock.append(line[1:])
+            nowblock.append(line[1:].strip())
         elif isseparator(line) or isempty(line):
             continue
         else:
