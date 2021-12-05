@@ -66,7 +66,7 @@ def checkblock(inblock, outblock, errors):
         wasfields, nowfields = fieldregex.split(was), fieldregex.split(now)
         for (wasfield, nowfield) in zip(wasfields, nowfields):
             if not checkfield(wasfield, nowfield):
-                errors.append('<{}--->{}'.format(was, now))
+                errors.append('<{}---\n>{}'.format(was, now))
                 return False
 
     return True
