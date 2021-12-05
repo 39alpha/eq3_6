@@ -1,6 +1,6 @@
-import math
 import re
 import sys
+from math import fabs
 
 lineregex = re.compile(r'^\d+(,\d+)?c\d+(,\d+)?$')
 wasregex = re.compile(r'^< ')
@@ -42,10 +42,7 @@ def positiveish(n):
 def isclose(was, now):
     try:
         w, n = float(was), float(now)
-        if sys.version_info.major == 3:
-            return math.isclose(w, n)
-        else:
-            return abs(w - n) <= max(1e-9 * max(abs(w), abs(n)), 0.0)
+        return fabs(w - n) <= 1e-3 * max(fabs(w), fabs(n))
     except ValueError:
         return False
 
