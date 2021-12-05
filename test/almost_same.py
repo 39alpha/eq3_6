@@ -41,19 +41,22 @@ def positiveish(n):
     return n == ' ' or n == '+'
 
 
-def isclose(was, now):
+def isclose(was, now, rtol=1e-3, atol=0.0):
     try:
         w, n = float(was), float(now)
-        return fabs(w - n) <= 1e-3 * max(fabs(w), fabs(n))
+        diff = fabs(w - n)
+        cutoff = max(1e-3 * max(fabs(w), fabs(n)), atol)
+        message = 'abs({} - {}) = {} > {}'.format(w, n, diff, cutoff)
+        return diff <= cutoff, message
     except ValueError:
-        return False
+        return False, '{} != {}'.format(was, now)
 
 
 def checkfield(was, now):
     if was == now:
-        return True
+        return True, ''
     elif len(was) == 0 or len(now) == 0:
-        return False
+        return False, '{} != {}'.format(was, now)
     else:
         return isclose(was, now)
 
@@ -65,8 +68,9 @@ def checkblock(inblock, outblock, errors):
     for (was, now) in zip(inblock, outblock):
         wasfields, nowfields = fieldregex.split(was), fieldregex.split(now)
         for (wasfield, nowfield) in zip(wasfields, nowfields):
-            if not checkfield(wasfield, nowfield):
-                errors.append('<{}---\n>{}'.format(was, now))
+            valid, message = checkfield(wasfield, nowfield)
+            if not valid:
+                errors.append('<{}\n>{}Error: {}\n\n'.format(was, now, message))
                 return False
 
     return True
