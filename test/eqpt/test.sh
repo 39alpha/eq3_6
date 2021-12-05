@@ -2,6 +2,8 @@
 
 source $TEST_ROOT/util.sh
 
+EXTENSIONS=(po d1 d1f s)
+
 EQPT=$(realpath -m $PROJECT_ROOT/bin/eqpt)
 if ! [ -f $EQPT ]; then
     echo "eqpt binary not found at $EQPT; perhaps you should run make?"
@@ -9,21 +11,55 @@ if ! [ -f $EQPT ]; then
 fi
 
 echo "Running tests for $EQPT"
-for dir in data/*; do
-    dataset=$(basename $dir)
-    data0=$dir/data0.$dataset
+
+echo "  [TEST] Correctly names files"
+for name in data0.1kb 1kb.d0 1kb; do
+    rm -rf tmp
+    mkdir tmp
+    cd tmp
+
+    cp ../data/1kb.d0 $name
+    bname="${name%.*}"
+    $EQPT $name >/dev/null 2>&1
+    for ext in "${EXTENSIONS[@]}"; do
+        if ! [ -f $bname.$ext ]; then
+            failures=$((failures + 1))
+            failedtests+=("$bname.$ext is missing")
+        fi
+        tests=$((tests + 1))
+    done
+
+    rm -rf *
+
+    mkdir local
+    cp ../data/1kb.d0 local/$name
+    bname="${name%.*}"
+    $EQPT local/$name >/dev/null 2>&1
+    for ext in "${EXTENSIONS[@]}"; do
+        if ! [ -f $bname.$ext ]; then
+            failures=$((failures + 1))
+            failedtests+=("$bname.$ext is missing")
+        fi
+        tests=$((tests + 1))
+    done
+    cd ..
+done
+
+echo "  [TEST] Generates correct output"
+for data0 in data/*.d0; do
+    dataset=$(basename $data0 .d0)
 
     rm -rf tmp
     mkdir tmp
 
-    problem=$(basename $data0)
     cp $data0 tmp
 
     cd tmp
-    $EQPT data0.$dataset >/dev/null 2>&1
-    for file in output data1 data1f slist; do
-        groundtruth=$(realpath ../$dir/$file.$dataset)
-        if [ $file == "output" ]; then
+    $EQPT $(basename $data0) >/dev/null 2>&1
+    for ext in "${EXTENSIONS[@]}"; do
+        file=$dataset.$ext
+        groundtruth=$(realpath ../data/$dataset.$ext)
+        if [ $file == "$dataset.po" ]; then
             assert_same_contents $groundtruth $file skiptimes
         else
             assert_same_contents $groundtruth $file

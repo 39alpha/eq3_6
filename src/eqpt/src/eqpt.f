@@ -17,6 +17,13 @@ c-----------------------------------------------------------------------
       integer :: numargs
       character(100) :: temppath
       character(:), allocatable :: data0path
+      integer :: pathindices(2)
+      character(:), allocatable :: basename
+      character(:), allocatable :: ofile
+      character(:), allocatable :: d1file
+      character(:), allocatable :: d1ffile
+      character(:), allocatable :: sfile
+      character(:), allocatable :: d0sfile
 c
 c-----------------------------------------------------------------------
 c
@@ -295,13 +302,22 @@ c
           stop
       end if
 
+      call getbasename(data0path,pathindices)
+      basename = data0path(pathindices(1):pathindices(2))
+
       call openin(noutpt,nttyo,data0path,'formatted',ndata0)
 
-      call openou(noutpt,nttyo,'output','formatted',nrecl,noutpt)
-      call openou(noutpt,nttyo,'data1','unformatted',nrecl,ndata1)
-      call openou(noutpt,nttyo,'data1f','formatted',nrecl,ndat1f)
-      call openou(noutpt,nttyo,'slist','formatted',nrecl,nslist)
-      call openou(noutpt,nttyo,'data0s','formatted',nrecl,ndat0s)
+      ofile = basename // '.po'
+      d1file = basename // '.d1'
+      d1ffile = basename // '.d1f'
+      sfile = basename // '.s'
+      d0sfile = basename // '.d0s'
+
+      call openou(noutpt,nttyo,ofile,'formatted',nrecl,noutpt)
+      call openou(noutpt,nttyo,d1file,'unformatted',nrecl,ndata1)
+      call openou(noutpt,nttyo,d1ffile,'formatted',nrecl,ndat1f)
+      call openou(noutpt,nttyo,sfile,'formatted',nrecl,nslist)
+      call openou(noutpt,nttyo,d0sfile,'formatted',nrecl,ndat0s)
 c
 c     Make a copy of the DATA0 file, stripped of comments.
 c

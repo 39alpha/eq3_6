@@ -36,8 +36,12 @@ function assert_same_contents() {
 function summarize() {
     echo "SUMMARY"
     if (($failures != 0)); then
-        for file in "${failedtests[@]}"; do
-            echo "  FAILED $(realpath --relative-to=.. $file)"
+        for tst in "${failedtests[@]}"; do
+            if [ -f "$tst" ]; then
+                echo "  FAILED: $(realpath --relative-to=.. $tst)"
+            else
+                echo "  FAILED: $tst"
+            fi
         done
         echo ''
     fi

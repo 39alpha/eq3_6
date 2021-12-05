@@ -14,7 +14,7 @@ else
     export PYTHON=$(which python3)
 fi
 
-UNITS=(eqpt eq3nr eq6)
+UNITS=(eqpt)
 
 failed=0
 for unit in "${UNITS[@]}"; do
