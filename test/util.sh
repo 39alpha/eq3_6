@@ -6,13 +6,15 @@ failures=0
 tests=0
 failedtests=()
 
+almost_same="python $TEST_ROOT/almost_same.py"
+
 function compare() {
     if [ $# -ge 3 ]; then
         awk "!/$3/{print}" $1 > out.a
         awk "!/$3/{print}" $2 > out.b
-        diff out.a out.b
+        diff out.a out.b | $almost_same
     else
-        diff $1 $2
+        diff $1 $2 | $almost_same
     fi
 }
 
