@@ -3,6 +3,17 @@
 export PROJECT_ROOT=$(realpath $(pwd)/..)
 export TEST_ROOT=$(pwd)
 
+if ! which python3 >/dev/null; then
+    if ! which python >/dev/null; then
+        echo "ERROR: looks like we can't find your python executable. Is it on your path" >&2
+        exit -1
+    else
+        export PYTHON=$(which python)
+    fi
+else
+    export PYTHON=$(which python3)
+fi
+
 UNITS=(eqpt eq3nr eq6)
 
 failed=0

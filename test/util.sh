@@ -6,7 +6,7 @@ failures=0
 tests=0
 failedtests=()
 
-almost_same="python $TEST_ROOT/almost_same.py"
+almost_same="$PYTHON $TEST_ROOT/almost_same.py"
 
 function compare() {
     if [ $# -ge 3 ]; then
