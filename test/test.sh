@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-UNITS=(eqpt)
+UNITS=(eqpt eq3nr eq6)
 
 failed=0
 for unit in "${UNITS[@]}"; do
-    pushd eqpt >/dev/null 2>/dev/null
+    pushd $unit >/dev/null 2>/dev/null
     if ! bash test.sh; then
         failed=$((failed + 1))
     fi
