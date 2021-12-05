@@ -2,7 +2,7 @@ import re
 import sys
 from math import fabs
 
-lineregex = re.compile(r'^\d+(,\d+)?c\d+(,\d+)?$')
+changeregex = re.compile(r'^\d+(,\d+)?[cd]\d+(,\d+)?$')
 wasregex = re.compile(r'^< ')
 nowregex = re.compile(r'^> ')
 fieldregex = re.compile(r'[\s\|,]+')
@@ -10,8 +10,8 @@ sepregex = re.compile(r'^---$')
 emptyregex = re.compile(r'^$')
 
 
-def islinenum(line):
-    return lineregex.match(line)
+def ischange(line):
+    return changeregex.match(line)
 
 
 def iswas(line):
@@ -79,7 +79,7 @@ def main():
     nowblock = []
     errors = []
     for line in content.split('\n'):
-        if islinenum(line):
+        if ischange(line):
             if not checkblock(wasblock, nowblock, errors):
                 fail(errors)
             wasblock = []
