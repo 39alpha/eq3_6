@@ -1,3 +1,4 @@
+import math
 import re
 import sys
 
@@ -38,13 +39,15 @@ def positiveish(n):
     return n == ' ' or n == '+'
 
 
-def different_sign(w, n):
-    return w != n and (w == '-' or n == '-')
-
-
-def bothzero(was, now):
-    w, n = abs(float(was)), abs(float(now))
-    return w == n and w == 0. and n == 0.
+def isclose(was, now):
+    try:
+        w, n = float(was), float(now)
+        if sys.version_info.major == 3:
+            return math.isclose(w, n)
+        else:
+            return abs(w - n) <= max(1e-9 * max(abs(w), abs(n)), 0.0)
+    except ValueError:
+        return False
 
 
 def checkfield(was, now):
@@ -52,10 +55,8 @@ def checkfield(was, now):
         return True
     elif len(was) == 0 or len(now) == 0:
         return False
-    elif different_sign(was[0], now[0]) and bothzero(was, now):
-        return True
     else:
-        return False
+        return isclose(was, now)
 
 
 def checkblock(inblock, outblock):
