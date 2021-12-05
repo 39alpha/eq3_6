@@ -31,6 +31,8 @@ def isempty(line):
 
 
 def fail(content):
+    if isinstance(content, list):
+        content = content.join('\n')
     sys.stdout.write(content)
     sys.exit(1)
 
@@ -56,7 +58,7 @@ def checkfield(was, now):
         return isclose(was, now)
 
 
-def checkblock(inblock, outblock):
+def checkblock(inblock, outblock, errors):
     if len(inblock) != len(outblock):
         return False
 
@@ -64,7 +66,7 @@ def checkblock(inblock, outblock):
         wasfields, nowfields = fieldregex.split(was), fieldregex.split(now)
         for (wasfield, nowfield) in zip(wasfields, nowfields):
             if not checkfield(wasfield, nowfield):
-                sys.stderr.write('<{}\n---\n>{}\n'.format(was, now))
+                errors.append('<{}\n---\n>{}\n'.format(was, now))
                 return False
 
     return True
@@ -75,10 +77,11 @@ def main():
 
     wasblock = []
     nowblock = []
+    errors = []
     for line in content.split('\n'):
         if islinenum(line):
-            if not checkblock(wasblock, nowblock):
-                fail(content)
+            if not checkblock(wasblock, nowblock, errors):
+                fail(errors)
             wasblock = []
             nowblock = []
         elif iswas(line):
