@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 source $TEST_ROOT/util.sh
 
 EXTENSIONS=(3o 3p)
@@ -22,7 +24,7 @@ for name in acidmwb.3i acidwmb; do
     cp ../data/cmp/acidmwb.3i $name
 
     bname="${name%.*}"
-    $EQ3NR cmp.d1 $name >/dev/null 2>&1
+    $EQ3NR cmp.d1 $name >/dev/null
     for ext in "${EXTENSIONS[@]}"; do
         if ! [ -f $bname.$ext ]; then
             failures=$((failures + 1))
@@ -37,7 +39,7 @@ for name in acidmwb.3i acidwmb; do
     cp ../data/cmp/cmp.d1 .
     cp ../data/cmp/acidmwb.3i local/$name
     bname="${name%.*}"
-    $EQ3NR cmp.d1 local/$name >/dev/null 2>&1
+    $EQ3NR cmp.d1 local/$name >/dev/null
     for ext in "${EXTENSIONS[@]}"; do
         if ! [ -f $bname.$ext ]; then
             failures=$((failures + 1))
@@ -61,7 +63,7 @@ for dir in data/*; do
 
         cd tmp
 
-        $EQ3NR $dataset.d1 $problem.3i >/dev/null 2>&1
+        $EQ3NR $dataset.d1 $problem.3i >/dev/null
         for file in "${EXTENSIONS[@]}"; do
             file=$problem.$ext
             if [ $file == "$problem.3o" ]; then

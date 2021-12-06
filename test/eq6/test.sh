@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 source $TEST_ROOT/util.sh
 
 EXTENSIONS=(6o 6p)
@@ -20,7 +22,7 @@ for name in crisqtz.6i crisqtz; do
     cp ../data/cmp/crisqtz.6i $name
 
     bname="${name%.*}"
-    $EQ6 cmp.d1 $name >/dev/null 2>&1
+    $EQ6 cmp.d1 $name >/dev/null
     for ext in "${EXTENSIONS[@]}"; do
         if ! [ -f $bname.$ext ]; then
             failures=$((failures + 1))
@@ -35,7 +37,7 @@ for name in crisqtz.6i crisqtz; do
     cp ../data/cmp/cmp.d1 .
     cp ../data/cmp/crisqtz.6i local/$name
     bname="${name%.*}"
-    $EQ6 cmp.d1 local/$name >/dev/null 2>&1
+    $EQ6 cmp.d1 local/$name >/dev/null
     for ext in "${EXTENSIONS[@]}"; do
         if ! [ -f $bname.$ext ]; then
             failures=$((failures + 1))
@@ -59,7 +61,7 @@ for dir in data/*; do
 
         cd tmp
 
-        $EQ6 $dataset.d1 $problem.6i >/dev/null 2>&1
+        $EQ6 $dataset.d1 $problem.6i >/dev/null
 
         for file in "${EXTENSIONS[@]}"; do
             if [ $file == "$problem.6o" ]; then

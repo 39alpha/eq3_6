@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 source $TEST_ROOT/util.sh
 
 EXTENSIONS=(po d1 d1f s)
@@ -20,7 +22,7 @@ for name in data0.1kb 1kb.d0 1kb; do
 
     cp ../data/1kb.d0 $name
     bname="${name%.*}"
-    $EQPT $name >/dev/null 2>&1
+    $EQPT $name >/dev/null
     for ext in "${EXTENSIONS[@]}"; do
         if ! [ -f $bname.$ext ]; then
             failures=$((failures + 1))
@@ -34,7 +36,7 @@ for name in data0.1kb 1kb.d0 1kb; do
     mkdir local
     cp ../data/1kb.d0 local/$name
     bname="${name%.*}"
-    $EQPT local/$name >/dev/null 2>&1
+    $EQPT local/$name >/dev/null
     for ext in "${EXTENSIONS[@]}"; do
         if ! [ -f $bname.$ext ]; then
             failures=$((failures + 1))
@@ -55,7 +57,7 @@ for data0 in data/*.d0; do
     cp $data0 tmp
 
     cd tmp
-    $EQPT $(basename $data0) >/dev/null 2>&1
+    $EQPT $(basename $data0) >/dev/null
     for ext in "${EXTENSIONS[@]}"; do
         file=$dataset.$ext
         groundtruth=$(realpath ../data/$dataset.$ext)
