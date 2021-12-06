@@ -14,13 +14,13 @@
                 temp = index(filename(slashtemp+1:), '/')
             end do
 
-            extindex = index(filename(slashindex:), '.')
+            extindex = index(filename(slashindex+1:), '.')
             if (extindex.eq.0) then
-                extindex = n + 2
+                extindex = n + 1
             else
                 extindex = slashindex + extindex
             end if
 
             indices(1) = slashindex + 1
-            indices(2) = extindex - 2
+            indices(2) = extindex - 1
       end subroutine
