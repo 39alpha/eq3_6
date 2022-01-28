@@ -925,7 +925,6 @@ c
      $ 5x,'ehmini= ',1pe12.5,4x,'ehmaxi= ',e12.5,/
      $ 5x,'o2mini= ',1pe12.5,4x,'o2maxi= ',e12.5,/
      $ 5x,'awmini= ',1pe12.5,4x,'awmaxi= ',e12.5,/
-     $ 5x,'awmini= ',1pe12.5,4x,'awmaxi= ',e12.5,/
      $ 5x,'kstpmx= ',i12)
 c
 c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
