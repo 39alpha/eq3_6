@@ -27,7 +27,7 @@ c-----------------------------------------------------------------------
 c     File path parameters
 c-----------------------------------------------------------------------
       integer :: numargs
-      character(100) :: temppath
+      character(1024) :: temppath
       character(:), allocatable :: data1path
       character(:), allocatable :: threeipath
       integer :: pathindices(2)
