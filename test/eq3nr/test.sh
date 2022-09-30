@@ -6,7 +6,7 @@ source $TEST_ROOT/util.sh
 
 EXTENSIONS=(3o 3p)
 
-EQ3NR=$(realpath -m $PROJECT_ROOT/bin/eq3nr)
+EQ3NR=$(realpath -m $PROJECT_ROOT/build/src/eq3nr/eq3nr)
 if ! [ -f $EQ3NR ]; then
     echo "eq3nr binary not found at $EQ3NR; perhaps you should run make?"
     exit -1

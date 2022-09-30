@@ -6,7 +6,7 @@ source $TEST_ROOT/util.sh
 
 EXTENSIONS=(po d1 d1f s)
 
-EQPT=$(realpath -m $PROJECT_ROOT/bin/eqpt)
+EQPT=$(realpath -m $PROJECT_ROOT/build/src/eqpt/eqpt)
 if ! [ -f $EQPT ]; then
     echo "eqpt binary not found at $EQPT; perhaps you should run make?"
     exit -1

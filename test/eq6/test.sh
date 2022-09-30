@@ -6,7 +6,7 @@ source $TEST_ROOT/util.sh
 
 EXTENSIONS=(6o 6p)
 
-EQ6=$(realpath -m $PROJECT_ROOT/bin/eq6)
+EQ6=$(realpath -m $PROJECT_ROOT/build/src/eq6/eq6)
 if ! [ -f $EQ6 ]; then
     echo "eq6 binary not found at $EQ6; perhaps you should run make?"
     exit -1

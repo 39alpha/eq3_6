@@ -34,3 +34,5 @@ bin/
 *.app
 
 tmp/
+
+build
