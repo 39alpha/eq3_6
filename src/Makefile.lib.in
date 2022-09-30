@@ -1,11 +1,14 @@
-all: $(TARGET)
+all: $(SHARED_TARGET) $(STATIC_TARGET)
 
-$(TARGET): $(OBJECTS)
-	ar rsc $(TARGET) $^
+$(SHARED_TARGET): $(OBJECTS)
+	gfortran -shared -fPIC $(FFLAGS) -o $@ $^
+
+$(STATIC_TARGET): $(OBJECTS)
+	ar rsc $(STATIC_TARGET) $^
 
 obj/%.o: src/%.f
 	@mkdir -p obj
-	gfortran $(FFLAGS) $(INCLUDES) -c -o $@ $^
+	gfortran -fPIC $(FFLAGS) $(INCLUDES) -c -o $@ $^
 
 clean:
 	@rm -rf obj
