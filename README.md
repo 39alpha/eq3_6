@@ -9,9 +9,10 @@ Further changes will be made to address bug fixes and enhancements.
 
 ## Installation
 ```bash
-$ make
-$ make test
-$ make install
+$ cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Release
+$ make -C build
+$ make -C test
+$ make -C build install
 ```
 This will build all of the executables and libraries and install the following directories:
 - `bin` - contains the executable files `eq3nr`, `eq6`, `eqpt`, `xcon3` and `xcon6`
@@ -22,18 +23,13 @@ This will build all of the executables and libraries and install the following d
 By default `make install` will place all installation files in `/usr/local`, e.g.
 `/usr/local/bin/eq3nr`. If you wish to change that, you may specify an installation prefix:
 ```bash
-$ make PREFIX=/opt/eq3_6 install
+$ cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/eq3_6
+$ make -C build
+$ make -C build install
 ```
 which will place the files in `/opt/eq3_6`, e.g. `/opt/eq3_6/bin/eq3nr`.
 
 Of course, if you don't have write access to the install location, you will need to `sudo`.
-
-By default, `make` will compile all of the targets with optimimization level-3 `-O3`. If you'd like
-to change the compilation flags, e.g. to enable debugging `-g` or change the level `-O0`, you can do
-that with the `FFLAGS` option:
-```bash
-$ make FFLAGS=-g
-```
 
 ## Dependencies
 
