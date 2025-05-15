@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  ubuntu-18-build:
-    runs-on: ubuntu-18.04
+  ubuntu-22-build:
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
     - name: make -j2
@@ -18,8 +18,8 @@ jobs:
     - name: make test
       run: make test
 
-  ubuntu-20-build:
-    runs-on: ubuntu-20.04
+  ubuntu-24-build:
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v2
     - name: make -j2
@@ -28,9 +28,22 @@ jobs:
       run: sudo make install
     - name: make test
       run: make test
-      
-  macos-10-build:
-    runs-on: macos-10.15
+
+  macos-13-build:
+    runs-on: macos-13
+    steps:
+    - uses: actions/checkout@v2
+    - name: brew reinstall gcc coreutils
+      run: brew reinstall gcc coreutils
+    - name: make -j4
+      run: make -j4
+    - name: make install
+      run: sudo make install
+    - name: make test
+      run: make test
+
+  macos-14-build:
+    runs-on: macos-14
     steps:
     - uses: actions/checkout@v2
     - name: brew reinstall gcc coreutils
@@ -41,9 +54,9 @@ jobs:
       run: sudo make install
     - name: make test
       run: make test
-      
-  macos-11-build:
-    runs-on: macos-11
+
+  macos-15-build:
+    runs-on: macos-15
     steps:
     - uses: actions/checkout@v2
     - name: brew reinstall gcc coreutils
