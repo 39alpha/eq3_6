@@ -4514,6 +4514,14 @@ c     to the PRS.
 c
       if (iopt(1).eq.2 .and. nord.gt.0)
      $ qftpr2 = .not.qdmpr1 .and. qdmpr2
+
+c
+c     Set upper limits on the scale factor for the next step. Here
+c     kly is a delay factor that comes into play when the step size
+c     has been cut recently in connection with a search.
+c
+      scalim = 10.
+      if (kly .gt. 0) scalim = 2.0
 c
 c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 c
@@ -4546,13 +4554,7 @@ c
       if (qzprnt .or. qftpr2 .or. qdump) go to 350
 c
       if (qzplot) go to 360
-c
-c     Set upper limits on the scale factor for the next step. Here
-c     kly is a delay factor that comes into play when the step size
-c     has been cut recently in connection with a search.
-c
-      scalim = 10.
-      if (kly .gt. 0) scalim = 2.0
+
       go to 100
 c
 c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
