@@ -137,66 +137,21 @@ c
 c
 c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 c
-      if (abs(stx - 1.0) .gt. eps100) go to 200
+c     Set coefficients/exponents based on the site-mixing parameter
 c
-c     Calculate the mole fractions for the case of an ideal molecular
-c     mixing solution.
-c
-      do ns = nr1,nr2
-        if (jsflag(ns) .le. 0) then
-          nrn1 = ndrsr(1,ns)
-          cx = (-1.0/cdrs(nrn1))
-          xbar(ns) = 0.0
-          do ns2 = nr1,nr2
-            if (ns2 .ne. ns) then
-              nrn1 = ndrsr(1,ns2)
-              cx2 = (-1.0/cdrs(nrn1))
-              xx = cx2*sidrsp(ns2)
-              xx = xx - cx*sidrsp(ns)
-              xbar(ns) = xbar(ns) + texp(xx)
-            endif
-          enddo
-          xbar(ns) = 1.0 / (1.0 + xbar(ns))
-          xbarlg(ns) = tlg(xbar(ns))
-        endif
-      end do
-c
-c     Calculate the activities, activity coefficients, affinities,
-c     and saturation indices for the case of an ideal molecular
-c     mixing solution.
-c
-      siph = 0.
-      do ns = nr1,nr2
-        if (jsflag(ns) .le. 0) then
-          nrn1 = ndrsr(1,ns)
-          cx = (-1.0/cdrs(nrn1))
-          sisppu = cx*sidrsp(ns)
-          xx = xbar(ns)
-          xl = xbarlg(ns)
-          sisp = sisppu - xl
-          acflg(ns) = 0.
-          act(ns) = xx
-          actlg(ns) = xl
-          sisp = sisp/cx
-          sidrsp(ns) = sisp
-          affs(ns) = afcnst*sisp
-          siph = siph + xx*sisp
-        endif
-      enddo
-      sidrph(np) = siph
-      affp(np) = afcnst*siph
-c
-      go to 999
+      if (abs(stx - 1.0) .gt. eps100) then
+        stxi = 1./bpx(1,nx)
+        stxm1 = stx - 1.0
+      else
+        stx = 1.0
+        stxi = 1.0
+        stxm1 = 0.0
+      endif
 c
 c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 c
-  200 continue
-c
-c     Calculate the mole fractions for the case of an ideal site-mxing
-c     solution.
-c
-      stxi = 1./bpx(1,nx)
-      stxm1 = stx - 1.0
+c     Calculate the mole fractions for the case of an ideal molecular-
+c     or site-mixing solution.
 c
       do ns = nr1,nr2
         if (jsflag(ns) .le. 0) then
@@ -217,9 +172,11 @@ c
         endif
       end do
 c
+c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+c
 c     Calculate the activities, activity coefficients, affinities,
-c     and saturation indices for the case of an ideal site-mixing
-c     solution.
+c     and saturation indices for the case of an ideal molecular- or
+c     site-mixing solution.
 c
       siph = 0.
       do ns = nr1,nr2
@@ -241,10 +198,5 @@ c
       enddo
       sidrph(np) = siph
       affp(np) = afcnst*siph
-c
-      go to 999
-c
-c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-c
-  999 continue
+
       end
