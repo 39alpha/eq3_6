@@ -162,7 +162,7 @@ c
       qgexbf = qgexsh .or. net.gt.0
       if (qgexbf) then
         write (newin,1603)
- 1603   format('|Advisory: at least one exchanger creation block'
+ 1603   format('|Advisory: at least one exchanger creation block',
      $ ' follows on this file.',t80,'|')
       else
         write (newin,1605)

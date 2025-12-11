@@ -159,7 +159,7 @@ c     Species to adjust for electrical balancing.
 c
       j2 = ilnobl(uebal)
       write (newin,1510) iebal3,uebal(1:j2)
- 1510 format(4x,'iebal3= 'i3,/5x,'uebal= ',a)
+ 1510 format(4x,'iebal3= ',i3,/5x,'uebal= ',a)
 c
 c* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 c
@@ -234,7 +234,7 @@ c
  1740     format(5x,'ugexj= ',a)
 c
           write (newin,1760) cgexj(je,ne),zgexj(je,ne)
- 1760     format(5x,'cgexj= '1pe12.5,5x,'zgexj= ',e12.5)
+ 1760     format(5x,'cgexj= ',1pe12.5,5x,'zgexj= ',e12.5)
 c
           write (newin,1810) ngexrt(je,ne)
  1810     format(4x,'ngexrt= ',i3)

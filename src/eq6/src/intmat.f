@@ -237,7 +237,7 @@ c
      $            uspb56(1:jlenb)
  1030             format(/' * Note - (EQ6/intmat) An implied',
      $            ' ordinary basis switch',/7x,'replacing ',a,
-     $            ' with ',a,' was found.',/7x,'An explicit switch'
+     $            ' with ',a,' was found.',/7x,'An explicit switch',
      $            ' will be constructed.')
 c
                   nn = nobswt + 1

@@ -207,7 +207,7 @@ c
           write (nttyo,1110) ux8a(1:j4),unam1(1:j2),
      $    unam1(1:j2),unam2(1:j3),ux8(1:j5)
  1110     format(/' * Note - (EQPT/rdpz2) A charge of ',a,
-     $    ' was incorrectly',/7x,'specifed for ',a,' in the'
+     $    ' was incorrectly',/7x,'specifed for ',a,' in the',
      $    ' data block for the pair',/7x,a,', ',a,'. The',
      $    ' correct charge is ',a,'.',/7x,'The incorrect',
      $    ' charge will be ignored.')

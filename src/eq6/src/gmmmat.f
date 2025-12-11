@@ -209,7 +209,7 @@ c
               write (noutpt,1000) ureac(nrc)(1:j2),ux8(1:j3)
               write (nttyo,1000) ureac(nrc)(1:j2),ux8(1:j3)
  1000         format(/' * Error - (EQ6/gmmmat) The reactant ',a,
-     $        ' has an',/7x,'unrecognized forward rate law code'
+     $        ' has an',/7x,'unrecognized forward rate law code',
      $        ' of ',a,'.')
               stop
             endif
@@ -314,7 +314,7 @@ c
               write (noutpt,1020) ureac(nrc)(1:j2),ux8(1:j3)
               write (nttyo,1020) ureac(nrc)(1:j2),ux8(1:j3)
  1020         format(/' * Error - (EQ6/gmmmat) The reactant ',a,
-     $        ' has an',/7x,'unrecognized backward rate law code'
+     $        ' has an',/7x,'unrecognized backward rate law code',
      $        ' of ',a,'.')
               stop
             endif

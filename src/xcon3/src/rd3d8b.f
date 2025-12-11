@@ -1381,7 +1381,7 @@ c
  1820             format(/' * Error - (XCON3/rd3d8b) Have exceeded the',
      $            ' maximum number of ',i3,/7x,'reactions for a site',
      $            ' belonging to a generic ion exchange',/7x,'phase',
-     $            ' while reading the data for site ',a,' of exchange'
+     $            ' while reading the data for site ',a,' of exchange',
      $            ' phase',/7x,a,'. Increase the dimensioning',
      $            ' parameter',/7x,'ietpar to at least ',i3,'.')
                   go to 990

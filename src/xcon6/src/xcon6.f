@@ -2176,7 +2176,7 @@ c
  1710     format(/" * Error - (XCON6/xcon6) Can't translate this",
      $    /7x,'version level 8.0 or higher input file to a lower',
      $    /7x,'version level because it contains ',i3,' directives',
-     $    /7x'for special basis switching.')
+     $    /7x,'for special basis switching.')
           nerr = nerr + 1
         endif
 c

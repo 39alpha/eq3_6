@@ -727,7 +727,7 @@ c
           uxo(j4:j4) = ')'
           j3 = ilnobl(uopttx(n))
           write (newin,1465) uxo(1:j4),uopttx(n)(1:j3)
- 1465     format('|',a,' - ',a,':'t80,'|')
+ 1465     format('|',a,' - ',a,':',t80,'|')
           i = iopt(n)
           do j = 1,jptxpa
             ij = ioptox(j,n)
