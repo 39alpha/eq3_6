@@ -81,10 +81,10 @@ c-----------------------------------------------------------------------
 c
 c     Local variable declarations.
 c
-      integer nactc,nrn1,nr1,nr2,ns,nx
+      integer nactc,nrn1,nr1,nr2,ns,nx,ns2
 c
       real*8 af,cx,si,siph,sisp,sisppu,stx,stxi,stxm1,xl,xqk,xqks,
-     $ xqksum,xx
+     $ xqksum,xx,cx2
 c
       real*8 texp,tlg
 c
@@ -142,28 +142,24 @@ c
 c     Calculate the mole fractions for the case of an ideal molecular
 c     mixing solution.
 c
-      xqksum = 0.
       do ns = nr1,nr2
         if (jsflag(ns) .le. 0) then
           nrn1 = ndrsr(1,ns)
           cx = (-1.0/cdrs(nrn1))
-          sisppu = cx*sidrsp(ns)
-          xqk = texp(sisppu)
-          xqksum = xqksum + xqk
+          xbar(ns) = 0.0
+          do ns2 = nr1,nr2
+            if (ns2 .ne. ns) then
+              nrn1 = ndrsr(1,ns2)
+              cx2 = (-1.0/cdrs(nrn1))
+              xx = cx2*sidrsp(ns2)
+              xx = xx - cx*sidrsp(ns)
+              xbar(ns) = xbar(ns) + texp(xx)
+            endif
+          enddo
+          xbar(ns) = 1.0 / (1.0 + xbar(ns))
+          xbarlg(ns) = tlg(xbar(ns))
         endif
-      enddo
-c
-      do ns = nr1,nr2
-        if (jsflag(ns) .le. 0) then
-          nrn1 = ndrsr(1,ns)
-          cx = (-1.0/cdrs(nrn1))
-          sisppu = cx*sidrsp(ns)
-          xqk = texp(sisppu)
-          xx = xqk/xqksum
-          xbar(ns) = xx
-          xbarlg(ns) = tlg(xx)
-        endif
-      enddo
+      end do
 c
 c     Calculate the activities, activity coefficients, affinities,
 c     and saturation indices for the case of an ideal molecular
@@ -202,30 +198,24 @@ c
       stxi = 1./bpx(1,nx)
       stxm1 = stx - 1.0
 c
-      xqksum = 0.
       do ns = nr1,nr2
         if (jsflag(ns) .le. 0) then
           nrn1 = ndrsr(1,ns)
           cx = (-1.0/cdrs(nrn1))
-          sisppu = cx*sidrsp(ns)
-          xqk = texp(sisppu)
-          xqks = xqk**stxi
-          xqksum = xqksum + xqks
+          xbar(ns) = 0.0
+          do ns2 = nr1,nr2
+            if (ns2 .ne. ns) then
+              nrn1 = ndrsr(1,ns2)
+              cx2 = (-1.0/cdrs(nrn1))
+              xx = cx2*stxi*sidrsp(ns2)
+              xx = xx - cx*stxi*sidrsp(ns)
+              xbar(ns) = xbar(ns) + texp(xx)
+            endif
+          enddo
+          xbar(ns) = 1.0 / (1.0 + xbar(ns))
+          xbarlg(ns) = tlg(xbar(ns))
         endif
-      enddo
-c
-      do ns = nr1,nr2
-        if (jsflag(ns) .le. 0) then
-          nrn1 = ndrsr(1,ns)
-          cx = (-1.0/cdrs(nrn1))
-          sisppu = cx*sidrsp(ns)
-          xqk = texp(sisppu)
-          xqks = xqk**stxi
-          xx = xqks/xqksum
-          xbar(ns) = xx
-          xbarlg(ns) = tlg(xx)
-        endif
-      enddo
+      end do
 c
 c     Calculate the activities, activity coefficients, affinities,
 c     and saturation indices for the case of an ideal site-mixing
