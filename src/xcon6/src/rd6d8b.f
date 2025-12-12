@@ -821,8 +821,9 @@ c
 c
       if (icount.eq.0 .or. jpress.lt.0) then
         write (nttyo,1030)
- 1030   format(/' * Warning - (XCON6/rd6d8b) No option was selected for',
-     $  ' the pressure.',/7x,'The pressure will be set to be in',
+
+ 1030   format(/' * Warning - (XCON6/rd6d8b) No option was selected',
+     $  ' for the pressure.',/7x,'The pressure will be set to be in',
      $  ' accord with the',/7x,'data file reference pressure curve.')
         jpress = 0
         pressb = 0.
