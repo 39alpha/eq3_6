@@ -21,7 +21,7 @@ clean:
 	+make -C src/xcon6 clean
 
 test:
-	make -C test
+	./test/bats/bin/bats -T test
 
 install:
 	mkdir -p $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include
