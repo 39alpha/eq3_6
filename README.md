@@ -1,4 +1,7 @@
 # eq3_6
+
+[![Eq3/6](https://github.com/39alpha/eq3_6/actions/workflows/build.yml/badge.svg)](https://github.com/39alpha/eq3_6/actions/workflows/build.yml)
+
 A Software Package for Geochemical Modeling
 
 This is a slightly updated version of
