@@ -1,13 +1,8 @@
 setup() {
-  load 'test_helper/bats-support/load'
-  load 'test_helper/bats-assert/load'
-  load 'test_helper/bats-file/load'
+  load 'test_helper/common-setup'
+  _common_setup
 
-  DIR="$(cd "${BATS_TEST_DIRNAME}/.." >/dev/null 2>&1 && pwd)"
-
-  cd "${BATS_TEST_TMPDIR}" || return 1
-
-  cp "${DIR}/bin/eq3nr" .
+  cp "${TEST_TMPDIR}/bin/eq3nr" .
 }
 
 @test "Binary Exists" {
@@ -39,13 +34,17 @@ setup() {
 }
 
 check_output() {
-  cp "${BATS_TEST_DIRNAME}/data/eq3nr/${1}/${1}.d1" .
-  cp "${BATS_TEST_DIRNAME}/data/eq3nr/${1}/${2}.3i" .
+  local -r DIR="${1}"
+  local -r PROBLEM="${2}"
+  shift 2
+
+  cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${DIR}.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${PROBLEM}.3i" .
   for ext in 3o 3p; do
-    cp "${BATS_TEST_DIRNAME}/data/eq3nr/${1}/${2}.${ext}" "expected.${ext}"
+    cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
-  run ./eq3nr "${1}.d1" "${2}.3i"
+  run ./eq3nr "${DIR}.d1" "${PROBLEM}.3i"
 
   sed -E -i '/^\s*(Start|End|Run)\s+time/d' ./*.3o
   sed -E -i '/^\s*Run\s+[0-9]+/d' ./*.3o
@@ -58,7 +57,8 @@ check_output() {
   # for ext in 3i 3o 3p; do
   #   assert_files_equal "${2}.${ext}" "expected.${ext}"
   # done
-  assert_files_equal "${2}.3p" "expected.3p"
+
+  assert_files_almost_same "${PROBLEM}.3p" "expected.3p" "${@}"
 }
 
 @test "Correct output (cmp/acidmwb)" {
@@ -185,8 +185,7 @@ check_output() {
   check_output cmp swv2sx
 }
 @test "Correct output (fmt/c4pgwbN2)" {
-  skip
-  check_output fmt c4pgwbN2
+  check_output fmt c4pgwbN2 1e-8
 }
 @test "Correct output (fmt/deadseaw)" {
   check_output fmt deadseaw
@@ -360,8 +359,7 @@ check_output() {
   check_output ypf Sylcacl2
 }
 @test "Correct output (ypf/arcmir)" {
-  skip
-  check_output ypf arcmir
+  check_output ypf arcmir 1e-15
 }
 @test "Correct output (ypf/arcsyl)" {
   check_output ypf arcsyl

@@ -1,13 +1,8 @@
 setup() {
-  load 'test_helper/bats-support/load'
-  load 'test_helper/bats-assert/load'
-  load 'test_helper/bats-file/load'
+  load 'test_helper/common-setup'
+  _common_setup
 
-  DIR="$(cd "${BATS_TEST_DIRNAME}/.." >/dev/null 2>&1 && pwd)"
-
-  cd "${BATS_TEST_TMPDIR}" || return 1
-
-  cp "${DIR}/bin/eqpt" .
+  cp "${TEST_TMPDIR}/bin/eqpt" .
 }
 
 @test "Binary Exists" {

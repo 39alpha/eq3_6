@@ -2,6 +2,8 @@ PREFIX:=/usr/local
 export FFLAGS:=-O3
 export BATS_FLAGS:=-T
 export TEST_TARGET:=test
+export TEST_RTOL:=0
+export TEST_ATOL:=0
 
 all:
 	@mkdir -p bin lib
@@ -23,7 +25,7 @@ clean:
 	+make -C src/xcon6 clean
 
 test:
-	./test/bats/bin/bats $(BATS_FLAGS) $(TEST_TARGET)
+	TEST_RTOL=$(TEST_RTOL) TEST_ATOL=$(TEST_ATOL) ./test/bats/bin/bats $(BATS_FLAGS) $(TEST_TARGET)
 
 install:
 	mkdir -p $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include
