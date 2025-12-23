@@ -49,16 +49,9 @@ check_output() {
   sed -E -i '/^\s*(Start|End|Run)\s+time/d' ./*.3o
   sed -E -i '/^\s*Run\s+[0-9]+/d' ./*.3o
 
-  # DGM: For the moment, we are only going to check the 3p file. The problem is
-  #      we can't do a simple comparison between the files (e.g. diff) because
-  #      that doesn't account for small variations due to machine architecture
-  #      and differences that have no real effect on the results (-0 vs 0...).
-  # 
-  # for ext in 3i 3o 3p; do
-  #   assert_files_equal "${2}.${ext}" "expected.${ext}"
-  # done
-
-  assert_files_almost_same "${PROBLEM}.3p" "expected.3p" "${@}"
+  for ext in 3o 3p; do
+    assert_files_almost_same "expected.${ext}" "${PROBLEM}.${ext}" "${@}"
+  done
 }
 
 @test "Correct output (cmp/acidmwb)" {

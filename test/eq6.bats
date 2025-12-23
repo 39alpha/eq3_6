@@ -49,18 +49,18 @@ check_output() {
 
   run ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
 
-  sed -E -i '/^\s*(Start|End|Run)\s+time/d' ./*.6o
-  sed -E -i '/^\s*Run\s+[0-9]+/d' ./*.6o
+  # DGM: We are not going to check the 6o files for a couple of reasons:
+  #        1. They can differ in the number of iterations taken. While that
+  #           matters, it also kinda doesn't...
+  #        2. We are checking the pickup, 6tx and csv, which have all of the
+  #           the majority of the computed values of note.
+  #
+  # sed -E -i '/^\s*(Start|End|Run)\s+time/d' ./*.6o
+  # sed -E -i '/^\s*Run\s+[0-9]+/d' ./*.6o
 
-  # DGM: For the moment, we are only going to check the 3p file. The problem is
-  #      we can't do a simple comparison between the files (e.g. diff) because
-  #      that doesn't account for small variations due to machine architecture
-  #      and differences that have no real effect on the results (-0 vs 0...).
-  # 
-  # for ext in 3i 3o 3p; do
-  #   assert_files_equal "${2}.${ext}" "expected.${ext}"
-  # done
-  assert_files_almost_same "${PROBLEM}.6p" "expected.6p" "${@}"
+  for ext in 6p 6tx csv; do
+    assert_files_almost_same  "expected.${ext}" "${PROBLEM}.${ext}" "${@}"
+  done
 }
 
 @test "Correct output (cmp/crisqtz)" {
