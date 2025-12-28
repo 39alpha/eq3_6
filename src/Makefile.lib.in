@@ -3,7 +3,7 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS)
 	ar rsc $(TARGET) $^
 
-obj/%.o: src/%.f
+obj/%.o: src/%.f90
 	@mkdir -p obj
 	gfortran $(FFLAGS) $(INCLUDES) -c -o $@ $^
 
