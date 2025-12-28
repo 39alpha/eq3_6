@@ -55,8 +55,8 @@ check_output() {
   #        2. We are checking the pickup, 6tx and csv, which have all of the
   #           the majority of the computed values of note.
   #
-  # sed -E -i '/^\s*(Start|End|Run)\s+time/d' ./*.6o
-  # sed -E -i '/^\s*Run\s+[0-9]+/d' ./*.6o
+  # perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
+  # perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
 
   for ext in 6p 6tx csv; do
     assert_files_almost_same  "expected.${ext}" "${PROBLEM}.${ext}" "${@}"

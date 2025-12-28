@@ -46,8 +46,8 @@ check_output() {
 
   run ./eq3nr "${DIR}.d1" "${PROBLEM}.3i"
 
-  sed -E -i '/^\s*(Start|End|Run)\s+time/d' ./*.3o
-  sed -E -i '/^\s*Run\s+[0-9]+/d' ./*.3o
+  perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.3o
+  perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.3o
 
   for ext in 3o 3p; do
     assert_files_almost_same "expected.${ext}" "${PROBLEM}.${ext}" "${@}"

@@ -44,8 +44,8 @@ check_output() {
 
   run ./eqpt "${1}.d0"
 
-  sed -E -i '/^\s*(Start|End|Run)\s+time/d' ./*.po
-  sed -E -i '/^\s*Run\s+[0-9]+/d' ./*.po
+  perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.po
+  perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.po
 
   for ext in d1 d1f s po; do
     assert_files_equal "${1}.${ext}" "expected.${ext}"
