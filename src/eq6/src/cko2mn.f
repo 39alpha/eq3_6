@@ -83,7 +83,7 @@ c
           write (noutpt,1000)
  1000     format(/3x,'A scan for where the log fO2 reaches the',
      $    ' requested minimum value',/3x,'has failed. Dropping to the',
-     4    ' minimum step size.')
+     $    ' minimum step size.')
         endif
         delxi = dlxmin
         go to 990
