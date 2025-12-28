@@ -3,7 +3,7 @@ all: $(TARGET)
 $(TARGET): $(MODOBJECTS) $(OBJECTS) $(LIBRARIES)
 	gfortran $(FFLAGS) -Jmod -o $(TARGET) $^
 
-obj/%.o: src/%.f $(MODOBJECTS)
+obj/%.o: src/%.f90 $(MODOBJECTS)
 	@mkdir -p mod obj
 	gfortran $(FFLAGS) -Jmod -c $(INCLUDES) -o $@ $<
 
