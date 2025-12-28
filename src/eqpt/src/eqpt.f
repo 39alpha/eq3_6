@@ -459,7 +459,7 @@ c     elements on the data file.
 c
       call gnenb(ipbt_asv,ikt_asv,jpdblo,jpfc_asv,nap_asv,
      $ nat_asv,nazt_asv,nbt_asv,nct_asv,ndat0s,ngt_asv,nlt_asv,
-     4 nmt_asv,noutpt,npt_asv,npx2_asv,npx3_asv,nsb,nst_asv,nttyo,
+     $ nmt_asv,noutpt,npt_asv,npx2_asv,npx3_asv,nsb,nst_asv,nttyo,
      $ nxt_asv,uakey)
 c
       nbt = nbt_asv
