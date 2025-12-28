@@ -693,7 +693,7 @@ data uoprox(5,4) /'Include all species'/
 data ioprox(5,4) /1/
 
 ! iopr(5):
-data uoprtx(5) /'Print a Table of Aqueous Species/H+ ActivityRatios'/
+data uoprtx(5) /'Print a Table of Aqueous Species/H+ Activity Ratios'/
 data uoprcx(5) /'EQ3NR, EQ6'/
 
 data uoprox(1,5) /"Don't print"/
@@ -973,9 +973,9 @@ data uodbox(2,3) /'Print summary information'/
 data iodbox(2,3) /1/
 data uodbox(3,3) /'Print detailed information (including the beta and del vectors)'/
 data iodbox(3,3) /2/
-data uodbox(4,3) /'Print more detailed information (includingmatrix equations)'/
+data uodbox(4,3) /'Print more detailed information (including matrix equations)'/
 data iodbox(4,3) /3/
-data uodbox(5,3) /'Print most detailed information (includingactivity coefficients)'/
+data uodbox(5,3) /'Print most detailed information (including activity coefficients)'/
 data iodbox(5,3) /4/
 
 ! iodb(4):
@@ -988,9 +988,9 @@ data uodbox(2,4) /'Print summary information'/
 data iodbox(2,4) /1/
 data uodbox(3,4) /'Print detailed information (including the beta and del vectors)'/
 data iodbox(3,4) /2/
-data uodbox(4,4) /'Print more detailed information (includingthe Jacobian)'/
+data uodbox(4,4) /'Print more detailed information (including the Jacobian)'/
 data iodbox(4,4) /3/
-data uodbox(5,4) /'Print most detailed information (includingactivity coefficients)'/
+data uodbox(5,4) /'Print most detailed information (including activity coefficients)'/
 data iodbox(5,4) /4/
 
 ! iodb(5):
