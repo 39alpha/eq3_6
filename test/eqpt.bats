@@ -42,7 +42,7 @@ check_output() {
     cp "${BATS_TEST_DIRNAME}/data/eqpt/${1}.${ext}" "expected.${ext}"
   done
 
-  run ./eqpt "${1}.d0"
+  ./eqpt "${1}.d0"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.po
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.po
