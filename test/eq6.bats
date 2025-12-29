@@ -47,7 +47,7 @@ check_output() {
     cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
-  run ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
+  ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
 
   # DGM: We are not going to check the 6o files for a couple of reasons:
   #        1. They can differ in the number of iterations taken. While that
