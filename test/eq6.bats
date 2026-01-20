@@ -2,6 +2,7 @@ setup() {
   load 'test_helper/common-setup'
   _common_setup
 
+  cp "${TEST_TMPDIR}/bin/eqpt" .
   cp "${TEST_TMPDIR}/bin/eq6" .
 }
 
@@ -41,12 +42,13 @@ check_output() {
   local -r PROBLEM="${2}"
   shift 2
 
-  cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${DIR}.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/${DIR}.d0" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.6i" .
   for ext in 6i 6o 6p; do
     cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
+  ./eqpt "${DIR}.d0"
   ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
 
   # DGM: We are not going to check the 6o files for a couple of reasons:
@@ -54,7 +56,7 @@ check_output() {
   #           matters, it also kinda doesn't...
   #        2. We are checking the pickup, 6tx and csv, which have all of the
   #           the majority of the computed values of note.
-  #
+
   # perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
   # perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
 

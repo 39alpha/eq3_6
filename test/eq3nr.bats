@@ -2,6 +2,7 @@ setup() {
   load 'test_helper/common-setup'
   _common_setup
 
+  cp "${TEST_TMPDIR}/bin/eqpt" .
   cp "${TEST_TMPDIR}/bin/eq3nr" .
 }
 
@@ -38,12 +39,13 @@ check_output() {
   local -r PROBLEM="${2}"
   shift 2
 
-  cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${DIR}.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/${DIR}.d0" .
   cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${PROBLEM}.3i" .
   for ext in 3o 3p; do
     cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
+  ./eqpt ${DIR}.d0
   ./eq3nr "${DIR}.d1" "${PROBLEM}.3i"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.3o
