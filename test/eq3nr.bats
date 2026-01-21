@@ -46,8 +46,8 @@ check_output() {
     cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
-  ./eqpt "${DIR}.d0"
-  ./eq3nr "${DIR}.d1" "${PROBLEM}.3i"
+  run ./eqpt "${DIR}.d0"
+  run ./eq3nr "${DIR}.d1" "${PROBLEM}.3i"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.3o
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.3o
