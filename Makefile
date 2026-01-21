@@ -1,5 +1,5 @@
 PREFIX:=/usr/local
-export FFLAGS:=-O3
+export FFLAGS:=-O3 -ffp-contract=off
 export BATS_FLAGS:=-T
 export TEST_TARGET:=test
 
