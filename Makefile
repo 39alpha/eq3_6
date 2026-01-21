@@ -27,6 +27,9 @@ clean:
 test:
 	TEST_RTOL=$(TEST_RTOL) TEST_ATOL=$(TEST_ATOL) ./test/bats/bin/bats $(BATS_FLAGS) $(TEST_TARGET)
 
+snapshot:
+	./test/bats/bin/bats $(BATS_FLAGS) test/data/snapshots
+
 install:
 	mkdir -p $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include
 	mkdir -p $(PREFIX)/share/eq3_6

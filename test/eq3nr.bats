@@ -11,7 +11,7 @@ setup() {
 }
 
 @test "Correctly replaces extension" {
-  cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/cmp.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/acidmwb.3i" .
   ./eq3nr cmp.d1 acidmwb.3i
   assert_exists acidmwb.3o
@@ -19,7 +19,7 @@ setup() {
 }
 
 @test "Actual extension is not relevant" {
-  cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/cmp.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/acidmwb.3i" acidmwb.prob
   ./eq3nr cmp.d1 acidmwb.prob
   assert_exists acidmwb.3o
@@ -27,7 +27,7 @@ setup() {
 }
 
 @test "Handles no extension" {
-  cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/cmp.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/acidmwb.3i" acidmwb
   ./eq3nr cmp.d1 acidmwb
   assert_exists acidmwb.3o
@@ -37,6 +37,7 @@ setup() {
 check_output() {
   local -r DIR="${1}"
   local -r PROBLEM="${2}"
+  local -r SNAPSHOT_DIR="$(_snapshot_dir eq3nr)"
   shift 2
 
   cp "${BATS_TEST_DIRNAME}/data/eqpt/${DIR}.d0" .
@@ -45,7 +46,7 @@ check_output() {
     cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
-  ./eqpt ${DIR}.d0
+  ./eqpt "${DIR}.d0"
   ./eq3nr "${DIR}.d1" "${PROBLEM}.3i"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.3o
@@ -53,6 +54,10 @@ check_output() {
 
   for ext in 3o 3p; do
     assert_files_almost_same "expected.${ext}" "${PROBLEM}.${ext}" "${@}"
+  done
+
+  for ext in 3o 3p; do
+    assert_files_equal "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
   done
 }
 

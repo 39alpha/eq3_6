@@ -11,7 +11,7 @@ setup() {
 }
 
 @test "Correctly replaces extension" {
-  cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/cmp.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/crisqtz.6i" .
   ./eq6 cmp.d1 crisqtz.6i
   assert_exists crisqtz.6o
@@ -20,7 +20,7 @@ setup() {
 }
 
 @test "Actual extension is not relevant" {
-  cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/cmp.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/crisqtz.6i" crisqtz.prob
   ./eq6 cmp.d1 crisqtz.prob
   assert_exists crisqtz.6o
@@ -29,7 +29,7 @@ setup() {
 }
 
 @test "Handles no extension" {
-  cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/cmp.d1" .
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/crisqtz.6i" crisqtz
   ./eq6 cmp.d1 crisqtz
   assert_exists crisqtz.6o
@@ -40,6 +40,7 @@ setup() {
 check_output() {
   local -r DIR="${1}"
   local -r PROBLEM="${2}"
+  local -r SNAPSHOT_DIR="$(_snapshot_dir eq6)"
   shift 2
 
   cp "${BATS_TEST_DIRNAME}/data/eqpt/${DIR}.d0" .
@@ -51,17 +52,20 @@ check_output() {
   ./eqpt "${DIR}.d0"
   ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
 
+  perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
+  perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
+
   # DGM: We are not going to check the 6o files for a couple of reasons:
   #        1. They can differ in the number of iterations taken. While that
   #           matters, it also kinda doesn't...
   #        2. We are checking the pickup, 6tx and csv, which have all of the
   #           the majority of the computed values of note.
-
-  # perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
-  # perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
-
-  for ext in 6p 6tx csv; do
+  for ext in 6p 6tx; do
     assert_files_almost_same  "expected.${ext}" "${PROBLEM}.${ext}" "${@}"
+  done
+
+  for ext in 6o 6p 6tx; do
+    assert_files_equal "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
   done
 }
 

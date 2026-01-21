@@ -1,0 +1,213 @@
+* Start of the bottom half of the input file                                   *
+*------------------------------------------------------------------------------*
+| Secondary Title        | (utitl2(n))                                         |
+|------------------------------------------------------------------------------|
+|EQ3NR input file name= c4pgwb.3i                                              |
+|Description= "Initialize CRA-2004 PABC GWB brine"                             |
+|Version level= 8.0                                                            |
+|Revised 12/30/08    Revisor= T.J. Wolery                                      |
+|This is part of the WIPP EQ3/6-FMT comparison study.                          |
+|                                                                              |
+|***** Revised variant of the Mfix input, based on the FMT .inguess file ***** |
+|      M1: use the Mfix input with Harvie (1981), Aphi = 0.392, and            |
+|      beta(1)(NaCl) = 0.2664                                                  |
+|      Adjust the Cl- to satisfy charge balance                                |
+|***************************************************************************** |
+|                                                                              |
+|  Intialize CRA-2004 PABC GWB brine, containing organics and trace            |
+|actinides (Brush, 2005). The corresponding FMT input files are                |
+|fmt_cra1bc_gwb_hmag_orgs_007.in and fmt_cra1bc_gwb_hmag_orgs_007.inguess.     |
+|Salt minerals and actinide solids will be reacted with this initial brine     |
+|using the EQ6 input file c4pgwb.6i.                                           |
+|                                                                              |
+| The original specified mole totals for hydrogen and oxygen cannot be         |
+|used here. The amount of water in the present EQ3NR calcuation is fixed at    |
+|exactly 1 kg. The amount in the corresponding FMT calculation may vary        |
+|slightly from that, owing to approximations in preparing the FMT input        |
+|(e.g., mole totals for hydrogen and oxygen).                                  |
+|                                                                              |
+|  The switch iopg(2) is set to -1 so that the input pH is interpreted as      |
+|the Pitzer pH. Reported ionic activities and activity coefficients are        |
+|therefore also on the "Pitzer" scale. The input pH value is essentially       |
+|a starting estimate. The H+ concentration is adjusted to satisfy              |
+|electrical balance.                                                           |
+|                                                                              |
+|  The density and TDS inputs used here are from the "c4pgwb" worksheet of     |
+|an example of the spreadsheet density calculator, specifically the file       |
+|Conc_density_calcs_EV2008.xls. They are used here to convert input            |
+|molarities to molalities. Note that EQ3/6 will compute the density and TDS    |
+|for output using the WIPP brine density model (the model used in FMT).        |
+|                                                                              |
+|  The molarity/molality ratio also from that spreadsheet is used as an input. |
+|This affects the brine mass that is fed to EQ6 (via the EQ3NR pickup file).   |
+|This is scaled to match a volume of 1 L, using the molarity/molality ratio    |
+|as the scaling factor (scamas).                                               |
+|                                                                              |
+|  ClO4-, O2(aq), and H2(aq) are suppressed in this problem. ClO4- is treated  |
+|as a pseudo-element on the original FMT database, and thus cannot form from   |
+|Cl and O in the FMT calculations. The original FMT database lacks O2(aq)      |
+|and H2(aq).                                                                   |
+|                                                                              |
+|  The following minerals are suppressed: Aragonite, Calcite, Gaylussite,      |
+|Magnesite, Nesquehonite, Pirssonite, Dolomite, and Hydromagnesite4323.        |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|Brush, L. 2005. Results of Calculations of Actinide Solubilities for the      |
+|  WIPP Performance-Assesment Baseline Calculuations. Analysis report,         |
+|  May 18, 2005. Carlsbad, NM: Sandia National Laboraties. ERMS 539800.        |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (usbsw(1,n))       |
+|   with |None                                            | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Original temperature (C) | 2.50000E+01| (tempci)                              |
+|------------------------------------------------------------------------------|
+|Original pressure (bars) | 1.01320E+00| (pressi)                              |
+|------------------------------------------------------------------------------|
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: no exchanger creation blocks follow on this file.                   |
+|Option: on further processing (writing a pickup file or running XCON6 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|ClO4-                                           |Suppress        | 0.00000E+00|
+|O2(aq)                                          |Suppress        | 0.00000E+00|
+|H2(aq)                                          |Suppress        | 0.00000E+00|
+|Aragonite                                       |Suppress        | 0.00000E+00|
+|Calcite                                         |Suppress        | 0.00000E+00|
+|Gaylussite                                      |Suppress        | 0.00000E+00|
+|Magnesite                                       |Suppress        | 0.00000E+00|
+|Nesquehonite                                    |Suppress        | 0.00000E+00|
+|Pirssonite                                      |Suppress        | 0.00000E+00|
+|Dolomite                                        |Suppress        | 0.00000E+00|
+|Hydromagnesite4323                              |Suppress        | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [ ] ( 0) The B-dot equation                                                 |
+|  [x] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [x] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [ ] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Matrix Index Limits                                                           |
+|------------------------------------------------------------------------------|
+|No. of chem. elements   |   15| (kct)                                         |
+|No. of basis species    |   19| (kbt)                                         |
+|Index of last pure min. |   19| (kmt)                                         |
+|Index of last sol-sol.  |   19| (kxt)                                         |
+|Matrix size             |   19| (kdim)                                        |
+|PRS data flag           |    0| (kprs)                                        |
+|------------------------------------------------------------------------------|
+|Mass Balance Species (Matrix Row Variables)     |Units/Constraint| --         |
+| (ubmtbi(n))                                    |(ujf6(jflgi(n)))| --         |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        |Moles           | --         |
+|Am+++                   Aqueous solution        |Moles           | --         |
+|B(OH)4-                 Aqueous solution        |Moles           | --         |
+|Br-                     Aqueous solution        |Moles           | --         |
+|HCO3-                   Aqueous solution        |Moles           | --         |
+|Ca++                    Aqueous solution        |Moles           | --         |
+|Cl-                     Aqueous solution        |Moles           | --         |
+|H+                      Aqueous solution        |Moles           | --         |
+|K+                      Aqueous solution        |Moles           | --         |
+|Mg++                    Aqueous solution        |Moles           | --         |
+|Na+                     Aqueous solution        |Moles           | --         |
+|NpO2+                   Aqueous solution        |Moles           | --         |
+|SO4--                   Aqueous solution        |Moles           | --         |
+|Th++++                  Aqueous solution        |Moles           | --         |
+|O2(g)                   Aqueous solution        |Moles           | --         |
+|Acetate-                Aqueous solution        |Make non-basis  | --         |
+|Citrate---              Aqueous solution        |Make non-basis  | --         |
+|EDTA----                Aqueous solution        |Make non-basis  | --         |
+|Oxalate--               Aqueous solution        |Make non-basis  | --         |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf6(jflgi(n))) are:                                    *
+*    Moles               Make non-basis                                        *
+*------------------------------------------------------------------------------*
+|Mass Balance Totals (moles)                                                   |
+|------------------------------------------------------------------------------|
+|Basis species (info. only)      |Equilibrium System    |Aqueous Solution      |
+| (ubmtbi(n))                    | (mtbi(n))            | (mtbaqi(n))          |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous | 5.533436987481473E+01| 5.533436987481473E+01|
+|Am+++                   Aqueous | 1.000000020388154E-18| 1.000000020388154E-18|
+|B(OH)4-                 Aqueous | 1.740649992785701E-01| 1.740649992785701E-01|
+|Br-                     Aqueous | 2.919800000000001E-02| 2.919800000000001E-02|
+|HCO3-                   Aqueous | 1.000000003266426E-18| 1.000000003266426E-18|
+|Ca++                    Aqueous | 8.044700001365084E-04| 8.044700001365084E-04|
+|Cl-                     Aqueous | 6.187646820271024E+00| 6.187646820271024E+00|
+|H+                      Aqueous | 2.010014556256557E-01| 2.010014556256557E-01|
+|K+                      Aqueous | 5.143330000000000E-01| 5.143330000000000E-01|
+|Mg++                    Aqueous | 1.123000000328329E+00| 1.123000000328329E+00|
+|Na+                     Aqueous | 3.908030000000000E+00| 3.908030000000000E+00|
+|NpO2+                   Aqueous | 1.000000013225490E-18| 1.000000013225490E-18|
+|SO4--                   Aqueous | 1.965250001154318E-01| 1.965250001154318E-01|
+|Th++++                  Aqueous | 1.000000107101051E-18| 1.000000107101051E-18|
+|O2(g)                   Aqueous | 0.000000000000000E+00| 0.000000000000000E+00|
+|Acetate-                Aqueous | 1.190380000133629E-02| 1.190380000133629E-02|
+|Citrate---              Aqueous | 9.051370394367821E-04| 9.051370394367821E-04|
+|EDTA----                Aqueous | 9.141211330584701E-06| 9.141211330584701E-06|
+|Oxalate--               Aqueous | 3.617890034046637E-02| 3.617890034046637E-02|
+|Electrical imbalance            |-1.437729935105381E-10|-1.437729935105381E-10|
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Matrix Column Variables and Values                                            |
+|------------------------------------------------------------------------------|
+|Basis species (uzveci(n))                       |Log moles (zvclgi(n)) | --   |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        | 1.744358983526984E+00| --   |
+|Am+++                   Aqueous solution        |-1.959634529576122E+01| --   |
+|B(OH)4-                 Aqueous solution        |-7.154918176773023E+00| --   |
+|Br-                     Aqueous solution        |-1.534646895767724E+00| --   |
+|HCO3-                   Aqueous solution        |-2.164761519779731E+01| --   |
+|Ca++                    Aqueous solution        |-3.100970082803681E+00| --   |
+|Cl-                     Aqueous solution        | 7.915255169884203E-01| --   |
+|H+                      Aqueous solution        |-2.479170000000000E+00| --   |
+|K+                      Aqueous solution        |-2.887556101177083E-01| --   |
+|Mg++                    Aqueous solution        | 3.786845357065404E-02| --   |
+|Na+                     Aqueous solution        | 5.919578889219783E-01| --   |
+|NpO2+                   Aqueous solution        |-1.858670703475503E+01| --   |
+|SO4--                   Aqueous solution        |-7.177341043671861E-01| --   |
+|Th++++                  Aqueous solution        |-2.508688528324786E+01| --   |
+|O2(g)                   Aqueous solution        |-7.000000000000000E-01| --   |
+|Acetate-                Aqueous solution        |-4.380524266537809E+00| --   |
+|Citrate---              Aqueous solution        |-7.011846600020475E+00| --   |
+|EDTA----                Aqueous solution        |-1.332129358708127E+01| --   |
+|Oxalate--               Aqueous solution        |-3.480144482666185E+00| --   |
+|------------------------------------------------------------------------------|
+|Phases and Species in the PRS                                                 |
+|------------------------------------------------------------------------------|
+|Phase           |None                    | (uprphi(n))                        |
+|------------------------------------------------------------------------------|
+|->|No. of Moles    | 0.000000000000000E+00| (mprphi(n))                       |
+|------------------------------------------------------------------------------|
+|--->|Species                 |No. of Moles          | --                      |
+|--->| (uprspi(i,n))          | (mprspi(i,n))        | --                      |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.000000000000000E+00| --                      |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|
