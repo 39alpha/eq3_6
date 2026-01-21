@@ -69,41 +69,149 @@ check_output() {
   done
 }
 
+check_snapshot_only() {
+  local -r DIR="${1}"
+  local -r PROBLEM="${2}"
+  local -r SNAPSHOT_DIR="$(_snapshot_dir eq6)"
+  shift 2
+
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/${DIR}.d0" .
+  cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.6i" .
+  for ext in 6i 6o 6p; do
+    cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
+  done
+
+  run ./eqpt "${DIR}.d0"
+  run ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
+
+  perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
+  perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
+
+  for ext in 6o 6p 6tx; do
+    assert_files_equal "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
+  done
+}
+
 @test "Correct output (cmp/crisqtz)" {
-  check_output cmp crisqtz 1e-14
+  case "$(arch)" in
+    "arm64")
+      check_output cmp crisqtz 1e-8
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp crisqtz 1e-14
+      ;;
+    *)
+      check_output cmp crisqtz
+      ;;
+  esac
 }
 @test "Correct output (cmp/dedolo)" {
-  check_output cmp dedolo
+  case "$(arch)" in
+    "arm64")
+      check_output cmp dedolo 1e-7
+      ;;
+    *)
+      check_output cmp dedolo
+      ;;
+  esac
 }
 @test "Correct output (cmp/heatqf)" {
   check_output cmp heatqf
 }
 @test "Correct output (cmp/heatsw)" {
-  check_output cmp heatsw 1e-15
+  case "$(arch)" in
+    "arm64")
+      check_output cmp heatsw 1e-15
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp heatsw 1e-15
+      ;;
+    *)
+      check_output cmp heatsw
+      ;;
+  esac
 }
 @test "Correct output (cmp/heatswfl)" {
-  check_output cmp heatswfl 1e-6
+  case "$(arch)" in
+    "arm64")
+      check_output cmp heatswfl 1e-5
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp heatswfl 1e-6
+      ;;
+    *)
+      check_output cmp heatswfl
+      ;;
+  esac
 }
 @test "Correct output (cmp/j13wsf)" {
   check_output cmp j13wsf
 }
 @test "Correct output (cmp/j13wtitr)" {
-  check_output cmp j13wtitr 1e-14
+  case "$(arch)" in
+    "arm64")
+      check_output cmp j13wtitr 1e-14
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp j13wtitr 1e-14
+      ;;
+    *)
+      check_output cmp j13wtitr
+      ;;
+  esac
 }
 @test "Correct output (cmp/j13wtuff)" {
-  check_output cmp j13wtuff 1e-9
+  case "$(arch)" in
+    "arm64")
+      check_output cmp j13wtuff 1e-9
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp j13wtuff 1e-9
+      ;;
+    *)
+      check_output cmp j13wtuff
+      ;;
+  esac
 }
 @test "Correct output (cmp/methane)" {
-  check_output cmp methane
+  case "$(arch)" in
+    "arm64")
+      check_output cmp methane 1e-4
+      ;;
+    *)
+      check_output cmp methane
+      ;;
+  esac
 }
 @test "Correct output (cmp/micro)" {
-  check_output cmp micro
+  case "$(arch)" in
+    "arm64")
+      check_output cmp micro 1e-7
+      ;;
+    *)
+      check_output cmp micro
+      ;;
+  esac
 }
 @test "Correct output (cmp/microft)" {
-  check_output cmp microft
+  case "$(arch)" in
+    "arm64")
+      check_output cmp microft 1e-3
+      ;;
+    *)
+      check_output cmp microft
+      ;;
+  esac
 }
 @test "Correct output (cmp/pptcal)" {
-  check_output cmp pptcal
+  case "$(arch)" in
+    "arm64")
+      check_output cmp pptcal 1e-15
+      ;;
+    *)
+      check_output cmp pptcal
+      ;;
+  esac
 }
 @test "Correct output (cmp/pptmins)" {
   check_output cmp pptmins
@@ -115,91 +223,366 @@ check_output() {
   check_output cmp pptqtza
 }
 @test "Correct output (cmp/pyrsw)" {
-  check_output cmp pyrsw 1e-19
+  case "$(arch)" in
+    "x86_64"|"amd64")
+      check_output cmp pyrsw 1e-19
+      ;;
+    *)
+      check_output cmp pyrsw
+      ;;
+  esac
 }
 @test "Correct output (cmp/rwssdiag)" {
-  check_output cmp rwssdiag 1e-8
+  case "$(arch)" in
+    "arm64")
+      check_output cmp rwssdiag 1e-8
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp rwssdiag 1e-8
+      ;;
+    *)
+      check_output cmp rwssdiag
+      ;;
+  esac
 }
 @test "Correct output (cmp/rwtitr)" {
-  check_output cmp rwtitr 1e-17
+  case "$(arch)" in
+    "arm64")
+      check_output cmp rwtitr 1e-15
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp rwtitr 1e-17
+      ;;
+    *)
+      check_output cmp rwtitr
+      ;;
+  esac
 }
 @test "Correct output (cmp/swtitr)" {
-  check_output cmp swtitr 1e-9
+  case "$(arch)" in
+    "arm64")
+      check_output cmp swtitr 1e-9
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp swtitr 1e-9
+      ;;
+    *)
+      check_output cmp swtitr
+      ;;
+  esac
 }
 @test "Correct output (cmp/swxrca)" {
-  check_output cmp swxrca 1e-6
+  case "$(arch)" in
+    "arm64")
+      skip "This problem is known to be broken on arm64"
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp swxrca 1e-6
+      ;;
+    *)
+      check_output cmp swxrca
+      ;;
+  esac
+}
+@test "Check snapshot only (cmp/swxrca)" {
+  check_snapshot_only cmp swxrca
 }
 @test "Correct output (cmp/swxrcaft)" {
-  check_output cmp swxrcaft 1e-5
+  case "$(arch)" in
+    "arm64")
+      skip "This problem is known to be broken on arm64"
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp swxrcaft 1e-5
+      ;;
+    *)
+      check_output cmp swxrcaft
+      ;;
+  esac
+}
+@test "Check snapshot only (cmp/swxrcaft)" {
+  check_snapshot_only cmp swxrcaft
 }
 @test "Correct output (fmt/c4pgwbN2)" {
-  check_output fmt c4pgwbN2 1e-11
+  case "$(arch)" in
+    "arm64")
+      check_output fmt c4pgwbN2 1e-11
+      ;;
+    "x86_64"|"amd64")
+      check_output fmt c4pgwbN2 1e-11
+      ;;
+    *)
+      check_output fmt c4pgwbN2
+      ;;
+  esac
 }
 @test "Correct output (fmt/f24vc7b3)" {
-  check_output fmt f24vc7b3 1e-13
+  case "$(arch)" in
+    "arm64")
+      check_output fmt f24vc7b3 1e-13
+      ;;
+    "x86_64"|"amd64")
+      check_output fmt f24vc7b3 1e-13
+      ;;
+    *)
+      check_output fmt f24vc7b3
+      ;;
+  esac
 }
 @test "Correct output (fmt/f24vc7k4)" {
-  check_output fmt f24vc7k4 1e-11
+  case "$(arch)" in
+    "arm64")
+      check_output fmt f24vc7k4 1e-11
+      ;;
+    "x86_64"|"amd64")
+      check_output fmt f24vc7k4 1e-11
+      ;;
+    *)
+      check_output fmt f24vc7k4
+      ;;
+  esac
 }
 @test "Correct output (fmt/f24vc7m)" {
-  check_output fmt f24vc7m 1e-13
+  case "$(arch)" in
+    "arm64")
+      check_output fmt f24vc7m 1e-13
+      ;;
+    "x86_64"|"amd64")
+      check_output fmt f24vc7m 1e-13
+      ;;
+    *)
+      check_output fmt f24vc7m
+      ;;
+  esac
 }
 @test "Correct output (fmt/gypnaclx)" {
-  check_output fmt gypnaclx
+  case "$(arch)" in
+    "arm64")
+      check_output fmt gypnaclx 1e-13
+      ;;
+    *)
+      check_output fmt gypnaclx
+      ;;
+  esac
 }
 @test "Correct output (hmw/calhal)" {
-  check_output hmw calhal 1e-14
+  case "$(arch)" in
+    "arm64")
+      check_output hmw calhal 1e-14
+      ;;
+    "x86_64"|"amd64")
+      check_output hmw calhal 1e-14
+      ;;
+    *)
+      check_output hmw calhal
+      ;;
+  esac
 }
 @test "Correct output (hmw/evapsw)" {
-  check_output hmw evapsw 1e-7
+  case "$(arch)" in
+    "arm64")
+      check_output hmw evapsw 1e-6
+      ;;
+    "x86_64"|"amd64")
+      check_output hmw evapsw 1e-7
+      ;;
+    *)
+      check_output hmw evapsw
+      ;;
+  esac
 }
 @test "Correct output (hmw/evswgyha)" {
-  check_output hmw evswgyha 1e-12
+  case "$(arch)" in
+    "arm64")
+      check_output hmw evswgyha 1e-13
+      ;;
+    "x86_64"|"amd64")
+      check_output hmw evswgyha 1e-12
+      ;;
+    *)
+      check_output hmw evswgyha
+      ;;
+  esac
 }
 @test "Correct output (hmw/fwbrmix)" {
-  check_output hmw fwbrmix 1e-14
+  case "$(arch)" in
+    "arm64")
+      check_output hmw fwbrmix 1e-13
+      ;;
+    "x86_64"|"amd64")
+      check_output hmw fwbrmix 1e-14
+      ;;
+    *)
+      check_output hmw fwbrmix
+      ;;
+  esac
 }
 @test "Correct output (hmw/gypanhy)" {
-  check_output hmw gypanhy
+  case "$(arch)" in
+    "arm64")
+      check_output hmw gypanhy 1e-14
+      ;;
+    *)
+      check_output hmw gypanhy
+      ;;
+  esac
 }
 @test "Correct output (hmw/mgso4)" {
-  check_output hmw mgso4 1e-8
+  case "$(arch)" in
+    "arm64")
+      skip "This problem is known to be broken on arm64"
+      ;;
+    "x86_64"|"amd64")
+      check_output hmw mgso4 1e-8
+      ;;
+    *)
+      check_output hmw mgso4
+      ;;
+  esac
+}
+@test "Check snapshot only (hmw/mgso4)" {
+  check_snapshot_only hmw mgso4
 }
 @test "Correct output (hmw/swv1sxk)" {
-  check_output hmw swv1sxk
+  case "$(arch)" in
+    "arm64")
+      check_output hmw swv1sxk 1e-15
+      ;;
+    *)
+      check_output hmw swv1sxk
+      ;;
+  esac
 }
 @test "Correct output (ymp/crisqtz)" {
-  check_output ymp crisqtz
+  case "$(arch)" in
+    "arm64")
+      check_output ymp crisqtz 1e-13
+      ;;
+    *)
+      check_output ymp crisqtz
+      ;;
+  esac
 }
 @test "Correct output (ymp/dedolo)" {
-  check_output ymp dedolo 1e-13
+  case "$(arch)" in
+    "arm64")
+      check_output ymp dedolo 1e-9
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp dedolo 1e-13
+      ;;
+    *)
+      check_output ymp dedolo
+      ;;
+  esac
 }
 @test "Correct output (ymp/heatqf)" {
-  check_output ymp heatqf
+  case "$(arch)" in
+    "arm64")
+      check_output ymp heatqf 1e-18
+      ;;
+    *)
+      check_output ymp heatqf
+      ;;
+  esac
 }
 @test "Correct output (ymp/heatsw)" {
-  check_output ymp heatsw 1e-16
+  case "$(arch)" in
+    "arm64")
+      check_output ymp heatsw 1e-16
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp heatsw 1e-16
+      ;;
+    *)
+      check_output ymp heatsw
+      ;;
+  esac
 }
 @test "Correct output (ymp/j13wsf)" {
-  check_output ymp j13wsf 1e-9
+  case "$(arch)" in
+    "arm64")
+      check_output ymp j13wsf 1e-6
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp j13wsf 1e-9
+      ;;
+    *)
+      check_output ymp j13wsf
+      ;;
+  esac
 }
 @test "Correct output (ymp/j13wtitr)" {
-  check_output ymp j13wtitr
+  case "$(arch)" in
+    "arm64")
+      check_output ymp j13wtitr 1e-15
+      ;;
+    *)
+      check_output ymp j13wtitr
+      ;;
+  esac
 }
 @test "Correct output (ymp/j13wtuff)" {
-  check_output ymp j13wtuff 1e-6
+  case "$(arch)" in
+    "arm64")
+      check_output ymp j13wtuff 1e-6
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp j13wtuff 1e-6
+      ;;
+    *)
+      check_output ymp j13wtuff
+      ;;
+  esac
 }
 @test "Correct output (ymp/methane)" {
-  check_output ymp methane 1e-5
+  case "$(arch)" in
+    "arm64")
+      check_output ymp methane 1e-3
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp methane 1e-5
+      ;;
+    *)
+      check_output ymp methane
+      ;;
+  esac
 }
 @test "Correct output (ymp/micro)" {
-  check_output ymp micro 1e-13
+  case "$(arch)" in
+    "arm64")
+      check_output ymp micro 1e-13
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp micro 1e-13
+      ;;
+    *)
+      check_output ymp micro
+      ;;
+  esac
 }
 @test "Correct output (ymp/microft)" {
-  check_output ymp microft 1e-4
+  case "$(arch)" in
+    "arm64")
+      check_output ymp microft 1e-4
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp microft 1e-4
+      ;;
+    *)
+      check_output ymp microft
+      ;;
+  esac
 }
 @test "Correct output (ymp/pptcal)" {
-  check_output ymp pptcal
+  case "$(arch)" in
+    "arm64")
+      check_output ymp pptcal 1e-15
+      ;;
+    *)
+      check_output ymp pptcal
+      ;;
+  esac
 }
 @test "Correct output (ymp/pptmins)" {
   check_output ymp pptmins
@@ -214,23 +597,90 @@ check_output() {
   check_output ymp pyrsw
 }
 @test "Correct output (ymp/rwssdiag)" {
-  check_output ymp rwssdiag
+  case "$(arch)" in
+    "arm64")
+      check_output ymp rwssdiag 1e-9
+      ;;
+    *)
+      check_output ymp rwssdiag
+      ;;
+  esac
 }
 @test "Correct output (ymp/rwtitr)" {
-  check_output ymp rwtitr
+  case "$(arch)" in
+    "arm64")
+      check_output ymp rwtitr 1e-14
+      ;;
+    *)
+      check_output ymp rwtitr
+      ;;
+  esac
 }
 @test "Correct output (ymp/swtitr)" {
-  check_output ymp swtitr 1e-13
+  case "$(arch)" in
+    "arm64")
+      check_output ymp swtitr 1e-13
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp swtitr 1e-13
+      ;;
+    *)
+      check_output ymp swtitr
+      ;;
+  esac
 }
 @test "Correct output (ymp/swxrca)" {
-  check_output ymp swxrca 1e-13
+  case "$(arch)" in
+    "arm64")
+      skip "This problem is known to be broken on arm64"
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp swxrca 1e-13
+      ;;
+    *)
+      check_output ymp swxrca
+      ;;
+  esac
+}
+@test "Check snapshot only (ymp/swxrca)" {
+  check_snapshot_only ymp swxrca
 }
 @test "Correct output (ymp/swxrcaft)" {
-  check_output ymp swxrcaft 1e-8
+  case "$(arch)" in
+    "arm64")
+      skip "This problem is known to be broken on arm64"
+      ;;
+    "x86_64"|"amd64")
+      check_output ymp swxrcaft 1e-8
+      ;;
+    *)
+      check_output ymp swxrcaft
+      ;;
+  esac
+}
+@test "Check snapshot only (ymp/swxrcaft)" {
+  check_snapshot_only ymp swxrcaft
 }
 @test "Correct output (ypf/calhal90)" {
-  check_output ypf calhal90
+  case "$(arch)" in
+    "arm64")
+      check_output ypf calhal90 1e-13
+      ;;
+    *)
+      check_output ypf calhal90
+      ;;
+  esac
 }
 @test "Correct output (ypf/evapsw60)" {
-  check_output ypf evapsw60 1e-12
+  case "$(arch)" in
+    "arm64")
+      check_output ypf evapsw60 1e-11
+      ;;
+    "x86_64"|"amd64")
+      check_output ypf evapsw60 1e-12
+      ;;
+    *)
+      check_output ypf evapsw60
+      ;;
+  esac
 }

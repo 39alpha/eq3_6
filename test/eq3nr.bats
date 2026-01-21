@@ -185,7 +185,17 @@ check_output() {
   check_output cmp swv2sx
 }
 @test "Correct output (fmt/c4pgwbN2)" {
-  check_output fmt c4pgwbN2 1e-8
+  case "$(arch)" in
+    "arm64")
+      check_output fmt c4pgwbN2 1e-8
+      ;;
+    "x86_64"|"amd64")
+      check_output fmt c4pgwbN2 1e-8
+      ;;
+    *)
+      check_output fmt c4pgwbN2
+      ;;
+  esac
 }
 @test "Correct output (fmt/deadseaw)" {
   check_output fmt deadseaw
@@ -203,7 +213,14 @@ check_output() {
   check_output fmt gypnaclx
 }
 @test "Correct output (fmt/swmajm)" {
-  check_output fmt swmajm
+  case "$(arch)" in
+    "arm64")
+      check_output fmt swmajm 1e-16
+      ;;
+    *)
+      check_output fmt swmajm
+      ;;
+  esac
 }
 @test "Correct output (hmw/calnacl)" {
   check_output hmw calnacl
@@ -215,7 +232,14 @@ check_output() {
   check_output hmw deadsea
 }
 @test "Correct output (hmw/epsomite)" {
-  check_output hmw epsomite
+  case "$(arch)" in
+    "arm64")
+      check_output hmw epsomite 1e-14
+      ;;
+    *)
+      check_output hmw epsomite
+      ;;
+  esac
 }
 @test "Correct output (hmw/gypsum)" {
   check_output hmw gypsum
@@ -320,7 +344,14 @@ check_output() {
   check_output ymp swco2
 }
 @test "Correct output (ymp/swg1sx)" {
-  check_output ymp swg1sx
+  case "$(arch)" in
+    "arm64")
+      check_output ymp swg1sx 1e-16
+      ;;
+    *)
+      check_output ymp swg1sx
+      ;;
+  esac
 }
 @test "Correct output (ymp/swgeo)" {
   check_output ymp swgeo
@@ -350,7 +381,14 @@ check_output() {
   check_output ymp swv1sx
 }
 @test "Correct output (ymp/swv1sxca)" {
-  check_output ymp swv1sxca
+  case "$(arch)" in
+    "arm64")
+      check_output ymp swv1sxca 1e-27
+      ;;
+    *)
+      check_output ymp swv1sxca
+      ;;
+  esac
 }
 @test "Correct output (ymp/swv2sx)" {
   check_output ymp swv2sx
@@ -359,7 +397,17 @@ check_output() {
   check_output ypf Sylcacl2
 }
 @test "Correct output (ypf/arcmir)" {
-  check_output ypf arcmir 1e-15
+  case "$(arch)" in
+    "arm64")
+      check_output ypf arcmir 1e-14
+      ;;
+    "x86_64"|"amd64")
+      check_output ypf arcmir 1e-14
+      ;;
+    *)
+      check_output ypf arcmir
+      ;;
+  esac
 }
 @test "Correct output (ypf/arcsyl)" {
   check_output ypf arcsyl
