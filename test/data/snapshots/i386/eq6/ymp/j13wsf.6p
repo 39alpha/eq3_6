@@ -1,0 +1,674 @@
+|------------------------------------------------------------------------------|
+| Main Title             | (utitl1(n))                                         |
+|------------------------------------------------------------------------------|
+|Note: This main title is a carry-over from a previous run.                    |
+|EQ6 input file name= j13wsf.6i                                                |
+|Description= "Reaction of J-13 well water with spent nuclear fuel"            |
+|Version level= 8.0                                                            |
+|Revised 02/18/97    Revisor= T.J. Wolery                                      |
+|This is part of the EQ3/6 Test Case Library                                   |
+|                                                                              |
+|  React spent nuclear fuel with J-13 well water. The O2 and CO2 fugacities    |
+|are fixed at atmospheric values using nffg options. The spent nuclear fuel    |
+|is treated as a special reactant. One "mole" is equivalent to 100 grams. The  |
+|spent fuel composition corresponds to average PWR spent fuel with burnup of   |
+|33,000 MWd/MTIHM at 1,000 years This was computed by Henry Shaw (LLNL,        |
+|1/12/89) as a correction to the data published in Table 2 of Bruton and Shaw  |
+|(1988).                                                                       |
+|                                                                              |
+|  Purpose: to test the ability of the code to model reaction in a large,      |
+|complex system, whose components exhibit a variety of chemical behaviors.     |
+|Results may be roughly compared with those reported by Bruton and Shaw        |
+|(1988); changes in thermodynamic data preclude meaningful exact comparison.   |
+|                                                                              |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|Bruton, C.J., and Shaw, H.F., 1988, Geochemical simulation of reaction        |
+|  between spent fuel waste form and J-13 water at 25C and 90C: In Apted,      |
+|  M.J., and Westerman, R.E., editors, Scientific Basis for Nuclear Waste      |
+|  Management XI, Materials Research Society Symposium Proceedings, v. 112,    |
+|  Materials Research Society, Pittsburgh, Pennsylvania, p. 485-494.           |
+|------------------------------------------------------------------------------|
+|Temperature option (jtemp):                                                   |
+|  [x] ( 0) Constant temperature:                                              |
+|             Value (C)         | 2.50000E+01| (tempcb)                        |
+|  [ ] ( 1) Linear tracking in Xi:                                             |
+|             Base Value (C)    | 0.00000E+00| (tempcb)                        |
+|             Derivative        | 0.00000E+00| (ttk(1))                        |
+|  [ ] ( 2) Linear tracking in time:                                           |
+|             Base Value (C)    | 0.00000E+00| (tempcb)                        |
+|             Derivative        | 0.00000E+00| (ttk(1))                        |
+|  [ ] ( 3) Fluid mixing tracking (fluid 2 = special reactant):                |
+|             T of fluid 1 (C)  | 0.00000E+00| (tempcb)                        |
+|             T of fluid 2 (C)  | 0.00000E+00| (ttk(2))                        |
+|             Mass ratio factor | 0.00000E+00| (ttk(1))                        |
+|------------------------------------------------------------------------------|
+|Pressure option (jpress):                                                     |
+|  [x] ( 0) Follow the data file reference pressure curve                      |
+|  [ ] ( 1) Follow the 1.013-bar/steam-saturation curve                        |
+|  [ ] ( 2) Constant pressure:                                                 |
+|             Value (bars)      | 0.00000E+00| (pressb)                        |
+|  [ ] ( 3) Linear tracking in Xi:                                             |
+|             Base Value (bars) | 0.00000E+00| (pressb)                        |
+|             Derivative        | 0.00000E+00| (ptk(1))                        |
+|  [ ] ( 4) Linear tracking in time:                                           |
+|             Base Value (bars) | 0.00000E+00| (pressb)                        |
+|             Derivative        | 0.00000E+00| (ptk(1))                        |
+|------------------------------------------------------------------------------|
+|Reactants (Irreversible Reactions) | (nrct)                                   |
+|------------------------------------------------------------------------------|
+|Reactant        |Spent Fuel              | (ureac(n))                         |
+|------------------------------------------------------------------------------|
+|->|Type         |Special reactant        | (urcjco(jcode(n)))                 |
+|------------------------------------------------------------------------------|
+|->|Status       |Reacting                | (urcjre(jreac(n)))                 |
+|------------------------------------------------------------------------------|
+|->|Amount remaining (moles) | 9.99998E-01| (morr(n))                          |
+|------------------------------------------------------------------------------|
+|->|Amount destroyed (moles) | 1.92886E-06| (modr(n))                          |
+|------------------------------------------------------------------------------|
+|->|Molar volume (cm3/mol)   | 0.00000E+00| (vreac(n))                         |
+|------------------------------------------------------------------------------|
+|->|Composition                                                                |
+|------------------------------------------------------------------------------|
+|--->|Element |Stoich. Number        | (this is a table header)                |
+|------------------------------------------------------------------------------|
+|--->|C       | 1.312200000000000E-03| (uesri(i,n), cesri(i,n))                |
+|--->|Ca      | 4.280000000000000E-09| (uesri(i,n), cesri(i,n))                |
+|--->|Ni      | 2.094000000000000E-02| (uesri(i,n), cesri(i,n))                |
+|--->|Se      | 2.415000000000000E-05| (uesri(i,n), cesri(i,n))                |
+|--->|Tc      | 7.750000000000000E-04| (uesri(i,n), cesri(i,n))                |
+|--->|Sn      | 3.173600000000000E-03| (uesri(i,n), cesri(i,n))                |
+|--->|I       | 1.500000000000000E-04| (uesri(i,n), cesri(i,n))                |
+|--->|Cs      | 1.140000000000000E-03| (uesri(i,n), cesri(i,n))                |
+|--->|Pb      | 1.830000000000000E-11| (uesri(i,n), cesri(i,n))                |
+|--->|Ra      | 1.400000000000000E-09| (uesri(i,n), cesri(i,n))                |
+|--->|Th      | 3.710000000000000E-07| (uesri(i,n), cesri(i,n))                |
+|--->|U       | 4.054300000000000E-01| (uesri(i,n), cesri(i,n))                |
+|--->|Np      | 5.980000000000000E-04| (uesri(i,n), cesri(i,n))                |
+|--->|Pu      | 3.142000000000000E-03| (uesri(i,n), cesri(i,n))                |
+|--->|Am      | 1.402000000000000E-04| (uesri(i,n), cesri(i,n))                |
+|--->|O       | 8.518600000000000E-01| (uesri(i,n), cesri(i,n))                |
+|------------------------------------------------------------------------------|
+|->|Reaction                                                                   |
+|------------------------------------------------------------------------------|
+|--->|Species                 |Reaction Coefficient  | (this is a table header)|
+|------------------------------------------------------------------------------|
+|--->|Spent Fuel              |-1.000000000000000E+00| (ubsri(i,n), cbsri(i,n))|
+|--->|HCO3-                   | 1.312200000000000E-03| (ubsri(i,n), cbsri(i,n))|
+|--->|Ca++                    | 4.280000000000000E-09| (ubsri(i,n), cbsri(i,n))|
+|--->|Ni++                    | 2.094000000000000E-02| (ubsri(i,n), cbsri(i,n))|
+|--->|SeO3--                  | 2.415000000000000E-05| (ubsri(i,n), cbsri(i,n))|
+|--->|TcO4-                   | 7.750000000000000E-04| (ubsri(i,n), cbsri(i,n))|
+|--->|Sn++                    | 3.173600000000000E-03| (ubsri(i,n), cbsri(i,n))|
+|--->|I-                      | 1.500000000000000E-04| (ubsri(i,n), cbsri(i,n))|
+|--->|Cs+                     | 1.140000000000000E-03| (ubsri(i,n), cbsri(i,n))|
+|--->|Pb++                    | 1.830000000000000E-11| (ubsri(i,n), cbsri(i,n))|
+|--->|Ra++                    | 1.400000000000000E-09| (ubsri(i,n), cbsri(i,n))|
+|--->|Th++++                  | 3.710000000000000E-07| (ubsri(i,n), cbsri(i,n))|
+|--->|UO2++                   | 4.054300000000000E-01| (ubsri(i,n), cbsri(i,n))|
+|--->|Np++++                  | 5.980000000000000E-04| (ubsri(i,n), cbsri(i,n))|
+|--->|Pu++++                  | 3.142000000000000E-03| (ubsri(i,n), cbsri(i,n))|
+|--->|Am+++                   | 1.402000000000000E-04| (ubsri(i,n), cbsri(i,n))|
+|--->|H+                      |-8.733237953966000E-01| (ubsri(i,n), cbsri(i,n))|
+|--->|H2O                     | 4.360057976983000E-01| (ubsri(i,n), cbsri(i,n))|
+|--->|O2(g)                   |-2.010574238491500E-01| (ubsri(i,n), cbsri(i,n))|
+|------------------------------------------------------------------------------|
+|->|Surface area option (nsk(n)):                                              |
+|->|  [x] ( 0) Constant surface area:                                          |
+|->|             Value (cm2)       | 0.00000E+00| (sfcar(n))                   |
+|->|  [ ] ( 1) Constant specific surface area:                                 |
+|->|             Value (cm2/g)     | 0.00000E+00| (ssfcar(n))                  |
+|->|  [ ] ( 2) n**2/3 growth law- current surface area:                        |
+|->|             Value (cm2)       | 0.00000E+00| (sfcar(n))                   |
+|------------------------------------------------------------------------------|
+|->|Surface area factor      | 1.00000E+00| (fkrc(n))                          |
+|------------------------------------------------------------------------------|
+|->|Forward rate law          |Relative rate equation  | (urcnrk(nrk(1,n)))    |
+|------------------------------------------------------------------------------|
+|--->|dXi(n)/dXi (mol/mol)      | 1.00000E+00| (rkb(1,1,n))                    |
+|------------------------------------------------------------------------------|
+|--->|d2Xi(n)/dXi2 (mol/mol2)   | 0.00000E+00| (rkb(2,1,n))                    |
+|------------------------------------------------------------------------------|
+|--->|d3Xi(n)/dXi3 (mol/mol3)   | 0.00000E+00| (rkb(3,1,n))                    |
+|------------------------------------------------------------------------------|
+|->|Backward rate law         |Partial equilibrium     | (urcnrk(nrk(2,n)))    |
+|------------------------------------------------------------------------------|
+* Valid reactant type strings (urcjco(jcode(n))) are:                          *
+*    Pure mineral                Solid solution                                *
+*    Special reactant            Aqueous species                               *
+*    Gas species                 Generic ion exchanger                         *
+*------------------------------------------------------------------------------*
+* Valid reactant status strings (urcjre(jreac(n))) are:                        *
+*    Saturated, reacting         Reacting                                      *
+*    Exhausted                   Saturated, not reacting                       *
+*------------------------------------------------------------------------------*
+* Valid forward rate law strings (urcnrk(nrk(1,n))) are:                       *
+*    Use backward rate law       Relative rate equation                        *
+*    TST rate equation           Linear rate equation                          *
+*------------------------------------------------------------------------------*
+* Valid backward rate law strings (urcnrk(nrk(2,n))) are:                      *
+*    Use forward rate law        Partial equilibrium                           *
+*    Relative rate equation      TST rate equation                             *
+*    Linear rate equation                                                      *
+*------------------------------------------------------------------------------*
+|Starting, minimum, and maximum values of key run parameters.                  |
+|------------------------------------------------------------------------------|
+|Starting Xi value        | 1.92886E-06| (xistti)                              |
+|------------------------------------------------------------------------------|
+|Maximum Xi value         | 1.00000E+00| (ximaxi)                              |
+|------------------------------------------------------------------------------|
+|Starting time (seconds)  | 0.00000E+00| (tistti)                              |
+|------------------------------------------------------------------------------|
+|Maximum time (seconds)   | 1.00000E+38| (timmxi)                              |
+|------------------------------------------------------------------------------|
+|Minimum value of pH      |-1.00000E+38| (phmini)                              |
+|------------------------------------------------------------------------------|
+|Maximum value of pH      | 1.00000E+38| (phmaxi)                              |
+|------------------------------------------------------------------------------|
+|Minimum value of Eh (v)  |-1.00000E+38| (ehmini)                              |
+|------------------------------------------------------------------------------|
+|Maximum value of Eh (v)  | 1.00000E+38| (ehmaxi)                              |
+|------------------------------------------------------------------------------|
+|Minimum value of log fO2 |-1.00000E+38| (o2mini)                              |
+|------------------------------------------------------------------------------|
+|Maximum value of log fO2 | 1.00000E+38| (o2maxi)                              |
+|------------------------------------------------------------------------------|
+|Minimum value of aw      |-1.00000E+38| (awmini)                              |
+|------------------------------------------------------------------------------|
+|Maximum value of aw      | 1.00000E+38| (awmaxi)                              |
+|------------------------------------------------------------------------------|
+|Maximum number of steps  |          10| (kstpmx)                              |
+|------------------------------------------------------------------------------|
+|Print interval parameters.                                                    |
+|------------------------------------------------------------------------------|
+|Xi print interval        | 1.00000E-01| (dlxprn)                              |
+|------------------------------------------------------------------------------|
+|Log Xi print interval    | 1.00000E+38| (dlxprl)                              |
+|------------------------------------------------------------------------------|
+|Time print interval      | 1.00000E+38| (dltprn)                              |
+|------------------------------------------------------------------------------|
+|Log time print interval  | 1.00000E+38| (dltprl)                              |
+|------------------------------------------------------------------------------|
+|pH print interval        | 1.00000E+38| (dlhprn)                              |
+|------------------------------------------------------------------------------|
+|Eh (v) print interval    | 1.00000E+38| (dleprn)                              |
+|------------------------------------------------------------------------------|
+|Log fO2 print interval   | 1.00000E+38| (dloprn)                              |
+|------------------------------------------------------------------------------|
+|aw print interval        | 1.00000E+38| (dlaprn)                              |
+|------------------------------------------------------------------------------|
+|Steps print interval     |         100| (ksppmx)                              |
+|------------------------------------------------------------------------------|
+|Plot interval parameters.                                                     |
+|------------------------------------------------------------------------------|
+|Xi plot interval         | 1.00000E+38| (dlxplo)                              |
+|------------------------------------------------------------------------------|
+|Log Xi plot interval     | 1.00000E+38| (dlxpll)                              |
+|------------------------------------------------------------------------------|
+|Time plot interval       | 1.00000E+38| (dltplo)                              |
+|------------------------------------------------------------------------------|
+|Log time plot interval   | 1.00000E+38| (dltpll)                              |
+|------------------------------------------------------------------------------|
+|pH plot interval         | 1.00000E+38| (dlhplo)                              |
+|------------------------------------------------------------------------------|
+|Eh (v) plot interval     | 1.00000E+38| (dleplo)                              |
+|------------------------------------------------------------------------------|
+|Log fO2 plot interval    | 1.00000E+38| (dloplo)                              |
+|------------------------------------------------------------------------------|
+|aw plot interval         | 1.00000E+38| (dlaplo)                              |
+|------------------------------------------------------------------------------|
+|Steps plot interval      |       10000| (ksplmx)                              |
+|------------------------------------------------------------------------------|
+|Iopt Model Option Switches ("( 0)" marks default choices)                     |
+|------------------------------------------------------------------------------|
+|iopt(1) - Physical System Model Selection:                                    |
+|  [x] ( 0) Closed system                                                      |
+|  [ ] ( 1) Titration system                                                   |
+|  [ ] ( 2) Fluid-centered flow-through open system                            |
+|------------------------------------------------------------------------------|
+|iopt(2) - Kinetic Mode Selection:                                             |
+|  [x] ( 0) Reaction progress mode (arbitrary kinetics)                        |
+|  [ ] ( 1) Reaction progress/time mode (true kinetics)                        |
+|------------------------------------------------------------------------------|
+|iopt(3) - Phase Boundary Searches:                                            |
+|  [x] ( 0) Search for phase boundaries and constrain the step size to match   |
+|  [ ] ( 1) Search for phase boundaries and print their locations              |
+|  [ ] ( 2) Don't search for phase boundaries                                  |
+|------------------------------------------------------------------------------|
+|iopt(4) - Solid Solutions:                                                    |
+|  [x] ( 0) Ignore                                                             |
+|  [ ] ( 1) Permit                                                             |
+|------------------------------------------------------------------------------|
+|iopt(5) - Clear the ES Solids Read from the INPUT File:                       |
+|  [x] ( 0) Don't do it                                                        |
+|  [ ] ( 1) Do it                                                              |
+|------------------------------------------------------------------------------|
+|iopt(6) - Clear the ES Solids at the Initial Value of Reaction Progress:      |
+|  [x] ( 0) Don't do it                                                        |
+|  [ ] ( 1) Do it                                                              |
+|------------------------------------------------------------------------------|
+|iopt(7) - Clear the ES Solids at the End of the Run:                          |
+|  [x] ( 0) Don't do it                                                        |
+|  [ ] ( 1) Do it                                                              |
+|------------------------------------------------------------------------------|
+|iopt(9) - Clear the PRS Solids Read from the INPUT file:                      |
+|  [x] ( 0) Don't do it                                                        |
+|  [ ] ( 1) Do it                                                              |
+|------------------------------------------------------------------------------|
+|iopt(10) - Clear the PRS Solids at the End of the Run:                        |
+|  [x] ( 0) Don't do it                                                        |
+|  [ ] ( 1) Do it, unless numerical problems cause early termination           |
+|------------------------------------------------------------------------------|
+|iopt(11) - Auto Basis Switching in pre-N-R Optimization:                      |
+|  [x] ( 0) Turn off                                                           |
+|  [ ] ( 1) Turn on                                                            |
+|------------------------------------------------------------------------------|
+|iopt(12) - Auto Basis Switching after Newton-Raphson Iteration:               |
+|  [x] ( 0) Turn off                                                           |
+|  [ ] ( 1) Turn on                                                            |
+|------------------------------------------------------------------------------|
+|iopt(13) - Calculational Mode Selection:                                      |
+|  [x] ( 0) Normal path tracing                                                |
+|  [ ] ( 1) Economy mode (if permissible)                                      |
+|  [ ] ( 2) Super economy mode (if permissible)                                |
+|------------------------------------------------------------------------------|
+|iopt(14) - ODE Integrator Corrector Mode Selection:                           |
+|  [x] ( 0) Allow Stiff and Simple Correctors                                  |
+|  [ ] ( 1) Allow Only the Simple Corrector                                    |
+|  [ ] ( 2) Allow Only the Stiff Corrector                                     |
+|  [ ] ( 3) Allow No Correctors                                                |
+|------------------------------------------------------------------------------|
+|iopt(15) - Force the Suppression of All Redox Reactions:                      |
+|  [x] ( 0) Don't do it                                                        |
+|  [ ] ( 1) Do it                                                              |
+|------------------------------------------------------------------------------|
+|iopt(16) - BACKUP File Options:                                               |
+|  [ ] (-1) Don't write a BACKUP file                                          |
+|  [x] ( 0) Write BACKUP files                                                 |
+|  [ ] ( 1) Write a sequential BACKUP file                                     |
+|------------------------------------------------------------------------------|
+|iopt(17) - PICKUP File Options:                                               |
+|  [ ] (-1) Don't write a PICKUP file                                          |
+|  [x] ( 0) Write a PICKUP file                                                |
+|------------------------------------------------------------------------------|
+|iopt(18) - TAB File Options:                                                  |
+|  [ ] (-1) Don't write a TAB file                                             |
+|  [x] ( 0) Write a TAB file                                                   |
+|  [ ] ( 1) Write a TAB file, prepending TABX file data from a previous run    |
+|------------------------------------------------------------------------------|
+|iopt(20) - Advanced EQ6 PICKUP File Options:                                  |
+|  [x] ( 0) Write a normal EQ6 PICKUP file                                     |
+|  [ ] ( 1) Write an EQ6 INPUT file with Fluid 1 set up for fluid mixing       |
+|------------------------------------------------------------------------------|
+|Iopr Print Option Switches ("( 0)" marks default choices)                     |
+|------------------------------------------------------------------------------|
+|iopr(1) - Print All Species Read from the Data File:                          |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(2) - Print All Reactions:                                                |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print the reactions                                                |
+|  [ ] ( 2) Print the reactions and log K values                               |
+|  [ ] ( 3) Print the reactions, log K values, and associated data             |
+|------------------------------------------------------------------------------|
+|iopr(3) - Print the Aqueous Species Hard Core Diameters:                      |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(4) - Print a Table of Aqueous Species Concentrations, Activities, etc.:  |
+|  [ ] (-3) Omit species with molalities < 1.e-8                               |
+|  [ ] (-2) Omit species with molalities < 1.e-12                              |
+|  [ ] (-1) Omit species with molalities < 1.e-20                              |
+|  [x] ( 0) Omit species with molalities < 1.e-100                             |
+|  [ ] ( 1) Include all species                                                |
+|------------------------------------------------------------------------------|
+|iopr(5) - Print a Table of Aqueous Species/H+ Activity Ratios:                |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print cation/H+ activity ratios only                               |
+|  [ ] ( 2) Print cation/H+ and anion/H+ activity ratios                       |
+|  [ ] ( 3) Print ion/H+ activity ratios and neutral species activities        |
+|------------------------------------------------------------------------------|
+|iopr(6) - Print a Table of Aqueous Mass Balance Percentages:                  |
+|  [ ] (-1) Don't print                                                        |
+|  [x] ( 0) Print those species comprising at least 99% of each mass balance   |
+|  [ ] ( 1) Print all contributing species                                     |
+|------------------------------------------------------------------------------|
+|iopr(7) - Print Tables of Saturation Indices and Affinities:                  |
+|  [ ] (-1) Don't print                                                        |
+|  [x] ( 0) Print, omitting those phases undersaturated by more than 10 kcal   |
+|  [ ] ( 1) Print for all phases                                               |
+|------------------------------------------------------------------------------|
+|iopr(8) - Print a Table of Fugacities:                                        |
+|  [ ] (-1) Don't print                                                        |
+|  [x] ( 0) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(9) - Print a Table of Mean Molal Activity Coefficients:                  |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print                                                              |
+|------------------------------------------------------------------------------|
+|iopr(10) - Print a Tabulation of the Pitzer Interaction Coefficients:         |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print a summary tabulation                                         |
+|  [ ] ( 2) Print a more detailed tabulation                                   |
+|------------------------------------------------------------------------------|
+|iopr(17) - PICKUP file format ("W" or "D"):                                   |
+|  [x] ( 0) Use the format of the INPUT file                                   |
+|  [ ] ( 1) Use "W" format                                                     |
+|  [ ] ( 2) Use "D" format                                                     |
+|------------------------------------------------------------------------------|
+|Iodb Debugging Print Option Switches ("( 0)" marks default choices)           |
+|------------------------------------------------------------------------------|
+|iodb(1) - Print General Diagnostic Messages:                                  |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print Level 1 diagnostic messages                                  |
+|  [ ] ( 2) Print Level 1 and Level 2 diagnostic messages                      |
+|------------------------------------------------------------------------------|
+|iodb(2) - Kinetics Related Diagnostic Messages:                               |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print Level 1 kinetics diagnostic messages                         |
+|  [ ] ( 2) Print Level 1 and Level 2 kinetics diagnostic messages             |
+|------------------------------------------------------------------------------|
+|iodb(3) - Print Pre-Newton-Raphson Optimization Information:                  |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information (including the beta and del vectors)    |
+|  [ ] ( 3) Print more detailed information (including matrix equations)       |
+|  [ ] ( 4) Print most detailed information (including activity coefficients)  |
+|------------------------------------------------------------------------------|
+|iodb(4) - Print Newton-Raphson Iteration Information:                         |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information (including the beta and del vectors)    |
+|  [ ] ( 3) Print more detailed information (including the Jacobian)           |
+|  [ ] ( 4) Print most detailed information (including activity coefficients)  |
+|------------------------------------------------------------------------------|
+|iodb(5) - Print Step-Size and Order Selection:                                |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information                                         |
+|------------------------------------------------------------------------------|
+|iodb(6) - Print Details of Hypothetical Affinity Calculations:                |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information                                         |
+|------------------------------------------------------------------------------|
+|iodb(7) - Print General Search (e.g., for a phase boundary) Information:      |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|------------------------------------------------------------------------------|
+|iodb(8) - Print ODE Corrector Iteration Information:                          |
+|  [x] ( 0) Don't print                                                        |
+|  [ ] ( 1) Print summary information                                          |
+|  [ ] ( 2) Print detailed information (including the betar and delvcr vectors)|
+|------------------------------------------------------------------------------|
+|Mineral Sub-Set Selection Suppression Options | (nxopt)                       |
+|------------------------------------------------------------------------------|
+|Option  |Sub-Set Defining Species| (this is a table header)                   |
+|------------------------------------------------------------------------------|
+|None    |None                    | (uxopt(n), uxcat(n))                       |
+|------------------------------------------------------------------------------|
+* Valid mineral sub-set selection suppression option strings (uxopt(n)) are:   *
+*    None        All         Alwith      Allwith                               *
+*------------------------------------------------------------------------------*
+|Exceptions to the Mineral Sub-Set Selection Suppression Options | (nxopex)    |
+|------------------------------------------------------------------------------|
+|Mineral                 | (this is a table header)                            |
+|------------------------------------------------------------------------------|
+|None                    | (uxopex(n))                                         |
+|------------------------------------------------------------------------------|
+|Fixed Fugacity Options | (nffg)                                               |
+|------------------------------------------------------------------------------|
+|Gas                     |Moles to Add |Log Fugacity | --                      |
+| (uffg(n))              | (moffg(n))  | (xlkffg(n)) | --                      |
+|------------------------------------------------------------------------------|
+|O2(g)                   |  0.00000E+00| -7.00000E-01| --                      |
+|CO2(g)                  |  0.00000E+00| -3.50000E+00| --                      |
+|------------------------------------------------------------------------------|
+|Numerical Parameters                                                          |
+|------------------------------------------------------------------------------|
+|Max. finite-difference order               |   6        | (nordmx)            |
+|Beta convergence tolerance                 | 1.00000E-06| (tolbt)             |
+|Del convergence tolerance                  | 1.00000E-06| (toldl)             |
+|Max. No. of N-R iterations                 | 200        | (itermx)            |
+|Search/find convergence tolerance          | 1.00000E-06| (tolxsf)            |
+|Saturation tolerance                       | 5.00000E-04| (tolsat)            |
+|Max. No. of Phase Assemblage Tries         | 100        | (ntrymx)            |
+|Zero order step size (in Xi)               | 1.00000E-08| (dlxmx0)            |
+|Max. interval in Xi between PRS transfers  | 1.00000E+38| (dlxdmp)            |
+|------------------------------------------------------------------------------|
+* Start of the bottom half of the input file                                   *
+*------------------------------------------------------------------------------*
+| Secondary Title        | (utitl2(n))                                         |
+|------------------------------------------------------------------------------|
+|EQ6 input file name= j13wsf.6i                                                |
+|Description= "Reaction of J-13 well water with spent nuclear fuel"            |
+|Version level= 8.0                                                            |
+|Revised 02/18/97    Revisor= T.J. Wolery                                      |
+|This is part of the EQ3/6 Test Case Library                                   |
+|                                                                              |
+|  React spent nuclear fuel with J-13 well water. The O2 and CO2 fugacities    |
+|are fixed at atmospheric values using nffg options. The spent nuclear fuel    |
+|is treated as a special reactant. One "mole" is equivalent to 100 grams. The  |
+|spent fuel composition corresponds to average PWR spent fuel with burnup of   |
+|33,000 MWd/MTIHM at 1,000 years This was computed by Henry Shaw (LLNL,        |
+|1/12/89) as a correction to the data published in Table 2 of Bruton and Shaw  |
+|(1988).                                                                       |
+|                                                                              |
+|  Purpose: to test the ability of the code to model reaction in a large,      |
+|complex system, whose components exhibit a variety of chemical behaviors.     |
+|Results may be roughly compared with those reported by Bruton and Shaw        |
+|(1988); changes in thermodynamic data preclude meaningful exact comparison.   |
+|                                                                              |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|Bruton, C.J., and Shaw, H.F., 1988, Geochemical simulation of reaction        |
+|  between spent fuel waste form and J-13 water at 25C and 90C: In Apted,      |
+|  M.J., and Westerman, R.E., editors, Scientific Basis for Nuclear Waste      |
+|  Management XI, Materials Research Society Symposium Proceedings, v. 112,    |
+|  Materials Research Society, Pittsburgh, Pennsylvania, p. 485-494.           |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |NH3(aq)                 Aqueous solution        | (usbsw(1,n))       |
+|   with |NO3-                    Aqueous solution        | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Original temperature (C) | 2.50000E+01| (tempci)                              |
+|------------------------------------------------------------------------------|
+|Original pressure (bars) | 1.01320E+00| (pressi)                              |
+|------------------------------------------------------------------------------|
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: no exchanger creation blocks follow on this file.                   |
+|Option: on further processing (writing a pickup file or running XCON6 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|None                                            |None            | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [x] ( 0) The B-dot equation                                                 |
+|  [ ] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [ ] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [x] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Matrix Index Limits                                                           |
+|------------------------------------------------------------------------------|
+|No. of chem. elements   |   32| (kct)                                         |
+|No. of basis species    |   34| (kbt)                                         |
+|Index of last pure min. |   46| (kmt)                                         |
+|Index of last sol-sol.  |   46| (kxt)                                         |
+|Matrix size             |   46| (kdim)                                        |
+|PRS data flag           |    0| (kprs)                                        |
+|------------------------------------------------------------------------------|
+|Mass Balance Species (Matrix Row Variables)     |Units/Constraint| --         |
+| (ubmtbi(n))                                    |(ujf6(jflgi(n)))| --         |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        |Moles           | --         |
+|Al+++                   Aqueous solution        |Moles           | --         |
+|Am+++                   Aqueous solution        |Moles           | --         |
+|B(OH)3(aq)              Aqueous solution        |Moles           | --         |
+|Ca++                    Aqueous solution        |Moles           | --         |
+|Cl-                     Aqueous solution        |Moles           | --         |
+|Cs+                     Aqueous solution        |Moles           | --         |
+|Cu++                    Aqueous solution        |Moles           | --         |
+|F-                      Aqueous solution        |Moles           | --         |
+|Fe++                    Aqueous solution        |Moles           | --         |
+|H+                      Aqueous solution        |Moles           | --         |
+|HCO3-                   Aqueous solution        |Moles           | --         |
+|HPO4--                  Aqueous solution        |Moles           | --         |
+|I-                      Aqueous solution        |Moles           | --         |
+|K+                      Aqueous solution        |Moles           | --         |
+|Li+                     Aqueous solution        |Moles           | --         |
+|Mg++                    Aqueous solution        |Moles           | --         |
+|Mn++                    Aqueous solution        |Moles           | --         |
+|NO3-                    Aqueous solution        |Moles           | --         |
+|Na+                     Aqueous solution        |Moles           | --         |
+|Ni++                    Aqueous solution        |Moles           | --         |
+|Np++++                  Aqueous solution        |Moles           | --         |
+|Pb++                    Aqueous solution        |Moles           | --         |
+|Pu++++                  Aqueous solution        |Moles           | --         |
+|Ra++                    Aqueous solution        |Moles           | --         |
+|SO4--                   Aqueous solution        |Moles           | --         |
+|SeO3--                  Aqueous solution        |Moles           | --         |
+|SiO2(aq)                Aqueous solution        |Moles           | --         |
+|Sn++                    Aqueous solution        |Moles           | --         |
+|Sr++                    Aqueous solution        |Moles           | --         |
+|TcO4-                   Aqueous solution        |Moles           | --         |
+|Th++++                  Aqueous solution        |Moles           | --         |
+|UO2++                   Aqueous solution        |Moles           | --         |
+|O2(g)                   Aqueous solution        |Moles           | --         |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf6(jflgi(n))) are:                                    *
+*    Moles               Make non-basis                                        *
+*------------------------------------------------------------------------------*
+|Mass Balance Totals (moles)                                                   |
+|------------------------------------------------------------------------------|
+|Basis species (info. only)      |Equilibrium System    |Aqueous Solution      |
+| (ubmtbi(n))                    | (mtbi(n))            | (mtbaqi(n))          |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous | 5.500820011046114E+01| 5.550872049717055E+01|
+|Al+++                   Aqueous | 2.964990138725051E-07| 8.431592014489290E-10|
+|Am+++                   Aqueous | 2.714262366705715E-10| 2.714262338614832E-10|
+|B(OH)3(aq)              Aqueous | 1.238820293749129E-05| 1.238820294300220E-05|
+|Ca++                    Aqueous | 3.243674834216392E-04| 2.164261658411570E-04|
+|Cl-                     Aqueous | 2.013950982576971E-04| 2.013950982574178E-04|
+|Cs+                     Aqueous | 2.199900925846075E-09| 2.199900925845237E-09|
+|Cu++                    Aqueous | 1.000000000346740E-12| 9.999999974899168E-13|
+|F-                      Aqueous | 1.147465049689603E-04| 1.143300531312690E-04|
+|Fe++                    Aqueous | 7.162425915076534E-07| 4.409353758668152E-13|
+|H+                      Aqueous | 5.003002726552772E-01|-4.389098967279801E-05|
+|HCO3-                   Aqueous | 5.023009953340901E-01| 1.603676342255089E-03|
+|HPO4--                  Aqueous | 1.250269589611083E-06| 9.140787283225012E-10|
+|I-                      Aqueous | 2.903290691902730E-10| 2.903290691902725E-10|
+|K+                      Aqueous | 1.289058603571544E-04| 1.289058603563058E-04|
+|Li+                     Aqueous | 6.915430053308662E-06| 6.915430053273175E-06|
+|Mg++                    Aqueous | 8.269903312301716E-05| 1.399768466459306E-05|
+|Mn++                    Aqueous | 2.184278473759726E-07| 5.034660827167937E-16|
+|NO3-                    Aqueous | 1.416016208254558E-04| 1.416016208247921E-04|
+|Na+                     Aqueous | 1.992190439488544E-03| 1.992190439468227E-03|
+|Ni++                    Aqueous | 4.039133805896213E-08| 4.039133801625360E-08|
+|Np++++                  Aqueous | 1.154458555839697E-09| 2.518988367782831E-20|
+|Pb++                    Aqueous | 1.000035298487194E-12| 1.000035295624136E-12|
+|Pu++++                  Aqueous | 6.061479569306755E-09| 1.411578199766083E-29|
+|Ra++                    Aqueous | 1.002700404645776E-12| 1.002700404645777E-12|
+|SO4--                   Aqueous | 1.915397715738004E-04| 1.915397715253178E-04|
+|SeO3--                  Aqueous | 4.758198013977717E-11| 4.758198013280151E-11|
+|SiO2(aq)                Aqueous | 1.014740955623470E-03| 1.624894278592049E-04|
+|Sn++                    Aqueous | 6.122431559881871E-09| 6.122431558268341E-09|
+|Sr++                    Aqueous | 4.565167769993406E-07| 4.565167767974441E-07|
+|TcO4-                   Aqueous | 1.495866857483077E-09| 1.495866857483078E-09|
+|Th++++                  Aqueous | 1.715607232134189E-12| 2.408844626581064E-15|
+|UO2++                   Aqueous | 7.820188968120826E-07| 7.820189053318369E-07|
+|O2(g)                   Aqueous | 4.999977953352349E-01| 2.519984567003983E-04|
+|Electrical imbalance            | 1.034577240427307E-04| 1.034577240427307E-04|
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Matrix Column Variables and Values                                            |
+|------------------------------------------------------------------------------|
+|Basis species (uzveci(n))                       |Log moles (zvclgi(n)) | --   |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        | 1.744361181125355E+00| --   |
+|Al+++                   Aqueous solution        |-2.058586451051741E+01| --   |
+|Am+++                   Aqueous solution        |-1.282718821693420E+01| --   |
+|B(OH)3(aq)              Aqueous solution        |-4.980472003565709E+00| --   |
+|Ca++                    Aqueous solution        |-3.691846863099620E+00| --   |
+|Cl-                     Aqueous solution        |-3.696118242683080E+00| --   |
+|Cs+                     Aqueous solution        |-8.657653346512452E+00| --   |
+|Cu++                    Aqueous solution        |-1.405378159068734E+01| --   |
+|F-                      Aqueous solution        |-3.942356485513624E+00| --   |
+|Fe++                    Aqueous solution        |-2.481878483871746E+01| --   |
+|H+                      Aqueous solution        |-8.452605827265399E+00| --   |
+|HCO3-                   Aqueous solution        |-2.809506916730237E+00| --   |
+|HPO4--                  Aqueous solution        |-9.108591097453182E+00| --   |
+|I-                      Aqueous solution        |-2.182050948697720E+01| --   |
+|K+                      Aqueous solution        |-3.890211805307557E+00| --   |
+|Li+                     Aqueous solution        |-5.160561891824331E+00| --   |
+|Mg++                    Aqueous solution        |-4.875746863099620E+00| --   |
+|Mn++                    Aqueous solution        |-1.602784686309962E+01| --   |
+|NO3-                    Aqueous solution        |-3.849282045753074E+00| --   |
+|Na+                     Aqueous solution        |-2.702210438707521E+00| --   |
+|Ni++                    Aqueous solution        |-7.512866155675325E+00| --   |
+|Np++++                  Aqueous solution        |-4.324930200870519E+01| --   |
+|Pb++                    Aqueous solution        |-1.421601623327607E+01| --   |
+|Pu++++                  Aqueous solution        |-4.152680200870519E+01| --   |
+|Ra++                    Aqueous solution        |-1.199882880979641E+01| --   |
+|SO4--                   Aqueous solution        |-3.729076437678134E+00| --   |
+|SeO3--                  Aqueous solution        |-2.251242211475874E+01| --   |
+|SiO2(aq)                Aqueous solution        |-3.827797802401629E+00| --   |
+|Sn++                    Aqueous solution        |-6.281440522095098E+01| --   |
+|Sr++                    Aqueous solution        |-6.364552150629279E+00| --   |
+|TcO4-                   Aqueous solution        |-8.825107059969991E+00| --   |
+|Th++++                  Aqueous solution        |-3.173500200870519E+01| --   |
+|UO2++                   Aqueous solution        |-1.411717065869034E+01| --   |
+|O2(g)                   Aqueous solution        |-7.000000000000000E-01| --   |
+|Calcite                 Calcite                 |-4.431682300503625E+00| --   |
+|Dolomite-ord            Dolomite-ord            |-4.163034738633097E+00| --   |
+|Fluorapatite            Fluorapatite            |-6.380435217910907E+00| --   |
+|Nontronite-Ca           Nontronite-Ca           |-6.445970120174505E+00| --   |
+|NpO2                    NpO2                    |-8.937621653308790E+00| --   |
+|PuO2                    PuO2                    |-8.217421354322601E+00| --   |
+|Pyrolusite              Pyrolusite              |-6.660691995215775E+00| --   |
+|Stellerite              Stellerite              |-7.352920604556403E+00| --   |
+|Thorianite              Thorianite              |-1.176619234305078E+01| --   |
+|Tridymite               Tridymite               |-3.070419619406195E+00| --   |
+|fix_fO2(g)              fix_fO2(g)              |-3.012511003558913E-01| --   |
+|fix_fCO2(g)             fix_fCO2(g)             |-3.005760422582651E-01| --   |
+|------------------------------------------------------------------------------|
+|Phases and Species in the PRS                                                 |
+|------------------------------------------------------------------------------|
+|Phase           |None                    | (uprphi(n))                        |
+|------------------------------------------------------------------------------|
+|->|No. of Moles    | 0.000000000000000E+00| (mprphi(n))                       |
+|------------------------------------------------------------------------------|
+|--->|Species                 |No. of Moles          | --                      |
+|--->| (uprspi(i,n))          | (mprspi(i,n))        | --                      |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.000000000000000E+00| --                      |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|

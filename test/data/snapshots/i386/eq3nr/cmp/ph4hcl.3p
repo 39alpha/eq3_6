@@ -1,0 +1,148 @@
+* Start of the bottom half of the input file                                   *
+*------------------------------------------------------------------------------*
+| Secondary Title        | (utitl2(n))                                         |
+|------------------------------------------------------------------------------|
+|EQ3NR input file name= ph4hcl.3i                                              |
+|Description= "A pH 4 HCl solution, with traces of K, Al, and Si"              |
+|Version level= 8.0                                                            |
+|Revised 02/14/97    Revisor= T.J. Wolery                                      |
+|This is part of the EQ3/6 Test Case Library                                   |
+|                                                                              |
+|  Dilute HCl solution, pH 4.00, with traces of potassium, aluminum, and       |
+|silica. This problem is part of test problem 3 of INTERA (1983), who report   |
+|a comparison study of EQ3/6 with PHREEQE (Parkhurst, Thorstenson, and         |
+|Plummer, 1980). Note that precipitation of quartz, chalcedony, and tridymite  |
+|is prevented by means of nxmod suppress options. This has no effect on the    |
+|EQ3NR calculation. It is simply needed for the subsequent EQ6 problem. EQ3NR  |
+|passes this on to EQ6 on the PICKUP file.                                     |
+|                                                                              |
+|  Purpose: to provide a PICKUP file for construction of the EQ6 test cases    |
+|micro.6i and microft.6i.                                                      |
+|                                                                              |
+|  This problem is actually redox-indifferent. The auxiliary basis species     |
+|O2(aq) and H2(aq) have therefore been suppressed. The EQ6 option switch       |
+|iopt(15) should be set to 1.                                                  |
+|                                                                              |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|INTERA Environmental Consultants, Inc., 1983, Geochemical Models Suitable     |
+|  for Performance Assessment of Nuclear Waste Storage: Comparison of          |
+|  PHREEQE and EQ3/EQ6: Office of Nuclear Waste Isolation, Battelle Project    |
+|  Management Division, Columbus, Ohio, ONWI-473, 114 p.                       |
+|                                                                              |
+|Parkhurst, D.L., Thorstenson, D.C., and Plummer, L.N., 1980, PHREEQE-         |
+|  A Computer Program for Geochemical Calculations: Water Resources            |
+|  Investigations Report 80-96, U.S. Geological Survey, Reston, Virginia,      |
+|  210 p.                                                                      |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (usbsw(1,n))       |
+|   with |None                                            | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Original temperature (C) | 2.50000E+01| (tempci)                              |
+|------------------------------------------------------------------------------|
+|Original pressure (bars) | 1.01320E+00| (pressi)                              |
+|------------------------------------------------------------------------------|
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: no exchanger creation blocks follow on this file.                   |
+|Option: on further processing (writing a pickup file or running XCON6 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|Quartz                                          |Suppress        | 0.00000E+00|
+|Chalcedony                                      |Suppress        | 0.00000E+00|
+|Tridymite                                       |Suppress        | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [x] ( 0) The B-dot equation                                                 |
+|  [ ] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [ ] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [x] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Matrix Index Limits                                                           |
+|------------------------------------------------------------------------------|
+|No. of chem. elements   |    6| (kct)                                         |
+|No. of basis species    |    7| (kbt)                                         |
+|Index of last pure min. |    7| (kmt)                                         |
+|Index of last sol-sol.  |    7| (kxt)                                         |
+|Matrix size             |    7| (kdim)                                        |
+|PRS data flag           |    0| (kprs)                                        |
+|------------------------------------------------------------------------------|
+|Mass Balance Species (Matrix Row Variables)     |Units/Constraint| --         |
+| (ubmtbi(n))                                    |(ujf6(jflgi(n)))| --         |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        |Moles           | --         |
+|Al+++                   Aqueous solution        |Moles           | --         |
+|Cl-                     Aqueous solution        |Moles           | --         |
+|H+                      Aqueous solution        |Moles           | --         |
+|K+                      Aqueous solution        |Moles           | --         |
+|SiO2(aq)                Aqueous solution        |Moles           | --         |
+|O2(g)                   Aqueous solution        |Moles           | --         |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf6(jflgi(n))) are:                                    *
+*    Moles               Make non-basis                                        *
+*------------------------------------------------------------------------------*
+|Mass Balance Totals (moles)                                                   |
+|------------------------------------------------------------------------------|
+|Basis species (info. only)      |Equilibrium System    |Aqueous Solution      |
+| (ubmtbi(n))                    | (mtbi(n))            | (mtbaqi(n))          |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous | 5.550843506189440E+01| 5.550843506189440E+01|
+|Al+++                   Aqueous | 1.000000000000050E-12| 1.000000000000050E-12|
+|Cl-                     Aqueous | 1.011629092597910E-04| 1.011629092597910E-04|
+|H+                      Aqueous | 1.011629052597910E-04| 1.011629052597910E-04|
+|K+                      Aqueous | 1.000000000000001E-12| 1.000000000000001E-12|
+|SiO2(aq)                Aqueous | 9.999999999999992E-13| 9.999999999999992E-13|
+|O2(g)                   Aqueous | 2.331489422794826E-18| 2.331489422794826E-18|
+|Electrical imbalance            |-4.065758146820642E-20|-4.065758146820642E-20|
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Matrix Column Variables and Values                                            |
+|------------------------------------------------------------------------------|
+|Basis species (uzveci(n))                       |Log moles (zvclgi(n)) | --   |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        | 1.744358983526984E+00| --   |
+|Al+++                   Aqueous solution        |-1.204400338249425E+01| --   |
+|Cl-                     Aqueous solution        |-3.994987866885238E+00| --   |
+|H+                      Aqueous solution        |-3.994987444367077E+00| --   |
+|K+                      Aqueous solution        |-1.200000137411354E+01| --   |
+|SiO2(aq)                Aqueous solution        |-1.200000049015453E+01| --   |
+|O2(g)                   Aqueous solution        |-7.000000000000000E-01| --   |
+|------------------------------------------------------------------------------|
+|Phases and Species in the PRS                                                 |
+|------------------------------------------------------------------------------|
+|Phase           |None                    | (uprphi(n))                        |
+|------------------------------------------------------------------------------|
+|->|No. of Moles    | 0.000000000000000E+00| (mprphi(n))                       |
+|------------------------------------------------------------------------------|
+|--->|Species                 |No. of Moles          | --                      |
+|--->| (uprspi(i,n))          | (mprspi(i,n))        | --                      |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.000000000000000E+00| --                      |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|

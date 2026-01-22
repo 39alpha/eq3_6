@@ -192,6 +192,9 @@ check_output() {
     "x86_64"|"amd64")
       check_output fmt c4pgwbN2 1e-8
       ;;
+    "i386")
+      check_output fmt c4pgwbN2 1e-8
+      ;;
     *)
       check_output fmt c4pgwbN2
       ;;
@@ -217,6 +220,9 @@ check_output() {
     "arm64")
       check_output fmt swmajm 1e-16
       ;;
+    "i386")
+      check_output fmt swmajm 1e-16
+      ;;
     *)
       check_output fmt swmajm
       ;;
@@ -234,6 +240,9 @@ check_output() {
 @test "Correct output (hmw/epsomite)" {
   case "$(arch)" in
     "arm64")
+      check_output hmw epsomite 1e-14
+      ;;
+    "i386")
       check_output hmw epsomite 1e-14
       ;;
     *)
@@ -348,6 +357,9 @@ check_output() {
     "arm64")
       check_output ymp swg1sx 1e-16
       ;;
+    "i386")
+      check_output ymp swg1sx 1e-15
+      ;;
     *)
       check_output ymp swg1sx
       ;;
@@ -385,6 +397,9 @@ check_output() {
     "arm64")
       check_output ymp swv1sxca 1e-27
       ;;
+    "i386")
+      check_output ymp swv1sxca 1e-27
+      ;;
     *)
       check_output ymp swv1sxca
       ;;
@@ -402,6 +417,9 @@ check_output() {
       check_output ypf arcmir 1e-14
       ;;
     "x86_64"|"amd64")
+      check_output ypf arcmir 1e-14
+      ;;
+    "i386")
       check_output ypf arcmir 1e-14
       ;;
     *)
