@@ -1,0 +1,108 @@
+name: snapshots
+
+on:
+  push:
+    branches: [ snapshot ]
+
+jobs:
+  ubuntu-22-build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: make FFLAGS="-O0" -j2
+      run: make FFLAGS="-O0" -j2
+    - name: git submodule init
+      run: git submodule init
+    - name: git submodule update
+      run: git submodule update
+    - name: make snapshot
+      run: make snapshot
+    - name: archive snapshots
+      uses: actions/upload-artifact@v4
+      with:
+        name: ubuntu-22-snapshots
+        path: test/data/snapshots/amd64
+        retention-days: 2
+
+  ubuntu-24-build:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: make FFLAGS="-O0" -j2
+      run: make FFLAGS="-O0" -j2
+    - name: git submodule init
+      run: git submodule init
+    - name: git submodule update
+      run: git submodule update
+    - name: make snapshot
+      run: make snapshot
+    - name: archive snapshots
+      uses: actions/upload-artifact@v4
+      with:
+        name: ubuntu-24-snapshots
+        path: test/data/snapshots/amd64
+        retention-days: 2
+
+  macos-14-build:
+    runs-on: macos-14
+    steps:
+    - uses: actions/checkout@v2
+    - name: brew reinstall gcc coreutils
+      run: brew reinstall gcc coreutils
+    - name: make FFLAGS="-O0" -j3
+      run: make FFLAGS="-O0" -j3
+    - name: git submodule init
+      run: git submodule init
+    - name: git submodule update
+      run: git submodule update
+    - name: make snapshot
+      run: make snapshot
+    - name: archive snapshots
+      uses: actions/upload-artifact@v4
+      with:
+        name: macos-14-snapshots
+        path: test/data/snapshots/arm64
+        retention-days: 2
+
+  macos-15-intel-build:
+    runs-on: macos-15-intel
+    steps:
+    - uses: actions/checkout@v2
+    - name: brew reinstall gcc coreutils
+      run: brew reinstall gcc coreutils
+    - name: make FFLAGS="-O0" -j3
+      run: make FFLAGS="-O0" -j3
+    - name: git submodule init
+      run: git submodule init
+    - name: git submodule update
+      run: git submodule update
+    - name: make snapshot
+      run: make snapshot
+    - name: archive snapshots
+      uses: actions/upload-artifact@v4
+      with:
+        name: macos-15-intel-snapshots
+        path: test/data/snapshots/i386
+        retention-days: 2
+
+  macos-latest-build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: brew reinstall gcc coreutils
+      run: brew reinstall gcc coreutils
+    - name: make FFLAGS="-O0" -j3
+      run: make FFLAGS="-O0" -j3
+    - name: git submodule init
+      run: git submodule init
+    - name: git submodule update
+      run: git submodule update
+    - name: make snapshot
+      run: make snapshot
+    - name: archive snapshots
+      uses: actions/upload-artifact@v4
+      with:
+        name: macos-latest-snapshots
+        path: test/data/snapshots/arm64
+        retention-days: 2
+

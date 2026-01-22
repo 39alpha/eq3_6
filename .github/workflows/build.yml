@@ -1,4 +1,4 @@
-name: EQ3/6 Tests
+name: tests
 
 on:
   push:
