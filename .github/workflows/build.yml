@@ -11,64 +11,64 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
-    - name: make -j2
-      run: make -j2
+    - name: make -j4
+      run: make -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
     - name: make test
-      run: make test
+      run: make BATS_FLAGS="-T -j 4" test
 
   ubuntu-24-build:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v2
-    - name: make -j2
-      run: make -j2
+    - name: make -j4
+      run: make -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
     - name: make test
-      run: make test
+      run: make BATS_FLAGS="-T -j 4" test
 
   macos-14-build:
     runs-on: macos-14
     steps:
     - uses: actions/checkout@v2
-    - name: brew reinstall gcc coreutils
-      run: brew reinstall gcc coreutils
-    - name: make -j3
-      run: make -j3
+    - name: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel
+    - name: make -j4
+      run: make -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
     - name: make test
-      run: make test
+      run: make BATS_FLAGS="-T -j 4" test
 
   macos-15-intel-build:
     runs-on: macos-15-intel
     steps:
     - uses: actions/checkout@v2
-    - name: brew reinstall gcc coreutils
-      run: brew reinstall gcc coreutils
-    - name: make -j3
-      run: make -j3
+    - name: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel
+    - name: make -j4
+      run: make -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
     - name: make test
-      run: make test
+      run: make BATS_FLAGS="-T -j 4" test
 
   macos-latest-build:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: brew reinstall gcc coreutils
-      run: brew reinstall gcc coreutils
+    - name: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel
     - name: make -j3
       run: make -j3
     - name: git submodule init
@@ -76,4 +76,4 @@ jobs:
     - name: git submodule update
       run: git submodule update
     - name: make test
-      run: make test
+      run: make BATS_FLAGS="-T -j 3" test
