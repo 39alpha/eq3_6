@@ -7,7 +7,7 @@ on:
     branches: [ main, dev ]
 
 jobs:
-  ubuntu-22-build:
+  ubuntu-22:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
     - name: make test
       run: make BATS_FLAGS="-T -j 4" test
 
-  ubuntu-24-build:
+  ubuntu-24:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
     - name: make test
       run: make BATS_FLAGS="-T -j 4" test
 
-  macos-14-build:
+  macos-14:
     runs-on: macos-14
     steps:
     - uses: actions/checkout@v2
@@ -48,7 +48,7 @@ jobs:
     - name: make test
       run: make BATS_FLAGS="-T -j 4" test
 
-  macos-15-intel-build:
+  macos-15-intel:
     runs-on: macos-15-intel
     steps:
     - uses: actions/checkout@v2
@@ -63,7 +63,7 @@ jobs:
     - name: make test
       run: make BATS_FLAGS="-T -j 4" test
 
-  macos-latest-build:
+  macos-latest:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
