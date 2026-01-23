@@ -57,6 +57,7 @@ check_output() {
   done
 
   for ext in 3o 3p; do
+    assert_files_almost_same "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}" 0 0
     assert_files_equal "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
   done
 }

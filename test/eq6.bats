@@ -65,6 +65,7 @@ check_output() {
   done
 
   for ext in 6o 6p 6tx; do
+    assert_files_almost_same "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}" 0 0
     assert_files_equal "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
   done
 }
@@ -77,9 +78,6 @@ check_snapshot_only() {
 
   cp "${BATS_TEST_DIRNAME}/data/eqpt/${DIR}.d0" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.6i" .
-  for ext in 6i 6o 6p; do
-    cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
-  done
 
   run ./eqpt "${DIR}.d0"
   run ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
@@ -88,6 +86,7 @@ check_snapshot_only() {
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
 
   for ext in 6o 6p 6tx; do
+    assert_files_almost_same "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}" 0 0
     assert_files_equal "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
   done
 }
@@ -313,40 +312,34 @@ check_snapshot_only() {
 @test "Correct output (cmp/swxrca)" {
   case "$(arch)" in
     "arm64")
-      skip "This problem is known to be broken on arm64"
+      check_snapshot_only cmp swxrca
       ;;
     "x86_64"|"amd64")
       check_output cmp swxrca 1e-6
       ;;
     "i386")
-      skip "This problem is known to be broken on i386"
+      check_snapshot_only cmp swxrca
       ;;
     *)
       check_output cmp swxrca
       ;;
   esac
 }
-@test "Check snapshot only (cmp/swxrca)" {
-  check_snapshot_only cmp swxrca
-}
 @test "Correct output (cmp/swxrcaft)" {
   case "$(arch)" in
     "arm64")
-      skip "This problem is known to be broken on arm64"
+      check_snapshot_only cmp swxrcaft
       ;;
     "x86_64"|"amd64")
       check_output cmp swxrcaft 1e-5
       ;;
     "i386")
-      skip "This problem is known to be broken on arm64"
+      check_snapshot_only cmp swxrcaft
       ;;
     *)
       check_output cmp swxrcaft
       ;;
   esac
-}
-@test "Check snapshot only (cmp/swxrcaft)" {
-  check_snapshot_only cmp swxrcaft
 }
 @test "Correct output (fmt/c4pgwbN2)" {
   case "$(arch)" in
@@ -505,7 +498,7 @@ check_snapshot_only() {
 @test "Correct output (hmw/mgso4)" {
   case "$(arch)" in
     "arm64")
-      skip "This problem is known to be broken on arm64"
+      check_snapshot_only hmw mgso4
       ;;
     "x86_64"|"amd64")
       check_output hmw mgso4 1e-8
@@ -517,9 +510,6 @@ check_snapshot_only() {
       check_output hmw mgso4
       ;;
   esac
-}
-@test "Check snapshot only (hmw/mgso4)" {
-  check_snapshot_only hmw mgso4
 }
 @test "Correct output (hmw/swv1sxk)" {
   case "$(arch)" in
@@ -752,40 +742,34 @@ check_snapshot_only() {
 @test "Correct output (ymp/swxrca)" {
   case "$(arch)" in
     "arm64")
-      skip "This problem is known to be broken on arm64"
+      check_snapshot_only ymp swxrca
       ;;
     "x86_64"|"amd64")
       check_output ymp swxrca 1e-13
       ;;
     "i386")
-      skip "This problem is known to be broken on i386"
+      check_snapshot_only ymp swxrca
       ;;
     *)
       check_output ymp swxrca
       ;;
   esac
 }
-@test "Check snapshot only (ymp/swxrca)" {
-  check_snapshot_only ymp swxrca
-}
 @test "Correct output (ymp/swxrcaft)" {
   case "$(arch)" in
     "arm64")
-      skip "This problem is known to be broken on arm64"
+      check_snapshot_only ymp swxrcaft
       ;;
     "x86_64"|"amd64")
       check_output ymp swxrcaft 1e-8
       ;;
     "i386")
-      skip "This problem is known to be broken on i386"
+      check_snapshot_only ymp swxrcaft
       ;;
     *)
       check_output ymp swxrcaft
       ;;
   esac
-}
-@test "Check snapshot only (ymp/swxrcaft)" {
-  check_snapshot_only ymp swxrcaft
 }
 @test "Correct output (ypf/calhal90)" {
   case "$(arch)" in
