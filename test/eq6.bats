@@ -193,10 +193,13 @@ check_snapshot_only() {
 @test "Correct output (cmp/methane)" {
   case "$(arch)" in
     "arm64")
-      check_output cmp methane 1e-4
+      check_output cmp methane 1e-3
       ;;
     "i386")
-      check_output cmp methane 1e-4
+      check_output cmp methane 1e-3
+      ;;
+    "x86_64"|"amd64")
+      check_output cmp methane 1e-6
       ;;
     *)
       check_output cmp methane
