@@ -1,11 +1,11 @@
 all: $(TARGET)
 
 $(TARGET): $(MODOBJECTS) $(OBJECTS) $(LIBRARIES)
-	gfortran $(FFLAGS) -Jmod -o $(TARGET) $^
+	gfortran -Wall -Wextra -Werror -pedantic -Wno-unused-variable -Wno-unused-label -Wno-character-truncation -Wno-unused-dummy-argument -Wno-maybe-uninitialized -Wno-do-subscript -Wno-compare-reals -Wno-unused-parameter $(FFLAGS) -Jmod -o $(TARGET) $^
 
 obj/%.o: src/%.f90 $(MODOBJECTS)
 	@mkdir -p mod obj
-	gfortran $(FFLAGS) -Jmod -c $(INCLUDES) -o $@ $<
+	gfortran -Wall -Wextra -Werror -pedantic -Wno-unused-variable -Wno-unused-label -Wno-character-truncation -Wno-unused-dummy-argument -Wno-maybe-uninitialized -Wno-do-subscript -Wno-compare-reals -Wno-unused-parameter $(FFLAGS) -Jmod -c $(INCLUDES) -o $@ $<
 
 ../../lib/libeqlib.a:
 	+make -C ../eqlib
