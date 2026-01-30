@@ -307,6 +307,4 @@ subroutine tpadv(aadh,aadhh,aadhv,aaphi,abdh,abdhh,abdhv,abdoth,abdot,abdotv,ada
 990 continue
     tempcd = tempc
     pressd = press
-
-999 continue
 end subroutine tpadv

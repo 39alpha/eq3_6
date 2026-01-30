@@ -780,6 +780,4 @@ subroutine cdappl(acflg,acfw,acfwlg,actlg,actw,actwlg,adwipp,afcnst,affpd,affsd,
 
     dvoso = vosoct - vodrt
     dwoso = wosoct - wodrt
-
-999 continue
 end subroutine cdappl

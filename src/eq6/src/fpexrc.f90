@@ -187,6 +187,4 @@ subroutine fpexrc(delxi,dlxmin,drer0,dxval0,eps100,iodb,jreac,morr,morr0,nodbmx,
     if (dxsv .gt. delxi) then
         qdump = .false.
     end if
-
-999 continue
 end subroutine fpexrc

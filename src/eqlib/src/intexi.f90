@@ -1638,7 +1638,6 @@ subroutine intexi(al10,axhfs,axlks,axvfs,cegexs,cess,cdrs,cgexj,cpgexs,egexjf,ie
         kern2(ne) = ke
     end do
 
-990 continue
     if (nerr .gt. 0) then
         stop
     end if

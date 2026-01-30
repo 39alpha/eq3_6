@@ -33,5 +33,4 @@ subroutine cliefu()
     ! om
     ! om     END_F77_DEPENDENT_CODE
     ! om   END_SPARC_DEPENDENT_CODE
-999 continue
 end subroutine cliefu

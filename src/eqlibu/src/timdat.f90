@@ -57,6 +57,4 @@ subroutine timdat(udate,utime)
     ! complaining that zone and values are not used.
     ux = zone
     mm = values(1)
-
-999 continue
 end subroutine timdat

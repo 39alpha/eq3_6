@@ -546,6 +546,4 @@ subroutine wr6w7(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzpr
                                                                                             write (newin,3200) uendit
                                                                                             write (newin,3200) uendit
                                                                                         end if
-
-999 continue
                                                                                     end subroutine wr6w7

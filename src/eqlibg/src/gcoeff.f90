@@ -694,6 +694,4 @@ subroutine gcoeff(abar,acflgc,actwlc,adh,adhh,adhv,al10,aphi,azero,a3bar,a3bars,
         nref = nhydr
         call gcscal(acflgc,delacf,narn1,narn2,nref,nstmax,zchar)
     end if
-
-999 continue
 end subroutine gcoeff

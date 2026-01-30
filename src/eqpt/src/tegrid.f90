@@ -102,6 +102,4 @@ subroutine tegrid(itgenf,nacdpr,narxt,nerr,noutpt,ntprmx,ntprt,nttyo,nwarn,ustrg
             end if
         end if
     end do
-
-999 continue
 end subroutine tegrid

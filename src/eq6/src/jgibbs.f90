@@ -709,6 +709,4 @@ subroutine jgibbs(aamatr,afcnst,affp,cdrs,cscale,csts,delvec,eps100,gmmatr,iindx
 
         stop
     end if
-
-999 continue
 end subroutine jgibbs

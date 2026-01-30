@@ -671,6 +671,4 @@ subroutine stepfd(acflg,acflg0,affp0,affp,afrc0,afrc1,aw0,aw1,delxi,dxsm00,eh0,e
             call copyaa(fdre0,fdrem1,nmax)
         end if
     end if
-
-999 continue
 end subroutine stepfd

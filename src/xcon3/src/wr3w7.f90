@@ -209,6 +209,4 @@ subroutine wr3w7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                             write (newin,1340)
 1340 format(3x,'endit.')
                         end if
-
-999 continue
                     end subroutine wr3w7
