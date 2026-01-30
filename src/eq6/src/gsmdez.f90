@@ -52,6 +52,4 @@ subroutine gsmdez(delxia,dzvc0,dzvc0s,kdim,kmax,nord,nrd1mx)
             dzvc0s(n,kcol) = dzx
         end do
     end do
-
-999 continue
 end subroutine gsmdez

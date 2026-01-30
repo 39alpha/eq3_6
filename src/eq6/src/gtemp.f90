@@ -73,6 +73,4 @@ subroutine gtemp(afcnst,al10,iopt,jtemp,noptmx,noutpt,nttkmx,nttyo,rconst,rtcnst
 
         stop
     end if
-
-999 continue
 end subroutine gtemp

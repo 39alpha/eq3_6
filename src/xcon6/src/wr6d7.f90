@@ -447,7 +447,6 @@ subroutine wr6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
 
 170 continue
 
-180 continue
                                 if (iktbt(nxrt) .eq. 0) then
                                     write (newin,1330) unone,zero
                                 end if
@@ -468,7 +467,6 @@ subroutine wr6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
 
 190 continue
 
-200 continue
                                     if (nesrbt(nsrt) .eq. 0) then
                                         write (newin,1360) unone(1:8),zero
                                     end if
@@ -1011,6 +1009,4 @@ subroutine wr6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                                                                                                                                 end if
 
                                                                                                                                 write (newin,3020)
-
-999 continue
                                                                                                                             end subroutine wr6d7

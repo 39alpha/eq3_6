@@ -723,6 +723,4 @@ subroutine switch(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvf
 
     qbassw = .true.
 200 continue
-
-999 continue
 end subroutine switch

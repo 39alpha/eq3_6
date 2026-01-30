@@ -69,6 +69,4 @@ subroutine ginvrt(aimatr,delvec,gmmatr,ipivot,kdim,kmax)
             aimatr(j,k) = delvec(j)
         end do
     end do
-
-999 continue
 end subroutine ginvrt

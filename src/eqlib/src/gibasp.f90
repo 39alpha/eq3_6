@@ -88,6 +88,4 @@ subroutine gibasp(cgexj,cjbasp,iern1,ixbasp,jern1,jern2,jetmax,jgext,narn1,narn2
             end do
         end if
     end do
-
-999 continue
 end subroutine gibasp

@@ -392,6 +392,4 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
 1010 format(/' * Note - (EQ6/ldlxrc) The step size has been cut',' from ',1pe12.5,/7x,'to ',e12.5,' to limit rapid change',' associated with ',a,'.')
         end if
     end if
-
-999 continue
 end subroutine ldlxrc

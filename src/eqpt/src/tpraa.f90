@@ -236,6 +236,4 @@ subroutine tpraa(alamaa,atheta,iaapr,ipbtmx,jpfcmx,naapr,natmax,ncvaa,nerr,noutp
 
     ncvaa = naapr - nodatc
     pcvaa = (100.*ncvaa)/float(naapr)
-
-999 continue
 end subroutine tpraa

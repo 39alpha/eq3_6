@@ -330,7 +330,6 @@ subroutine wr3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
 
 180 continue
 
-190 continue
                                 write (newin,1090)
 
                                 ! Input solid solutions, excluding those defined as part of

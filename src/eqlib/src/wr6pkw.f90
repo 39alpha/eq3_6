@@ -728,6 +728,4 @@ subroutine wr6pkw(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         write (newin,3620) uendit(1:j3)
 3620 format(1x,a)
     end if
-
-999 continue
 end subroutine wr6pkw

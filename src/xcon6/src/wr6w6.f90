@@ -333,8 +333,6 @@ subroutine wr6w6(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzpr
                                                     write (newin,1690) rk0(i,1,nrc),ndact(i,1,nrc)
 1690 format(7x,'rk0= ',1pe12.5,5x,'ndact= ',i2)
 
-1800 format(5x,'ndact= ',i2)
-
                                                     if (ndact(i,1,nrc) .gt. 0) then
                                                         do 230 n = 1,ndact(i,1,nrc)
                                                             write (newin,1680) udac(n,i,1,nrc),cdac(n,i,1,nrc)
@@ -371,15 +369,12 @@ subroutine wr6w6(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzpr
 260 continue
                                                             else if (nrk(2,nrc) .eq. 3) then
                                                                 write (newin,1830) rk0(1,2,nrc)
-1920 format(6x,'rpk1= ',1pe12.5)
                                                             else if (nrk(2,nrc) .eq. 4) then
                                                                 write (newin,1840) imech(2,nrc)
 
                                                                 do 280 i = 1,imech(2,nrc)
                                                                     write (newin,1930) rk0(i,2,nrc),ndact(i,2,nrc)
 1930 format(7x,'rpk= ',1pe12.5,4x,'npdact= ',i2)
-
-1940 format(4x,'npdact= ',i2)
 
                                                                     if (ndact(i,2,nrc) .gt. 0) then
                                                                         do 270 n = 1,ndact(i,2,nrc)
@@ -536,6 +531,4 @@ subroutine wr6w6(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzpr
                                                                                             write (newin,3200) uendit
                                                                                             write (newin,3200) uendit
                                                                                         end if
-
-999 continue
                                                                                     end subroutine wr6w6

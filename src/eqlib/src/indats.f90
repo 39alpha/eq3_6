@@ -199,7 +199,6 @@ subroutine indats(adhfsa,advfsa,axhfsa,axlksa,axvfsa,cdrsa,cdrsv,cessa,cessv,ipc
 
         ! A species with no elements is treated as being comprised of
         ! one "null" element.
-125 continue
         nessn = nessn + 1
         cessa(nessn) = 0.
         nessa(nessn) = 0

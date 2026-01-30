@@ -514,6 +514,4 @@ subroutine ngcadv(abar,acflg,acflgo,actwlc,adh,adhh,adhv,afcnst,al10,aphi,azero,
 
         call betacf(acflg,acflgo,bacfmx,nst,nstmax,ubacmx,uspec)
     end if
-
-999 continue
 end subroutine ngcadv

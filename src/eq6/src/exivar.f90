@@ -446,6 +446,4 @@ subroutine exivar(abar,acflg,acflgo,act,actlg,actwlc,adh,adhh,adhv,al10,aphi,aze
         write (noutpt,1200)
 1200 format(/11x,' --- Finished initializing calculations ---',/)
     end if
-
-999 continue
 end subroutine exivar

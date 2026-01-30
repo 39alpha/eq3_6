@@ -152,6 +152,4 @@ subroutine wterm(apx,iapxmx,iktmax,ixrn1,ixrn2,jsol,ncmpr,noutpt,nptmax,nstmax,n
 100 format(/' * Error - (EQLIBG/wterm) Have an Illegal jsol',/7x,'value of ',i2,' for solid solution ',a,'.')
         end if
     end do
-
-999 continue
 end subroutine wterm
