@@ -16467,15 +16467,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -6.1193E-12 eq
+               Charge discrepancy= -6.1197E-12 eq
               Sigma |equivalents|=  1.0869E+00 eq
 
           Actual Charge imbalance=  9.2280E-04 eq/kg.solu
         Expected Charge imbalance=  9.2226E-04 eq/kg.solu
-               Charge discrepancy= -5.9331E-12 eq/kg.solu
+               Charge discrepancy= -5.9334E-12 eq/kg.solu
               Sigma |equivalents|=  1.0538E+00 eq/kg.solu
 
-      Relative charge discrepancy= -5.6301E-12
+      Relative charge discrepancy= -5.6304E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -16636,7 +16636,7 @@
 
    Phase/End-member           d mol/d Xi  d grams/d Xi  d V(cm3)/d Xi
 
- Dolomite-ord                 3.4293E-08   6.3236E-06   0.00000E+00
+ Dolomite-ord                 3.4292E-08   6.3236E-06   0.00000E+00
  Gypsum                       1.5371E-05   2.6464E-03   0.00000E+00
 
  Exchanger 1                  0.0000E+00   2.0065E+01   0.00000E+00
@@ -17035,15 +17035,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -4.7872E-12 eq
+               Charge discrepancy= -4.7873E-12 eq
               Sigma |equivalents|=  1.0869E+00 eq
 
           Actual Charge imbalance=  9.2280E-04 eq/kg.solu
         Expected Charge imbalance=  9.2226E-04 eq/kg.solu
-               Charge discrepancy= -4.6415E-12 eq/kg.solu
+               Charge discrepancy= -4.6416E-12 eq/kg.solu
               Sigma |equivalents|=  1.0538E+00 eq/kg.solu
 
-      Relative charge discrepancy= -4.4045E-12
+      Relative charge discrepancy= -4.4046E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -18040,11 +18040,11 @@
    Not shifted: Exchanger 1
                Mass=  1.00000E-12 moles
 
- Stepping to Xi=  8.7366E-01, delxi=  3.3663E-02, nord= 3
+ Stepping to Xi=  8.7366E-01, delxi=  3.3664E-02, nord= 3
  Steps completed=    97, iter=  10, ncorr= 0
  Most rapidly changing is zvclg1(Ca++ Site A)=     -0.7023
 
- Stepping to Xi=  8.8000E-01, delxi=  6.3367E-03, nord= 3
+ Stepping to Xi=  8.8000E-01, delxi=  6.3364E-03, nord= 3
  Steps completed=    98, iter=   6, ncorr= 0
  Most rapidly changing is zvclg1(Ca++ Site A)=     -0.6955
 
@@ -18776,15 +18776,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -3.5885E-12 eq
+               Charge discrepancy= -3.5887E-12 eq
               Sigma |equivalents|=  1.0869E+00 eq
 
           Actual Charge imbalance=  9.2280E-04 eq/kg.solu
         Expected Charge imbalance=  9.2226E-04 eq/kg.solu
-               Charge discrepancy= -3.4793E-12 eq/kg.solu
+               Charge discrepancy= -3.4795E-12 eq/kg.solu
               Sigma |equivalents|=  1.0538E+00 eq/kg.solu
 
-      Relative charge discrepancy= -3.3016E-12
+      Relative charge discrepancy= -3.3018E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -19316,15 +19316,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -6.0189E-12 eq
+               Charge discrepancy= -6.0191E-12 eq
               Sigma |equivalents|=  1.0869E+00 eq
 
           Actual Charge imbalance=  9.2280E-04 eq/kg.solu
         Expected Charge imbalance=  9.2226E-04 eq/kg.solu
-               Charge discrepancy= -5.8357E-12 eq/kg.solu
+               Charge discrepancy= -5.8360E-12 eq/kg.solu
               Sigma |equivalents|=  1.0538E+00 eq/kg.solu
 
-      Relative charge discrepancy= -5.5377E-12
+      Relative charge discrepancy= -5.5379E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -19860,15 +19860,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -5.9308E-12 eq
+               Charge discrepancy= -5.9309E-12 eq
               Sigma |equivalents|=  1.0869E+00 eq
 
           Actual Charge imbalance=  9.2280E-04 eq/kg.solu
         Expected Charge imbalance=  9.2226E-04 eq/kg.solu
-               Charge discrepancy= -5.7503E-12 eq/kg.solu
+               Charge discrepancy= -5.7504E-12 eq/kg.solu
               Sigma |equivalents|=  1.0538E+00 eq/kg.solu
 
-      Relative charge discrepancy= -5.4567E-12
+      Relative charge discrepancy= -5.4568E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -20241,10 +20241,10 @@
 
      Reactant                  Moles     Delta moles    Mass, g    Delta mass, g
 
-  Exchanger 1                1.6653E-16   1.0000E+00   2.3271E-14   1.3974E+02
+  Exchanger 1                2.2204E-16   1.0000E+00   3.1028E-14   1.3974E+02
 
 
-                    Mass remaining=  2.3271E-14 grams
+                    Mass remaining=  3.1028E-14 grams
                     Mass destroyed=  1.3974E+02 grams
 
 
@@ -20785,10 +20785,10 @@
 
      Reactant                  Moles     Delta moles    Mass, g    Delta mass, g
 
-  Exchanger 1                5.5511E-17   1.0000E+00   7.7571E-15   1.3974E+02
+  Exchanger 1                1.1102E-16   1.0000E+00   1.5514E-14   1.3974E+02
 
 
-                    Mass remaining=  7.7571E-15 grams
+                    Mass remaining=  1.5514E-14 grams
                     Mass destroyed=  1.3974E+02 grams
 
 
@@ -20948,15 +20948,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -5.3361E-12 eq
+               Charge discrepancy= -5.3362E-12 eq
               Sigma |equivalents|=  1.0869E+00 eq
 
           Actual Charge imbalance=  9.2280E-04 eq/kg.solu
         Expected Charge imbalance=  9.2226E-04 eq/kg.solu
-               Charge discrepancy= -5.1737E-12 eq/kg.solu
+               Charge discrepancy= -5.1738E-12 eq/kg.solu
               Sigma |equivalents|=  1.0538E+00 eq/kg.solu
 
-      Relative charge discrepancy= -4.9095E-12
+      Relative charge discrepancy= -4.9096E-12
 
 
                 --- Distribution of Aqueous Solute Species ---

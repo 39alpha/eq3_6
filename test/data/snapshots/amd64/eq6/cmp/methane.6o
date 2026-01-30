@@ -5466,7 +5466,7 @@
 
  Stepping to Xi=  1.2569E-04, delxi=  1.2360E-11, nord= 0
  Steps completed=    27, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(O2(g))=    -17.1970
+ Most rapidly changing is zvclg1(O2(g))=    -17.1969
 
  Stepping to Xi=  1.2569E-04, delxi=  2.7809E-11, nord= 0
  iter= 13      
@@ -5478,7 +5478,7 @@
 
  Stepping to Xi=  1.2569E-04, delxi=  6.9523E-12, nord= 0
  Steps completed=    28, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(O2(g))=    -29.1970
+ Most rapidly changing is zvclg1(O2(g))=    -29.1969
 
  Stepping to Xi=  1.2569E-04, delxi=  1.5643E-11, nord= 0
  iter= 9       
@@ -5490,7 +5490,7 @@
 
  Stepping to Xi=  1.2569E-04, delxi=  3.9107E-12, nord= 0
  Steps completed=    29, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(O2(g))=    -41.1970
+ Most rapidly changing is zvclg1(O2(g))=    -41.1969
 
  Stepping to Xi=  1.2569E-04, delxi=  8.7990E-12, nord= 0
  iter= 6       
@@ -5615,7 +5615,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Hematite                         0.0000   0.0000E+00
+  Hematite                        -0.0000   0.0000E+00
   Calcite                         -0.0000   0.0000E+00
   CH4(g)                     9999999.0000   1.0000E+00
 
@@ -5768,17 +5768,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance=  8.3079E-13 eq
+          Actual Charge imbalance=  8.3080E-13 eq
         Expected Charge imbalance=  8.3079E-13 eq
-               Charge discrepancy= -3.5113E-18 eq
+               Charge discrepancy=  2.5602E-18 eq
               Sigma |equivalents|=  2.1158E-02 eq
 
           Actual Charge imbalance=  8.3015E-13 eq/kg.solu
         Expected Charge imbalance=  8.3015E-13 eq/kg.solu
-               Charge discrepancy= -3.5086E-18 eq/kg.solu
+               Charge discrepancy=  2.5582E-18 eq/kg.solu
               Sigma |equivalents|=  2.1142E-02 eq/kg.solu
 
-      Relative charge discrepancy= -1.6596E-16
+      Relative charge discrepancy=  1.2100E-16
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -6029,7 +6029,7 @@
 
  Calcite                         -1.7007   1.9920E-02   1.9937E+00   0.0000E+00
  Hematite                        -4.0000   1.0000E-04   1.5969E-02   0.0000E+00
- UO2.3333(beta)                 -11.9721   1.0664E-12   2.9364E-10   0.0000E+00
+ UO2.3333(beta)                 -11.9725   1.0654E-12   2.9337E-10   0.0000E+00
 
 
             --- Grand Summary of Solid Phases (ES + PRS + Reactants) ---
@@ -6038,7 +6038,7 @@
 
  Calcite                         -1.7007   1.9920E-02   1.9937E+00   0.0000E+00
  Hematite                        -4.0000   1.0000E-04   1.5969E-02   0.0000E+00
- UO2.3333(beta)                 -11.9721   1.0664E-12   2.9364E-10   0.0000E+00
+ UO2.3333(beta)                 -11.9725   1.0654E-12   2.9337E-10   0.0000E+00
 
 
                           Mass, grams       Volume, cm3
@@ -6094,7 +6094,7 @@
      UO2(am)                      -5.87171     -8.01069
      UO2.25                       -0.05001     -0.06823
      UO2.25(beta)                 -0.11001     -0.15009
-     UO2.3333(beta)               -0.00000     -0.00000     SATD
+     UO2.3333(beta)                0.00000      0.00000     SATD
      UO2.6667                     -0.30994     -0.42284
      UO2CO3                       -1.73753     -2.37049
      UO3(alpha)                   -4.74380     -6.47190
@@ -7050,10 +7050,10 @@
 
           Actual Charge imbalance=  9.9415E-13 eq
         Expected Charge imbalance=  8.3079E-13 eq
-               Charge discrepancy=  1.6335E-13 eq
+               Charge discrepancy=  1.6336E-13 eq
               Sigma |equivalents|=  2.1119E-02 eq
 
-          Actual Charge imbalance=  9.9338E-13 eq/kg.solu
+          Actual Charge imbalance=  9.9339E-13 eq/kg.solu
         Expected Charge imbalance=  8.3016E-13 eq/kg.solu
                Charge discrepancy=  1.6323E-13 eq/kg.solu
               Sigma |equivalents|=  2.1103E-02 eq/kg.solu
@@ -7486,7 +7486,7 @@
  Steps completed=    64, iter=   6, ncorr= 0
  Most rapidly changing is zvclg1(O2(g))=    -52.5331
 
- Stepping to Xi=  1.3317E-04, delxi=  6.2148E-09, nord= 6
+ Stepping to Xi=  1.3317E-04, delxi=  6.2150E-09, nord= 6
  iter= 5       
 
    Have 1 supersaturated phases.
@@ -7498,7 +7498,7 @@
  Steps completed=    65, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(O2(g))=    -52.6172
 
- Stepping to Xi=  1.3317E-04, delxi=  3.4958E-09, nord= 0
+ Stepping to Xi=  1.3317E-04, delxi=  3.4959E-09, nord= 0
  iter= 4       
 
    Have 1 supersaturated phases.
@@ -7506,11 +7506,11 @@
  --- The extent of supersaturation exceeds the normal tolerance ---
  --- Cutting the step size and trying again ---
 
- Stepping to Xi=  1.3317E-04, delxi=  8.7396E-10, nord= 0
+ Stepping to Xi=  1.3317E-04, delxi=  8.7398E-10, nord= 0
  Steps completed=    66, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(O2(g))=    -52.6672
 
- Stepping to Xi=  1.3317E-04, delxi=  1.9664E-09, nord= 0
+ Stepping to Xi=  1.3317E-04, delxi=  1.9665E-09, nord= 0
  iter= 4       
 
    Have 1 supersaturated phases.
@@ -7518,7 +7518,7 @@
  --- The extent of supersaturation exceeds the normal tolerance ---
  --- Cutting the step size and trying again ---
 
- Stepping to Xi=  1.3317E-04, delxi=  4.9160E-10, nord= 0
+ Stepping to Xi=  1.3317E-04, delxi=  4.9162E-10, nord= 0
  iter= 3       
 
    Have 1 supersaturated phases.
@@ -7743,17 +7743,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance=  8.3079E-13 eq
+          Actual Charge imbalance=  8.3080E-13 eq
         Expected Charge imbalance=  8.3079E-13 eq
-               Charge discrepancy= -1.1494E-18 eq
+               Charge discrepancy=  4.9221E-18 eq
               Sigma |equivalents|=  2.1092E-02 eq
 
           Actual Charge imbalance=  8.3016E-13 eq/kg.solu
         Expected Charge imbalance=  8.3016E-13 eq/kg.solu
-               Charge discrepancy= -1.1486E-18 eq/kg.solu
+               Charge discrepancy=  4.9184E-18 eq/kg.solu
               Sigma |equivalents|=  2.1076E-02 eq/kg.solu
 
-      Relative charge discrepancy= -5.4496E-17
+      Relative charge discrepancy=  2.3336E-16
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -8021,7 +8021,7 @@
  Calcite                         -1.7004   1.9936E-02   1.9953E+00   0.0000E+00
  Hematite                        -4.0000   9.9998E-05   1.5969E-02   0.0000E+00
  UO2.25                          -4.3991   3.9896E-05   1.0933E-02   0.0000E+00
- Uraninite                       -9.0155   9.6493E-10   2.6056E-07   0.0000E+00
+ Uraninite                       -9.0155   9.6491E-10   2.6055E-07   0.0000E+00
 
 
             --- Grand Summary of Solid Phases (ES + PRS + Reactants) ---
@@ -8031,7 +8031,7 @@
  Calcite                         -1.7004   1.9936E-02   1.9953E+00   0.0000E+00
  Hematite                        -4.0000   9.9998E-05   1.5969E-02   0.0000E+00
  UO2.25                          -4.3991   3.9896E-05   1.0933E-02   0.0000E+00
- Uraninite                       -9.0155   9.6493E-10   2.6056E-07   0.0000E+00
+ Uraninite                       -9.0155   9.6491E-10   2.6055E-07   0.0000E+00
 
 
                           Mass, grams       Volume, cm3
@@ -8404,15 +8404,15 @@
 
           Actual Charge imbalance=  8.3124E-13 eq
         Expected Charge imbalance=  8.3079E-13 eq
-               Charge discrepancy=  4.5080E-16 eq
+               Charge discrepancy=  4.4646E-16 eq
               Sigma |equivalents|=  2.1098E-02 eq
 
-          Actual Charge imbalance=  8.3061E-13 eq/kg.solu
+          Actual Charge imbalance=  8.3060E-13 eq/kg.solu
         Expected Charge imbalance=  8.3016E-13 eq/kg.solu
-               Charge discrepancy=  4.5046E-16 eq/kg.solu
+               Charge discrepancy=  4.4612E-16 eq/kg.solu
               Sigma |equivalents|=  2.1082E-02 eq/kg.solu
 
-      Relative charge discrepancy=  2.1367E-14
+      Relative charge discrepancy=  2.1161E-14
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -9042,7 +9042,7 @@
                                 kcal/mol      mol/mol
 
   Hematite                        -0.0000   0.0000E+00
-  Calcite                          0.0000   0.0000E+00
+  Calcite                         -0.0000   0.0000E+00
   CH4(g)                     9999999.0000   1.0000E+00
 
 
@@ -9604,7 +9604,7 @@
      Bassanite                    -2.53568     -3.45940
      Graphite                     -4.20998     -5.74361
      CaSO4:0.5H2O(beta)           -2.70378     -3.68873
-     Calcite                      -0.00000     -0.00000     SATD
+     Calcite                       0.00000      0.00000     SATD
      Fe(OH)2                      -4.91154     -6.70074
      Fe(OH)3                      -5.60151     -7.64206
      FeO                          -4.53870     -6.19208
@@ -9627,7 +9627,7 @@
      UO2.25                       -1.76620     -2.40960
      UO2.25(beta)                 -1.82620     -2.49146
      UO2.3333(beta)               -5.19274     -7.08438
-     Uraninite                     0.00000      0.00000     SATD
+     Uraninite                    -0.00000     -0.00000     SATD
      Wustite                      -4.84235     -6.60634
 
         Phases with affinities less than -10 kcal are not listed.
@@ -9721,7 +9721,7 @@
 
  Stepping to Xi=  4.9390E-04, delxi=  1.5445E-05, nord= 3
  Steps completed=   132, iter=   4, ncorr= 0
- Most rapidly changing is zvclg1(Hematite)=     -6.3436
+ Most rapidly changing is zvclg1(Hematite)=     -6.3437
 
  Stepping to Xi=  4.9544E-04, delxi=  1.5438E-06, nord= 4
  Steps completed=   133, iter=   4, ncorr= 0
@@ -9731,7 +9731,7 @@
  Steps completed=   134, iter=  10, ncorr= 0
  Most rapidly changing is zvclg1(Hematite)=    -11.6893
 
- Stepping to Xi=  4.9561E-04, delxi=  7.8230E-12, nord= 1
+ Stepping to Xi=  4.9561E-04, delxi=  7.8229E-12, nord= 1
  Steps completed=   135, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Hematite)=    -20.3580
 
@@ -9952,7 +9952,7 @@
 
           Actual Charge imbalance=  1.1221E-12 eq/kg.solu
         Expected Charge imbalance=  8.3020E-13 eq/kg.solu
-               Charge discrepancy=  2.9187E-13 eq/kg.solu
+               Charge discrepancy=  2.9186E-13 eq/kg.solu
               Sigma |equivalents|=  1.9823E-02 eq/kg.solu
 
       Relative charge discrepancy=  1.4724E-11
@@ -10680,17 +10680,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance=  8.3099E-13 eq
+          Actual Charge imbalance=  8.3098E-13 eq
         Expected Charge imbalance=  8.3079E-13 eq
-               Charge discrepancy=  1.9621E-16 eq
+               Charge discrepancy=  1.8927E-16 eq
               Sigma |equivalents|=  1.9801E-02 eq
 
-          Actual Charge imbalance=  8.3039E-13 eq/kg.solu
+          Actual Charge imbalance=  8.3038E-13 eq/kg.solu
         Expected Charge imbalance=  8.3020E-13 eq/kg.solu
-               Charge discrepancy=  1.9607E-16 eq/kg.solu
+               Charge discrepancy=  1.8914E-16 eq/kg.solu
               Sigma |equivalents|=  1.9787E-02 eq/kg.solu
 
-      Relative charge discrepancy=  9.9091E-15
+      Relative charge discrepancy=  9.5587E-15
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -10726,7 +10726,7 @@
  Formate                    2.0680E-10      -9.6844      -0.0471      -9.7316
  HCl(aq)                    4.3717E-11     -10.3594       0.0000     -10.3594
  FeCO3(aq)                  3.0449E-11     -10.5164       0.0000     -10.5164
- H2(aq)                     2.7091E-11     -10.5672       0.0013     -10.5659
+ H2(aq)                     2.7090E-11     -10.5672       0.0013     -10.5659
  FeSO4(aq)                  8.9566E-12     -11.0479       0.0000     -11.0479
  Ca(For)+                   5.3035E-12     -11.2754      -0.0502     -11.3257
  Methane(aq)                1.6416E-12     -11.7847       0.0000     -11.7847
@@ -10858,14 +10858,14 @@
  U(For)++                   1.6291E-47     -46.7880      -0.1955     -46.9836
  2-Hydroxybutanoate         1.0899E-48     -47.9626      -0.0464     -48.0090
  H-Glutarate                8.4091E-49     -48.0752      -0.0464     -48.1216
- Fe(But)+                   4.3228E-49     -48.3642      -0.0502     -48.4145
+ Fe(But)+                   4.3227E-49     -48.3642      -0.0502     -48.4145
  2-Butanone(aq)             2.4774E-49     -48.6060       0.0000     -48.6060
  n-Butane(aq)               1.1889E-49     -48.9249       0.0000     -48.9249
  Glutaric_acid(aq)          7.5492E-52     -51.1221       0.0000     -51.1221
  Ethyne(aq)                 5.0852E-52     -51.2937       0.0000     -51.2937
  Ethylacetate(aq)           3.2088E-52     -51.4937       0.0000     -51.4937
  2-Hydroxybutanoic(aq)      2.9030E-52     -51.5372       0.0000     -51.5372
- Pentanoate                 9.4198E-53     -52.0260      -0.0464     -52.0723
+ Pentanoate                 9.4197E-53     -52.0260      -0.0464     -52.0723
  HClO(aq)                   1.7280E-53     -52.7625       0.0000     -52.7625
  ClO-                       1.1339E-53     -52.9454      -0.0464     -52.9918
  S5O6--                     1.1260E-53     -52.9485      -0.1908     -53.1393
@@ -10922,12 +10922,12 @@
  2-Hydroxyhexanoic(aq)      5.4780E-76     -75.2614       0.0000     -75.2614
  p-Toluate                  4.3579E-76     -75.3607      -0.0464     -75.4071
  H(o-Phthalate)-            4.1609E-76     -75.3808      -0.0464     -75.4272
- m-Toluate                  2.4968E-76     -75.6026      -0.0464     -75.6490
+ m-Toluate                  2.4967E-76     -75.6026      -0.0464     -75.6490
  Heptanoate                 1.7633E-76     -75.7537      -0.0464     -75.8000
  U(But)++                   4.8093E-78     -77.3179      -0.1955     -77.5135
  o-Toluate                  2.5762E-78     -77.5890      -0.0464     -77.6354
  1-Hexanol(aq)              2.0198E-78     -77.6947       0.0000     -77.6947
- Hexanal(aq)                9.2692E-79     -78.0330       0.0000     -78.0330
+ Hexanal(aq)                9.2691E-79     -78.0330       0.0000     -78.0330
  Heptanoic_acid(aq)         5.6607E-79     -78.2471       0.0000     -78.2471
  p-Toluic_acid(aq)          4.1853E-79     -78.3783       0.0000     -78.3783
  Fe(Lac)2(aq)               3.6329E-79     -78.4397       0.0000     -78.4397
@@ -10964,7 +10964,7 @@
  Azelate                    5.9736E-98     -97.2238      -0.1908     -97.4146
  2-Hydroxyoctanoic(aq)      1.0340E-99     -98.9855       0.0000     -98.9855
  Nonanoate                  5.9567-100     -99.2250      -0.0464     -99.2714
- H-Azelate                  4.8620-100     -99.3132      -0.0464     -99.3595
+ H-Azelate                  4.8620-100     -99.3132      -0.0464     -99.3596
 
     Species with molalities less than  1.000-100 are not listed.
 

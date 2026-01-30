@@ -16623,7 +16623,7 @@
  Steps completed=    97, iter=   4, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.7985
 
- Stepping to Xi=  8.0758E-01, delxi=  4.0006E-03, nord= 2
+ Stepping to Xi=  8.0758E-01, delxi=  4.0005E-03, nord= 2
  Steps completed=    98, iter=   5, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.6457
 
@@ -16635,7 +16635,7 @@
  Steps completed=   100, iter=   7, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.2806
 
- Stepping to Xi=  8.4000E-01, delxi=  1.3739E-02, nord= 3
+ Stepping to Xi=  8.4000E-01, delxi=  1.3740E-02, nord= 3
  Steps completed=   101, iter=   9, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.1374
 
@@ -18237,7 +18237,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                  -0.00000     -0.00000     SATD
+     Exchanger 1                   0.00000      0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -18309,10 +18309,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                        -0.0000         -0.0000   SATD
+ Exchanger 1                         0.0000          0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                       -0.0000         -0.0000   SATD
+   Na+ Site A                        0.0000          0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -18507,12 +18507,12 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy=  5.5928E-11 eq
+               Charge discrepancy=  5.5929E-11 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
         Expected Charge imbalance=  9.2232E-04 eq/kg.solu
-               Charge discrepancy=  5.4230E-11 eq/kg.solu
+               Charge discrepancy=  5.4231E-11 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
       Relative charge discrepancy=  5.1503E-11
@@ -19472,10 +19472,10 @@
 
      Reactant                  Moles     Delta moles    Mass, g    Delta mass, g
 
-  Exchanger 1                1.1102E-16   1.0000E+00   1.5514E-14   1.3974E+02
+  Exchanger 1                2.7756E-17   1.0000E+00   3.8786E-15   1.3974E+02
 
 
-                    Mass remaining=  1.5514E-14 grams
+                    Mass remaining=  3.8786E-15 grams
                     Mass destroyed=  1.3974E+02 grams
 
 
@@ -19643,7 +19643,7 @@
                Charge discrepancy=  5.4254E-11 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy=  5.1525E-11
+      Relative charge discrepancy=  5.1526E-11
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -19844,7 +19844,7 @@
  Dolomite-ord                    -3.5450   2.8513E-04   5.2578E-02   0.0000E+00
  Gypsum                          -1.7665   1.7120E-02   2.9476E+00   0.0000E+00
 
- Exchanger 1                    -12.0000   1.0001E-12   2.1449E+01   0.0000E+00
+ Exchanger 1                    -12.0000   1.0000E-12   2.1449E+01   0.0000E+00
    Ca++ Site A                   -0.5834   2.6100E-01   1.0460E+01   0.0000E+00
    Na+ Site A                    -0.3206   4.7800E-01   1.0989E+01   0.0000E+00
 
@@ -19921,7 +19921,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -19993,10 +19993,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -20202,7 +20202,7 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy=  5.5952E-11 eq
+               Charge discrepancy=  5.5953E-11 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu

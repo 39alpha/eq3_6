@@ -16591,7 +16591,7 @@
  Steps completed=    89, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.9989
 
- Stepping to Xi=  8.0016E-01, delxi=  2.5300E-05, nord= 1
+ Stepping to Xi=  8.0016E-01, delxi=  2.5299E-05, nord= 1
  Steps completed=    90, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.9970
 
@@ -16623,11 +16623,11 @@
  Steps completed=    97, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.8008
 
- Stepping to Xi=  8.0752E-01, delxi=  3.9891E-03, nord= 2
+ Stepping to Xi=  8.0752E-01, delxi=  3.9892E-03, nord= 2
  Steps completed=    98, iter=   5, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.6477
 
- Stepping to Xi=  8.1340E-01, delxi=  5.8753E-03, nord= 2
+ Stepping to Xi=  8.1340E-01, delxi=  5.8754E-03, nord= 2
  Steps completed=    99, iter=   8, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.4929
 
@@ -17951,7 +17951,7 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy=  5.6172E-11 eq
+               Charge discrepancy=  5.6171E-11 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
@@ -17959,7 +17959,7 @@
                Charge discrepancy=  5.4466E-11 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy=  5.1727E-11
+      Relative charge discrepancy=  5.1726E-11
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -18237,7 +18237,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -18309,10 +18309,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -18512,7 +18512,7 @@
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
         Expected Charge imbalance=  9.2232E-04 eq/kg.solu
-               Charge discrepancy=  5.4272E-11 eq/kg.solu
+               Charge discrepancy=  5.4271E-11 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
       Relative charge discrepancy=  5.1542E-11
@@ -18793,7 +18793,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                  -0.00000     -0.00000     SATD
+     Exchanger 1                   0.00000      0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -18865,10 +18865,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                        -0.0000         -0.0000   SATD
+ Exchanger 1                         0.0000          0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                       -0.0000         -0.0000   SATD
+   Na+ Site A                        0.0000          0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -19079,7 +19079,7 @@
                Charge discrepancy=  5.4211E-11 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy=  5.1485E-11
+      Relative charge discrepancy=  5.1484E-11
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -19357,7 +19357,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -19429,10 +19429,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -19924,7 +19924,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -19996,10 +19996,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
