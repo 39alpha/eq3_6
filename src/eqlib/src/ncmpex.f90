@@ -1,4 +1,5 @@
 subroutine ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fo2,fo2lg,fsort,fugac,fugalg,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,istack,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,mrgexs,mtb,moph,mosp,narn1,narn2,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,noutpt,no2gaq,nphasx,npt,nptmax,nst,nstmax,nttyo,omega,omeglg,press,qxbarw,q6mode,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zgexj,zvclg1,zvec1)
+    use iso_fortran_env, only: dp => real64
     !! This subroutine computes all parameters necessary to write the
     !! Jacobian matrix from the zvclg1 array. It thus "expands" the
     !! basis set variable data.
@@ -532,8 +533,8 @@ subroutine ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,eg
                     dxw = -0.5*xbarw
                 end if
 
-                dxw = min(dxw,0.05)
-                dxw = max(dxw,-0.05)
+                dxw = min(dxw,0.05_dp)
+                dxw = max(dxw,-0.05_dp)
 
                 ! Make the correction and try again.
                 xbarw = xbarw + dxw

@@ -1,4 +1,5 @@
 subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,eh,fje,fo2lg,fugac,fxi,iktmax,iopt,jflag,jsflag,kmax,kstep,kx1,kxt,mrmlra,modr,mosp,mospt,moph,mopht,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,ncmpr,nct,nctmax,nelect,ngrn1,ngrn2,ngtmax,nhydr,nhydx,nllnmx,no2gaq,noptmx,noutpt,npt,nptmax,nrct,nrctmx,nstmax,ntabx,ntidmx,ntitl2,ntitld,ntitmx,nttyo,nxrn1,nxrn2,nxtmax,pe,ph,phmes,ppmwb,ppmwe,prcinf,press,prminf,qrho,qriinf,rho,rhowc,sidrph,sigmam,tdsgks,tdsglw,tempc,time1,uelem,ulinex,uphase,uplatm,ureac,uspec,usteq6,utitl2,utitld,uveeq6,vodrt,vosoct,wkgh2o,wodrt,wosoct,xbar,xbarlg,xi1)
+    use iso_fortran_env, only: dp => real64
     !! This subroutine writes to TABX (the scrambled TAB file) using
     !! a csv (comma separated value) format. A .csv file can be opened
     !! by spreadsheets and other software that support data analysis
@@ -1622,7 +1623,7 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
     !   Affinities of reactants, kcal
     ! Prepare the data.
     do n = 1,nrct
-        afrcx(n) = min(99999.,afrc1(n))
+        afrcx(n) = min(99999.0_dp,afrc1(n))
     end do
 
     ultag1 = 'K       '
