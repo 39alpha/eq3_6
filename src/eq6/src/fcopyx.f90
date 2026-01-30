@@ -25,9 +25,6 @@ subroutine fcopyx(nf1,nf2,nllnmx,ulinex)
 
     character(len=nllnmx) :: ulinex
 
-    ! Local variable declarations.
-    integer :: j
-
     rewind nf1
 100 continue
     read (nf1,'(a)',end=110) ulinex

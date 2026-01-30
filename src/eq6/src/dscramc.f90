@@ -41,14 +41,10 @@ subroutine dscramc(ntabx,ntabs,nllnmx,ulinex)
     ! Local variable declarations.
     integer :: j1
     integer :: j2
-    integer :: j
     integer :: jc
     integer :: n
     integer :: ntable
     integer :: ntablx
-
-    integer, dimension(:), allocatable :: iftabl
-    integer, dimension(:), allocatable :: iltabl
 
     logical :: qtablf
     logical :: qvhfix
@@ -59,7 +55,6 @@ subroutine dscramc(ntabx,ntabs,nllnmx,ulinex)
     character(len=8), dimension(:), allocatable :: utablx
 
     character(len=8) :: uidstr
-    character(len=8) :: uidstx
     character(len=8) :: utx
     character(len=8) :: ux8
 

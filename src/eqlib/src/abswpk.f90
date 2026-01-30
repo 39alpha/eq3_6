@@ -66,8 +66,6 @@ subroutine abswpk(beta,cdrs,csts,efac,ibswx,iebal,iindx1,jcsort,jflag,jssort,kbt
     integer :: nsi
     integer :: nsj
 
-    logical :: qskip
-
     real(kind=8) :: btest
     real(kind=8) :: cx
     real(kind=8) :: wsi
