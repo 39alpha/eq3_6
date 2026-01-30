@@ -1,4 +1,5 @@
 subroutine setrcp(aftarg,dlxmax,dlxmin,dlxmx0,npslmx,nsscmx,nsslmx,prcinf,sscrew,tolaft,tolsat,tolsst,zkfac,zklgmn,zklogl,zklogu)
+    use iso_fortran_env, only: dp => real64
     !! This subroutine sets the values of various run control parameters
     !! which are not read from the input file.
     !! This subroutine is called by:
@@ -149,7 +150,7 @@ subroutine setrcp(aftarg,dlxmax,dlxmin,dlxmx0,npslmx,nsscmx,nsslmx,prcinf,sscrew
     ! in reaction progress space and time space is not limited by this
     ! parameter.
     dlxmin = 0.01*dlxmx0
-    dlxmin = min(dlxmin,1.e-14)
+    dlxmin = min(dlxmin,1.e-14_dp)
 
     ! Upper limit on the step size.
     dlxmax = prcinf
