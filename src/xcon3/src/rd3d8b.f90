@@ -334,7 +334,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -345,7 +345,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
         if (.not.qnone) then
             nsbsw = nsbsw + 1
-            usbsw(1,nsbsw) = ufield(2)
+            usbsw(1,nsbsw) = ufield(2)(1:48)
         end if
 
         ! Read the name of the "with" species from a two-line header.
@@ -358,7 +358,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         if (.not.qnone) then
-            usbsw(2,nsbsw) = ufield(2)
+            usbsw(2,nsbsw) = ufield(2)(1:48)
         end if
     end do
 
@@ -767,7 +767,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         iebal3 = 1
         ustr = ufield(2)
-        uebal = ustr
+        uebal = ustr(1:24)
         icount = icount + 1
     end if
 
@@ -1010,7 +1010,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         irdxc3 = 1
         ustr = ufield(2)
-        uredox = ustr
+        uredox = ustr(1:24)
         icount = icount + 1
     end if
 
@@ -1073,7 +1073,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 1030 format(/' * Warning - (XCON3/rd3d8b) Found ',i2,' fields',' where ',i2,/7x,'were expected on the line which begins with',/7x,'"',a,'".')
     end if
 
-    ux48 = ufield(1)
+    ux48 = ufield(1)(1:48)
 
     nbi = nbi + 1
 
@@ -1126,7 +1126,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '->'
         j2 = ilnobl(ustr24)
         j3 = ilnobl(uheadx)
@@ -1138,7 +1138,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         ustr = ufield(2)
-        ucospi(nbi)(1:48) = ustr
+        ucospi(nbi)(1:48) = ustr(1:48)
     end if
 
     ! Read the next data line. Go back to process it.
@@ -1203,7 +1203,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -1223,7 +1223,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 990
             end if
 
-            ugexp(ne) = ustr
+            ugexp(ne) = ustr(1:24)
             jgext(ne) = 0
         end if
 
@@ -1236,7 +1236,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '--------'
 
         if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -1259,7 +1259,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Mol. Wt. (Z)'
         call locase(ustr24)
         call locase(uheadx)
@@ -1292,7 +1292,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Exchange model'
         call locase(ustr24)
         call locase(uheadx)
@@ -1306,7 +1306,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         if (.not.qnonep) then
-            ugexmo(ne) = ufield(3)
+            ugexmo(ne) = ufield(3)(1:24)
         end if
 
         ! Read the reference temperature (C) for the thermodynamic
@@ -1326,7 +1326,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Ref. Temp. (C)'
         call locase(ustr24)
         call locase(uheadx)
@@ -1367,7 +1367,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             j3 = ilnobl(uheadx)
 
             if (ustr(1:j2) .eq. uheadx(1:j3)) then
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'Exchange site'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -1381,7 +1381,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 end if
 
                 ustr = ufield(3)
-                ustrn = ustr
+                ustrn = ustr(1:24)
                 call locase(ustrn)
 
                 if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -1405,7 +1405,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                         go to 990
                     end if
 
-                    ugexj(je,ne) = ufield(3)
+                    ugexj(je,ne) = ufield(3)(1:8)
                     ngexrt(je,ne) = 0
                 end if
             else
@@ -1437,7 +1437,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 999
             end if
 
-            ustr24 = ufield(1)
+            ustr24 = ufield(1)(1:24)
             uheadx = '--------'
 
             if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -1458,7 +1458,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 999
             end if
 
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Stoich. number'
             call locase(ustr24)
             call locase(uheadx)
@@ -1492,7 +1492,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 999
             end if
 
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Electr. charge'
             call locase(ustr24)
             call locase(uheadx)
@@ -1542,7 +1542,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 j3 = ilnobl(uheadx)
 
                 if (ustr(1:j2) .eq. uheadx(1:j3)) then
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Reaction'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -1556,7 +1556,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                     end if
 
                     ustr = ufield(3)
-                    ustrn = ustr
+                    ustrn = ustr(1:24)
                     call locase(ustrn)
 
                     if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -1581,7 +1581,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                             go to 990
                         end if
 
-                        ugexr(n,je,ne) = ufield(3)
+                        ugexr(n,je,ne) = ufield(3)(1:56)
                     end if
                 else
                     ! Back up.
@@ -1634,7 +1634,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                     go to 999
                 end if
 
-                ustr24 = ufield(1)
+                ustr24 = ufield(1)(1:24)
                 uheadx = '--------'
 
                 if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -1655,7 +1655,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                     go to 999
                 end if
 
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'Parameter'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -1678,7 +1678,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                     go to 999
                 end if
 
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'K func.'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -1700,7 +1700,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
                 if (qokay) then
                     xlkgex(n,je,ne) = var
-                    uxkgex(n,je,ne) = ufield(4)
+                    uxkgex(n,je,ne) = ufield(4)(1:8)
                 end if
 
                 ! Read the Delta H data for the reaction from a one-line
@@ -1713,7 +1713,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                     go to 999
                 end if
 
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'DelH0r'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -1735,7 +1735,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
                 if (qokay) then
                     xhfgex(n,je,ne) = var
-                    uhfgex(n,je,ne) = ufield(4)
+                    uhfgex(n,je,ne) = ufield(4)(1:8)
                 end if
 
                 ! Read the Delta V data for the reaction from a two-line
@@ -1748,7 +1748,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                     go to 999
                 end if
 
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'DelV0r'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -1770,7 +1770,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
                 if (qokay) then
                     xvfgex(n,je,ne) = var
-                    uvfgex(n,je,ne) = ufield(4)
+                    uvfgex(n,je,ne) = ufield(4)(1:8)
                 end if
             end do
 
@@ -1819,7 +1819,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -1841,7 +1841,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 990
             end if
 
-            ugexpi(nei) = ustr
+            ugexpi(nei) = ustr(1:24)
             j3 = ilnobl(ugexpi(nei))
             jgexti(nei) = 0
 
@@ -1883,7 +1883,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '--------'
 
         if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -1904,7 +1904,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Moles/kg.H2O'
         call locase(ustr24)
         call locase(uheadx)
@@ -1947,7 +1947,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             j3 = ilnobl(uheadx)
 
             if (ustr(1:j2) .eq. uheadx(1:j3)) then
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'Exchange site'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -1961,7 +1961,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 end if
 
                 ustr = ufield(3)
-                ustrn = ustr
+                ustrn = ustr(1:24)
                 call locase(ustrn)
 
                 if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -1985,7 +1985,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                         go to 990
                     end if
 
-                    ugexji(jei,nei) = ufield(3)
+                    ugexji(jei,nei) = ufield(3)(1:8)
                     ngexti(jei,nei) = 0
                 end if
             else
@@ -2017,7 +2017,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 999
             end if
 
-            ustr24 = ufield(1)
+            ustr24 = ufield(1)(1:24)
             uheadx = '--------'
 
             if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -2038,7 +2038,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 999
             end if
 
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Exchange species'
             call locase(ustr24)
             call locase(uheadx)
@@ -2053,7 +2053,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
             ! Check the measure of concentration: equivalent fraction
             ! versus mole fraction.
-            ustr24 = ufield(3)
+            ustr24 = ufield(3)(1:24)
 
             if (qnonep) then
                 if (ustr24(1:10) .eq. 'Mole frac.') then
@@ -2111,7 +2111,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
                 if (ustr(1:j2) .eq. uheadx(1:j3)) then
                     ustr = ufield(2)
-                    ustrn = ustr
+                    ustrn = ustr(1:24)
                     call locase(ustrn)
 
                     if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -2134,7 +2134,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                             go to 990
                         end if
 
-                        ugexsi(iei,jei,nei) = ufield(2)
+                        ugexsi(iei,jei,nei) = ufield(2)(1:24)
                         ustr = ufield(3)
                         call chreal(nttyo,qrderr,ustr,var)
 
@@ -2240,7 +2240,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -2260,7 +2260,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                 go to 990
             end if
 
-            usoli(nxi) = ustr
+            usoli(nxi) = ustr(1:24)
             ncmpri(1,nxi) = nxic + 1
         end if
 
@@ -2273,7 +2273,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '--------'
 
         if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -2294,7 +2294,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 999
         end if
 
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Component'
         call locase(ustr24)
         call locase(uheadx)
@@ -2325,7 +2325,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
             if (ustr(1:j2) .eq. uheadx(1:j3)) then
                 ustr = ufield(2)
-                ustrn = ustr
+                ustrn = ustr(1:24)
                 call locase(ustrn)
 
                 if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -2349,7 +2349,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
                         go to 990
                     end if
 
-                    umemi(nxic) = ufield(2)
+                    umemi(nxic) = ufield(2)(1:24)
                     ustr = ufield(3)
                     call chreal(nttyo,qrderr,ustr,var)
 
@@ -2430,7 +2430,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         call locase(ustr)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -2450,7 +2450,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
             go to 990
         end if
 
-        uxmod(n) = ufield(1)
+        uxmod(n) = ufield(1)(1:48)
 
         ustr = ufield(2)
         call locase(ustr)
@@ -3466,7 +3466,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -3477,7 +3477,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
 
         if (.not.qnone) then
             nobsw = nobsw + 1
-            uobsw(1,nobsw) = ufield(2)
+            uobsw(1,nobsw) = ufield(2)(1:48)
         end if
 
         ! Read the name of the "with" species from a two-line header.
@@ -3490,7 +3490,7 @@ subroutine rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,
         end if
 
         if (.not.qnone) then
-            uobsw(2,nobsw) = ufield(2)
+            uobsw(2,nobsw) = ufield(2)(1:48)
         end if
     end do
 

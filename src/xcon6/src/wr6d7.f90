@@ -333,9 +333,9 @@ subroutine wr6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                 if (uxopt(n)(1:8) .eq. 'all     ') then
                     ux8(k) = uxopt(n)
                 else if (uxopt(n)(1:8) .eq. 'alwith  ') then
-                    ux8(k) = uxct16(n)
+                    ux8(k) = uxct16(n)(1:8)
                 else
-                    ux8(k) = uxct16(n)
+                    ux8(k) = uxct16(n)(1:8)
                 end if
 
                 if (k .eq. 2) then

@@ -3944,9 +3944,9 @@ subroutine path(aadh,aadhh,aadhv,aaphi,abdh,abdhh,abdhv,abdot,abdoth,abdotv,adad
 
             if (kzmax .le. kbt) then
                 ns = nbasp(inmax)
-                ustr24 = uspec(ns)
+                ustr24 = uspec(ns)(1:24)
             else if (kzmax .le. kxt) then
-                ustr24 = uspec(inmax)
+                ustr24 = uspec(inmax)(1:24)
             end if
 
             j2 = ilnobl(ustr24)
@@ -4677,7 +4677,7 @@ subroutine path(aadh,aadhh,aadhv,aaphi,abdh,abdhh,abdhv,abdot,abdoth,abdotv,adad
 
             if (jflag(ns) .lt. 30) then
                 n = n + 1
-                ubsr1(n) = uspec(ns)
+                ubsr1(n) = uspec(ns)(1:24)
                 cbsr1(n) = wx*mtbaq(nb)
             end if
         end do
