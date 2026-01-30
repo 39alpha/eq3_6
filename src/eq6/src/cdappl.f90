@@ -250,7 +250,6 @@ subroutine cdappl(acflg,acfw,acfwlg,actlg,actw,actwlg,adwipp,afcnst,affpd,affsd,
     real(kind=8) :: wospx
 
     real(kind=8) :: texp
-    real(kind=8) :: tlg
 
     ! Compute the model time in various units.
     if (iopt(2) .ge. 1) then

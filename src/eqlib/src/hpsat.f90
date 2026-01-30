@@ -101,9 +101,6 @@ subroutine hpsat(acflg,act,actlg,afcnst,affp,affs,apx,bpx,cdrs,eps100,iapxmx,ibp
     real(kind=8) :: stxi
     real(kind=8) :: stxm1
     real(kind=8) :: xl
-    real(kind=8) :: xqk
-    real(kind=8) :: xqks
-    real(kind=8) :: xqksum
     real(kind=8) :: xx
     real(kind=8) :: cx2
 

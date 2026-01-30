@@ -62,7 +62,6 @@ subroutine prtsia(affsd,jflagd,jflgi,jsflag,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,
     integer :: kount
     integer :: n
     integer :: nb
-    integer :: nbb
     integer :: nr1
     integer :: nr2
     integer :: nse

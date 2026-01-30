@@ -194,17 +194,13 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
     integer :: jt2
     integer :: jt3
     integer :: jthv1
-    integer :: jthv2
-    integer :: jthv3
     integer :: jts
     integer :: n
     integer :: nb
     integer :: nc
     integer :: ng
-    integer :: ngt
     integer :: nlim
     integer :: np
-    integer :: nrc
     integer :: nr1
     integer :: nr2
     integer :: ns
@@ -220,7 +216,6 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
 
     character(len=48) :: ux48
     character(len=16) :: ux16
-    character(len=8) :: ux8
     character(len=8) :: ux8a
     character(len=8) :: ux8b
     character(len=8) :: ultag1
@@ -228,15 +223,10 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
     character(len=8) :: ultag3
     character(len=8) :: ultags
     character(len=8) :: ultgv1
-    character(len=8) :: ultgv2
-    character(len=8) :: ultgv3
     character(len=8) :: unotav
 
-    real(kind=8) :: mx
     real(kind=8) :: sidrcv
     real(kind=8) :: tdays
-
-    real(kind=8) :: tlg
 
     data unotav/'N/A'/
 

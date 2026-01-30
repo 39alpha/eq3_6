@@ -279,7 +279,6 @@ program eq3nr
     integer :: ibetmx
     integer :: icarb
     integer :: idelmx
-    integer :: ie
     integer :: iebal
     integer :: iebal3
     integer :: ielam

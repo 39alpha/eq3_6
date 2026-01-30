@@ -421,7 +421,6 @@ subroutine eqphas(aamatr,abar,acflg,acflgo,act,actlg,adh,adhh,adhv,afcnst,affp,a
     integer :: inext
     integer :: irow1
     integer :: irow2
-    integer :: isave
     integer :: isspt
     integer :: j
     integer :: jcol1

@@ -65,7 +65,6 @@ subroutine rc3ocf(amu,jpfcmx,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,il
     integer :: iz1
     integer :: iz3
     integer :: inote
-    integer :: na
     integer :: j
     integer :: j1
     integer :: j2

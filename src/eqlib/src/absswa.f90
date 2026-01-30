@@ -117,7 +117,6 @@ subroutine absswa(adhfs,adhfsx,advfs,advfsx,avcnst,axhfs,axhfsx,axlks,axlksx,axv
     integer :: ns2
 
     integer :: ilnobl
-    integer :: nbasis
 
     character(len=56) :: usp156
     character(len=56) :: usp256

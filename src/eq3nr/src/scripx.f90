@@ -217,8 +217,6 @@ subroutine scripx(abar,acflg,act,actlg,adh,afcnst,affpd,affsd,ahrc,alki,apx,atwt
     integer :: nr2
     integer :: ns
     integer :: nss
-    integer :: ns1
-    integer :: ns2
     integer :: nt
     integer :: nx
     integer :: nxi
@@ -270,8 +268,6 @@ subroutine scripx(abar,acflg,act,actlg,adh,afcnst,affpd,affsd,ahrc,alki,apx,atwt
     real(kind=8) :: phnbs
     real(kind=8) :: phmes
     real(kind=8) :: phx
-    real(kind=8) :: ppmv
-    real(kind=8) :: ppmw
     real(kind=8) :: pxc
     real(kind=8) :: pxd
     real(kind=8) :: pxx
@@ -286,7 +282,6 @@ subroutine scripx(abar,acflg,act,actlg,adh,afcnst,affpd,affsd,ahrc,alki,apx,atwt
 
     real(kind=8) :: coefst
     real(kind=8) :: texp
-    real(kind=8) :: tlg
 
     data uinput /'Input   '/,ufinal /'Final   '/,uadj   /'Adj     '/
 
