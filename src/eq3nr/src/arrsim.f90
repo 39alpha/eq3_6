@@ -261,7 +261,7 @@ subroutine arrsim(aamatr,acflg,actlg,bbig,cdrs,cjbasp,cnufac,conc,conclg,coval,d
             nb1 = jjndex(irow)
             ns1 = nbasp(nb1)
             jfl = jflag(ns1)
-            ust1 = uspec(ns1)
+            ust1 = uspec(ns1)(1:24)
             ust3 = ublk24
 
             if (ns1 .eq. narn1) then
@@ -283,15 +283,15 @@ subroutine arrsim(aamatr,acflg,actlg,bbig,cdrs,cjbasp,cnufac,conc,conclg,coval,d
             if (jfl .eq. 17) then
                 ns = ncosp(nb1)
                 ust2 = 'Log activity combination'
-                ust3 = uspec(ns)
+                ust3 = uspec(ns)(1:24)
             else if (jfl .eq. 18) then
                 ns = ncosp(nb1)
                 ust2 = 'Mean log activity'
-                ust3 = uspec(ns)
+                ust3 = uspec(ns)(1:24)
             else if (jfl .eq. 21) then
                 ns = ncosp(nb1)
                 ust2 = 'pHCl'
-                ust3 = uspec(ns)
+                ust3 = uspec(ns)(1:24)
             else if (jfl .eq. 27) then
                 ust2 = uaqeq
             else

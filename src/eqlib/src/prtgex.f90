@@ -159,7 +159,7 @@ subroutine prtgex(acflg,actlg,affpd,affsd,cegexs,conc,egexjc,egexjf,egexpa,egexp
             if (nss .le. 0) then
                 ux24 = '__ '
             else
-                ux24 = uspec(nss)
+                ux24 = uspec(nss)(1:24)
             end if
 
             if (nss .gt. 0) then
@@ -181,7 +181,7 @@ subroutine prtgex(acflg,actlg,affpd,affsd,cegexs,conc,egexjc,egexjf,egexpa,egexp
             nss = ngexsa(ie,je,ne)
 
             if (nss .gt. 0) then
-                ux24 = uspec(nss)
+                ux24 = uspec(nss)(1:24)
                 elx = tlg(ex)
                 write (noutpt,1130) ux24,ex,elx
 1130 format(10x,a24,3x,1pe11.4,3x,0pf9.4)

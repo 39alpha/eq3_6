@@ -1268,7 +1268,7 @@ program xcon3
             do nb = 1,nbti
                 if (uobsw(1,nobsw)(1:48) .eq. uspeci(nb)(1:48)) then
                     ns = nb
-                    ubasis(ns) = uobsw(2,nobsw)
+                    ubasis(ns) = uobsw(2,nobsw)(1:24)
                     go to 244
                 end if
             end do
@@ -1468,7 +1468,7 @@ program xcon3
         ! Map any inputs equivalent to pH to pH, and any inputs equivalent
         ! to pHCl to pHCl.
         do nb = 1,nbti
-            ustr = uspeci(nb)
+            ustr = uspeci(nb)(1:24)
 
             if (ustr(1:3) .eq. 'H+ ') then
                 jfli = jflgi(nb)
@@ -1479,7 +1479,7 @@ program xcon3
                 else if (jfli .eq. 19) then
                     jflgi(nb) = 20
                 else if (jfli .eq. 17) then
-                    ustr1 = ucospi(nb)
+                    ustr1 = ucospi(nb)(1:24)
 
                     if (ustr1(1:4).eq.'Cl- ') then
                         ucospi(nb) = ' '

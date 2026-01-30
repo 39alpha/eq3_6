@@ -3611,7 +3611,7 @@ program eq3nr
 
             if (jflag(ns) .lt. 30) then
                 n = n + 1
-                ubsr1(n) = uspec(ns)
+                ubsr1(n) = uspec(ns)(1:24)
                 cbsr1(n) = mtbaq(nb)
             end if
         end do

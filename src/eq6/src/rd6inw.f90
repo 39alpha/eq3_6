@@ -620,7 +620,7 @@ subroutine rd6inw(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     go to 990
                 end if
 
-                ugerji(jei,ner) = uxs
+                ugerji(jei,ner) = uxs(1:8)
 
                 neti = 0
 

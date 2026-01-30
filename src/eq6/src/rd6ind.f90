@@ -1261,7 +1261,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -1283,7 +1283,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         if (nrc .gt. 0) then
-            ureac(nrc) = ustr
+            ureac(nrc) = ustr(1:24)
         end if
 
         ! Read the separator line following the line containing the name
@@ -1296,7 +1296,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1014) uline1
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '--------'
 
         if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -1318,7 +1318,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Type'
         call locase(ustr24)
         call locase(uheadx)
@@ -1374,7 +1374,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Status'
         call locase(ustr24)
         call locase(uheadx)
@@ -1431,7 +1431,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Amount remaining (moles)'
         call locase(ustr24)
         call locase(uheadx)
@@ -1467,7 +1467,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Amount destroyed (moles)'
         call locase(ustr24)
         call locase(uheadx)
@@ -1519,7 +1519,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Composition'
             call locase(ustr24)
             call locase(uheadx)
@@ -1543,7 +1543,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Component'
             call locase(ustr24)
             call locase(uheadx)
@@ -1599,7 +1599,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 rxbari(iki,nxr) = var
-                ucxri(iki,nxr) = ufield(2)
+                ucxri(iki,nxr) = ufield(2)(1:24)
             end do
 
 210 continue
@@ -1629,7 +1629,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Molar volume (cm3/mol)'
             call locase(ustr24)
             call locase(uheadx)
@@ -1662,7 +1662,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Composition'
             call locase(ustr24)
             call locase(uheadx)
@@ -1686,7 +1686,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Element'
             call locase(ustr24)
             call locase(uheadx)
@@ -1742,7 +1742,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 cesri(nci,nsr) = var
-                uesri(nci,nsr) = ufield(2)
+                uesri(nci,nsr) = ufield(2)(1:8)
             end do
 
 220 continue
@@ -1758,7 +1758,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Reaction'
             call locase(ustr24)
             call locase(uheadx)
@@ -1782,7 +1782,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Species'
             call locase(ustr24)
             call locase(uheadx)
@@ -1838,7 +1838,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 cbsri(n,nsr) = var
-                ubsri(n,nsr) = ufield(2)
+                ubsri(n,nsr) = ufield(2)(1:24)
             end do
 
 230 continue
@@ -1868,7 +1868,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Exchange model'
             call locase(ustr24)
             call locase(uheadx)
@@ -1882,7 +1882,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 go to 999
             end if
 
-            ugermo(ner) = ufield(3)
+            ugermo(ner) = ufield(3)(1:24)
 
             ! Composition sub-block header.
             uheadx = '->'
@@ -1894,7 +1894,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Composition'
             call locase(ustr24)
             call locase(uheadx)
@@ -1934,7 +1934,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
                 if (ustr(1:j2) .eq. uheadx(1:j3)) then
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Exchange site'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -1959,7 +1959,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                         go to 990
                     end if
 
-                    ugerji(jei,ner) = ufield(3)
+                    ugerji(jei,ner) = ufield(3)(1:8)
                 else
                     ! Should have found the first line after the sub-block for
                     ! the composition of the current exchanger reactant.
@@ -1979,7 +1979,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 write (noutpt,1014) uline1
-                ustr24 = ufield(1)
+                ustr24 = ufield(1)(1:24)
                 uheadx = '--------'
 
                 if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -2004,7 +2004,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 write (noutpt,1016) uline1,uline2
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'Component'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -2063,7 +2063,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                         go to 999
                     end if
 
-                    ugersi(nei,jei,ner) = ufield(2)
+                    ugersi(nei,jei,ner) = ufield(2)(1:24)
                     egersi(nei,jei,ner) = var
                     xgersi(nei,jei,ner) = var
                 end do
@@ -2092,7 +2092,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1014) uline1
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Surface area option (nsk'
         call locase(ustr24)
         call locase(uheadx)
@@ -2158,7 +2158,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1014) uline1
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Value (cm2)'
         call locase(ustr24)
         call locase(uheadx)
@@ -2234,7 +2234,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1014) uline1
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Value (cm2/g)'
         call locase(ustr24)
         call locase(uheadx)
@@ -2311,7 +2311,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Value (cm2)'
         call locase(ustr24)
         call locase(uheadx)
@@ -2364,7 +2364,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Surface area factor'
         call locase(ustr24)
         call locase(uheadx)
@@ -2408,7 +2408,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
 
             if (jd .eq. 1) then
                 uheadx = 'Forward rate law'
@@ -2497,7 +2497,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = urcrel(i,1)
                     call locase(ustr24)
                     call locase(uheadx)
@@ -2587,7 +2587,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(1)
+                    ustr24 = ufield(1)(1:24)
                     uheadx = '--------'
 
                     if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -2622,7 +2622,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
 
                     if (jd .eq. 1) then
                         uheadx = 'sigma(i,+,n)'
@@ -2663,7 +2663,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
 
                     if (jd .eq. 1) then
                         uheadx = 'k(i,+,n) (mol/cm2/sec)'
@@ -2703,7 +2703,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Ref. Temperature (C)'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -2740,7 +2740,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Temperature dependence o'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -2849,7 +2849,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Value (kcal/mol)'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -2925,7 +2925,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Value (kcal/mol)'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -2980,7 +2980,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Kinetic activity product'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -3005,7 +3005,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Species'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -3030,7 +3030,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
 
                     if (jd .eq. 1) then
                         uheadx = '(udac(j,i,1,n))'
@@ -3068,7 +3068,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                         end if
 
                         write (noutpt,1014) uline1
-                        ustr24 = ufield(2)
+                        ustr24 = ufield(2)(1:24)
                         uheadx = 'None'
                         call locase(ustr24)
                         call locase(uheadx)
@@ -3078,7 +3078,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                         if (ustr24(1:j2) .eq. uheadx(1:j3)) then
                             ! Have no species appearing in the kinetic activity
                             ! product.
-                            udac(1,imh,jd,nrc) = ufield(2)
+                            udac(1,imh,jd,nrc) = ufield(2)(1:24)
                             cdac(1,imh,jd,nrc) = 0.
                             uheadx = '--------'
 
@@ -3106,7 +3106,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                             go to 990
                         end if
 
-                        udac(ndt,imh,jd,nrc) = ufield(2)
+                        udac(ndt,imh,jd,nrc) = ufield(2)(1:24)
                         ustr = ufield(3)
                         call chreal(nttyo,qrderr,ustr,var)
 
@@ -3203,7 +3203,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(1)
+                    ustr24 = ufield(1)(1:24)
                     uheadx = '--------'
 
                     if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -3247,7 +3247,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
 
                     if (jd .eq. 1) then
                         uheadx = 'k(i,+,n) (mol/cm2/sec)'
@@ -3287,7 +3287,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1016) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Ref. Temperature (C)'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -3324,7 +3324,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Temperature dependence o'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -3433,7 +3433,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Value (kcal/mol)'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -3509,7 +3509,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     write (noutpt,1014) uline1,uline2
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Value (kcal/mol)'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -5123,7 +5123,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
     end if
 
     write (noutpt,1016) uline1,uline2
-    ustr24 = ufield(1)
+    ustr24 = ufield(1)(1:24)
     call locase(ustr24)
     call locase(uheadx)
     j2 = ilnobl(ustr24)
@@ -5159,7 +5159,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         go to 380
     end if
 
-    ustrn = ustr
+    ustrn = ustr(1:24)
     call locase(ustrn)
 
     if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -5179,7 +5179,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             go to 990
         end if
 
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         do n = 1,4
@@ -5187,7 +5187,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             call locase(uheadx)
 
             if (ustrn(1:16) .eq. uheadx(1:16)) then
-                uxopt(nxi) = uxopti(n)
+                uxopt(nxi) = uxopti(n)(1:8)
                 go to 350
             end if
         end do
@@ -5207,7 +5207,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         go to 990
 
 350 continue
-        uxcat(nxi) = ufield(2)
+        uxcat(nxi) = ufield(2)(1:24)
     end if
 
     ! Read the next line. Go back to process it.
@@ -5278,7 +5278,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
     end if
 
     write (noutpt,1016) uline1,uline2
-    ustr24 = ufield(1)
+    ustr24 = ufield(1)(1:24)
     call locase(ustr24)
     call locase(uheadx)
     j2 = ilnobl(ustr24)
@@ -5314,7 +5314,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         go to 420
     end if
 
-    ustrn = ustr
+    ustrn = ustr(1:24)
     call locase(ustrn)
 
     if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -5334,7 +5334,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             go to 990
         end if
 
-        uxopex(nxic) = ufield(1)
+        uxopex(nxic) = ufield(1)(1:24)
     end if
 
     ! Read the next line. Go back to process it.
@@ -5373,7 +5373,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
     end if
 
     write (noutpt,1014) uline1
-    ustr24 = ufield(1)
+    ustr24 = ufield(1)(1:24)
     call locase(ustr24)
     call locase(uheadx)
     j2 = ilnobl(ustr24)
@@ -5395,7 +5395,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
     end if
 
     write (noutpt,1016) uline1,uline2
-    ustr24 = ufield(1)
+    ustr24 = ufield(1)(1:24)
     call locase(ustr24)
     call locase(uheadx)
     j2 = ilnobl(ustr24)
@@ -5431,7 +5431,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         go to 440
     end if
 
-    ustrn = ustr
+    ustrn = ustr(1:24)
     call locase(ustrn)
 
     if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -5451,7 +5451,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             go to 990
         end if
 
-        uffg(nfi) = ufield(1)
+        uffg(nfi) = ufield(1)(1:24)
         ustr = ufield(2)
         call chreal(nttyo,qrderr,ustr,var)
 
@@ -5764,7 +5764,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
         write (noutpt,1014) uline1
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -5775,7 +5775,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
         if (.not.qnone) then
             nsbsw = nsbsw + 1
-            usbsw(1,nsbsw) = ufield(2)
+            usbsw(1,nsbsw) = ufield(2)(1:48)
         end if
 
         ! Read the name of the "with" species from a two-line header.
@@ -5790,7 +5790,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         write (noutpt,1016) uline1,uline2
 
         if (.not.qnone) then
-            usbsw(2,nsbsw) = ufield(2)
+            usbsw(2,nsbsw) = ufield(2)(1:48)
         end if
     end do
 
@@ -6070,7 +6070,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
         write (noutpt,1014) uline1
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -6091,7 +6091,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 go to 990
             end if
 
-            ugexp(ne) = ustr
+            ugexp(ne) = ustr(1:24)
             jgext(ne) = 0
         end if
 
@@ -6105,7 +6105,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1014) uline1
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '--------'
 
         if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -6130,7 +6130,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Mol. Wt. (Z)'
         call locase(ustr24)
         call locase(uheadx)
@@ -6165,7 +6165,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Exchange model'
         call locase(ustr24)
         call locase(uheadx)
@@ -6180,7 +6180,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         if (.not.qnonep) then
-            ugexmo(ne) = ufield(3)
+            ugexmo(ne) = ufield(3)(1:24)
         end if
 
         ! Read the reference temperature (C) for the thermodynamic
@@ -6201,7 +6201,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             go to 999
         end if
 
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'Ref. Temp. (C)'
         call locase(ustr24)
         call locase(uheadx)
@@ -6244,7 +6244,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
             if (ustr(1:j2) .eq. uheadx(1:j3)) then
                 write (noutpt,1014) uline1
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'Exchange site'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -6259,7 +6259,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 ustr = ufield(3)
-                ustrn = ustr
+                ustrn = ustr(1:24)
                 call locase(ustrn)
 
                 if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -6284,7 +6284,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                         go to 990
                     end if
 
-                    ugexj(je,ne) = ufield(3)
+                    ugexj(je,ne) = ufield(3)(1:8)
                     ngexrt(je,ne) = 0
                 end if
             else
@@ -6317,7 +6317,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1014) uline1
-            ustr24 = ufield(1)
+            ustr24 = ufield(1)(1:24)
             uheadx = '--------'
 
             if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -6340,7 +6340,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Stoich. number'
             call locase(ustr24)
             call locase(uheadx)
@@ -6376,7 +6376,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             end if
 
             write (noutpt,1016) uline1,uline2
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Electr. charge'
             call locase(ustr24)
             call locase(uheadx)
@@ -6428,7 +6428,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
                 if (ustr(1:j2) .eq. uheadx(1:j3)) then
                     write (noutpt,1014) uline1
-                    ustr24 = ufield(2)
+                    ustr24 = ufield(2)(1:24)
                     uheadx = 'Reaction'
                     call locase(ustr24)
                     call locase(uheadx)
@@ -6443,7 +6443,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                     end if
 
                     ustr = ufield(3)
-                    ustrn = ustr
+                    ustrn = ustr(1:24)
                     call locase(ustrn)
 
                     if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -6469,7 +6469,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                             go to 990
                         end if
 
-                        ugexr(n,je,ne) = ufield(3)
+                        ugexr(n,je,ne) = ufield(3)(1:56)
                     end if
                 else
                     ! Back up.
@@ -6523,7 +6523,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 write (noutpt,1014) uline1
-                ustr24 = ufield(1)
+                ustr24 = ufield(1)(1:24)
                 uheadx = '--------'
 
                 if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -6546,7 +6546,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 write (noutpt,1016) uline1,uline2
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'Parameter'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -6571,7 +6571,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 write (noutpt,1014) uline1
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'K func.'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -6594,7 +6594,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
                 if (qokay) then
                     xlkgex(n,je,ne) = var
-                    uxkgex(n,je,ne) = ufield(4)
+                    uxkgex(n,je,ne) = ufield(4)(1:8)
                 end if
 
                 ! Read the Delta H data for the reaction from a one-line
@@ -6608,7 +6608,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 write (noutpt,1014) uline1
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'DelH0r'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -6631,7 +6631,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
                 if (qokay) then
                     xhfgex(n,je,ne) = var
-                    uhfgex(n,je,ne) = ufield(4)
+                    uhfgex(n,je,ne) = ufield(4)(1:8)
                 end if
 
                 ! Read the Delta V data for the reaction from a two-line
@@ -6645,7 +6645,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 write (noutpt,1016) uline1,uline2
-                ustr24 = ufield(2)
+                ustr24 = ufield(2)(1:24)
                 uheadx = 'DelV0r'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -6668,7 +6668,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
                 if (qokay) then
                     xvfgex(n,je,ne) = var
-                    uvfgex(n,je,ne) = ufield(4)
+                    uvfgex(n,je,ne) = ufield(4)(1:8)
                 end if
             end do
 
@@ -6802,7 +6802,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         call locase(ustr)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -6823,7 +6823,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             go to 990
         end if
 
-        uxmod(n) = ufield(1)
+        uxmod(n) = ufield(1)(1:48)
 
         ustr = ufield(2)
         call locase(ustr)
@@ -7334,7 +7334,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
     end if
 
     ! Check for no species for which mass balances are defined.
-    ustrn = ustr
+    ustrn = ustr(1:24)
     call locase(ustrn)
 
     if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -7370,7 +7370,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         go to 990
     end if
 
-    ux48 = ufield(1)
+    ux48 = ufield(1)(1:48)
 
     nbi = nbi + 1
 
@@ -7386,7 +7386,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
     ubmtbi(nbi) = ux48
 
     ustr = ufield(2)
-    ustrn = ustr
+    ustrn = ustr(1:24)
     call locase(ustrn)
 
     if (ustrn(1:16) .eq. 'moles           ') then
@@ -7536,7 +7536,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
     end if
 
     write (noutpt,1016) uline1,uline2
-    ustr24 = ufield(1)
+    ustr24 = ufield(1)(1:24)
     call locase(ustr24)
     call locase(uheadx)
     j2 = ilnobl(ustr24)
@@ -7599,7 +7599,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
         write (noutpt,1014) uline1
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -7610,7 +7610,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 
         if (.not.qnone) then
             nobsw = nobsw + 1
-            uobsw(1,nobsw) = ufield(2)
+            uobsw(1,nobsw) = ufield(2)(1:48)
         end if
 
         ! Read the name of the "with" species from a two-line header.
@@ -7625,7 +7625,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         write (noutpt,1016) uline1,uline2
 
         if (.not.qnone) then
-            uobsw(2,nobsw) = ufield(2)
+            uobsw(2,nobsw) = ufield(2)(1:48)
         end if
     end do
 
@@ -7688,7 +7688,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         go to 990
     end if
 
-    ux48 = ufield(1)
+    ux48 = ufield(1)(1:48)
 
     krow = krow + 1
 
@@ -7770,7 +7770,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         write (noutpt,1014) uline1
 
         ustr = ufield(2)
-        ustrn = ustr
+        ustrn = ustr(1:24)
         call locase(ustrn)
 
         if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -7790,7 +7790,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 go to 990
             end if
 
-            uprphi(npi )= ustr
+            uprphi(npi )= ustr(1:24)
         end if
 
         ! Read the separator line following the line containing
@@ -7803,7 +7803,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1014) uline1
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '--------'
 
         if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -7825,7 +7825,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1016) uline1,uline2
-        ustr24 = ufield(2)
+        ustr24 = ufield(2)(1:24)
         uheadx = 'No. of Moles'
         call locase(ustr24)
         call locase(uheadx)
@@ -7867,7 +7867,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         j3 = ilnobl(uheadx)
 
         if (ustr(1:j2) .eq. uheadx(1:j3)) then
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = 'Species'
             call locase(ustr24)
             call locase(uheadx)
@@ -7899,7 +7899,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         j3 = ilnobl(uheadx)
 
         if (ustr(1:j2) .eq. uheadx(1:j3)) then
-            ustr24 = ufield(2)
+            ustr24 = ufield(2)(1:24)
             uheadx = '(uprspi(i,n))'
             call locase(ustr24)
             call locase(uheadx)
@@ -7923,7 +7923,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
         end if
 
         write (noutpt,1014) uline1
-        ustr24 = ufield(1)
+        ustr24 = ufield(1)(1:24)
         uheadx = '--------'
 
         if (ustr24(1:8) .ne. uheadx(1:8)) then
@@ -7953,7 +7953,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
             uheadx = '--------'
 
             if (ustr(1:8) .ne. uheadx(1:8)) then
-                ustr24 = ufield(1)
+                ustr24 = ufield(1)(1:24)
                 uheadx = '--->'
                 call locase(ustr24)
                 call locase(uheadx)
@@ -7968,7 +7968,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                 end if
 
                 ustr = ufield(2)
-                ustrn = ustr
+                ustrn = ustr(1:24)
                 call locase(ustrn)
 
                 if (ustrn(1:5).eq.'none ' .or. ustr(1:1).eq.' ') then
@@ -8002,7 +8002,7 @@ subroutine rd6ind(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
                         go to 990
                     end if
 
-                    uprspi(nsi) = ufield(2)
+                    uprspi(nsi) = ufield(2)(1:48)
                     uprspi(nsi)(25:48) = uprphi(npi)
                     ustr = ufield(3)
                     call chreal(nttyo,qrderr,ustr,var)

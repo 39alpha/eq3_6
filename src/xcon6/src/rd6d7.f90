@@ -460,7 +460,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                         uxct16(nxopt) = '        '
                     else
                         uxopt(nxopt) = 'alwith'
-                        uxct16(nxopt) = ustr
+                        uxct16(nxopt) = ustr(1:16)
                     end if
                 end if
 
@@ -522,7 +522,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                             go to 990
                         end if
 
-                        uxopex(nxopex) = ustr
+                        uxopex(nxopex) = ustr(1:24)
                     end if
 
 170 continue
@@ -611,7 +611,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                         go to 990
                     end if
 
-                    uffg(nffg) = ufield(1)
+                    uffg(nffg) = ufield(1)(1:24)
                     ustr = ufield(2)
                     call chreal(nttyo,qrderr,ustr,var)
 
@@ -755,7 +755,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                     end if
 
                     nrct = nrc
-                    ureac(nrc) = ufield(2)
+                    ureac(nrc) = ufield(2)(1:24)
                     ustr = ufield(4)
                     call chrint(ivar,nttyo,qrderr,ustr)
 
@@ -877,7 +877,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                             go to 990
                         end if
 
-                        uendb(iktb,nxrt) = ufield(2)
+                        uendb(iktb,nxrt) = ufield(2)(1:24)
                         ustr = ufield(4)
                         call chreal(nttyo,qrderr,ustr,var)
 
@@ -972,7 +972,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                             go to 990
                         end if
 
-                        uesrb(ncb,nsrt) = ufield(2)
+                        uesrb(ncb,nsrt) = ufield(2)(1:8)
                         ustr = ufield(4)
                         call chreal(nttyo,qrderr,ustr,var)
 
@@ -1145,7 +1145,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                             go to 990
                         end if
 
-                        udac(n,i,1,nrc) = ufield(2)
+                        udac(n,i,1,nrc) = ufield(2)(1:24)
                         ustr = ufield(4)
                         call chreal(nttyo,qrderr,ustr,var)
 
@@ -1385,7 +1385,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                             go to 990
                         end if
 
-                        udac(n,i,2,nrc) = ufield(2)
+                        udac(n,i,2,nrc) = ufield(2)(1:24)
                         ustr = ufield(4)
                         call chreal(nttyo,qrderr,ustr,var)
 
@@ -2240,7 +2240,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                                                 go to 990
                                             end if
 
-                                            uxmd24(n) = ufield(1)
+                                            uxmd24(n) = ufield(1)(1:24)
 
                                             ustr = ufield(2)
                                             call locase(ustr)
@@ -2507,7 +2507,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                                                         go to 990
                                                     end if
 
-                                                    uelemb(i) = ufield(1)
+                                                    uelemb(i) = ufield(1)(1:8)
                                                     ustr = ufield(2)
                                                     call chreal(nttyo,qrderr,ustr,var)
 
@@ -2567,8 +2567,8 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                                                         go to 990
                                                     end if
 
-                                                    unrms(i) = ufield(1)
-                                                    undms(i) = ufield(2)
+                                                    unrms(i) = ufield(1)(1:24)
+                                                    undms(i) = ufield(2)(1:24)
                                                     ustr = ufield(3)
                                                     call chreal(nttyo,qrderr,ustr,var)
 
@@ -2664,8 +2664,8 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                                                         go to 990
                                                     end if
 
-                                                    uprs(nprmn)(1:24) = ufield(2)
-                                                    uprs(nprmn)(25:48) = ufield(2)
+                                                    uprs(nprmn)(1:24) = ufield(2)(1:24)
+                                                    uprs(nprmn)(25:48) = ufield(2)(1:24)
                                                     ustr = ufield(3)
                                                     call chreal(nttyo,qrderr,ustr,var)
 
@@ -2689,7 +2689,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                                                     nprmx = nprmn
 
 800 continue
-                                                    ux = ufield(1)
+                                                    ux = ufield(1)(1:24)
 
 810 continue
                                                     nfldtx = 0
@@ -2725,7 +2725,7 @@ subroutine rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,elect
                                                     end if
 
                                                     uprs(nprmx)(1:24) = ux
-                                                    uprs(nprmx)(25:48) = ufield(2)
+                                                    uprs(nprmx)(25:48) = ufield(2)(1:24)
                                                     ustr = ufield(3)
                                                     call chreal(nttyo,qrderr,ustr,var)
 

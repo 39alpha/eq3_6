@@ -1,6 +1,6 @@
 all: $(TARGET)
 
-FIXED_FLAGS := -std=f2008 -Wall -Wextra -Werror -pedantic -Wno-character-truncation -Wno-unused-dummy-argument -Wno-maybe-uninitialized -Wno-do-subscript -Wno-compare-reals -Wno-unused-parameter -ffree-line-length-3000
+FIXED_FLAGS := -std=f2008 -Wall -Wextra -Werror -pedantic -Wno-unused-dummy-argument -Wno-maybe-uninitialized -Wno-do-subscript -Wno-compare-reals -Wno-unused-parameter -ffree-line-length-3000
 
 $(TARGET): $(MODOBJECTS) $(OBJECTS) $(LIBRARIES)
 	gfortran $(FIXED_FLAGS) $(FFLAGS) -Jmod -o $(TARGET) $^

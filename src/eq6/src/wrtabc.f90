@@ -364,7 +364,7 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
                 if (jsflag(ns2).lt.2 .and. jflag(ns2).ne.30) then
                     if (ns1.ne.narn1 .and. ns1.ne.nelect .and.          ns1.ne.no2gaq) then
                         nqtpr = nqtpr + 1
-                        ubasqx(nqtpr) = uspec(ns1)
+                        ubasqx(nqtpr) = uspec(ns1)(1:24)
                     end if
                 end if
             end if
@@ -380,7 +380,7 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
             if (ns1.ge.narn1 .and. ns1.le.narn2) then
                 if (jsflag(ns2).lt.2 .and. jflag(ns2).ne.30) then
                     nbtpr = nbtpr + 1
-                    ubaspx(nbtpr) = uspec(ns1)
+                    ubaspx(nbtpr) = uspec(ns1)(1:24)
                 end if
             end if
         end do
@@ -971,8 +971,8 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
             end if
         end do
 
-        ultag1 = 'C3       '
-        ultag2 = 'C4       '
+        ultag1 = 'C3       '(1:8)
+        ultag2 = 'C4       '(1:8)
         jt1 = len_trim(ultag1)
         jt2 = len_trim(ultag2)
 
@@ -2220,7 +2220,7 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
                         nxct = nxct + 1
                         n = nxct
                         ussphx(1,n) = uphase(np)
-                        ussphx(2,n) = uspec(ns)
+                        ussphx(2,n) = uspec(ns)(1:24)
                         xfrac(n) = xbar(ns)
                     end do
                 end if
@@ -2256,7 +2256,7 @@ subroutine wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,e
                         nxct = nxct + 1
                         n = nxct
                         ussphx(1,n) = uphase(np)
-                        ussphx(2,n) = uspec(ns)
+                        ussphx(2,n) = uspec(ns)(1:24)
                         xfrac(n) = mospt(ns)/mopht(np)
                     end do
                 end if

@@ -159,7 +159,7 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
 
             if (dlxic .lt. delxi) then
                 delxi = dlxic
-                unamsp = uspec(ns)
+                unamsp = uspec(ns)(1:24)
                 go to 100
             end if
         end if
@@ -198,7 +198,7 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
 
                 if (dlxic .lt. delxi) then
                     delxi = dlxic
-                    unamsp = uspec(ns)
+                    unamsp = uspec(ns)(1:24)
                     go to 100
                 end if
             end if
@@ -232,7 +232,7 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
 
                 if (dlxic .lt. delxi) then
                     delxi = dlxic
-                    unamsp = uspec(ns)
+                    unamsp = uspec(ns)(1:24)
                     go to 100
                 end if
             end if
@@ -264,7 +264,7 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
 
             if (dlxic .lt. delxi) then
                 delxi = dlxic
-                unamsp = uspec(ns)
+                unamsp = uspec(ns)(1:24)
                 go to 100
             end if
         end if
@@ -295,7 +295,7 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
 
             if (dlxic .lt. delxi) then
                 delxi = dlxic
-                unamsp = uspec(ns)
+                unamsp = uspec(ns)(1:24)
                 go to 100
             end if
         end if
@@ -332,7 +332,7 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
                 if (dlxic .lt. delxi) then
                     if (dlxic .gt. dlxmin) then
                         delxi = dlxic
-                        unamsp = uspec(ns)
+                        unamsp = uspec(ns)(1:24)
                         go to 100
                     end if
                 end if
@@ -373,7 +373,7 @@ subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khyd
 
                     if (dlxic .lt. delxi) then
                         delxi = dlxic
-                        unamsp = uspec(ns)
+                        unamsp = uspec(ns)(1:24)
                         go to 100
                     end if
                 end if
