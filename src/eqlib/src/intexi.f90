@@ -302,26 +302,26 @@ subroutine intexi(al10,axhfs,axlks,axvfs,cegexs,cess,cdrs,cgexj,cpgexs,egexjf,ie
     character(len=24) :: ustr2
     character(len=8) :: ugexjd
 
-    real :: afhx
-    real :: afvx
-    real :: afxb
-    real :: afx0
-    real :: arcnst
-    real :: bfx
-    real :: cfactr
-    real :: cgx
-    real :: cfxi
-    real :: cfxz
-    real :: cx
-    real :: efx
-    real :: tfxb
-    real :: tfx0
-    real :: xx
-    real :: zprod
-    real :: zpx
-    real :: zsi
-    real :: zxj
-    real :: zxjt
+    real(kind=8) :: afhx
+    real(kind=8) :: afvx
+    real(kind=8) :: afxb
+    real(kind=8) :: afx0
+    real(kind=8) :: arcnst
+    real(kind=8) :: bfx
+    real(kind=8) :: cfactr
+    real(kind=8) :: cgx
+    real(kind=8) :: cfxi
+    real(kind=8) :: cfxz
+    real(kind=8) :: cx
+    real(kind=8) :: efx
+    real(kind=8) :: tfxb
+    real(kind=8) :: tfx0
+    real(kind=8) :: xx
+    real(kind=8) :: zprod
+    real(kind=8) :: zpx
+    real(kind=8) :: zsi
+    real(kind=8) :: zxj
+    real(kind=8) :: zxjt
 
     ! Initialize some constants.
     nerr = 0
