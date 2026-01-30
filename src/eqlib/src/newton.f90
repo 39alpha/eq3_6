@@ -502,7 +502,7 @@ subroutine newton(aamatr,abar,acflg,acflgo,act,actlg,actwlc,adh,adhh,adhv,afcnst
 
         if (idelmx .gt. 0) then
             utd = uldel(idelmx)
-            udelmx = uzvec1(idelmx)
+            udelmx = uzvec1(idelmx)(1:8)
         end if
 
         write (noutpt,1200) iter

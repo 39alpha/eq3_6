@@ -124,7 +124,7 @@ subroutine prtrdx(ah,ahrc,cdrsd,eh,ehrc,fo2lg,fo2lrc,jflgi,jsflag,narn1,nbasp,nb
         cx1 = coefdr(cdrsd,ndrsd,ndrsmx,ndrsrd,no2gaq,ns1,nstmax)
 
         if (cx1 .ne. 0.) then
-            ux24 = uspec(narn1)
+            ux24 = uspec(narn1)(1:24)
             nr1 = ndrsrd(1,ns1)
             nr2 = ndrsrd(2,ns1)
 
@@ -136,7 +136,7 @@ subroutine prtrdx(ah,ahrc,cdrsd,eh,ehrc,fo2lg,fo2lrc,jflgi,jsflag,narn1,nbasp,nb
                 end if
 
                 if (nse.ne.ns1 .and. nse.ne.no2gaq .and. nse.ne.nelect      .and. nse.ne.narn1 .and. nse.ne.nhydr) then
-                    ux24 = uspec(nse)
+                    ux24 = uspec(nse)(1:24)
                 end if
             end do
 

@@ -174,7 +174,7 @@ subroutine prtsia(affsd,jflagd,jflgi,jsflag,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,
             go to 250
         end if
 
-        ux24 = uspec(ns2)
+        ux24 = uspec(ns2)(1:24)
 
         kount = kount + 1
 

@@ -403,7 +403,7 @@ subroutine rd6w72(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzp
                                             go to 990
                                         end if
 
-                                        uesrb(ncb,nsrt) = ux
+                                        uesrb(ncb,nsrt) = ux(1:8)
                                         cesrb(ncb,nsrt) = xx
 190 continue
 

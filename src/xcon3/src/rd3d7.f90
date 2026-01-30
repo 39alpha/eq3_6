@@ -266,7 +266,7 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                     write (nttyo,1018) uline1
                 end if
 
-                uebal = ufield(2)
+                uebal = ufield(2)(1:24)
 
                 if (nmark .eq. 3) then
                     uebal = 'pick1.'
@@ -368,10 +368,10 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                     go to 990
                 end if
 
-                uspecb(nsq) = ufield(1)
+                uspecb(nsq) = ufield(1)(1:24)
 
                 if (qrdxcp) then
-                    uredox = ufield(1)
+                    uredox = ufield(1)(1:24)
                 end if
 
                 qrdxcp = .false.
@@ -404,9 +404,9 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                     ustr = ufield(2)
 
                     if (jflagb(nsq).ge.17 .and. jflagb(nsq).le.21) then
-                        uphas1(nsq) = ustr
+                        uphas1(nsq) = ustr(1:24)
                     else
-                        ubasis(nsq) = ustr
+                        ubasis(nsq) = ustr(1:24)
                     end if
 
                     if (jflagb(nsq) .eq. 20) then
@@ -419,7 +419,7 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                             go to 990
                         end if
 
-                        usolb(nxtb) = ustr
+                        usolb(nxtb) = ustr(1:24)
                         iktb = 0
 160 continue
                         nfldtx = 0
@@ -439,10 +439,10 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                             iktb = iktb + 1
 
                             if (iktb .eq. 1) then
-                                uphas2(nsq) = ufield(2)
+                                uphas2(nsq) = ufield(2)(1:24)
                             end if
 
-                            umemb(iktb,nxtb) = ufield(2)
+                            umemb(iktb,nxtb) = ufield(2)(1:24)
                             ustr = ufield(3)
                             call chreal(nttyo,qrderr,ustr,var)
 
@@ -528,7 +528,7 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                         go to 990
                     end if
 
-                    usolb(nxtb) = ufield(1)
+                    usolb(nxtb) = ufield(1)(1:24)
                     iktb = 0
 
 230 continue
@@ -575,7 +575,7 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                         go to 990
                     end if
 
-                    umemb(iktb,nxtb) = ufield(2)
+                    umemb(iktb,nxtb) = ufield(2)(1:24)
                     ustr = ufield(3)
                     call chreal(nttyo,qrderr,ustr,var)
 
@@ -633,7 +633,7 @@ subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,n
                         go to 990
                     end if
 
-                    uxmd24(n) = ufield(1)
+                    uxmd24(n) = ufield(1)(1:24)
 
                     ustr = ufield(2)
                     call locase(ustr)
