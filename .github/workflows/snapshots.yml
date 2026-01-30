@@ -2,7 +2,7 @@ name: snapshots
 
 on:
   push:
-    branches: [ snapshot ]
+    branches: [ "**" ]
 
 jobs:
   ubuntu-22-build:
@@ -47,8 +47,8 @@ jobs:
     runs-on: macos-14
     steps:
     - uses: actions/checkout@v2
-    - name: brew reinstall gcc coreutils
-      run: brew reinstall gcc coreutils
+    - name: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel
     - name: make FFLAGS="-O0" -j4
       run: make FFLAGS="-O0" -j4
     - name: git submodule init
@@ -68,8 +68,8 @@ jobs:
     runs-on: macos-15-intel
     steps:
     - uses: actions/checkout@v2
-    - name: brew reinstall gcc coreutils
-      run: brew reinstall gcc coreutils
+    - name: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel
     - name: make FFLAGS="-O0" -j4
       run: make FFLAGS="-O0" -j4
     - name: git submodule init
@@ -89,8 +89,8 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: brew reinstall gcc coreutils
-      run: brew reinstall gcc coreutils
+    - name: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel
     - name: make FFLAGS="-O0" -j3
       run: make FFLAGS="-O0" -j3
     - name: git submodule init
