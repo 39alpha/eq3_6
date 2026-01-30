@@ -292,7 +292,6 @@ subroutine wr3pkw(electr,cgexj,ietmax,iopg,jetmax,jflgi,jgext,kbt,kct,kdim,kmax,
 3530 format(3x,1pe22.15)
     end do
 
-    ! The is no PRS in EQ3NR, so the block of data for phases and
+    ! There is no PRS in EQ3NR, so the block of data for phases and
     ! species in the PRS is not written here.
-999 continue
 end subroutine wr3pkw

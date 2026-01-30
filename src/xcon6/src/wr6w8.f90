@@ -725,6 +725,4 @@ subroutine wr6w8(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlepl
         write (newin,3620) uendit(1:j3)
 3620 format(1x,a)
     end if
-
-999 continue
 end subroutine wr6w8

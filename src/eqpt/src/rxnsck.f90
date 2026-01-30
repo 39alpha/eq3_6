@@ -190,6 +190,4 @@ subroutine rxnsck(nbtmx1,cdrsi,nct,ndrsts,nentri,nerr,noutpt,ns,nsb,nttyo,qblkrs
             end if
         end if
     end if
-
-999 return
 end subroutine rxnsck

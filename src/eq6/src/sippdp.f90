@@ -305,6 +305,4 @@ subroutine sippdp(actw,aw0plo,aw0prn,aw1plo,aw1prn,dlaplo,dlaprn,dleplo,dleprn,d
             aw1prn = aw1prn + dlaprn
         end if
     end if
-
-999 continue
 end subroutine sippdp

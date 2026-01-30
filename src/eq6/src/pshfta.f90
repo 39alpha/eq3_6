@@ -131,6 +131,4 @@ subroutine pshfta(csts,emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fdsem1,iemop,iem
         qprflg = iodb(10) .ge. 1
         call escalc(csts,iindx1,jcsort,kbt,kmax,moph,mosp,mtb,mtb0,nbaspd,nbt,nbtmax,ncmpr,noutpt,npt,nptmax,nstmax,nsts,nstsmx,nstsr,qprflg,uspec)
     end if
-
-999 continue
 end subroutine pshfta

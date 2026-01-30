@@ -605,6 +605,4 @@ subroutine chkinx(cdrs,coval,ier,irdxc3,jflag,jsflag,narn1,narn2,nbasp,nbt,nbtma
             end if
         end if
     end do
-
-999 continue
 end subroutine chkinx

@@ -470,6 +470,4 @@ subroutine swtchb(adhfsd,adhfsx,advfsd,advfsx,axhfsd,axhfsx,axlksd,axlksx,axvfsd
     else if (nb2 .eq. nbw) then
         nbw = nb1
     end if
-
-999 continue
 end subroutine swtchb

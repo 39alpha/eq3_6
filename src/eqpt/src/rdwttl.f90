@@ -319,7 +319,6 @@ subroutine rdwttl(ipch,ipcv,jpdblo,jpfcmx,jptffl,narxt,ndata1,ndat0s,ndat1f,nout
         write (ux8b,'(i5)') n
         call lejust(ux8a)
         j3 = ilnobl(ux8a)
-1390 format('   Number of points in range ',a,'= ',a)
     end do
 
     ! Set flags for enthalpy and volume functions data grids.

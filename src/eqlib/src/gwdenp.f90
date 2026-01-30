@@ -137,6 +137,4 @@ subroutine gwdenp(adwipp,bdwipp,jcsort,mlmrra,mosp,mrmlra,mwtsp,narn1,narn2,nstm
         rhoc = 0.001*rhowc
         tdsplc = 1000.*tdsglw
     end if
-
-999 continue
 end subroutine gwdenp

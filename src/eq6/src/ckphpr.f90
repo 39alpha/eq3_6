@@ -232,7 +232,6 @@ subroutine ckphpr(delxi,dlxmin,dph0,dxh0pr,dxh1pr,dxval0,eps100,iodb,nodbmx,nord
 
 210 continue
 
-990 continue
     if (dxsv .gt. delxi) then
         qdump = .false.
     end if

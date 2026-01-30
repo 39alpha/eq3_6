@@ -232,7 +232,6 @@ subroutine cko2pl(delxi,dlxmin,do20,dxo0pl,dxo1pl,dxval0,eps100,iodb,nodbmx,nord
 
 210 continue
 
-990 continue
     if (dxsv .gt. delxi) then
         qdump = .false.
     end if

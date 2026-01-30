@@ -234,6 +234,4 @@ subroutine dumpdp(csts,demop0,demos0,emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fd
             end do
         end do
     end if
-
-999 continue
 end subroutine dumpdp

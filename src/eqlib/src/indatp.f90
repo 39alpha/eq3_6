@@ -159,6 +159,4 @@ subroutine indatp(apxa,axlksa,bpxa,cdrsa,cessa,iapxa_asv,iapxta,ibpxa_asv,ibpxta
     ! Deallocate  the scratch array.
 200 continue
     DEALLOCATE(ucompv)
-
-999 continue
 end subroutine indatp

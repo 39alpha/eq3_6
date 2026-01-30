@@ -974,6 +974,4 @@ subroutine wr3d8(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,i
 2900 format('|End of problem',64x,'|')
 
     write (newin,2050)
-
-999 continue
 end subroutine wr3d8

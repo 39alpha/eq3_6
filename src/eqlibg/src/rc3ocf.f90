@@ -611,6 +611,4 @@ subroutine rc3ocf(amu,jpfcmx,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,il
             amu(j,n) = cx*amu(j,n)
         end do
     end do
-
-999 continue
 end subroutine rc3ocf

@@ -279,6 +279,4 @@ subroutine satchk(acflg,act,actlg,afcnst,affp,affs,apx,bpx,cdrs,eps100,iindx1,io
             end do
         end if
     end do
-
-999 continue
 end subroutine satchk

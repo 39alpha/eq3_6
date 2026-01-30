@@ -236,6 +236,4 @@ subroutine tprcc(alamcc,atheta,iccpr,ipbtmx,jpfcmx,natmax,nccpr,ncvcc,nerr,noutp
 
     ncvcc = nccpr - nodatc
     pcvcc = (100.*ncvcc)/float(nccpr)
-
-999 continue
 end subroutine tprcc

@@ -194,6 +194,4 @@ subroutine chsgex(adhfs,adhfsd,adhfsx,advfs,advfsd,advfsx,axhfs,axhfsd,axhfsx,ax
     ! required to do that. It doesn't seem worthwhile at the present
     ! time.
     call mdrgex(adhfs,adhfsd,adhfsx,advfs,advfsd,advfsx,axhfs,axhfsd,axhfsx,axlks,axlksd,axlksx,axvfs,axvfsd,axvfsx,cdrs,cdrsd,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,nbasp,nbaspd,nbtmax,ndrs,ndrsd,ndrsx,ndrsmx,ndrsr,ndrsrd,ndrsrx,nern1,nern2,noutpt,nst,nstmax,ntprmx,nttyo)
-
-999 continue
 end subroutine chsgex

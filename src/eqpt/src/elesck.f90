@@ -133,6 +133,4 @@ subroutine elesck(cessi,nbtmx1,nctmax,ncts,nentei,nerr,noutpt,ns,nttyo,qblkes,qz
 
         nerr = nerr + 1
     end if
-
-999 return
 end subroutine elesck

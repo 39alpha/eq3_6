@@ -79,6 +79,4 @@ subroutine gpress(iopt,jpress,noptmx,noutpt,nptkmx,nttyo,presg,presh,press,press
 
         stop
     end if
-
-999 continue
 end subroutine gpress

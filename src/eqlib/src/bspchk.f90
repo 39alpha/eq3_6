@@ -76,6 +76,4 @@ subroutine bspchk(jsflag,nbaspd,nbtd,nbtmax,ndrsd,ndrsmx,ndrsrd,noutpt,nrdxsp,ns
             end if
         end if
     end do
-
-110 continue
 end subroutine bspchk

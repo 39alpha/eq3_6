@@ -181,6 +181,4 @@ subroutine setpk3(electr,iindx1,jflag,jflgi,kbt,kdim,kmax,kmt,kprs,kwater,kxt,mt
     if (nerr .gt. 0) then
         stop
     end if
-
-999 continue
 end subroutine setpk3

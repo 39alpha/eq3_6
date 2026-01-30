@@ -153,7 +153,6 @@ subroutine search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,
     end if
 
     ! Check the right boundary point.
-100 continue
     x(2) = xright
     delxi = xright
 

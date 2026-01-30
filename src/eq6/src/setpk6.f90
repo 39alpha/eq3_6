@@ -276,6 +276,4 @@ subroutine setpk6(actwlg,awmax,awmaxi,awmin,awmini,eh,ehmax,ehmaxi,ehmin,ehmini,
     if (nerr .gt. 0) then
         stop
     end if
-
-999 continue
 end subroutine setpk6

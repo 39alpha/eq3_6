@@ -1812,6 +1812,4 @@ subroutine wr6pkd(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dlep
 8310 format('|End of problem',64x,'|')
 
     write (newin,1050)
-
-999 continue
 end subroutine wr6pkd

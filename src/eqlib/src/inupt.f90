@@ -330,6 +330,4 @@ subroutine inupt(amua,aslma,ielam,ipbt_asv,jpdblo,jpfc_asv,nad1,nalpaa,napa_asv,
     end do
 
     nmuta = nmu
-
-999 continue
 end subroutine inupt

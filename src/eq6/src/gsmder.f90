@@ -73,6 +73,4 @@ subroutine gsmder(delxia,drer0,drer0s,drir0,drir0s,jreac,nord,nrct,nrctmx,nrd1mx
             end do
         end if
     end do
-
-999 continue
 end subroutine gsmder

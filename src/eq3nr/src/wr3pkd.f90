@@ -282,8 +282,6 @@ subroutine wr3pkd(electr,cgexj,ietmax,iopg,jetmax,jflgi,jgext,kbt,kct,kdim,kmax,
     end if
 
     if (net.gt.0 .or. qgexsh) then
-1694 format('* Valid exchange model strings (ugexmo(n)) are:',t80,'*')
-
         ux80(1:1) = '*'
         ux80(2:79) = ' '
         ux80(80:80) = '*'
@@ -627,6 +625,4 @@ subroutine wr3pkd(electr,cgexj,ietmax,iopg,jetmax,jflgi,jgext,kbt,kct,kdim,kmax,
 8310 format('|End of problem',64x,'|')
 
     write (newin,1050)
-
-999 continue
 end subroutine wr3pkd

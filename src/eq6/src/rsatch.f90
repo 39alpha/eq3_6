@@ -440,6 +440,4 @@ subroutine rsatch(csts,egers,egexs,iern1,ietmax,iindx1,iktmax,iopt,ipndx1,jcode,
     end do
 
 440 continue
-
-999 continue
 end subroutine rsatch

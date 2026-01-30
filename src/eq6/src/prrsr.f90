@@ -123,6 +123,4 @@ subroutine prrsr(cbsr,jcode,nbaspd,nbtd,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrnde
             end if
         end if
     end do
-
-999 continue
 end subroutine prrsr

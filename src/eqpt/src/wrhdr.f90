@@ -237,6 +237,4 @@ subroutine wrhdr(ikt_asv,ipch_asv,ipcv_asv,jpfc_asv,nap_asv,narx_asv,nat_asv,nbt
     end if
 
     write (ndat1f,1000) utermc(1:72)
-
-999 continue
 end subroutine wrhdr

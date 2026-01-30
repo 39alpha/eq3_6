@@ -455,6 +455,4 @@ subroutine wr3w8(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,i
 
     write (newin,1330) scamas
 1330 format (4x,'scamas= ',1pe12.5)
-
-999 continue
 end subroutine wr3w8

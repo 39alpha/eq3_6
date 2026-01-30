@@ -232,7 +232,6 @@ subroutine ckehpl(delxi,dlxmin,deh0,dxe0pl,dxe1pl,dxval0,eps100,iodb,nodbmx,nord
 
 210 continue
 
-990 continue
     if (dxsv .gt. delxi) then
         qdump = .false.
     end if
