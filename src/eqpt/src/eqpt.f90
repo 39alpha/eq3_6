@@ -25,7 +25,6 @@ program eqpt
     !              computing activity coefficients in solid solutions
     integer :: iapxpa
     integer :: ibpxpa
-    integer :: iktpar
 
     parameter(iapxpa = 20,ibpxpa = 20)
 

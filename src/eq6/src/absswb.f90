@@ -99,7 +99,6 @@ subroutine absswb(adhfs,adhfsx,advfs,advfsx,avcnst,axhfs,axhfsx,axlks,axlksx,axv
     integer :: jlen1
     integer :: jlen2
     integer :: jlen3
-    integer :: krow
     integer :: nb
     integer :: nb1
     integer :: nb2
