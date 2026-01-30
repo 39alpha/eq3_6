@@ -16599,7 +16599,7 @@
  Steps completed=    91, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.9936
 
- Stepping to Xi=  8.0029E-01, delxi=  8.4984E-05, nord= 1
+ Stepping to Xi=  8.0029E-01, delxi=  8.4983E-05, nord= 1
  Steps completed=    92, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.9874
 
@@ -16607,7 +16607,7 @@
  Steps completed=    93, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.9766
 
- Stepping to Xi=  8.0079E-01, delxi=  3.5191E-04, nord= 1
+ Stepping to Xi=  8.0079E-01, delxi=  3.5192E-04, nord= 1
  Steps completed=    94, iter=   5, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.9525
 
@@ -16619,7 +16619,7 @@
  Steps completed=    96, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.8839
 
- Stepping to Xi=  8.0359E-01, delxi=  1.6787E-03, nord= 2
+ Stepping to Xi=  8.0359E-01, delxi=  1.6788E-03, nord= 2
  Steps completed=    97, iter=   4, ncorr= 0
  Most rapidly changing is zvclg1(Gypsum)=     -6.7982
 
@@ -17109,7 +17109,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -17181,10 +17181,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -20485,7 +20485,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -20557,10 +20557,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
