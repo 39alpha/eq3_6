@@ -5,7 +5,7 @@ $(TARGET): $(OBJECTS)
 
 obj/%.o: src/%.f90
 	@mkdir -p obj
-	gfortran $(FFLAGS) $(INCLUDES) -c -o $@ $^
+	gfortran -Wall -Wextra -Werror -pedantic -Wno-conversion -Wno-unused-variable -Wno-unused-label -Wno-character-truncation -Wno-unused-dummy-argument -Wno-maybe-uninitialized -Wno-do-subscript -Wno-compare-reals -Wno-unused-parameter $(FFLAGS) $(INCLUDES) -c -o $@ $^
 
 clean:
 	@rm -rf obj
