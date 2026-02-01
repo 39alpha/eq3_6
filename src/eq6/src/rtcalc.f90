@@ -80,7 +80,7 @@ subroutine rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech,
     ! Loop over all kinetically-governed reactions. Calculate the
     ! relevant surface areas for surface-area-controlled reactions.
     do nrc = 1,nrct
-        call csfar(afrc1,morr,morr0,mwtrc,noutpt,nrc,nrctmx,nsk,nttyo,prcinf,sfcar,sfcar0,ssfcar,ureac)
+        call csfar(afrc1, morr, morr0, mwtrc, noutpt, nrc, nrctmx, nsk, nttyo, prcinf, sfcar, sfcar0, ssfcar, ureac)
     end do
 
     ! Determine the rate law form (forward or backward) to use for
@@ -109,7 +109,7 @@ subroutine rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech,
     ! Loop over all kinetically-governed reactions. Calculate the
     ! net rate (relative or absolute) for each one.
     do nrc = 1,nrct
-        call crrate(act,afrc1,cdac,csigma,eps100,fkrc,idirec,imchmx,imech,iodb,jreac,morr,ndac,ndact,ndctmx,nodbmx,noutpt,nrc,nrctmx,nrk,nstmax,nttyo,rk,rreac1,rrelr1,rrxfi1,rtcnst,sfcar,udac,ureac)
+        call crrate(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, jreac, morr, ndac, ndact, ndctmx, nodbmx, noutpt, nrc, nrctmx, nrk, nstmax, nttyo, rk, rreac1, rrelr1, rrxfi1, rtcnst, sfcar, udac, ureac)
     end do
 
     ! If in time mode, calculate the inverse rate. Calculate relative

@@ -161,7 +161,7 @@ subroutine inttfx(narn1a, narn2a, noutpt, nsta_asv, ntfxa, ntfxmx, ntfxta, nttyo
         ! Calling sequence substitutions:
         !   narn1a for nrn1a
         !   narn2a for nrn2a
-        call srchn(narn1a,narn2a,ns,nsta_asv,unam,uspeca)
+        call srchn(narn1a, narn2a, ns, nsta_asv, unam, uspeca)
 
         if (ns .gt. 0) then
             ! If a previous match was found, skip.

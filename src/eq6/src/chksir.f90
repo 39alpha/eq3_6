@@ -110,7 +110,7 @@ subroutine chksir(delxi, dlxmin, drir0, dxval0, eps100, iodb, nodbmx, nord, nout
             dxval0(n) = drir0(n)
         end do
 
-        call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+        call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
         if (ier .le. 0) then
             go to 100

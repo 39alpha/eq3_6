@@ -116,7 +116,7 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
     ! Calling sequence substitutions:
     !   apresg for arr
     !   pgrid for prop
-    call evdat2(apresg,narxmx,narxt,ntpr,ntprmx,pgrid,tempc)
+    call evdat2(apresg, narxmx, narxt, ntpr, ntprmx, pgrid, tempc)
 
     do n = 1,nxmod
         if (kxmod(n) .lt. 0) then
@@ -145,7 +145,7 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
             nt = nr2 - nr1 + 1
 
             if (nt .lt. 2) then
-                call fmspnm(jlen,unam48,uspn56)
+                call fmspnm(jlen, unam48, uspn56)
                 write (noutpt,1005) uspn56(1:jlen)
                 write (nttyo,1005) uspn56(1:jlen)
 1005 format(/' * Error - (EQLIB/alters) The species ',a,/7x,'is in the strict basis set, so it can not be affected',/7x,'by the  specifed nxmod alter option.')
@@ -164,7 +164,7 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
             !   ns for k
             !   nstmax for nmax
             !   xlkold for prop
-            call evdat3(axlks,ns,nstmax,narxmx,narxt,ntpr,ntprmx,xlkold,tempc)
+            call evdat3(axlks, ns, nstmax, narxmx, narxt, ntpr, ntprmx, xlkold, tempc)
 
             ! Map the kxmod = 0 and kxmod = 2 options to the kxmod = 1
             ! option.
@@ -182,7 +182,7 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
 
 110 continue
                 if (cds .le. 0) then
-                    call fmspnm(jlen,unam48,uspn56)
+                    call fmspnm(jlen, unam48, uspn56)
                     write (noutpt,1010) uspn56(1:jlen)
                     write (nttyo,1010) uspn56(1:jlen)
 1010 format(/" * Error - (EQLIB/alters) Couldn't find a",' non-zero reaction coefficient',/7x,'for the species ',a,', which is',/7x,'specified in an nxmod alter option.'," Therefore can't alter the",/7x,'corresponding',' equilibrium constant.')
@@ -208,11 +208,11 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
 
             ! Calling sequence substitutions:
             !   noutpt for nf
-            call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns,nstmax,uspec)
+            call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns, nstmax, uspec)
 
             ! Calling sequence substitutions:
             !   nttyo for nf
-            call prreac(cdrs,ndrs,ndrsmx,ndrsr,nttyo,ns,nstmax,uspec)
+            call prreac(cdrs, ndrs, ndrsmx, ndrsr, nttyo, ns, nstmax, uspec)
             xlknew = xlkold + xlkdel
             write (noutpt,1020) tempc,pgrid,xlkold,xlknew
             write (nttyo,1020) tempc,pgrid,xlkold,xlknew
@@ -226,7 +226,7 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
         end do
 
         if (nhits .le. 0) then
-            call fmspnm(jlen,unam48,uspn56)
+            call fmspnm(jlen, unam48, uspn56)
             write (noutpt,1025) uspn56(1:jlen)
             write (nttyo,1025) uspn56(1:jlen)
 1025 format(/" * Error- (EQLIB/alters) Can't find the species",/7x,a,', which is specified in an nxmod alter option.',' Check to make sure',/7x,'that a species of this name',' appears on the supporting data file.')
@@ -247,7 +247,7 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
         ! Check to see that the species is not a fictive fugacity
         ! fixing species.
         if (unam48(1:4) .eq. ufix(1:4)) then
-            call fmspnm(jlen,unam48,uspn56)
+            call fmspnm(jlen, unam48, uspn56)
             write (noutpt,1035) uspn56(1:jlen)
             write (nttyo,1035) uspn56(1:jlen)
 1035 format(/' * Note - (EQLIB/alters) The species "',a,'" specified',/7x,'in an nxmod alter option comprises a',' fictive fugacity-fixing.',/7x,' phase. Such an option'," can't be applied to this kind of species.")

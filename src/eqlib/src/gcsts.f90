@@ -111,7 +111,7 @@ subroutine gcsts(cdrs, csts, jflag, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, no
         if (nj .gt. nstsmx) then
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (noutpt,1000) nstsmx,uspn56(1:jlen)
             write (nttyo,1000) nstsmx,uspn56(1:jlen)
 1000 format(/' * Error - (EQLIB/gcsts) The maximum ',i7,' entries have been exceeded',/7x,'computing the csts',' array of stoichiometric coefficients. The last',/7x,'species for which the coefficients were being computed',/7x,'was ',a,'. Increase the dimensioning',/7x,'parameter nstspa')
@@ -132,7 +132,7 @@ subroutine gcsts(cdrs, csts, jflag, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, no
             if (nt .lt. 2) then
                 ! Calling sequence substitutions:
                 !   uspec(ns) for unam48
-                call fmspnx(jlen,uspec(ns),uspn56)
+                call fmspnx(jlen, uspec(ns), uspn56)
                 write (noutpt,1005) uspn56(1:jlen)
                 write (nttyo,1005) uspn56(1:jlen)
 1005 format(/' * Error - (EQLIB/gcsts) The species ',a,/7x,'has no associated reaction on the data file, but it',/7x,'is not a strict basis species.')
@@ -158,13 +158,13 @@ subroutine gcsts(cdrs, csts, jflag, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, no
                     if (nbb .le. 0) then
                         ! Calling sequence substitutions:
                         !   uspec(ns) for unam48
-                        call fmspnx(jlen,uspec(ns),uspn56)
+                        call fmspnx(jlen, uspec(ns), uspn56)
 
                         ! Calling sequence substitutions:
                         !   jlene for jlen
                         !   uspec(nse) for unam48
                         !   uspe56 for uspn56
-                        call fmspnx(jlene,uspec(nse),uspe56)
+                        call fmspnx(jlene, uspec(nse), uspe56)
                         write (noutpt,1010) uspe56(1:jlene),uspn56(1:jlen)
                         write (nttyo,1010) uspe56(1:jlene),uspn56(1:jlen)
 1010 format(/' * Error - (EQLIB/gcsts) The species ',a,/7x,'appears in the data file reaction for ',a,',',/7x,'but it is not in the data file basis set.')

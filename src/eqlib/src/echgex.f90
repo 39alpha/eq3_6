@@ -101,7 +101,7 @@ subroutine echgex(axlks, cdrs, cgexj, iern1, iern2, jern1, jern2, jetmax, jgext,
             do ns = jern1(je,ne),jern2(je,ne)
                 ! Calling sequence substitutions:
                 !   noutpt for nf
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns, nstmax, uspec)
 
                 nr1 = ndrsr(1,ns)
                 nr2 = ndrsr(2,ns)

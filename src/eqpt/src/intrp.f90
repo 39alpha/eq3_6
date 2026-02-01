@@ -65,7 +65,7 @@ subroutine intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt
 
     ! Initialize apr to 0.
     nmax = narxmx*ntprmx
-    call initaz(apr,nmax)
+    call initaz(apr, nmax)
 
     ! Loop on temperature ranges.
     do ntpr = 1,ntprt
@@ -107,7 +107,7 @@ subroutine intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt
         end if
 
         ! Fit the polynomial.
-        call polfit(aamatr,cof,gmmatr,ier,ipivot,narxmx,npft,noutpt,nttyo,xvec,yvec)
+        call polfit(aamatr, cof, gmmatr, ier, ipivot, narxmx, npft, noutpt, nttyo, xvec, yvec)
 
         if (ier .gt. 0) then
             write (noutpt,1010) ntpr,tempc(1,ntpr),tempc(narxt(ntpr),ntpr)
@@ -125,7 +125,7 @@ subroutine intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt
         !   cof for avy
         !   cof for avys
         !   npft for nmax
-        call rscaly(tvecmx,cof,cof,eps100,npft)
+        call rscaly(tvecmx, cof, cof, eps100, npft)
 
         ! Store the fitted coefficients for this range in the apr array.
         do n = 1,npft

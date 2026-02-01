@@ -283,8 +283,8 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
 
     cdrs(nbt + 2,ns) = 0.
 
-    call initcv(uessi,nct,' ')
-    call initcv(udrsi,nbt1,' ')
+    call initcv(uessi, nct, ' ')
+    call initcv(udrsi, nbt1, ' ')
 
     ! Read the first line of the block.
 110 continue
@@ -538,7 +538,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
 
     ! Check for blank element names, duplicate element names, and
     ! zero-valued stoichiometric coefficients.
-    call elesck(cessi,nbtmx1,nctmax,ncts,nentei,nerr,noutpt,ns,nttyo,qblkes,qzeres,uessi,usblkf,uspec)
+    call elesck(cessi, nbtmx1, nctmax, ncts, nentei, nerr, noutpt, ns, nttyo, qblkes, qzeres, uessi, usblkf, uspec)
 
     if (ns .eq. nbw) then
         ! Make sure that H2O is the first aqueous species.
@@ -772,11 +772,11 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
         ! zero-valued reaction coefficients. Check that the reaction
         ! coefficient of the species with which the reaction is
         ! associated has a negative value.
-        call rxnsck(nbtmx1,cdrsi,nct,ndrsts,nentri,nerr,noutpt,ns,nsb,nttyo,qblkrs,qzerrs,udrsi,usblkf,uspec)
+        call rxnsck(nbtmx1, cdrsi, nct, ndrsts, nentri, nerr, noutpt, ns, nsb, nttyo, qblkrs, qzerrs, udrsi, usblkf, uspec)
 
         ! Read the log K grid for the current species.
         ! Return the data in the xdbval holding array.
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -791,12 +791,12 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
         !   ns for ipc
         !   nbtmx1 for ipcmax
         !   xlks for zdbval
-        call ldbar3(ns,nbtmx1,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,xlks)
+        call ldbar3(ns, nbtmx1, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, xlks)
 
         if (itgenf .ge. 0) then
             ! Test the grid ranges for sparseness of actual data.
             ustrgr = 'the log K for ' // uspec(ns)
-            call tegrid(itgenf,nacdpr,narxt,nerr,noutpt,ntprmx,ntprt,nttyo,nwarn,ustrgr)
+            call tegrid(itgenf, nacdpr, narxt, nerr, noutpt, ntprmx, ntprt, nttyo, nwarn, ustrgr)
         end if
     end if
 
@@ -809,7 +809,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
     if (ipch .ge. 0) then
         ! Read the enthalpy function grid for the current species.
         ! Return the data in the xdbval holding array.
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -824,18 +824,18 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
         !   ns for ipc
         !   nbtmx1 for ipcmax
         !   xhfs for zdbval
-        call ldbar3(ns,nbtmx1,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,xhfs)
+        call ldbar3(ns, nbtmx1, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, xhfs)
 
         if (itgenf .ge. 0) then
             ! Test the grid ranges for sparseness of actual data.
             ustrgr = 'the enthalpy function for ' // uspec(ns)
-            call tegrid(itgenf,nacdpr,narxt,nerr,noutpt,ntprmx,ntprt,nttyo,nwarn,ustrgr)
+            call tegrid(itgenf, nacdpr, narxt, nerr, noutpt, ntprmx, ntprt, nttyo, nwarn, ustrgr)
         end if
 
         do ipc = 1,ipch
             ! Read the enthalpy function derivative grid for the current
             ! species. Return the data in the xdbval holding array.
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -849,14 +849,14 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
             ! Calling sequence substitutions:
             !   ipchmx for ipcmax
             !   dhfs for zdbval
-            call ldbar4(ipc,ipchmx,nacdpr,narxmx,narxt,nbtmx1,ndbmax,ns,ntprmx,ntprt,xdbval,dhfs)
+            call ldbar4(ipc, ipchmx, nacdpr, narxmx, narxt, nbtmx1, ndbmax, ns, ntprmx, ntprt, xdbval, dhfs)
         end do
     end if
 
     if (ipcv .ge. 0) then
         ! Read the volume function grid for the current species.
         ! Return the data in the xdbval holding array.
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -871,18 +871,18 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
         !   ns for ipc
         !   nbtmx1 for ipcmax
         !   xvfs for zdbval
-        call ldbar3(ns,nbtmx1,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,xvfs)
+        call ldbar3(ns, nbtmx1, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, xvfs)
 
         if (itgenf .ge. 0) then
             ! Test the grid ranges for sparseness of actual data.
             ustrgr = 'the volume function for ' // uspec(ns)
-            call tegrid(itgenf,nacdpr,narxt,nerr,noutpt,ntprmx,ntprt,nttyo,nwarn,ustrgr)
+            call tegrid(itgenf, nacdpr, narxt, nerr, noutpt, ntprmx, ntprt, nttyo, nwarn, ustrgr)
         end if
 
         do ipc = 1,ipcv
             ! Read the volume function derivative grid for the current
             ! species. Return the data in the xdbval holding array.
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -896,7 +896,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
             ! Calling sequence substitutions:
             !   ipcvmx for ipcmax
             !   dvfs for zdbval
-            call ldbar4(ipc,ipcvmx,nacdpr,narxmx,narxt,nbtmx1,ndbmax,ns,ntprmx,ntprt,xdbval,dvfs)
+            call ldbar4(ipc, ipcvmx, nacdpr, narxmx, narxt, nbtmx1, ndbmax, ns, ntprmx, ntprt, xdbval, dvfs)
         end do
     end if
 
@@ -921,7 +921,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
     ! of O2(g).
     if (qelect) then
         if (ns .gt. nsb) then
-            call etoo2(cdrsi,dhfe,dhfs,dvfe,dvfs,ipch,ipchmx,ipcv,ipcvmx,narxmx,narxt,nbtmx1,ndrsts,ns,ntprmx,ntprt,udrsi,xhfe,xhfs,xlke,xlks,xvfe,xvfs)
+            call etoo2(cdrsi, dhfe, dhfs, dvfe, dvfs, ipch, ipchmx, ipcv, ipcvmx, narxmx, narxt, nbtmx1, ndrsts, ns, ntprmx, ntprt, udrsi, xhfe, xhfs, xlke, xlks, xvfe, xvfs)
         end if
     end if
 
@@ -1050,7 +1050,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
     if (ndrsts .ge. 2) then
         if (.not.qblkes .and. .not.qnofes) then
             if (.not.qblkrs .and. .not.qnofrs) then
-                call rxnchk(cdrs,cess,mtotr,nbt,nbtmx1,nbtmx2,nco,nct,nctmax,nerr,noutpt,ns,nsb,nttyo,uelem,uspec,zchar)
+                call rxnchk(cdrs, cess, mtotr, nbt, nbtmx1, nbtmx2, nco, nct, nctmax, nerr, noutpt, ns, nsb, nttyo, uelem, uspec, zchar)
             end if
         end if
     end if
@@ -1062,7 +1062,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
         end do
     end do
 
-    call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+    call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
     ux24 = 'Log K'
     j2 = ilnobl(ux24)
@@ -1086,7 +1086,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
             end do
         end do
 
-        call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'Enthalpy'
         j2 = ilnobl(ux24)
@@ -1108,7 +1108,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
                 end do
             end do
 
-            call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'dhfs( )'
             write (ux24(6:6),'(i1)') ipc
@@ -1132,7 +1132,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
             end do
         end do
 
-        call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'Volume'
         j2 = ilnobl(ux24)
@@ -1154,7 +1154,7 @@ subroutine pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
                 end do
             end do
 
-            call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'dvfs( )'
             write (ux24(6:6),'(i1)') ipc

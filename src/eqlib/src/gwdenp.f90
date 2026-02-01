@@ -76,7 +76,7 @@ subroutine gwdenp(adwipp, bdwipp, jcsort, mlmrra, mosp, mrmlra, mwtsp, narn1, na
     ! solutes, the solvent, and the solution, and also some related
     ! quantities.
     ! Get the total dissolved solute mass (wotds, g).
-    call ctds(jcsort,mosp,mwtsp,narn1,narn2,nstmax,wotds)
+    call ctds(jcsort, mosp, mwtsp, narn1, narn2, nstmax, wotds)
 
     ! Get the solvent mass (fixed at 1000 grams in EQ3NR, variable
     ! in EQ6). The following works for either code.

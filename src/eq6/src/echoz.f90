@@ -222,7 +222,7 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     ! the number of each of entity on the data base, the number the
     ! software is dimensioned for, and the number appearing in the
     ! current problem.
-    call prtntt(nat,nata,natmax,nbt,nbta,nbtmax,nct,ncta,nctmax,ngt,ngta,ngtmax,nlt,nlta,nltmax,nmt,nmta,nmtmax,noutpt,npt,npta,nptmax,nst,nsta,nstmax,nxt,nxta,nxtmax)
+    call prtntt(nat, nata, natmax, nbt, nbta, nbtmax, nct, ncta, nctmax, ngt, ngta, ngtmax, nlt, nlta, nltmax, nmt, nmta, nmtmax, noutpt, npt, npta, nptmax, nst, nsta, nstmax, nxt, nxta, nxtmax)
 
     if (jtemp .eq. 0) then
         write (noutpt,1030) tempcb
@@ -258,7 +258,7 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     if (iopr(2) .ge. 1) then
         ilevel = 2
         nf = noutpt
-        call echolk(axlks,cdrs,ilevel,jsflag,narxmx,ndrs,ndrsmx,ndrsr,nf,nst,ntprmx,nstmax,press,tempc,uspec,xlks)
+        call echolk(axlks, cdrs, ilevel, jsflag, narxmx, ndrs, ndrsmx, ndrsr, nf, nst, ntprmx, nstmax, press, tempc, uspec, xlks)
     end if
 
     write (noutpt,1200) xistti,ximaxi,tistti,timmxi,phmini,phmaxi,ehmini,ehmaxi,o2mini,o2maxi,awmini,awmaxi,kstpmx
@@ -356,7 +356,7 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
 1580 format(//5x,'Reaction:')
 
                 nf = noutpt
-                call prrsr(cbsr,jcode,nbaspd,nbtd,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+                call prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
 
                 write (noutpt,1590)
 1590 format(1x)

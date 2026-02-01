@@ -129,7 +129,7 @@ subroutine ldlxrc(al10, delxi, dlxmin, dzvc0, iodb, iindx1, kbt, kdim, kelect, k
     ! Make a Taylor's series expansion of the z vector, without applying
     ! change limits.
     qztayl = .false.
-    call ztaylr(delxi,dzvc0,kdim,kmax,km1,kxt,nord,nrd1mx,qztayl,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+    call ztaylr(delxi, dzvc0, kdim, kmax, km1, kxt, nord, nrd1mx, qztayl, zklogu, zvclg0, zvclg1, zvec0, zvec1)
 
     if (kwater .gt. 0) then
         ! Number of moles of H2O. The limit is +/- lwater %.

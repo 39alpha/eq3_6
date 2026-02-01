@@ -115,7 +115,7 @@ subroutine search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord
     x(1) = xleft
     delxi = xleft
 
-    call sfncge(delxi,xval0,xtargv,dxval0,nord,nrd1mx,resx)
+    call sfncge(delxi, xval0, xtargv, dxval0, nord, nrd1mx, resx)
 
     y(1) = resx
     ares0 = abs(resx)
@@ -156,7 +156,7 @@ subroutine search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord
     x(2) = xright
     delxi = xright
 
-    call sfncge(delxi,xval0,xtargv,dxval0,nord,nrd1mx,resx)
+    call sfncge(delxi, xval0, xtargv, dxval0, nord, nrd1mx, resx)
 
     y(2) = resx
     ares = abs(resx)
@@ -231,7 +231,7 @@ subroutine search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord
 
     delxi = xnew
 
-    call sfncge(delxi,xval0,xtargv,dxval0,nord,nrd1mx,resx)
+    call sfncge(delxi, xval0, xtargv, dxval0, nord, nrd1mx, resx)
 
     ares = abs(resx)
     resfnc = (ares0 - ares)/ares0

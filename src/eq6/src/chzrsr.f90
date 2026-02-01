@@ -112,13 +112,13 @@ subroutine chzrsr(cbsr, elecsr, eps100, jcode, nbasp, nbt, nbtmax, nbt1mx, noutp
                 ! Calling sequence substitutions:
                 !   nbasp for nbaspd
                 !   nbt for nbtd
-                call prrsr(cbsr,jcode,nbasp,nbt,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+                call prrsr(cbsr, jcode, nbasp, nbt, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
 
                 ! Calling sequence substitutions:
                 !   nbasp for nbaspd
                 !   nbt for nbtd
                 nf = nttyo
-                call prrsr(cbsr,jcode,nbasp,nbt,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+                call prrsr(cbsr, jcode, nbasp, nbt, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
 
                 ux24 = ' '
                 write (ux24,'(1pe12.5)') ztx

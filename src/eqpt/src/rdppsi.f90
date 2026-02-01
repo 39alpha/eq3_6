@@ -196,7 +196,7 @@ subroutine rdppsi(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxpsi, npx3m
     !      Calling sequence substitutions:
     !        n1 for na
     !        unam1 for unams
-    call gspidx(ier,n1,nat,natmax,uaqsp,unam1)
+    call gspidx(ier, n1, nat, natmax, uaqsp, unam1)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>' .and. unam3(1:7).ne.'<blank>') then
@@ -211,7 +211,7 @@ subroutine rdppsi(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxpsi, npx3m
     ! Calling sequence substitutions:
     !   n2 for na
     !   unam2 for unams
-    call gspidx(ier,n2,nat,natmax,uaqsp,unam2)
+    call gspidx(ier, n2, nat, natmax, uaqsp, unam2)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>' .and. unam3(1:7).ne.'<blank>') then
@@ -224,7 +224,7 @@ subroutine rdppsi(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxpsi, npx3m
     ! Calling sequence substitutions:
     !   n3 for na
     !   unam3 for unams
-    call gspidx(ier,n3,nat,natmax,uaqsp,unam3)
+    call gspidx(ier, n3, nat, natmax, uaqsp, unam3)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>' .and. unam3(1:7).ne.'<blank>') then
@@ -360,7 +360,7 @@ subroutine rdppsi(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxpsi, npx3m
     ! n1, n2, n3, z1, z2, z3, iz1, iz2, iz3 are all changed
     ! in addtion to u1, u2, u3. Note that unam1, unam2, and
     ! unam3 are not changed.
-    call artrip(iz1,iz2,iz3,na,nc,nn,n1,n2,n3,u1,u2,u3,z1,z2,z3)
+    call artrip(iz1, iz2, iz3, na, nc, nn, n1, n2, n3, u1, u2, u3, z1, z2, z3)
 
     ! Store the triplet names in the order required by the
     ! storage rules. The triplet in the original order is
@@ -404,7 +404,7 @@ subroutine rdppsi(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxpsi, npx3m
         if (ux80(1:j6) .eq. ustr16(1:j6)) then
             udastr = ux80
             udastr(1:j6) = ' '
-            call g1dat(ier,noutpt,nttyo,udastr,var)
+            call g1dat(ier, noutpt, nttyo, udastr, var)
 
             if (ier .gt. 0) then
                 write (noutpt,1320) uline(1:j5),unam1(1:j2),unam2(1:j3),unam3(1:j4)

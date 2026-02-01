@@ -174,7 +174,7 @@ subroutine mincsp(cdrsd, jpflag, jsflag, nbaspd, nbtd, nbtmax, ncmpra, ndrsd, nd
                         if (uspeca(ns)(1:24) .eq. uxopex(i)(1:24)) then
                             ! Calling sequence substitutions:
                             !   uspeca(ns) for unam48
-                            call fmspnm(jlen,uspeca(ns),uspn56)
+                            call fmspnm(jlen, uspeca(ns), uspn56)
                             write (noutpt,1130) uspn56(1:jlen)
                             write (nttyo,1130) uspn56(1:jlen)
 1130 format(11x,a)
@@ -222,7 +222,7 @@ subroutine mincsp(cdrsd, jpflag, jsflag, nbaspd, nbtd, nbtmax, ncmpra, ndrsd, nd
                                         if (uspeca(ns)(1:24) .eq. uxopex(i)(1:24)) then
                                             ! Calling sequence substitutions:
                                             !   uspeca(ns) for unam48
-                                            call fmspnm(jlen,uspeca(ns),uspn56)
+                                            call fmspnm(jlen, uspeca(ns), uspn56)
                                             write (noutpt,1130) uspn56(1:jlen)
                                             write (nttyo,1130) uspn56(1:jlen)
                                             go to 210

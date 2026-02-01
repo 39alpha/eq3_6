@@ -128,7 +128,7 @@ subroutine chktmx(delxi, dlxmin, dlxtmx, drir0, dxval0, eps100, iodb, nodbmx, no
 
             ! Calling sequence substitutions:
             !   nordp1 for nord
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nordp1,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nordp1, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dlxtmx = delxi
 

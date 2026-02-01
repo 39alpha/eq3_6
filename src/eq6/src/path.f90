@@ -1461,12 +1461,12 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Set up the cdrw array. This provides a fast way to get the
     ! reaction coefficient of H2O (Aqueous solution) in any reaction.
-    call gcdrw(cdrs,cdrw,narn1,ndrs,ndrsmx,ndrsr,nst,nstmax)
+    call gcdrw(cdrs, cdrw, narn1, ndrs, ndrsmx, ndrsr, nst, nstmax)
 
     ! Set up the cdrtw array. This contains a stoichiometric sum of the
     ! number of times H2O (Aqueous solution) is implied as a solvent
     ! in any reaction.
-    call gcdrtw(cdrs,cdrtw,narn1,narn2,ndrs,ndrsmx,ndrsr,nelect,no2gaq,nst,nstmax)
+    call gcdrtw(cdrs, cdrtw, narn1, narn2, ndrs, ndrsmx, ndrsr, nelect, no2gaq, nst, nstmax)
 
     ! Initialize concentration, activity coefficient, activity, etc.,
     ! arrays.
@@ -1481,20 +1481,20 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end do
 
     av = -99999.
-    call initav(actlg,nstmax,av)
-    call initav(conclg,nstmax,av)
-    call initav(xbarlg,nstmax,av)
-    call initav(loph,nptmax,av)
+    call initav(actlg, nstmax, av)
+    call initav(conclg, nstmax, av)
+    call initav(xbarlg, nstmax, av)
+    call initav(loph, nptmax, av)
 
     nmax = nptmax
-    call initaz(moph,nmax)
-    call initaz(affp,nmax)
+    call initaz(moph, nmax)
+    call initaz(affp, nmax)
 
     nmax = nbtmax
-    call initaz(amtb,nmax)
+    call initaz(amtb, nmax)
 
     nmax = 2*npetmx
-    call initiz(ncmpe,nmax)
+    call initiz(ncmpe, nmax)
 
     ! Initialize (null) some other arrays.
     do ne = 1,netmax
@@ -1503,13 +1503,13 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end do
 
     nmax = jetmax*netmax
-    call initaz(egexjc,nmax)
+    call initaz(egexjc, nmax)
 
     nmax = ietmax*jetmax*netmax
-    call initaz(egexs,nmax)
+    call initaz(egexs, nmax)
 
     nmax = ketmax*netmax
-    call initaz(egexw,nmax)
+    call initaz(egexw, nmax)
 
     ! Initialize the mole fractions and activities of pure solids and
     ! liquids.
@@ -1563,17 +1563,17 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Initialize the jjsort, jssort, jcsort, and jgsort arrays by
     ! setting each element equal to its index.
-    call initii(jcsort,nst)
-    call initii(jjsort,nst)
-    call initii(jssort,nst)
-    call initii(jgsort,ngt)
+    call initii(jcsort, nst)
+    call initii(jjsort, nst)
+    call initii(jssort, nst)
+    call initii(jgsort, ngt)
 
     ! Expand the system description from the data read from the input
     ! file. This includes estimating the numbers of moles of all phases
     ! and species present, the concentrations, activity coefficients,
     ! and activities of all the species, the ionic strength, and the
     ! sum of the molalities of all aqueous aqueous solute species.
-    call exivar(abar,acflg,acflgo,act,actlg,actwlc,adh,adhh,adhv,al10,aphi,azero,a3bar,a3bars,bdh,bdhh,bdhv,bdot,bdoth,bdotv,cco2,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fje,fjeo,fo2,fo2lg,fsort,fugac,fugalg,fxi,fxio,ielam,iern1,iern2,ietmax,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifrn1,ifrn2,ifzeta,igas,igstak,iindx1,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilrn1,ilrn2,ilzeta,imrn1,imrn2,insgf,iodb,iopg,ipbtmx,istack,ixrn1,ixrn2,izmax,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,moph,mosp,mrgexs,mtb,napmax,narn1,narn2,natmax,nazmmx,nazpmx,nbasp,nbaspd,nbt,nbtmax,nchlor,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,net,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,nhydr,nmutmx,nmxmax,nodbmx,nopgmx,noutpt,no2gaq,nphasx,npt,nptmax,nsltmx,nst,nstmax,nsxmax,nttyo,omega,omeglg,press,qhawep,qpit75,q6mode,sigmam,sigmmo,tempk,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zchcu6,zchsq2,zgexj,zvclg1,zvec1)
+    call exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, ielam, iern1, iern2, ietmax, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, ipbtmx, istack, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, moph, mosp, mrgexs, mtb, napmax, narn1, narn2, natmax, nazmmx, nazpmx, nbasp, nbaspd, nbt, nbtmax, nchlor, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, net, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, nhydr, nmutmx, nmxmax, nodbmx, nopgmx, noutpt, no2gaq, nphasx, npt, nptmax, nsltmx, nst, nstmax, nsxmax, nttyo, omega, omeglg, press, qhawep, qpit75, q6mode, sigmam, sigmmo, tempk, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zchcu6, zchsq2, zgexj, zvclg1, zvec1)
 
     ! Set the composition known flag for solid solutions present
     ! in the ES.
@@ -1601,11 +1601,11 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     kxt0 = kxt
     kdim0 = kdim
 
-    call copyia(iindx1,iindx0,kmax)
-    call copyia(ipndx1,ipndx0,kmax)
-    call copyca(uzvec1,uzvec0,kmax)
-    call copyaa(zvclg1,zvclg0,kmax)
-    call copyaa(zvec1,zvec0,kmax)
+    call copyia(iindx1, iindx0, kmax)
+    call copyia(ipndx1, ipndx0, kmax)
+    call copyca(uzvec1, uzvec0, kmax)
+    call copyaa(zvclg1, zvclg0, kmax)
+    call copyaa(zvec1, zvec0, kmax)
 
     qstart = .true.
     nordsv = 0
@@ -1638,14 +1638,14 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         rrelr1(n) = 0.
     end do
 
-    call copyia(jreac,jreac0,nrctmx)
-    call copyaa(morr,morr0,nrctmx)
-    call copyaa(modr,modr0,nrctmx)
-    call copyaa(mtb,mtb0,nbtmax)
-    call copyaa(sfcar,sfcar0,nrctmx)
+    call copyia(jreac, jreac0, nrctmx)
+    call copyaa(morr, morr0, nrctmx)
+    call copyaa(modr, modr0, nrctmx)
+    call copyaa(mtb, mtb0, nbtmax)
+    call copyaa(sfcar, sfcar0, nrctmx)
 
-    call initaz(xirct,nrctmx)
-    call initaz(xirct0,nrctmx)
+    call initaz(xirct, nrctmx)
+    call initaz(xirct0, nrctmx)
 
     iexrt = 0
     jexrt = 0
@@ -1697,10 +1697,10 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end do
 
     nmax = nrd1mx*kmax
-    call initaz(fdzv0,nmax)
-    call initaz(fdzvm1,nmax)
-    call initaz(dzvc0,nmax)
-    call initaz(dzvc0s,nmax)
+    call initaz(fdzv0, nmax)
+    call initaz(fdzvm1, nmax)
+    call initaz(dzvc0, nmax)
+    call initaz(dzvc0s, nmax)
 
     do n = 1,nordmx
         fdawm1(n) = 0.
@@ -1718,37 +1718,37 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end do
 
     nmax = nordmx*nptmax
-    call initaz(fdaf0,nmax)
-    call initaz(fdafm1,nmax)
-    call initaz(daffp0,nmax)
+    call initaz(fdaf0, nmax)
+    call initaz(fdafm1, nmax)
+    call initaz(daffp0, nmax)
 
     nmax = nordmx*npetmx
-    call initaz(fdpe0,nmax)
-    call initaz(fdpem1,nmax)
-    call initaz(demop0,nmax)
+    call initaz(fdpe0, nmax)
+    call initaz(fdpem1, nmax)
+    call initaz(demop0, nmax)
 
     nmax = 2*npetmx
-    call initiz(ncmpe0,nmax)
+    call initiz(ncmpe0, nmax)
 
     nmax = nordmx*nsetmx
-    call initaz(fdse0,nmax)
-    call initaz(fdsem1,nmax)
-    call initaz(demos0,nmax)
+    call initaz(fdse0, nmax)
+    call initaz(fdsem1, nmax)
+    call initaz(demos0, nmax)
 
     nmax = nordmx*nrctmx
-    call initaz(fdarm1,nmax)
-    call initaz(fdar0,nmax)
-    call initaz(dafrc0,nmax)
-    call initaz(fdrem1,nmax)
-    call initaz(fdre0,nmax)
-    call initaz(fdre1,nmax)
+    call initaz(fdarm1, nmax)
+    call initaz(fdar0, nmax)
+    call initaz(dafrc0, nmax)
+    call initaz(fdrem1, nmax)
+    call initaz(fdre0, nmax)
+    call initaz(fdre1, nmax)
 
     nmax = nrd1mx*nrctmx
-    call initaz(fdrrm1,nmax)
-    call initaz(fdrr0,nmax)
-    call initaz(fdrr1,nmax)
-    call initaz(drer0,nmax)
-    call initaz(drer0s,nmax)
+    call initaz(fdrrm1, nmax)
+    call initaz(fdrr0, nmax)
+    call initaz(fdrr1, nmax)
+    call initaz(drer0, nmax)
+    call initaz(drer0s, nmax)
 
     ! Set up the ixbasp and cjbasp arrays. The former is a flag
     ! array, each member of which denotes whether the
@@ -1756,11 +1756,11 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! is defined in terms of molality (= 0) or mole fraction (= 1).
     ! The cjbasp array contains any site stoichiometric factors
     ! associated with the operational basis species.
-    call gibasp(cgexj,cjbasp,iern1,ixbasp,jern1,jern2,jetmax,jgext,narn1,narn2,nbasp,nbt,nbtmax,nern1,nern2,netmax,nphasx,nstmax)
+    call gibasp(cgexj, cjbasp, iern1, ixbasp, jern1, jern2, jetmax, jgext, narn1, narn2, nbasp, nbt, nbtmax, nern1, nern2, netmax, nphasx, nstmax)
 
     ! Make the equilibrium calculation at the initial point of reaction
     ! progress.
-    call eqshel(aadh,aadhh,aadhv,aamatr,aaphi,abar,abdh,abdhh,abdhv,abdot,abdoth,abdotv,acflg,acflgo,act,actlg,adadhh,adadhv,adbdhh,adbdhv,adbdth,adbdtv,adh,adhh,adhv,afcnst,affp,affs,alpha,al10,amtb,aphi,apx,avcnst,azero,a3bar,a3bars,bacfmx,bbig,bdh,bdhh,bdhv,bdot,bdoth,bdotv,beta,betamx,betao,bgamx,bneg,bpx,cbsr,cco2,cdac,cegexs,cesr,cess,cdrs,cdrsd,cdrsx,cdrtw,cdrw,cjbasp,cnufac,conc,conclg,cpgexs,cscale,csigma,csts,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,deltim,delvco,delvec,delxi,dlogxw,dlxmin,drer0,drir0,dzvc0,d1zvc1,eact,egers,egexjc,egexjf,egexs,eh,ehfac,elecsr,eps100,farad,fje,fjeo,fkrc,fo2,fo2lg,fsort,fugac,fugalg,fxi,fxio,gmmatr,hact,iact,iapxt,ibpxt,ibswx,ielam,ier,iern1,iern2,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifrn1,ifrn2,ifzeta,igas,igstak,iindx0,iindx1,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilrn1,ilrn2,ilzeta,imech,imrn1,imrn2,insgf,iodb,iopg,iopt,ipch,ipivot,ipndx1,ipcv,istack,iter,itermx,ixbasp,ixrn1,ixrn2,izmax,jcode,jcsort,jflag,jgsort,jgstak,jjsort,jpflag,jpress,jptffl,jreac,jsflag,jsitex,jsol,jssort,jstack,jtemp,kbt,kction,kdim,kelect,khydr,khydx,km10,km1,kmt,kmt0,ko2gaq,kpsat,kpsst,krdxsp,kwater,kx1,kx10,kxt,kxt0,loph,losp,lsort,modr,modr0,moph,morr,morr0,mosp,mrgers,mrgexs,mtb,mtbaq,mtb0,mte,mteaq,mwtrc,narn1,narn2,narxt,nat,nbasp,nbaspd,nbaspx,nbt,nbtd,nbw,nchlor,ncmpr,ncorr,nct,ndac,ndact,ndrs,ndrsd,ndrsx,ndrsr,ndrsrd,ndrsrx,nelect,nern1,nern2,ness,nessr,net,nfrn1,nfrn2,ngrn1,ngrn2,ngt,nhydr,nhydx,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmt,nord,noutpt,no2gaq,npchk,nphasx,npslmx,npt,nrct,nrdxsp,nrk,nrndex,nsk,nsslmx,nst,nsts,nstsr,ntpr,ntrymx,ntprt,nttyo,nxridx,nxrn1,nxrn2,nxt,nweope,nwndpc,omega,omeglg,prcinf,press,pressb,pressd,ptk,qbassw,qbseqc,qbye,qcnpre,qcntmp,qhawep,qmod,qoptmz,qpit75,qredox,qriinf,qscon,qshoot,qstart,qtrch,qtvchk,qxknph,q6mode,rcnstv,rconst,rkb,rhsvec,rirec0,rk,rreacn,rreac1,rrelr0,rrelr1,rtcnst,rxbar,screwd,sidrph,sidrsp,sigmam,sigmmo,smp100,tdays,tempc,tempcb,tempcd,tempcu,tempc0,tempk,timemx,time0,time1,tiplol,tiplot,tiprnl,tiprnt,tistsv,tolbt,toldl,tolsat,tolsst,tolxst,trkb,ttk,ubacmx,ubgamx,udac,ufixf,ugermo,ulbeta,uldel,uphase,ureac,uspec,uzvec0,uzvec1,vreac,weight,wfac,wodr,worr,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xgers,xirct,xirct0,xistsv,xi0,xi1,zchar,zchcu6,zchsq2,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+    call eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, abdot, abdoth, abdotv, acflg, acflgo, act, actlg, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adh, adhh, adhv, afcnst, affp, affs, alpha, al10, amtb, aphi, apx, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdhh, bdhv, bdot, bdoth, bdotv, beta, betamx, betao, bgamx, bneg, bpx, cbsr, cco2, cdac, cegexs, cesr, cess, cdrs, cdrsd, cdrsx, cdrtw, cdrw, cjbasp, cnufac, conc, conclg, cpgexs, cscale, csigma, csts, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, deltim, delvco, delvec, delxi, dlogxw, dlxmin, drer0, drir0, dzvc0, d1zvc1, eact, egers, egexjc, egexjf, egexs, eh, ehfac, elecsr, eps100, farad, fje, fjeo, fkrc, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, hact, iact, iapxt, ibpxt, ibswx, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx0, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imech, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipivot, ipndx1, ipcv, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcode, jcsort, jflag, jgsort, jgstak, jjsort, jpflag, jpress, jptffl, jreac, jsflag, jsitex, jsol, jssort, jstack, jtemp, kbt, kction, kdim, kelect, khydr, khydx, km10, km1, kmt, kmt0, ko2gaq, kpsat, kpsst, krdxsp, kwater, kx1, kx10, kxt, kxt0, loph, losp, lsort, modr, modr0, moph, morr, morr0, mosp, mrgers, mrgexs, mtb, mtbaq, mtb0, mte, mteaq, mwtrc, narn1, narn2, narxt, nat, nbasp, nbaspd, nbaspx, nbt, nbtd, nbw, nchlor, ncmpr, ncorr, nct, ndac, ndact, ndrs, ndrsd, ndrsx, ndrsr, ndrsrd, ndrsrx, nelect, nern1, nern2, ness, nessr, net, nfrn1, nfrn2, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmt, nord, noutpt, no2gaq, npchk, nphasx, npslmx, npt, nrct, nrdxsp, nrk, nrndex, nsk, nsslmx, nst, nsts, nstsr, ntpr, ntrymx, ntprt, nttyo, nxridx, nxrn1, nxrn2, nxt, nweope, nwndpc, omega, omeglg, prcinf, press, pressb, pressd, ptk, qbassw, qbseqc, qbye, qcnpre, qcntmp, qhawep, qmod, qoptmz, qpit75, qredox, qriinf, qscon, qshoot, qstart, qtrch, qtvchk, qxknph, q6mode, rcnstv, rconst, rkb, rhsvec, rirec0, rk, rreacn, rreac1, rrelr0, rrelr1, rtcnst, rxbar, screwd, sidrph, sidrsp, sigmam, sigmmo, smp100, tdays, tempc, tempcb, tempcd, tempcu, tempc0, tempk, timemx, time0, time1, tiplol, tiplot, tiprnl, tiprnt, tistsv, tolbt, toldl, tolsat, tolsst, tolxst, trkb, ttk, ubacmx, ubgamx, udac, ufixf, ugermo, ulbeta, uldel, uphase, ureac, uspec, uzvec0, uzvec1, vreac, weight, wfac, wodr, worr, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xgers, xirct, xirct0, xistsv, xi0, xi1, zchar, zchcu6, zchsq2, zklogu, zvclg0, zvclg1, zvec0, zvec1)
 
     ! Note on ier codes returned by EQ6/eqshel.f:
     !   =    0  Okay
@@ -1806,7 +1806,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Get the weights (masses) of solvent, total dissolved solutes,
     ! and aqueous solution, and get the aqeuous solution density.
-    call gwdenp(adwipp,bdwipp,jcsort,mlmrra,mosp,mrmlra,mwtsp,narn1,narn2,nstmax,qdwipp,rhoc,rhowc,tdsgks,tdsglw,tdspkc,tdsplc,tempc,vosol,wfh2o,wftds,wkgwi,woh2o,wosol,wotds)
+    call gwdenp(adwipp, bdwipp, jcsort, mlmrra, mosp, mrmlra, mwtsp, narn1, narn2, nstmax, qdwipp, rhoc, rhowc, tdsgks, tdsglw, tdspkc, tdsplc, tempc, vosol, wfh2o, wftds, wkgwi, woh2o, wosol, wotds)
 
     if (qdwipp) then
         qrho = .true.
@@ -1818,7 +1818,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Compute pH, Eh, and pe-, all with reference to appropriate
     ! pH scales. Also compute the pHCl.
-    call gpheh(acflg,actlg,actwlg,adh,ah,ahmes,ahnbs,conc,eh,ehfac,ehmes,ehnbs,farad,fo2lg,fxi,iopg,mrmlra,nchlor,nhydr,nopgmx,noutpt,nstmax,nttyo,pch,pe,pemes,penbs,ph,phcl,phmes,phnbs,qphcl,qredox,qrho,xlke)
+    call gpheh(acflg, actlg, actwlg, adh, ah, ahmes, ahnbs, conc, eh, ehfac, ehmes, ehnbs, farad, fo2lg, fxi, iopg, mrmlra, nchlor, nhydr, nopgmx, noutpt, nstmax, nttyo, pch, pe, pemes, penbs, ph, phcl, phmes, phnbs, qphcl, qredox, qrho, xlke)
 
     wkgh2o = 1.e-3*woh2o
     wkgsol = 1.e-3*wosol
@@ -1839,7 +1839,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     kstpab = 0
 
     if (iopt(12) .gt. 0) then
-        call absswb(adhfs,adhfsx,advfs,advfsx,avcnst,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrtw,cdrsx,cdrw,csts,dhfs,dvfs,eps100,ibswx,iindx1,iodb,ipch,ipchmx,ipcv,ipcvmx,jcsort,jflag,jsflag,kbt,kmax,mosp,mtb,narn1,narn2,narxmx,narxt,nbasp,nbaspd,nbaspx,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsr,ndrsrx,ndrsx,nelect,nhydr,nodbmx,no2gaq,noutpt,nst,nstmax,nsts,nstsmx,nstsr,nswtch,ntpr,ntprmx,nttyo,presg,press,qbassw,qbswx,tempc,uspec,uzvec1,weight,xhfs,xvfs,xlks)
+        call absswb(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrtw, cdrsx, cdrw, csts, dhfs, dvfs, eps100, ibswx, iindx1, iodb, ipch, ipchmx, ipcv, ipcvmx, jcsort, jflag, jsflag, kbt, kmax, mosp, mtb, narn1, narn2, narxmx, narxt, nbasp, nbaspd, nbaspx, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, ndrsrx, ndrsx, nelect, nhydr, nodbmx, no2gaq, noutpt, nst, nstmax, nsts, nstsmx, nstsr, nswtch, ntpr, ntprmx, nttyo, presg, press, qbassw, qbswx, tempc, uspec, uzvec1, weight, xhfs, xvfs, xlks)
 
         if (nswtch .gt. 0) then
             ! It is not necessary here to set the qabswx flag, which
@@ -1853,7 +1853,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! is defined in terms of molality (= 0) or mole fraction (= 1).
             ! The cjbasp array contains any site stoichiometric factors
             ! associated with the operational basis species.
-            call gibasp(cgexj,cjbasp,iern1,ixbasp,jern1,jern2,jetmax,jgext,narn1,narn2,nbasp,nbt,nbtmax,nern1,nern2,netmax,nphasx,nstmax)
+            call gibasp(cgexj, cjbasp, iern1, ixbasp, jern1, jern2, jetmax, jgext, narn1, narn2, nbasp, nbt, nbtmax, nern1, nern2, netmax, nphasx, nstmax)
         end if
     end if
 
@@ -1864,8 +1864,8 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! calculations at this point are complete. Note that the set of
     ! matrix variables may have been changed due to mineral
     ! precipitation, etc.
-    call copyia(iindx1,iindx0,kdim)
-    call copyia(ipndx1,ipndx0,kdim)
+    call copyia(iindx1, iindx0, kdim)
+    call copyia(ipndx1, ipndx0, kdim)
 
     km10 = km1
     kmt0 = kmt
@@ -1891,7 +1891,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (nrct .gt. 0) then
         ! Calculate the initial affinities and rates of the irreversible
         ! reactions.
-        call raff(acflg,actlg,afcnst,affp,afrc1,bpx,cdrs,cgexj,ibpxmx,ibpxt,iern1,ietmax,iktmax,ixrn1,ixrn2,jcode,jern1,jern2,jetmax,jflag,jgext,jpflag,jsflag,jsol,ncmpr,ndrs,ndrsmx,ndrsr,nertmx,net,netmax,ngext,noutpt,nptmax,nrct,nrctmx,nrndex,nstmax,nttyo,nxridx,nxrtmx,nxtmax,rxbar,uphase,uspec,wfac,xbar,xbarlg,xgers,xlks)
+        call raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibpxt, iern1, ietmax, iktmax, ixrn1, ixrn2, jcode, jern1, jern2, jetmax, jflag, jgext, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, nertmx, net, netmax, ngext, noutpt, nptmax, nrct, nrctmx, nrndex, nstmax, nttyo, nxridx, nxrtmx, nxtmax, rxbar, uphase, uspec, wfac, xbar, xbarlg, xgers, xlks)
 
         ! For each reactant, check the status flag against the affinity
         ! and the number of moles present to ensure that any reactant
@@ -1916,15 +1916,15 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         end do
 
         ! Check the reactants for saturation.
-        call rsatch(csts,egers,egexs,iern1,ietmax,iindx1,iktmax,iopt,ipndx1,jcode,jern1,jern2,jetmax,jgext,jpflag,jreac,kmax,km1,kmt,kx1,kxt,loph,losp,moph,morr,mosp,mrgers,mtb,mtb0,nbaspd,nbtmax,ncmpr,nern1,nern2,nert,nertmx,netmax,ngext,noptmx,noutpt,nptmax,nrct,nrctmx,nrk,nrndex,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrt,nxrtmx,qreq,rxbar,tolxsf,uphase,ureac,uspec,xbar,xbarlg,zvclg1,zvec1)
+        call rsatch(csts, egers, egexs, iern1, ietmax, iindx1, iktmax, iopt, ipndx1, jcode, jern1, jern2, jetmax, jgext, jpflag, jreac, kmax, km1, kmt, kx1, kxt, loph, losp, moph, morr, mosp, mrgers, mtb, mtb0, nbaspd, nbtmax, ncmpr, nern1, nern2, nert, nertmx, netmax, ngext, noptmx, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrt, nxrtmx, qreq, rxbar, tolxsf, uphase, ureac, uspec, xbar, xbarlg, zvclg1, zvec1)
 
         ! Calculate rates at the initial point by evaluating the
         ! rate laws.
-        call rtcalc(act,afrc1,cdac,csigma,eps100,fkrc,idirec,imchmx,imech,iodb,iopt,jcode,jreac,morr,morr0,mwtrc,ndac,ndact,ndctmx,nodbmx,noptmx,nord,noutpt,nrk,nrct,nrctmx,nsk,nstmax,nttyo,prcinf,prminf,qriinf,rirec1,rk,rreac1,rrelr1,rtcnst,rrxfi1,sfcar,sfcar0,ssfcar,udac,ureac)
+        call rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, iopt, jcode, jreac, morr, morr0, mwtrc, ndac, ndact, ndctmx, nodbmx, noptmx, nord, noutpt, nrk, nrct, nrctmx, nsk, nstmax, nttyo, prcinf, prminf, qriinf, rirec1, rk, rreac1, rrelr1, rtcnst, rrxfi1, sfcar, sfcar0, ssfcar, udac, ureac)
     end if
 
     ! Calculate the total affinity (aft1).
-    call caft1(afrc1,aft1,nrct,nrctmx,rrelr1)
+    call caft1(afrc1, aft1, nrct, nrctmx, rrelr1)
     aft0 = aft1
     aftm1 = aft1
     qaft1 = .false.
@@ -1933,7 +1933,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! fractions of the exchange ions present in generic ion exchanger
     ! phases. Cations and anions are treated separately in these
     ! calculations.
-    call gegexw(cegexs,egexpc,egexpa,egexw,iern1,iern2,ietmax,jern1,jetmax,jgext,kern1,kern2,ketmax,kgexsa,moph,mosp,netmax,ngexsa,ngext,noutpt,nptmax,nstmax,nttyo,xgexw,zchar)
+    call gegexw(cegexs, egexpc, egexpa, egexw, iern1, iern2, ietmax, jern1, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, nptmax, nstmax, nttyo, xgexw, zchar)
 
     ! Initialize arrays associated with finite-difference description
     ! of the number of mole of phases and species in the Equilibrium
@@ -1947,7 +1947,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! species, respectively. The demop and demos arrays contain the
     ! corresponding derivatives.
     ! Initialize the index arrays.
-    call iiemop(iemop,iemos,iindx1,ipndx1,jsflag,kdim,kmax,ncmpe,ncmpr,noutpt,npet,npetmx,npt,nptmax,nset,nsetmx,nstmax,nttyo,uaqsln,uspec,uphase)
+    call iiemop(iemop, iemos, iindx1, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr, noutpt, npet, npetmx, npt, nptmax, nset, nsetmx, nstmax, nttyo, uaqsln, uspec, uphase)
 
     ! Load the corresponding numbers of moles.
     do npe = 1,npet
@@ -1965,20 +1965,20 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     npet0 = 0
 
     ! Calculate various secondary data at the initial point.
-    call cdappl(acflg,acfw,acfwlg,actlg,actw,actwlg,adwipp,afcnst,affpd,affsd,ah,ahrc,alk,alk1,alk2,alki,atwt,bdwipp,cdrsd,cess,conc,csts,ctb,cteaq,dvoso,dwoso,eh,ehfac,ehrc,eps100,farad,fdpe0,fdse0,fjest,fo2lg,fo2lrc,fxist,iaqsln,iemop0,iemos0,iern1,iern2,ifrn1,ifrn2,ilrn1,ilrn2,imrn1,imrn2,iopt,ixrn1,ixrn2,jcode,jcsort,jern1,jflag,jflagd,jgext,jpflag,jsflag,jssort,modr,moph,mophg,mophj,mopht,morr,mosp,mospg,mospj,mospt,mprph,mprsp,mrgers,mrmlra,mtb,mtbaq,mte,mteaq,mwtges,mwtrc,mwtsp,narn1,narn2,nat,nbasp,nbaspd,nbt,nchlor,ncmpe0,ncmpr,nct,ndrsd,ndrsrd,nelect,nern1,nern2,nert,ness,nessr,net,nfrn1,nfrn2,ngext,ngrn1,ngrn2,ngt,nhydr,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmrt,nmt,no2gaq,npchk,npet,npet0,npt,npts,nrct,nrndex,nst,nsts,nstsr,ntf1,ntf1t,ntf2,ntf2t,nxridx,nxrn1,nxrn2,nxrt,nxt,osc,oscst,omega,pe,perc,ph,phmes,ppmwb,ppmwe,qriinf,qxknph,rreacn,rreac1,rxbar,sfcar,sidrsp,sidrph,sigmam,sigmst,tdays,tempc,tf1,tf2,thours,time1,tmins,tyears,uphase,uspec,vodrt,voph,vophg,vophj,vopht,vosoct,vosp,vospg,vospj,vospt,vosp0,vreac,wfh2o,wkgwi,wodr,wodrt,woph,wophg,wophj,wopht,worr,worrt,wosoct,wosp,wospg,wospj,wospt,xbar,xlke,xlksd,zchcu6,zchsq2)
+    call cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affpd, affsd, ah, ahrc, alk, alk1, alk2, alki, atwt, bdwipp, cdrsd, cess, conc, csts, ctb, cteaq, dvoso, dwoso, eh, ehfac, ehrc, eps100, farad, fdpe0, fdse0, fjest, fo2lg, fo2lrc, fxist, iaqsln, iemop0, iemos0, iern1, iern2, ifrn1, ifrn2, ilrn1, ilrn2, imrn1, imrn2, iopt, ixrn1, ixrn2, jcode, jcsort, jern1, jflag, jflagd, jgext, jpflag, jsflag, jssort, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mprph, mprsp, mrgers, mrmlra, mtb, mtbaq, mte, mteaq, mwtges, mwtrc, mwtsp, narn1, narn2, nat, nbasp, nbaspd, nbt, nchlor, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nelect, nern1, nern2, nert, ness, nessr, net, nfrn1, nfrn2, ngext, ngrn1, ngrn2, ngt, nhydr, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmrt, nmt, no2gaq, npchk, npet, npet0, npt, npts, nrct, nrndex, nst, nsts, nstsr, ntf1, ntf1t, ntf2, ntf2t, nxridx, nxrn1, nxrn2, nxrt, nxt, osc, oscst, omega, pe, perc, ph, phmes, ppmwb, ppmwe, qriinf, qxknph, rreacn, rreac1, rxbar, sfcar, sidrsp, sidrph, sigmam, sigmst, tdays, tempc, tf1, tf2, thours, time1, tmins, tyears, uphase, uspec, vodrt, voph, vophg, vophj, vopht, vosoct, vosp, vospg, vospj, vospt, vosp0, vreac, wfh2o, wkgwi, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosp, wospg, wospj, wospt, xbar, xlke, xlksd, zchcu6, zchsq2)
 
     ! Print results at the initial point.
-    call scripz(abar,acflg,acfw,acfwlg,actlg,actw,actwlg,affpd,affsd,afrc1,aft1,ah,ahmes,ahnbs,ahrc,alki,alk1,alk2,awmax,awmin,a3bar,cbsr,cdrsd,cegexs,cesr,conc,conclg,csts,ctb,cteaq,dvoso,dwoso,egers,egexjc,egexjf,egexpa,egexpc,egexs,egexw,eh,ehmax,ehmes,ehmin,ehnbs,ehrc,elecsr,electr,fje,fjest,fo2,fo2lg,fo2lrc,fugac,fugalg,fxi,fxist,iaqsln,iemop,iemop0,iemos,iemos0,iern1,iern2,iexr,iexrt,ifrn1,ifrn2,ilrn1,ilrn2,imech,imrn1,imrn2,iopg,iopr,iopt,ipndx1,ixrn1,ixrn2,jcode,jcsort,jern1,jern2,jexr,jexrt,jflag,jflagd,jflgi,jgext,jgsort,jpflag,jreac,jsca,jscat,jscr,jscrt,jsflag,jsol,jssort,kbt,kern1,kern2,kgexsa,km1,kmt,kx1,kxt,kstep,kstpmx,loph,losp,mlmrra,modr,moph,mophg,mophj,mopht,morr,mosp,mospg,mospj,mospt,mprph,mprsp,mrgers,mrmlra,mwtrc,mwtsp,narn1,narn2,nat,nbasp,nbaspd,nbt,ncmpe,ncmpe0,ncmpr,nct,ndrsd,ndrsrd,nelect,nern1,nern2,nert,net,nfrn1,nfrn2,ngext,ngexsa,ngrn1,ngrn2,ngt,nhydr,nhydx,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmrt,nmt,noutpt,no2gaq,npet,npet0,npt,npts,nrct,nrdxsp,nrk,nrndex,nst,nsts,nstsr,ntf1t,ntf2t,nxridx,nxrn1,nxrn2,nxrt,nxt,osc,oscst,omega,o2max,o2min,pch,pe,pemes,penbs,perc,ph,phcl,phmax,phmes,phmin,phnbs,ppmwe,presg,press,qaft1,qftpr2,qmod,qphcl,qredox,qrho,qriinf,qstopx,qvhfxi,qvlsow,qzprnt,rho,rhoc,rhowc,rk,rreacn,rreac1,rrelr1,rxbar,sfcar,sidrph,sidrsp,sigmst,sigmam,ssfcar,tdays,tdsglw,tdspkc,tdsplc,tempc,thours,time1,timemx,tmins,tolsat,tolxsf,tolxst,tolxsu,tyears,uelem,ugermo,ugexj,ugexmo,uphase,ureac,uspec,uxtype,vodrt,voph,vophg,vophj,vopht,vosoct,vosol,vosp,vospg,vospj,vospt,vreac,wfh2o,wftds,wkgwi,woh2o,wodr,wodrt,woph,wophg,wophj,wopht,worr,worrt,wosoct,wosol,wosp,wospg,wospj,wospt,wotds,xbar,xbarlg,xbarw,xbrwlg,xgers,xgexw,xi1,xidump,ximax,xistsv,xirct,zchar)
+    call scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, afrc1, aft1, ah, ahmes, ahnbs, ahrc, alki, alk1, alk2, awmax, awmin, a3bar, cbsr, cdrsd, cegexs, cesr, conc, conclg, csts, ctb, cteaq, dvoso, dwoso, egers, egexjc, egexjf, egexpa, egexpc, egexs, egexw, eh, ehmax, ehmes, ehmin, ehnbs, ehrc, elecsr, electr, fje, fjest, fo2, fo2lg, fo2lrc, fugac, fugalg, fxi, fxist, iaqsln, iemop, iemop0, iemos, iemos0, iern1, iern2, iexr, iexrt, ifrn1, ifrn2, ilrn1, ilrn2, imech, imrn1, imrn2, iopg, iopr, iopt, ipndx1, ixrn1, ixrn2, jcode, jcsort, jern1, jern2, jexr, jexrt, jflag, jflagd, jflgi, jgext, jgsort, jpflag, jreac, jsca, jscat, jscr, jscrt, jsflag, jsol, jssort, kbt, kern1, kern2, kgexsa, km1, kmt, kx1, kxt, kstep, kstpmx, loph, losp, mlmrra, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mprph, mprsp, mrgers, mrmlra, mwtrc, mwtsp, narn1, narn2, nat, nbasp, nbaspd, nbt, ncmpe, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nelect, nern1, nern2, nert, net, nfrn1, nfrn2, ngext, ngexsa, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmrt, nmt, noutpt, no2gaq, npet, npet0, npt, npts, nrct, nrdxsp, nrk, nrndex, nst, nsts, nstsr, ntf1t, ntf2t, nxridx, nxrn1, nxrn2, nxrt, nxt, osc, oscst, omega, o2max, o2min, pch, pe, pemes, penbs, perc, ph, phcl, phmax, phmes, phmin, phnbs, ppmwe, presg, press, qaft1, qftpr2, qmod, qphcl, qredox, qrho, qriinf, qstopx, qvhfxi, qvlsow, qzprnt, rho, rhoc, rhowc, rk, rreacn, rreac1, rrelr1, rxbar, sfcar, sidrph, sidrsp, sigmst, sigmam, ssfcar, tdays, tdsglw, tdspkc, tdsplc, tempc, thours, time1, timemx, tmins, tolsat, tolxsf, tolxst, tolxsu, tyears, uelem, ugermo, ugexj, ugexmo, uphase, ureac, uspec, uxtype, vodrt, voph, vophg, vophj, vopht, vosoct, vosol, vosp, vospg, vospj, vospt, vreac, wfh2o, wftds, wkgwi, woh2o, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosol, wosp, wospg, wospj, wospt, wotds, xbar, xbarlg, xbarw, xbrwlg, xgers, xgexw, xi1, xidump, ximax, xistsv, xirct, zchar)
 
     ! Write results at the initial point on the tabx file. This file
     ! is used to create the plot file tab.
     if (iopt(18) .ge. 0) then
         if (qtatxt) then
             ! The TAB file is an ordinary text file.
-            call wrtabx(actlg,afrc1,aft1,alk,cteaq,dvoso,dwoso,eh,fo2lg,iindx1,iktmax,iopt,ipndx1,kmax,km1,kmt,kstep,kx1,kxt,loph,ncmpr,modr,mopht,narn1,mosp,nct,nctmax,noptmx,nptmax,nrct,nrctmx,nstmax,ntabx,ntidmx,ntitl2,ntitld,ntitmx,nxtmax,pe,ph,ppmwe,prcinf,press,prminf,qbye,qmod,qriinf,tempc,time1,uelem,uphase,uplatm,ureac,uspec,usteq6,utitl2,utitld,uveeq6,vodrt,vosoct,wodrt,woh2o,wosoct,xbar,xi1)
+            call wrtabx(actlg, afrc1, aft1, alk, cteaq, dvoso, dwoso, eh, fo2lg, iindx1, iktmax, iopt, ipndx1, kmax, km1, kmt, kstep, kx1, kxt, loph, ncmpr, modr, mopht, narn1, mosp, nct, nctmax, noptmx, nptmax, nrct, nrctmx, nstmax, ntabx, ntidmx, ntitl2, ntitld, ntitmx, nxtmax, pe, ph, ppmwe, prcinf, press, prminf, qbye, qmod, qriinf, tempc, time1, uelem, uphase, uplatm, ureac, uspec, usteq6, utitl2, utitld, uveeq6, vodrt, vosoct, wodrt, woh2o, wosoct, xbar, xi1)
         else
             ! The TAB file is a .csv file.
-            call wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,eh,fje,fo2lg,fugac,fxi,iktmax,iopt,jflag,jsflag,kmax,kstep,kx1,kxt,mrmlra,modr,mosp,mospt,moph,mopht,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,ncmpr,nct,nctmax,nelect,ngrn1,ngrn2,ngtmax,nhydr,nhydx,nllnmx,no2gaq,noptmx,noutpt,npt,nptmax,nrct,nrctmx,nstmax,ntabx,ntidmx,ntitl2,ntitld,ntitmx,nttyo,nxrn1,nxrn2,nxtmax,pe,ph,phmes,ppmwb,ppmwe,prcinf,press,prminf,qrho,qriinf,rho,rhowc,sidrph,sigmam,tdsgks,tdsglw,tempc,time1,uelem,ulinex,uphase,uplatm,ureac,uspec,usteq6,utitl2,utitld,uveeq6,vodrt,vosoct,wkgh2o,wodrt,wosoct,xbar,xbarlg,xi1)
+            call wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvoso, dwoso, eh, fje, fo2lg, fugac, fxi, iktmax, iopt, jflag, jsflag, kmax, kstep, kx1, kxt, mrmlra, modr, mosp, mospt, moph, mopht, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ncmpr, nct, nctmax, nelect, ngrn1, ngrn2, ngtmax, nhydr, nhydx, nllnmx, no2gaq, noptmx, noutpt, npt, nptmax, nrct, nrctmx, nstmax, ntabx, ntidmx, ntitl2, ntitld, ntitmx, nttyo, nxrn1, nxrn2, nxtmax, pe, ph, phmes, ppmwb, ppmwe, prcinf, press, prminf, qrho, qriinf, rho, rhowc, sidrph, sigmam, tdsgks, tdsglw, tempc, time1, uelem, ulinex, uphase, uplatm, ureac, uspec, usteq6, utitl2, utitld, uveeq6, vodrt, vosoct, wkgh2o, wodrt, wosoct, xbar, xbarlg, xi1)
         end if
     end if
 
@@ -1987,7 +1987,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Write entertainment for the user, showing the progress
     ! of the current run.
-    call wrentu(actw,eh,fo2lg,iopg,iopt,kstep,nopgmx,noptmx,nttyo,ph,qredox,time1,xi1)
+    call wrentu(actw, eh, fo2lg, iopg, iopt, kstep, nopgmx, noptmx, nttyo, ph, qredox, time1, xi1)
 
     if (iopt(6) .gt. 0) then
         ! Clear ES solids at the starting point. Fictive fugacity-fixing
@@ -1996,7 +1996,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         write (nttyo,1230)
 1230 format(/' * Note (EQ6/path) Clearing solid phases from the',' equilibrium system (ES)',/7x,'at the starting point of',' reaction progress.')
 
-        call clress(csts,iindx1,ipndx1,jpflag,jsflag,kdim,kmax,km1,kmt,kx1,kxt,loph,losp,moph,mosp,mtb,mtbaq,nbt,nbtmax,nptmax,nstmax,nsts,nstsmx,nstsr,ufixf,uzvec1,zvec1,zvclg1)
+        call clress(csts, iindx1, ipndx1, jpflag, jsflag, kdim, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mtb, mtbaq, nbt, nbtmax, nptmax, nstmax, nsts, nstsmx, nstsr, ufixf, uzvec1, zvec1, zvclg1)
     end if
 
     ! Make sure that there is something to define a reaction path
@@ -2010,7 +2010,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end if
 
     ! Check stop conditions.
-    call chkstc(actw,awmax,awmin,eh,ehmax,ehmin,fo2lg,iopt,jreac,kstep,kstpmx,noptmx,noutpt,nrct,nrctmx,nttyo,o2max,o2min,ph,phmax,phmin,prcinf,qaft1,qcnpre,qcntmp,qconst,qredox,qstop,qvhfxi,qvlsow,timemx,time1,tolxst,tolxsu,ximax,xi1)
+    call chkstc(actw, awmax, awmin, eh, ehmax, ehmin, fo2lg, iopt, jreac, kstep, kstpmx, noptmx, noutpt, nrct, nrctmx, nttyo, o2max, o2min, ph, phmax, phmin, prcinf, qaft1, qcnpre, qcntmp, qconst, qredox, qstop, qvhfxi, qvlsow, timemx, time1, tolxst, tolxsu, ximax, xi1)
 
     if (qstop) then
         go to 990
@@ -2021,7 +2021,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (iopt(16) .ge. 0) then
         ! Prepare to write results at the initial point to the
         ! backup file.
-        call setpk6(actwlg,awmax,awmaxi,awmin,awmini,eh,ehmax,ehmaxi,ehmin,ehmini,fo2lg,iindx1,jflag,jflgi,kbt,kdim,kmax,kprs,mprph,mprphi,mprsp,mprspi,mtb,mtbi,mtbaq,mtbaqi,nbasp,nbaspd,nbaspi,nbti,nbtmax,ncmpr,nobswt,noutpt,nprpmx,nprpti,nprsmx,nprsti,npt,nptmax,nttyo,nstmax,o2max,o2maxi,o2min,o2mini,ph,phmax,phmaxi,phmin,phmini,prcinf,press,pressi,tempc,tempci,time1,timemx,timmxi,tistti,ubmtbi,uobsw,uphase,uprphi,uprspi,uspec,uzveci,uzvec1,xi1,ximax,ximaxi,xistti,zvclgi,zvclg1)
+        call setpk6(actwlg, awmax, awmaxi, awmin, awmini, eh, ehmax, ehmaxi, ehmin, ehmini, fo2lg, iindx1, jflag, jflgi, kbt, kdim, kmax, kprs, mprph, mprphi, mprsp, mprspi, mtb, mtbi, mtbaq, mtbaqi, nbasp, nbaspd, nbaspi, nbti, nbtmax, ncmpr, nobswt, noutpt, nprpmx, nprpti, nprsmx, nprsti, npt, nptmax, nttyo, nstmax, o2max, o2maxi, o2min, o2mini, ph, phmax, phmaxi, phmin, phmini, prcinf, press, pressi, tempc, tempci, time1, timemx, timmxi, tistti, ubmtbi, uobsw, uphase, uprphi, uprspi, uspec, uzveci, uzvec1, xi1, ximax, ximaxi, xistti, zvclgi, zvclg1)
 
         ! Rewind the current backup file (BAKUPA or BAKUPB).
         rewind (nbkupn)
@@ -2031,12 +2031,12 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! Compact (W) format.
             ! Calling sequence substitutions:
             !   nbkupn for newin
-            call wr6pkw(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,nbkupn,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+            call wr6pkw(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, nbkupn, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
         else
             ! Menu-style (D) format.
             ! Calling sequence substitutions:
             !   nbkupn for newin
-            call wr6pkd(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,nbkupn,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+            call wr6pkd(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, nbkupn, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
         end if
 
         if (iopt(16) .eq. 0) then
@@ -2123,7 +2123,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! of the number of mole of phases and species in the Equilibrium
     ! System (ES).
     ! Re-set the index arrays.
-    call iiemop(iemop,iemos,iindx1,ipndx1,jsflag,kdim,kmax,ncmpe,ncmpr,noutpt,npet,npetmx,npt,nptmax,nset,nsetmx,nstmax,nttyo,uaqsln,uspec,uphase)
+    call iiemop(iemop, iemos, iindx1, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr, noutpt, npet, npetmx, npt, nptmax, nset, nsetmx, nstmax, nttyo, uaqsln, uspec, uphase)
 
     ! Re-load the corresponding numbers of moles.
     do npe = 1,npet
@@ -2143,8 +2143,8 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! truncated Taylor's series. The akmat0 matrix is part of the
     ! predictor function. the akmat1 matrix is part of the corrector.
     nmax = nrd1mx*nrd1mx
-    call initaz(akmat0,nmax)
-    call initaz(akmat1,nmax)
+    call initaz(akmat0, nmax)
+    call initaz(akmat1, nmax)
 
     do i = 1,nrd1mx
         akmat0(i,i) = fctrl(i)
@@ -2190,7 +2190,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     qsawth = .false.
 
     ! Calculate the first print, plot and dump points.
-    call sippdp(actw,aw0plo,aw0prn,aw1plo,aw1prn,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eh,eh0plo,eh0prn,eh1plo,eh1prn,eps100,fo2lg,lprcin,o20plo,o20prn,o21plo,o21prn,ph,ph0plo,ph0prn,ph1plo,ph1prn,prcinf,qredox,tiplol,tiplot,tiprnl,tiprnt,tistsv,xidump,xiplol,xiplot,xiprnl,xiprnt,xistsv)
+    call sippdp(actw, aw0plo, aw0prn, aw1plo, aw1prn, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eh, eh0plo, eh0prn, eh1plo, eh1prn, eps100, fo2lg, lprcin, o20plo, o20prn, o21plo, o21prn, ph, ph0plo, ph0prn, ph1plo, ph1prn, prcinf, qredox, tiplol, tiplot, tiprnl, tiprnt, tistsv, xidump, xiplol, xiplot, xiprnl, xiprnt, xistsv)
 
     qtplo = dltplo.lt.prcinf .or. dltpll.lt.prcinf
     qtprn = dltprn.lt.prcinf .or. dltprl.lt.prcinf
@@ -2246,7 +2246,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! Save information at the current point of reaction progress
     ! and update the finite differences for variables that are
     ! tracked using such.
-    call stepfd(acflg,acflg0,affp0,affp,afrc0,afrc1,aw0,aw1,delxi,dxsm00,eh0,eh1,emop,emop0,emos,emos0,fdafm1,fdaf0,fdarm1,fdar0,fdawm1,fdaw0,fdehm1,fdeh0,fdlim,fdo2m1,fdo20,fdpem1,fdpe0,fdphm1,fdph0,fdrem1,fdre0,fdrim1,fdri0,fdrrm1,fdrr0,fdsem1,fdse0,fdzvm1,fdzv0,fje,fje0,fo2lg0,fo2lg1,fxi,fxi0,iemop,iemop0,iemos,iemos0,iindx0,iindx1,iodb,iopt,ipndx0,ipndx1,jcode,jreac,jreac0,jpflag,kdim,kdim0,kmax,km1,km10,kmt,kmt0,kord,kx1,kx10,kxt,kxt0,modr,modr0,moph,moph0,morr,morr0,mosp,mosp0,mtb,mtb0,nbt,nbtmax,ncmpe,ncmpe0,nodbmx,noptmx,nordmx,noutpt,npet,npetmx,npet0,npt,nptmax,npts,nrct,nrctmx,nrd1mx,nrndex,nset,nsetmx,nset0,nstmax,ph0,ph1,qredox,rirec0,rirec1,rreac0,rreac1,rrelr0,rrelr1,sfcar,sfcar0,sigmam,sigmm0,tempc,tempc0,time0,time1,uzvec0,uzvec1,xi0,xi1,xim1,xirct,xirct0,zvclg0,zvclg1,zvec0,zvec1)
+    call stepfd(acflg, acflg0, affp0, affp, afrc0, afrc1, aw0, aw1, delxi, dxsm00, eh0, eh1, emop, emop0, emos, emos0, fdafm1, fdaf0, fdarm1, fdar0, fdawm1, fdaw0, fdehm1, fdeh0, fdlim, fdo2m1, fdo20, fdpem1, fdpe0, fdphm1, fdph0, fdrem1, fdre0, fdrim1, fdri0, fdrrm1, fdrr0, fdsem1, fdse0, fdzvm1, fdzv0, fje, fje0, fo2lg0, fo2lg1, fxi, fxi0, iemop, iemop0, iemos, iemos0, iindx0, iindx1, iodb, iopt, ipndx0, ipndx1, jcode, jreac, jreac0, jpflag, kdim, kdim0, kmax, km1, km10, kmt, kmt0, kord, kx1, kx10, kxt, kxt0, modr, modr0, moph, moph0, morr, morr0, mosp, mosp0, mtb, mtb0, nbt, nbtmax, ncmpe, ncmpe0, nodbmx, noptmx, nordmx, noutpt, npet, npetmx, npet0, npt, nptmax, npts, nrct, nrctmx, nrd1mx, nrndex, nset, nsetmx, nset0, nstmax, ph0, ph1, qredox, rirec0, rirec1, rreac0, rreac1, rrelr0, rrelr1, sfcar, sfcar0, sigmam, sigmm0, tempc, tempc0, time0, time1, uzvec0, uzvec1, xi0, xi1, xim1, xirct, xirct0, zvclg0, zvclg1, zvec0, zvec1)
 
     if (iopt(1) .eq. 2) then
         ! Doing the fluid-centered flow-through open system model.
@@ -2255,7 +2255,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! the ES to the PRS. This is part of the fluid-centered
             ! flow-through open system model. A partial shift of a phase
             ! leaves some of its mass in the ES.
-            call pshfta(csts,emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fdsem1,iemop,iemos,iern1,iern2,ietmax,iindx1,imrn1,imrn2,iodb,ipndx1,ixrn1,ixrn2,jcsort,jern1,jetmax,jgext,jpflag,jsflag,kbt,km1,kmax,kmt,kx1,kxt,loph,losp,moph,mosp,mprph,mprsp,mrgexs,mtb,mtb0,nbasp,nbaspd,nbt,nbtmax,ncmpe,ncmpr,netmax,ngext,nodbmx,nordmx,noutpt,npet,npetmx,npt,nptmax,nsetmx,nstmax,nsts,nstsmx,nstsr,nttyo,uaqsln,ufixf,uphase,uspec,xbar,xbarlg,zklgmn,zklogl,zvclg0,zvclg1,zvec0,zvec1)
+            call pshfta(csts, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, iodb, ipndx1, ixrn1, ixrn2, jcsort, jern1, jetmax, jgext, jpflag, jsflag, kbt, km1, kmax, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, mtb, mtb0, nbasp, nbaspd, nbt, nbtmax, ncmpe, ncmpr, netmax, ngext, nodbmx, nordmx, noutpt, npet, npetmx, npt, nptmax, nsetmx, nstmax, nsts, nstsmx, nstsr, nttyo, uaqsln, ufixf, uphase, uspec, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
         end if
     end if
 
@@ -2271,7 +2271,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
                 ! Make a total PRS shift of any mineral which is disappearing
                 ! and purge it from the ES. The flag variable qbye is set
                 ! to true if any such shift is made here.
-                call dumpdp(csts,demop0,demos0,emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fdsem1,iemop,iemos,iern1,iern2,ietmax,iindx0,iindx1,imrn1,imrn2,iodb,ipndx0,ipndx1,ixrn1,ixrn2,jcsort,jern1,jetmax,jgext,jpflag,jsflag,kbt,kdim,kdim0,kmax,km1,km10,kmt,kmt0,kord,kstep,kx1,kx10,kxt,kxt0,loph,losp,moph,mosp,mprph,mprsp,mrgexs,mtb,mtb0,nbasp,nbaspd,nbt,nbtmax,ncmpe,ncmpr,ndelay,netmax,ngext,nodbmx,nordmx,noutpt,npet,npetmx,npet0,npt,nptmax,npts,nset,nsetmx,nset0,nstmax,nsts,nstsmx,nstsr,nttyo,qbye,uaqsln,ufixf,uspec,uphase,uzvec0,uzvec1,xbar,xbarlg,zklgmn,zklogl,zvclg0,zvclg1,zvec0,zvec1)
+                call dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx0, iindx1, imrn1, imrn2, iodb, ipndx0, ipndx1, ixrn1, ixrn2, jcsort, jern1, jetmax, jgext, jpflag, jsflag, kbt, kdim, kdim0, kmax, km1, km10, kmt, kmt0, kord, kstep, kx1, kx10, kxt, kxt0, loph, losp, moph, mosp, mprph, mprsp, mrgexs, mtb, mtb0, nbasp, nbaspd, nbt, nbtmax, ncmpe, ncmpr, ndelay, netmax, ngext, nodbmx, nordmx, noutpt, npet, npetmx, npet0, npt, nptmax, npts, nset, nsetmx, nset0, nstmax, nsts, nstsmx, nstsr, nttyo, qbye, uaqsln, ufixf, uspec, uphase, uzvec0, uzvec1, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
 
                 ! Note: if such a shift has been made here, the maximum
                 ! order of the finite-differences (kord) has been set
@@ -2336,7 +2336,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (qecon) then
         ! Choose the step size and order when operating in economy
         ! mode.
-        call chdxec(delxi,dlxmx0,dzvc0,iodb,kdim,kmax,km1,kxt,nodbmx,nord,noutpt,nrd1mx,qmin,qscon,scale,scalim,scnstd,scnsti,uzvec1,zvec0)
+        call chdxec(delxi, dlxmx0, dzvc0, iodb, kdim, kmax, km1, kxt, nodbmx, nord, noutpt, nrd1mx, qmin, qscon, scale, scalim, scnstd, scnsti, uzvec1, zvec0)
     else
         ! Choose the step size and order when operating in normal mode.
         ! Here control is based on the Gear approach. An order greater
@@ -2345,10 +2345,10 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! in the finite differences and derivatives of the z and r
         ! vectors to facilitate this approach.
         ! Get choices based on finite differences for the z vector.
-        call chdxgz(delxi,dlxmx0,fdlim,fdzv0,iodb,iopt,jordlm,kdim,kmax,km1,kord,kxt,nodbmx,noptmx,nordmx,nordz,noutpt,nrd1mx,nsscmx,scalim,scfcz,sscrew,qmin,smp100,uzvec1,zklogu,zvec0,zvclg0)
+        call chdxgz(delxi, dlxmx0, fdlim, fdzv0, iodb, iopt, jordlm, kdim, kmax, km1, kord, kxt, nodbmx, noptmx, nordmx, nordz, noutpt, nrd1mx, nsscmx, scalim, scfcz, sscrew, qmin, smp100, uzvec1, zklogu, zvec0, zvclg0)
 
         ! Get choices based on finite differences for the r vector.
-        call chdxgr(delxi,dlxmx0,fdri0,fdrr0,iodb,jordlm,jreac,kord,nodbmx,nordmx,nordr,noutpt,nrct,nrctmx,nrd1mx,nsscmx,scalim,scfcr,sscrew,qriinf,rirec0,rrelr0,ureac)
+        call chdxgr(delxi, dlxmx0, fdri0, fdrr0, iodb, jordlm, jreac, kord, nodbmx, nordmx, nordr, noutpt, nrct, nrctmx, nrd1mx, nsscmx, scalim, scfcr, sscrew, qriinf, rirec0, rrelr0, ureac)
 
         qstabz = .false.
         qstabr = .false.
@@ -2364,32 +2364,32 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
                 ! given predictor-based finite differences.
                 ! Calling sequence substitutions:
                 !   kordp1 for nord
-                call gakmat(akmat0,dxsm00,kordp1,nrd1mx)
+                call gakmat(akmat0, dxsm00, kordp1, nrd1mx)
 
                 ! Now compute the corresponding derivatives.
                 ! Calling sequence substitutions:
                 !   kordp1 for nord
-                call zderiv(akmat0,dzvc0,fdzv0,kdim,kmax,kordp1,nrd1mx)
+                call zderiv(akmat0, dzvc0, fdzv0, kdim, kmax, kordp1, nrd1mx)
 
                 ! Calling sequence substitutions:
                 !   kordp1 for nord
-                call rderiv(akmat0,drer0,drir0,fdri0,fdrr0,jreac,kordp1,nrct,nrctmx,nrd1mx)
+                call rderiv(akmat0, drer0, drir0, fdri0, fdrr0, jreac, kordp1, nrct, nrctmx, nrd1mx)
 
                 ! Now compute the corresponding average derivatives.
                 delxia = dxsm00(2)
 
                 ! Calling sequence substitutions:
                 !   kordp1 for nord
-                call gsmdez(delxia,dzvc0,dzvc0s,kdim,kmax,kordp1,nrd1mx)
+                call gsmdez(delxia, dzvc0, dzvc0s, kdim, kmax, kordp1, nrd1mx)
 
                 ! Calling sequence substitutions:
                 !   kordp1 for nord
-                call gsmder(delxia,drer0,drer0s,drir0,drir0s,jreac,kordp1,nrct,nrctmx,nrd1mx)
+                call gsmder(delxia, drer0, drer0s, drir0, drir0s, jreac, kordp1, nrct, nrctmx, nrd1mx)
 
                 ! Choose step sizes and orders.
-                call chdxtz(delxi,dlxmx0,dzvc0,iodb,iopt,jordlm,kdim,kmax,km1,kord,kxt,nodbmx,noptmx,nordmx,nordzs,noutpt,nrd1mx,nsscmx,scalim,scfczs,sscrew,qmin,smp100,uzvec1,zklogu,zvec0,zvclg0)
+                call chdxtz(delxi, dlxmx0, dzvc0, iodb, iopt, jordlm, kdim, kmax, km1, kord, kxt, nodbmx, noptmx, nordmx, nordzs, noutpt, nrd1mx, nsscmx, scalim, scfczs, sscrew, qmin, smp100, uzvec1, zklogu, zvec0, zvclg0)
 
-                call chdxtr(delxi,dlxmx0,drer0,drir0,iodb,jordlm,jreac,kord,nodbmx,nordmx,nordrs,noutpt,nrct,nrctmx,nrd1mx,nsscmx,scalim,scfcrs,sscrew,qriinf,rirec0,rrelr0,ureac)
+                call chdxtr(delxi, dlxmx0, drer0, drir0, iodb, jordlm, jreac, kord, nodbmx, nordmx, nordrs, noutpt, nrct, nrctmx, nrd1mx, nsscmx, scalim, scfcrs, sscrew, qriinf, rirec0, rrelr0, ureac)
 
                 ! Resolve regular vs. "stable" results.
                 if (scfczs .gt. scfcz) then
@@ -2424,48 +2424,48 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! First compute the matrix (akmat0 = F * B) used to calculate
         ! derivatives for truncated Taylor's series, given predictor-
         ! based finite differences.
-        call gakmat(akmat0,dxsm00,nord,nrd1mx)
+        call gakmat(akmat0, dxsm00, nord, nrd1mx)
 
         ! Now compute the derivatives.
-        call zderiv(akmat0,dzvc0,fdzv0,kdim,kmax,nord,nrd1mx)
+        call zderiv(akmat0, dzvc0, fdzv0, kdim, kmax, nord, nrd1mx)
 
         if (iopt(2) .gt. 0) then
-            call rderiv(akmat0,drer0,drir0,fdri0,fdrr0,jreac,nord,nrct,nrctmx,nrd1mx)
+            call rderiv(akmat0, drer0, drir0, fdri0, fdrr0, jreac, nord, nrct, nrctmx, nrd1mx)
         end if
 
-        call aderiv(akmat0,daffp0,fdaf0,nord,nordmx,npt,nptmax,nrd1mx)
-        call bderiv(akmat0,dafrc0,fdar0,jreac,nord,nordmx,nrct,nrctmx,nrd1mx)
-        call pderiv(akmat0,demop0,fdpe0,nord,nordmx,npet,npetmx,nrd1mx)
-        call sderiv(akmat0,demos0,fdse0,nord,nordmx,nrd1mx,nset,nsetmx)
+        call aderiv(akmat0, daffp0, fdaf0, nord, nordmx, npt, nptmax, nrd1mx)
+        call bderiv(akmat0, dafrc0, fdar0, jreac, nord, nordmx, nrct, nrctmx, nrd1mx)
+        call pderiv(akmat0, demop0, fdpe0, nord, nordmx, npet, npetmx, nrd1mx)
+        call sderiv(akmat0, demos0, fdse0, nord, nordmx, nrd1mx, nset, nsetmx)
 
         ! Calling sequence substitutions:
         !   dph0 for dxx0
         !   fdph0 for fdxx0
-        call xderiv(akmat0,dph0,fdph0,nord,nordmx,nrd1mx)
+        call xderiv(akmat0, dph0, fdph0, nord, nordmx, nrd1mx)
 
         if (qredox) then
             ! Calling sequence substitutions:
             !   deh0 for dxx0
             !   fdeh0 for fdxx0
-            call xderiv(akmat0,deh0,fdeh0,nord,nordmx,nrd1mx)
+            call xderiv(akmat0, deh0, fdeh0, nord, nordmx, nrd1mx)
 
             ! Calling sequence substitutions:
             !   do20 for dxx0
             !   fdo20 for fdxx0
-            call xderiv(akmat0,do20,fdo20,nord,nordmx,nrd1mx)
+            call xderiv(akmat0, do20, fdo20, nord, nordmx, nrd1mx)
         end if
 
         ! Calling sequence substitutions:
         !   daw0 for dxx0
         !   fdaw0 for fdxx0
-        call xderiv(akmat0,daw0,fdaw0,nord,nordmx,nrd1mx)
+        call xderiv(akmat0, daw0, fdaw0, nord, nordmx, nrd1mx)
 
         if (qstabl) then
             delxia = dxsm00(nord)
 
             ! Compute average derivatives.
-            call gsmdez(delxia,dzvc0,dzvc0s,kdim,kmax,nord,nrd1mx)
-            call gsmder(delxia,drer0,drer0s,drir0,drir0s,jreac,nord,nrct,nrctmx,nrd1mx)
+            call gsmdez(delxia, dzvc0, dzvc0s, kdim, kmax, nord, nrd1mx)
+            call gsmder(delxia, drer0, drer0s, drir0, drir0s, jreac, nord, nrct, nrctmx, nrd1mx)
 
             ! Replace the actual with the average derivatives.
             do kcol = 1,kdim
@@ -2611,7 +2611,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! or the log fO2. This limit allows some minimum of information
         ! density to be obtained in the neighborhood of the rapid
         ! change.
-        call ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khydx,km1,kmax,ko2gaq,krdxsp,kwater,kxt,nbasp,nbtmax,nodbmx,nord,noutpt,nrd1mx,nstmax,nttyo,qrapch,uspec,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+        call ldlxrc(al10, delxi, dlxmin, dzvc0, iodb, iindx1, kbt, kdim, kelect, khydr, khydx, km1, kmax, ko2gaq, krdxsp, kwater, kxt, nbasp, nbtmax, nodbmx, nord, noutpt, nrd1mx, nstmax, nttyo, qrapch, uspec, zklogu, zvclg0, zvclg1, zvec0, zvec1)
     end if
 
     if (nord.gt.0 .and. .not.qscon .and. iopt(3).lt.1  .and. kxt.ge.km1 .and. iopt(1).le.1) then
@@ -2620,7 +2620,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! help other mechanisms efficiently locate a phase disappearance
         ! boundary. It is not designed to increase information density
         ! near the boundary.
-        call ldlxrd(delxi,dlxmin,dzvc0,fdzv0,iodb,ipndx1,kdim,km1,kmax,kxt,loph,nodbmx,nord,noutpt,nptmax,nrd1mx,nttyo,uphase,zklogu,zvec0)
+        call ldlxrd(delxi, dlxmin, dzvc0, fdzv0, iodb, ipndx1, kdim, km1, kmax, kxt, loph, nodbmx, nord, noutpt, nptmax, nrd1mx, nttyo, uphase, zklogu, zvec0)
     end if
 
     qdump = .false.
@@ -2637,7 +2637,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! series fail to detect a phase whose mass is going over a maximum
         ! and iopt(1) = 2, then go back instructions in EQ6/eqcalc.f will
         ! prevent a skip over the maximum.
-        call fpbflo(al10,delxi,demop0,dlxmin,dxval0,d1emp1,d2emp1,emop,emop0,eps100,fdpe0,iemop,ier,iodb,nodbmx,nord,nordmx,noutpt,npet,npetmx,nptmax,nrd1mx,nttyo,qdump,toldl,uaqsln,ufixf,uphase,xim1,xi0,xi1,xval0,zklogu)
+        call fpbflo(al10, delxi, demop0, dlxmin, dxval0, d1emp1, d2emp1, emop, emop0, eps100, fdpe0, iemop, ier, iodb, nodbmx, nord, nordmx, noutpt, npet, npetmx, nptmax, nrd1mx, nttyo, qdump, toldl, uaqsln, ufixf, uphase, xim1, xi0, xi1, xval0, zklogu)
 
         if (ier .gt. 0) then
             ! A search for a maximum in subroutine fpbflo failed. Go back
@@ -2663,7 +2663,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
                 zvec1(kcol) = zvec0(kcol)
             end do
 
-            call pshfta(csts,emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fdsem1,iemop,iemos,iern1,iern2,ietmax,iindx1,imrn1,imrn2,iodb,ipndx1,ixrn1,ixrn2,jcsort,jern1,jetmax,jgext,jpflag,jsflag,kbt,km1,kmax,kmt,kx1,kxt,loph,losp,moph,mosp,mprph,mprsp,mrgexs,mtb,mtb0,nbasp,nbaspd,nbt,nbtmax,ncmpe,ncmpr,netmax,ngext,nodbmx,nordmx,noutpt,npet,npetmx,npt,nptmax,nsetmx,nstmax,nsts,nstsmx,nstsr,nttyo,uaqsln,ufixf,uphase,uspec,xbar,xbarlg,zklgmn,zklogl,zvclg0,zvclg1,zvec0,zvec1)
+            call pshfta(csts, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, iodb, ipndx1, ixrn1, ixrn2, jcsort, jern1, jetmax, jgext, jpflag, jsflag, kbt, km1, kmax, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, mtb, mtb0, nbasp, nbaspd, nbt, nbtmax, ncmpe, ncmpr, netmax, ngext, nodbmx, nordmx, noutpt, npet, npetmx, npt, nptmax, nsetmx, nstmax, nsts, nstsmx, nstsr, nttyo, uaqsln, ufixf, uphase, uspec, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
 
             delxi = dlxmx0
             go to 110
@@ -2679,11 +2679,11 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! detected by a test in EQLIB/newton.f. This subroutine will then
         ! issue a go back instruction, which will prevent the boundary
         ! from being skipped over.
-        call fpbnpp(affp,affp0,aftarg,daffp0,delxi,dlxmin,dxval0,eps100,iodb,iopt,jpflag,nodbmx,noptmx,nord,nordmx,noutpt,npchk,npt,nptmax,nrd1mx,nttyo,tolaft,tolsat,uphase,xi0,xi1,xval0)
+        call fpbnpp(affp, affp0, aftarg, daffp0, delxi, dlxmin, dxval0, eps100, iodb, iopt, jpflag, nodbmx, noptmx, nord, nordmx, noutpt, npchk, npt, nptmax, nrd1mx, nttyo, tolaft, tolsat, uphase, xi0, xi1, xval0)
 
         if (iopt(1).ne.2 .and. npet.gt.0) then
             ! Find the phase boundary for a disappearing phase in the ES.
-            call fpbdpp(delxi,demop0,dlxmin,dxval0,emop,emop0,eps100,iemop,iodb,iopt,nodbmx,noptmx,nord,nordmx,noutpt,npet,nrd1mx,npetmx,nptmax,nttyo,uphase,xi0,xi1,xval0)
+            call fpbdpp(delxi, demop0, dlxmin, dxval0, emop, emop0, eps100, iemop, iodb, iopt, nodbmx, noptmx, nord, nordmx, noutpt, npet, nrd1mx, npetmx, nptmax, nttyo, uphase, xi0, xi1, xval0)
         end if
     end if
 
@@ -2706,7 +2706,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! oscillate about their equilibrium points. As long as the
             ! magnitudes of the oscillations are small, it is better to
             ! not try to pin down the cross-overs.
-            call chksar(afrc0,afrcp,dafrc0,delxi,dlxmin,dxval0,eps100,iodb,jreac,nodbmx,noutpt,nord,nordmx,nrct,nrctmx,nrd1mx,nrk,nttyo,tolsar,ureac,xi0,xi1,xval0)
+            call chksar(afrc0, afrcp, dafrc0, delxi, dlxmin, dxval0, eps100, iodb, jreac, nodbmx, noutpt, nord, nordmx, nrct, nrctmx, nrd1mx, nrk, nttyo, tolsar, ureac, xi0, xi1, xval0)
         end if
     end if
 
@@ -2720,7 +2720,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
                 ! but errors in finite differences that could cause a
                 ! predicted inverse rate to do this. If so, the step size
                 ! needs to be reduced.
-                call chksir(delxi,dlxmin,drir0,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,rirec0,rirecp,xi0,xi1,xval0)
+                call chksir(delxi, dlxmin, drir0, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, rirec0, rirecp, xi0, xi1, xval0)
             end if
         end if
     end if
@@ -2735,7 +2735,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! This check is best avoided near overall equilibrium. See
             ! comments made above in regard to a similar check on sign
             ! changes of reactant affinities.
-            call chksrr(delxi,dlxmin,drer0,dxval0,eps100,iodb,jreac,nodbmx,noutpt,nord,nrct,nrctmx,nrd1mx,nttyo,rrelr0,rrelrp,tolsrr,ureac,xi0,xi1,xval0)
+            call chksrr(delxi, dlxmin, drer0, dxval0, eps100, iodb, jreac, nodbmx, noutpt, nord, nrct, nrctmx, nrd1mx, nttyo, rrelr0, rrelrp, tolsrr, ureac, xi0, xi1, xval0)
         end if
     end if
 
@@ -2744,135 +2744,135 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! Make absolutely sure that the time increment is positive.
             ! Errors in numerical integration have the potential to
             ! produce a negative or zero result.
-            call chksti(akmat0,drer0,drir0,deltim,delxi,dlxmin,fdri0,fdrr0,iodb,jreac,kly,kmax,nodbmx,kord,nord,noutpt,npts,nrct,nrctmx,nrd1mx,nttyo,prcinf,qriinf,rirec0,smp100,time0,time1,xi0,xi1)
+            call chksti(akmat0, drer0, drir0, deltim, delxi, dlxmin, fdri0, fdrr0, iodb, jreac, kly, kmax, nodbmx, kord, nord, noutpt, npts, nrct, nrctmx, nrd1mx, nttyo, prcinf, qriinf, rirec0, smp100, time0, time1, xi0, xi1)
         end if
     end if
 
     if (nrct .gt. 0) then
         ! Limit delxi by exhaustion of reactants.
-        call fpexrc(delxi,dlxmin,drer0,dxval0,eps100,iodb,jreac,morr,morr0,nodbmx,nord,noutpt,nrct,nrctmx,nrd1mx,nttyo,qdump,rrelr0,ureac,xi0,xi1,xval0)
+        call fpexrc(delxi, dlxmin, drer0, dxval0, eps100, iodb, jreac, morr, morr0, nodbmx, nord, noutpt, nrct, nrctmx, nrd1mx, nttyo, qdump, rrelr0, ureac, xi0, xi1, xval0)
     end if
 
     if (iopt(2) .gt. 0) then
         ! Limit delxi so that the next time-based print point is not
         ! exceeded.
         if (qtprn) then
-            call chktpr(delxi,dlxmin,dlxtpr,drir0,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qdump,qriinf,rirec0,tiprnl,tiprnt,time0,time1,tolxst,xi0,xi1,xval0)
+            call chktpr(delxi, dlxmin, dlxtpr, drir0, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qdump, qriinf, rirec0, tiprnl, tiprnt, time0, time1, tolxst, xi0, xi1, xval0)
         end if
     end if
 
     ! Limit delxi so that the next pH-based print point is not exceeded.
     if (dlhprn .lt. prcinf) then
-        call ckphpr(delxi,dlxmin,dph0,dxh0pr,dxh1pr,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,ph0,ph1,ph0prn,ph1prn,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckphpr(delxi, dlxmin, dph0, dxh0pr, dxh1pr, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, ph0, ph1, ph0prn, ph1prn, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     if (qredox) then
         ! Limit delxi so that the next Eh-based print point is not
         ! exceeded.
         if (dlhprn .lt. prcinf) then
-            call ckehpr(delxi,dlxmin,deh0,dxe0pr,dxe1pr,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,eh0,eh1,eh0prn,eh1prn,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call ckehpr(delxi, dlxmin, deh0, dxe0pr, dxe1pr, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, eh0, eh1, eh0prn, eh1prn, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
 
         ! Limit delxi so that the next log fO2-based print point is not
         ! exceeded.
         if (dloprn .lt. prcinf) then
-            call cko2pr(delxi,dlxmin,do20,dxo0pr,dxo1pr,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,fo2lg0,fo2lg1,o20prn,o21prn,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call cko2pr(delxi, dlxmin, do20, dxo0pr, dxo1pr, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, fo2lg0, fo2lg1, o20prn, o21prn, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
     end if
 
     ! Limit delxi so that the next aw-based print point is not exceeded.
     if (dlaprn .lt. prcinf) then
-        call ckawpr(delxi,dlxmin,daw0,dxw0pr,dxw1pr,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,aw0prn,aw1prn,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckawpr(delxi, dlxmin, daw0, dxw0pr, dxw1pr, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, aw0prn, aw1prn, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     if (iopt(2) .gt. 0) then
         ! Limit delxi so that the next time-based plot point is not
         ! exceeded.
         if (qtplo) then
-            call chktpl(delxi,dlxmin,dlxtpl,drir0,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qdump,qriinf,rirec0,tiplol,tiplot,time0,time1,tolxst,xi0,xi1,xval0)
+            call chktpl(delxi, dlxmin, dlxtpl, drir0, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qdump, qriinf, rirec0, tiplol, tiplot, time0, time1, tolxst, xi0, xi1, xval0)
         end if
     end if
 
     ! Limit delxi so that the next pH-based plot point is not exceeded.
     if (dlhplo .lt. prcinf) then
-        call ckphpl(delxi,dlxmin,dph0,dxh0pl,dxh1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,ph0,ph1,ph0plo,ph1plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckphpl(delxi, dlxmin, dph0, dxh0pl, dxh1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, ph0, ph1, ph0plo, ph1plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     if (qredox) then
         ! Limit delxi so that the next Eh-based plot point is not
         ! exceeded.
         if (dlhplo .lt. prcinf) then
-            call ckehpl(delxi,dlxmin,deh0,dxe0pl,dxe1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,eh0,eh1,eh0plo,eh1plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call ckehpl(delxi, dlxmin, deh0, dxe0pl, dxe1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, eh0, eh1, eh0plo, eh1plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
 
         ! Limit delxi so that the next log fO2-based plot point is not
         ! exceeded.
         if (dloplo .lt. prcinf) then
-            call cko2pl(delxi,dlxmin,do20,dxo0pl,dxo1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,fo2lg0,fo2lg1,o20plo,o21plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call cko2pl(delxi, dlxmin, do20, dxo0pl, dxo1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, fo2lg0, fo2lg1, o20plo, o21plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
     end if
 
     ! Limit delxi so that the next aw-based plot point is not exceeded.
     if (dlaplo .lt. prcinf) then
-        call ckawpl(delxi,dlxmin,daw0,dxw0pl,dxw1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,aw0plo,aw1plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckawpl(delxi, dlxmin, daw0, dxw0pl, dxw1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, aw0plo, aw1plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     if (iopt(2) .gt. 0) then
         ! Limit delxi so that the requested maximum value of time
         ! is not exceeded.
         if (timemx .lt. prcinf) then
-            call chktmx(delxi,dlxmin,dlxtmx,drir0,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qdump,qriinf,rirec0,timemx,time0,time1,tolxst,xi0,xi1,xval0)
+            call chktmx(delxi, dlxmin, dlxtmx, drir0, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qdump, qriinf, rirec0, timemx, time0, time1, tolxst, xi0, xi1, xval0)
         end if
     end if
 
     ! Limit delxi so that the requested minimum value of pH
     ! is not exceeded.
     if (phmin .gt. -prcinf) then
-        call ckphmn(delxi,dlxmin,dph0,dxh0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,ph0,ph1,phmin,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckphmn(delxi, dlxmin, dph0, dxh0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, ph0, ph1, phmin, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     ! Limit delxi so that the requested maximum value of pH
     ! is not exceeded.
     if (phmax .lt. prcinf) then
-        call ckphmx(delxi,dlxmin,dph0,dxh1mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,ph0,ph1,phmax,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckphmx(delxi, dlxmin, dph0, dxh1mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, ph0, ph1, phmax, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     if (qredox) then
         ! Limit delxi so that the requested minimum value of Eh
         ! is not exceeded.
         if (ehmin .gt. -prcinf) then
-            call ckehmn(delxi,dlxmin,deh0,dxe0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,eh0,eh1,ehmin,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call ckehmn(delxi, dlxmin, deh0, dxe0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, eh0, eh1, ehmin, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
 
         ! Limit delxi so that the requested maximum value of Eh
         ! is not exceeded.
         if (ehmax .lt. prcinf) then
-            call ckehmx(delxi,dlxmin,deh0,dxe1mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,eh0,eh1,ehmax,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call ckehmx(delxi, dlxmin, deh0, dxe1mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, eh0, eh1, ehmax, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
 
         ! Limit delxi so that the requested minimum value of log fO2
         ! is not exceeded.
         if (o2min .gt. -prcinf) then
-            call cko2mn(delxi,dlxmin,do20,dxo0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,fo2lg0,fo2lg1,o2min,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call cko2mn(delxi, dlxmin, do20, dxo0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, fo2lg0, fo2lg1, o2min, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
 
         ! Limit delxi so that the requested maximum value of log fO2
         ! is not exceeded.
         if (o2max .lt. prcinf) then
-            call cko2mx(delxi,dlxmin,do20,dxo1mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,fo2lg0,fo2lg1,o2max,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+            call cko2mx(delxi, dlxmin, do20, dxo1mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, fo2lg0, fo2lg1, o2max, prcinf, qdump, tolxsu, xi0, xi1, xval0)
         end if
     end if
 
     ! Limit delxi so that the requested minimum value of the activity
     ! of water is not exceeded.
     if (awmin .gt. -prcinf) then
-        call ckawmn(delxi,dlxmin,daw0,dxw0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,awmin,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckawmn(delxi, dlxmin, daw0, dxw0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, awmin, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     ! Limit delxi so that the requested maximum value of the activity
     ! of water is not exceeded.
     if (awmax .lt. prcinf) then
-        call ckawmx(delxi,dlxmin,daw0,dxw1mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,awmax,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+        call ckawmx(delxi, dlxmin, daw0, dxw1mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, awmax, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     end if
 
     ! Make sure that delxi is not less than dlxmin unless one of the
@@ -2930,7 +2930,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (nrct .gt. 0) then
         ! Increment the irreversible reactions (those associated with
         ! the "reactants"); update the ES mass balance totals accordingly.
-        call reacts(cbsr,csts,delxi,drer0,iern1,ietmax,iktmax,iodb,jcode,jetmax,jgext,jreac,modr,modr0,morr,morr0,mrgers,mtb,mtb0,nbaspd,nbt,nbtmax,nbt1mx,ncmpr,nern1,nern2,nertmx,netmax,ngext,nodbmx,nord,noutpt,nptmax,nrct,nrctmx,nrd1mx,nrndex,nsrtmx,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrtmx,rrelr0,rxbar,ureac,xirct,xirct0)
+        call reacts(cbsr, csts, delxi, drer0, iern1, ietmax, iktmax, iodb, jcode, jetmax, jgext, jreac, modr, modr0, morr, morr0, mrgers, mtb, mtb0, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nern1, nern2, nertmx, netmax, ngext, nodbmx, nord, noutpt, nptmax, nrct, nrctmx, nrd1mx, nrndex, nsrtmx, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrtmx, rrelr0, rxbar, ureac, xirct, xirct0)
     end if
 
     if (iopt(2) .gt. 0) then
@@ -2939,14 +2939,14 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             deltim = prcinf
         else
             ! Increment the time and related functions.
-            call timeca(deltim,delxi,drir0,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qriinf,rirec0,time0,time1)
+            call timeca(deltim, delxi, drir0, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qriinf, rirec0, time0, time1)
         end if
 
         if (delxi .le. dlxmin) then
             ! Make sure that the calculated time does not exceed any
             ! any specified limits such as the maximum time just because
             ! delxi is at the minimum value.
-            call tivchk(deltim,delxi,qtvchk,time1,time0,timemx,tiplol,tiplot,tiprnl,tiprnt,tolxst)
+            call tivchk(deltim, delxi, qtvchk, time1, time0, timemx, tiplol, tiplot, tiprnl, tiprnt, tolxst)
         end if
     end if
 
@@ -2955,7 +2955,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! thermodynamic and kinetic quantities which depend these
         ! variables.
         ntpr0 = ntpr
-        call tpadv(aadh,aadhh,aadhv,aaphi,abdh,abdhh,abdhv,abdoth,abdot,abdotv,adadhh,adadhv,adbdhh,adbdhv,adbdth,adbdtv,adh,adhfe,adhh,adhv,adhfs,adhfsd,advfe,advfs,advfsd,afcnst,al10,amu,aslm,aphi,aprehw,apresg,apresh,apx,avcnst,axhfe,axhfs,axhfsd,axlke,axlks,axlksd,axvfe,axvfs,axvfsd,bdh,bdhh,bdhv,bdot,bdoth,bdotv,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,dhfe,dhfs,dhfsd,dvfe,dvfs,dvfsd,eact,ehfac,farad,hact,iact,iapxmx,iktmax,imchmx,imech,iopg,iopt,ipbtmx,ipch,ipchmx,ipcv,ipcvmx,ixrn1,ixrn2,jpfcmx,jpress,jptffl,jsol,jtemp,narxmx,narxt,narxth,nbasp,nbaspd,nbt,nbtd,nbtmax,ncmpr,ndrsr,ndrsrd,nmut,nmutmx,nopgmx,noptmx,noutpt,nptkmx,nptmax,nrct,nrctmx,nrk,nslt,nsltmx,nst,nstmax,ntpr,ntprmx,ntprt,nttkmx,nttyo,nweope,nwndpc,nxt,nxtmax,pmu,presg,presh,press,pressb,pressd,pslamn,ptk,rcnstv,rconst,rk,rkb,rtcnst,tempc,tempcb,tempcd,tempcu,tempk,time1,trkb,ttk,uphase,uspec,wfac,xhfe,xhfs,xhfsd,xi1,xlke,xlks,xlksd,xvfe,xvfs,xvfsd)
+        call tpadv(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdoth, abdot, abdotv, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adh, adhfe, adhh, adhv, adhfs, adhfsd, advfe, advfs, advfsd, afcnst, al10, amu, aslm, aphi, aprehw, apresg, apresh, apx, avcnst, axhfe, axhfs, axhfsd, axlke, axlks, axlksd, axvfe, axvfs, axvfsd, bdh, bdhh, bdhv, bdot, bdoth, bdotv, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dhfs, dhfsd, dvfe, dvfs, dvfsd, eact, ehfac, farad, hact, iact, iapxmx, iktmax, imchmx, imech, iopg, iopt, ipbtmx, ipch, ipchmx, ipcv, ipcvmx, ixrn1, ixrn2, jpfcmx, jpress, jptffl, jsol, jtemp, narxmx, narxt, narxth, nbasp, nbaspd, nbt, nbtd, nbtmax, ncmpr, ndrsr, ndrsrd, nmut, nmutmx, nopgmx, noptmx, noutpt, nptkmx, nptmax, nrct, nrctmx, nrk, nslt, nsltmx, nst, nstmax, ntpr, ntprmx, ntprt, nttkmx, nttyo, nweope, nwndpc, nxt, nxtmax, pmu, presg, presh, press, pressb, pressd, pslamn, ptk, rcnstv, rconst, rk, rkb, rtcnst, tempc, tempcb, tempcd, tempcu, tempk, time1, trkb, ttk, uphase, uspec, wfac, xhfe, xhfs, xhfsd, xi1, xlke, xlks, xlksd, xvfe, xvfs, xvfsd)
 
         qtrch = ntpr0 .ne. ntpr
 
@@ -2977,7 +2977,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! true even if the current order is zero, as the order may
     ! have been higher earlier in the current step.
     qztayl = .true.
-    call ztaylr(delxi,dzvc0,kdim,kmax,km1,kxt,nord,nrd1mx,qztayl,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+    call ztaylr(delxi, dzvc0, kdim, kmax, km1, kxt, nord, nrd1mx, qztayl, zklogu, zvclg0, zvclg1, zvec0, zvec1)
 
     qstart = xi1 .le. xistsv
 
@@ -3003,7 +3003,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! for any non-redox variable because of the general presence of
     ! significant buffering effects of one kind or another (true
     ! buffering, mass buffering).
-    call eqshel(aadh,aadhh,aadhv,aamatr,aaphi,abar,abdh,abdhh,abdhv,abdot,abdoth,abdotv,acflg,acflgo,act,actlg,adadhh,adadhv,adbdhh,adbdhv,adbdth,adbdtv,adh,adhh,adhv,afcnst,affp,affs,alpha,al10,amtb,aphi,apx,avcnst,azero,a3bar,a3bars,bacfmx,bbig,bdh,bdhh,bdhv,bdot,bdoth,bdotv,beta,betamx,betao,bgamx,bneg,bpx,cbsr,cco2,cdac,cegexs,cesr,cess,cdrs,cdrsd,cdrsx,cdrtw,cdrw,cjbasp,cnufac,conc,conclg,cpgexs,cscale,csigma,csts,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,deltim,delvco,delvec,delxi,dlogxw,dlxmin,drer0,drir0,dzvc0,d1zvc1,eact,egers,egexjc,egexjf,egexs,eh,ehfac,elecsr,eps100,farad,fje,fjeo,fkrc,fo2,fo2lg,fsort,fugac,fugalg,fxi,fxio,gmmatr,hact,iact,iapxt,ibpxt,ibswx,ielam,ier,iern1,iern2,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifrn1,ifrn2,ifzeta,igas,igstak,iindx0,iindx1,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilrn1,ilrn2,ilzeta,imech,imrn1,imrn2,insgf,iodb,iopg,iopt,ipch,ipivot,ipndx1,ipcv,istack,iter,itermx,ixbasp,ixrn1,ixrn2,izmax,jcode,jcsort,jflag,jgsort,jgstak,jjsort,jpflag,jpress,jptffl,jreac,jsflag,jsitex,jsol,jssort,jstack,jtemp,kbt,kction,kdim,kelect,khydr,khydx,km10,km1,kmt,kmt0,ko2gaq,kpsat,kpsst,krdxsp,kwater,kx1,kx10,kxt,kxt0,loph,losp,lsort,modr,modr0,moph,morr,morr0,mosp,mrgers,mrgexs,mtb,mtbaq,mtb0,mte,mteaq,mwtrc,narn1,narn2,narxt,nat,nbasp,nbaspd,nbaspx,nbt,nbtd,nbw,nchlor,ncmpr,ncorr,nct,ndac,ndact,ndrs,ndrsd,ndrsx,ndrsr,ndrsrd,ndrsrx,nelect,nern1,nern2,ness,nessr,net,nfrn1,nfrn2,ngrn1,ngrn2,ngt,nhydr,nhydx,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmt,nord,noutpt,no2gaq,npchk,nphasx,npslmx,npt,nrct,nrdxsp,nrk,nrndex,nsk,nsslmx,nst,nsts,nstsr,ntpr,ntrymx,ntprt,nttyo,nxridx,nxrn1,nxrn2,nxt,nweope,nwndpc,omega,omeglg,prcinf,press,pressb,pressd,ptk,qbassw,qbseqc,qbye,qcnpre,qcntmp,qhawep,qmod,qoptmz,qpit75,qredox,qriinf,qscon,qshoot,qstart,qtrch,qtvchk,qxknph,q6mode,rcnstv,rconst,rkb,rhsvec,rirec0,rk,rreacn,rreac1,rrelr0,rrelr1,rtcnst,rxbar,screwd,sidrph,sidrsp,sigmam,sigmmo,smp100,tdays,tempc,tempcb,tempcd,tempcu,tempc0,tempk,timemx,time0,time1,tiplol,tiplot,tiprnl,tiprnt,tistsv,tolbt,toldl,tolsat,tolsst,tolxst,trkb,ttk,ubacmx,ubgamx,udac,ufixf,ugermo,ulbeta,uldel,uphase,ureac,uspec,uzvec0,uzvec1,vreac,weight,wfac,wodr,worr,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xgers,xirct,xirct0,xistsv,xi0,xi1,zchar,zchcu6,zchsq2,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+    call eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, abdot, abdoth, abdotv, acflg, acflgo, act, actlg, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adh, adhh, adhv, afcnst, affp, affs, alpha, al10, amtb, aphi, apx, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdhh, bdhv, bdot, bdoth, bdotv, beta, betamx, betao, bgamx, bneg, bpx, cbsr, cco2, cdac, cegexs, cesr, cess, cdrs, cdrsd, cdrsx, cdrtw, cdrw, cjbasp, cnufac, conc, conclg, cpgexs, cscale, csigma, csts, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, deltim, delvco, delvec, delxi, dlogxw, dlxmin, drer0, drir0, dzvc0, d1zvc1, eact, egers, egexjc, egexjf, egexs, eh, ehfac, elecsr, eps100, farad, fje, fjeo, fkrc, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, hact, iact, iapxt, ibpxt, ibswx, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx0, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imech, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipivot, ipndx1, ipcv, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcode, jcsort, jflag, jgsort, jgstak, jjsort, jpflag, jpress, jptffl, jreac, jsflag, jsitex, jsol, jssort, jstack, jtemp, kbt, kction, kdim, kelect, khydr, khydx, km10, km1, kmt, kmt0, ko2gaq, kpsat, kpsst, krdxsp, kwater, kx1, kx10, kxt, kxt0, loph, losp, lsort, modr, modr0, moph, morr, morr0, mosp, mrgers, mrgexs, mtb, mtbaq, mtb0, mte, mteaq, mwtrc, narn1, narn2, narxt, nat, nbasp, nbaspd, nbaspx, nbt, nbtd, nbw, nchlor, ncmpr, ncorr, nct, ndac, ndact, ndrs, ndrsd, ndrsx, ndrsr, ndrsrd, ndrsrx, nelect, nern1, nern2, ness, nessr, net, nfrn1, nfrn2, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmt, nord, noutpt, no2gaq, npchk, nphasx, npslmx, npt, nrct, nrdxsp, nrk, nrndex, nsk, nsslmx, nst, nsts, nstsr, ntpr, ntrymx, ntprt, nttyo, nxridx, nxrn1, nxrn2, nxt, nweope, nwndpc, omega, omeglg, prcinf, press, pressb, pressd, ptk, qbassw, qbseqc, qbye, qcnpre, qcntmp, qhawep, qmod, qoptmz, qpit75, qredox, qriinf, qscon, qshoot, qstart, qtrch, qtvchk, qxknph, q6mode, rcnstv, rconst, rkb, rhsvec, rirec0, rk, rreacn, rreac1, rrelr0, rrelr1, rtcnst, rxbar, screwd, sidrph, sidrsp, sigmam, sigmmo, smp100, tdays, tempc, tempcb, tempcd, tempcu, tempc0, tempk, timemx, time0, time1, tiplol, tiplot, tiprnl, tiprnt, tistsv, tolbt, toldl, tolsat, tolsst, tolxst, trkb, ttk, ubacmx, ubgamx, udac, ufixf, ugermo, ulbeta, uldel, uphase, ureac, uspec, uzvec0, uzvec1, vreac, weight, wfac, wodr, worr, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xgers, xirct, xirct0, xistsv, xi0, xi1, zchar, zchcu6, zchsq2, zklogu, zvclg0, zvclg1, zvec0, zvec1)
 
     ! Note on ier codes returned by EQ6/eqshel.f:
     !   =    0  Okay
@@ -3037,7 +3037,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! for the last good point and stop.
 150 continue
 
-    call goback(acflg,acflg0,emop,emop0,emos,emos0,fje,fje0,fxi,fxi0,iemop,iemop0,iemos,iemos0,iindx0,iindx1,ipndx0,ipndx1,jpflag,jsflag,jreac,jreac0,kdim,kdim0,kmax,km1,km10,kmt,kmt0,kx1,kx10,kxt,kxt0,loph,losp,moph,moph0,mosp,mosp0,ncmpe,ncmpe0,npet,npetmx,npet0,npt,nptmax,nrct,nrctmx,nset,nsetmx,nset0,nst,nstmax,qreq,qriinf,sigmam,sigmm0,uzvec0,uzvec1,xi0,xi1)
+    call goback(acflg, acflg0, emop, emop0, emos, emos0, fje, fje0, fxi, fxi0, iemop, iemop0, iemos, iemos0, iindx0, iindx1, ipndx0, ipndx1, jpflag, jsflag, jreac, jreac0, kdim, kdim0, kmax, km1, km10, kmt, kmt0, kx1, kx10, kxt, kxt0, loph, losp, moph, moph0, mosp, mosp0, ncmpe, ncmpe0, npet, npetmx, npet0, npt, nptmax, nrct, nrctmx, nset, nsetmx, nset0, nst, nstmax, qreq, qriinf, sigmam, sigmm0, uzvec0, uzvec1, xi0, xi1)
 
     if (ier.eq.180 .and. delxi.le.dlxmin) then
         ! Normally this error code results in a reduction in the step
@@ -3073,8 +3073,8 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         kxt = kxt0
         kdim = kdim0
 
-        call copyaa(zvclg0,zvclg1,kdim)
-        call copyaa(zvec0,zvec1,kdim)
+        call copyaa(zvclg0, zvclg1, kdim)
+        call copyaa(zvec0, zvec1, kdim)
 
         do kcol = 1,kdim
             uzvec1(kcol) = uzvec0(kcol)
@@ -3091,19 +3091,19 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! Recompute the temperature and pressure. Then recompute the
         ! thermodynamic and kinetic quantities which depend these
         ! variables.
-        call tpadv(aadh,aadhh,aadhv,aaphi,abdh,abdhh,abdhv,abdoth,abdot,abdotv,adadhh,adadhv,adbdhh,adbdhv,adbdth,adbdtv,adh,adhfe,adhh,adhv,adhfs,adhfsd,advfe,advfs,advfsd,afcnst,al10,amu,aslm,aphi,aprehw,apresg,apresh,apx,avcnst,axhfe,axhfs,axhfsd,axlke,axlks,axlksd,axvfe,axvfs,axvfsd,bdh,bdhh,bdhv,bdot,bdoth,bdotv,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,dhfe,dhfs,dhfsd,dvfe,dvfs,dvfsd,eact,ehfac,farad,hact,iact,iapxmx,iktmax,imchmx,imech,iopg,iopt,ipbtmx,ipch,ipchmx,ipcv,ipcvmx,ixrn1,ixrn2,jpfcmx,jpress,jptffl,jsol,jtemp,narxmx,narxt,narxth,nbasp,nbaspd,nbt,nbtd,nbtmax,ncmpr,ndrsr,ndrsrd,nmut,nmutmx,nopgmx,noptmx,noutpt,nptkmx,nptmax,nrct,nrctmx,nrk,nslt,nsltmx,nst,nstmax,ntpr,ntprmx,ntprt,nttkmx,nttyo,nweope,nwndpc,nxt,nxtmax,pmu,presg,presh,press,pressb,pressd,pslamn,ptk,rcnstv,rconst,rk,rkb,rtcnst,tempc,tempcb,tempcd,tempcu,tempk,time1,trkb,ttk,uphase,uspec,wfac,xhfe,xhfs,xhfsd,xi1,xlke,xlks,xlksd,xvfe,xvfs,xvfsd)
+        call tpadv(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdoth, abdot, abdotv, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adh, adhfe, adhh, adhv, adhfs, adhfsd, advfe, advfs, advfsd, afcnst, al10, amu, aslm, aphi, aprehw, apresg, apresh, apx, avcnst, axhfe, axhfs, axhfsd, axlke, axlks, axlksd, axvfe, axvfs, axvfsd, bdh, bdhh, bdhv, bdot, bdoth, bdotv, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dhfs, dhfsd, dvfe, dvfs, dvfsd, eact, ehfac, farad, hact, iact, iapxmx, iktmax, imchmx, imech, iopg, iopt, ipbtmx, ipch, ipchmx, ipcv, ipcvmx, ixrn1, ixrn2, jpfcmx, jpress, jptffl, jsol, jtemp, narxmx, narxt, narxth, nbasp, nbaspd, nbt, nbtd, nbtmax, ncmpr, ndrsr, ndrsrd, nmut, nmutmx, nopgmx, noptmx, noutpt, nptkmx, nptmax, nrct, nrctmx, nrk, nslt, nsltmx, nst, nstmax, ntpr, ntprmx, ntprt, nttkmx, nttyo, nweope, nwndpc, nxt, nxtmax, pmu, presg, presh, press, pressb, pressd, pslamn, ptk, rcnstv, rconst, rk, rkb, rtcnst, tempc, tempcb, tempcd, tempcu, tempk, time1, trkb, ttk, uphase, uspec, wfac, xhfe, xhfs, xhfsd, xi1, xlke, xlks, xlksd, xvfe, xvfs, xvfsd)
 
         if (nrct .ge. 1) then
             ! Increment the irreversible reactions (those associated with
             ! the "reactants"); update the ES mass balance totals
             ! accordingly.
-            call reacts(cbsr,csts,delxi,drer0,iern1,ietmax,iktmax,iodb,jcode,jetmax,jgext,jreac,modr,modr0,morr,morr0,mrgers,mtb,mtb0,nbaspd,nbt,nbtmax,nbt1mx,ncmpr,nern1,nern2,nertmx,netmax,ngext,nodbmx,nord,noutpt,nptmax,nrct,nrctmx,nrd1mx,nrndex,nsrtmx,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrtmx,rrelr0,rxbar,ureac,xirct,xirct0)
+            call reacts(cbsr, csts, delxi, drer0, iern1, ietmax, iktmax, iodb, jcode, jetmax, jgext, jreac, modr, modr0, morr, morr0, mrgers, mtb, mtb0, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nern1, nern2, nertmx, netmax, ngext, nodbmx, nord, noutpt, nptmax, nrct, nrctmx, nrd1mx, nrndex, nsrtmx, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrtmx, rrelr0, rxbar, ureac, xirct, xirct0)
         end if
 
         ! Expand the system description.
-        call ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fo2,fo2lg,fsort,fugac,fugalg,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,istack,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,mrgexs,mtb,moph,mosp,narn1,narn2,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,noutpt,no2gaq,nphasx,npt,nptmax,nst,nstmax,nttyo,omega,omeglg,press,qxbarw,q6mode,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zgexj,zvclg1,zvec1)
+        call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
-        call pshfta(csts,emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fdsem1,iemop,iemos,iern1,iern2,ietmax,iindx1,imrn1,imrn2,iodb,ipndx1,ixrn1,ixrn2,jcsort,jern1,jetmax,jgext,jpflag,jsflag,kbt,km1,kmax,kmt,kx1,kxt,loph,losp,moph,mosp,mprph,mprsp,mrgexs,mtb,mtb0,nbasp,nbaspd,nbt,nbtmax,ncmpe,ncmpr,netmax,ngext,nodbmx,nordmx,noutpt,npet,npetmx,npt,nptmax,nsetmx,nstmax,nsts,nstsmx,nstsr,nttyo,uaqsln,ufixf,uphase,uspec,xbar,xbarlg,zklgmn,zklogl,zvclg0,zvclg1,zvec0,zvec1)
+        call pshfta(csts, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, iodb, ipndx1, ixrn1, ixrn2, jcsort, jern1, jetmax, jgext, jpflag, jsflag, kbt, km1, kmax, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, mtb, mtb0, nbasp, nbaspd, nbt, nbtmax, ncmpe, ncmpr, netmax, ngext, nodbmx, nordmx, noutpt, npet, npetmx, npt, nptmax, nsetmx, nstmax, nsts, nstsmx, nstsr, nttyo, uaqsln, ufixf, uphase, uspec, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
 
         delxi = max(dxsave,dlxmin)
         nord = min(nord,kord)
@@ -3182,7 +3182,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Get the weights (masses) of solvent, total dissolved solutes,
     ! and aqueous solution, and get the aqeuous solution density.
-    call gwdenp(adwipp,bdwipp,jcsort,mlmrra,mosp,mrmlra,mwtsp,narn1,narn2,nstmax,qdwipp,rhoc,rhowc,tdsgks,tdsglw,tdspkc,tdsplc,tempc,vosol,wfh2o,wftds,wkgwi,woh2o,wosol,wotds)
+    call gwdenp(adwipp, bdwipp, jcsort, mlmrra, mosp, mrmlra, mwtsp, narn1, narn2, nstmax, qdwipp, rhoc, rhowc, tdsgks, tdsglw, tdspkc, tdsplc, tempc, vosol, wfh2o, wftds, wkgwi, woh2o, wosol, wotds)
 
     if (qdwipp) then
         qrho = .true.
@@ -3194,7 +3194,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Compute pH, Eh, and pe-, all with reference to appropriate
     ! pH scales. Also compute the pHCl.
-    call gpheh(acflg,actlg,actwlg,adh,ah,ahmes,ahnbs,conc,eh,ehfac,ehmes,ehnbs,farad,fo2lg,fxi,iopg,mrmlra,nchlor,nhydr,nopgmx,noutpt,nstmax,nttyo,pch,pe,pemes,penbs,ph,phcl,phmes,phnbs,qphcl,qredox,qrho,xlke)
+    call gpheh(acflg, actlg, actwlg, adh, ah, ahmes, ahnbs, conc, eh, ehfac, ehmes, ehnbs, farad, fo2lg, fxi, iopg, mrmlra, nchlor, nhydr, nopgmx, noutpt, nstmax, nttyo, pch, pe, pemes, penbs, ph, phcl, phmes, phnbs, qphcl, qredox, qrho, xlke)
 
     wkgh2o = 1.e-3*woh2o
     wkgsol = 1.e-3*wosol
@@ -3210,14 +3210,14 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end if
 
     ! Update the affinities of the irreversible reactions (afrc1).
-    call raff(acflg,actlg,afcnst,affp,afrc1,bpx,cdrs,cgexj,ibpxmx,ibpxt,iern1,ietmax,iktmax,ixrn1,ixrn2,jcode,jern1,jern2,jetmax,jflag,jgext,jpflag,jsflag,jsol,ncmpr,ndrs,ndrsmx,ndrsr,nertmx,net,netmax,ngext,noutpt,nptmax,nrct,nrctmx,nrndex,nstmax,nttyo,nxridx,nxrtmx,nxtmax,rxbar,uphase,uspec,wfac,xbar,xbarlg,xgers,xlks)
+    call raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibpxt, iern1, ietmax, iktmax, ixrn1, ixrn2, jcode, jern1, jern2, jetmax, jflag, jgext, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, nertmx, net, netmax, ngext, noutpt, nptmax, nrct, nrctmx, nrndex, nstmax, nttyo, nxridx, nxrtmx, nxtmax, rxbar, uphase, uspec, wfac, xbar, xbarlg, xgers, xlks)
 
     ! Check the irreversible reactions for saturation.
-    call rsatch(csts,egers,egexs,iern1,ietmax,iindx1,iktmax,iopt,ipndx1,jcode,jern1,jern2,jetmax,jgext,jpflag,jreac,kmax,km1,kmt,kx1,kxt,loph,losp,moph,morr,mosp,mrgers,mtb,mtb0,nbaspd,nbtmax,ncmpr,nern1,nern2,nert,nertmx,netmax,ngext,noptmx,noutpt,nptmax,nrct,nrctmx,nrk,nrndex,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrt,nxrtmx,qreq,rxbar,tolxsf,uphase,ureac,uspec,xbar,xbarlg,zvclg1,zvec1)
+    call rsatch(csts, egers, egexs, iern1, ietmax, iindx1, iktmax, iopt, ipndx1, jcode, jern1, jern2, jetmax, jgext, jpflag, jreac, kmax, km1, kmt, kx1, kxt, loph, losp, moph, morr, mosp, mrgers, mtb, mtb0, nbaspd, nbtmax, ncmpr, nern1, nern2, nert, nertmx, netmax, ngext, noptmx, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrt, nxrtmx, qreq, rxbar, tolxsf, uphase, ureac, uspec, xbar, xbarlg, zvclg1, zvec1)
 
     ! Calculate rates of irreversible reactions at the new point by
     ! evaluating the corresponding rate laws.
-    call rtcalc(act,afrc1,cdac,csigma,eps100,fkrc,idirec,imchmx,imech,iodb,iopt,jcode,jreac,morr,morr0,mwtrc,ndac,ndact,ndctmx,nodbmx,noptmx,nord,noutpt,nrk,nrct,nrctmx,nsk,nstmax,nttyo,prcinf,prminf,qriinf,rirec1,rk,rreac1,rrelr1,rtcnst,rrxfi1,sfcar,sfcar0,ssfcar,udac,ureac)
+    call rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, iopt, jcode, jreac, morr, morr0, mwtrc, ndac, ndact, ndctmx, nodbmx, noptmx, nord, noutpt, nrk, nrct, nrctmx, nsk, nstmax, nttyo, prcinf, prminf, qriinf, rirec1, rk, rreac1, rrelr1, rtcnst, rrxfi1, sfcar, sfcar0, ssfcar, udac, ureac)
 
     if (qshoot) then
         go to 220
@@ -3237,7 +3237,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! Make sure that the calculated time does not exceed any
             ! any specified limits such as the maximum time just because
             ! delxi is at the minimum value.
-            call tivchk(deltim,delxi,qtvchk,time1,time0,timemx,tiplol,tiplot,tiprnl,tiprnt,tolxst)
+            call tivchk(deltim, delxi, qtvchk, time1, time0, timemx, tiplol, tiplot, tiprnl, tiprnt, tolxst)
 
             if (qtvchk) then
                 qriinf = .false.
@@ -3261,7 +3261,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! inverse rate and the relative rates to compare with values
         ! obtained from rate law expressions. If using a corrector
         ! function, these variables are already available.
-        call rtaylr(delxi,drer0,drir0,jreac,nord,nrct,nrctmx,nrd1mx,rirec0,rirecp,rrelr0,rrelrp)
+        call rtaylr(delxi, drer0, drir0, jreac, nord, nrct, nrctmx, nrd1mx, rirec0, rirecp, rrelr0, rrelrp)
 
         ! Zero the "old" values of btrmax and dlrmax, which are used
         ! to estimate the convergence rate for the ODE integrator.
@@ -3285,7 +3285,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end if
 
     ! Compute residual functions for the ODE integrator.
-    call betars(alphar,betar,btrfnc,btrmax,btrmxo,ibtrmx,nrct,nrct1,nrctmx,rirec1,rirecp,rrelr1,rrelrp)
+    call betars(alphar, betar, btrfnc, btrmax, btrmxo, ibtrmx, nrct, nrct1, nrctmx, rirec1, rirecp, rrelr1, rrelrp)
 
     if (iodb(8) .ge. 2) then
         write (noutpt,1500)
@@ -3304,7 +3304,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Test the accuracy of rate law integration. If the accuracy
     ! is sufficient, qodeok will be returned with a value of .true.
-    call tstari(afrc1,alphar,betar,delxi,iodb,modr,nodbmx,noutpt,nrct,nrctmx,nrct1,nsscmx,qodeok,rirec1,rirecp,rrelr1,rrelrp,sscrew,time1,tistrt,ureac)
+    call tstari(afrc1, alphar, betar, delxi, iodb, modr, nodbmx, noutpt, nrct, nrctmx, nrct1, nsscmx, qodeok, rirec1, rirecp, rrelr1, rrelrp, sscrew, time1, tistrt, ureac)
 
     if (iodb(8) .ge. 1) then
         write(noutpt,1520) btrmax,btrfnc
@@ -3426,13 +3426,13 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! Calling sequence substitutions:
         !   akmat1 for akmat0
         !   dxsm10 for dxsm00
-        call gakmat(akmat1,dxsm10,nord,nrd1mx)
+        call gakmat(akmat1, dxsm10, nord, nrd1mx)
 
         if (qhcon) then
             ! Calculate the w factor (whcfac) needed for higher-order
             ! (stiff) ODE corrections. This depends only on the recent
             ! step size history, including the current step size.
-            call gwhcfa(akmat1,delxi,dxsm11,hhcvec,nord,nordmx,nrd1mx,whcfac,xhcvec)
+            call gwhcfa(akmat1, delxi, dxsm11, hhcvec, nord, nordmx, nrd1mx, whcfac, xhcvec)
         end if
     end if
 
@@ -3462,10 +3462,10 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         !        calculating the Jacobian matrix J[r].
         ! XX - Note: this can be changed by basis switching. Am probably
         ! XX   recalculating these arrays many times unnecessarily.
-        call gndacb(cdac,cdacb,cdrs,eps100,imech,imchmx,jflag,nbasp,nbt,nbtmax,ndac,ndacb,ndact,ndactb,ndctmx,ndrs,ndrsmx,ndrsr,nrct,nrctmx,nstmax)
+        call gndacb(cdac, cdacb, cdrs, eps100, imech, imchmx, jflag, nbasp, nbt, nbtmax, ndac, ndacb, ndact, ndactb, ndctmx, ndrs, ndrsmx, ndrsr, nrct, nrctmx, nstmax)
 
         ! Compute the Jacobian matrix J[r] (armatr).
-        call garmat(act,afrc1,aimatr,al10,armatr,cdac,cdacb,cdrs,csigma,csts,delvec,dlogxw,dvjdte,eact,eps100,fkrc,gmmatr,hact,iact,idirec,iindx1,iktmax,imchmx,imech,ipivot,jcode,jreac,jtemp,kbt,kdim,kmax,mmmatr,morr,mwtrc,nbasp,nbt,nbtmax,ncmpr,ndac,ndacb,ndact,ndctmx,ndrs,ndrsmx,ndrsr,noutpt,nptmax,nrct,nrctmx,nrct1,nrk,nrndex,nsk,nstmax,nsts,nstsmx,nstsr,nttkmx,nttyo,nxridx,nxrtmx,rirec1,rk,rkb,rreac1,rrelr1,rrxfi1,rtcnst,rxbar,sfcar,sgmatr,ssfcar,tempc,tempcb,tempk,ttk,ureac,whcfac,xi1,xlks,xxmatr,xymatr)
+        call garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, csts, delvec, dlogxw, dvjdte, eact, eps100, fkrc, gmmatr, hact, iact, idirec, iindx1, iktmax, imchmx, imech, ipivot, jcode, jreac, jtemp, kbt, kdim, kmax, mmmatr, morr, mwtrc, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrct1, nrk, nrndex, nsk, nstmax, nsts, nstsmx, nstsr, nttkmx, nttyo, nxridx, nxrtmx, rirec1, rk, rkb, rreac1, rrelr1, rrxfi1, rtcnst, rxbar, sfcar, sgmatr, ssfcar, tempc, tempcb, tempk, ttk, ureac, whcfac, xi1, xlks, xxmatr, xymatr)
 
         ! Solve for the correction vector (delvcr). If EQLIBU/msolvr.f
         ! can't solve the matrix, it is because the matrix is either
@@ -3480,7 +3480,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         !   nrct1  for kmax
         !   rhsvcr for rhsvec
         qpr = .false.
-        call msolvr(armatr,delvcr,grmatr,ier,ipivtr,nrct1,nrct1,noutpt,nttyo,qpr,rhsvcr)
+        call msolvr(armatr, delvcr, grmatr, ier, ipivtr, nrct1, nrct1, noutpt, nttyo, qpr, rhsvcr)
 
         if (ier .le. 0) then
             ! Correct the predicted values. Note that the results are
@@ -3546,7 +3546,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Compute the new set of finite differences for a corrector
     ! step.
-    call corrfd(delxi,dxsm11,fdlim,fdre0,fdre1,fdri0,fdri1,fdrr0,fdrr1,iodb,iopt,jreac,nodbmx,noptmx,nord,nordmx,noutpt,npts,nrct,nrctmx,nrd1mx,rirec0,rirec1,rreac0,rreac1,rrelr0,rrelr1)
+    call corrfd(delxi, dxsm11, fdlim, fdre0, fdre1, fdri0, fdri1, fdrr0, fdrr1, iodb, iopt, jreac, nodbmx, noptmx, nord, nordmx, noutpt, npts, nrct, nrctmx, nrd1mx, rirec0, rirec1, rreac0, rreac1, rrelr0, rrelr1)
 
     ! Now recompute the corresponding set of derivatives for the
     ! original base point.
@@ -3554,7 +3554,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     !   akmat1 for akmat0
     !   fdri1 for fdri0
     !   fdrr1 for fdrr0
-    call rderiv(akmat1,drer0,drir0,fdri1,fdrr1,jreac,nord,nrct,nrctmx,nrd1mx)
+    call rderiv(akmat1, drer0, drir0, fdri1, fdrr1, jreac, nord, nrct, nrctmx, nrd1mx)
 
     ! Save the current corrected rate values. They will be the
     ! predicted rates for the next corrector iteration. This
@@ -3719,7 +3719,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (jexrtx .gt. 0) then
         ! Determine whether or not to reduce delxi and go back and try
         ! again to better locate an event in question.
-        call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+        call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
         if (qadjdx) then
             ier = 0
@@ -3807,7 +3807,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (jscatx.gt.0 .or. jscrtx.gt.0) then
         ! Determine whether or not to reduce delxi and go back and try
         ! again to better locate an event in question.
-        call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+        call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
         if (qadjdx) then
             ier = 0
@@ -3819,7 +3819,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Check for oversteps of the pH, Eh, log fO2, or aw with respect to
     ! currently defined print point values.
-    call cophpr(actw,aw0prn,aw1prn,delxi,dlxmin,eh,eh0prn,eh1prn,fo2lg,iodb,nodbmx,noutpt,o20prn,o21prn,ph,ph0prn,ph1prn,qadjdx,qredox,tolxsu)
+    call cophpr(actw, aw0prn, aw1prn, delxi, dlxmin, eh, eh0prn, eh1prn, fo2lg, iodb, nodbmx, noutpt, o20prn, o21prn, ph, ph0prn, ph1prn, qadjdx, qredox, tolxsu)
 
     if (qadjdx) then
         ier = 0
@@ -3828,7 +3828,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Check for oversteps of the pH, Eh, log fO2, or aw with respect to
     ! currently defined plot point values.
-    call cophpl(actw,aw0plo,aw1plo,delxi,dlxmin,eh,eh0plo,eh1plo,fo2lg,iodb,nodbmx,noutpt,o20plo,o21plo,ph,ph0plo,ph1plo,qadjdx,qredox,tolxsu)
+    call cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg, iodb, nodbmx, noutpt, o20plo, o21plo, ph, ph0plo, ph1plo, qadjdx, qredox, tolxsu)
 
     if (qadjdx) then
         ier = 0
@@ -3837,7 +3837,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     ! Check for oversteps of the pH, Eh, log fO2, or aw with respect to
     ! requested minimum and maximum values.
-    call cophlm(actw,awmax,awmin,delxi,dlxmin,eh,ehmax,ehmin,fo2lg,iodb,nodbmx,noutpt,o2max,o2min,ph,phmax,phmin,qadjdx,qredox,tolxsu)
+    call cophlm(actw, awmax, awmin, delxi, dlxmin, eh, ehmax, ehmin, fo2lg, iodb, nodbmx, noutpt, o2max, o2min, ph, phmax, phmin, qadjdx, qredox, tolxsu)
 
     if (qadjdx) then
         ier = 0
@@ -3849,7 +3849,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! The ES phase assemblage has changed. Re-set the index arrays
         ! associated with finite-difference description of the numbers of
         ! mole of phases and species in the Equilibrium System (ES).
-        call iiemop(iemop,iemos,iindx1,ipndx1,jsflag,kdim,kmax,ncmpe,ncmpr,noutpt,npet,npetmx,npt,nptmax,nset,nsetmx,nstmax,nttyo,uaqsln,uspec,uphase)
+        call iiemop(iemop, iemos, iindx1, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr, noutpt, npet, npetmx, npt, nptmax, nset, nsetmx, nstmax, nttyo, uaqsln, uspec, uphase)
     end if
 
     ! Update the numbers of moles variables for phases present in
@@ -3867,11 +3867,11 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     end do
 
     ! Recalculate the total affinity (aft1).
-    call caft1(afrc1,aft1,nrct,nrctmx,rrelr1)
+    call caft1(afrc1, aft1, nrct, nrctmx, rrelr1)
 
     ! Write entertainment for the user, showing the progress
     ! of the current run.
-    call wrentu(actw,eh,fo2lg,iopg,iopt,kstep,nopgmx,noptmx,nttyo,ph,qredox,time1,xi1)
+    call wrentu(actw, eh, fo2lg, iopg, iopt, kstep, nopgmx, noptmx, nttyo, ph, qredox, time1, xi1)
 
     qprntx = (xi1 + eps100) .ge. xiprnt
     qprntt = (time1 + eps100) .ge. tiprnt
@@ -4040,7 +4040,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         ! Automatic basis switching after solving at the current point
         ! of reaction progress is turned on, and this is the 20th step
         ! since the last time the need for this was checked.
-        call absswb(adhfs,adhfsx,advfs,advfsx,avcnst,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrtw,cdrsx,cdrw,csts,dhfs,dvfs,eps100,ibswx,iindx1,iodb,ipch,ipchmx,ipcv,ipcvmx,jcsort,jflag,jsflag,kbt,kmax,mosp,mtb,narn1,narn2,narxmx,narxt,nbasp,nbaspd,nbaspx,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsr,ndrsrx,ndrsx,nelect,nhydr,nodbmx,no2gaq,noutpt,nst,nstmax,nsts,nstsmx,nstsr,nswtch,ntpr,ntprmx,nttyo,presg,press,qbassw,qbswx,tempc,uspec,uzvec1,weight,xhfs,xvfs,xlks)
+        call absswb(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrtw, cdrsx, cdrw, csts, dhfs, dvfs, eps100, ibswx, iindx1, iodb, ipch, ipchmx, ipcv, ipcvmx, jcsort, jflag, jsflag, kbt, kmax, mosp, mtb, narn1, narn2, narxmx, narxt, nbasp, nbaspd, nbaspx, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, ndrsrx, ndrsx, nelect, nhydr, nodbmx, no2gaq, noutpt, nst, nstmax, nsts, nstsmx, nstsr, nswtch, ntpr, ntprmx, nttyo, presg, press, qbassw, qbswx, tempc, uspec, uzvec1, weight, xhfs, xvfs, xlks)
 
         if (nswtch .gt. 0) then
             ! Set a flag noting that automatic basis switching has just
@@ -4080,31 +4080,31 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
         delxi = dlxmx0
         npts = 0
 
-        call initaz(dxsm00,nrd1mx)
-        call initaz(dxsm10,nrd1mx)
-        call initaz(dxsm11,nrd1mx)
+        call initaz(dxsm00, nrd1mx)
+        call initaz(dxsm10, nrd1mx)
+        call initaz(dxsm11, nrd1mx)
 
         nmax = nrd1mx*kmax
-        call initaz(dzvc0,nmax)
-        call initaz(dzvc0s,nmax)
-        call initaz(fdzv0,nmax)
-        call initaz(fdzvm1,nmax)
+        call initaz(dzvc0, nmax)
+        call initaz(dzvc0s, nmax)
+        call initaz(fdzv0, nmax)
+        call initaz(fdzvm1, nmax)
 
-        call initaz(fdri0,nrd1mx)
-        call initaz(fdrim1,nrd1mx)
-        call initaz(drir0,nrd1mx)
-        call initaz(drir0s,nrd1mx)
+        call initaz(fdri0, nrd1mx)
+        call initaz(fdrim1, nrd1mx)
+        call initaz(drir0, nrd1mx)
+        call initaz(drir0s, nrd1mx)
 
         nmax = nordmx*nrctmx
-        call initaz(fdar0,nmax)
-        call initaz(fdarm1,nmax)
-        call initaz(dafrc0,nmax)
+        call initaz(fdar0, nmax)
+        call initaz(fdarm1, nmax)
+        call initaz(dafrc0, nmax)
 
         nmax = nrd1mx*nrctmx
-        call initaz(fdrr0,nmax)
-        call initaz(fdrrm1,nmax)
-        call initaz(drer0,nmax)
-        call initaz(drer0s,nmax)
+        call initaz(fdrr0, nmax)
+        call initaz(fdrrm1, nmax)
+        call initaz(drer0, nmax)
+        call initaz(drer0s, nmax)
     end if
 
     npts = npts + 1
@@ -4304,32 +4304,32 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     ! fractions of the exchange ions present in generic ion exchanger
     ! phases. Cations and anions are treated separately in these
     ! calculations.
-    call gegexw(cegexs,egexpc,egexpa,egexw,iern1,iern2,ietmax,jern1,jetmax,jgext,kern1,kern2,ketmax,kgexsa,moph,mosp,netmax,ngexsa,ngext,noutpt,nptmax,nstmax,nttyo,xgexw,zchar)
+    call gegexw(cegexs, egexpc, egexpa, egexw, iern1, iern2, ietmax, jern1, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, nptmax, nstmax, nttyo, xgexw, zchar)
 
     ! Compute various secondary parameters at the current point of
     ! reaction progress.
-    call cdappl(acflg,acfw,acfwlg,actlg,actw,actwlg,adwipp,afcnst,affpd,affsd,ah,ahrc,alk,alk1,alk2,alki,atwt,bdwipp,cdrsd,cess,conc,csts,ctb,cteaq,dvoso,dwoso,eh,ehfac,ehrc,eps100,farad,fdpe0,fdse0,fjest,fo2lg,fo2lrc,fxist,iaqsln,iemop0,iemos0,iern1,iern2,ifrn1,ifrn2,ilrn1,ilrn2,imrn1,imrn2,iopt,ixrn1,ixrn2,jcode,jcsort,jern1,jflag,jflagd,jgext,jpflag,jsflag,jssort,modr,moph,mophg,mophj,mopht,morr,mosp,mospg,mospj,mospt,mprph,mprsp,mrgers,mrmlra,mtb,mtbaq,mte,mteaq,mwtges,mwtrc,mwtsp,narn1,narn2,nat,nbasp,nbaspd,nbt,nchlor,ncmpe0,ncmpr,nct,ndrsd,ndrsrd,nelect,nern1,nern2,nert,ness,nessr,net,nfrn1,nfrn2,ngext,ngrn1,ngrn2,ngt,nhydr,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmrt,nmt,no2gaq,npchk,npet,npet0,npt,npts,nrct,nrndex,nst,nsts,nstsr,ntf1,ntf1t,ntf2,ntf2t,nxridx,nxrn1,nxrn2,nxrt,nxt,osc,oscst,omega,pe,perc,ph,phmes,ppmwb,ppmwe,qriinf,qxknph,rreacn,rreac1,rxbar,sfcar,sidrsp,sidrph,sigmam,sigmst,tdays,tempc,tf1,tf2,thours,time1,tmins,tyears,uphase,uspec,vodrt,voph,vophg,vophj,vopht,vosoct,vosp,vospg,vospj,vospt,vosp0,vreac,wfh2o,wkgwi,wodr,wodrt,woph,wophg,wophj,wopht,worr,worrt,wosoct,wosp,wospg,wospj,wospt,xbar,xlke,xlksd,zchcu6,zchsq2)
+    call cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affpd, affsd, ah, ahrc, alk, alk1, alk2, alki, atwt, bdwipp, cdrsd, cess, conc, csts, ctb, cteaq, dvoso, dwoso, eh, ehfac, ehrc, eps100, farad, fdpe0, fdse0, fjest, fo2lg, fo2lrc, fxist, iaqsln, iemop0, iemos0, iern1, iern2, ifrn1, ifrn2, ilrn1, ilrn2, imrn1, imrn2, iopt, ixrn1, ixrn2, jcode, jcsort, jern1, jflag, jflagd, jgext, jpflag, jsflag, jssort, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mprph, mprsp, mrgers, mrmlra, mtb, mtbaq, mte, mteaq, mwtges, mwtrc, mwtsp, narn1, narn2, nat, nbasp, nbaspd, nbt, nchlor, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nelect, nern1, nern2, nert, ness, nessr, net, nfrn1, nfrn2, ngext, ngrn1, ngrn2, ngt, nhydr, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmrt, nmt, no2gaq, npchk, npet, npet0, npt, npts, nrct, nrndex, nst, nsts, nstsr, ntf1, ntf1t, ntf2, ntf2t, nxridx, nxrn1, nxrn2, nxrt, nxt, osc, oscst, omega, pe, perc, ph, phmes, ppmwb, ppmwe, qriinf, qxknph, rreacn, rreac1, rxbar, sfcar, sidrsp, sidrph, sigmam, sigmst, tdays, tempc, tf1, tf2, thours, time1, tmins, tyears, uphase, uspec, vodrt, voph, vophg, vophj, vopht, vosoct, vosp, vospg, vospj, vospt, vosp0, vreac, wfh2o, wkgwi, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosp, wospg, wospj, wospt, xbar, xlke, xlksd, zchcu6, zchsq2)
 
     ! Print a description of the system at the current point of
     ! reaction progress.
-    call scripz(abar,acflg,acfw,acfwlg,actlg,actw,actwlg,affpd,affsd,afrc1,aft1,ah,ahmes,ahnbs,ahrc,alki,alk1,alk2,awmax,awmin,a3bar,cbsr,cdrsd,cegexs,cesr,conc,conclg,csts,ctb,cteaq,dvoso,dwoso,egers,egexjc,egexjf,egexpa,egexpc,egexs,egexw,eh,ehmax,ehmes,ehmin,ehnbs,ehrc,elecsr,electr,fje,fjest,fo2,fo2lg,fo2lrc,fugac,fugalg,fxi,fxist,iaqsln,iemop,iemop0,iemos,iemos0,iern1,iern2,iexr,iexrt,ifrn1,ifrn2,ilrn1,ilrn2,imech,imrn1,imrn2,iopg,iopr,iopt,ipndx1,ixrn1,ixrn2,jcode,jcsort,jern1,jern2,jexr,jexrt,jflag,jflagd,jflgi,jgext,jgsort,jpflag,jreac,jsca,jscat,jscr,jscrt,jsflag,jsol,jssort,kbt,kern1,kern2,kgexsa,km1,kmt,kx1,kxt,kstep,kstpmx,loph,losp,mlmrra,modr,moph,mophg,mophj,mopht,morr,mosp,mospg,mospj,mospt,mprph,mprsp,mrgers,mrmlra,mwtrc,mwtsp,narn1,narn2,nat,nbasp,nbaspd,nbt,ncmpe,ncmpe0,ncmpr,nct,ndrsd,ndrsrd,nelect,nern1,nern2,nert,net,nfrn1,nfrn2,ngext,ngexsa,ngrn1,ngrn2,ngt,nhydr,nhydx,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmrt,nmt,noutpt,no2gaq,npet,npet0,npt,npts,nrct,nrdxsp,nrk,nrndex,nst,nsts,nstsr,ntf1t,ntf2t,nxridx,nxrn1,nxrn2,nxrt,nxt,osc,oscst,omega,o2max,o2min,pch,pe,pemes,penbs,perc,ph,phcl,phmax,phmes,phmin,phnbs,ppmwe,presg,press,qaft1,qftpr2,qmod,qphcl,qredox,qrho,qriinf,qstopx,qvhfxi,qvlsow,qzprnt,rho,rhoc,rhowc,rk,rreacn,rreac1,rrelr1,rxbar,sfcar,sidrph,sidrsp,sigmst,sigmam,ssfcar,tdays,tdsglw,tdspkc,tdsplc,tempc,thours,time1,timemx,tmins,tolsat,tolxsf,tolxst,tolxsu,tyears,uelem,ugermo,ugexj,ugexmo,uphase,ureac,uspec,uxtype,vodrt,voph,vophg,vophj,vopht,vosoct,vosol,vosp,vospg,vospj,vospt,vreac,wfh2o,wftds,wkgwi,woh2o,wodr,wodrt,woph,wophg,wophj,wopht,worr,worrt,wosoct,wosol,wosp,wospg,wospj,wospt,wotds,xbar,xbarlg,xbarw,xbrwlg,xgers,xgexw,xi1,xidump,ximax,xistsv,xirct,zchar)
+    call scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, afrc1, aft1, ah, ahmes, ahnbs, ahrc, alki, alk1, alk2, awmax, awmin, a3bar, cbsr, cdrsd, cegexs, cesr, conc, conclg, csts, ctb, cteaq, dvoso, dwoso, egers, egexjc, egexjf, egexpa, egexpc, egexs, egexw, eh, ehmax, ehmes, ehmin, ehnbs, ehrc, elecsr, electr, fje, fjest, fo2, fo2lg, fo2lrc, fugac, fugalg, fxi, fxist, iaqsln, iemop, iemop0, iemos, iemos0, iern1, iern2, iexr, iexrt, ifrn1, ifrn2, ilrn1, ilrn2, imech, imrn1, imrn2, iopg, iopr, iopt, ipndx1, ixrn1, ixrn2, jcode, jcsort, jern1, jern2, jexr, jexrt, jflag, jflagd, jflgi, jgext, jgsort, jpflag, jreac, jsca, jscat, jscr, jscrt, jsflag, jsol, jssort, kbt, kern1, kern2, kgexsa, km1, kmt, kx1, kxt, kstep, kstpmx, loph, losp, mlmrra, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mprph, mprsp, mrgers, mrmlra, mwtrc, mwtsp, narn1, narn2, nat, nbasp, nbaspd, nbt, ncmpe, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nelect, nern1, nern2, nert, net, nfrn1, nfrn2, ngext, ngexsa, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmrt, nmt, noutpt, no2gaq, npet, npet0, npt, npts, nrct, nrdxsp, nrk, nrndex, nst, nsts, nstsr, ntf1t, ntf2t, nxridx, nxrn1, nxrn2, nxrt, nxt, osc, oscst, omega, o2max, o2min, pch, pe, pemes, penbs, perc, ph, phcl, phmax, phmes, phmin, phnbs, ppmwe, presg, press, qaft1, qftpr2, qmod, qphcl, qredox, qrho, qriinf, qstopx, qvhfxi, qvlsow, qzprnt, rho, rhoc, rhowc, rk, rreacn, rreac1, rrelr1, rxbar, sfcar, sidrph, sidrsp, sigmst, sigmam, ssfcar, tdays, tdsglw, tdspkc, tdsplc, tempc, thours, time1, timemx, tmins, tolsat, tolxsf, tolxst, tolxsu, tyears, uelem, ugermo, ugexj, ugexmo, uphase, ureac, uspec, uxtype, vodrt, voph, vophg, vophj, vopht, vosoct, vosol, vosp, vospg, vospj, vospt, vreac, wfh2o, wftds, wkgwi, woh2o, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosol, wosp, wospg, wospj, wospt, wotds, xbar, xbarlg, xbarw, xbrwlg, xgers, xgexw, xi1, xidump, ximax, xistsv, xirct, zchar)
 
     ! Write results at the current point of reaction progress on the
     ! tabx file. This file is used to create the plot file tab.
     if (ximax.gt.xistsv .and. iopt(18).ge.0) then
         if (qtatxt) then
             ! The TAB file is an ordinary text file.
-            call wrtabx(actlg,afrc1,aft1,alk,cteaq,dvoso,dwoso,eh,fo2lg,iindx1,iktmax,iopt,ipndx1,kmax,km1,kmt,kstep,kx1,kxt,loph,ncmpr,modr,mopht,narn1,mosp,nct,nctmax,noptmx,nptmax,nrct,nrctmx,nstmax,ntabx,ntidmx,ntitl2,ntitld,ntitmx,nxtmax,pe,ph,ppmwe,prcinf,press,prminf,qbye,qmod,qriinf,tempc,time1,uelem,uphase,uplatm,ureac,uspec,usteq6,utitl2,utitld,uveeq6,vodrt,vosoct,wodrt,woh2o,wosoct,xbar,xi1)
+            call wrtabx(actlg, afrc1, aft1, alk, cteaq, dvoso, dwoso, eh, fo2lg, iindx1, iktmax, iopt, ipndx1, kmax, km1, kmt, kstep, kx1, kxt, loph, ncmpr, modr, mopht, narn1, mosp, nct, nctmax, noptmx, nptmax, nrct, nrctmx, nstmax, ntabx, ntidmx, ntitl2, ntitld, ntitmx, nxtmax, pe, ph, ppmwe, prcinf, press, prminf, qbye, qmod, qriinf, tempc, time1, uelem, uphase, uplatm, ureac, uspec, usteq6, utitl2, utitld, uveeq6, vodrt, vosoct, wodrt, woh2o, wosoct, xbar, xi1)
         else
             ! The TAB file is a .csv file.
-            call wrtabc(acflg,actlg,actw,afrc1,aft1,alk,conclg,cteaq,ctb,dvoso,dwoso,eh,fje,fo2lg,fugac,fxi,iktmax,iopt,jflag,jsflag,kmax,kstep,kx1,kxt,mrmlra,modr,mosp,mospt,moph,mopht,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,ncmpr,nct,nctmax,nelect,ngrn1,ngrn2,ngtmax,nhydr,nhydx,nllnmx,no2gaq,noptmx,noutpt,npt,nptmax,nrct,nrctmx,nstmax,ntabx,ntidmx,ntitl2,ntitld,ntitmx,nttyo,nxrn1,nxrn2,nxtmax,pe,ph,phmes,ppmwb,ppmwe,prcinf,press,prminf,qrho,qriinf,rho,rhowc,sidrph,sigmam,tdsgks,tdsglw,tempc,time1,uelem,ulinex,uphase,uplatm,ureac,uspec,usteq6,utitl2,utitld,uveeq6,vodrt,vosoct,wkgh2o,wodrt,wosoct,xbar,xbarlg,xi1)
+            call wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvoso, dwoso, eh, fje, fo2lg, fugac, fxi, iktmax, iopt, jflag, jsflag, kmax, kstep, kx1, kxt, mrmlra, modr, mosp, mospt, moph, mopht, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ncmpr, nct, nctmax, nelect, ngrn1, ngrn2, ngtmax, nhydr, nhydx, nllnmx, no2gaq, noptmx, noutpt, npt, nptmax, nrct, nrctmx, nstmax, ntabx, ntidmx, ntitl2, ntitld, ntitmx, nttyo, nxrn1, nxrn2, nxtmax, pe, ph, phmes, ppmwb, ppmwe, prcinf, press, prminf, qrho, qriinf, rho, rhowc, sidrph, sigmam, tdsgks, tdsglw, tempc, time1, uelem, ulinex, uphase, uplatm, ureac, uspec, usteq6, utitl2, utitld, uveeq6, vodrt, vosoct, wkgh2o, wodrt, wosoct, xbar, xbarlg, xi1)
         end if
     end if
 
     if (iopt(16) .ge. 0) then
         ! Prepare to write results at the current point to the
         ! backup file.
-        call setpk6(actwlg,awmax,awmaxi,awmin,awmini,eh,ehmax,ehmaxi,ehmin,ehmini,fo2lg,iindx1,jflag,jflgi,kbt,kdim,kmax,kprs,mprph,mprphi,mprsp,mprspi,mtb,mtbi,mtbaq,mtbaqi,nbasp,nbaspd,nbaspi,nbti,nbtmax,ncmpr,nobswt,noutpt,nprpmx,nprpti,nprsmx,nprsti,npt,nptmax,nttyo,nstmax,o2max,o2maxi,o2min,o2mini,ph,phmax,phmaxi,phmin,phmini,prcinf,press,pressi,tempc,tempci,time1,timemx,timmxi,tistti,ubmtbi,uobsw,uphase,uprphi,uprspi,uspec,uzveci,uzvec1,xi1,ximax,ximaxi,xistti,zvclgi,zvclg1)
+        call setpk6(actwlg, awmax, awmaxi, awmin, awmini, eh, ehmax, ehmaxi, ehmin, ehmini, fo2lg, iindx1, jflag, jflgi, kbt, kdim, kmax, kprs, mprph, mprphi, mprsp, mprspi, mtb, mtbi, mtbaq, mtbaqi, nbasp, nbaspd, nbaspi, nbti, nbtmax, ncmpr, nobswt, noutpt, nprpmx, nprpti, nprsmx, nprsti, npt, nptmax, nttyo, nstmax, o2max, o2maxi, o2min, o2mini, ph, phmax, phmaxi, phmin, phmini, prcinf, press, pressi, tempc, tempci, time1, timemx, timmxi, tistti, ubmtbi, uobsw, uphase, uprphi, uprspi, uspec, uzveci, uzvec1, xi1, ximax, ximaxi, xistti, zvclgi, zvclg1)
 
         ! Rewind the current backup file (BAKUPA or BAKUPB).
         if (iopt(16) .eq. 0) then
@@ -4341,12 +4341,12 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             ! Compact (W) format.
             ! Calling sequence substitutions:
             !   nbkupn for newin
-            call wr6pkw(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,nbkupn,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+            call wr6pkw(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, nbkupn, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
         else
             ! Menu-style (D) format.
             ! Calling sequence substitutions:
             !   nbkupn for newin
-            call wr6pkd(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,nbkupn,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+            call wr6pkd(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, nbkupn, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
         end if
 
         if (iopt(16) .eq. 0) then
@@ -4380,14 +4380,14 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     !       kstppl = 0
     !     endif
     !     Check stop conditions.
-    call chkstc(actw,awmax,awmin,eh,ehmax,ehmin,fo2lg,iopt,jreac,kstep,kstpmx,noptmx,noutpt,nrct,nrctmx,nttyo,o2max,o2min,ph,phmax,phmin,prcinf,qaft1,qcnpre,qcntmp,qconst,qredox,qstop,qvhfxi,qvlsow,timemx,time1,tolxst,tolxsu,ximax,xi1)
+    call chkstc(actw, awmax, awmin, eh, ehmax, ehmin, fo2lg, iopt, jreac, kstep, kstpmx, noptmx, noutpt, nrct, nrctmx, nttyo, o2max, o2min, ph, phmax, phmin, prcinf, qaft1, qcnpre, qcntmp, qconst, qredox, qstop, qvhfxi, qvlsow, timemx, time1, tolxst, tolxsu, ximax, xi1)
 
     if (qstop .or. qstopx) then
         go to 990
     end if
 
     ! Reset print, plot, and PRS transfer points as necessary.
-    call adprpl(actw,aw0plo,aw0prn,aw1plo,aw1prn,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxpll,dlxplo,dlxprl,dlxprn,dlxdmp,eh,eh0plo,eh0prn,eh1plo,eh1prn,fo2lg,fxprpl,o20plo,o20prn,o21plo,o21prn,ph,ph0plo,ph0prn,ph1plo,ph1prn,qplaw0,qplaw1,qpleh0,qpleh1,qplolt,qplolx,qplott,qplotx,qplo20,qplo21,qplph0,qplph1,qpraw0,qpraw1,qpreh0,qpreh1,qprnlx,qprnlt,qprntx,qprntt,qpro20,qpro21,qprph0,qprph1,qredox,time1,tiplol,tiplot,tiprnl,tiprnt,xidump,xiplol,xiplot,xiprnl,xiprnt,xi1)
+    call adprpl(actw, aw0plo, aw0prn, aw1plo, aw1prn, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxpll, dlxplo, dlxprl, dlxprn, dlxdmp, eh, eh0plo, eh0prn, eh1plo, eh1prn, fo2lg, fxprpl, o20plo, o20prn, o21plo, o21prn, ph, ph0plo, ph0prn, ph1plo, ph1prn, qplaw0, qplaw1, qpleh0, qpleh1, qplolt, qplolx, qplott, qplotx, qplo20, qplo21, qplph0, qplph1, qpraw0, qpraw1, qpreh0, qpreh1, qprnlx, qprnlt, qprntx, qprntt, qpro20, qpro21, qprph0, qprph1, qredox, time1, tiplol, tiplot, tiprnl, tiprnt, xidump, xiplol, xiplot, xiprnl, xiprnt, xi1)
 
     ! If shooting to the end, go do the next step.
     if (qshoot) then
@@ -4442,8 +4442,8 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     kxt = kxt0
     kdim = kdim0
 
-    call copyaa(zvclg0,zvclg1,kdim)
-    call copyaa(zvec0,zvec1,kdim)
+    call copyaa(zvclg0, zvclg1, kdim)
+    call copyaa(zvec0, zvec1, kdim)
 
     do kcol = 1,kdim
         uzvec1(kcol) = uzvec0(kcol)
@@ -4454,12 +4454,12 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (iopt(2) .gt. 0) then
         rirec1 = rirec0
 
-        call copyaa(rreac0,rreac1,nrct)
-        call copyaa(rrelr0,rrelr1,nrct)
-        call copyaa(sfcar0,sfcar,nrct)
+        call copyaa(rreac0, rreac1, nrct)
+        call copyaa(rrelr0, rrelr1, nrct)
+        call copyaa(sfcar0, sfcar, nrct)
     end if
 
-    call copyaa(afrc0,afrc1,nrct)
+    call copyaa(afrc0, afrc1, nrct)
 
     go to 110
 
@@ -4633,7 +4633,7 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             write (nttyo,2400)
 2400 format(/' * Note (EQ6/path) Clearing equilibrium system',' (ES) solids',/7x,'at the end of the run.')
 
-            call clress(csts,iindx1,ipndx1,jpflag,jsflag,kdim,kmax,km1,kmt,kx1,kxt,loph,losp,moph,mosp,mtb,mtbaq,nbt,nbtmax,nptmax,nstmax,nsts,nstsmx,nstsr,ufixf,uzvec1,zvec1,zvclg1)
+            call clress(csts, iindx1, ipndx1, jpflag, jsflag, kdim, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mtb, mtbaq, nbt, nbtmax, nptmax, nstmax, nsts, nstsmx, nstsr, ufixf, uzvec1, zvec1, zvclg1)
         end if
 
         if (iopt(10) .gt. 0) then
@@ -4643,8 +4643,8 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
             write (nttyo,2410)
 2410 format(/' * Note (EQ6/path) Clearing physically removed',' system (PRS) solids',/7x,'at the end of the run.')
 
-            call initaz(mprsp,nstmax)
-            call initaz(mprph,nptmax)
+            call initaz(mprsp, nstmax)
+            call initaz(mprph, nptmax)
         end if
     end if
 
@@ -4688,21 +4688,21 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
     if (iopt(17) .ge. 0) then
         ! Prepare to write results at the final point to the
         ! pickup file.
-        call setpk6(actwlg,awmax,awmaxi,awmin,awmini,eh,ehmax,ehmaxi,ehmin,ehmini,fo2lg,iindx1,jflag,jflgi,kbt,kdim,kmax,kprs,mprph,mprphi,mprsp,mprspi,mtb,mtbi,mtbaq,mtbaqi,nbasp,nbaspd,nbaspi,nbti,nbtmax,ncmpr,nobswt,noutpt,nprpmx,nprpti,nprsmx,nprsti,npt,nptmax,nttyo,nstmax,o2max,o2maxi,o2min,o2mini,ph,phmax,phmaxi,phmin,phmini,prcinf,press,pressi,tempc,tempci,time1,timemx,timmxi,tistti,ubmtbi,uobsw,uphase,uprphi,uprspi,uspec,uzveci,uzvec1,xi1,ximax,ximaxi,xistti,zvclgi,zvclg1)
+        call setpk6(actwlg, awmax, awmaxi, awmin, awmini, eh, ehmax, ehmaxi, ehmin, ehmini, fo2lg, iindx1, jflag, jflgi, kbt, kdim, kmax, kprs, mprph, mprphi, mprsp, mprspi, mtb, mtbi, mtbaq, mtbaqi, nbasp, nbaspd, nbaspi, nbti, nbtmax, ncmpr, nobswt, noutpt, nprpmx, nprpti, nprsmx, nprsti, npt, nptmax, nttyo, nstmax, o2max, o2maxi, o2min, o2mini, ph, phmax, phmaxi, phmin, phmini, prcinf, press, pressi, tempc, tempci, time1, timemx, timmxi, tistti, ubmtbi, uobsw, uphase, uprphi, uprspi, uspec, uzveci, uzvec1, xi1, ximax, ximaxi, xistti, zvclgi, zvclg1)
 
         if (iopt(20) .gt. 0) then
             ! Prepare to write an advanced EQ6 pickup file. There is
             ! currently only one option. It is determined by the iopt(20)
             ! option switch. See comments in EQ6/stpkmd.f.
-            call stpkmd(cbsri,cbsr1,cdac,cesri,cesr1,csigma,eact,fkrc,hact,iact,ibsrti,ibsrt1,iesrti,iesrt1,iktmax,imchmx,imech,iopt,ixrti,jcode,jreac,modr,morr,morrw1,nbt1mx,nctmax,ndact,ndctmx,noptmx,noutpt,nprob,nrct,nrctmx,nrk,nsk,nsrt,nsrtmx,ntitl1,ntitmx,nttyo,nxrt,nxrtmx,rkb,rxbari,sfcar,ssfcar,trkb,ubsri,ubsr1,ucxri,udac,uesri,uesr1,ureac,ureac1,utitl1,vreac)
+            call stpkmd(cbsri, cbsr1, cdac, cesri, cesr1, csigma, eact, fkrc, hact, iact, ibsrti, ibsrt1, iesrti, iesrt1, iktmax, imchmx, imech, iopt, ixrti, jcode, jreac, modr, morr, morrw1, nbt1mx, nctmax, ndact, ndctmx, noptmx, noutpt, nprob, nrct, nrctmx, nrk, nsk, nsrt, nsrtmx, ntitl1, ntitmx, nttyo, nxrt, nxrtmx, rkb, rxbari, sfcar, ssfcar, trkb, ubsri, ubsr1, ucxri, udac, uesri, uesr1, ureac, ureac1, utitl1, vreac)
         end if
 
         ! Write results at the final point to the pickup file.
         if (upkfor(1:1) .eq. 'W') then
-            call wr6pkw(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,newin,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+            call wr6pkw(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, newin, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
         else
             ! Menu-style (D) format.
-            call wr6pkd(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,newin,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+            call wr6pkd(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, newin, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
         end if
     end if
 end subroutine path

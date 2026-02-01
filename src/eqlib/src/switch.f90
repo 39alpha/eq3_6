@@ -132,41 +132,41 @@ subroutine switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, ax
 
     ! Zero scratch arrays.
     nmax = narxmx*ntprmx*ipchmx*nstmax
-    call initaz(adhfsx,nmax)
+    call initaz(adhfsx, nmax)
 
     nmax = narxmx*ntprmx*ipcvmx*nstmax
-    call initaz(advfsx,nmax)
+    call initaz(advfsx, nmax)
 
     nmax = narxmx*ntprmx*nstmax
-    call initaz(axhfsx,nmax)
-    call initaz(axlksx,nmax)
-    call initaz(axvfsx,nmax)
+    call initaz(axhfsx, nmax)
+    call initaz(axlksx, nmax)
+    call initaz(axvfsx, nmax)
 
     nmax = 2*nstmax
-    call initiz(ndrsrx,nmax)
+    call initiz(ndrsrx, nmax)
 
     nmax = ndrsmx
-    call initaz(cdrsx,nmax)
-    call initiz(ndrsx,nmax)
+    call initaz(cdrsx, nmax)
+    call initiz(ndrsx, nmax)
 
     qbswok = .false.
 
     ns1 = nbaspx(nb)
 
     ! Check to see if the switch is okay.
-    call swtchk(cdrs,jflag,jsflag,nbaspx,nbt,nbtmax,ndrs,ndrsmx,ndrsr,noutpt,ns1,ns2,nstmax,nttyo,uspec)
+    call swtchk(cdrs, jflag, jsflag, nbaspx, nbt, nbtmax, ndrs, ndrsmx, ndrsr, noutpt, ns1, ns2, nstmax, nttyo, uspec)
 
     ! Calling sequence substitutions:
     !   jlen1 for jlen
     !   uspec(ns1) for unam48
     !   usp156 for uspn56
-    call fmspnx(jlen1,uspec(ns1),usp156)
+    call fmspnx(jlen1, uspec(ns1), usp156)
 
     ! Calling sequence substitutions:
     !   jlen2 for jlen
     !   uspec(ns2) for unam48
     !   usp256 for uspn56
-    call fmspnx(jlen2,uspec(ns2),usp256)
+    call fmspnx(jlen2, uspec(ns2), usp256)
 
     ! Check whether or not the species being switched in is not already
     ! in the active basis set (associated with some other mass balance).
@@ -204,13 +204,13 @@ subroutine switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, ax
     ! Calling sequence substitutions:
     !   noutpt for nf
     !   ns1 for ns
-    call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns1,nstmax,uspec)
+    call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns1, nstmax, uspec)
 
     ! Print the existing linking reaction.
     ! Calling sequence substitutions:
     !   noutpt for nf
     !   ns2 for ns
-    call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns2,nstmax,uspec)
+    call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns2, nstmax, uspec)
 
     write (noutpt,1050)
 1050 format(1x)
@@ -503,7 +503,7 @@ subroutine switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, ax
             ! Do reactions for all other species.
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
 
             ! Calling sequence substitutions:
             !   ns1 for nse
@@ -668,7 +668,7 @@ subroutine switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, ax
 
     ! Copy the new reactions from the 'x' arrays into the standard
     ! arrays.
-    call cdrscx(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,nstmax,ntprmx)
+    call cdrscx(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, nstmax, ntprmx)
 
     write (noutpt,1090)
 1090 format(/'  After the switch:',/)
@@ -677,13 +677,13 @@ subroutine switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, ax
     ! Calling sequence substitutions:
     !   noutpt for nf
     !   ns1 for ns
-    call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns1,nstmax,uspec)
+    call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns1, nstmax, uspec)
 
     ! Print the new reaction for the ns2-th species.
     ! Calling sequence substitutions:
     !   noutpt for nf
     !   ns2 for ns
-    call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns2,nstmax,uspec)
+    call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns2, nstmax, uspec)
 
     write (noutpt,1050)
 

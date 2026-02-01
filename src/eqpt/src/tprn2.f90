@@ -102,7 +102,7 @@ subroutine tprn2(abeta, acphi, alamn2, amun3, in2pr, ipbtmx, jpfcmx, natmax, ncv
         unam1 = uaqsp(i)
 
         ! Search for unam1 in the upair array.
-        call srch22(jpair,unam1,unam1,upair,npx2mx,npx2t)
+        call srch22(jpair, unam1, unam1, upair, npx2mx, npx2t)
 
         if (jpair .gt. 0) then
             ! Have found an entry.

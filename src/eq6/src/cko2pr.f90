@@ -122,7 +122,7 @@ subroutine cko2pr(delxi, dlxmin, do20, dxo0pr, dxo1pr, dxval0, eps100, iodb, nod
                 dxval0(n) = do20(n)
             end do
 
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dxo0pr = delxi
 
@@ -204,7 +204,7 @@ subroutine cko2pr(delxi, dlxmin, do20, dxo0pr, dxo1pr, dxval0, eps100, iodb, nod
                 dxval0(n) = do20(n)
             end do
 
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dxo1pr = delxi
 

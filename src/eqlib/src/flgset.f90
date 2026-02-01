@@ -169,7 +169,7 @@ subroutine flgset(axlksd, iopt, jflag, jpflag, jsflag, kxmod, narn1a, narn2a, na
 
                     ! Calling sequence substitutions:
                     !   uspeca(nse) for unam48
-                    call fmspnx(jlen,uspeca(nse),uspn56)
+                    call fmspnx(jlen, uspeca(nse), uspn56)
 
                     write (noutpt,1010) uspn56(1:jlen)
                     write (nttyo,1010) uspn56(1:jlen)
@@ -200,7 +200,7 @@ subroutine flgset(axlksd, iopt, jflag, jpflag, jsflag, kxmod, narn1a, narn2a, na
     end do
 
     ! Execute the nxmod suppression options.
-    call supprs(kxmod,jpflag,jsflag,ncmpra,noutpt,npta,nptmax,nsta,nstmax,nttyo,nxmdmx,nxmod,uphasa,uspeca,uxmod)
+    call supprs(kxmod, jpflag, jsflag, ncmpra, noutpt, npta, nptmax, nsta, nstmax, nttyo, nxmdmx, nxmod, uphasa, uspeca, uxmod)
 
     ! Suppress any phase with zero species.
     do np = 1,npta

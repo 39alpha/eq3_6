@@ -74,9 +74,9 @@ subroutine cwrpjt(noutpt)
         x = x + 0.01
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -88,9 +88,9 @@ subroutine cwrpjt(noutpt)
         x = x + 0.02
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -101,9 +101,9 @@ subroutine cwrpjt(noutpt)
         x = x + 0.04
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -114,9 +114,9 @@ subroutine cwrpjt(noutpt)
         x = x + 0.2
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -127,9 +127,9 @@ subroutine cwrpjt(noutpt)
         x = x + 1.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -139,9 +139,9 @@ subroutine cwrpjt(noutpt)
     x = x + 2.0
 
     if (.not.qpit75) then
-        call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+        call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
     else
-        call gpj0(dhj0,d2hj0,hj0,x)
+        call gpj0(dhj0, d2hj0, hj0, x)
     end if
 
     write (noutpt,1050) x,hj0,dhj0
@@ -151,9 +151,9 @@ subroutine cwrpjt(noutpt)
         x = x + 4.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -164,9 +164,9 @@ subroutine cwrpjt(noutpt)
         x = x + 10.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -176,9 +176,9 @@ subroutine cwrpjt(noutpt)
     x = x + 100.0
 
     if (.not.qpit75) then
-        call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+        call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
     else
-        call gpj0(dhj0,d2hj0,hj0,x)
+        call gpj0(dhj0, d2hj0, hj0, x)
     end if
 
     write (noutpt,1050) x,hj0,dhj0
@@ -188,9 +188,9 @@ subroutine cwrpjt(noutpt)
         x = x + 200.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -200,9 +200,9 @@ subroutine cwrpjt(noutpt)
     x = x + 1000.0
 
     if (.not.qpit75) then
-        call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+        call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
     else
-        call gpj0(dhj0,d2hj0,hj0,x)
+        call gpj0(dhj0, d2hj0, hj0, x)
     end if
 
     write (noutpt,1050) x,hj0,dhj0
@@ -212,9 +212,9 @@ subroutine cwrpjt(noutpt)
         x = x + 2000.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1050) x,hj0,dhj0
@@ -249,9 +249,9 @@ subroutine cwrpjt(noutpt)
         x = x + 0.001
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1070) x,hj0,dhj0
@@ -263,9 +263,9 @@ subroutine cwrpjt(noutpt)
         x = x + 0.01
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1070) x,hj0,dhj0
@@ -276,9 +276,9 @@ subroutine cwrpjt(noutpt)
         x = x + 0.1
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1070) x,hj0,dhj0
@@ -289,9 +289,9 @@ subroutine cwrpjt(noutpt)
         x = x + 1.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1070) x,hj0,dhj0
@@ -302,9 +302,9 @@ subroutine cwrpjt(noutpt)
         x = x + 10.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1070) x,hj0,dhj0
@@ -315,9 +315,9 @@ subroutine cwrpjt(noutpt)
         x = x + 100.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1070) x,hj0,dhj0
@@ -328,9 +328,9 @@ subroutine cwrpjt(noutpt)
         x = x + 1000.0
 
         if (.not.qpit75) then
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         write (noutpt,1070) x,hj0,dhj0

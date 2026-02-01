@@ -109,11 +109,11 @@ subroutine fpbflo(al10, delxi, demop0, dlxmin, dxval0, d1emp1, d2emp1, emop, emo
 
     ! Make a Taylor's series expansion of the first derivatives of the
     ! numbers of moles of the phases in the ES.
-    call d1ptay(delxi,demop0,d1emp1,nord,nordmx,npet,npetmx)
+    call d1ptay(delxi, demop0, d1emp1, nord, nordmx, npet, npetmx)
 
     ! Make a Taylor's series expansion of the numbers of moles of the
     ! phases in the ES.
-    call ptaylr(delxi,demop0,emop0,emop,nord,nordmx,npet,npetmx)
+    call ptaylr(delxi, demop0, emop0, emop, nord, nordmx, npet, npetmx)
 
     ! Find any phases whose mole numbers are decreasing. Pick the
     ! one whose mole number would be decreased the most at the
@@ -191,7 +191,7 @@ subroutine fpbflo(al10, delxi, demop0, dlxmin, dxval0, d1emp1, d2emp1, emop, emo
                     dxval0(nord) = 0.
                 end if
 
-                call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+                call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
                 if (ier .le. 0) then
                     go to 100

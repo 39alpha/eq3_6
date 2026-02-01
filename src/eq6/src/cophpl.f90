@@ -47,7 +47,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
         ! Determine whether or not to reduce delxi and go back and try
         ! again to better locate the event in question.
-        call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+        call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
         if (qadjdx) then
             go to 999
@@ -63,7 +63,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
         ! Determine whether or not to reduce delxi and go back and try
         ! again to better locate the event in question.
-        call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+        call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
         if (qadjdx) then
             go to 999
@@ -80,7 +80,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
             ! Determine whether or not to reduce delxi and go back and try
             ! again to better locate the event in question.
-            call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+            call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
             if (qadjdx) then
                 go to 999
@@ -96,7 +96,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
             ! Determine whether or not to reduce delxi and go back and try
             ! again to better locate the event in question.
-            call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+            call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
             if (qadjdx) then
                 go to 999
@@ -112,7 +112,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
             ! Determine whether or not to reduce delxi and go back and try
             ! again to better locate the event in question.
-            call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+            call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
             if (qadjdx) then
                 go to 999
@@ -129,7 +129,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
             ! Determine whether or not to reduce delxi and go back and try
             ! again to better locate the event in question.
-            call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+            call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
             if (qadjdx) then
                 go to 999
@@ -147,7 +147,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
         ! Determine whether or not to reduce delxi and go back and try
         ! again to better locate the event in question.
-        call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+        call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
         if (qadjdx) then
             go to 999
@@ -164,7 +164,7 @@ subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg
 
         ! Determine whether or not to reduce delxi and go back and try
         ! again to better locate the event in question.
-        call dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+        call dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
 
         if (qadjdx) then
             go to 999

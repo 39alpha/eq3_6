@@ -153,7 +153,7 @@ subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1,
 1010 format(/'   Mass= ',1pe12.5,' moles',/'   Two-point relative rate= ',1pe12.5,' mol/mol',/)
                     end if
 
-                    call shftph(emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fdsem1,iemop,iemos,iern1,iern2,ietmax,iindx1,imrn1,imrn2,ipndx1,ixrn1,ixrn2,jern1,jetmax,jgext,jpflag,jsflag,kbt,kmax,km1,kmt,kx1,kxt,loph,losp,moph,mosp,mprph,mprsp,mrgexs,nbtmax,ncmpe,ncmpr,netmax,ngext,nordmx,noutpt,np,npet,npetmx,nptmax,nsetmx,nstmax,nttyo,qshftd,qtotsh,uphase,xbar,xbarlg,zklgmn,zklogl,zvclg0,zvclg1,zvec0,zvec1)
+                    call shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, ipndx1, ixrn1, ixrn2, jern1, jetmax, jgext, jpflag, jsflag, kbt, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, nbtmax, ncmpe, ncmpr, netmax, ngext, nordmx, noutpt, np, npet, npetmx, nptmax, nsetmx, nstmax, nttyo, qshftd, qtotsh, uphase, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
 
                     jpflag(np) = 0
                     nr1 = ncmpr(1,np)
@@ -176,9 +176,9 @@ subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1,
         npts = 1
         qprflg = iodb(10) .ge. 1
 
-        call escalc(csts,iindx1,jcsort,kbt,kmax,moph,mosp,mtb,mtb0,nbaspd,nbt,nbtmax,ncmpr,noutpt,npt,nptmax,nstmax,nsts,nstsmx,nstsr,qprflg,uspec)
+        call escalc(csts, iindx1, jcsort, kbt, kmax, moph, mosp, mtb, mtb0, nbaspd, nbt, nbtmax, ncmpr, noutpt, npt, nptmax, nstmax, nsts, nstsmx, nstsr, qprflg, uspec)
 
-        call miidxz(ier,iindx1,ipndx1,jpflag,jsflag,kbt,kdim,kmax,km1,kmt,kx1,kxt,losp,ncmpr,noutpt,npt,nptmax,nstmax,nttyo,uspec,uzvec1,zvclg1,zvec1)
+        call miidxz(ier, iindx1, ipndx1, jpflag, jsflag, kbt, kdim, kmax, km1, kmt, kx1, kxt, losp, ncmpr, noutpt, npt, nptmax, nstmax, nttyo, uspec, uzvec1, zvclg1, zvec1)
 
         if (ier .gt. 0) then
             write (noutpt,1020)
@@ -205,20 +205,20 @@ subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1,
         ! The ES phase assemblage has changed. Re-set the index arrays
         ! associated with finite-difference description of the numbers
         ! of mole of phases and species in the Equilibrium System (ES).
-        call iiemop(iemop,iemos,iindx1,ipndx1,jsflag,kdim,kmax,ncmpe,ncmpr,noutpt,npet,npetmx,npt,nptmax,nset,nsetmx,nstmax,nttyo,uaqsln,uspec,uphase)
+        call iiemop(iemop, iemos, iindx1, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr, noutpt, npet, npetmx, npt, nptmax, nset, nsetmx, nstmax, nttyo, uaqsln, uspec, uphase)
 
         npet0 = npet
         nset0 = nset
 
         nmax = nordmx*npetmx
-        call initaz(fdpe0,nmax)
-        call initaz(fdpem1,nmax)
-        call initaz(demop0,nmax)
+        call initaz(fdpe0, nmax)
+        call initaz(fdpem1, nmax)
+        call initaz(demop0, nmax)
 
         nmax = nordmx*nsetmx
-        call initaz(fdse0,nmax)
-        call initaz(fdsem1,nmax)
-        call initaz(demos0,nmax)
+        call initaz(fdse0, nmax)
+        call initaz(fdsem1, nmax)
+        call initaz(demos0, nmax)
 
         do npe = 1,npet
             np = iemop(npe)

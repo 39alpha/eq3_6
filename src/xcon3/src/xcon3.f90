@@ -242,9 +242,9 @@ program xcon3
     data ninpt  /9/,ninpts /10/,newin /11/,nxcon /12/
 
     ! Get configuration identification data.
-    call aaaxc3(ustxc3,uvexc3)
-    call aaaelu(ustelu,uveelu)
-    call platfd(uplatc,uplatm)
+    call aaaxc3(ustxc3, uvexc3)
+    call aaaelu(ustelu, uveelu)
+    call platfd(uplatc, uplatm)
 
     ! Set dimensioning variables.
     ietmax = ietpar
@@ -448,7 +448,7 @@ program xcon3
 
         ! Read the IXCON options file.
 790 continue
-        call rddixc(nxcon,uoldvd,unewf,unewv)
+        call rddixc(nxcon, uoldvd, unewf, unewv)
     else
         write (nttyo,1057)
 1057 format(/' * Error - (XCON3/xcon3) The IXCON options file'," doesn't exist.")
@@ -595,48 +595,48 @@ program xcon3
     nprob = nprob + 1
 
     ! Zero or null various variables.
-    call initcb(utitl,ntitmx)
+    call initcb(utitl, ntitmx)
 
-    call initiz(iopt,noptmx)
-    call initiz(iopg,nopgmx)
-    call initiz(iopr,noprmx)
-    call initiz(iodb,nodbmx)
+    call initiz(iopt, noptmx)
+    call initiz(iopg, nopgmx)
+    call initiz(iopr, noprmx)
+    call initiz(iodb, nodbmx)
 
-    call initcb(uxmod,nxmdmx)
-    call initcb(uxmd24,nxmdmx)
-    call initiz(jxmod,nxmdmx)
-    call initiz(kxmod,nxmdmx)
-    call initaz(xlkmod,nxmdmx)
+    call initcb(uxmod, nxmdmx)
+    call initcb(uxmd24, nxmdmx)
+    call initiz(jxmod, nxmdmx)
+    call initiz(kxmod, nxmdmx)
+    call initaz(xlkmod, nxmdmx)
 
-    call initcb(uspecb,nsqmax)
-    call initcb(ubasis,nsqmax)
-    call initiz(jflagb,nsqmax)
-    call initaz(cspb,nsqmax)
-    call initcb(uphas1,nsqmax)
-    call initcb(uphas2,nsqmax)
+    call initcb(uspecb, nsqmax)
+    call initcb(ubasis, nsqmax)
+    call initiz(jflagb, nsqmax)
+    call initaz(cspb, nsqmax)
+    call initcb(uphas1, nsqmax)
+    call initcb(uphas2, nsqmax)
 
-    call initcb(usolb,nxtmax)
+    call initcb(usolb, nxtmax)
 
     nmax = iktmax*nxtmax
-    call initcb(umemb,nmax)
-    call initaz(xbarb,nmax)
+    call initcb(umemb, nmax)
+    call initaz(xbarb, nmax)
 
-    call initcb(uspeci,nbtmax)
-    call initiz(jflgi,nbtmax)
-    call initaz(covali,nbtmax)
-    call initcb(ucospi,nbtmax)
+    call initcb(uspeci, nbtmax)
+    call initiz(jflgi, nbtmax)
+    call initaz(covali, nbtmax)
+    call initcb(ucospi, nbtmax)
 
     nmax = 2*nbtmax
-    call initcb(usbsw,nmax)
-    call initcb(uobsw,nmax)
+    call initcb(usbsw, nmax)
+    call initcb(uobsw, nmax)
 
-    call initcb(usoli,nxtimx)
+    call initcb(usoli, nxtimx)
 
-    call initcb(umemi,nxicmx)
-    call initaz(xbari,nxicmx)
+    call initcb(umemi, nxicmx)
+    call initaz(xbari, nxicmx)
 
     nmax = 2*nxtimx
-    call initiz(ncmpri,nmax)
+    call initiz(ncmpri, nmax)
 
     ! The uacion variable only appears on version level '6.0' input
     ! files. Provide a blank default value.
@@ -645,13 +645,13 @@ program xcon3
     ! Read the current problem on the stripped input file.
     if (uoldf(1:1) .eq. 'W') then
         if (uoldv(1:3) .eq. '6.0') then
-            call rd3w6(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,ninpts,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,qend,qrderr,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,uacion,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call rd3w6(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, ninpts, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, qend, qrderr, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, uacion, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
 
             if (qrderr) then
                 go to 990
             end if
         else if (uoldv(1:3) .eq. '7.0') then
-            call rd3w7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,ninpts,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,qend,qrderr,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call rd3w7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, ninpts, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, qend, qrderr, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
 
             if (qrderr) then
                 go to 990
@@ -659,13 +659,13 @@ program xcon3
         else if (uoldv(1:3) .eq. '7.2') then
             ! Note: version level 7.2 is identical to version level 7.0
             ! for this format.
-            call rd3w7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,ninpts,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,qend,qrderr,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call rd3w7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, ninpts, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, qend, qrderr, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
 
             if (qrderr) then
                 go to 990
             end if
         else if (uoldv(1:3) .eq. '8.0') then
-            call rd3w8(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,iopr,iopt,irdxc3,itdsf3,itermx,jgext,jetmax,jflgi,jgexti,jpres3,kxmod,mwtges,nbti,nbtmax,ncmpri,net,neti,netmax,ngexti,ninpts,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,noutpt,nprob,nsbswt,ntitl,ntitmx,nttyo,nxicmx,nxmdmx,nxmod,nxti,nxtimx,pei,press,qend,qgexsh,qrderr,rho,scamas,tdspkg,tdspl,tempc,tgexp,tolbt,toldl,tolspf,ucospi,uebal,ugexj,ugexji,ugexmo,ugexp,ugexpi,ugexr,ugexsi,umemi,uobsw,uredox,usbsw,usoli,uspeci,utitl,uhfgex,uvfgex,uxkgex,uxmod,xbari,xgexsi,xhfgex,xlkgex,xvfgex,xlkmod,zgexj)
+            call rd3w8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, noutpt, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qgexsh, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
 
             if (qrderr) then
                 go to 990
@@ -730,7 +730,7 @@ program xcon3
 
             go to 990
         else if (uoldv(1:3) .eq. '7.0') then
-            call rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,ninpts,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,qend,qrderr,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, ninpts, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, qend, qrderr, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
 
             if (qrderr) then
                 go to 990
@@ -738,19 +738,19 @@ program xcon3
         else if (uoldv(1:3) .eq. '7.2') then
             ! Note: XCON3/rd3d7.f can read a "D" format input file at
             ! version level '7.2' as well as at version level '7.0'.
-            call rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,ninpts,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,qend,qrderr,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, ninpts, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, qend, qrderr, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
 
             if (qrderr) then
                 go to 990
             end if
         else if (uoldv(1:3).eq.'8.0' .and. q8beta) then
-            call rd3d8b(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,iopr,iopt,irdxc3,itdsf3,itermx,jgext,jetmax,jflgi,jgexti,jpres3,kxmod,mwtges,nbti,nbtmax,ncmpri,net,neti,netmax,ngexti,ninpts,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,noutpt,nprob,nsbswt,ntitl,ntitmx,nttyo,nxicmx,nxmdmx,nxmod,nxti,nxtimx,pei,press,qend,qrderr,rho,scamas,tdspkg,tdspl,tempc,tgexp,tolbt,toldl,tolspf,ucospi,uebal,ugexj,ugexji,ugexmo,ugexp,ugexpi,ugexr,ugexsi,umemi,uobsw,uredox,usbsw,usoli,uspeci,utitl,uhfgex,uvfgex,uxkgex,uxmod,xbari,xgexsi,xhfgex,xlkgex,xvfgex,xlkmod,zgexj)
+            call rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, noutpt, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
 
             if (qrderr) then
                 go to 990
             end if
         else if (uoldv(1:3) .eq. '8.0') then
-            call rd3d8(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,iopr,iopt,irdxc3,itdsf3,itermx,jgext,jetmax,jflgi,jgexti,jpres3,kxmod,mwtges,nbti,nbtmax,ncmpri,net,neti,netmax,ngexti,ninpts,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,noutpt,nprob,nsbswt,ntitl,ntitmx,nttyo,nxicmx,nxmdmx,nxmod,nxti,nxtimx,pei,press,qend,qgexsh,qrderr,rho,scamas,tdspkg,tdspl,tempc,tgexp,tolbt,toldl,tolspf,ucospi,uebal,ugexj,ugexji,ugexmo,ugexp,ugexpi,ugexr,ugexsi,umemi,uobsw,uredox,usbsw,usoli,uspeci,utitl,uhfgex,uvfgex,uxkgex,uxmod,xbari,xgexsi,xhfgex,xlkgex,xvfgex,xlkmod,zgexj)
+            call rd3d8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, noutpt, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qgexsh, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
 
             if (qrderr) then
                 go to 990
@@ -834,12 +834,12 @@ program xcon3
     ! Calling sequence substitutions:
     !   uoldv for ustr
     !   verold for var
-    call chreal(nttyo,qrderr,uoldv,verold)
+    call chreal(nttyo, qrderr, uoldv, verold)
 
     ! Calling sequence substitutions:
     !   unewv for ustr
     !   vernew for var
-    call chreal(nttyo,qrderr,unewv,vernew)
+    call chreal(nttyo, qrderr, unewv, vernew)
 
     ! Patch up possible incompatibilities between "D" and "W" formats.
     ! The relevant variables here do not appear on EQ6 input files.
@@ -1494,15 +1494,15 @@ program xcon3
     ! Write the current problem on the new input file.
     if (unewf(1:1) .eq. 'W') then
         if (unewv(1:3) .eq. '6.0') then
-            call wr3w6(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,newin,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nxmdmx,nxmod,nxtb,nxtmax,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,uacion,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call wr3w6(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, newin, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nxmdmx, nxmod, nxtb, nxtmax, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, uacion, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
         else if (unewv(1:3) .eq. '7.0') then
-            call wr3w7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,newin,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nxmdmx,nxmod,nxtb,nxtmax,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call wr3w7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, newin, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nxmdmx, nxmod, nxtb, nxtmax, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
         else if (unewv(1:3) .eq. '7.2') then
             ! Note: version level 7.2 is identical to version level 7.0
             ! for this format.
-            call wr3w7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,newin,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nxmdmx,nxmod,nxtb,nxtmax,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call wr3w7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, newin, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nxmdmx, nxmod, nxtb, nxtmax, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
         else if (unewv(1:3) .eq. '8.0') then
-            call wr3w8(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,iopr,iopt,irdxc3,itdsf3,itermx,jgext,jetmax,jflgi,jgexti,jpres3,kxmod,mwtges,nbti,nbtmax,ncmpri,net,neti,netmax,newin,ngexti,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nsbswt,ntitl,ntitmx,nttyo,nxicmx,nxmdmx,nxmod,nxti,nxtimx,pei,press,qgexsh,rho,scamas,tdspkg,tdspl,tempc,tgexp,tolbt,toldl,tolspf,ucospi,uebal,ugexj,ugexji,ugexmo,ugexp,ugexpi,ugexr,ugexsi,umemi,uobsw,uredox,usbsw,usoli,uspeci,utitl,uhfgex,uvfgex,uxkgex,uxmod,xbari,xgexsi,xhfgex,xlkgex,xvfgex,xlkmod,zgexj)
+            call wr3w8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, newin, ngexti, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qgexsh, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
         else
             write (nttyo,1220) unewv
 1220 format(/' * Error - (XCON3/xcon3) Coding to implement',/7x,'writing an input file in "W" format has not been',/7x,'implemented for version level "',a3,'."')
@@ -1516,11 +1516,11 @@ program xcon3
 
             go to 990
         else if (unewv(1:3) .eq. '7.0') then
-            call wr3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,newin,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call wr3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, newin, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
         else if (unewv(1:3) .eq. '7.2') then
-            call wr3d72(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,newin,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+            call wr3d72(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, newin, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
         else if (unewv(1:3) .eq. '8.0') then
-            call wr3d8(cgexj,cgexpi,covali,ehi,egexsi,fo2lgi,iebal3,ietmax,iodb,iopg,iopr,iopt,irdxc3,itdsf3,itermx,jgext,jetmax,jflgi,jgexti,jpres3,kxmod,mwtges,nbti,nbtmax,ncmpri,net,neti,netmax,newin,ngexti,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nsbswt,ntitl,ntitmx,nttyo,nxicmx,nxmdmx,nxmod,nxti,nxtimx,pei,press,qgexsh,rho,scamas,tdspkg,tdspl,tempc,tgexp,tolbt,toldl,tolspf,ucospi,uebal,ugexj,ugexji,ugexmo,ugexp,ugexpi,ugexr,ugexsi,umemi,uobsw,uredox,usbsw,usoli,uspeci,utitl,uhfgex,uvfgex,uxkgex,uxmod,xbari,xgexsi,xhfgex,xlkgex,xvfgex,xlkmod,zgexj)
+            call wr3d8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, newin, ngexti, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qgexsh, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
         else
             write (nttyo,1240) unewv
 1240 format(/' * Error - (XCON3/xcon3) Coding to implement',/7x,'writing an input file in "D" format has not been',/7x,'implemented for version level "',a3,'."')

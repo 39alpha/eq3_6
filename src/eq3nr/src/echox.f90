@@ -160,7 +160,7 @@ subroutine echox(azero, cdrs, covali, eh, fo2lg, iebal3, iodb, iopg, iopr, iopt,
     ! the number of each of entity on the data base, the number the
     ! software is dimensioned for, and the number appearing in the
     ! current problem.
-    call prtntt(nat,nata,natmax,nbt,nbta,nbtmax,nct,ncta,nctmax,ngt,ngta,ngtmax,nlt,nlta,nltmax,nmt,nmta,nmtmax,noutpt,npt,npta,nptmax,nst,nsta,nstmax,nxt,nxta,nxtmax)
+    call prtntt(nat, nata, natmax, nbt, nbta, nbtmax, nct, ncta, nctmax, ngt, ngta, ngtmax, nlt, nlta, nltmax, nmt, nmta, nmtmax, noutpt, npt, npta, nptmax, nst, nsta, nstmax, nxt, nxta, nxtmax)
 
     write (noutpt,1040) (iopt(n), n = 1,10)
 1040 format(/' iopt(1)=  ',i2,' (Used only by EQ6)',/' iopt(2)=  ',i2,' (Used only by EQ6)',/' iopt(3)=  ',i2,' (Used only by EQ6)',/' iopt(4)=  ',i2,' (Solid solutions)',/' iopt(5)=  ',i2,' (Used only by EQ6)',/' iopt(6)=  ',i2,' (Used only by EQ6)',/' iopt(7)=  ',i2,' (Not used)',/' iopt(8)=  ',i2,' (Not used)',/' iopt(9)=  ',i2,' (Not used)',/' iopt(10)= ',i2,' (Not used)')
@@ -288,7 +288,7 @@ subroutine echox(azero, cdrs, covali, eh, fo2lg, iebal3, iodb, iopg, iopr, iopt,
 
                 ! Calling sequence substitutions:
                 !   noutpt for nf
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns, nstmax, uspec)
                 write (noutpt,1322)
 1322 format(1x)
             else if (jfl.eq.27 .or. jfl.eq.30) then

@@ -217,7 +217,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
     ! Process and write the data for the standard pressure grid.
     ! Calling sequence substitutions:
     !   presg for avgrid
-    call intrp(aamatr,apr,presg,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+    call intrp(aamatr, apr, presg, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
     ux24 = 'presg'
     j2 = ilnobl(ux24)
@@ -242,7 +242,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
         ! pressure envelope.
         ! Calling sequence substitutions:
         !   prehw for avgrid
-        call intrp(aamatr,apr,prehw,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, prehw, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'prehw'
         j2 = ilnobl(ux24)
@@ -265,7 +265,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
         ! Process and write the A(gamma,10) data.
         ! Calling sequence substitutions:
         !   adh for avgrid
-        call intrp(aamatr,apr,adh,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, adh, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'adh'
         j2 = ilnobl(ux24)
@@ -285,7 +285,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the A(H) data.
             ! Calling sequence substitutions:
             !   adhh for avgrid
-            call intrp(aamatr,apr,adhh,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, adhh, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'adhh'
             j2 = ilnobl(ux24)
@@ -309,7 +309,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dadhh( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -332,7 +332,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the A(V) data.
             ! Calling sequence substitutions:
             !   adhv for avgrid
-            call intrp(aamatr,apr,adhv,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, adhv, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'adhv'
             j2 = ilnobl(ux24)
@@ -356,7 +356,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dadhv( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -378,7 +378,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
         ! Process and write the B(gamma) data.
         ! Calling sequence substitutions:
         !   bdh for avgrid
-        call intrp(aamatr,apr,bdh,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, bdh, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'bdh'
         j2 = ilnobl(ux24)
@@ -398,7 +398,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the B(H) data.
             ! Calling sequence substitutions:
             !   bdhh for avgrid
-            call intrp(aamatr,apr,bdhh,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, bdhh, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'bdhh'
             j2 = ilnobl(ux24)
@@ -422,7 +422,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dbdhh( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -445,7 +445,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the B(V) data.
             ! Calling sequence substitutions:
             !   bdhv for avgrid
-            call intrp(aamatr,apr,bdhv,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, bdhv, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'bdhv'
             j2 = ilnobl(ux24)
@@ -469,7 +469,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dbdhv( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -492,7 +492,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
         ! interpolate and write the polynomial coefficients for bdot
         ! Calling sequence substitutions:
         !   bdot for avgrid
-        call intrp(aamatr,apr,bdot,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, bdot, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'bdot'
         j2 = ilnobl(ux24)
@@ -512,7 +512,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the B-dot(H) data.
             ! Calling sequence substitutions:
             !   bdoth for avgrid
-            call intrp(aamatr,apr,bdoth,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, bdoth, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'bdoth'
             j2 = ilnobl(ux24)
@@ -536,7 +536,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dbdth( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -559,7 +559,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the B-dot(V) data.
             ! Calling sequence substitutions:
             !   bdotv for avgrid
-            call intrp(aamatr,apr,bdotv,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, bdotv, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'bdotv'
             j2 = ilnobl(ux24)
@@ -583,7 +583,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dbdtv( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -620,7 +620,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
         ! Process and write the A(phi) data.
         ! Calling sequence substitutions:
         !   aphi for avgrid
-        call intrp(aamatr,apr,aphi,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, aphi, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'aphi'
         j2 = ilnobl(ux24)
@@ -640,7 +640,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the A(H) data.
             ! Calling sequence substitutions:
             !   adhh for avgrid
-            call intrp(aamatr,apr,adhh,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, adhh, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'adhh'
             j2 = ilnobl(ux24)
@@ -664,7 +664,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dadhh( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -687,7 +687,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
             ! Process and write the A(V) data.
             ! Calling sequence substitutions:
             !   adhv for avgrid
-            call intrp(aamatr,apr,adhv,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, adhv, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'adhv'
             j2 = ilnobl(ux24)
@@ -711,7 +711,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                     end do
                 end do
 
-                call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+                call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
                 ux24 = 'dadhv( )'
                 write (ux24(7:7),'(i1)') ipc
@@ -735,7 +735,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
     ! Begin with the log K data.
     ! Calling sequence substitutions:
     !   xlke for avgrid
-    call intrp(aamatr,apr,xlke,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+    call intrp(aamatr, apr, xlke, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
     ux24 = 'xlke'
     j2 = ilnobl(ux24)
@@ -755,7 +755,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
         ! Process and write the enthalpy of reaction data.
         ! Calling sequence substitutions:
         !   xhfe for avgrid
-        call intrp(aamatr,apr,xhfe,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, xhfe, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'xhfe'
         j2 = ilnobl(ux24)
@@ -780,7 +780,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                 end do
             end do
 
-            call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'dhfe( )'
             write (ux24(7:7),'(i1)') ipc
@@ -803,7 +803,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
         ! Process and write the volume of reaction data.
         ! Calling sequence substitutions:
         !   xvfe for avgrid
-        call intrp(aamatr,apr,xvfe,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+        call intrp(aamatr, apr, xvfe, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
         ux24 = 'xvfe'
         j2 = ilnobl(ux24)
@@ -828,7 +828,7 @@ subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bd
                 end do
             end do
 
-            call intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+            call intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
 
             ux24 = 'dvfe( )'
             write (ux24(7:7),'(i1)') ipc

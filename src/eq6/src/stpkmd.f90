@@ -90,7 +90,7 @@ subroutine stpkmd(cbsri, cbsr1, cdac, cesri, cesr1, csigma, eact, fkrc, hact, ia
     end if
 
     ! Set up the initial part of the new main title.
-    call initcb(utitl1,ntitmx)
+    call initcb(utitl1, ntitmx)
     ntitl1 = 25
     utitl1(1) = 'EQ6 input file name= sample.6i'
     utitl1(2) = 'Description= "Sample"'
@@ -103,50 +103,50 @@ subroutine stpkmd(cbsri, cbsr1, cdac, cesri, cesr1, csigma, eact, fkrc, hact, ia
 
     ! Delete all current reactants.
     nrct = 0
-    call initiz(jcode,nrctmx)
-    call initiz(jreac,nrctmx)
-    call initiz(nsk,nrctmx)
+    call initiz(jcode, nrctmx)
+    call initiz(jreac, nrctmx)
+    call initiz(nsk, nrctmx)
 
     nsrt = 0
-    call initiz(ibsrti,nsrtmx)
-    call initiz(iesrti,nsrtmx)
+    call initiz(ibsrti, nsrtmx)
+    call initiz(iesrti, nsrtmx)
 
     nmax = nbt1mx*nsrtmx
-    call initaz(cbsri,nmax)
-    call initcb(ubsri,nmax)
+    call initaz(cbsri, nmax)
+    call initcb(ubsri, nmax)
 
     nmax = nctmax*nsrtmx
-    call initaz(cesri,nmax)
-    call initcb(uesri,nmax)
+    call initaz(cesri, nmax)
+    call initcb(uesri, nmax)
 
-    call initiz(ixrti,nxrtmx)
+    call initiz(ixrti, nxrtmx)
 
     nxrt = 0
     nmax = iktmax*nxrtmx
-    call initaz(rxbari,nmax)
-    call initcb(ucxri,nmax)
+    call initaz(rxbari, nmax)
+    call initcb(ucxri, nmax)
 
-    call initcb(ureac,nrctmx)
-    call initaz(fkrc,nrctmx)
-    call initaz(sfcar,nrctmx)
-    call initaz(ssfcar,nrctmx)
+    call initcb(ureac, nrctmx)
+    call initaz(fkrc, nrctmx)
+    call initaz(sfcar, nrctmx)
+    call initaz(ssfcar, nrctmx)
 
     nmax = 2*nrctmx
-    call initiz(imech,nmax)
-    call initiz(nrk,nmax)
+    call initiz(imech, nmax)
+    call initiz(nrk, nmax)
 
     nmax = imchmx*2*nrctmx
-    call initaz(csigma,nmax)
-    call initaz(rkb,nmax)
-    call initaz(trkb,nmax)
-    call initaz(eact,nmax)
-    call initaz(hact,nmax)
-    call initiz(iact,nmax)
-    call initiz(ndact,nmax)
+    call initaz(csigma, nmax)
+    call initaz(rkb, nmax)
+    call initaz(trkb, nmax)
+    call initaz(eact, nmax)
+    call initaz(hact, nmax)
+    call initiz(iact, nmax)
+    call initiz(ndact, nmax)
 
     nmax = ndctmx*imchmx*2*nrctmx
-    call initaz(cdac,nmax)
-    call initcb(udac,nmax)
+    call initaz(cdac, nmax)
+    call initcb(udac, nmax)
 
     ! Write an EQ6 input file in which "Fluid 2" is the sole reactant
     ! added to the equilibrium system (ES) containing "Fluid 1" and

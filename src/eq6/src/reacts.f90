@@ -126,7 +126,7 @@ subroutine reacts(cbsr, csts, delxi, drer0, iern1, ietmax, iktmax, iodb, jcode, 
 
     do nrc = 1,nrct
         if (jreac(nrc).eq.0 .or. jreac(nrc).eq.-1) then
-            call integr(delxi,dlxrct,drer0,nord,nrc,nrctmx,nrd1mx,rrelr0)
+            call integr(delxi, dlxrct, drer0, nord, nrc, nrctmx, nrd1mx, rrelr0)
 
             ! XX       It is assumed that each reactant has a reaction coefficient
             ! XX       of -1. Below it is implied that dlxrct is multiplied by -(-1).

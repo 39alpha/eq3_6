@@ -93,13 +93,13 @@ subroutine swtchb(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx
     !   jlen1 for jlen
     !   uspeca(ns1) for unam48
     !   usp156 for uspn56
-    call fmspnx(jlen1,uspeca(ns1),usp156)
+    call fmspnx(jlen1, uspeca(ns1), usp156)
 
     ! Calling sequence substitutions:
     !   jlen2 for jlen
     !   uspeca(ns2) for unam48
     !   usp256 for uspn56
-    call fmspnx(jlen2,uspeca(ns2),usp256)
+    call fmspnx(jlen2, uspeca(ns2), usp256)
 
     if (nb1 .eq. nb2) then
         write (noutpt,1004) usp156(1:jlen1)
@@ -163,7 +163,7 @@ subroutine swtchb(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx
             !   ndrsrd for ndrsr
             !   noutpt for nf
             !   uspeca for uspec
-            call prreac(cdrsd,ndrsd,ndrsmx,ndrsrd,noutpt,ns,nstmax,uspeca)
+            call prreac(cdrsd, ndrsd, ndrsmx, ndrsrd, noutpt, ns, nstmax, uspeca)
             nerr = nerr + 1
         end if
     end if
@@ -196,7 +196,7 @@ subroutine swtchb(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx
     !   noutpt for nf
     !   ns2 for ns
     !   uspeca for uspec
-    call prreac(cdrsd,ndrsd,ndrsmx,ndrsrd,noutpt,ns2,nstmax,uspeca)
+    call prreac(cdrsd, ndrsd, ndrsmx, ndrsrd, noutpt, ns2, nstmax, uspeca)
 
     nrl1 = ndrsrd(1,ns2)
     nrl2 = ndrsrd(2,ns2)
@@ -210,7 +210,7 @@ subroutine swtchb(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx
 
         ! Calling sequence substitutions:
         !   uspeca(ns) for unam48
-        call fmspnx(jlen,uspeca(ns),uspn56)
+        call fmspnx(jlen, uspeca(ns), uspn56)
 
         if (ns .eq. ns1) then
             ! Invert the linking reaction. Put the coefficient for the
@@ -449,7 +449,7 @@ subroutine swtchb(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx
     !   cdrsd for cdrs
     !   ndrsd for ndrs
     !   ndrsrd for ndrsr
-    call cdrscx(adhfsd,adhfsx,advfsd,advfsx,axhfsd,axhfsx,axlksd,axlksx,axvfsd,axvfsx,cdrsd,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,ndrsd,ndrsmx,ndrsx,ndrsrd,ndrsrx,nstmax,ntprmx)
+    call cdrscx(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx, axvfsd, axvfsx, cdrsd, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, ndrsd, ndrsmx, ndrsx, ndrsrd, ndrsrx, nstmax, ntprmx)
 
     ! Print the new linking reaction.
     ! Calling sequence substitutions:
@@ -459,7 +459,7 @@ subroutine swtchb(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx
     !   ns1 for ns
     !   noutpt for nf
     !   uspeca for uspec
-    call prreac(cdrsd,ndrsd,ndrsmx,ndrsrd,noutpt,ns1,nstmax,uspeca)
+    call prreac(cdrsd, ndrsd, ndrsmx, ndrsrd, noutpt, ns1, nstmax, uspeca)
 
     ! Interchange the basis indices.
     nbaspd(nb1) = ns2

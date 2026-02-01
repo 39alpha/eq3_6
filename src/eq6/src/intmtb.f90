@@ -58,7 +58,7 @@ subroutine intmtb(mtb, mtbaq, mtbaqi, mtbi, nbasp, nbt, nbti, nbtmax, noutpt, ns
             end if
         end do
 
-        call fmspnm(jlen2,ubmtbi(nbi),uspn56)
+        call fmspnm(jlen2, ubmtbi(nbi), uspn56)
         write (noutpt,1000) uspn56(1:jlen2)
         write (nttyo,1000) uspn56(1:jlen2)
 1000 format(/' * Error - (EQ6/intmtb) A mass balance is defined',' on the input',/7x,'file for ',a,", but this species isn't",' in the',/7x,"currently active basis set. Either it isn't",' on the current data file',/7x,'or it has been suppressed',' as by an nxmod or iopt(15) option.')

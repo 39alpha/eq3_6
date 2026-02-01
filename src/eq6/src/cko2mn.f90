@@ -116,7 +116,7 @@ subroutine cko2mn(delxi, dlxmin, do20, dxo0mx, dxval0, eps100, iodb, nodbmx, nor
                 dxval0(n) = do20(n)
             end do
 
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dxo0mx = delxi
 

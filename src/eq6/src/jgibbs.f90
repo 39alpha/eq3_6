@@ -223,7 +223,7 @@ subroutine jgibbs(aamatr, afcnst, affp, cdrs, cscale, csts, delvec, eps100, gmma
         irow2 = idim
         jcol1 = 1
         jcol2 = kbt
-        call lindep(aamatr,eps100,irow1,irow2,jcol1,jcol2,kmax,qldep)
+        call lindep(aamatr, eps100, irow1, irow2, jcol1, jcol2, kmax, qldep)
 
         if (.not.qldep) then
             ! Have not obtained linear dependence. The phase being tested
@@ -341,7 +341,7 @@ subroutine jgibbs(aamatr, afcnst, affp, cdrs, cscale, csts, delvec, eps100, gmma
         irow2 = idim
         jcol1 = 1
         jcol2 = kbt
-        call lindep(aamatr,eps100,irow1,irow2,jcol1,jcol2,kmax,qldep)
+        call lindep(aamatr, eps100, irow1, irow2, jcol1, jcol2, kmax, qldep)
 
         if (qldep) then
             j2 = ilnobl(uphase(np))
@@ -440,7 +440,7 @@ subroutine jgibbs(aamatr, afcnst, affp, cdrs, cscale, csts, delvec, eps100, gmma
 
         ! Calling sequence substitutions:
         !   idim for kdim
-        call msolvr(aamatr,delvec,gmmatr,ier,ipivot,idim,kmax,noutpt,nttyo,qpr,rhsvec)
+        call msolvr(aamatr, delvec, gmmatr, ier, ipivot, idim, kmax, noutpt, nttyo, qpr, rhsvec)
 
         if (ier .gt. 0) then
             j2 = ilnobl(uphase(np))

@@ -130,7 +130,7 @@ subroutine absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
     ! a search similar to the one above, but with a variety of special
     ! constraints. The indices of candidates are stored in the array
     ! ibswx.
-    call abswpk(beta,cdrs,csts,efac,ibswx,iebal,iindx1,jcsort,jflag,jssort,kbt,kmax,mosp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,ndrs,ndrsmx,ndrsr,nelect,nhydr,no2gaq,nstmax,nsts,nstsmx,nstsr,qbswx,q6mode,weight)
+    call abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, jssort, kbt, kmax, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nelect, nhydr, no2gaq, nstmax, nsts, nstsmx, nstsr, qbswx, q6mode, weight)
 
     if (.not.qbswx) then
         nswtch = 0
@@ -151,19 +151,19 @@ subroutine absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
                 !   jlen1 for jlen
                 !   uspec(nsj) for unam48
                 !   usp156 for uspn56
-                call fmspnx(jlen1,uspec(nsj),usp156)
+                call fmspnx(jlen1, uspec(nsj), usp156)
 
                 ! Calling sequence substitutions:
                 !   jlen2 for jlen
                 !   uspec(nsi) for unam48
                 !   usp256 for uspn56
-                call fmspnx(jlen2,uspec(nsi),usp256)
+                call fmspnx(jlen2, uspec(nsi), usp256)
 
                 ! Calling sequence substitutions:
                 !   jlen3 for jlen
                 !   uspec(nse) for unam48
                 !   usp356 for uspn56
-                call fmspnx(jlen3,uspec(nse),usp356)
+                call fmspnx(jlen3, uspec(nse), usp356)
 
                 write (noutpt,1010) usp156(1:jlen1),usp256(1:jlen2),usp356(1:jlen3)
 1010 format(/3x,'Could replace ',a,' in the active basis set',' with',/3x,a,' as the species associated with the mass',' balance',/3x,'of ',a,'.')
@@ -198,13 +198,13 @@ subroutine absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
                                 !   jlen2 for jlen
                                 !   uspec(ns2) for unam48
                                 !   usp256 for uspn56
-                                call fmspnx(jlen2,uspec(ns2),usp256)
+                                call fmspnx(jlen2, uspec(ns2), usp256)
 
                                 ! Calling sequence substitutions:
                                 !   jlen3 for jlen
                                 !   uspec(nse) for unam48
                                 !   usp356 for uspn56
-                                call fmspnx(jlen3,uspec(nse),usp356)
+                                call fmspnx(jlen3, uspec(nse), usp356)
 
                                 write (ux8,'(i5)') jfl
                                 call lejust(ux8)
@@ -234,7 +234,7 @@ subroutine absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
     end if
 
     ! Resolve any conflicts in candidate basis switches.
-    call gabswx(beta,ibswx,iindx1,kbt,kmax,nbt,nbtmax)
+    call gabswx(beta, ibswx, iindx1, kbt, kmax, nbt, nbtmax)
 
     ! Count the number of switches to make.
     nswtch = 0
@@ -271,19 +271,19 @@ subroutine absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
                 !   jlen1 for jlen
                 !   uspec(nsj) for unam48
                 !   usp156 for uspn56
-                call fmspnx(jlen1,uspec(nsj),usp156)
+                call fmspnx(jlen1, uspec(nsj), usp156)
 
                 ! Calling sequence substitutions:
                 !   jlen2 for jlen
                 !   uspec(nsi) for unam48
                 !   usp256 for uspn56
-                call fmspnx(jlen2,uspec(nsi),usp256)
+                call fmspnx(jlen2, uspec(nsi), usp256)
 
                 ! Calling sequence substitutions:
                 !   jlen3 for jlen
                 !   uspec(nse) for unam48
                 !   usp356 for uspn56
-                call fmspnx(jlen3,uspec(nse),usp356)
+                call fmspnx(jlen3, uspec(nse), usp356)
 
                 write (noutpt,1110) usp156(1:jlen1),usp256(1:jlen2),usp356(1:jlen3)
 1110 format(/3x,'Will replace ',a,' in the active basis set',' with',/3x,a,' as the species associated with the mass',' balance',/3x,'of ',a,'.')
@@ -293,22 +293,22 @@ subroutine absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
         write (noutpt,1020)
     end if
 
-    call autosw(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ibswx,iindx1,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,kbt,kmax,narn1,narxmx,nbasp,nbaspd,nbaspx,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,nst,nstmax,ntprmx,nttyo,qbassw,uspec,uzvec1)
+    call autosw(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ibswx, iindx1, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, kbt, kmax, narn1, narxmx, nbasp, nbaspd, nbaspx, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, nst, nstmax, ntprmx, nttyo, qbassw, uspec, uzvec1)
 
     ! Recompute the cdrw array.
-    call gcdrw(cdrs,cdrw,narn1,ndrs,ndrsmx,ndrsr,nst,nstmax)
+    call gcdrw(cdrs, cdrw, narn1, ndrs, ndrsmx, ndrsr, nst, nstmax)
 
     ! Recompute the cdrtw array.
-    call gcdrtw(cdrs,cdrtw,narn1,narn2,ndrs,ndrsmx,ndrsr,nelect,no2gaq,nst,nstmax)
+    call gcdrtw(cdrs, cdrtw, narn1, narn2, ndrs, ndrsmx, ndrsr, nelect, no2gaq, nst, nstmax)
 
     ! Update the thermodynamic data to correspond to the new
     ! active basis set. First, recompute the log K, etc., data for
     ! the various reactions.
-    call evdatr(adhfs,advfs,axhfs,axlks,axvfs,dhfs,dvfs,ipch,ipchmx,ipcv,ipcvmx,narxmx,narxt,nst,nstmax,ntpr,ntprmx,tempc,xhfs,xlks,xvfs)
+    call evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, ipcv, ipcvmx, narxmx, narxt, nst, nstmax, ntpr, ntprmx, tempc, xhfs, xlks, xvfs)
 
     ! Then make pressure corrections to these thermodynamic data.
     if (ipcv .ge. 0) then
-        call pcorrx(avcnst,dhfs,dvfs,ipch,ipchmx,ipcv,ipcvmx,nbasp,nbt,nbtmax,ndrsr,nst,nstmax,presg,press,xhfs,xlks,xvfs)
+        call pcorrx(avcnst, dhfs, dvfs, ipch, ipchmx, ipcv, ipcvmx, nbasp, nbt, nbtmax, ndrsr, nst, nstmax, presg, press, xhfs, xlks, xvfs)
     end if
 
 999 continue

@@ -158,7 +158,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     ! Calling sequence substitutions:
     !   apresg for arr
     !   presg for prop
-    call evdat2(apresg,narxmx,narxt,ntpr,ntprmx,presg,tempc)
+    call evdat2(apresg, narxmx, narxt, ntpr, ntprmx, presg, tempc)
 
     ! Compute the 1.013-bar/steam-saturation curve pressure at the
     ! initial temperature.
@@ -175,14 +175,14 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     !   ntprh for ntpr
     !   2 for ntprmx
     !   presh for prop
-    call evdat2(apresh,5,narxth,ntprh,2,presh,tempc)
+    call evdat2(apresh, 5, narxth, ntprh, 2, presh, tempc)
 
     if (ipcv .ge. 0) then
         ! Compute the half-width of the recommended pressure envelope.
         ! Calling sequence substitutions:
         !   aprehw for arr
         !   prehw for prop
-        call evdat2(aprehw,narxmx,narxt,ntpr,ntprmx,prehw,tempc)
+        call evdat2(aprehw, narxmx, narxt, ntpr, ntprmx, prehw, tempc)
     end if
 
     if (iopg(1) .le. 0) then
@@ -191,7 +191,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   aadh for arr
         !   adh for prop
-        call evdat2(aadh,narxmx,narxt,ntpr,ntprmx,adh,tempc)
+        call evdat2(aadh, narxmx, narxt, ntpr, ntprmx, adh, tempc)
 
         aphi = adh*al10/3.
     end if
@@ -202,7 +202,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   aaphi for arr
         !   aphi for prop
-        call evdat2(aaphi,narxmx,narxt,ntpr,ntprmx,aphi,tempc)
+        call evdat2(aaphi, narxmx, narxt, ntpr, ntprmx, aphi, tempc)
         adh= 3.*aphi/al10
     end if
 
@@ -212,7 +212,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   aadh for arr
         !   adh for prop
-        call evdat2(aadh,narxmx,narxt,ntpr,ntprmx,adh,tempc)
+        call evdat2(aadh, narxmx, narxt, ntpr, ntprmx, adh, tempc)
 
         aphi = adh*al10/3.
     end if
@@ -222,7 +222,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   aadhh for arr
         !   adhh for prop
-        call evdat2(aadhh,narxmx,narxt,ntpr,ntprmx,adhh,tempc)
+        call evdat2(aadhh, narxmx, narxt, ntpr, ntprmx, adhh, tempc)
 
         do ipc = 1,ipch
             ! Compute the pressure derivatives of the Debye-Huckel A(H)
@@ -231,7 +231,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             !   adadhh for arr
             !   ipc for k
             !   ipchmx for nmax
-            call evdat3(adadhh,ipc,ipchmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+            call evdat3(adadhh, ipc, ipchmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
             dadhh(ipc) = prop
         end do
     end if
@@ -241,7 +241,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   aadhv for arr
         !   adhv for prop
-        call evdat2(aadhv,narxmx,narxt,ntpr,ntprmx,adhv,tempc)
+        call evdat2(aadhv, narxmx, narxt, ntpr, ntprmx, adhv, tempc)
 
         do ipc = 1,ipcv
             ! Compute the pressure derivatives of the Debye-Huckel A(V)
@@ -250,7 +250,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             !   adadhv for arr
             !   ipc for k
             !   ipcvmx for nmax
-            call evdat3(adadhv,ipc,ipcvmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+            call evdat3(adadhv, ipc, ipcvmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
             dadhv(ipc) = prop
         end do
     end if
@@ -261,14 +261,14 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   abdh for arr
         !   bdh for prop
-        call evdat2(abdh,narxmx,narxt,ntpr,ntprmx,bdh,tempc)
+        call evdat2(abdh, narxmx, narxt, ntpr, ntprmx, bdh, tempc)
 
         if (ipch .ge. 0) then
             ! Compute the Debye-Huckel B(H) parameter.
             ! Calling sequence substitutions:
             !   abdhh for arr
             !   bdhh for prop
-            call evdat2(abdhh,narxmx,narxt,ntpr,ntprmx,bdhh,tempc)
+            call evdat2(abdhh, narxmx, narxt, ntpr, ntprmx, bdhh, tempc)
 
             do ipc = 1,ipch
                 ! Compute the pressure derivatives of the Debye-Huckel B(H)
@@ -277,7 +277,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
                 !   adbdhh for arr
                 !   ipc for k
                 !   ipchmx for nmax
-                call evdat3(adbdhh,ipc,ipchmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat3(adbdhh, ipc, ipchmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 dbdhh(ipc) = prop
             end do
         end if
@@ -287,7 +287,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             ! Calling sequence substitutions:
             !   abdhv for arr
             !   bdhv for prop
-            call evdat2(abdhv,narxmx,narxt,ntpr,ntprmx,bdhv,tempc)
+            call evdat2(abdhv, narxmx, narxt, ntpr, ntprmx, bdhv, tempc)
 
             do ipc = 1,ipcv
                 ! Compute the pressure derivatives of the Debye-Huckel B(V)
@@ -296,7 +296,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
                 !   adbdhv for arr
                 !   ipc for k
                 !   ipcvmx for nmax
-                call evdat3(adbdhv,ipc,ipcvmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat3(adbdhv, ipc, ipcvmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 dbdhv(ipc) = prop
             end do
         end if
@@ -308,14 +308,14 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   abdot for arr
         !   bdot for prop
-        call evdat2(abdot,narxmx,narxt,ntpr,ntprmx,bdot,tempc)
+        call evdat2(abdot, narxmx, narxt, ntpr, ntprmx, bdot, tempc)
 
         if (ipch .ge. 0) then
             ! Compute the Debye-Huckel B-dot(H) parameter.
             ! Calling sequence substitutions:
             !   abdoth for arr
             !   bdoth for prop
-            call evdat2(abdoth,narxmx,narxt,ntpr,ntprmx,bdoth,tempc)
+            call evdat2(abdoth, narxmx, narxt, ntpr, ntprmx, bdoth, tempc)
 
             do ipc = 1,ipch
                 ! Compute the pressure derivatives of the Debye-Huckel
@@ -324,7 +324,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
                 !   adbdth for arr
                 !   ipc for k
                 !   ipchmx for nmax
-                call evdat3(adbdth,ipc,ipchmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat3(adbdth, ipc, ipchmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 dbdth(ipc) = prop
             end do
         end if
@@ -334,7 +334,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             ! Calling sequence substitutions:
             !   abdotv for arr
             !   bdotv for prop
-            call evdat2(abdotv,narxmx,narxt,ntpr,ntprmx,bdotv,tempc)
+            call evdat2(abdotv, narxmx, narxt, ntpr, ntprmx, bdotv, tempc)
 
             do ipc = 1,ipcv
                 ! Compute the pressure derivatives of the Debye-Huckel
@@ -343,7 +343,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
                 !   adbdtv for arr
                 !   ipc for k
                 !   ipcvmx for nmax
-                call evdat3(adbdtv,ipc,ipcvmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat3(adbdtv, ipc, ipcvmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 dbdtv(ipc) = prop
             end do
         end if
@@ -354,7 +354,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! Calling sequence substitutions:
         !   axlke for arr
         !   xlke for prop
-        call evdat2(axlke,narxmx,narxt,ntpr,ntprmx,xlke,tempc)
+        call evdat2(axlke, narxmx, narxt, ntpr, ntprmx, xlke, tempc)
     else
         xlke = 9999999.
     end if
@@ -365,7 +365,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             ! Calling sequence substitutions:
             !   axhfe for arr
             !   xhfe for prop
-            call evdat2(axhfe,narxmx,narxt,ntpr,ntprmx,xhfe,tempc)
+            call evdat2(axhfe, narxmx, narxt, ntpr, ntprmx, xhfe, tempc)
         else
             xhfe = 9999999.
         end if
@@ -377,7 +377,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             !   adhfe for arr
             !   ipc for k
             !   ipchmx for nmax
-            call evdat3(adhfe,ipc,ipchmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+            call evdat3(adhfe, ipc, ipchmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
             dhfe(ipc) = prop
         end do
     end if
@@ -388,7 +388,7 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             ! Calling sequence substitutions:
             !   axvfe for arr
             !   xvfe for prop
-            call evdat2(axvfe,narxmx,narxt,ntpr,ntprmx,xvfe,tempc)
+            call evdat2(axvfe, narxmx, narxt, ntpr, ntprmx, xvfe, tempc)
         else
             xvfe = 9999999.
         end if
@@ -400,14 +400,14 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
             !   advfe for arr
             !   ipc for k
             !   ipcvmx for nmax
-            call evdat3(advfe,ipc,ipcvmx,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+            call evdat3(advfe, ipc, ipcvmx, narxmx, narxt, ntpr, ntprmx, prop, tempc)
             dvfe(ipc) = prop
         end do
     end if
 
     ! Compute the log K values for all reactions as they are
     ! currently written.
-    call evdatr(adhfs,advfs,axhfs,axlks,axvfs,dhfs,dvfs,ipch,ipchmx,ipcv,ipcvmx,narxmx,narxt,nst,nstmax,ntpr,ntprmx,tempc,xhfs,xlks,xvfs)
+    call evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, ipcv, ipcvmx, narxmx, narxt, nst, nstmax, ntpr, ntprmx, tempc, xhfs, xlks, xvfs)
 
     ! Compute the log K values for all reactions as they were
     ! written on the data file.
@@ -422,19 +422,19 @@ subroutine evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     !   xhfsd for xhfs
     !   xlksd for xlks
     !   xvfsd for xvfs
-    call evdatr(adhfsd,advfsd,axhfsd,axlksd,axvfsd,dhfsd,dvfsd,ipch,ipchmx,ipcv,ipcvmx,narxmx,narxt,nst,nstmax,ntpr,ntprmx,tempc,xhfsd,xlksd,xvfsd)
+    call evdatr(adhfsd, advfsd, axhfsd, axlksd, axvfsd, dhfsd, dvfsd, ipch, ipchmx, ipcv, ipcvmx, narxmx, narxt, nst, nstmax, ntpr, ntprmx, tempc, xhfsd, xlksd, xvfsd)
 
     ! Compute remaining temperature-dependent aqueous species activity
     ! coefficient parameters.
     if (iopg(1) .eq. 1) then
         ! Computer the S-lambda(n) and mu coefficients for Pitzer's
         ! equations.
-        call evptzc(amu,aslm,ipbtmx,jpfcmx,jptffl,nmut,nmutmx,noutpt,nttyo,nslt,nsltmx,pmu,pslamn,tempc)
+        call evptzc(amu, aslm, ipbtmx, jpfcmx, jptffl, nmut, nmutmx, noutpt, nttyo, nslt, nsltmx, pmu, pslamn, tempc)
     end if
 
     ! Compute temperature dependent solid solution activity
     ! coefficient parameters.
     if (iopt(4) .ge. 1) then
-        call wterm(apx,iapxmx,iktmax,ixrn1,ixrn2,jsol,ncmpr,noutpt,nptmax,nstmax,nttyo,nxt,nxtmax,press,tempk,uphase,uspec,wfac)
+        call wterm(apx, iapxmx, iktmax, ixrn1, ixrn2, jsol, ncmpr, noutpt, nptmax, nstmax, nttyo, nxt, nxtmax, press, tempk, uphase, uspec, wfac)
     end if
 end subroutine evdata

@@ -84,7 +84,7 @@ subroutine inbdot(azeroa, insgfa, nad1, narn1a, narn2a, nata, nata_asv, nerr, no
     ! Calling sequence substitutions:
     !   narn1a for nrn1a
     !   narn2a for nrn2a
-    call srchn(narn1a,narn2a,ns,nsta_asv,unam,uspeca)
+    call srchn(narn1a, narn2a, ns, nsta_asv, unam, uspeca)
 
     ! If not found among the loaded species, skip.
     if (ns .le. 0) then

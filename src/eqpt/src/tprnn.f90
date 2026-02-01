@@ -103,7 +103,7 @@ subroutine tprnn(abeta, acphi, alamnn, innpr, in2pr, ipbtmx, jpfcmx, natmax, ncv
 
         ! Search for unam1, unam2 in the upair array.
         ! That array corresponds to the species pairs blocks.
-        call srch22(jpair,unam1,unam2,upair,npx2mx,npx2t)
+        call srch22(jpair, unam1, unam2, upair, npx2mx, npx2t)
 
         if (jpair .gt. 0) then
             ! Have found an entry.

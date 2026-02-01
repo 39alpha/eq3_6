@@ -299,7 +299,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     ! Print a table of the elemental composition of the aqueous
     ! solution.
-    call prteca(cteaq,mrmlra,nct,nctmax,noutpt,ppmwe,qrho,rho,uelem)
+    call prteca(cteaq, mrmlra, nct, nctmax, noutpt, ppmwe, qrho, rho, uelem)
 
     ! Compute and save the calculated total concentration of the
     ! species adjusted for electrical balance.
@@ -319,11 +319,11 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     ! Print a table of the numerical composition of the aqueous
     ! solution.
-    call prtnca(ctb,jflag,jsflag,mrmlra,mwtsp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,noutpt,nstmax,qrho,rho,uspec,wfh2o)
+    call prtnca(ctb, jflag, jsflag, mrmlra, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, noutpt, nstmax, qrho, rho, uspec, wfh2o)
 
     ! Compute and print a table of the sensible composition of the
     ! aqueous solution.
-    call prtsca(ctb,jflag,jsflag,mrmlra,mwtsp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,nelect,nhydr,nhydx,noutpt,no2gaq,nstmax,qrho,rho,uspec,wfh2o)
+    call prtsca(ctb, jflag, jsflag, mrmlra, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, nelect, nhydr, nhydx, noutpt, no2gaq, nstmax, qrho, rho, uspec, wfh2o)
 
     ! Compute and print various aqueous solution parameters.
     actwlg = actlg(narn1)
@@ -363,22 +363,22 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     ! Compute the stoichiometric ionic strength.
     ! Calling sequence substitution:
     !   fxist for fxistc
-    call cfxist(ctb,fxist,nbaspd,nbt,nbtmax,nstmax,zchsq2)
+    call cfxist(ctb, fxist, nbaspd, nbt, nbtmax, nstmax, zchsq2)
 
     ! Compute the stoichiometric ionic asymmetry.
     ! Calling sequence substitution:
     !   fjest for fjestc
-    call cfjest(ctb,fjest,nbaspd,nbt,nbtmax,nstmax,zchcu6)
+    call cfjest(ctb, fjest, nbaspd, nbt, nbtmax, nstmax, zchcu6)
 
-    call prtvpa(abar,acfw,acfwlg,actw,actwlg,a3bar,fje,fjest,fo2,fo2lg,fxi,fxist,iopg,mlmrra,mrmlra,nopgmx,noutpt,osc,oscst,qrho,rhoc,rhowc,sigmam,sigmst,tdsglw,tdspkc,tdsplc,vosol,wfh2o,wftds,woh2o,wosol,wotds,xbarw,xbrwlg)
+    call prtvpa(abar, acfw, acfwlg, actw, actwlg, a3bar, fje, fjest, fo2, fo2lg, fxi, fxist, iopg, mlmrra, mrmlra, nopgmx, noutpt, osc, oscst, qrho, rhoc, rhowc, sigmam, sigmst, tdsglw, tdspkc, tdsplc, vosol, wfh2o, wftds, woh2o, wosol, wotds, xbarw, xbrwlg)
 
     ! Compute and print pH, Eh, and pe-, all with reference to
     ! appropriate pH scales. Also compute and print the pHCl.
     qredox = .true.
 
-    call gpheh(acflg,actlg,actwlg,adh,ah,ahmes,ahnbs,conc,eh,ehfac,ehmes,ehnbs,farad,fo2lg,fxi,iopg,mrmlra,nchlor,nhydr,nopgmx,noutpt,nstmax,nttyo,pch,pe,pemes,penbs,ph,phcl,phmes,phnbs,qphcl,qredox,qrho,xlke)
+    call gpheh(acflg, actlg, actwlg, adh, ah, ahmes, ahnbs, conc, eh, ehfac, ehmes, ehnbs, farad, fo2lg, fxi, iopg, mrmlra, nchlor, nhydr, nopgmx, noutpt, nstmax, nttyo, pch, pe, pemes, penbs, ph, phcl, phmes, phnbs, qphcl, qredox, qrho, xlke)
 
-    call prpheh(ah,ahmes,ahnbs,eh,ehmes,ehnbs,iopg,nopgmx,noutpt,pch,pe,pemes,penbs,ph,phcl,phmes,phnbs,qphcl,qredox,qrho)
+    call prpheh(ah, ahmes, ahnbs, eh, ehmes, ehnbs, iopg, nopgmx, noutpt, pch, pe, pemes, penbs, ph, phcl, phmes, phnbs, qphcl, qredox, qrho)
 
     ! Print a table of computed alkalinity parameters.
     ! Compute the HCO3-CO3-OH total alkalinity.
@@ -388,7 +388,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     !   ntf1mx for ntfxmx
     !   ntf1t for ntfxt
     !   tf1 for tfx
-    call calk(alk1,conc,nstmax,ntf1,ntf1mx,ntf1t,tf1)
+    call calk(alk1, conc, nstmax, ntf1, ntf1mx, ntf1t, tf1)
 
     ! Compute the extended total alkalinity.
     ! Calling sequence substitutions:
@@ -397,13 +397,13 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     !   ntf2mx for ntfxmx
     !   ntf2t for ntfxt
     !   tf2 for tfx
-    call calk(alk2,conc,nstmax,ntf2,ntf2mx,ntf2t,tf2)
+    call calk(alk2, conc, nstmax, ntf2, ntf2mx, ntf2t, tf2)
 
-    call prtalk(alki,alk1,alk2,mrmlra,noutpt,ntf1t,ntf2t,qrho,rho,tempc,wfh2o)
+    call prtalk(alki, alk1, alk2, mrmlra, noutpt, ntf1t, ntf2t, qrho, rho, tempc, wfh2o)
 
     ! Calculate and print the electrical balance and the cation and
     ! anion contributions.
-    call gszm(conc,jcsort,narn1,narn2,nstmax,sigza,sigzc,sigzi,sigzm,zchar)
+    call gszm(conc, jcsort, narn1, narn2, nstmax, sigza, sigzc, sigzi, sigzm, zchar)
 
     msigzm = 0.5*sigzm
     sanion = -sigza
@@ -519,26 +519,26 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     if (iopr(5) .gt. 0) then
         ! Compute and print activity ratios of aqueous species.
-        call prtacr(actlg,iopr,jsflag,nbaspd,nbt,nbtmax,nelect,nhydr,noprmx,no2gaq,noutpt,nstmax,uspec,zchar)
+        call prtacr(actlg, iopr, jsflag, nbaspd, nbt, nbtmax, nelect, nhydr, noprmx, no2gaq, noutpt, nstmax, uspec, zchar)
     end if
 
     ! Print the aqueous species distribution.
-    call prtaqs(acflg,actlg,conc,conclg,iopr,jcsort,narn1,narn2,noprmx,noutpt,nstmax,uspec)
+    call prtaqs(acflg, actlg, conc, conclg, iopr, jcsort, narn1, narn2, noprmx, noutpt, nstmax, uspec)
 
     if (iopr(9) .gt. 0) then
         ! Compute and print the mean ionic activities and activity
         ! coefficients.
-        call prtmip(acflg,actlg,conclg,ctb,nbaspd,nbt,nbtmax,nelect,nhydr,nhydx,noutpt,nstmax,uspec,zchar)
+        call prtmip(acflg, actlg, conclg, ctb, nbaspd, nbt, nbtmax, nelect, nhydr, nhydx, noutpt, nstmax, uspec, zchar)
     end if
 
     ! Print the contributions of aqueous species to each mass balance.
-    call prtpct(conc,csts,ctb,iopr,jcsort,jflag,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,nelect,nhydr,noprmx,no2gaq,noutpt,nstmax,nsts,nstsmx,nstsr,uspec)
+    call prtpct(conc, csts, ctb, iopr, jcsort, jflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, nelect, nhydr, noprmx, no2gaq, noutpt, nstmax, nsts, nstsmx, nstsr, uspec)
 
     ! Compute and print the state of redox reactions that are not
     ! constrained to be at equilibrium.
-    call cdardx(actlg,actwlg,ah,ahrc,cdrsd,eh,ehfac,ehrc,farad,fo2lg,fo2lrc,jsflag,mosp,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,no2gaq,nstmax,pe,perc,ph,xlke,xlksd)
+    call cdardx(actlg, actwlg, ah, ahrc, cdrsd, eh, ehfac, ehrc, farad, fo2lg, fo2lrc, jsflag, mosp, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, no2gaq, nstmax, pe, perc, ph, xlke, xlksd)
 
-    call prtrdx(ah,ahrc,cdrsd,eh,ehrc,fo2lg,fo2lrc,jflgi,jsflag,narn1,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,nelect,nhydr,no2gaq,noutpt,nstmax,pe,perc,uspec)
+    call prtrdx(ah, ahrc, cdrsd, eh, ehrc, fo2lg, fo2lrc, jflgi, jsflag, narn1, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nelect, nhydr, no2gaq, noutpt, nstmax, pe, perc, uspec)
 
     ! Compute the saturation index for the reaction associated to
     ! each species. Do this for the reactions as they were written
@@ -553,17 +553,17 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     ! Calculate affinities and saturation indices using the 'd' set
     ! of reactions.
-    call gaffsd(actlg,afcnst,affpd,affsd,cdrsd,jflagd,jpflag,ncmpr,ndrsd,ndrsmx,ndrsrd,npt,nptmax,nst,nstmax,qxknph,sidrph,sidrsp,uphase,uspec,xbar,xlksd)
+    call gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndrsd, ndrsmx, ndrsrd, npt, nptmax, nst, nstmax, qxknph, sidrph, sidrsp, uphase, uspec, xbar, xlksd)
 
     ! Compute and print saturation index and affinity tables for
     ! reactions in the aqueous phase not constrained to be at
     ! equilibrium.
-    call prtsia(affsd,jflagd,jflgi,jsflag,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,nhydr,noutpt,nrdxsp,nstmax,sidrsp,uspec)
+    call prtsia(affsd, jflagd, jflgi, jsflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
 
     if (iopr(7) .ge. 0) then
         ! Print saturation index and affinity tables for the
         ! various non-aqueous phases.
-        call prtsat(affpd,iern1,iern2,ilrn1,ilrn2,imrn1,imrn2,iopr,iopt,ixrn1,ixrn2,jpflag,noutpt,noprmx,noptmx,nptmax,sidrph,tolspf,uphase)
+        call prtsat(affpd, iern1, iern2, ilrn1, ilrn2, imrn1, imrn2, iopr, iopt, ixrn1, ixrn2, jpflag, noutpt, noprmx, noptmx, nptmax, sidrph, tolspf, uphase)
     end if
 
     if (iopt(4).ge.1 .and. nxti.gt.0) then
@@ -577,7 +577,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
         do nxi = 1,nxti
             np = npnxp(nxi)
             ncount = ncount + 1
-            call prtsso(acflg,actlg,affpd,affsd,ixrn1,ixrn2,jsol,jsomax,ncmpr,noutpt,np,nptmax,nstmax,nxtmax,sidrph,sidrsp,tolspf,uspec,uphase,uxtype,xbar,xbarlg)
+            call prtsso(acflg, actlg, affpd, affsd, ixrn1, ixrn2, jsol, jsomax, ncmpr, noutpt, np, nptmax, nstmax, nxtmax, sidrph, sidrsp, tolspf, uspec, uphase, uxtype, xbar, xbarlg)
         end do
 
         if (ncount .le. 0) then
@@ -610,7 +610,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
                 !   ndrsd for ndrs
                 !   ndrsrd for ndrsr
                 !   xlksd for xlks
-                call hpsat(acflg,act,actlg,afcnst,affpd,affsd,apx,bpx,cdrsd,eps100,iapxmx,ibpxmx,ier,iktmax,ixrn1,jflag,jpflag,jsflag,jsol,ncmpr,ndrsd,ndrsmx,ndrsrd,noutpt,np,nptmax,nstmax,nttyo,nxrn1,nxrn2,nxtmax,sidrsp,sidrph,uphase,uspec,wfac,xbar,xbarlg,xlksd)
+                call hpsat(acflg, act, actlg, afcnst, affpd, affsd, apx, bpx, cdrsd, eps100, iapxmx, ibpxmx, ier, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, ncmpr, ndrsd, ndrsmx, ndrsrd, noutpt, np, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, sidrsp, sidrph, uphase, uspec, wfac, xbar, xbarlg, xlksd)
 
                 ! Check to see if the hypothetical affinity calculation
                 ! converged.
@@ -626,7 +626,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
                     go to 310
                 end if
 
-                call prtsso(acflg,actlg,affpd,affsd,ixrn1,ixrn2,jsol,jsomax,ncmpr,noutpt,np,nptmax,nstmax,nxtmax,sidrph,sidrsp,tolspf,uspec,uphase,uxtype,xbar,xbarlg)
+                call prtsso(acflg, actlg, affpd, affsd, ixrn1, ixrn2, jsol, jsomax, ncmpr, noutpt, np, nptmax, nstmax, nxtmax, sidrph, sidrsp, tolspf, uspec, uphase, uxtype, xbar, xbarlg)
             end if
 
 310 continue
@@ -657,7 +657,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
             np = ngexpi(nei)
             ncount = ncount + 1
 
-            call prtgex(acflg,actlg,affpd,affsd,cegexs,conc,egexjc,egexjf,egexpa,egexpc,egexs,egexw,iern1,iern2,ietmax,jern1,jern2,jetmax,jgext,kern1,kern2,ketmax,kgexsa,moph,mosp,netmax,ngexsa,ngext,noutpt,np,nptmax,nstmax,sidrph,sidrsp,tolspf,ugexj,ugexmo,uspec,uphase,xbar,xbarlg,xgexw,wkgwi)
+            call prtgex(acflg, actlg, affpd, affsd, cegexs, conc, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
         end do
 
         if (ncount .le. 0) then
@@ -683,7 +683,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
                 ier = 0
                 ncount = ncount + 1
 
-                call prtgex(acflg,actlg,affpd,affsd,cegexs,conc,egexjc,egexjf,egexpa,egexpc,egexs,egexw,iern1,iern2,ietmax,jern1,jern2,jetmax,jgext,kern1,kern2,ketmax,kgexsa,moph,mosp,netmax,ngexsa,ngext,noutpt,np,nptmax,nstmax,sidrph,sidrsp,tolspf,ugexj,ugexmo,uspec,uphase,xbar,xbarlg,xgexw,wkgwi)
+                call prtgex(acflg, actlg, affpd, affsd, cegexs, conc, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
             end if
         end do
 
@@ -696,7 +696,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     if (iopr(8) .ge. 0) then
         ! Print a table of equilibrium fugacities.
-        call prtfug(jgsort,fugac,fugalg,jsflag,ngrn1,ngt,ngtmax,noutpt,nstmax,uspec)
+        call prtfug(jgsort, fugac, fugalg, jsflag, ngrn1, ngt, ngtmax, noutpt, nstmax, uspec)
     end if
 
     write (noutpt,2000)

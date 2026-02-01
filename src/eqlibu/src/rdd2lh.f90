@@ -58,7 +58,7 @@ subroutine rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, 
     read (ninpts,1000,err=990) uline1
 1000 format(a80)
 
-    call parslj(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+    call parslj(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
 
     ! Compare the number of fields found with that expected.
     if (nfldtx .gt. 0) then

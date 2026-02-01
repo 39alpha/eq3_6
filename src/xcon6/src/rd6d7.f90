@@ -198,7 +198,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
     read (ninpts,1000,end=100,err=990) uline1
 1000 format(a80)
 
-    call parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+    call parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
     ustr = ufield(1)
 
     if (ustr(1:8) .ne. '--------') then
@@ -217,7 +217,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 105 continue
     do 110 n = 1,ntitmx + 1
         read (ninpts,1000,err=990) uline1
-        call parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+        call parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
         ustr = ufield(1)
 
         if (ustr(1:8) .eq. '--------') then
@@ -241,13 +241,13 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
         uheadx = 'calculational mode'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
         end if
 
-        call gmarko(nfldmx,nfldt,nmark,nttyo,ufield,uline1)
+        call gmarko(nfldmx, nfldt, nmark, nttyo, ufield, uline1)
 
         if (nmark .gt. 0) then
             nmodl2 = nmark - 2
@@ -255,13 +255,13 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
         uheadx = 'model type'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
         end if
 
-        call gmarko(nfldmx,nfldt,nmark,nttyo,ufield,uline1)
+        call gmarko(nfldmx, nfldt, nmark, nttyo, ufield, uline1)
 
         if (nmark .gt. 0) then
             nmodl1 = nmark - 1
@@ -273,13 +273,13 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
         uheadx = 'temperature model'
         nfldtx = 3
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
         end if
 
-        call gmarko(nfldmx,nfldt,nmark,nttyo,ufield,uline1)
+        call gmarko(nfldmx, nfldt, nmark, nttyo, ufield, uline1)
 
         if (nmark .gt. 0) then
             jtemp = nmark - 2
@@ -287,14 +287,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
         uheadx = 'tstart(c)'
         nfldtx = 8
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
         end if
 
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 990
@@ -304,7 +304,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
         do 130 i = 1,3
             ustr = ufield(2*i + 2)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 990
@@ -317,14 +317,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
             ! Note: cplim does not appear on the "D" format input file.
             uheadx = 'starting value of zi'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
             end if
 
             ustr = ufield(2)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 990
@@ -332,7 +332,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             zistrt = var
             ustr = ufield(4)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 990
@@ -342,14 +342,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             uheadx = 'starting time (sec)'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
             end if
 
             ustr = ufield(2)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 990
@@ -357,7 +357,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             tstrt = var
             ustr = ufield(4)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 990
@@ -367,14 +367,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             uheadx = 'max. steps'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
             end if
 
             ustr = ufield(2)
-            call chrint(ivar,nttyo,qrderr,ustr)
+            call chrint(ivar, nttyo, qrderr, ustr)
 
             if (qrderr) then
                 go to 990
@@ -382,7 +382,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             kstpmx = ivar
             ustr = ufield(4)
-            call chrint(ivar,nttyo,qrderr,ustr)
+            call chrint(ivar, nttyo, qrderr, ustr)
 
             if (qrderr) then
                 go to 990
@@ -393,14 +393,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
             ! Print interval parameters.
             uheadx = 'linear print interval'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
             end if
 
             ustr = ufield(2)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 990
@@ -408,7 +408,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             dzprnt = var
             ustr = ufield(4)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 990
@@ -426,7 +426,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             uheadx = 'suppress mineral phases'
             nfldtx = 1
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -434,7 +434,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
             uheadx = 'phases w/ elements'
             nfldtx = 3
-            call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+            call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -467,7 +467,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 150 continue
 
                 nfldtx = 0
-                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -528,7 +528,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 170 continue
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -565,7 +565,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     uheadx = 'fixed fugacity phases- species, '
                     nfldtx = 1
-                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -582,7 +582,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -613,7 +613,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     uffg(nffg) = ufield(1)(1:24)
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -621,7 +621,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     moffg(nffg) = var
                     ustr = ufield(3)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -631,7 +631,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
 190 continue
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -654,7 +654,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     ! Read a second dashed separator line.
 200 continue
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -674,7 +674,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     uheadx = 'reactants'
                     nfldtx = 1
-                    call rdd2l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,uline2,ulscr)
+                    call rdd2l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, uline2, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -692,7 +692,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
 210 continue
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -728,7 +728,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     if (ustr(1:4) .eq. 'none') then
                         nfldtx = 1
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -757,7 +757,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     nrct = nrc
                     ureac(nrc) = ufield(2)(1:24)
                     ustr = ufield(4)
-                    call chrint(ivar,nttyo,qrderr,ustr)
+                    call chrint(ivar, nttyo, qrderr, ustr)
 
                     if (qrderr) then
                         go to 990
@@ -767,14 +767,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     uheadx = 'moles remaining'
                     nfldtx = 4
-                    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+                    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
                     end if
 
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -782,7 +782,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     morr(nrc) = var
                     ustr = ufield(4)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -792,7 +792,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     uheadx = 'reactant type'
                     nfldtx = 4
-                    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+                    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -815,7 +815,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(4)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -825,14 +825,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     uheadx = 'surface type'
                     nfldtx = 4
-                    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+                    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
                     end if
 
                     ustr = ufield(2)
-                    call chrint(ivar,nttyo,qrderr,ustr)
+                    call chrint(ivar, nttyo, qrderr, ustr)
 
                     if (qrderr) then
                         go to 990
@@ -840,7 +840,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     nsk(nrc) = ivar
                     ustr = ufield(4)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -860,7 +860,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                         uheadx = 'end-member'
                         nfldtx = 4
-                        call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+                        call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -879,7 +879,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                         uendb(iktb,nxrt) = ufield(2)(1:24)
                         ustr = ufield(4)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 990
@@ -888,7 +888,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                         rxbarb(iktb,nxrt) = var
 
                         nfldtx = 4
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -908,7 +908,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                         uheadx = 'end-member'
                         nfldtx = 4
 230 continue
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -945,7 +945,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                         end if
 
                         ustr = ufield(2)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 990
@@ -955,7 +955,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                         uheadx = 'element'
                         nfldtx = 4
-                        call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+                        call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -974,7 +974,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                         uesrb(ncb,nsrt) = ufield(2)(1:8)
                         ustr = ufield(4)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 990
@@ -983,7 +983,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                         cesrb(ncb,nsrt) = var
 
                         nfldtx = 4
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -1007,7 +1007,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                         uheadx = 'element'
                         nfldtx = 4
 250 continue
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -1034,7 +1034,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(2)
-                    call chrint(ivar,nttyo,qrderr,ustr)
+                    call chrint(ivar, nttyo, qrderr, ustr)
 
                     if (qrderr) then
                         go to 990
@@ -1044,7 +1044,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     ! Rate law parameters, forward direction.
                     nfldtx = 4
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1097,7 +1097,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     i = im
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1107,7 +1107,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     if (nrk(1,nrc) .eq. 2) then
                         ustr = ufield(4)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 990
@@ -1124,7 +1124,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     uheadx = 'aqueous species'
                     nfldtx = 4
 270 continue
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1147,7 +1147,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                         udac(n,i,1,nrc) = ufield(2)(1:24)
                         ustr = ufield(4)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 990
@@ -1178,7 +1178,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1189,7 +1189,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     iact(i,1,nrc) = 0
 
                     nfldtx = 4
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1226,7 +1226,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1239,7 +1239,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(4)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1253,7 +1253,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
 280 continue
                     nfldtx = 4
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1266,7 +1266,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     ! Rate law parameters, backward direction.
                     ustr = ufield(2)
-                    call chrint(ivar,nttyo,qrderr,ustr)
+                    call chrint(ivar, nttyo, qrderr, ustr)
 
                     if (qrderr) then
                         go to 990
@@ -1284,7 +1284,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     im = im + 1
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1337,7 +1337,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     i = im
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1347,7 +1347,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     if (nrk(2,nrc) .eq. 2) then
                         ustr = ufield(4)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 990
@@ -1364,7 +1364,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     uheadx = 'aqueous species'
                     nfldtx = 4
 310 continue
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1387,7 +1387,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                         udac(n,i,2,nrc) = ufield(2)(1:24)
                         ustr = ufield(4)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 990
@@ -1422,7 +1422,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1433,7 +1433,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     iact(i,2,nrc) = 0
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1484,7 +1484,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(2)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1497,7 +1497,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     ustr = ufield(4)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 990
@@ -1510,7 +1510,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     end if
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1528,7 +1528,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                     ! Note: iopt(1) = iopt1, etc.
                     nfldtx = 1
                     uheadx = 'options'
-                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1536,7 +1536,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     i = 0
                     nfldtx = 1
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -1603,7 +1603,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 390 continue
                         jdesc = jdesc + 1
                         nfldtx = 1
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -1710,7 +1710,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                 ! Development options.
                                 uheadx = 'development options'
                                 nfldtx = 1
-                                call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                 if (qrderr) then
                                     go to 999
@@ -1730,7 +1730,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 440 continue
                                 i = i + 1
                                 nfldtx = 1
-                                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                 if (qrderr) then
                                     go to 999
@@ -1776,7 +1776,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                     go to 990
 
 460 continue
-                                    call chrint(ivar,nttyo,qrderr,ustr)
+                                    call chrint(ivar, nttyo, qrderr, ustr)
 
                                     if (qrderr) then
                                         go to 990
@@ -1807,7 +1807,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                     ! Tolerances.
                                     uheadx = 'tolerances'
                                     nfldtx = 1
-                                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                     if (qrderr) then
                                         go to 999
@@ -1827,7 +1827,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 510 continue
                                     i = i + 1
                                     nfldtx = 0
-                                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                     if (qrderr) then
                                         go to 999
@@ -1868,7 +1868,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                                         if (idescx .eq. 1) then
                                             ! Itermx.
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1877,7 +1877,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             itermx = ivar
                                         else if (idescx .eq. 2) then
                                             ! Dlzidp.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1886,7 +1886,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             dlzidp = var
                                         else if (idescx .eq. 3) then
                                             ! Tolbt.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1895,7 +1895,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             tolbt = var
                                         else if (idescx .eq. 4) then
                                             ! Toldl.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1904,7 +1904,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             toldl = var
                                         else if (idescx .eq. 5) then
                                             ! Tolx.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1913,7 +1913,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             tolx = var
                                         else if (idescx .eq. 6) then
                                             ! Tolsat.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1922,7 +1922,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             tolsat = var
                                         else if (idescx .eq. 7) then
                                             ! Tolsst.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1931,7 +1931,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             tolsst = var
                                         else if (idescx .eq. 8) then
                                             ! Sscrew1.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1940,7 +1940,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             sscrew(1) = var
                                         else if (idescx .eq. 9) then
                                             ! Sscrew2.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1949,7 +1949,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             sscrew(2) = var
                                         else if (idescx .eq. 10) then
                                             ! Sscrew3.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1958,7 +1958,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             sscrew(3) = var
                                         else if (idescx .eq. 11) then
                                             ! Sscrew4.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1967,7 +1967,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             sscrew(4) = var
                                         else if (idescx .eq. 12) then
                                             ! Sscrew5.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1976,7 +1976,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             sscrew(5) = var
                                         else if (idescx .eq. 13) then
                                             ! Sscrew6.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1985,7 +1985,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             sscrew(6) = var
                                         else if (idescx .eq. 14) then
                                             ! Zklogu.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -1994,7 +1994,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             zklogu = var
                                         else if (idescx .eq. 15) then
                                             ! Zklogl.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2003,7 +2003,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             zklogl = var
                                         else if (idescx .eq. 16) then
                                             ! Zkfac.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2012,7 +2012,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             zkfac = var
                                         else if (idescx .eq. 17) then
                                             ! Dlzmx1.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2021,7 +2021,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             dlzmx1 = var
                                         else if (idescx .eq. 18) then
                                             ! Dlzmx2.
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2030,7 +2030,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             dlzmx2 = var
                                         else if (idescx .eq. 19) then
                                             ! Nordlm.
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2039,7 +2039,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             nordlm = ivar
                                         else if (idescx .eq. 20) then
                                             ! Ntrymx.
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2048,7 +2048,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ntrymx = ivar
                                         else if (idescx .eq. 21) then
                                             ! Npslmx.
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2057,7 +2057,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             npslmx = ivar
                                         else if (idescx .eq. 22) then
                                             ! Nsslmx.
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2066,7 +2066,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             nsslmx = ivar
                                         else if (idescx .eq. 23) then
                                             ! Ioscan.
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2085,7 +2085,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                                         do 530 n = 1,ntitmx + 1
                                             read (ninpts,1000,err=990) uline1
-                                            call parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+                                            call parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
                                             ustr = ufield(1)
 
                                             if (ustr(1:8) .eq. '--------') then
@@ -2106,14 +2106,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ! Original temperature.
                                             uheadx = 'temperature (c)'
                                             nfldtx = 2
-                                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
                                             end if
 
                                             ustr = ufield(2)
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 990
@@ -2124,14 +2124,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ! Electrical imbalance.
                                             uheadx = 'electrical imbalance'
                                             nfldtx = 2
-                                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
                                             end if
 
                                             ustr = ufield(2)
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 990
@@ -2142,14 +2142,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ! Number of aqueous basis species.
                                             uheadx = 'number of aqueous master species'
                                             nfldtx = 2
-                                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
                                             end if
 
                                             ustr = ufield(2)
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 990
@@ -2163,14 +2163,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ! Postion of last pure mineral.
                                             uheadx = 'position of last pure mineral'
                                             nfldtx = 2
-                                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
                                             end if
 
                                             ustr = ufield(2)
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 990
@@ -2181,14 +2181,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ! Postion of last solid solution.
                                             uheadx = 'position of last solid solution'
                                             nfldtx = 2
-                                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
                                             end if
 
                                             ustr = ufield(2)
-                                            call chrint(ivar,nttyo,qrderr,ustr)
+                                            call chrint(ivar, nttyo, qrderr, ustr)
 
                                             if (qrderr) then
                                                 go to 990
@@ -2199,14 +2199,14 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ! Nxmod options.
                                             uheadx = 'suppressed species'
                                             nfldtx = 1
-                                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
                                             end if
 
                                             nfldtx = 0
-                                            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2281,7 +2281,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             end if
 
                                             ustr = ufield(4)
-                                            call chreal(nttyo,qrderr,ustr,var)
+                                            call chreal(nttyo, qrderr, ustr, var)
 
                                             if (qrderr) then
                                                 go to 990
@@ -2291,7 +2291,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
 560 continue
                                             nfldtx = 0
-                                            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2319,7 +2319,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                             ! Note: iopg(1) = iopg1, etc.
                                             uheadx = 'iopg options'
                                             nfldtx = 1
-                                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2327,7 +2327,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                                             i = 0
                                             nfldtx = 1
-                                            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                             if (qrderr) then
                                                 go to 999
@@ -2391,7 +2391,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 690 continue
                                                 jdesc = jdesc + 1
                                                 nfldtx = 1
-                                                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                                 if (qrderr) then
                                                     go to 999
@@ -2471,7 +2471,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     ! Balance totals.
                                                     uheadx = 'elements, moles and moles aqueous'
                                                     nfldtx = 1
-                                                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2480,7 +2480,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     i = 0
 730 continue
                                                     nfldtx = 0
-                                                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2509,7 +2509,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                                                     uelemb(i) = ufield(1)(1:8)
                                                     ustr = ufield(2)
-                                                    call chreal(nttyo,qrderr,ustr,var)
+                                                    call chreal(nttyo, qrderr, ustr, var)
 
                                                     if (qrderr) then
                                                         go to 990
@@ -2517,7 +2517,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                                                     mteb(i) = var
                                                     ustr = ufield(3)
-                                                    call chreal(nttyo,qrderr,ustr,var)
+                                                    call chreal(nttyo, qrderr, ustr, var)
 
                                                     if (qrderr) then
                                                         go to 990
@@ -2531,7 +2531,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     ! Basis variable data.
                                                     uheadx = 'master species and logarithmic basis variables'
                                                     nfldtx = 1
-                                                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2540,7 +2540,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     i = 0
 760 continue
                                                     nfldtx = 0
-                                                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2570,7 +2570,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     unrms(i) = ufield(1)(1:24)
                                                     undms(i) = ufield(2)(1:24)
                                                     ustr = ufield(3)
-                                                    call chreal(nttyo,qrderr,ustr,var)
+                                                    call chreal(nttyo, qrderr, ustr, var)
 
                                                     if (qrderr) then
                                                         go to 990
@@ -2585,7 +2585,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     ! Physically removed system data.
                                                     uheadx = 'physically removed subsystem'
                                                     nfldtx = 1
-                                                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2596,7 +2596,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     kprs = 0
 
                                                     nfldtx = 0
-                                                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2610,7 +2610,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                                                     if (ustr(1:4) .eq. 'none') then
                                                         nfldtx = 1
-                                                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                                         if (qrderr) then
                                                             go to 999
@@ -2667,7 +2667,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     uprs(nprmn)(1:24) = ufield(2)(1:24)
                                                     uprs(nprmn)(25:48) = ufield(2)(1:24)
                                                     ustr = ufield(3)
-                                                    call chreal(nttyo,qrderr,ustr,var)
+                                                    call chreal(nttyo, qrderr, ustr, var)
 
                                                     if (qrderr) then
                                                         go to 990
@@ -2676,7 +2676,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     mprs(nprmn) = var
 
                                                     nfldtx = 0
-                                                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2693,7 +2693,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
 810 continue
                                                     nfldtx = 0
-                                                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                                     if (qrderr) then
                                                         go to 999
@@ -2727,7 +2727,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
                                                     uprs(nprmx)(1:24) = ux
                                                     uprs(nprmx)(25:48) = ufield(2)(1:24)
                                                     ustr = ufield(3)
-                                                    call chreal(nttyo,qrderr,ustr,var)
+                                                    call chreal(nttyo, qrderr, ustr, var)
 
                                                     if (qrderr) then
                                                         go to 990

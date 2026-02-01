@@ -362,7 +362,7 @@ subroutine rsatch(csts, egers, egexs, iern1, ietmax, iindx1, iktmax, iopt, ipndx
 
                         ! Calling sequence substitutions:
                         !   uspec(ns) for unam48
-                        call fmspnm(jlen,uspec(ns),uspn56)
+                        call fmspnm(jlen, uspec(ns), uspn56)
                         write (noutpt,1050) uspn56(1:jlen)
                         write (nttyo,1050) uspn56(1:jlen)
 1050 format(/' * Error - (EQ6/rsatch) Programming error'," trap: Can't determine",/7x,'the exchange site index',' je for the species',/7x,a,'.')
@@ -380,7 +380,7 @@ subroutine rsatch(csts, egers, egexs, iern1, ietmax, iindx1, iktmax, iopt, ipndx
 
                         ! Calling sequence substitutions:
                         !   uspec(ns) for unam48
-                        call fmspnm(jlen,uspec(ns),uspn56)
+                        call fmspnm(jlen, uspec(ns), uspn56)
                         write (noutpt,1060) uspn56(1:jlen)
                         write (nttyo,1060) uspn56(1:jlen)
 1060 format(/' * Error - (EQ6/rsatch) Programming error'," trap: Can't determine",/7x,'the exchange species',' index ie of the species',/7x,a,'.')

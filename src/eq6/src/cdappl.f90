@@ -291,8 +291,8 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
 
     ! Compute data for a summary of the elemental composition of the
     ! aqueous phase.
-    call initaz(mte,nctmax)
-    call initaz(mteaq,nctmax)
+    call initaz(mte, nctmax)
+    call initaz(mteaq, nctmax)
 
     do nss = 1,nst
         ns = jssort(nss)
@@ -330,8 +330,8 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
 
     ! Compute the elemental composition of the aqueous solution
     ! (molalities and ppm: mg/kg.sol).
-    call initaz(cteaq,nctmax)
-    call initaz(ppmwe,nctmax)
+    call initaz(cteaq, nctmax)
+    call initaz(ppmwe, nctmax)
 
     do nc = 1,nct
         cteaq(nc) = wkgwi*mteaq(nc)
@@ -340,9 +340,9 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
 
     ! Compute the mass and concentration totals in the aqueous phase
     ! in terms of data file basis species.
-    call initaz(mtbaq,nbtmax)
-    call initaz(ctb,nbtmax)
-    call initaz(ppmwb,nbtmax)
+    call initaz(mtbaq, nbtmax)
+    call initaz(ctb, nbtmax)
+    call initaz(ppmwb, nbtmax)
 
     do nss = narn1,narn2
         ns = jcsort(nss)
@@ -399,12 +399,12 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     ! Compute the stoichiometric ionic strength.
     ! Calling sequence substitution:
     !   fxist for fxistc
-    call cfxist(ctb,fxist,nbaspd,nbt,nbtmax,nstmax,zchsq2)
+    call cfxist(ctb, fxist, nbaspd, nbt, nbtmax, nstmax, zchsq2)
 
     ! Compute the stoichiometric ionic asymmetry.
     ! Calling sequence substitution:
     !   fjest for fjestc
-    call cfjest(ctb,fjest,nbaspd,nbt,nbtmax,nstmax,zchcu6)
+    call cfjest(ctb, fjest, nbaspd, nbt, nbtmax, nstmax, zchcu6)
 
     ! Compute alkalinity parameters.
     ! Compute the HCO3-CO3-OH total alkalinity.
@@ -414,7 +414,7 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     !   ntf1mx for ntfxmx
     !   ntf1t for ntfxt
     !   tf1 for tfx
-    call calk(alk1,conc,nstmax,ntf1,ntf1mx,ntf1t,tf1)
+    call calk(alk1, conc, nstmax, ntf1, ntf1mx, ntf1t, tf1)
 
     ! Compute the extended total alkalinity.
     ! Calling sequence substitutions:
@@ -423,40 +423,40 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     !   ntf2mx for ntfxmx
     !   ntf2t for ntfxt
     !   tf2 for tfx
-    call calk(alk2,conc,nstmax,ntf2,ntf2mx,ntf2t,tf2)
+    call calk(alk2, conc, nstmax, ntf2, ntf2mx, ntf2t, tf2)
 
     alki = 0.
     alk = alk2
 
     ! Compute data for redox reactions that are not constrained to be
     ! at equilibrium.
-    call cdardx(actlg,actwlg,ah,ahrc,cdrsd,eh,ehfac,ehrc,farad,fo2lg,fo2lrc,jsflag,mosp,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,no2gaq,nstmax,pe,perc,ph,xlke,xlksd)
+    call cdardx(actlg, actwlg, ah, ahrc, cdrsd, eh, ehfac, ehrc, farad, fo2lg, fo2lrc, jsflag, mosp, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, no2gaq, nstmax, pe, perc, ph, xlke, xlksd)
 
     ! Calculate affinities and saturation indices using the 'd' set
     ! of reactions.
-    call gaffsd(actlg,afcnst,affpd,affsd,cdrsd,jflagd,jpflag,ncmpr,ndrsd,ndrsmx,ndrsrd,npt,nptmax,nst,nstmax,qxknph,sidrph,sidrsp,uphase,uspec,xbar,xlksd)
+    call gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndrsd, ndrsmx, ndrsrd, npt, nptmax, nst, nstmax, qxknph, sidrph, sidrsp, uphase, uspec, xbar, xlksd)
 
     vosoct = 0.
     wosoct = 0.
 
-    call initaz(voph,nptmax)
-    call initaz(woph,nptmax)
-    call initaz(vosp,nstmax)
-    call initaz(wosp,nstmax)
+    call initaz(voph, nptmax)
+    call initaz(woph, nptmax)
+    call initaz(vosp, nstmax)
+    call initaz(wosp, nstmax)
 
-    call initaz(mopht,nptmax)
-    call initaz(vopht,nptmax)
-    call initaz(wopht,nptmax)
-    call initaz(mospt,nstmax)
-    call initaz(vospt,nstmax)
-    call initaz(wospt,nstmax)
+    call initaz(mopht, nptmax)
+    call initaz(vopht, nptmax)
+    call initaz(wopht, nptmax)
+    call initaz(mospt, nstmax)
+    call initaz(vospt, nstmax)
+    call initaz(wospt, nstmax)
 
-    call initaz(mophg,nptmax)
-    call initaz(vophg,nptmax)
-    call initaz(wophg,nptmax)
-    call initaz(mospg,nstmax)
-    call initaz(vospg,nstmax)
-    call initaz(wospg,nstmax)
+    call initaz(mophg, nptmax)
+    call initaz(vophg, nptmax)
+    call initaz(wophg, nptmax)
+    call initaz(mospg, nstmax)
+    call initaz(vospg, nstmax)
+    call initaz(wospg, nstmax)
 
     if (iopt(1).eq.0 .or. iopt(1).eq.1) then
         ! Compute data which describe the solid phases in the ES.
@@ -497,12 +497,12 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
         ! Compute the product mineral assemblage which is instantaneous
         ! with respect to Xi (for the fluid-centered flow-through system
         ! only).
-        call initaz(mophj,nptmax)
-        call initaz(vophj,nptmax)
-        call initaz(wophj,nptmax)
-        call initaz(mospj,nstmax)
-        call initaz(vospj,nstmax)
-        call initaz(wospj,nstmax)
+        call initaz(mophj, nptmax)
+        call initaz(vophj, nptmax)
+        call initaz(wophj, nptmax)
+        call initaz(mospj, nstmax)
+        call initaz(vospj, nstmax)
+        call initaz(wospj, nstmax)
 
         if (npts .gt. 0) then
             ! Use the two-point derivative.

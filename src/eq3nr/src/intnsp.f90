@@ -80,7 +80,7 @@ subroutine intnsp(coval, covali, ier, jflag, narn1, narn2, nbasp, nbt, nbti, nbt
 
             ! Calling sequence substitutions:
             !   ucospi(nbi) for unam48
-            call fmspnx(jlen,ucospi(nbi),uspn56)
+            call fmspnx(jlen, ucospi(nbi), uspn56)
 
             if (jfl .eq. 17) then
                 write (noutpt,1000) uspn56(1:jlen)
@@ -122,7 +122,7 @@ subroutine intnsp(coval, covali, ier, jflag, narn1, narn2, nbasp, nbt, nbti, nbt
 
                 ! Calling sequence substitutions:
                 !   uspec(ns1) for unam48
-                call fmspnx(jlen,uspec(ns1),uspn56)
+                call fmspnx(jlen, uspec(ns1), uspn56)
                 write (noutpt,1040) uspn56(1:jlen)
                 write (nttyo,1040) uspn56(1:jlen)
 1040 format(/' * Error - (EQ3NR/intnsp) The pHCl constraint',' (jflag= 21)',/7x,"can't be applied to the species ",a,'.',/7x,'It can only be applied to H+ or Cl-.')
@@ -156,7 +156,7 @@ subroutine intnsp(coval, covali, ier, jflag, narn1, narn2, nbasp, nbt, nbti, nbt
 
             ! Calling sequence substitutions:
             !   ucospi(nbi) for unam48
-            call fmspnx(jlen,ucospi(nbi),uspn56)
+            call fmspnx(jlen, ucospi(nbi), uspn56)
             write (noutpt,1050) uspn56(1:jlen)
             write (nttyo,1050) uspn56(1:jlen)
 1050 format(/' * Error - (EQ3NR/intnsp) The species ',a,/7x,'is required for a heterogeneous equilibrium',' constraint',/7x,"(jflag= 25), but it isn't otherwise",' present in the current system.')

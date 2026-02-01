@@ -288,7 +288,7 @@ subroutine gnenb(ipbt_asv, ikt_asv, jpdblo, jpfc_asv, nap_asv, nat_asv, nazt_asv
             ! input here, in which case only the default set holds.
             ! Load the default set into the palpha array.
             nmax = ipbt_asv*nap_par
-            call initaz(palpha,nmax)
+            call initaz(palpha, nmax)
             palpha(1,1) = 2.0
             palpha(2,1) = 12.0
             palpha(1,2) = 1.4
@@ -329,7 +329,7 @@ subroutine gnenb(ipbt_asv, ikt_asv, jpdblo, jpfc_asv, nap_asv, nat_asv, nazt_asv
                 ! Found a line with the alpha(1) parameter.
                 j5 = index(ux80,'=')
                 udastr = ux80(j5 + 1:80)
-                call g1dat(ier,noutpt,nttyo,udastr,var)
+                call g1dat(ier, noutpt, nttyo, udastr, var)
 
                 if (ier .gt. 0) then
                     write (noutpt,1110) uline(1:j3)
@@ -355,7 +355,7 @@ subroutine gnenb(ipbt_asv, ikt_asv, jpdblo, jpfc_asv, nap_asv, nat_asv, nazt_asv
                         ! Found a line with the expected alpha(i) parameter.
                         j5 = index(ux80,'=')
                         udastr = ux80(j5 + 1:80)
-                        call g1dat(ier,noutpt,nttyo,udastr,var)
+                        call g1dat(ier, noutpt, nttyo, udastr, var)
 
                         if (ier .le. 0) then
                             palphi(i) = var

@@ -87,7 +87,7 @@ subroutine autosw(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, ax
     logical :: qbswok
 
     ! Save the nbasp array.
-    call copyia(nbasp,nbaspx,nbt)
+    call copyia(nbasp, nbaspx, nbt)
 
     do krow = 1,kbt
         nb = iindx1(krow)
@@ -108,13 +108,13 @@ subroutine autosw(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, ax
 
                     ! Calling sequence substitutions:
                     !   nsd for ns2
-                    call switch(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,narn1,narxmx,nbasp,nbaspd,nbaspx,nb,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,nsd,nst,nstmax,ntprmx,nttyo,qbassw,qbswok,uspec)
+                    call switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, narn1, narxmx, nbasp, nbaspd, nbaspx, nb, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, nsd, nst, nstmax, ntprmx, nttyo, qbassw, qbswok, uspec)
                 end if
             end if
 
             nbasp(nb) = ns2
 
-            call switch(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,narn1,narxmx,nbasp,nbaspd,nbaspx,nb,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,ns2,nst,nstmax,ntprmx,nttyo,qbassw,qbswok,uspec)
+            call switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, narn1, narxmx, nbasp, nbaspd, nbaspx, nb, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, ns2, nst, nstmax, ntprmx, nttyo, qbassw, qbswok, uspec)
 
             ! Update the names in the uzvec1 array.
             uzvec1(krow) = uspec(ns2)

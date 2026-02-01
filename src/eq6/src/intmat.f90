@@ -163,7 +163,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
                     ! Calling sequence substitutions:
                     !   jlenb for jlen2
                     !   uspb56 for uspn56
-                    call fmspnx(jlenb,uzveci(krow),uspb56)
+                    call fmspnx(jlenb, uzveci(krow), uspb56)
 
                     do nb = 1,nbt
                         ns1 = nbasp(nb)
@@ -178,7 +178,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
                             ! Calling sequence substitutions:
                             !   jlena for jlen2
                             !   uspa56 for uspn56
-                            call fmspnx(jlena,ubmtbi(nbi),uspa56)
+                            call fmspnx(jlena, ubmtbi(nbi), uspa56)
 
                             kcol = kcol + 1
                             iindx1(kcol) = nb
@@ -202,7 +202,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
                                         ! Calling sequence substitutions:
                                         !   jlend for jlen2
                                         !   uspd56 for uspn56
-                                        call fmspnx(jlend,uobsw(2,n),uspd56)
+                                        call fmspnx(jlend, uobsw(2, n), uspd56)
 
                                         write (noutpt,1010) uspb56(1:jlenb),uspa56(1:jlena),uspd56(1:jlend)
                                         write (nttyo,1010) uspb56(1:jlenb),uspa56(1:jlena),uspd56(1:jlend)
@@ -217,7 +217,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
                                     !   Calling sequence substitutions:
                                     !     jlenc for jlen2
                                     !     uspc56 for uspn56
-                                    call fmspnx(jlenc,uobsw(1,n),uspc56)
+                                    call fmspnx(jlenc, uobsw(1, n), uspc56)
 
                                     write (noutpt,1020) uspb56(1:jlenb),uspa56(1:jlena),uspc56(1:jlenc)
                                     write (nttyo,1020) uspb56(1:jlenb),uspa56(1:jlena),uspc56(1:jlenc)
@@ -310,7 +310,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
 
             qloffg = .true.
         else
-            call fmspnm(jlen2,uzveci(krow),uspn56)
+            call fmspnm(jlen2, uzveci(krow), uspn56)
             write (noutpt,1080) uspn56(1:jlen2)
             write (nttyo,1080) uspn56(1:jlen2)
 1080 format(/' * Error - (EQ6/intmat) The species ',a,/7x,'is in the system described on the input file, but it'," isn't",/7x,"on the data file and wasn't created",' following an input file directive.')
@@ -338,7 +338,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
             end if
         end do
 
-        call fmspnm(jlen2,uzveci(krow),uspn56)
+        call fmspnm(jlen2, uzveci(krow), uspn56)
         write (noutpt,1080) uspn56(1:jlen2)
         write (nttyo,1080) uspn56(1:jlen2)
         nerr = nerr + 1
@@ -358,7 +358,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
             end if
         end do
 
-        call fmspnm(jlen2,uzveci(krow),uspn56)
+        call fmspnm(jlen2, uzveci(krow), uspn56)
         write (noutpt,1080) uspn56(1:jlen2)
         write (nttyo,1080) uspn56(1:jlen2)
         nerr = nerr + 1
@@ -382,7 +382,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
             end if
         end do
 
-        call fmspnx(jlen2,uspec(narn1),uspn56)
+        call fmspnx(jlen2, uspec(narn1), uspn56)
         write (noutpt,1200) uspn56(1:jlen2)
         write (nttyo,1200) uspn56(1:jlen2)
 1200 format(/' * Error - (EQ6/intmat) The species ',a," isn't",/7x,'on the input file, as is required.')
@@ -406,7 +406,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
         end do
 
         if (nhydx .eq. 0) then
-            call fmspnx(jlen2,uspec(nhydr),uspn56)
+            call fmspnx(jlen2, uspec(nhydr), uspn56)
             write (noutpt,1200) uspn56(1:jlen2)
             write (nttyo,1200) uspn56(1:jlen2)
             nerr = nerr + 1
@@ -429,7 +429,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
         end do
 
         if (nhydr .eq. 0) then
-            call fmspnx(jlen2,uspec(nhydx),uspn56)
+            call fmspnx(jlen2, uspec(nhydx), uspn56)
             write (noutpt,1200) uspn56(1:jlen2)
             write (nttyo,1200) uspn56(1:jlen2)
             nerr = nerr + 1
@@ -452,7 +452,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
         end do
 
         if (nelect .eq. 0) then
-            call fmspnm(jlen2,uspec(no2gaq),uspn56)
+            call fmspnm(jlen2, uspec(no2gaq), uspn56)
             write (noutpt,1200) uspn56(1:jlen2)
             write (nttyo,1200) uspn56(1:jlen2)
             nerr = nerr + 1
@@ -475,7 +475,7 @@ subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax,
         end do
 
         if (no2gaq .eq. 0) then
-            call fmspnm(jlen2,uspec(nelect),uspn56)
+            call fmspnm(jlen2, uspec(nelect), uspn56)
             write (noutpt,1200) uspn56(1:jlen2)
             write (nttyo,1200) uspn56(1:jlen2)
             nerr = nerr + 1

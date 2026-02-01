@@ -334,8 +334,8 @@ subroutine pcrss(apx, bpx, iapxmx, ibpxmx, iktmax, issot, nbtmx1, ndata1, ndat0s
     read (uline,1250,err=995) jsol
 1250 format(10x,i1)
 
-    call initaz(apx,iapxmx)
-    call initaz(bpx,ibpxmx)
+    call initaz(apx, iapxmx)
+    call initaz(bpx, ibpxmx)
 
     ! Read the number of interaction coefficients for computing
     ! activity coefficients in this solid solution.

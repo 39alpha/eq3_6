@@ -125,7 +125,7 @@ subroutine hpsat(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, 
         act(ns) = 1.0
         actlg(ns) = 0.
 
-        call afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+        call afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
         affs(ns) = af
         sidrsp(ns) = si
     end do

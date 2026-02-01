@@ -63,7 +63,7 @@ subroutine echolk(axlks, cdrs, ilevel, jsflag, narxmx, ndrs, ndrsmx, ndrsr, nf, 
             write (nf,2050)
 2050 format(' --------------------------------------------------')
 
-            call prreac(cdrs,ndrs,ndrsmx,ndrsr,nf,ns,nstmax,uspec)
+            call prreac(cdrs, ndrs, ndrsmx, ndrsr, nf, ns, nstmax, uspec)
 
             if (ilevel .ge. 2) then
                 write (nf,2060) xlks(ns)

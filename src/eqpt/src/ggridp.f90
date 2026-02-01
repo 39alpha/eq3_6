@@ -189,7 +189,7 @@ subroutine ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv
             ulbufb = ulbufa(2:80)
             call lejust(ulbufb)
             ustr = ulbufb(1:8)
-            call chrint(ntpr_asv,nttyo,qrderr,ustr)
+            call chrint(ntpr_asv, nttyo, qrderr, ustr)
 
             if (qrderr) then
                 go to 997
@@ -245,7 +245,7 @@ subroutine ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv
 
                 if (k .gt. 0) then
                     ustr = ulbufb(1:k)
-                    call chrint(ntpri,nttyo,qrderr,ustr)
+                    call chrint(ntpri, nttyo, qrderr, ustr)
 
                     if (qrderr) then
                         go to 997
@@ -276,7 +276,7 @@ subroutine ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv
                 ulbufb = ulbufa(j:80)
                 call lejust(ulbufb)
                 ustr = ulbufb(1:8)
-                call chrint(narxti,nttyo,qrderr,ustr)
+                call chrint(narxti, nttyo, qrderr, ustr)
 
                 if (qrderr) then
                     go to 997

@@ -133,7 +133,7 @@ subroutine gpheh(acflg, actlg, actwlg, adh, ah, ahmes, ahnbs, conc, eh, ehfac, e
         ahnbs = -99999.
 
         if (nchlor .gt. 0) then
-            call nbsgam(acfnbs,adh,fxi,nchlor,noutpt,nttyo)
+            call nbsgam(acfnbs, adh, fxi, nchlor, noutpt, nttyo)
             delacf = acfnbs - acflg(nchlor)
             phnbs = ph + delacf
 

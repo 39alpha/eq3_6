@@ -138,7 +138,7 @@ subroutine rdwttl(ipch, ipcv, jpdblo, jpfcmx, jptffl, narxt, ndata1, ndat0s, nda
     ! range. This was found as the greatest value of any range.
     ! Now, it is necessary to get the actual value for each range.
     ntprt = ntprmx
-    call initiz(narxt,ntprmx)
+    call initiz(narxt, ntprmx)
 
     if (ntprt .eq. 2) then
         narxt(1) = 4
@@ -180,7 +180,7 @@ subroutine rdwttl(ipch, ipcv, jpdblo, jpfcmx, jptffl, narxt, ndata1, ndat0s, nda
 
                 if (k .gt. 0) then
                     ustr = ulbufb(1:k)
-                    call chrint(ntpri,nttyo,qrderr,ustr)
+                    call chrint(ntpri, nttyo, qrderr, ustr)
 
                     if (qrderr) then
                         go to 997
@@ -211,7 +211,7 @@ subroutine rdwttl(ipch, ipcv, jpdblo, jpfcmx, jptffl, narxt, ndata1, ndat0s, nda
                 ulbufb = ulbufa(j:80)
                 call lejust(ulbufb)
                 ustr = ulbufb(1:8)
-                call chrint(narxti,nttyo,qrderr,ustr)
+                call chrint(narxti, nttyo, qrderr, ustr)
 
                 if (qrderr) then
                     go to 997

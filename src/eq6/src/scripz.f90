@@ -610,26 +610,26 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
 1480 format(/' Early termination.')
 
     ! Print tables of data for reactants and reaction rates.
-    call prtrct(afrc1,aft1,imchmx,imech,iopt,modr,morr,noptmx,noutpt,nrct,nrctmx,nrk,rk,rreacn,rreac1,rrelr1,sfcar,ureac,wodr,wodrt,worr,worrt,xi1,xistsv)
+    call prtrct(afrc1, aft1, imchmx, imech, iopt, modr, morr, noptmx, noutpt, nrct, nrctmx, nrk, rk, rreacn, rreac1, rrelr1, sfcar, ureac, wodr, wodrt, worr, worrt, xi1, xistsv)
 
     ! Print a table of the elemental composition of the aqueous
     ! solution.
-    call prteca(cteaq,mrmlra,nct,nctmax,noutpt,ppmwe,qrho,rho,uelem)
+    call prteca(cteaq, mrmlra, nct, nctmax, noutpt, ppmwe, qrho, rho, uelem)
 
     ! Compute and print a table of the numerical compostion of the
     ! aqueous solution.
-    call prtnca(ctb,jflag,jsflag,mrmlra,mwtsp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,noutpt,nstmax,qrho,rho,uspec,wfh2o)
+    call prtnca(ctb, jflag, jsflag, mrmlra, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, noutpt, nstmax, qrho, rho, uspec, wfh2o)
 
     ! Compute and print a table of the sensible compostion of the
     ! aqueous solution.
-    call prtsca(ctb,jflag,jsflag,mrmlra,mwtsp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,nelect,nhydr,nhydx,noutpt,no2gaq,nstmax,qrho,rho,uspec,wfh2o)
+    call prtsca(ctb, jflag, jsflag, mrmlra, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, nelect, nhydr, nhydx, noutpt, no2gaq, nstmax, qrho, rho, uspec, wfh2o)
 
     ! Print pH, Eh, and pe-, all with reference to appropriate
     ! pH scales. Also print the pHCl.
-    call prpheh(ah,ahmes,ahnbs,eh,ehmes,ehnbs,iopg,nopgmx,noutpt,pch,pe,pemes,penbs,ph,phcl,phmes,phnbs,qphcl,qredox,qrho)
+    call prpheh(ah, ahmes, ahnbs, eh, ehmes, ehnbs, iopg, nopgmx, noutpt, pch, pe, pemes, penbs, ph, phcl, phmes, phnbs, qphcl, qredox, qrho)
 
     ! Print various aqueous phase parameters.
-    call prtvpa(abar,acfw,acfwlg,actw,actwlg,a3bar,fje,fjest,fo2,fo2lg,fxi,fxist,iopg,mlmrra,mrmlra,nopgmx,noutpt,osc,oscst,qrho,rhoc,rhowc,sigmam,sigmst,tdsglw,tdspkc,tdsplc,vosol,wfh2o,wftds,woh2o,wosol,wotds,xbarw,xbrwlg)
+    call prtvpa(abar, acfw, acfwlg, actw, actwlg, a3bar, fje, fjest, fo2, fo2lg, fxi, fxist, iopg, mlmrra, mrmlra, nopgmx, noutpt, osc, oscst, qrho, rhoc, rhowc, sigmam, sigmst, tdsglw, tdspkc, tdsplc, vosol, wfh2o, wftds, woh2o, wosol, wotds, xbarw, xbrwlg)
 
     ! Print more precise mass results for the aqueous phase.
     write (ux16a,'(1pg15.8)') woh2o
@@ -645,11 +645,11 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
 1500 format(//11x,'--- More Precise Aqueous Phase Masses ---',//23x,'Solvent mass= ',a,' g',/17x,'Solutes (TDS) mass= ',a,' g',/14x,'Aqueous solution mass= ',a,' g',//)
 
     ! Print a table of computed alkalinity parameters.
-    call prtalk(alki,alk1,alk2,mrmlra,noutpt,ntf1t,ntf2t,qrho,rho,tempc,wfh2o)
+    call prtalk(alki, alk1, alk2, mrmlra, noutpt, ntf1t, ntf2t, qrho, rho, tempc, wfh2o)
 
     ! Compute and print a table describing the aqueous phase charge
     ! balance.
-    call gszm(conc,jcsort,narn1,narn2,nstmax,sigza,sigzc,sigzi,sigzm,zchar)
+    call gszm(conc, jcsort, narn1, narn2, nstmax, sigza, sigzc, sigzi, sigzm, zchar)
 
     sigzia = sigzi/wconst
     sigzma = sigzm/wconst
@@ -673,26 +673,26 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
 1510 format(//7x,' --- Aqueous Solution Charge Balance ---',//6x,'    Actual Charge imbalance= ',1pe11.4,' eq',/6x,'  Expected Charge imbalance= ',e11.4,' eq',/6x,'         Charge discrepancy= ',e11.4,' eq',/6x,'        Sigma |equivalents|= ',e11.4,' eq',//6x,'    Actual Charge imbalance= ',e11.4,' eq/kg.solu',/6x,'  Expected Charge imbalance= ',e11.4,' eq/kg.solu',/6x,'         Charge discrepancy= ',e11.4,' eq/kg.solu',/6x,'        Sigma |equivalents|= ',e11.4,' eq/kg.solu',//6x,'Relative charge discrepancy= ',e11.4)
 
     ! Print detailed listing of aqueous species.
-    call prtaqs(acflg,actlg,conc,conclg,iopr,jcsort,narn1,narn2,noprmx,noutpt,nstmax,uspec)
+    call prtaqs(acflg, actlg, conc, conclg, iopr, jcsort, narn1, narn2, noprmx, noutpt, nstmax, uspec)
 
     ! Print the contributions of species to each aqueous mass total.
-    call prtpct(conc,csts,ctb,iopr,jcsort,jflag,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,nelect,nhydr,noprmx,no2gaq,noutpt,nstmax,nsts,nstsmx,nstsr,uspec)
+    call prtpct(conc, csts, ctb, iopr, jcsort, jflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, nelect, nhydr, noprmx, no2gaq, noutpt, nstmax, nsts, nstsmx, nstsr, uspec)
 
     if (iopr(9) .gt. 0) then
         ! Compute and print the mean ionic activities and activity
         ! coefficients.
-        call prtmip(acflg,actlg,conclg,ctb,nbaspd,nbt,nbtmax,nelect,nhydr,nhydx,noutpt,nstmax,uspec,zchar)
+        call prtmip(acflg, actlg, conclg, ctb, nbaspd, nbt, nbtmax, nelect, nhydr, nhydx, noutpt, nstmax, uspec, zchar)
     end if
 
     if (iopr(5) .gt. 0) then
         ! Compute and print activity ratios of aqueous species.
-        call prtacr(actlg,iopr,jsflag,nbaspd,nbt,nbtmax,nelect,nhydr,noprmx,no2gaq,noutpt,nstmax,uspec,zchar)
+        call prtacr(actlg, iopr, jsflag, nbaspd, nbt, nbtmax, nelect, nhydr, noprmx, no2gaq, noutpt, nstmax, uspec, zchar)
     end if
 
     if (qredox) then
         ! Print data for redox reactions that are not constrained to be
         ! at equilibrium.
-        call prtrdx(ah,ahrc,cdrsd,eh,ehrc,fo2lg,fo2lrc,jflag,jsflag,narn1,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,nelect,nhydr,no2gaq,noutpt,nstmax,pe,perc,uspec)
+        call prtrdx(ah, ahrc, cdrsd, eh, ehrc, fo2lg, fo2lrc, jflag, jsflag, narn1, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nelect, nhydr, no2gaq, noutpt, nstmax, pe, perc, uspec)
     end if
 
     if (iopt(1).eq.0 .or. iopt(1).eq.1) then
@@ -1063,12 +1063,12 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     ! the aqueous phase not constrained to be at equilibrium. The
     ! data correspond to the reactions and thermodynamic data in
     ! the 'd' set.
-    call prtsia(affsd,jflagd,jflgi,jsflag,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,nhydr,noutpt,nrdxsp,nstmax,sidrsp,uspec)
+    call prtsia(affsd, jflagd, jflgi, jsflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
 
     if (iopr(7) .ge. 0) then
         ! Print saturation index and affinity tables for the
         ! various non-aqueous phases.
-        call prtsat(affpd,iern1,iern2,ilrn1,ilrn2,imrn1,imrn2,iopr,iopt,ixrn1,ixrn2,jpflag,noutpt,noprmx,noptmx,nptmax,sidrph,tolsat,uphase)
+        call prtsat(affpd, iern1, iern2, ilrn1, ilrn2, imrn1, imrn2, iopr, iopt, ixrn1, ixrn2, jpflag, noutpt, noprmx, noptmx, nptmax, sidrph, tolsat, uphase)
     end if
 
     if (iopt(4) .gt. 0) then
@@ -1082,7 +1082,7 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
         do np = ixrn1,ixrn2
             if (jpflag(np) .eq. -1) then
                 ncount = ncount + 1
-                call prtsso(acflg,actlg,affpd,affsd,ixrn1,ixrn2,jsol,jsomax,ncmpr,noutpt,np,nptmax,nstmax,nxtmax,sidrph,sidrsp,tolsat,uspec,uphase,uxtype,xbar,xbarlg)
+                call prtsso(acflg, actlg, affpd, affsd, ixrn1, ixrn2, jsol, jsomax, ncmpr, noutpt, np, nptmax, nstmax, nxtmax, sidrph, sidrsp, tolsat, uspec, uphase, uxtype, xbar, xbarlg)
             end if
         end do
 
@@ -1105,7 +1105,7 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
         do np = iern1,iern2
             ncount = ncount + 1
 
-            call prtgex(acflg,actlg,affpd,affsd,cegexs,conc,egexjc,egexjf,egexpa,egexpc,egexs,egexw,iern1,iern2,ietmax,jern1,jern2,jetmax,jgext,kern1,kern2,ketmax,kgexsa,moph,mosp,netmax,ngexsa,ngext,noutpt,np,nptmax,nstmax,sidrph,sidrsp,tolspf,ugexj,ugexmo,uspec,uphase,xbar,xbarlg,xgexw,wkgwi)
+            call prtgex(acflg, actlg, affpd, affsd, cegexs, conc, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
         end do
 
         if (ncount .le. 0) then
@@ -1117,7 +1117,7 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
 
     if (iopr(8) .ge. 0) then
         ! Print table of equilibrium fugacities.
-        call prtfug(jgsort,fugac,fugalg,jsflag,ngrn1,ngt,ngtmax,noutpt,nstmax,uspec)
+        call prtfug(jgsort, fugac, fugalg, jsflag, ngrn1, ngt, ngtmax, noutpt, nstmax, uspec)
     end if
 
     write (noutpt,2000)

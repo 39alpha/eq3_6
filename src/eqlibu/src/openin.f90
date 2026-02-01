@@ -70,7 +70,7 @@ subroutine openin(noutpt, nttyo, ufiln, uform, ilu)
     end if
 
     ! Get the next available logical unit number.
-    call getlu(ilu,nerr)
+    call getlu(ilu, nerr)
 
     if (nerr .ne. 0) then
         if (noutpt .gt. 0) then

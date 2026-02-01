@@ -417,7 +417,7 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
         do kcol = 1,kdim
             ! Calling sequence substitutions:
             !   uzvec1(kcol) for unam48
-            call fmspnx(jlen,uzvec1(kcol),uspn56)
+            call fmspnx(jlen, uzvec1(kcol), uspn56)
             jlen = min(jlen,38)
             write (noutpt,1010) kcol,uspn56(1:jlen),zvclg1(kcol)
 1010 format(1x,i3,2x,a,t46,1pe12.5)
@@ -441,7 +441,7 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
     end if
 
     ! Compute the Newton-Raphson residual functions.
-    call betas(acflg,actlg,afcnst,alpha,amtb,bbig,beta,betamx,bneg,cdrs,conc,conclg,coval,csts,eh,ehfac,fo2lg,ibetmx,iebal,iindx1,irdxc3,jcsort,jflag,jsflag,jssort,kbt,kdim,kelect,khydr,kmax,km1,ko2gaq,kwater,kxt,mtb,mosp,narn1,narn2,nbasp,nbtmax,ncosp,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,nhydr,noutpt,no2gaq,nredox,nst,nstmax,nsts,nstsmx,nstsr,ntfx,ntfxmx,ntfxt,nttyo,omega,qredox,q6mode,tfx,ubbig,ubneg,ubetmx,uspec,uzvec1,weight,xbrwlg,xlke,xlks,zchar)
+    call betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cdrs, conc, conclg, coval, csts, eh, ehfac, fo2lg, ibetmx, iebal, iindx1, irdxc3, jcsort, jflag, jsflag, jssort, kbt, kdim, kelect, khydr, kmax, km1, ko2gaq, kwater, kxt, mtb, mosp, narn1, narn2, nbasp, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, nhydr, noutpt, no2gaq, nredox, nst, nstmax, nsts, nstsmx, nstsr, ntfx, ntfxmx, ntfxt, nttyo, omega, qredox, q6mode, tfx, ubbig, ubneg, ubetmx, uspec, uzvec1, weight, xbrwlg, xlke, xlks, zchar)
 
     ! The label below is the return point for iter >= 1.
 100 continue
@@ -450,7 +450,7 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
     fjeo = fje
 
     ! Save the activity coefficients.
-    call copyaa(acflg,acflgo,nst)
+    call copyaa(acflg, acflgo, nst)
 
     bx = 0.
     dx = 0.
@@ -479,7 +479,7 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
         do kcol = 1,kdim
             ! Calling sequence substitutions:
             !   uzvec1(kcol) for unam48
-            call fmspnx(jlen,uzvec1(kcol),uspn56)
+            call fmspnx(jlen, uzvec1(kcol), uspn56)
             jlen = min(jlen,38)
             write (noutpt,1110) kcol,uspn56(1:jlen),beta(kcol)
 1110 format(1x,i3,2x,a,t46,1pe12.5)
@@ -530,13 +530,13 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
 
         ! Calling sequence substitutions:
         !   ubbig for unam48
-        call fmspnx(jlen,ubbig,uspn56)
+        call fmspnx(jlen, ubbig, uspn56)
         write (noutpt,1260) bbig,uspn56(1:jlen)
 1260 format(9x,'bbig= ',1pe12.5,',   ubbig= ',a)
 
         ! Calling sequence substitutions:
         !   ubneg for unam48
-        call fmspnx(jlen,ubneg,uspn56)
+        call fmspnx(jlen, ubneg, uspn56)
         write (noutpt,1270) bneg,uspn56(1:jlen)
 1270 format(9x,'bneg= ',1pe12.5,',   ubneg= ',a)
 
@@ -580,7 +580,7 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
     ! XX   qxbarw = abs(bsigmm).le.0.05 .and. bgamx.le.0.05 .and.
     ! XX  $ abs(rlxgam - 1.0).le.eps100
     !      Do a Newton-Raphson step.
-    call nrstep(aamatr,acflg,act,actlg,afcnst,alpha,al10,amtb,bbig,beta,betamx,betao,betfnc,betmxo,bneg,bpx,btfcnr,cdrs,cdrtw,cdrw,cegexs,cgexj,cjbasp,cnufac,conc,conclg,cpgexs,csts,coval,delfnc,delmax,delvco,delvec,dlogxw,egexjc,egexjf,egexs,eh,ehfac,eps100,fo2,fo2lg,fsort,fugac,fugalg,gmmatr,ibetmx,ibpxmx,idelmx,iebal,ier,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,iodb,ipivot,ipndx1,irdxc3,istack,iter,itermx,ixbasp,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kction,kdim,kelect,khydr,kmax,kmt,km1,ko2gaq,kwater,kxt,kx1,loph,losp,lsort,mgext,moph,mosp,mrgexs,mtb,narn1,narn2,nbasp,nbt,nbtmax,nbw,ncmpr,ncosp,ndrs,ndrsmx,ndrsr,negbfc,negdfc,negxfc,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,nhydr,nodbmx,noibfc,noutpt,no2gaq,npconv,nphasx,npobfc,npodfc,npt,nptmax,nredox,nst,nstmax,nsts,nstsmx,nstsr,ntfx,ntfxmx,ntfxt,nttyo,nxtmax,omega,omeglg,press,qcacf,qcbeta,qredox,qxbarw,q6mode,rhsvec,rlxfac,screwd,screwn,sigmam,sigmmo,tfx,ubetmx,ubbig,ubneg,ugexj,ugexmo,uphase,uspec,uzvec1,weight,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlke,xlks,zchar,zgexj,zvclg1,zvec1)
+    call nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, beta, betamx, betao, betfnc, betmxo, bneg, bpx, btfcnr, cdrs, cdrtw, cdrw, cegexs, cgexj, cjbasp, cnufac, conc, conclg, cpgexs, csts, coval, delfnc, delmax, delvco, delvec, dlogxw, egexjc, egexjf, egexs, eh, ehfac, eps100, fo2, fo2lg, fsort, fugac, fugalg, gmmatr, ibetmx, ibpxmx, idelmx, iebal, ier, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, iodb, ipivot, ipndx1, irdxc3, istack, iter, itermx, ixbasp, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kction, kdim, kelect, khydr, kmax, kmt, km1, ko2gaq, kwater, kxt, kx1, loph, losp, lsort, mgext, moph, mosp, mrgexs, mtb, narn1, narn2, nbasp, nbt, nbtmax, nbw, ncmpr, ncosp, ndrs, ndrsmx, ndrsr, negbfc, negdfc, negxfc, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, nhydr, nodbmx, noibfc, noutpt, no2gaq, npconv, nphasx, npobfc, npodfc, npt, nptmax, nredox, nst, nstmax, nsts, nstsmx, nstsr, ntfx, ntfxmx, ntfxt, nttyo, nxtmax, omega, omeglg, press, qcacf, qcbeta, qredox, qxbarw, q6mode, rhsvec, rlxfac, screwd, screwn, sigmam, sigmmo, tfx, ubetmx, ubbig, ubneg, ugexj, ugexmo, uphase, uspec, uzvec1, weight, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlke, xlks, zchar, zgexj, zvclg1, zvec1)
 
     if (ier .gt. 0) then
         ! Iteration has been stopped.
@@ -596,7 +596,7 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
                     if (abs(delvec(kcol)) .gt. toldl) then
                         ! Calling sequence substitutions:
                         !   uzvec1(kcol) for unam48
-                        call fmspnx(jlen,uzvec1(kcol),uspn56)
+                        call fmspnx(jlen, uzvec1(kcol), uspn56)
                         write (noutpt,1320) uspn56(1:jlen),delvec(kcol)
 1320 format(11x,'delvec(',a,') = ',g12.5)
                     end if
@@ -639,13 +639,13 @@ subroutine newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, ad
 
     chfacf = 0.50
 
-    call ngcadv(abar,acflg,acflgo,actwlc,adh,adhh,adhv,afcnst,al10,aphi,azero,a3bar,a3bars,bacfmx,bdh,bdhh,bdhv,bdot,bdoth,bdotv,bgamx,bpx,bsigmm,bfje,bfxi,cco2,cgexj,chfacf,chfsgm,conc,delam,dgpit,dpelm,dpslm,dselm,elam,eps100,fje,fjeo,fxi,fxio,gpit,ibpxt,ielam,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilzeta,insgf,iopg,iter,ipndx1,ixrn1,ixrn2,izmax,jcsort,jern1,jern2,jgext,jsol,kx1,kxt,nalpha,napt,narn1,narn2,nchlor,ncmpr,net,nhydr,nmut,nmux,nmxi,nmxx,noutpt,nslt,nslx,nst,nsxi,nsxx,nttyo,omega,palpha,pelm,pmu,press,pslamn,pslm,qhawep,qpit75,qpracf,q6mode,rlxgam,selm,sigmam,sigmmo,tempk,ubacmx,ubgamx,uphase,uspec,wfac,xbar,xbarlg,xbarwc,xbrwlc,zchar,zchcu6,zchsq2)
+    call ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, aphi, azero, a3bar, a3bars, bacfmx, bdh, bdhh, bdhv, bdot, bdoth, bdotv, bgamx, bpx, bsigmm, bfje, bfxi, cco2, cgexj, chfacf, chfsgm, conc, delam, dgpit, dpelm, dpslm, dselm, elam, eps100, fje, fjeo, fxi, fxio, gpit, ibpxt, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, iter, ipndx1, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jgext, jsol, kx1, kxt, nalpha, napt, narn1, narn2, nchlor, ncmpr, net, nhydr, nmut, nmux, nmxi, nmxx, noutpt, nslt, nslx, nst, nsxi, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, qpracf, q6mode, rlxgam, selm, sigmam, sigmmo, tempk, ubacmx, ubgamx, uphase, uspec, wfac, xbar, xbarlg, xbarwc, xbrwlc, zchar, zchcu6, zchsq2)
 
     ! Recalculate the concentrations, etc., of dependent species.
-    call ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fo2,fo2lg,fsort,fugac,fugalg,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,istack,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,mrgexs,mtb,moph,mosp,narn1,narn2,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,noutpt,no2gaq,nphasx,npt,nptmax,nst,nstmax,nttyo,omega,omeglg,press,qxbarw,q6mode,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zgexj,zvclg1,zvec1)
+    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
     ! Recalculate the Newton-Raphson residual functions.
-    call betas(acflg,actlg,afcnst,alpha,amtb,bbig,beta,betamx,bneg,cdrs,conc,conclg,coval,csts,eh,ehfac,fo2lg,ibetmx,iebal,iindx1,irdxc3,jcsort,jflag,jsflag,jssort,kbt,kdim,kelect,khydr,kmax,km1,ko2gaq,kwater,kxt,mtb,mosp,narn1,narn2,nbasp,nbtmax,ncosp,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,nhydr,noutpt,no2gaq,nredox,nst,nstmax,nsts,nstsmx,nstsr,ntfx,ntfxmx,ntfxt,nttyo,omega,qredox,q6mode,tfx,ubbig,ubneg,ubetmx,uspec,uzvec1,weight,xbrwlg,xlke,xlks,zchar)
+    call betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cdrs, conc, conclg, coval, csts, eh, ehfac, fo2lg, ibetmx, iebal, iindx1, irdxc3, jcsort, jflag, jsflag, jssort, kbt, kdim, kelect, khydr, kmax, km1, ko2gaq, kwater, kxt, mtb, mosp, narn1, narn2, nbasp, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, nhydr, noutpt, no2gaq, nredox, nst, nstmax, nsts, nstsmx, nstsr, ntfx, ntfxmx, ntfxt, nttyo, omega, qredox, q6mode, tfx, ubbig, ubneg, ubetmx, uspec, uzvec1, weight, xbrwlg, xlke, xlks, zchar)
 
     go to 100
 

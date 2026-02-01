@@ -137,7 +137,7 @@ subroutine indatp(apxa, axlksa, bpxa, cdrsa, cessa, iapxa_asv, iapxta, ibpxa_asv
 
         do nsc = nmrn1a,nmrn2a
             if (ucompv(n)(1:24) .eq. uspeca(nsc)(1:24)) then
-                call clones(axlksa,cdrsa,cessa,mwtspa,narx_asv,ndrsa,ndrsa_asv,ndrsn,ndrsra,nessa,nessa_asv,nessn,nessra,np,npta_asv,ns,nsc,nsta_asv,ntpr_asv,uphasa,uspeca,zchara)
+                call clones(axlksa, cdrsa, cessa, mwtspa, narx_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nessa, nessa_asv, nessn, nessra, np, npta_asv, ns, nsc, nsta_asv, ntpr_asv, uphasa, uspeca, zchara)
                 qclnsa(ns) = .true.
                 go to 130
             end if

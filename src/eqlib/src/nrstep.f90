@@ -296,8 +296,8 @@ subroutine nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, be
 
     ! Save the current values of the beta and delvec arrays for use in
     ! under-relaxation schemes.
-    call copyaa(beta,betao,kdim)
-    call copyaa(delvec,delvco,kdim)
+    call copyaa(beta, betao, kdim)
+    call copyaa(delvec, delvco, kdim)
     delmxo = delmax
 
     ! Check to see if iteration should be stopped because there is
@@ -409,7 +409,7 @@ subroutine nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, be
     iter = iter + 1
 
     ! Calculate the Jacobian matrix (aamatr).
-    call matrix(aamatr,al10,bpx,cdrs,cdrtw,cdrw,cjbasp,cnufac,conc,csts,dlogxw,eps100,ibpxmx,iebal,iern1,ietmax,iindx1,ipndx1,irdxc3,ixbasp,ixrn1,jcsort,jern1,jern2,jetmax,jflag,jjsort,jsitex,kbt,kction,kdim,kelect,khydr,kmax,kmt,km1,ko2gaq,kwater,kxt,kx1,mosp,narn1,narn2,nbasp,nbt,nbtmax,nbw,ncosp,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,noutpt,no2gaq,nphasx,nredox,nst,nstmax,nsts,nstsmx,nstsr,ntfx,ntfxmx,ntfxt,nttyo,nxtmax,omega,qredox,q6mode,tfx,ugexmo,uspec,weight,xbar,xbarw,xbarwc,zchar)
+    call matrix(aamatr, al10, bpx, cdrs, cdrtw, cdrw, cjbasp, cnufac, conc, csts, dlogxw, eps100, ibpxmx, iebal, iern1, ietmax, iindx1, ipndx1, irdxc3, ixbasp, ixrn1, jcsort, jern1, jern2, jetmax, jflag, jjsort, jsitex, kbt, kction, kdim, kelect, khydr, kmax, kmt, km1, ko2gaq, kwater, kxt, kx1, mosp, narn1, narn2, nbasp, nbt, nbtmax, nbw, ncosp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, noutpt, no2gaq, nphasx, nredox, nst, nstmax, nsts, nstsmx, nstsr, ntfx, ntfxmx, ntfxt, nttyo, nxtmax, omega, qredox, q6mode, tfx, ugexmo, uspec, weight, xbar, xbarw, xbarwc, zchar)
 
     ! Get the right-hand-side vector (rhsvec = -alpha).
     do krow = 1,kdim
@@ -423,7 +423,7 @@ subroutine nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, be
         do krow = 1,kdim
             ! Calling sequence substitutions:
             !   uzvec1(krow) for unam48
-            call fmspnx(jlen,uzvec1(krow),uspn56)
+            call fmspnx(jlen, uzvec1(krow), uspn56)
             write (noutpt,1020) krow,uspn56(1:jlen)
 1020 format(1x,i3,2x,a)
 
@@ -438,7 +438,7 @@ subroutine nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, be
     ! Solve the Jacobian system. If EQLIBU/msolvr.f can't solve the
     ! matrix, it is because the matrix is either zero (ier = 1) or
     ! non-zero, but computationally singular (ier = 2).
-    call msolvr(aamatr,delvec,gmmatr,ier,ipivot,kdim,kmax,noutpt,nttyo,qpr,rhsvec)
+    call msolvr(aamatr, delvec, gmmatr, ier, ipivot, kdim, kmax, noutpt, nttyo, qpr, rhsvec)
 
     if (ier .gt. 0) then
         go to 999
@@ -533,7 +533,7 @@ subroutine nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, be
         do kcol = 1,kdim
             ! Calling sequence substitutions:
             !   uzvec1(kcol) for unam48
-            call fmspnx(jlen,uzvec1(kcol),uspn56)
+            call fmspnx(jlen, uzvec1(kcol), uspn56)
             jlen = min(jlen,38)
             rdx = rlxfac*delvec(kcol)
             write (noutpt,1062) kcol,uspn56(1:jlen),rdx,zvclg1(kcol)
@@ -549,9 +549,9 @@ subroutine nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, be
     ! constant,that is, not to update them until all under-relaxation
     ! has been completed.
     ! Recalculate the concentrations, etc., of dependent species.
-    call ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fo2,fo2lg,fsort,fugac,fugalg,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,istack,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,mrgexs,mtb,moph,mosp,narn1,narn2,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,noutpt,no2gaq,nphasx,npt,nptmax,nst,nstmax,nttyo,omega,omeglg,press,qxbarw,q6mode,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zgexj,zvclg1,zvec1)
+    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
-    call betas(acflg,actlg,afcnst,alpha,amtb,bbig,beta,betamx,bneg,cdrs,conc,conclg,coval,csts,eh,ehfac,fo2lg,ibetmx,iebal,iindx1,irdxc3,jcsort,jflag,jsflag,jssort,kbt,kdim,kelect,khydr,kmax,km1,ko2gaq,kwater,kxt,mtb,mosp,narn1,narn2,nbasp,nbtmax,ncosp,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,nhydr,noutpt,no2gaq,nredox,nst,nstmax,nsts,nstsmx,nstsr,ntfx,ntfxmx,ntfxt,nttyo,omega,qredox,q6mode,tfx,ubbig,ubneg,ubetmx,uspec,uzvec1,weight,xbrwlg,xlke,xlks,zchar)
+    call betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cdrs, conc, conclg, coval, csts, eh, ehfac, fo2lg, ibetmx, iebal, iindx1, irdxc3, jcsort, jflag, jsflag, jssort, kbt, kdim, kelect, khydr, kmax, km1, ko2gaq, kwater, kxt, mtb, mosp, narn1, narn2, nbasp, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, nhydr, noutpt, no2gaq, nredox, nst, nstmax, nsts, nstsmx, nstsr, ntfx, ntfxmx, ntfxt, nttyo, omega, qredox, q6mode, tfx, ubbig, ubneg, ubetmx, uspec, uzvec1, weight, xbrwlg, xlke, xlks, zchar)
 
     if (iodb(4) .ge. 2) then
         write (noutpt,1080)
@@ -560,7 +560,7 @@ subroutine nrstep(aamatr, acflg, act, actlg, afcnst, alpha, al10, amtb, bbig, be
         do kcol = 1,kdim
             ! Calling sequence substitutions:
             !   uzvec1(kcol) for unam48
-            call fmspnx(jlen,uzvec1(kcol),uspn56)
+            call fmspnx(jlen, uzvec1(kcol), uspn56)
             jlen = min(jlen,38)
             write (noutpt,1085) kcol,uspn56(1:jlen),beta(kcol)
 1085 format(1x,i3,2x,a,t46,1pe12.5)

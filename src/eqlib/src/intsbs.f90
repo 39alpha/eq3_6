@@ -59,7 +59,7 @@ subroutine intsbs(nb1, nb2, nbaspd, nbtd, nbtmax, noutpt, ns1, ns2, nsbsw, nstma
     nerr = nerr + 1
 
     unam48 = usbsw(1,nsbsw)
-    call fmspnx(jlen,unam48,uspn56)
+    call fmspnx(jlen, unam48, uspn56)
     write (noutpt,1000) uspn56(1:jlen)
     write (nttyo,1000) uspn56(1:jlen)
 1000 format(/' * Error - (EQLIB/intsbs) Invalid special basis',' directive on the',/7x,'input file: ',a,' is not in the basis',' set and therefore',/7x,'can not be specified in a special',' basis switch.')
@@ -81,7 +81,7 @@ subroutine intsbs(nb1, nb2, nbaspd, nbtd, nbtmax, noutpt, ns1, ns2, nsbsw, nstma
         nerr = nerr + 1
 
         unam48 = usbsw(2,nsbsw)
-        call fmspnx(jlen,unam48,uspn56)
+        call fmspnx(jlen, unam48, uspn56)
         write (noutpt,1000) uspn56(1:jlen)
         write (nttyo,1000) uspn56(1:jlen)
 

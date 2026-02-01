@@ -126,7 +126,7 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
 
     ! Coefficients for equilibrium constants.
     if (nern1 .gt. 1) then
-        call copyaa(axlksd,axlksx,nmax)
+        call copyaa(axlksd, axlksx, nmax)
     end if
 
     do ns = nern1,nern2
@@ -151,7 +151,7 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
     if (ipch .ge. 0) then
         ! Coefficients for enthalpy functions.
         if (nern1 .gt. 1) then
-            call copyaa(axhfsd,axhfsx,nmax)
+            call copyaa(axhfsd, axhfsx, nmax)
         end if
 
         do ns = nern1,nern2
@@ -175,7 +175,7 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
         if (ipch .ge. 1) then
             ! Coefficients for derivatives of enthalpy functions.
             if (nern1 .gt. 1) then
-                call copyaa(adhfsd,adhfsx,jhmax)
+                call copyaa(adhfsd, adhfsx, jhmax)
             end if
 
             do ns = nern1,nern2
@@ -206,7 +206,7 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
     if (ipcv .ge. 0) then
         ! Coefficients for volume functions.
         if (nern1 .gt. 1) then
-            call copyaa(axvfsd,axvfsx,nmax)
+            call copyaa(axvfsd, axvfsx, nmax)
         end if
 
         do ns = nern1,nern2
@@ -230,7 +230,7 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
         if (ipcv .ge. 1) then
             ! Coefficients for derivatives of volume functions.
             if (nern1 .gt. 1) then
-                call copyaa(advfsd,advfsx,jvmax)
+                call copyaa(advfsd, advfsx, jvmax)
             end if
 
             do ns = nern1,nern2
@@ -260,7 +260,7 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
     ! Index range pointers for reactions.
     if (nern1 .gt. 1) then
         nmax = 2*(nern1 - 1)
-        call copyia(ndrsrd,ndrsrx,nmax)
+        call copyia(ndrsrd, ndrsrx, nmax)
     end if
 
     do ns = nern1,nern2
@@ -304,8 +304,8 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
 
     if (nern1 .gt. 1) then
         nmax = ndrsrd(2,nern1 - 1)
-        call copyaa(cdrsd,cdrsx,nmax)
-        call copyia(ndrsd,ndrsx,nmax)
+        call copyaa(cdrsd, cdrsx, nmax)
+        call copyia(ndrsd, ndrsx, nmax)
     end if
 
     if (nern1 .gt. 1) then
@@ -358,5 +358,5 @@ subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
     !   cdrsd for cdrs
     !   ndrsd for ndrs
     !   ndrsrd for ndrsr
-    call cdrscx(adhfsd,adhfsx,advfsd,advfsx,axhfsd,axhfsx,axlksd,axlksx,axvfsd,axvfsx,cdrsd,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,ndrsd,ndrsmx,ndrsx,ndrsrd,ndrsrx,nstmax,ntprmx)
+    call cdrscx(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx, axvfsd, axvfsx, cdrsd, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, ndrsd, ndrsmx, ndrsx, ndrsrd, ndrsrx, nstmax, ntprmx)
 end subroutine mdrgex

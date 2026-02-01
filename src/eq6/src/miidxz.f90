@@ -80,7 +80,7 @@ subroutine miidxz(ier, iindx1, ipndx1, jpflag, jsflag, kbt, kdim, kmax, km1, kmt
                 else
                     ! Calling sequence substitutions:
                     !   uspec(ns) for unam48
-                    call fmspnm(jlen,uspec(ns),uspn56)
+                    call fmspnm(jlen, uspec(ns), uspn56)
 
                     write (noutpt,1000) kmax,uspn56(1:jlen)
                     write (nttyo,1000) kmax,uspn56(1:jlen)
@@ -118,7 +118,7 @@ subroutine miidxz(ier, iindx1, ipndx1, jpflag, jsflag, kbt, kdim, kmax, km1, kmt
                         else
                             ! Calling sequence substitutions:
                             !   uspec(ns) for unam48
-                            call fmspnm(jlen,uspec(ns),uspn56)
+                            call fmspnm(jlen, uspec(ns), uspn56)
 
                             write (noutpt,1000) uspn56(1:jlen)
                             write (nttyo,1000) uspn56(1:jlen)

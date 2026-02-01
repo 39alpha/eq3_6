@@ -127,7 +127,7 @@ subroutine tpraac(amuaac, amua2c, apsi, iaactr, icapr, ipbtmx, jpfcmx, naactr, n
 
         ! Search for unam1, unam2, unam3 in the utripl array.
         ! That array corresponds to the species triplets blocks.
-        call srch33(jtripl,unam1,unam2,unam3,utripl,npx3mx,npx3t)
+        call srch33(jtripl, unam1, unam2, unam3, utripl, npx3mx, npx3t)
 
         if (jtripl .le. 0) then
             ! No data block was found on the DATA0 file.

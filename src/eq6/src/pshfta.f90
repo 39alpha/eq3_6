@@ -117,7 +117,7 @@ subroutine pshfta(csts, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, 
 
         if (uphase(np)(1:24) .ne. uaqsln(1:24)) then
             if (uphase(np)(1:5) .ne. ufixf(1:5)) then
-                call shftph(emop,emop0,emos,emos0,fdpe0,fdpem1,fdse0,fdsem1,iemop,iemos,iern1,iern2,ietmax,iindx1,imrn1,imrn2,ipndx1,ixrn1,ixrn2,jern1,jetmax,jgext,jpflag,jsflag,kbt,kmax,km1,kmt,kx1,kxt,loph,losp,moph,mosp,mprph,mprsp,mrgexs,nbtmax,ncmpe,ncmpr,netmax,ngext,nordmx,noutpt,np,npet,npetmx,nptmax,nsetmx,nstmax,nttyo,qshftd,qtotsh,uphase,xbar,xbarlg,zklgmn,zklogl,zvclg0,zvclg1,zvec0,zvec1)
+                call shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, ipndx1, ixrn1, ixrn2, jern1, jetmax, jgext, jpflag, jsflag, kbt, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, nbtmax, ncmpe, ncmpr, netmax, ngext, nordmx, noutpt, np, npet, npetmx, nptmax, nsetmx, nstmax, nttyo, qshftd, qtotsh, uphase, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
 
                 if (qshftd) then
                     nshftd = nshftd + 1
@@ -129,6 +129,6 @@ subroutine pshfta(csts, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, 
     if (nshftd .gt. 0) then
         ! Recompute the composition of the ES.
         qprflg = iodb(10) .ge. 1
-        call escalc(csts,iindx1,jcsort,kbt,kmax,moph,mosp,mtb,mtb0,nbaspd,nbt,nbtmax,ncmpr,noutpt,npt,nptmax,nstmax,nsts,nstsmx,nstsr,qprflg,uspec)
+        call escalc(csts, iindx1, jcsort, kbt, kmax, moph, mosp, mtb, mtb0, nbaspd, nbt, nbtmax, ncmpr, noutpt, npt, nptmax, nstmax, nsts, nstsmx, nstsr, qprflg, uspec)
     end if
 end subroutine pshfta

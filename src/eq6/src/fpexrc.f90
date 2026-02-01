@@ -147,7 +147,7 @@ subroutine fpexrc(delxi, dlxmin, drer0, dxval0, eps100, iodb, jreac, morr, morr0
 
                 ! Calling sequence substitutions:
                 !   nordp1 for nord
-                call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nordp1,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+                call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nordp1, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
                 if (ier .le. 0) then
                     go to 100

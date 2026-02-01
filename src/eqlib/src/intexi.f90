@@ -357,7 +357,7 @@ subroutine intexi(al10, axhfs, axlks, axvfs, cegexs, cess, cdrs, cgexj, cpgexs, 
 
         if (j4 .le. 0) then
             ! Have a blank exchanger name. Assign a default name.
-            call adgexp(ne,noutpt,nttyo,ugexpd)
+            call adgexp(ne, noutpt, nttyo, ugexpd)
             ugexp(ne) = ugexpd
             j4 = ilnobl(ugexp(ne))
         end if
@@ -433,7 +433,7 @@ subroutine intexi(al10, axhfs, axlks, axvfs, cegexs, cess, cdrs, cgexj, cpgexs, 
 
         ! Loop on sites.
         do je = 1,jgext(ne)
-            call lejust(ugexj(je,ne))
+            call lejust(ugexj(je, ne))
             j3 = ilnobl(ugexj(je,ne))
 
             ! Calculate the formally declared exchange capacity (in
@@ -446,7 +446,7 @@ subroutine intexi(al10, axhfs, axlks, axvfs, cegexs, cess, cdrs, cgexj, cpgexs, 
             if (j3 .eq. 0) then
                 ! No name was given. Assign one (e.g., "S(1)" to site 1,
                 ! "S(2)" to site 2).
-                call adgexj(je,noutpt,nttyo,ugexjd)
+                call adgexj(je, noutpt, nttyo, ugexjd)
                 ugexj(je,ne) = ugexjd
                 j3 = ilnobl(ugexj(je,ne))
             end if
@@ -732,7 +732,7 @@ subroutine intexi(al10, axhfs, axlks, axvfs, cegexs, cess, cdrs, cgexj, cpgexs, 
             ! Convert the input thermodynamic parameters for exchange or
             ! dissociation reactions to standard units.
             do ie = 1,nspect
-                call lejust(uxkgex(ie,je,ne))
+                call lejust(uxkgex(ie, je, ne))
 
                 if (uxkgex(ie,je,ne)(1:3) .eq. '   ') then
                     uxkgex(ie,je,ne) = 'LogK/eq'
@@ -753,7 +753,7 @@ subroutine intexi(al10, axhfs, axlks, axvfs, cegexs, cess, cdrs, cgexj, cpgexs, 
                     nerr = nerr + 1
                 end if
 
-                call lejust(uhfgex(ie,je,ne))
+                call lejust(uhfgex(ie, je, ne))
 
                 if (uhfgex(ie,je,ne)(1:3) .eq. '   ') then
                     uhfgex(ie,je,ne) = 'kcal/eq'
@@ -770,7 +770,7 @@ subroutine intexi(al10, axhfs, axlks, axvfs, cegexs, cess, cdrs, cgexj, cpgexs, 
                     nerr = nerr + 1
                 end if
 
-                call lejust(uvfgex(ie,je,ne))
+                call lejust(uvfgex(ie, je, ne))
 
                 if (uvfgex(ie,je,ne)(1:3) .eq. '   ') then
                     uvfgex(ie,je,ne) = 'cm3/eq'

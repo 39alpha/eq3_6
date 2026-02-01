@@ -63,7 +63,7 @@ subroutine gelam(aphi, delam, dpelm, elam, fxi, izmax, nazpmx, pelm, qpit75)
 
             ! Get the primitive E-lambda and its derivatives for
             ! this current charge pair.
-            call elmdd(aphi,el,elp,elpp,fxi,ijz,qpit75)
+            call elmdd(aphi, el, elp, elpp, fxi, ijz, qpit75)
             pelm(iz,jz) = el
             dpelm(1,iz,jz) = elp
             dpelm(2,iz,jz) = elpp

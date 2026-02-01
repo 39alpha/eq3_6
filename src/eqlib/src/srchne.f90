@@ -53,7 +53,7 @@ subroutine srchne(nrn1a, nrn2a, ns, nsta_asv, unam, uspeca)
     nfdif = ichar('A') - ichar('a')
 
     ! Try the species name as is.
-    call srchn(nrn1a,nrn2a,ns,nsta_asv,unam,uspeca)
+    call srchn(nrn1a, nrn2a, ns, nsta_asv, unam, uspeca)
 
     if (ns .le. 0) then
         ! Convert to lower case.
@@ -72,7 +72,7 @@ subroutine srchne(nrn1a, nrn2a, ns, nsta_asv, unam, uspeca)
         if (unamlc .ne. unam) then
             ! Calling sequence substitutions:
             !   unamlc for unam
-            call srchn(nrn1a,nrn2a,ns,nsta_asv,unamlc,uspeca)
+            call srchn(nrn1a, nrn2a, ns, nsta_asv, unamlc, uspeca)
         end if
     end if
 
@@ -93,7 +93,7 @@ subroutine srchne(nrn1a, nrn2a, ns, nsta_asv, unam, uspeca)
         if (unamuc .ne. unam) then
             ! Calling sequence substitutions:
             !   unamuc for unam
-            call srchn(nrn1a,nrn2a,ns,nsta_asv,unamuc,uspeca)
+            call srchn(nrn1a, nrn2a, ns, nsta_asv, unamuc, uspeca)
         end if
     end if
 end subroutine srchne

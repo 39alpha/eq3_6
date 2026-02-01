@@ -222,7 +222,7 @@ subroutine rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx
     ! Calling sequence substitutions:
     !   n1 for na
     !   unam1 for unams
-    call gspidx(ier,n1,nat,natmax,uaqsp,unam1)
+    call gspidx(ier, n1, nat, natmax, uaqsp, unam1)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>' .and. unam3(1:7).ne.'<blank>') then
@@ -244,7 +244,7 @@ subroutine rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx
         ! Calling sequence substitutions:
         !   n2 for na
         !   unam2 for unams
-        call gspidx(ier,n2,nat,natmax,uaqsp,unam2)
+        call gspidx(ier, n2, nat, natmax, uaqsp, unam2)
 
         if (ier .gt. 0) then
             if (unam1(1:7).ne.'<blank>' .and.      unam2(1:7).ne.'<blank>' .and. unam3(1:7).ne.'<blank>') then
@@ -279,7 +279,7 @@ subroutine rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx
         ! Calling sequence substitutions:
         !   n3 for na
         !   unam3 for unams
-        call gspidx(ier,n3,nat,natmax,uaqsp,unam3)
+        call gspidx(ier, n3, nat, natmax, uaqsp, unam3)
 
         if (ier .gt. 0) then
             if (unam1(1:7).ne.'<blank>' .and.      unam2(1:7).ne.'<blank>' .and. unam3(1:7).ne.'<blank>') then
@@ -348,7 +348,7 @@ subroutine rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx
         ! Check for illegal species combinations. These checks depend
         ! on the charge combinations; hence, they should not be made
         ! unless the all the charges have been determined.
-        call tripck(na,nc,nerr,nn,noutpt,nttyo,n1,n2,n3,qdup12,qdup13,qdup23,unam1,unam2,unam3)
+        call tripck(na, nc, nerr, nn, noutpt, nttyo, n1, n2, n3, qdup12, qdup13, qdup23, unam1, unam2, unam3)
     end if
 
     ! Copy the names before rearranging for storage.
@@ -367,7 +367,7 @@ subroutine rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx
     !     anion 1, anion 2, cation
     !   If two species are of the same charge type,
     !   store alphabetically.
-    call artrip(iz1,iz2,iz3,na,nc,nn,n1,n2,n3,u1,u2,u3,z1,z2,z3)
+    call artrip(iz1, iz2, iz3, na, nc, nn, n1, n2, n3, u1, u2, u3, z1, z2, z3)
 
     ! Store the triplet names in the order required by the
     ! storage rules. The triplet in the original order is
@@ -395,7 +395,7 @@ subroutine rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx
     read (ndat0s,1170,end=990,err=995) uline
 
     ! Check for illegal inputs in the S-theta data fields.
-    call thetck(athetx,jpfcmx,na,nc,nerr,nn,noutpt,nttyo,n1,n2,n3,unam1,unam2,unam3)
+    call thetck(athetx, jpfcmx, na, nc, nerr, nn, noutpt, nttyo, n1, n2, n3, unam1, unam2, unam3)
 
     if ((nc.eq.2 .and. na.eq.1) .or.  (nc.eq.1 .and. na.eq.2)) then
         ! Find the theta index for the two cations or two anions.

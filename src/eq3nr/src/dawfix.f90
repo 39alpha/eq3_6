@@ -216,14 +216,14 @@ subroutine dawfix(aamatr, cdrs, eps100, gmmatr, iindx1, iodb, irdxc3, jflag, jjn
             else if (jflag(ns) .eq. 27) then
                 ! Calling sequence substitutions:
                 !   noutpt for nf
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns, nstmax, uspec)
             else if (jflag(ns) .eq. 25) then
                 ns2 = ncosp(ns)
 
                 ! Calling sequence substitutions:
                 !   noutpt for nf
                 !   ns2 for ns
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns2,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns2, nstmax, uspec)
             else if (irdxc3 .lt. 0) then
                 write (noutpt,1050)
 1050 format(/10x,'2 H2O(l) = 4 H+ + 4 e- + O2(g)',/)
@@ -233,7 +233,7 @@ subroutine dawfix(aamatr, cdrs, eps100, gmmatr, iindx1, iodb, irdxc3, jflag, jjn
                 ! Calling sequence substitutions:
                 !   noutpt for nf
                 !   ns2 for ns
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns2,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns2, nstmax, uspec)
             end if
 
             write (noutpt,1020)
@@ -253,7 +253,7 @@ subroutine dawfix(aamatr, cdrs, eps100, gmmatr, iindx1, iodb, irdxc3, jflag, jjn
     irow2 = ibt
     jcol1 = 2
     jcol2 = ibt
-    call lindep(aamatr,eps100,irow1,irow2,jcol1,jcol2,kmax,qldep)
+    call lindep(aamatr, eps100, irow1, irow2, jcol1, jcol2, kmax, qldep)
 
     if (qldep) then
         ! Have linear dependence omitting the water column. Test for
@@ -267,7 +267,7 @@ subroutine dawfix(aamatr, cdrs, eps100, gmmatr, iindx1, iodb, irdxc3, jflag, jjn
         end do
 
         jcol1 = 1
-        call lindep(aamatr,eps100,irow1,irow2,jcol1,jcol2,kmax,qldep)
+        call lindep(aamatr, eps100, irow1, irow2, jcol1, jcol2, kmax, qldep)
         qawfix = .not.qldep
     end if
 

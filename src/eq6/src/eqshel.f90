@@ -651,12 +651,12 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
     kxts = kxt
     kdims = kdim
 
-    call copyia(nbasp,nbasps,nbt)
-    call copyia(iindx1,iindxs,kdim)
-    call copyia(ipndx1,ipndxs,kdim)
+    call copyia(nbasp, nbasps, nbt)
+    call copyia(iindx1, iindxs, kdim)
+    call copyia(ipndx1, ipndxs, kdim)
 
-    call copyaa(zvclg1,zvclgs,kdim)
-    call copyaa(acflg,acflgs,nst)
+    call copyaa(zvclg1, zvclgs, kdim)
+    call copyaa(acflg, acflgs, nst)
 
     xbarws = xbarwc
     xbrwls = xbrwlc
@@ -695,13 +695,13 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
     if (iopt(2) .gt. 0) then
         if (xi1 .gt. xistsv) then
             if (.not.qshoot) then
-                call timeca(deltim,delxi,drir0,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qriinf,rirec0,time0,time1)
+                call timeca(deltim, delxi, drir0, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qriinf, rirec0, time0, time1)
 
                 if (delxi .le. dlxmin) then
                     ! Make sure that the calculated time does not exceed any
                     ! any specified limits such as the maximum time just because
                     ! delxi is at the minimum value.
-                    call tivchk(deltim,delxi,qtvchk,time1,time0,timemx,tiplol,tiplot,tiprnl,tiprnt,tolxst)
+                    call tivchk(deltim, delxi, qtvchk, time1, time0, timemx, tiplol, tiplot, tiprnl, tiprnt, tolxst)
                 end if
             end if
         else
@@ -720,13 +720,13 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
         ! Make a Taylor's series expansion of the dz/d(xi) vector.
         ! This information is used to track how the reacting system
         ! is changing.
-        call d1ztay(delxi,dzvc0,d1zvc1,kdim,kmax,nord,nrd1mx)
+        call d1ztay(delxi, dzvc0, d1zvc1, kdim, kmax, nord, nrd1mx)
     end if
 
     if (nrct .ge. 1) then
         ! Increment the irreversible reactions (those associated with
         ! the "reactants"); update the ES mass balance totals accordingly.
-        call reacts(cbsr,csts,delxi,drer0,iern1,ietmax,iktmax,iodb,jcode,jetmax,jgext,jreac,modr,modr0,morr,morr0,mrgers,mtb,mtb0,nbaspd,nbt,nbtmax,nbt1mx,ncmpr,nern1,nern2,nertmx,netmax,ngext,nodbmx,nord,noutpt,nptmax,nrct,nrctmx,nrd1mx,nrndex,nsrtmx,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrtmx,rrelr0,rxbar,ureac,xirct,xirct0)
+        call reacts(cbsr, csts, delxi, drer0, iern1, ietmax, iktmax, iodb, jcode, jetmax, jgext, jreac, modr, modr0, morr, morr0, mrgers, mtb, mtb0, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nern1, nern2, nertmx, netmax, ngext, nodbmx, nord, noutpt, nptmax, nrct, nrctmx, nrd1mx, nrndex, nsrtmx, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrtmx, rrelr0, rxbar, ureac, xirct, xirct0)
     end if
 
     ! Set a flag for a go back followed by a step size reduction when
@@ -737,7 +737,7 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
 
     ! Make the equilibrium calculation. Basis switching may occur.
     ! Also, the phase assemblage may be changed.
-    call eqphas(aamatr,abar,acflg,acflgo,act,actlg,adh,adhh,adhv,afcnst,affp,affs,alpha,al10,amtb,aphi,apx,avcnst,azero,a3bar,a3bars,bacfmx,bbig,bdh,bdhh,bdhv,bdot,bdoth,bdotv,beta,betamx,betao,bgamx,bneg,bpx,cco2,cegexs,cess,cdrs,cdrsd,cdrsx,cdrtw,cdrw,cjbasp,cnufac,conc,conclg,cpgexs,cscale,csts,delvco,delvec,d1zvc1,dlogxw,egexjc,egexjf,egexs,eh,ehfac,eps100,farad,fje,fjeo,fo2,fo2lg,fsort,fugac,fugalg,fxi,fxio,gmmatr,iapxt,ibpxt,ibswx,ielam,ier,iern1,iern2,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifrn1,ifrn2,ifzeta,igas,igstak,iindx0,iindx1,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilrn1,ilrn2,ilzeta,imrn1,imrn2,insgf,iodb,iopg,iopt,ipch,ipivot,ipndx1,ipcv,istack,iter,itermx,ixbasp,ixrn1,ixrn2,izmax,jcsort,jflag,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jsol,jssort,jstack,kbt,kction,kdim,kelect,khydr,khydx,km1,km10,kmt,kmt0,ko2gaq,kpsat,kpsst,krdxsp,kwater,kx1,kx10,kxt0,kxt,loph,losp,lsort,moph,mosp,mrgexs,mtb,mtbaq,narn1,narn2,narxt,nat,nbasp,nbaspd,nbaspx,nbt,nbtd,nbw,nchlor,ncmpr,nct,ndrs,ndrsd,ndrsx,ndrsr,ndrsrd,ndrsrx,nelect,nern1,nern2,ness,nessr,net,nfrn1,nfrn2,ngrn1,ngrn2,ngt,nhydr,nhydx,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmt,nord,no2gaq,noutpt,npchk,nphasx,npt,nrdxsp,nst,nsts,nstsr,ntpr,ntrymx,nttyo,nxrn1,nxrn2,nxt,omega,omeglg,prcinf,press,qbassw,qbseqc,qbye,qcnpre,qcntmp,qhawep,qmod,qoptmz,qpit75,qredox,qsspgb,qstart,qxknph,q6mode,rcnstv,rconst,rhsvec,rtcnst,screwd,sidrph,sidrsp,sigmam,sigmmo,smp100,tempc,tempk,tolbt,toldl,tolsat,tolsst,ubacmx,ubgamx,ulbeta,uldel,uphase,uspec,uzvec1,weight,wfac,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,zchar,zchcu6,zchsq2,zvclg1,zvec1)
+    call eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcnst, affp, affs, alpha, al10, amtb, aphi, apx, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdhh, bdhv, bdot, bdoth, bdotv, beta, betamx, betao, bgamx, bneg, bpx, cco2, cegexs, cess, cdrs, cdrsd, cdrsx, cdrtw, cdrw, cjbasp, cnufac, conc, conclg, cpgexs, cscale, csts, delvco, delvec, d1zvc1, dlogxw, egexjc, egexjf, egexs, eh, ehfac, eps100, farad, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, iapxt, ibpxt, ibswx, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx0, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipivot, ipndx1, ipcv, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcsort, jflag, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, khydx, km1, km10, kmt, kmt0, ko2gaq, kpsat, kpsst, krdxsp, kwater, kx1, kx10, kxt0, kxt, loph, losp, lsort, moph, mosp, mrgexs, mtb, mtbaq, narn1, narn2, narxt, nat, nbasp, nbaspd, nbaspx, nbt, nbtd, nbw, nchlor, ncmpr, nct, ndrs, ndrsd, ndrsx, ndrsr, ndrsrd, ndrsrx, nelect, nern1, nern2, ness, nessr, net, nfrn1, nfrn2, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmt, nord, no2gaq, noutpt, npchk, nphasx, npt, nrdxsp, nst, nsts, nstsr, ntpr, ntrymx, nttyo, nxrn1, nxrn2, nxt, omega, omeglg, prcinf, press, qbassw, qbseqc, qbye, qcnpre, qcntmp, qhawep, qmod, qoptmz, qpit75, qredox, qsspgb, qstart, qxknph, q6mode, rcnstv, rconst, rhsvec, rtcnst, screwd, sidrph, sidrsp, sigmam, sigmmo, smp100, tempc, tempk, tolbt, toldl, tolsat, tolsst, ubacmx, ubgamx, ulbeta, uldel, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, zchar, zchcu6, zchsq2, zvclg1, zvec1)
 
     if (ier .eq. 8) then
         ! Go back and reduce the step size to avoid exceeding the
@@ -928,7 +928,7 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
 
                                 ! Calling sequence substitutions:
                                 !   uspec(ns) for unam48
-                                call fmspnm(jlen,uspec(ns),uspn56)
+                                call fmspnm(jlen, uspec(ns), uspn56)
                                 write (noutpt,1300) uspn56(1:jlen),mxx0,mosp(ns),dlmoph
 1300 format(' Some of ',a,' was unexpectedly destroyed.',/5x,'Previous number of moles was ',1pe12.5,/5x,'Current number of moles is   ',e12.5,/5x,'Amount destroyed was ',e12.5,/21x,/3x,"That's too much. Will go back and first",' transfer some of the current',/3x,'amount to the',' physically removed system (PRS).')
                             end if
@@ -999,7 +999,7 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
             ns2 = nbasps(nb)
 
             if (ns2 .ne. ns) then
-                call switch(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,narn1,narxmx,nbasp,nbaspd,nbaspx,nb,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,ns2,nst,nstmax,ntprmx,nttyo,qbassw,qbswok,uspec)
+                call switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, narn1, narxmx, nbasp, nbaspd, nbaspx, nb, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, ns2, nst, nstmax, ntprmx, nttyo, qbassw, qbswok, uspec)
             end if
         end do
 
@@ -1013,12 +1013,12 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
     kxt = kxts
     kdim = kdims
 
-    call copyia(nbasps,nbasp,nbt)
-    call copyia(iindxs,iindx1,kdim)
-    call copyia(ipndxs,ipndx1,kdim)
+    call copyia(nbasps, nbasp, nbt)
+    call copyia(iindxs, iindx1, kdim)
+    call copyia(ipndxs, ipndx1, kdim)
 
-    call copyaa(zvclgs,zvclg1,kdim)
-    call copyaa(acflgs,acflg,nst)
+    call copyaa(zvclgs, zvclg1, kdim)
+    call copyaa(acflgs, acflg, nst)
 
     xbarwc = xbarws
     xbrwlc = xbrwls
@@ -1029,7 +1029,7 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
     ! is defined in terms of molality (= 0) or mole fraction (= 1).
     ! The cjbasp array contains any site stoichiometric factors
     ! associated with the operational basis species.
-    call gibasp(cgexj,cjbasp,iern1,ixbasp,jern1,jern2,jetmax,jgext,narn1,narn2,nbasp,nbt,nbtmax,nern1,nern2,netmax,nphasx,nstmax)
+    call gibasp(cgexj, cjbasp, iern1, ixbasp, jern1, jern2, jetmax, jgext, narn1, narn2, nbasp, nbt, nbtmax, nern1, nern2, netmax, nphasx, nstmax)
 
     ! Slightly increase the value of reaction progress to try to slide
     ! over a region of critical instability.
@@ -1040,17 +1040,17 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
     ! the AE solver; i.e., a set not containing any values that
     ! will cause the solver to fail in an unrecoverable fashion.
     qztayl = .true.
-    call ztaylr(delxi,dzvc0,kdim,kmax,km1,kxt,nord,nrd1mx,qztayl,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+    call ztaylr(delxi, dzvc0, kdim, kmax, km1, kxt, nord, nrd1mx, qztayl, zklogu, zvclg0, zvclg1, zvec0, zvec1)
 
     ! Save the new z vector expansion.
-    call copyaa(zvclg1,zvclgs,kdim)
+    call copyaa(zvclg1, zvclgs, kdim)
 
     if (.not.qcntmp .or. .not.qcnpre) then
         ! Recompute the temperature and pressure. Then recompute the
         ! thermodynamic and kinetic quantities which depend these
         ! variables.
         ntpr0 = ntpr
-        call tpadv(aadh,aadhh,aadhv,aaphi,abdh,abdhh,abdhv,abdoth,abdot,abdotv,adadhh,adadhv,adbdhh,adbdhv,adbdth,adbdtv,adh,adhfe,adhh,adhv,adhfs,adhfsd,advfe,advfs,advfsd,afcnst,al10,amu,aslm,aphi,aprehw,apresg,apresh,apx,avcnst,axhfe,axhfs,axhfsd,axlke,axlks,axlksd,axvfe,axvfs,axvfsd,bdh,bdhh,bdhv,bdot,bdoth,bdotv,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,dhfe,dhfs,dhfsd,dvfe,dvfs,dvfsd,eact,ehfac,farad,hact,iact,iapxmx,iktmax,imchmx,imech,iopg,iopt,ipbtmx,ipch,ipchmx,ipcv,ipcvmx,ixrn1,ixrn2,jpfcmx,jpress,jptffl,jsol,jtemp,narxmx,narxt,narxth,nbasp,nbaspd,nbt,nbtd,nbtmax,ncmpr,ndrsr,ndrsrd,nmut,nmutmx,nopgmx,noptmx,noutpt,nptkmx,nptmax,nrct,nrctmx,nrk,nslt,nsltmx,nst,nstmax,ntpr,ntprmx,ntprt,nttkmx,nttyo,nweope,nwndpc,nxt,nxtmax,pmu,presg,presh,press,pressb,pressd,pslamn,ptk,rcnstv,rconst,rk,rkb,rtcnst,tempc,tempcb,tempcd,tempcu,tempk,time1,trkb,ttk,uphase,uspec,wfac,xhfe,xhfs,xhfsd,xi1,xlke,xlks,xlksd,xvfe,xvfs,xvfsd)
+        call tpadv(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdoth, abdot, abdotv, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adh, adhfe, adhh, adhv, adhfs, adhfsd, advfe, advfs, advfsd, afcnst, al10, amu, aslm, aphi, aprehw, apresg, apresh, apx, avcnst, axhfe, axhfs, axhfsd, axlke, axlks, axlksd, axvfe, axvfs, axvfsd, bdh, bdhh, bdhv, bdot, bdoth, bdotv, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dhfs, dhfsd, dvfe, dvfs, dvfsd, eact, ehfac, farad, hact, iact, iapxmx, iktmax, imchmx, imech, iopg, iopt, ipbtmx, ipch, ipchmx, ipcv, ipcvmx, ixrn1, ixrn2, jpfcmx, jpress, jptffl, jsol, jtemp, narxmx, narxt, narxth, nbasp, nbaspd, nbt, nbtd, nbtmax, ncmpr, ndrsr, ndrsrd, nmut, nmutmx, nopgmx, noptmx, noutpt, nptkmx, nptmax, nrct, nrctmx, nrk, nslt, nsltmx, nst, nstmax, ntpr, ntprmx, ntprt, nttkmx, nttyo, nweope, nwndpc, nxt, nxtmax, pmu, presg, presh, press, pressb, pressd, pslamn, ptk, rcnstv, rconst, rk, rkb, rtcnst, tempc, tempcb, tempcd, tempcu, tempk, time1, trkb, ttk, uphase, uspec, wfac, xhfe, xhfs, xhfsd, xi1, xlke, xlks, xlksd, xvfe, xvfs, xvfsd)
 
         qtrch = ntpr .ne. ntpr0
     end if

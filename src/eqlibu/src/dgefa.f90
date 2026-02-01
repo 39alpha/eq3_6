@@ -80,7 +80,7 @@ subroutine dgefa(gmmatr, kmax, kdim, ipivot, info)
                 end if
 
                 tx = -1./div
-                call dscal(kdim - k,tx,gmmatr(k + 1,k),1)
+                call dscal(kdim - k, tx, gmmatr(k + 1, k), 1)
 
                 ! Row elimination with column indexing.
                 do j = kp1,kdim
@@ -91,7 +91,7 @@ subroutine dgefa(gmmatr, kmax, kdim, ipivot, info)
                         gmmatr(k,j) = tx
                     end if
 
-                    call daxpy(kdim - k,tx,gmmatr(k + 1,k),1,gmmatr(k + 1,j),1)
+                    call daxpy(kdim - k, tx, gmmatr(k + 1, k), 1, gmmatr(k + 1, j), 1)
                 end do
 
                 go to 100
