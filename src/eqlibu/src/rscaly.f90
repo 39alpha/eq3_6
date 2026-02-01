@@ -1,4 +1,4 @@
-subroutine rscaly(avxmax,avy,avys,eps100,nmax)
+subroutine rscaly(avxmax, avy, avys, eps100, nmax)
     !! This subroutine rescales the elements in the avys array. The
     !! results are placed in the avy array. This subroutine is normally
     !! used in conjunction with EQLIBU/scalx1.f and EQLIBU/polfit.f

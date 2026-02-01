@@ -1,4 +1,4 @@
-subroutine etoo2(cdrsi,dhfe,dhfs,dvfe,dvfs,ipch,ipchmx,ipcv,ipcvmx,narxmx,narxt,nbtmx1,ndrsts,ns,ntprmx,ntprt,udrsi,xhfe,xhfs,xlke,xlks,xvfe,xvfs)
+subroutine etoo2(cdrsi, dhfe, dhfs, dvfe, dvfs, ipch, ipchmx, ipcv, ipcvmx, narxmx, narxt, nbtmx1, ndrsts, ns, ntprmx, ntprt, udrsi, xhfe, xhfs, xlke, xlks, xvfe, xvfs)
     !! This subroutine converts the reaction for the ns-th species from
     !! one written in terms of e- to one written in terms of O2(g).
     !! The "Eh" reaction is used to do this.

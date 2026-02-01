@@ -1,4 +1,4 @@
-subroutine aaaeql(usteql,uveeql)
+subroutine aaaeql(usteql, uveeql)
     !! EQLIB: EQ3/6 Library - Main Part
     !! EQ3/6 version 8.0a R43a (Patched 10/01/2009)
     !! Last revised 04/24/02 by TJW

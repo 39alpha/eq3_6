@@ -1,4 +1,4 @@
-subroutine ckfrsr(cbsr,csts,jcode,jflag,nbaspd,nbtd,nbtmax,nbt1mx,noutpt,nrct,nrctmx,nrndex,nsrtmx,nstmax,nsts,nstsmx,nstsr,nttyo,ureac,uspec)
+subroutine ckfrsr(cbsr, csts, jcode, jflag, nbaspd, nbtd, nbtmax, nbt1mx, noutpt, nrct, nrctmx, nrndex, nsrtmx, nstmax, nsts, nstsmx, nstsr, nttyo, ureac, uspec)
     !! This subroutine checks the reactions for special reactants. As
     !! needed, it rewrites these reactions to eliminate any basis
     !! species for which jflag = 30. Such species are not in the active

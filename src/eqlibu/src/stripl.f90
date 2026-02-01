@@ -1,4 +1,4 @@
-subroutine stripl(nin,nout)
+subroutine stripl(nin, nout)
     !! This subroutine copies the file whose unit number is "nin" to
     !! that whose unit number is "nout". Lines beginning with an asterix
     !! are not copied. Lines exceeding a length of 80 characters are

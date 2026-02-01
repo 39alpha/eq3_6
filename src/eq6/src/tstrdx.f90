@@ -1,4 +1,4 @@
-subroutine tstrdx(cdrs,iodb,iopt,jflag,jsflag,narn1,narn2,ndrs,ndrsmx,ndrsr,nodbmx,noptmx,noutpt,nrdxsp,nstmax,qredox,uspec)
+subroutine tstrdx(cdrs, iodb, iopt, jflag, jsflag, narn1, narn2, ndrs, ndrsmx, ndrsr, nodbmx, noptmx, noutpt, nrdxsp, nstmax, qredox, uspec)
     !! This subroutine determines if the chemical model to be
     !! computed has a redox aspect. This will be determined to be
     !! so if a species in the model has an associated reaction

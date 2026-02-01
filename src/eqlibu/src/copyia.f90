@@ -1,4 +1,4 @@
-subroutine copyia(iarr1,iarr2,nmax)
+subroutine copyia(iarr1, iarr2, nmax)
     !! This subroutine copies the first nmax elements of the integer
     !! array iarr1 into the integer array iarr2. Normally, nmax would
     !! be the dimension of both arrays. However, nmax could be less

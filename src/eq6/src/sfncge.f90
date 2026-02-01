@@ -1,4 +1,4 @@
-subroutine sfncge(delxi,xval0,xtargv,dxval0,nord,nrd1mx,resx)
+subroutine sfncge(delxi, xval0, xtargv, dxval0, nord, nrd1mx, resx)
     !! This subroutine computes a general search function for
     !! EQ6/search.f. This search function is a residual defined as the
     !! difference between the calculated value of a function (xvalc)

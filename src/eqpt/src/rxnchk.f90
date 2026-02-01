@@ -1,4 +1,4 @@
-subroutine rxnchk(cdrs,cess,mtotr,nbt,nbtmx1,nbtmx2,nco,nct,nctmax,nerr,noutpt,ns,nsb,nttyo,uelem,uspec,zchar)
+subroutine rxnchk(cdrs, cess, mtotr, nbt, nbtmx1, nbtmx2, nco, nct, nctmax, nerr, noutpt, ns, nsb, nttyo, uelem, uspec, zchar)
     !! This suboutine checks the reaction associated with the ns-th
     !! species for mass and charge balance. If an imbalance is found,
     !! a message is written to the screen and output files.

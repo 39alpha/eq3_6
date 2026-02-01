@@ -1,4 +1,4 @@
-subroutine tprn2(abeta,acphi,alamn2,amun3,in2pr,ipbtmx,jpfcmx,natmax,ncvn2,nerr,nn2pr,nn3tr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvn2,qpdn2,uaqsp,upair)
+subroutine tprn2(abeta, acphi, alamn2, amun3, in2pr, ipbtmx, jpfcmx, natmax, ncvn2, nerr, nn2pr, nn3tr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvn2, qpdn2, uaqsp, upair)
     !! Test and process Pitzer data read from the data file that
     !! pertain to a single neutral species (nn and nnn combinations,
     !! such as CO2(aq)-CO2(aq) and CO2(aq)-CO2(aq)-CO2(aq). Find and

@@ -1,4 +1,4 @@
-subroutine nbsgam(acfnbs,adh,fxi,nchlor,noutpt,nttyo)
+subroutine nbsgam(acfnbs, adh, fxi, nchlor, noutpt, nttyo)
     !! This subroutine calculates the log activity coefficient of the
     !! chloride ion according to the NBS pH convention (e.g., Covington,
     !! Bates, and Durst, 1985). The convention itself may be extended

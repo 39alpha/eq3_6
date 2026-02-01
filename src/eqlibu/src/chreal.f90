@@ -1,4 +1,4 @@
-subroutine chreal(nttyo,qrderr,ustr,var)
+subroutine chreal(nttyo, qrderr, ustr, var)
     !! This subroutine reads the real*8 var from the character string
     !! ustr. The string may contain non-blank characters other than the
     !! real*8 number. If there is more than one real*8 number in the

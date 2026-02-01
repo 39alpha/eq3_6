@@ -1,4 +1,4 @@
-subroutine gegexw(cegexs,egexpc,egexpa,egexw,iern1,iern2,ietmax,jern1,jetmax,jgext,kern1,kern2,ketmax,kgexsa,moph,mosp,netmax,ngexsa,ngext,noutpt,nptmax,nstmax,nttyo,xgexw,zchar)
+subroutine gegexw(cegexs, egexpc, egexpa, egexw, iern1, iern2, ietmax, jern1, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, nptmax, nstmax, nttyo, xgexw, zchar)
     !! This subroutine computes the apparent "whole-phase" equivalent
     !! fractions (egexw) and mole fractions (xgexw) of the exchange
     !! ions present in generic ion exchanger phases. The exchange

@@ -1,4 +1,4 @@
-subroutine chdxtr(delxi,dlxmx0,drer0,drir0,iodb,jordlm,jreac,kord,nodbmx,nordmx,nordrs,noutpt,nrct,nrctmx,nrd1mx,nsscmx,scalim,scfcrs,sscrew,qriinf,rirec0,rrelr0,ureac)
+subroutine chdxtr(delxi, dlxmx0, drer0, drir0, iodb, jordlm, jreac, kord, nodbmx, nordmx, nordrs, noutpt, nrct, nrctmx, nrd1mx, nsscmx, scalim, scfcrs, sscrew, qriinf, rirec0, rrelr0, ureac)
     !! This subroutine chooses a step size and order according to the
     !! Taylor's series accuracy criterion, examining the r vector and
     !! its associated smoothed or average derivatives. Subroutine

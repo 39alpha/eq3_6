@@ -1,4 +1,4 @@
-subroutine ptaylr(delxi,demop0,emop0,emop,nord,nordmx,npet,npetmx)
+subroutine ptaylr(delxi, demop0, emop0, emop, nord, nordmx, npet, npetmx)
     !! This subroutine evaluates Taylor's series expansions for the
     !! number of moles of phases in the ES. These expansions are used
     !! to find phase boundaries at which phases disappear from the ES.

@@ -1,4 +1,4 @@
-subroutine dscramc(ntabx,ntabs,nllnmx,ulinex)
+subroutine dscramc(ntabx, ntabs, nllnmx, ulinex)
     !! This routine descrambles a file of tables whose lines are
     !! interspersed, but which are marked by an id string that
     !! apears first on any such line. The id string may contain up

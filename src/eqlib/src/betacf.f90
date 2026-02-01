@@ -1,4 +1,4 @@
-subroutine betacf(acflg,acflgo,bacfmx,nst,nstmax,ubacmx,uspec)
+subroutine betacf(acflg, acflgo, bacfmx, nst, nstmax, ubacmx, uspec)
     !! This subroutine finds the activity coefficient residual with
     !! the largest magnitude (bacfmx). The range of activity coefficient
     !! residuals covers all species.

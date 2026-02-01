@@ -1,4 +1,4 @@
-subroutine prtacr(actlg,iopr,jsflag,nbaspd,nbt,nbtmax,nelect,nhydr,noprmx,no2gaq,noutpt,nstmax,uspec,zchar)
+subroutine prtacr(actlg, iopr, jsflag, nbaspd, nbt, nbtmax, nelect, nhydr, noprmx, no2gaq, noutpt, nstmax, uspec, zchar)
     !! This subroutine prints a table of cation/H+ activity ratios,
     !! anion-H+ activity products, and neutral species activities.
     !! Only aqueous basis species are involved. The level of printing

@@ -1,4 +1,4 @@
-subroutine inttfx(narn1a,narn2a,noutpt,nsta_asv,ntfxa,ntfxmx,ntfxta,nttyo,tfxa,uspeca,utfxxd)
+subroutine inttfx(narn1a, narn2a, noutpt, nsta_asv, ntfxa, ntfxmx, ntfxta, nttyo, tfxa, uspeca, utfxxd)
     !! This subroutine sets up arrays for handling alkalinity
     !! coefficients Species names used to tag alkalinity coefficients
     !! are matched against the aqueous species names read from the data

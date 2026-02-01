@@ -1,4 +1,4 @@
-subroutine getlu(nlu,nerr)
+subroutine getlu(nlu, nerr)
     !! This subroutine finds a currently unused unit number.
     !! This subroutine is called by:
     !!   EQLIBU/openin.f

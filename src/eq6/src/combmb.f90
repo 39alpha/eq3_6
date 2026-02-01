@@ -1,4 +1,4 @@
-subroutine combmb(cdrs,iindx1,ipndx1,jflag,kbt,kdim,km1,kmax,kmt,kx1,kxt,mtb,mtbaq,ndrsmx,nbasp,nbt,nbtmax,ndrs,ndrsr,noutpt,nstmax,nttyo,uspec,uzvec1,zvclg1,zvec1)
+subroutine combmb(cdrs, iindx1, ipndx1, jflag, kbt, kdim, km1, kmax, kmt, kx1, kxt, mtb, mtbaq, ndrsmx, nbasp, nbt, nbtmax, ndrs, ndrsr, noutpt, nstmax, nttyo, uspec, uzvec1, zvclg1, zvec1)
     !! This subroutine combines mass balances totals so that the total
     !! mass of an active auxiliary basis species whose jflag value
     !! is 30 is combined into the total masses of the other basis

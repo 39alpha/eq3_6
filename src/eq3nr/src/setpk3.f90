@@ -1,4 +1,4 @@
-subroutine setpk3(electr,iindx1,jflag,jflgi,kbt,kdim,kmax,kmt,kprs,kwater,kxt,mtb,mtbi,mtbaq,mtbaqi,narn1,narn2,nbasp,nbaspd,nbaspi,nbti,nbtmax,ndrsrd,nern1,nern2,nobswt,nstmax,ntitl,ntitl2,ntitmx,omeglg,press,pressi,scamas,sigzi,tempc,tempci,ubmtbi,uobsw,uspec,utitl,utitl2,uzveci,uzvec1,zvclgi,zvclg1)
+subroutine setpk3(electr, iindx1, jflag, jflgi, kbt, kdim, kmax, kmt, kprs, kwater, kxt, mtb, mtbi, mtbaq, mtbaqi, narn1, narn2, nbasp, nbaspd, nbaspi, nbti, nbtmax, ndrsrd, nern1, nern2, nobswt, nstmax, ntitl, ntitl2, ntitmx, omeglg, press, pressi, scamas, sigzi, tempc, tempci, ubmtbi, uobsw, uspec, utitl, utitl2, uzveci, uzvec1, zvclgi, zvclg1)
     !! This subroutine sets up certain variables and arrays for writing
     !! on the pickup file. This subroutine must be called prior to
     !! writing a pickup file.

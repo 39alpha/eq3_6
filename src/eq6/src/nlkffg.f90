@@ -1,4 +1,4 @@
-subroutine nlkffg(axlks,cess,cdrs,iffg,ifrn1,ifrn2,jffg,jpflag,jsflag,mwtsp,narxmx,ncmpr,ndrs,ndrsmx,ndrsr,ness,nessmx,nessr,nffg,nffgmx,nfrn1,nfrn2,ngrn1,ngrn2,noutpt,nphasx,npt,nptmax,nst,nstmax,ntpr,ntprmx,nttyo,qcntmp,uffg,ufixf,uphase,uspec,vosp0,xlkffg)
+subroutine nlkffg(axlks, cess, cdrs, iffg, ifrn1, ifrn2, jffg, jpflag, jsflag, mwtsp, narxmx, ncmpr, ndrs, ndrsmx, ndrsr, ness, nessmx, nessr, nffg, nffgmx, nfrn1, nfrn2, ngrn1, ngrn2, noutpt, nphasx, npt, nptmax, nst, nstmax, ntpr, ntprmx, nttyo, qcntmp, uffg, ufixf, uphase, uspec, vosp0, xlkffg)
     !! This subroutine sets up ficitive minerals, each of which is used
     !! to fixing the fugacity of a specified gas. The fugacity is
     !! actually fixed only if the corresponding ficitive mineral is in

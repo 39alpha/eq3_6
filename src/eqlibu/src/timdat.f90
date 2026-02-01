@@ -1,4 +1,4 @@
-subroutine timdat(udate,utime)
+subroutine timdat(udate, utime)
     !! This subroutine gets the date and clock time in ASCII for time and
     !! date stamping on output files. The variable "udate" is returned in
     !! the form "ddMmmccyy" (e.g., 23Sep1997) under Fortran 90, in the

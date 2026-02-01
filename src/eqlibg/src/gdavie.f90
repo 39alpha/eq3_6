@@ -1,4 +1,4 @@
-subroutine gdavie(acflgc,actwlc,adh,al10,fxi,narn1,narn2,nstmax,omega,sigmam,xbrwlc,zchsq2)
+subroutine gdavie(acflgc, actwlc, adh, al10, fxi, narn1, narn2, nstmax, omega, sigmam, xbrwlc, zchsq2)
     !! This subroutine computes activity coefficients of aqueous species
     !! using the Davies (1961) equation. The activity of water is
     !! computed from an expression that was derived from the Davies

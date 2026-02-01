@@ -1,4 +1,4 @@
-subroutine ckphpr(delxi,dlxmin,dph0,dxh0pr,dxh1pr,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,ph0,ph1,ph0prn,ph1prn,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckphpr(delxi, dlxmin, dph0, dxh0pr, dxh1pr, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, ph0, ph1, ph0prn, ph1prn, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the next pH-based print
     !! point is not exceeded. Because the pH might be decreasing or
     !! increasing, two potential target points (ph0prn and ph1prn)

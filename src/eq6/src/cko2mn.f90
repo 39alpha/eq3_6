@@ -1,4 +1,4 @@
-subroutine cko2mn(delxi,dlxmin,do20,dxo0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,fo2lg0,fo2lg1,o2min,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine cko2mn(delxi, dlxmin, do20, dxo0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, fo2lg0, fo2lg1, o2min, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the requested minimum value of
     !! log fO2 is not exceeded.
     !! This subroutine is called by:

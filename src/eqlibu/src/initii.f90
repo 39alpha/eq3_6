@@ -1,4 +1,4 @@
-subroutine initii(iarray,nmax)
+subroutine initii(iarray, nmax)
     !! This subroutine initializes each element of the integer array
     !! iarray its index value over the first nmax positions. Normally,
     !! nmax would be the dimension of the 1D iarray. However, nmax could

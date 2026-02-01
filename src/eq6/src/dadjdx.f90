@@ -1,4 +1,4 @@
-subroutine dadjdx(delxi,dlxmin,iodb,nodbmx,noutpt,qadjdx)
+subroutine dadjdx(delxi, dlxmin, iodb, nodbmx, noutpt, qadjdx)
     !! This subroutine determines whether or not delxi can be reduced
     !! to satisfy some criterion, such as the pH not exceeding the
     !! requested maximum value.

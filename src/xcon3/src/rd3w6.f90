@@ -1,4 +1,4 @@
-subroutine rd3w6(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,ninpts,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,qend,qrderr,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,uacion,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+subroutine rd3w6(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, ninpts, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, qend, qrderr, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, uacion, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
     !! This subroutine reads the EQ3NR input file in compact ("W")
     !! format for versions 6.0-6.1.
     !! This subroutine is called by:

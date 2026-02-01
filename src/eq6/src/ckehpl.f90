@@ -1,4 +1,4 @@
-subroutine ckehpl(delxi,dlxmin,deh0,dxe0pl,dxe1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,eh0,eh1,eh0plo,eh1plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckehpl(delxi, dlxmin, deh0, dxe0pl, dxe1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, eh0, eh1, eh0plo, eh1plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the next Eh-based plot
     !! point is not exceeded. Because the Eh might be decreasing or
     !! increasing, two potential target points (eh0plo and eh1plo)

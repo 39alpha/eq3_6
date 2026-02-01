@@ -1,4 +1,4 @@
-subroutine swtchb(adhfsd,adhfsx,advfsd,advfsx,axhfsd,axhfsx,axlksd,axlksx,axvfsd,axvfsx,cdrsd,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,nbaspd,nbtmax,nbw,nb1,nb2,ndrsd,ndrsmx,ndrsx,ndrsrd,ndrsrx,noutpt,ns1,ns2,nsta,nstmax,ntprmx,nttyo,uspeca)
+subroutine swtchb(adhfsd, adhfsx, advfsd, advfsx, axhfsd, axhfsx, axlksd, axlksx, axvfsd, axvfsx, cdrsd, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, nbaspd, nbtmax, nbw, nb1, nb2, ndrsd, ndrsmx, ndrsx, ndrsrd, ndrsrx, noutpt, ns1, ns2, nsta, nstmax, ntprmx, nttyo, uspeca)
     !! This subroutine performs a special kind of basis switch. It
     !! interchanges the status of a strict basis species with an
     !! auxiliary basis species. The effect of this action is equivalent

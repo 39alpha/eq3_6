@@ -1,4 +1,4 @@
-subroutine rdpz3(apsi,atheta,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npx3mx,npx3t,nthdt,nttyo,nwarn,uaqsp,uethfl,uthdtr,utripl,zaqsp)
+subroutine rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx, npx3t, nthdt, nttyo, nwarn, uaqsp, uethfl, uthdtr, utripl, zaqsp)
     !! This suboutine reads the following Pitzer interaction parameter
     !! data from the DATA0 file:
     !!   S-theta(MM'X) (and S-theta (MXX')) and their temperature

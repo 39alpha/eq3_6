@@ -1,4 +1,4 @@
-subroutine prtalk(alki,alk1,alk2,mrmlra,noutpt,ntf1t,ntf2t,qrho,rho,tempc,wfh2o)
+subroutine prtalk(alki, alk1, alk2, mrmlra, noutpt, ntf1t, ntf2t, qrho, rho, tempc, wfh2o)
     !! This subroutine writes a table of computed alkalinity parameters.
     !! This subroutine is called by:
     !!   EQ3NR/scripx.f

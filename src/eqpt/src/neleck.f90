@@ -1,4 +1,4 @@
-subroutine neleck(nct,nctmax,nerr,noutpt,nttyo,uelem)
+subroutine neleck(nct, nctmax, nerr, noutpt, nttyo, uelem)
     !! Check the names of chemical elements for uniqueness.
     !! This subroutine is called by:
     !!   EQPT/eqpt.f

@@ -1,4 +1,4 @@
-subroutine flgchk(jpflag,jsflag,ncmpra,npta,nptmax,nstmax,qclnsa)
+subroutine flgchk(jpflag, jsflag, ncmpra, npta, nptmax, nstmax, qclnsa)
     !! This subroutine recalculates the jpflag array to insure
     !! consistency with the jsflag array. The jpflag value of a phase
     !! can't be lower than the lowest value of any of the species which

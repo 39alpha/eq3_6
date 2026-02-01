@@ -1,4 +1,4 @@
-subroutine tprnc(abeta,alamnc,incpr,ipbtmx,jpfcmx,natmax,ncvnc,nerr,nncpr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvnc,qpdnc,uaqsp,upair)
+subroutine tprnc(abeta, alamnc, incpr, ipbtmx, jpfcmx, natmax, ncvnc, nerr, nncpr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvnc, qpdnc, uaqsp, upair)
     !! Test and process the nc (neutral, cation) pair Pitzer data read
     !! from the DATA0 file. Find and flag errors, such as duplication of
     !! data (e.g., two data blocks for the same nc pair). The

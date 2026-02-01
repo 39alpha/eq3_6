@@ -1,4 +1,4 @@
-subroutine ndiagx(delmax,delvec,eps100,idelmx,iebal,iindx1,irdxc3,jflag,kcarb,kebal,khydr,kmax,ko2gaq,nbasp,nbtmax,nhydr,noutpt,nstmax,nttyo,screwd,uspec)
+subroutine ndiagx(delmax, delvec, eps100, idelmx, iebal, iindx1, irdxc3, jflag, kcarb, kebal, khydr, kmax, ko2gaq, nbasp, nbtmax, nhydr, noutpt, nstmax, nttyo, screwd, uspec)
     !! This subroutine attempts to generate diagnostics if hybrid
     !! Newton-Raphson iteration fails.
     !! This subroutine is called by:

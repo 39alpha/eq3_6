@@ -1,4 +1,4 @@
-subroutine elesck(cessi,nbtmx1,nctmax,ncts,nentei,nerr,noutpt,ns,nttyo,qblkes,qzeres,uessi,usblkf,uspec)
+subroutine elesck(cessi, nbtmx1, nctmax, ncts, nentei, nerr, noutpt, ns, nttyo, qblkes, qzeres, uessi, usblkf, uspec)
     !! This subroutine conducts tests on the elemental composition
     !! specified for a species. It detects any blank and duplicate
     !! element names in the composition and any zero-valued

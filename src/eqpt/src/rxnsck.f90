@@ -1,4 +1,4 @@
-subroutine rxnsck(nbtmx1,cdrsi,nct,ndrsts,nentri,nerr,noutpt,ns,nsb,nttyo,qblkrs,qzerrs,udrsi,usblkf,uspec)
+subroutine rxnsck(nbtmx1, cdrsi, nct, ndrsts, nentri, nerr, noutpt, ns, nsb, nttyo, qblkrs, qzerrs, udrsi, usblkf, uspec)
     !! This subroutine conducts tests on the associated reaction
     !! specified for a species. It detects any blank and duplicate
     !! species names in the reaction and any zero-valued reaction

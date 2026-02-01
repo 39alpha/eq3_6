@@ -1,4 +1,4 @@
-subroutine prtgex(acflg,actlg,affpd,affsd,cegexs,conc,egexjc,egexjf,egexpa,egexpc,egexs,egexw,iern1,iern2,ietmax,jern1,jern2,jetmax,jgext,kern1,kern2,ketmax,kgexsa,moph,mosp,netmax,ngexsa,ngext,noutpt,np,nptmax,nstmax,sidrph,sidrsp,tolspf,ugexj,ugexmo,uspec,uphase,xbar,xbarlg,xgexw,wkgwi)
+subroutine prtgex(acflg, actlg, affpd, affsd, cegexs, conc, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
     !! This subroutine prints tables describing the state and properties
     !! of the np-th phase (a generic ion exchanger). It is analogous to
     !! EQLIB/prtsso.f, which prints the same tables for solid solution

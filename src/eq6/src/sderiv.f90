@@ -1,4 +1,4 @@
-subroutine sderiv(akmat0,demos0,fdse0,nord,nordmx,nrd1mx,nset,nsetmx)
+subroutine sderiv(akmat0, demos0, fdse0, nord, nordmx, nrd1mx, nset, nsetmx)
     !! This subroutine computes estimates of the derivatives of the
     !! numbers of moles of selected species in the equilibrium system.
     !! These species include H2O(l) for the aqueous solution and all

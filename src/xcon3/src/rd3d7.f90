@@ -1,4 +1,4 @@
-subroutine rd3d7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,ninpts,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nttyo,nxmdmx,nxmod,nxtb,nxtmax,qend,qrderr,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, ninpts, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nttyo, nxmdmx, nxmod, nxtb, nxtmax, qend, qrderr, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
     !! This subroutine reads the EQ3NR input file in menu-style ("D")
     !! format for versions 7.0-7.2. It thus encompasses two version
     !! levels.

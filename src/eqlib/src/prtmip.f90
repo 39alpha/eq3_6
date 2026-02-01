@@ -1,4 +1,4 @@
-subroutine prtmip(acflg,actlg,conclg,ctb,nbaspd,nbt,nbtmax,nelect,nhydr,nhydx,noutpt,nstmax,uspec,zchar)
+subroutine prtmip(acflg, actlg, conclg, ctb, nbaspd, nbt, nbtmax, nelect, nhydr, nhydx, noutpt, nstmax, uspec, zchar)
     !! This subroutine prints  tables of the mean ionic activities and
     !! activity coefficients.
     !! This subroutine is called by:

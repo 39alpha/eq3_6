@@ -1,4 +1,4 @@
-subroutine prpheh(ah,ahmes,ahnbs,eh,ehmes,ehnbs,iopg,nopgmx,noutpt,pch,pe,pemes,penbs,ph,phcl,phmes,phnbs,qphcl,qredox,qrho)
+subroutine prpheh(ah, ahmes, ahnbs, eh, ehmes, ehnbs, iopg, nopgmx, noutpt, pch, pe, pemes, penbs, ph, phcl, phmes, phnbs, qphcl, qredox, qrho)
     !! This subroutine prints the pH, Eh (redox potential), and pe
     !! (log electron activity function) on the following pH scales:
     !!   1. The scale corresponding to the activity coefficient

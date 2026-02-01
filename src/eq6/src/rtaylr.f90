@@ -1,4 +1,4 @@
-subroutine rtaylr(delxi,drer0,drir0,jreac,nord,nrct,nrctmx,nrd1mx,rirec0,rirecp,rrelr0,rrelrp)
+subroutine rtaylr(delxi, drer0, drir0, jreac, nord, nrct, nrctmx, nrd1mx, rirec0, rirecp, rrelr0, rrelrp)
     !! This subroutine evaluates Taylor's series expansions for the
     !! inverse rate and the relative rates of all irreversible reactions.
     !! Compare with:

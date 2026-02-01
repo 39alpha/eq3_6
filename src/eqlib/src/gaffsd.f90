@@ -1,4 +1,4 @@
-subroutine gaffsd(actlg,afcnst,affpd,affsd,cdrsd,jflagd,jpflag,ncmpr,ndrsd,ndrsmx,ndrsrd,npt,nptmax,nst,nstmax,qxknph,sidrph,sidrsp,uphase,uspec,xbar,xlksd)
+subroutine gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndrsd, ndrsmx, ndrsrd, npt, nptmax, nst, nstmax, qxknph, sidrph, sidrsp, uphase, uspec, xbar, xlksd)
     !! This subroutine computes affinities and saturation indices based
     !! on reactions in the 'd' set (cdrsd/ndrsd/ndrsrd arrays).
     !! This subroutine is called by:

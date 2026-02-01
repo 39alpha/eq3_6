@@ -1,4 +1,4 @@
-subroutine rdpzet(apsi,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxzet,npx3mx,npx3t,nttyo,nwarn,uaqsp,utripl,zaqsp)
+subroutine rdpzet(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxzet, npx3mx, npx3t, nttyo, nwarn, uaqsp, utripl, zaqsp)
     !! This subroutine reads from the DATA1 file the coefficients
     !! required to compute those Pitzer interaction parameters
     !! associated with neutral-cation-anion (nca) triplets. This

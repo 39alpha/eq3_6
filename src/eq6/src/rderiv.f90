@@ -1,4 +1,4 @@
-subroutine rderiv(akmat0,drer0,drir0,fdri0,fdrr0,jreac,nord,nrct,nrctmx,nrd1mx)
+subroutine rderiv(akmat0, drer0, drir0, fdri0, fdrr0, jreac, nord, nrct, nrctmx, nrd1mx)
     !! This subroutine transforms finite differences of the rates of
     !! irreversible reactions into the corresponding derivatives.
     !! Note that (drer0) = (akmat0)(fdrr0). The inverse rate is treated

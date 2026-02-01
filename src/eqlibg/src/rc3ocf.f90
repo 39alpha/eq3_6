@@ -1,4 +1,4 @@
-subroutine rc3ocf(amu,jpfcmx,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilzeta,iodb,nmux,nmut,nmutmx,nodbmx,noutpt,nstmax,nttyo,uspec,zchar)
+subroutine rc3ocf(amu, jpfcmx, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, iodb, nmux, nmut, nmutmx, nodbmx, noutpt, nstmax, nttyo, uspec, zchar)
     !! This subroutine recalculates the original coefficients for
     !! the third-order Cphi, psi, and zeta parameters. Coefficients
     !! for parameters originally in mu form are are unchanged.

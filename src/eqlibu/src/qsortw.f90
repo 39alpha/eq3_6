@@ -1,4 +1,4 @@
-subroutine qsortw(asort,aval,istack,jsort,jstack,nmax,noutpt,nttyo,nval)
+subroutine qsortw(asort, aval, istack, jsort, jstack, nmax, noutpt, nttyo, nval)
     !! This subroutine sorts the first nval elements of the array
     !! aval, using the "quicksort" method of C.A.R. Hoare. The
     !! sorted elements of aval are placed in the array asort,

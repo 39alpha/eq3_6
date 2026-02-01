@@ -1,4 +1,4 @@
-subroutine caft1(afrc1,aft1,nrct,nrctmx,rrelr1)
+subroutine caft1(afrc1, aft1, nrct, nrctmx, rrelr1)
     !! This subroutine computes the total affinity (aft1).
     !! This subroutine is called by:
     !!   EQ6/path.f

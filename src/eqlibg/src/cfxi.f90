@@ -1,4 +1,4 @@
-subroutine cfxi(conc,fxic,jcsort,narn1,narn2,nstmax,zchsq2)
+subroutine cfxi(conc, fxic, jcsort, narn1, narn2, nstmax, zchsq2)
     !! This subroutine calculates the ionic strength. Note that a sorted
     !! summation is used.
     !! This subroutine is called by:

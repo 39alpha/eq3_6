@@ -1,4 +1,4 @@
-subroutine rdppsi(apsi,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxpsi,npx3mx,npx3t,nttyo,nwarn,uaqsp,utripl,zaqsp)
+subroutine rdppsi(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxpsi, npx3mx, npx3t, nttyo, nwarn, uaqsp, utripl, zaqsp)
     !! This subroutine reads from the DATA1 file the coefficients
     !! required to compute those Pitzer interaction parameters
     !! associated with cation-different cation-anion (cc'a) and

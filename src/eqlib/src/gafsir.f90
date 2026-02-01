@@ -1,4 +1,4 @@
-subroutine gafsir(actlg,afcnst,affsd,cdrsd,jflagd,ndrsd,ndrsmx,ndrsrd,nst,nstmax,sidrsp,uspec,xlksd)
+subroutine gafsir(actlg, afcnst, affsd, cdrsd, jflagd, ndrsd, ndrsmx, ndrsrd, nst, nstmax, sidrsp, uspec, xlksd)
     !! This subroutine computes the saturation indices of the reactions
     !! for the destruction of all species. The saturation index is
     !! defined as SI = log Q/K, where Q is the activity product and K is

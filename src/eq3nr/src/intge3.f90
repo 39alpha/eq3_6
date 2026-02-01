@@ -1,4 +1,4 @@
-subroutine intge3(cgexp,cgexpi,ier,iern1,iern2,ietmax,jern1,jern2,jetmax,jgext,jgexti,net,neti,netmax,ngexpi,ngexti,noutpt,nptmax,nstmax,nttyo,ugexj,ugexji,ugexp,ugexpi,ugexsi,uphase,uspec,xbar,xbarlg,xgexsi)
+subroutine intge3(cgexp, cgexpi, ier, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, jgexti, net, neti, netmax, ngexpi, ngexti, noutpt, nptmax, nstmax, nttyo, ugexj, ugexji, ugexp, ugexpi, ugexsi, uphase, uspec, xbar, xbarlg, xgexsi)
     !! This subroutine interprets any concentrations and compositions
     !! of generic exchange phases read from the EQ3NR input file. Here
     !! concentration means moles of exchanger phase per kg H2O, and

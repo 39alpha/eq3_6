@@ -1,4 +1,4 @@
-subroutine bderiv(akmat0,dafrc0,fdar0,jreac,nord,nordmx,nrct,nrctmx,nrd1mx)
+subroutine bderiv(akmat0, dafrc0, fdar0, jreac, nord, nordmx, nrct, nrctmx, nrd1mx)
     !! This subroutine computes estimates of the derivatives of the
     !! affinities of reactants (afrc1) from the corresponding finite
     !! differences. Note that (dafrc0) = (akmat0)(fdar0).

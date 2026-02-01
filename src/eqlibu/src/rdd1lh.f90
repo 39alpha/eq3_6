@@ -1,4 +1,4 @@
-subroutine rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+subroutine rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
     !! This subroutine reads one line containing an expected header
     !! or tag string from an EQ3/6 input in menu-style ("D")
     !! format. The line generally contains both the header and data.

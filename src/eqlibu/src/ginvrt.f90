@@ -1,4 +1,4 @@
-subroutine ginvrt(aimatr,delvec,gmmatr,ipivot,kdim,kmax)
+subroutine ginvrt(aimatr, delvec, gmmatr, ipivot, kdim, kmax)
     !! This subroutine inverts the matrix aamatr. The inverted matrix
     !! is returned in aimatr. Thus
     !!   [aamatr][aimatr] = I

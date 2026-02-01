@@ -1,4 +1,4 @@
-subroutine dfbasp(nbaspa,nbta,nbta_asv,ndrsa,ndrsa_asv,ndrsra,nerr,noutpt,nsta,nsta_asv,nttyo,ubasp,uspeca)
+subroutine dfbasp(nbaspa, nbta, nbta_asv, ndrsa, ndrsa_asv, ndrsra, nerr, noutpt, nsta, nsta_asv, nttyo, ubasp, uspeca)
     !! This subroutine decodes the ubasp array (list of basis species
     !! names built while reading the data file). It puts their
     !! species indices in the nbaspa array. The basis indices that

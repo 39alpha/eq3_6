@@ -1,4 +1,4 @@
-subroutine intinx(ier,ixrn1,ixrn2,ncmpr,ncmpri,noutpt,npnxp,nptmax,nstmax,nttyo,nxicmx,nxti,nxtimx,umemi,uphase,usoli,uspec,xbar,xbari,xbarlg)
+subroutine intinx(ier, ixrn1, ixrn2, ncmpr, ncmpri, noutpt, npnxp, nptmax, nstmax, nttyo, nxicmx, nxti, nxtimx, umemi, uphase, usoli, uspec, xbar, xbari, xbarlg)
     !! This subroutine interpets the solid solution compositions
     !! specified on the input file.
     !! This subroutine is called by:

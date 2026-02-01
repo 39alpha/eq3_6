@@ -1,4 +1,4 @@
-subroutine gspion(narn1,narn2,nchlor,nelect,nhydr,nhydx,noutpt,no2gaq,nstmax,nttyo,uspec)
+subroutine gspion(narn1, narn2, nchlor, nelect, nhydr, nhydx, noutpt, no2gaq, nstmax, nttyo, uspec)
     !! This subroutine finds the species indices of H+, OH-, Cl-,
     !! aqueous O2(g), and aqueous e-.
     !! This subroutine is called by:

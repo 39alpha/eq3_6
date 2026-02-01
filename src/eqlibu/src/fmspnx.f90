@@ -1,4 +1,4 @@
-subroutine fmspnx(jlen,unam48,uspn56)
+subroutine fmspnx(jlen, unam48, uspn56)
     !! This subroutine formats a 48-character species name (unam48) into
     !! a 56-character string (uspn56) so that the phase part of the
     !! name (in the field composed of the second 24 characters) appears

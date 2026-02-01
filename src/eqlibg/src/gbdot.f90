@@ -1,4 +1,4 @@
-subroutine gbdot(acflgc,actwlc,adh,al10,azero,bdh,bdot,cco2,fxi,insgf,narn1,narn2,natmax,nstmax,omega,sigmam,tempk,xbrwlc,zchar,zchsq2)
+subroutine gbdot(acflgc, actwlc, adh, al10, azero, bdh, bdot, cco2, fxi, insgf, narn1, narn2, natmax, nstmax, omega, sigmam, tempk, xbrwlc, zchar, zchsq2)
     !! This subroutine computes activity coefficients of aqueous species
     !! using the B-dot equation and a set of related approximations.
     !! This model is suitable only for relatively dilute solutions

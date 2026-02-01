@@ -1,4 +1,4 @@
-subroutine dscram(nf1,nf2)
+subroutine dscram(nf1, nf2)
     !! This subroutine unscrambles a file of tables whose lines are
     !! interspersed, but which are marked 'a', 'b', 'c', etc., in
     !! column one. The contents of the scrambled file are copied to

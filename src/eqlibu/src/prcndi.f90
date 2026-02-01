@@ -1,4 +1,4 @@
-subroutine prcndi(noutpt,nttyo)
+subroutine prcndi(noutpt, nttyo)
     !! This subroutine writes legal statements and disclaimers to the
     !! output and screen files.
     !! This subroutine is called by:

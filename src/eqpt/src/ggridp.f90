@@ -1,4 +1,4 @@
-subroutine ggridp(ipch_asv,ipcv_asv,itgenf,jpdblo,jpfc_asv,jptffl,narx_asv,ndat0s,ndb_asv,noutpt,ntid_asv,ntpr_asv,nttyo,q500fl,uakey)
+subroutine ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv, ndat0s, ndb_asv, noutpt, ntid_asv, ntpr_asv, nttyo, q500fl, uakey)
     !! This suboutine gets the necessary dimensioning parameters for the
     !! temperature grid on which thermodynamic data are represented.
     !! These parameters are presently embedded in the data file title,

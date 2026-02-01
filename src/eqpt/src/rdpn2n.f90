@@ -1,4 +1,4 @@
-subroutine rdpn2n(apsi,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxn2n,npx3mx,npx3t,nttyo,nwarn,uaqsp,utripl,zaqsp)
+subroutine rdpn2n(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxn2n, npx3mx, npx3t, nttyo, nwarn, uaqsp, utripl, zaqsp)
     !! This subroutine reads from the DATA1 file the coefficients
     !! required to compute those Pitzer interaction parameters
     !! associated with neutral-neutral-different neutral (nnn')

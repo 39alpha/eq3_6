@@ -1,4 +1,4 @@
-subroutine rdazp(azero,insgf,nazt,naztmx,ndat0s,nerr,noutpt,nttyo,uazp)
+subroutine rdazp(azero, insgf, nazt, naztmx, ndat0s, nerr, noutpt, nttyo, uazp)
     !! This subroutine reads hard core diamaters and related parameters
     !! used in the B-dot equation from the DATA0 file. This data
     !! consists of aqueous species names, hard core diameter

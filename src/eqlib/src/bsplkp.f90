@@ -1,4 +1,4 @@
-subroutine bsplkp(axlks,narxmx,nbasp,nbt,nbtmax,ndrs,ndrsmx,ndrsr,nstmax,ntprmx)
+subroutine bsplkp(axlks, narxmx, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nstmax, ntprmx)
     !! This subroutine looks at each active auxiliary basis species.
     !! It changes the corresponding log K polynomial coefficients so
     !! that log K is fixed at a value of -9999999. if any other species

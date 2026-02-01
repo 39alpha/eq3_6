@@ -1,4 +1,4 @@
-subroutine intieb(iebal,iebal3,ier,jsflag,nbasp,nbt,nbtmax,noutpt,nstmax,nttyo,uebal,uspec,zchar)
+subroutine intieb(iebal, iebal3, ier, jsflag, nbasp, nbt, nbtmax, noutpt, nstmax, nttyo, uebal, uspec, zchar)
     !! This subroutine finds the basis index (iebal) of the species to be
     !! adjusted for electrical balance, if any.
     !! This subroutine is called by:

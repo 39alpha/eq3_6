@@ -1,4 +1,4 @@
-subroutine prreac(cdrs,ndrs,ndrsmx,ndrsr,nf,ns,nstmax,uspec)
+subroutine prreac(cdrs, ndrs, ndrsmx, ndrsr, nf, ns, nstmax, uspec)
     !! This subroutine writes the n-th reaction in a set on the file
     !! whose unit number isf nf.
     !! This subroutine is called by:

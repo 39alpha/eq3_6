@@ -1,4 +1,4 @@
-subroutine initim(iexec0,jexec0,texec0,noutpt,nttyo,udate0,utime0)
+subroutine initim(iexec0, jexec0, texec0, noutpt, nttyo, udate0, utime0)
     !! This subroutine gets the time and date of the start of execution.
     !! It also calculates the data in the form needed to compute the
     !! actual run time at the end of execution (see EQLIBU/runtim.f).

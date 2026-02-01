@@ -1,4 +1,4 @@
-subroutine dawfix(aamatr,cdrs,eps100,gmmatr,iindx1,iodb,irdxc3,jflag,jjndex,kbt,kkndex,kmax,narn1,nbasp,nbtmax,ncosp,ndrs,ndrsmx,ndrsr,nelect,nhydr,nodbmx,no2gaq,noutpt,nstmax,qawfix,uspec)
+subroutine dawfix(aamatr, cdrs, eps100, gmmatr, iindx1, iodb, irdxc3, jflag, jjndex, kbt, kkndex, kmax, narn1, nbasp, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nhydr, nodbmx, no2gaq, noutpt, nstmax, qawfix, uspec)
     !! This subroutine determines if the activity of water is directly
     !! or indirectly fixed. For example, the user might directly specify
     !! the activity of water. Alternatively, a set of solubility

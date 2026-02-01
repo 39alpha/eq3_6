@@ -1,4 +1,4 @@
-subroutine initiz(iarray,nmax)
+subroutine initiz(iarray, nmax)
     !! This subroutine initializes the integer array iarray to zero over
     !! the first nmax positions. Normally, nmax would be the dimension
     !! of the 1D iarray. However, nmax could be less than the true

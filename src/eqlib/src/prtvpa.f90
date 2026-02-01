@@ -1,4 +1,4 @@
-subroutine prtvpa(abar,acfw,acfwlg,actw,actwlg,a3bar,fje,fjest,fo2,fo2lg,fxi,fxist,iopg,mlmrra,mrmlra,nopgmx,noutpt,osc,oscst,qrho,rhoc,rhowc,sigmam,sigmst,tdsglw,tdspkc,tdsplc,vosol,wfh2o,wftds,woh2o,wosol,wotds,xbarw,xbrwlg)
+subroutine prtvpa(abar, acfw, acfwlg, actw, actwlg, a3bar, fje, fjest, fo2, fo2lg, fxi, fxist, iopg, mlmrra, mrmlra, nopgmx, noutpt, osc, oscst, qrho, rhoc, rhowc, sigmam, sigmst, tdsglw, tdspkc, tdsplc, vosol, wfh2o, wftds, woh2o, wosol, wotds, xbarw, xbrwlg)
     !! This subroutine prints a table of various aqueous solution
     !! parameters.
     !! This subroutine is called by:

@@ -1,4 +1,4 @@
-subroutine wrpar(aamatr,adh,adhh,adhv,aphi,apr,avgrid,bdh,bdhh,bdhv,bdot,bdoth,bdotv,cco2,cof,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,dhfe,dvfe,eps100,gmmatr,ipch,ipchmx,ipcv,ipcvmx,ipivot,narxmx,narxt,ndata1,ndat1f,noutpt,ntprmx,ntprt,nttyo,presg,prehw,tdamax,tdamin,tempc,tempcs,tmpcmx,uakey,xhfe,xlke,xvfe,xvec,yvec)
+subroutine wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, cof, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dvfe, eps100, gmmatr, ipch, ipchmx, ipcv, ipcvmx, ipivot, narxmx, narxt, ndata1, ndat1f, noutpt, ntprmx, ntprt, nttyo, presg, prehw, tdamax, tdamin, tempc, tempcs, tmpcmx, uakey, xhfe, xlke, xvfe, xvec, yvec)
     !! This subroutine takes the data read from the DATA0 file by the
     !! EQPT/rdpar.f, processes it by converting data on a temperature
     !! grid to the equivalent set of coefficients of interpolating

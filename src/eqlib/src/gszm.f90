@@ -1,4 +1,4 @@
-subroutine gszm(conc,jcsort,narn1,narn2,nstmax,sigza,sigzc,sigzi,sigzm,zchar)
+subroutine gszm(conc, jcsort, narn1, narn2, nstmax, sigza, sigzc, sigzi, sigzm, zchar)
     !! This subroutine calculates the sums of equivalent concentrations
     !! and the charge imbalance. Note that a sorted summation is
     !! used.

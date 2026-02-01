@@ -1,4 +1,4 @@
-subroutine ncmpve(acflg,act,actlg,cdrs,cgexj,eps100,iern1,iern2,ietmax,jern1,jern2,jetmax,jflag,jgext,jsflag,losp,mgext,moph,mosp,nbasp,nbt,nbtmax,ndrs,ndrsmx,ndrsr,netmax,noutpt,nptmax,nstmax,nttyo,ugexj,uphase,uspec,xbar,xbarlg,xlks)
+subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, jern1, jern2, jetmax, jflag, jgext, jsflag, losp, mgext, moph, mosp, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, netmax, noutpt, nptmax, nstmax, nttyo, ugexj, uphase, uspec, xbar, xbarlg, xlks)
     !! This subroutine computes part of the "expansion" of the
     !! basis set variable data that yields the "total" system
     !! description. This part is the expansion giving the mole

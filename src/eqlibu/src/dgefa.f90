@@ -1,4 +1,4 @@
-subroutine dgefa(gmmatr,kmax,kdim,ipivot,info)
+subroutine dgefa(gmmatr, kmax, kdim, ipivot, info)
     !! This subroutine factors the real*8 array gmmatr, using the method
     !! of L-U decomposition. It is an adaptation of the 1979 Linpack
     !! subroutine of the same name. The size and order of the original

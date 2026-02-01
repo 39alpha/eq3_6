@@ -1,4 +1,4 @@
-subroutine parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+subroutine parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
     !! This subroutine parses the input string uline1, based on the
     !! delimiter '|'. Character strings found between delimiters are
     !! copied into the output array ufield. The elements of this array

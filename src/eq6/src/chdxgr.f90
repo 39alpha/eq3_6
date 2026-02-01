@@ -1,4 +1,4 @@
-subroutine chdxgr(delxi,dlxmx0,fdri0,fdrr0,iodb,jordlm,jreac,kord,nodbmx,nordmx,nordr,noutpt,nrct,nrctmx,nrd1mx,nsscmx,scalim,scfcr,sscrew,qriinf,rirec0,rrelr0,ureac)
+subroutine chdxgr(delxi, dlxmx0, fdri0, fdrr0, iodb, jordlm, jreac, kord, nodbmx, nordmx, nordr, noutpt, nrct, nrctmx, nrd1mx, nsscmx, scalim, scfcr, sscrew, qriinf, rirec0, rrelr0, ureac)
     !! This subroutine chooses a step size and order according to the
     !! Gear accuracy criterion, examining the r vector and its
     !! associated finite differences. Subroutine chdxgz.f performs

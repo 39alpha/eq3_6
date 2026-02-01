@@ -1,4 +1,4 @@
-subroutine chdxgz(delxi,dlxmx0,fdlim,fdzv0,iodb,iopt,jordlm,kdim,kmax,km1,kord,kxt,nodbmx,noptmx,nordmx,nordz,noutpt,nrd1mx,nsscmx,scalim,scfcz,sscrew,qmin,smp100,uzvec1,zklogu,zvec0,zvclg0)
+subroutine chdxgz(delxi, dlxmx0, fdlim, fdzv0, iodb, iopt, jordlm, kdim, kmax, km1, kord, kxt, nodbmx, noptmx, nordmx, nordz, noutpt, nrd1mx, nsscmx, scalim, scfcz, sscrew, qmin, smp100, uzvec1, zklogu, zvec0, zvclg0)
     !! This subroutine chooses a step size and order according to the
     !! Gear accuracy criterion, examining the z vector and its
     !! associated finite differences. Subroutine chdxgr.f performs

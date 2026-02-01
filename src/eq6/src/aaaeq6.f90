@@ -1,4 +1,4 @@
-subroutine aaaeq6(usteq6,uveeq6)
+subroutine aaaeq6(usteq6, uveeq6)
     !! EQ6: EQ6 Reaction-Path Code
     !! EQ3/6 version 8.0a R43a (Patched 10/01/2009)
     !! Last revised 04/24/02 by TJW

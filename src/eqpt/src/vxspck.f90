@@ -1,4 +1,4 @@
-subroutine vxspck(iktmax,issot,nerr,nmt,nmtmax,noutpt,nttyo,nxt,nxtmax,uminsp,ussoph,ussosp)
+subroutine vxspck(iktmax, issot, nerr, nmt, nmtmax, noutpt, nttyo, nxt, nxtmax, uminsp, ussoph, ussosp)
     !! Validate the names of solid solution end-members. Make sure that
     !! these names appear on the list of pure minerals.
     !! This subroutine is called by:

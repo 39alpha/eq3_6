@@ -1,4 +1,4 @@
-subroutine gakmat(akmat0,dxsm00,nord,nrd1mx)
+subroutine gakmat(akmat0, dxsm00, nord, nrd1mx)
     !! This subroutine computes the akmat0 matrix, which allows
     !! calculation of estimates of derivatives from corresponding finite
     !! differences. Note: this subroutine presumes that the diagonal

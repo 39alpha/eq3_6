@@ -1,4 +1,4 @@
-subroutine realch(noutpt,nttyo,ustr,var)
+subroutine realch(noutpt, nttyo, ustr, var)
     !! This subroutine converts writes the real*8 variable var into the
     !! string ustr, employing left justification and blank fill. If
     !! right justification is desired, one should just write the

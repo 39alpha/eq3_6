@@ -1,4 +1,4 @@
-subroutine alters(afcnst,apresg,axlks,cdrs,kxmod,narxmx,narxt,ndrs,ndrsmx,ndrsr,noutpt,npt,nptmax,nst,nstmax,ntpr,ntprmx,nttyo,nxmdmx,nxmod,tempc,uphase,uspec,uxmod,xlkmod)
+subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsmx, ndrsr, noutpt, npt, nptmax, nst, nstmax, ntpr, ntprmx, nttyo, nxmdmx, nxmod, tempc, uphase, uspec, uxmod, xlkmod)
     !! This subroutine alters the log K values of reactions for the
     !! destruction of the specified species after they are read from
     !! the data file. This is done before the reactions are rewritten

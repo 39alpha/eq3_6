@@ -1,4 +1,4 @@
-subroutine aaaeq3(usteq3,uveeq3)
+subroutine aaaeq3(usteq3, uveeq3)
     !! EQ3NR: EQ3NR Speciation-Solubility Code
     !! EQ3/6 version 8.0a R43a (Patched 10/01/2009)
     !! Last revised 04/24/02 by TJW

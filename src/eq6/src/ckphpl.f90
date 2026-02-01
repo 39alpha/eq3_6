@@ -1,4 +1,4 @@
-subroutine ckphpl(delxi,dlxmin,dph0,dxh0pl,dxh1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,ph0,ph1,ph0plo,ph1plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckphpl(delxi, dlxmin, dph0, dxh0pl, dxh1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, ph0, ph1, ph0plo, ph1plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the next pH-based plot
     !! point is not exceeded. Because the pH might be decreasing or
     !! increasing, two potential target points (ph0plo and ph1plo)

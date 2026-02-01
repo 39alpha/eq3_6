@@ -1,4 +1,4 @@
-subroutine fbassw(jcsort,jflag,mosp,narn1,narn2,nse,nsi,nsj,nstmax,weight,wsi)
+subroutine fbassw(jcsort, jflag, mosp, narn1, narn2, nse, nsi, nsj, nstmax, weight, wsi)
     !! This subroutine attempts to find a candidate species to switch
     !! switch into the active basis set. The function here is similar
     !! to that EQLIB/fdomsp.f, which finds the species that dominates

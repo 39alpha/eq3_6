@@ -1,4 +1,4 @@
-subroutine polfit(aamatr,cof,gmmatr,ier,ipivot,npfmax,npft,noutpt,nttyo,xvec,yvec)
+subroutine polfit(aamatr, cof, gmmatr, ier, ipivot, npfmax, npft, noutpt, nttyo, xvec, yvec)
     !! This subroutine fits an exact polynomial through npft points.
     !! Each point is an x,y pair, where the values of x are in the
     !! xvec array, those of y in the yvec array. The method is to solve

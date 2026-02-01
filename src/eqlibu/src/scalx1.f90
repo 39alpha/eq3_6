@@ -1,4 +1,4 @@
-subroutine scalx1(avx,avxmax,avxs,ier,nmax)
+subroutine scalx1(avx, avxmax, avxs, ier, nmax)
     !! This subroutine scales the elements in the avx array to the
     !! interval (-1,1). The results are placed in the avxs array. This
     !! subroutine is normally used in conjunction with EQLIBU/rscaly.f

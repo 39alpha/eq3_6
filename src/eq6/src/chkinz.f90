@@ -1,4 +1,4 @@
-subroutine chkinz(ier,imchmx,imech,iopt,jcode,kmax,kxt,nelect,noptmx,noutpt,no2gaq,nrct,nrctmx,nrk,nstmax,nttyo,rkb,ureac,uspeca,uzveci,zvclgi)
+subroutine chkinz(ier, imchmx, imech, iopt, jcode, kmax, kxt, nelect, noptmx, noutpt, no2gaq, nrct, nrctmx, nrk, nstmax, nttyo, rkb, ureac, uspeca, uzveci, zvclgi)
     !! This subroutine checks the code input for various kinds of
     !! errors and inconsistencies. Here ier accumulates the
     !! number of errors caught.

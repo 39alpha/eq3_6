@@ -1,4 +1,4 @@
-subroutine ptzchk(narn1,narn2,natmax,nmxi,noutpt,nstmax,nsxi,nttyo,uspec)
+subroutine ptzchk(narn1, narn2, natmax, nmxi, noutpt, nstmax, nsxi, nttyo, uspec)
     !! This subroutine checks each aqueous species in the current model
     !! to see if it has any S-lambda or mu Pitzer coefficients. If
     !! not, a warning is printed. If a species has at least one

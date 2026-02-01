@@ -1,4 +1,4 @@
-subroutine gfdho(aphi,bt,f,fp,fpp,fxi)
+subroutine gfdho(aphi, bt, f, fp, fpp, fxi)
     !! This subroutine computes the Debye-Huckel function f and its
     !! derivatives with respect to ionic strength for the case of
     !! the Debye-Huckel-osmotic (DHO) model. This is the Debye-Huckel

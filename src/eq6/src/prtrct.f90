@@ -1,4 +1,4 @@
-subroutine prtrct(afrc1,aft1,imchmx,imech,iopt,modr,morr,noptmx,noutpt,nrct,nrctmx,nrk,rk,rreacn,rreac1,rrelr1,sfcar,ureac,wodr,wodrt,worr,worrt,xi1,xistsv)
+subroutine prtrct(afrc1, aft1, imchmx, imech, iopt, modr, morr, noptmx, noutpt, nrct, nrctmx, nrk, rk, rreacn, rreac1, rrelr1, sfcar, ureac, wodr, wodrt, worr, worrt, xi1, xistsv)
     !! This subroutine prints tables of data for irreversible reactions
     !! and corresponding reaction rates.
     !! This subroutine is called by:

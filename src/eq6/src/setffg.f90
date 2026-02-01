@@ -1,4 +1,4 @@
-subroutine setffg(csts,iindx1,iffg,ipndx1,jpflag,jsflag,kbt,kdim,kmax,km1,kmt,kx1,kxt,losp,moffg,mtb,mtbaq,nbaspd,nbt,nbtmax,ncmpr,nffg,nffgmx,noutpt,nphasx,npt,nptmax,nstmax,nsts,nstsmx,nstsr,nttyo,qloffg,uffg,uspec,uzvec1,zvclg1,zvec1)
+subroutine setffg(csts, iindx1, iffg, ipndx1, jpflag, jsflag, kbt, kdim, kmax, km1, kmt, kx1, kxt, losp, moffg, mtb, mtbaq, nbaspd, nbt, nbtmax, ncmpr, nffg, nffgmx, noutpt, nphasx, npt, nptmax, nstmax, nsts, nstsmx, nstsr, nttyo, qloffg, uffg, uspec, uzvec1, zvclg1, zvec1)
     !! This subroutine puts new fictive fugacity-fixing phases into the
     !! matrix if the corresponding masses to add to the equilibrium
     !! system (ES) are positive. It keep old such phases in if the

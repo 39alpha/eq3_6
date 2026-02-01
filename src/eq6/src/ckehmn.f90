@@ -1,4 +1,4 @@
-subroutine ckehmn(delxi,dlxmin,deh0,dxe0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,eh0,eh1,ehmin,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckehmn(delxi, dlxmin, deh0, dxe0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, eh0, eh1, ehmin, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the requested minimum value of
     !! Eh is not exceeded.
     !! This subroutine is called by:

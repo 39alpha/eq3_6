@@ -1,4 +1,4 @@
-subroutine chdxec(delxi,dlxmx0,dzvc0,iodb,kdim,kmax,km1,kxt,nodbmx,nord,noutpt,nrd1mx,qmin,qscon,scale,scalim,scnstd,scnsti,uzvec1,zvec0)
+subroutine chdxec(delxi, dlxmx0, dzvc0, iodb, kdim, kmax, km1, kxt, nodbmx, nord, noutpt, nrd1mx, qmin, qscon, scale, scalim, scnstd, scnsti, uzvec1, zvec0)
     !! This subroutine chooses the step size (delxi) for economy and
     !! super economy modes.
     !! This subroutine is called by:

@@ -1,4 +1,4 @@
-subroutine wrentu(actw,eh,fo2lg,iopg,iopt,kstep,nopgmx,noptmx,nttyo,ph,qredox,time1,xi1)
+subroutine wrentu(actw, eh, fo2lg, iopg, iopt, kstep, nopgmx, noptmx, nttyo, ph, qredox, time1, xi1)
     !! This subroutine writes entertainment for the user while the
     !! run is underway. This output gives an idea of how the
     !! calculation is progressing. In that respect, it is somewhat

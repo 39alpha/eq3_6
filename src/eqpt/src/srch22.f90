@@ -1,4 +1,4 @@
-subroutine srch22(jpair,unam1,unam2,upair,npx2mx,npx2t)
+subroutine srch22(jpair, unam1, unam2, upair, npx2mx, npx2t)
     !! This subroutine searches for the species pair corresponding
     !! to unam1, unam2 or unam2, unam1 in the upair array, and returns
     !! the index jpair of that pair in that aray. The variable jpair

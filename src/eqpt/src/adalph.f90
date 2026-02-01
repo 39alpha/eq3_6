@@ -1,4 +1,4 @@
-subroutine adalph(alpha,ipbtmx,iz1,iz2,npx2,npx2mx)
+subroutine adalph(alpha, ipbtmx, iz1, iz2, npx2, npx2mx)
     !! This subroutine assigns standard values of the Pitzer
     !! alpha parameters for the npx2-th species pair. The standard
     !! values depend on the charge combination.

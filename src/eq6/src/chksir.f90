@@ -1,4 +1,4 @@
-subroutine chksir(delxi,dlxmin,drir0,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,rirec0,rirecp,xi0,xi1,xval0)
+subroutine chksir(delxi, dlxmin, drir0, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, rirec0, rirecp, xi0, xi1, xval0)
     !! This subroutine checks the sign of the inverse rate. It finds the
     !! point of reaction progress at which the inverse rate becomes
     !! zero. Technically, this should never happen. The inverse rate

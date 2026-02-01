@@ -1,4 +1,4 @@
-subroutine chkstc(actw,awmax,awmin,eh,ehmax,ehmin,fo2lg,iopt,jreac,kstep,kstpmx,noptmx,noutpt,nrct,nrctmx,nttyo,o2max,o2min,ph,phmax,phmin,prcinf,qaft1,qcnpre,qcntmp,qconst,qredox,qstop,qvhfxi,qvlsow,timemx,time1,tolxst,tolxsu,ximax,xi1)
+subroutine chkstc(actw, awmax, awmin, eh, ehmax, ehmin, fo2lg, iopt, jreac, kstep, kstpmx, noptmx, noutpt, nrct, nrctmx, nttyo, o2max, o2min, ph, phmax, phmin, prcinf, qaft1, qcnpre, qcntmp, qconst, qredox, qstop, qvhfxi, qvlsow, timemx, time1, tolxst, tolxsu, ximax, xi1)
     !! This subroutine checks for conditions which call for terminating
     !! the current reaction path calculation.
     !! This subroutine is called by:

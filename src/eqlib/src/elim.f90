@@ -1,4 +1,4 @@
-subroutine elim(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ipch,ipchmx,ipcv,ipcvmx,jsflag,narxmx,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,nse,nst,nstmax,ntprmx,noutpt,nttyo,uspec)
+subroutine elim(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ipch, ipchmx, ipcv, ipcvmx, jsflag, narxmx, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, nse, nst, nstmax, ntprmx, noutpt, nttyo, uspec)
     !! This subroutine rewrites reaction equations so that the auxiliary
     !! basis species with index nse and jflag = 30 is eliminated from
     !! all reactions except the one linking it with its corresponding

@@ -1,4 +1,4 @@
-subroutine clress(csts,iindx1,ipndx1,jpflag,jsflag,kdim,kmax,km1,kmt,kx1,kxt,loph,losp,moph,mosp,mtb,mtbaq,nbt,nbtmax,nptmax,nstmax,nsts,nstsmx,nstsr,ufixf,uzvec1,zvec1,zvclg1)
+subroutine clress(csts, iindx1, ipndx1, jpflag, jsflag, kdim, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mtb, mtbaq, nbt, nbtmax, nptmax, nstmax, nsts, nstsmx, nstsr, ufixf, uzvec1, zvec1, zvclg1)
     !! This subroutine clears equilibrium system (ES) solids. These
     !! solids include pure minerals and solid solutions, but not fictive
     !! fugacity-fixing minerals.

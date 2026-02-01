@@ -1,4 +1,4 @@
-subroutine csigm(conc,jcsort,narn1,narn2,nstmax,sigmmc)
+subroutine csigm(conc, jcsort, narn1, narn2, nstmax, sigmmc)
     !! This subroutine calculates the sum of the molalities of aqueous
     !! solute species (sigmmc):
     !!   Sigma(i) m(i)

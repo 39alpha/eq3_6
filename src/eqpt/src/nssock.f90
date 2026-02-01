@@ -1,4 +1,4 @@
-subroutine nssock(nerr,noutpt,nttyo,nxt,nxtmax,ussoph)
+subroutine nssock(nerr, noutpt, nttyo, nxt, nxtmax, ussoph)
     !! Check the names of solid solutions for uniqueness.
     !! This subroutine is called by:
     !!   EQPT/eqpt.f

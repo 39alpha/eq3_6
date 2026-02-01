@@ -1,4 +1,4 @@
-subroutine hdrchk(ndat0s,noutpt,nttyo)
+subroutine hdrchk(ndat0s, noutpt, nttyo)
     !! This suboutine checks the first line of the DATA0 file to ensure
     !! that the mandatory header ("data0" beginning in column 1) is
     !! present.

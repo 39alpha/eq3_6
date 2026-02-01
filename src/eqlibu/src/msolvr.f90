@@ -1,4 +1,4 @@
-subroutine msolvr(aamatr,delvec,gmmatr,ier,ipivot,kdim,kmax,noutpt,nttyo,qpr,rhsvec)
+subroutine msolvr(aamatr, delvec, gmmatr, ier, ipivot, kdim, kmax, noutpt, nttyo, qpr, rhsvec)
     !! This subroutine solves the matrix equation:
     !!   (aamatr)(delvec) = (rhsvec)
     !! The method employed is L-U decomposition. The original aamatr

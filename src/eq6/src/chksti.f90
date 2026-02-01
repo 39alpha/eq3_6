@@ -1,4 +1,4 @@
-subroutine chksti(akmat0,drer0,drir0,deltim,delxi,dlxmin,fdri0,fdrr0,iodb,jreac,kly,kmax,nodbmx,kord,nord,noutpt,npts,nrct,nrctmx,nrd1mx,nttyo,prcinf,qriinf,rirec0,smp100,time0,time1,xi0,xi1)
+subroutine chksti(akmat0, drer0, drir0, deltim, delxi, dlxmin, fdri0, fdrr0, iodb, jreac, kly, kmax, nodbmx, kord, nord, noutpt, npts, nrct, nrctmx, nrd1mx, nttyo, prcinf, qriinf, rirec0, smp100, time0, time1, xi0, xi1)
     !! This subroutine checks the sign of the time increment.
     !! This subroutine is called by:
     !!   EQ6/path.f

@@ -1,4 +1,4 @@
-subroutine inbdot(azeroa,insgfa,nad1,narn1a,narn2a,nata,nata_asv,nerr,noutpt,nsta_asv,nttyo,uspeca)
+subroutine inbdot(azeroa, insgfa, nad1, narn1a, narn2a, nata, nata_asv, nerr, noutpt, nsta_asv, nttyo, uspeca)
     !! This subroutine reads from the data file the block of individual
     !! species parameters for the B-dot model of aqueous species
     !! activity coefficients. For each solute species, these parameters

@@ -1,4 +1,4 @@
-subroutine gmarko(nfldmx,nfldt,nmark,nttyo,ufield,uline1)
+subroutine gmarko(nfldmx, nfldt, nmark, nttyo, ufield, uline1)
     !! This subroutine determines the choice for an option. This choice
     !! is marked with an asterisk on a line containing a field for
     !! each choice.

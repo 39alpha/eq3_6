@@ -1,4 +1,4 @@
-subroutine ldlxrc(al10,delxi,dlxmin,dzvc0,iodb,iindx1,kbt,kdim,kelect,khydr,khydx,km1,kmax,ko2gaq,krdxsp,kwater,kxt,nbasp,nbtmax,nodbmx,nord,noutpt,nrd1mx,nstmax,nttyo,qrapch,uspec,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+subroutine ldlxrc(al10, delxi, dlxmin, dzvc0, iodb, iindx1, kbt, kdim, kelect, khydr, khydx, km1, kmax, ko2gaq, krdxsp, kwater, kxt, nbasp, nbtmax, nodbmx, nord, noutpt, nrd1mx, nstmax, nttyo, qrapch, uspec, zklogu, zvclg0, zvclg1, zvec0, zvec1)
     !! This subroutine limits delxi when a variable corresponding to a
     !! basis species is rapidly changing. Special forms of this
     !! constraint apply to the following species:

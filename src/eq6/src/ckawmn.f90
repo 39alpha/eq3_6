@@ -1,4 +1,4 @@
-subroutine ckawmn(delxi,dlxmin,daw0,dxw0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,awmin,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckawmn(delxi, dlxmin, daw0, dxw0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, awmin, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the requested minimum value of
     !! activity of water (aw) is not exceeded.
     !! This subroutine is called by:

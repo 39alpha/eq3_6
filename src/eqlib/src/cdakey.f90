@@ -1,4 +1,4 @@
-subroutine cdakey(iopg,nopgmx,noutpt,nttyo,udakey,udatfi)
+subroutine cdakey(iopg, nopgmx, noutpt, nttyo, udakey, udatfi)
     !! This subroutine checks the flag string "udakey" read from the data
     !! file and checks it against a key-list to test whether or not
     !! the data file used is consistent with the specified model for

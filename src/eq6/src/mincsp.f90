@@ -1,4 +1,4 @@
-subroutine mincsp(cdrsd,jpflag,jsflag,nbaspd,nbtd,nbtmax,ncmpra,ndrsd,ndrsmx,ndrsrd,nmrn1a,nmrn2a,noutpt,npta,nptmax,nstmax,nttyo,nxopex,nxopmx,nxopt,nxpemx,uspeca,uxcat,uxopex,uxopt)
+subroutine mincsp(cdrsd, jpflag, jsflag, nbaspd, nbtd, nbtmax, ncmpra, ndrsd, ndrsmx, ndrsrd, nmrn1a, nmrn2a, noutpt, npta, nptmax, nstmax, nttyo, nxopex, nxopmx, nxopt, nxpemx, uspeca, uxcat, uxopex, uxopt)
     !! This subroutine executes the mineral subset-selection suppression
     !! (nxopt) options.
     !! This subroutine is called by:

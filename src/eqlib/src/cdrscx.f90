@@ -1,4 +1,4 @@
-subroutine cdrscx(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,nstmax,ntprmx)
+subroutine cdrscx(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, nstmax, ntprmx)
     !! This subroutine copies the scratch arrays for reactions and
     !! reaction properties into the standard arrays.
     !! This subroutine is called by:

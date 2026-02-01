@@ -1,4 +1,4 @@
-subroutine zderiv(akmat0,dzvc0,fdzv0,kdim,kmax,nord,nrd1mx)
+subroutine zderiv(akmat0, dzvc0, fdzv0, kdim, kmax, nord, nrd1mx)
     !! This subroutine computes estimates of the derivatives of the
     !! master algebraic variables (z vector) from the corresponding
     !! finite differences. Note that (dzvc0) = (akmat0)(fdzv0).

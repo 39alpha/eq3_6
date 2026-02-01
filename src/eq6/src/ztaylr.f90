@@ -1,4 +1,4 @@
-subroutine ztaylr(delxi,dzvc0,kdim,kmax,km1,kxt,nord,nrd1mx,qztayl,zklogu,zvclg0,zvclg1,zvec0,zvec1)
+subroutine ztaylr(delxi, dzvc0, kdim, kmax, km1, kxt, nord, nrd1mx, qztayl, zklogu, zvclg0, zvclg1, zvec0, zvec1)
     !! This subroutine calculates new values for algebraic master
     !! variables (the z vector elements) from the finite-difference-
     !! based truncated Taylor's series. If qztayl = .true., change

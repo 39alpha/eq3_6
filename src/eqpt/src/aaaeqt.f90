@@ -1,4 +1,4 @@
-subroutine aaaeqt(usteqt,uveeqt)
+subroutine aaaeqt(usteqt, uveeqt)
     !! EQPT: EQ3/6 Data File Preprocessor Code
     !! EQ3/6 version 8.0a R43a (Patched 10/01/2009)
     !! Last revised 04/24/02 by TJW

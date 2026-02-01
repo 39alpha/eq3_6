@@ -1,4 +1,4 @@
-subroutine gesum(conc,delam,elam,elsump,elsums,elsumw,fxi,narn1,narn2,nazpmx,nstmax,zchar)
+subroutine gesum(conc, delam, elam, elsump, elsums, elsumw, fxi, narn1, narn2, nazpmx, nstmax, zchar)
     !! This subroutine calculates three second order sums involving the
     !! E-lambda function (elam) and its ionic strength derivatives
     !! (delam). These are used in Pitzer's equations. These

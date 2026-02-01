@@ -1,4 +1,4 @@
-subroutine swtchk(cdrs,jflag,jsflag,nbaspx,nbt,nbtmax,ndrs,ndrsmx,ndrsr,noutpt,ns1,ns2,nstmax,nttyo,uspec)
+subroutine swtchk(cdrs, jflag, jsflag, nbaspx, nbt, nbtmax, ndrs, ndrsmx, ndrsr, noutpt, ns1, ns2, nstmax, nttyo, uspec)
     !! This subroutine checks a proposed basis switch for EQLIB/switch.f
     !! to see if doing the switch is ok or not.
     !! This subroutine is called by:

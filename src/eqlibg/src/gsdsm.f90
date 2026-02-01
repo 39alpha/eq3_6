@@ -1,4 +1,4 @@
-subroutine gsdsm(conc,dpslm,nslt,nsltmx,nslx,nstmax,spsum,spsump,uspec)
+subroutine gsdsm(conc, dpslm, nslt, nsltmx, nslx, nstmax, spsum, spsump, uspec)
     !! This subroutine computes the following second order sums used
     !! in Pitzer's equations:
     !!   spsum:  SUM(jk) S-lambda'(jk)*m(j)*m(k)

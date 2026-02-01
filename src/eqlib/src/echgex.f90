@@ -1,4 +1,4 @@
-subroutine echgex(axlks,cdrs,cgexj,iern1,iern2,jern1,jern2,jetmax,jgext,jpflag,jsflag,narxmx,narxt,ndrs,ndrsmx,ndrsr,netmax,noutpt,nptmax,ntprmx,ntprt,nstmax,press,tempc,ugexj,ugexmo,uphase,uspec,xlks)
+subroutine echgex(axlks, cdrs, cgexj, iern1, iern2, jern1, jern2, jetmax, jgext, jpflag, jsflag, narxmx, narxt, ndrs, ndrsmx, ndrsr, netmax, noutpt, nptmax, ntprmx, ntprt, nstmax, press, tempc, ugexj, ugexmo, uphase, uspec, xlks)
     !! This subroutine echoes a table for the generic ion exchangers,
     !! describing the setup of species, reactions, and corresponding
     !! thermodynamic data.

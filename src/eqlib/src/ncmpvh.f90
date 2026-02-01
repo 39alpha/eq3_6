@@ -1,4 +1,4 @@
-subroutine ncmpvh(acflg,act,actlg,cdrs,cgxj,jflag,jsflag,losp,mosp,mtxj,nbasp,nbt,nbtmax,ndrs,ndrsmx,ndrsr,nrr1,nrr2,nstmax,xbar,xbarlg,xlks)
+subroutine ncmpvh(acflg, act, actlg, cdrs, cgxj, jflag, jsflag, losp, mosp, mtxj, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nrr1, nrr2, nstmax, xbar, xbarlg, xlks)
     !! This subroutine calculates part of the "expansion" of the basis
     !! set description regarding a site of a generic ion exchange
     !! phase. It assists EQLIB/ncmpve.h. The part of the expansion

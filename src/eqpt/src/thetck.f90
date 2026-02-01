@@ -1,4 +1,4 @@
-subroutine thetck(athetx,jpfcmx,na,nc,nerr,nn,noutpt,nttyo,n1,n2,n3,unam1,unam2,unam3)
+subroutine thetck(athetx, jpfcmx, na, nc, nerr, nn, noutpt, nttyo, n1, n2, n3, unam1, unam2, unam3)
     !! This suboutine checks data that were read from the S-theta
     !! fields of the DATA0 file.
     !! This suboutine is called by:

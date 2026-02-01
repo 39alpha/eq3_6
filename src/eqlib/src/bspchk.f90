@@ -1,4 +1,4 @@
-subroutine bspchk(jsflag,nbaspd,nbtd,nbtmax,ndrsd,ndrsmx,ndrsrd,noutpt,nrdxsp,nstmax,nttyo,uspeca)
+subroutine bspchk(jsflag, nbaspd, nbtd, nbtmax, ndrsd, ndrsmx, ndrsrd, noutpt, nrdxsp, nstmax, nttyo, uspeca)
     !! This subroutine looks at each active auxiliary basis species.
     !! It prints a warning if any other species in the corresponding
     !! dissociation reaction is not present.

@@ -1,4 +1,4 @@
-subroutine indatd(arr,ipc,ipcx_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+subroutine indatd(arr, ipc, ipcx_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
     !! This subroutine reads from the unformatted data file (unit number
     !! nad1) the 3D array arr, which contains coefficients of
     !! interpolating polynomials representing a thermodynamic property

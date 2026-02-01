@@ -1,4 +1,4 @@
-subroutine prtsip(affpd,iopr,ir1,ir2,jpflag,kpsat,kpsst,noprmx,noutpt,nptmax,sidrph,tolspf,ugroup,uphase)
+subroutine prtsip(affpd, iopr, ir1, ir2, jpflag, kpsat, kpsst, noprmx, noutpt, nptmax, sidrph, tolspf, ugroup, uphase)
     !! This subroutine prints a table of saturation indices and
     !! affinities of phases whose indices lie in the range ir1 to ir2.
     !! The group corresponding to this range is described by ugroup.

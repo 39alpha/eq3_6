@@ -1,4 +1,4 @@
-subroutine tpraz(nat,natmax,nazt,naztmx,ncvaz,nerr,noutpt,nttyo,pcvaz,qpdaz,uaqsp,uazp)
+subroutine tpraz(nat, natmax, nazt, naztmx, ncvaz, nerr, noutpt, nttyo, pcvaz, qpdaz, uaqsp, uazp)
     !! Test and process the hard core diameter (azero) and neutral
     !! activity coefficient flag (insgf) data (i.e., the 'bdot' data)
     !! read from the DATA0 file. Find and flag errors, such as duplication

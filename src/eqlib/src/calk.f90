@@ -1,4 +1,4 @@
-subroutine calk(alkc,conc,nstmax,ntfx,ntfxmx,ntfxt,tfx)
+subroutine calk(alkc, conc, nstmax, ntfx, ntfxmx, ntfxt, tfx)
     !! This subroutine calculates the alkalinity (eq/kg H2O). A sorted
     !! summation is not done here, because relatively few species
     !! contribute to alkalinity. Also, the structure of the titration

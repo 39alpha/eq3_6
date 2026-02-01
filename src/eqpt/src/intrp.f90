@@ -1,4 +1,4 @@
-subroutine intrp(aamatr,apr,avgrid,cof,eps100,gmmatr,ipivot,narxmx,narxt,noutpt,ntprmx,ntprt,nttyo,tempc,tempcs,tmpcmx,xvec,yvec)
+subroutine intrp(aamatr, apr, avgrid, cof, eps100, gmmatr, ipivot, narxmx, narxt, noutpt, ntprmx, ntprt, nttyo, tempc, tempcs, tmpcmx, xvec, yvec)
     !! This subroutine fits interpolating polynomials to data (avgrid)
     !! on a temperature grid (tempc). The grid is divided into ranges.
     !! A separate polynomial is fitted to the data in each range.

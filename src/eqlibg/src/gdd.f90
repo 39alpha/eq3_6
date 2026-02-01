@@ -1,4 +1,4 @@
-subroutine gdd(dgpit,fxi,gpit,ipbtmx,napmax,napt,palpha)
+subroutine gdd(dgpit, fxi, gpit, ipbtmx, napmax, napt, palpha)
     !! This subroutine computes the functions g(xi) and their ionic
     !! strength derivatives (xi = alpha(i) * I**1/2). These functions
     !! are used in Pitzer's equations. Note: alpha(i) = 0 implies

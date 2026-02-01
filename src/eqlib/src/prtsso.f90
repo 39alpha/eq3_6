@@ -1,4 +1,4 @@
-subroutine prtsso(acflg,actlg,affpd,affsd,ixrn1,ixrn2,jsol,jsomax,ncmpr,noutpt,np,nptmax,nstmax,nxtmax,sidrph,sidrsp,tolspf,uspec,uphase,uxtype,xbar,xbarlg)
+subroutine prtsso(acflg, actlg, affpd, affsd, ixrn1, ixrn2, jsol, jsomax, ncmpr, noutpt, np, nptmax, nstmax, nxtmax, sidrph, sidrsp, tolspf, uspec, uphase, uxtype, xbar, xbarlg)
     !! This subroutine prints tables describing the state and properties
     !! of the np-th phase (a solid solution).
     !! This subroutine is called by:

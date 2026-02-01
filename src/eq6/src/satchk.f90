@@ -1,4 +1,4 @@
-subroutine satchk(acflg,act,actlg,afcnst,affp,affs,apx,bpx,cdrs,eps100,iindx1,iodb,iopt,iapxmx,ibpxmx,iktmax,ixrn1,jflag,jpflag,jsflag,jsol,kmax,km1,kpsat,kpsst,kxt,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nodbmx,noptmx,noutpt,npchk,npt,nptmax,nstmax,nttyo,nxrn1,nxrn2,nxtmax,qxknph,sidrph,sidrsp,tolsat,uphase,uspec,wfac,xbar,xbarlg,xlks)
+subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, iindx1, iodb, iopt, iapxmx, ibpxmx, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, kmax, km1, kpsat, kpsst, kxt, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nodbmx, noptmx, noutpt, npchk, npt, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, qxknph, sidrph, sidrsp, tolsat, uphase, uspec, wfac, xbar, xbarlg, xlks)
     !! This subroutine checks for newly saturated phases and
     !! supersaturated phases.
     !! This subroutine is called by:

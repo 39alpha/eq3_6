@@ -1,4 +1,4 @@
-subroutine rdwele(atwt,nch,nco,nct,nctmax,ndata1,ndat0s,ndat1f,nerr,noutpt,nslist,nttyo,uelem)
+subroutine rdwele(atwt, nch, nco, nct, nctmax, ndata1, ndat0s, ndat1f, nerr, noutpt, nslist, nttyo, uelem)
     !! This suboutine reads the chemical elements block from the
     !! DATA0 file.
     !! This suboutine is called by:

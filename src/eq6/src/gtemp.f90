@@ -1,4 +1,4 @@
-subroutine gtemp(afcnst,al10,iopt,jtemp,noptmx,noutpt,nttkmx,nttyo,rconst,rtcnst,tempc,tempcb,tempk,time1,ttk,xi1)
+subroutine gtemp(afcnst, al10, iopt, jtemp, noptmx, noutpt, nttkmx, nttyo, rconst, rtcnst, tempc, tempcb, tempk, time1, ttk, xi1)
     !! This subroutine computes the temperature (tempc) as a function of
     !! reaction progress (xi1) or time (time1).
     !! This subroutine is called by:

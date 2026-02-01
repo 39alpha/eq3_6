@@ -1,4 +1,4 @@
-subroutine fcopyx(nf1,nf2,nllnmx,ulinex)
+subroutine fcopyx(nf1, nf2, nllnmx, ulinex)
     !! This subroutine appends the contents of the file whose unit
     !! number is nf1 to the file whose unit number is nf2. The line
     !! length is assumed to be nllnmx characters. The second file

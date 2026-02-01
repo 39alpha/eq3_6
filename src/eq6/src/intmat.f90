@@ -1,4 +1,4 @@
-subroutine intmat(iaqsln,iindx1,ipndx1,kbt,kdim,kelect,khydr,khydx,kmax,km1,kmt,ko2gaq,kwater,kx1,kxt,narn1,narn2,nbasp,nbt,nbti,nbtmax,ncmpr,nelect,nern1,nern2,nhydr,nhydx,nobswt,noutpt,no2gaq,nphasx,npt,nptmax,nstmax,nttyo,qloffg,ubmtbi,ufixf,uobsw,uphase,uspec,uzveci,uzvec1,zvclgi,zvclg1,zvec1)
+subroutine intmat(iaqsln, iindx1, ipndx1, kbt, kdim, kelect, khydr, khydx, kmax, km1, kmt, ko2gaq, kwater, kx1, kxt, narn1, narn2, nbasp, nbt, nbti, nbtmax, ncmpr, nelect, nern1, nern2, nhydr, nhydx, nobswt, noutpt, no2gaq, nphasx, npt, nptmax, nstmax, nttyo, qloffg, ubmtbi, ufixf, uobsw, uphase, uspec, uzveci, uzvec1, zvclgi, zvclg1, zvec1)
     !! This routine interprets matrix variables read from the input
     !! file. It constructs the master variable array zvclgi and
     !! builds iindx1, the master variable index array, deleting any

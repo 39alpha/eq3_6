@@ -1,4 +1,4 @@
-subroutine cko2pl(delxi,dlxmin,do20,dxo0pl,dxo1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,fo2lg0,fo2lg1,o20plo,o21plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine cko2pl(delxi, dlxmin, do20, dxo0pl, dxo1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, fo2lg0, fo2lg1, o20plo, o21plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the next log fO2-based plot
     !! point is not exceeded. Because the log fO2 might be decreasing
     !! or increasing, two potential target points (o20plo and o21plo)

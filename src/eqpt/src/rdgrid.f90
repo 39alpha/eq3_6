@@ -1,4 +1,4 @@
-subroutine rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+subroutine rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
     !! This subroutine reads data from the standard log K temperature
     !! grid. Other kinds of data are read from such grids.
     !! This suboutine is called by:

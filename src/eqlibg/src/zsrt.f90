@@ -1,4 +1,4 @@
-subroutine zsrt(izmax,narn1,narn2,nstmax,zchar)
+subroutine zsrt(izmax, narn1, narn2, nstmax, zchar)
     !! This subroutine finds the largest absolute value of the electrical
     !! charge of any aqueous species (izmax). It is used as a limit in
     !! calculating higher-order electrostatic terms in Pitzer's

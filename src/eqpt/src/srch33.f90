@@ -1,4 +1,4 @@
-subroutine srch33(jtripl,unam1,unam2,unam3,utripl,npx3mx,npx3t)
+subroutine srch33(jtripl, unam1, unam2, unam3, utripl, npx3mx, npx3t)
     !! This subroutine searches for the species triplet corresponding
     !! to unam1, unam2, unam3 in the utripl array, and returns the
     !! index jtripl of that triplet in that array. The variable jtripl

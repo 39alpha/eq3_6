@@ -1,4 +1,4 @@
-subroutine ptztab(iopr,narn1,narn2,natmax,nmutmx,nmux,nmxi,nmxmax,nmxx,noprmx,noutpt,nsltmx,nslx,nstmax,nsxi,nsxmax,nsxx,uspec)
+subroutine ptztab(iopr, narn1, narn2, natmax, nmutmx, nmux, nmxi, nmxmax, nmxx, noprmx, noutpt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, uspec)
     !! This subroutine tabulates the species combinations corresponding
     !! to coefficients for Pitzer's equations. The tabulation is
     !! controlled by iopr(10):

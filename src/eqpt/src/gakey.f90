@@ -1,4 +1,4 @@
-subroutine gakey(ndat0s,noutpt,nttyo,uakey)
+subroutine gakey(ndat0s, noutpt, nttyo, uakey)
     !! This suboutine scans the DATA0 file to determine the aqueous
     !! species activity coefficient model (e.g., Pitzer, Simple
     !! Extended Debye-Huckel) associated with this file.

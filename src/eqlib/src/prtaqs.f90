@@ -1,4 +1,4 @@
-subroutine prtaqs(acflg,actlg,conc,conclg,iopr,jcsort,narn1,narn2,noprmx,noutpt,nstmax,uspec)
+subroutine prtaqs(acflg, actlg, conc, conclg, iopr, jcsort, narn1, narn2, noprmx, noutpt, nstmax, uspec)
     !! This subroutine prints a table of the concentrations, activities,
     !! and activity coefficients of the aqueous solute species. The
     !! species are listed in decreasing order of concentration. The

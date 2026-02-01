@@ -1,4 +1,4 @@
-subroutine openin(noutpt,nttyo,ufiln,uform,ilu)
+subroutine openin(noutpt, nttyo, ufiln, uform, ilu)
     !! This subroutine opens an input type file. The file must already
     !! exist. An unused logical unit number is obtained.
     !! This subroutine is called by:

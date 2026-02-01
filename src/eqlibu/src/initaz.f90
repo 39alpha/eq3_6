@@ -1,4 +1,4 @@
-subroutine initaz(array,nmax)
+subroutine initaz(array, nmax)
     !! This subroutine initializes the real*8 array "array" to zero over
     !! the first nmax positions. Normally, nmax would be the dimension
     !! of the 1D "array". However, nmax could be less than the true

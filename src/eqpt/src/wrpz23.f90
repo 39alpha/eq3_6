@@ -1,4 +1,4 @@
-subroutine wrpz23(alphca,alamaa,alamca,alamcc,alamna,alamnc,alamnn,alamn2,amuaac,amua2c,amucca,amuc2a,amunca,amun2n,amun3,ipbtmx,iaapr,icapr,iccpr,inapr,incpr,innpr,in2pr,iaactr,ia2ctr,iccatr,ic2atr,incatr,in2ntr,in3tr,jpdblo,jpfcmx,natmax,naapr,ncapr,nccpr,nnapr,nncpr,nnnpr,nn2pr,naactr,na2ctr,nccatr,nc2atr,nncatr,nn2ntr,nn3tr,ndata1,ndat1f,noutpt,nttyo,uaqsp,uethfl)
+subroutine wrpz23(alphca, alamaa, alamca, alamcc, alamna, alamnc, alamnn, alamn2, amuaac, amua2c, amucca, amuc2a, amunca, amun2n, amun3, ipbtmx, iaapr, icapr, iccpr, inapr, incpr, innpr, in2pr, iaactr, ia2ctr, iccatr, ic2atr, incatr, in2ntr, in3tr, jpdblo, jpfcmx, natmax, naapr, ncapr, nccpr, nnapr, nncpr, nnnpr, nn2pr, naactr, na2ctr, nccatr, nc2atr, nncatr, nn2ntr, nn3tr, ndata1, ndat1f, noutpt, nttyo, uaqsp, uethfl)
     !! This subroutine writes the processed Pitzer parameters (in
     !! conventional lambda and mu form) on the DATA1 and DATA1F files.
     !! This subroutine is called by:

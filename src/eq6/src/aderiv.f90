@@ -1,4 +1,4 @@
-subroutine aderiv(akmat0,daffp0,fdaf0,nord,nordmx,npt,nptmax,nrd1mx)
+subroutine aderiv(akmat0, daffp0, fdaf0, nord, nordmx, npt, nptmax, nrd1mx)
     !! This subroutine computes estimates of the derivatives of the phase
     !! affinities (affp) from the corresponding finite differences.
     !! Note that (daffp0) = (akmat0)(fdaf0).

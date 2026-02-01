@@ -1,4 +1,4 @@
-subroutine tripck(na,nc,nerr,nn,noutpt,nttyo,n1,n2,n3,qdup12,qdup13,qdup23,unam1,unam2,unam3)
+subroutine tripck(na, nc, nerr, nn, noutpt, nttyo, n1, n2, n3, qdup12, qdup13, qdup23, unam1, unam2, unam3)
     !! This suboutine checks the species triplets that were read
     !! from the DATA0 file for illegal combinations.
     !! The only legal combinations here correspond to ternary

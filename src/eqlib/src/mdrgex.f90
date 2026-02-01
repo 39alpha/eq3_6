@@ -1,4 +1,4 @@
-subroutine mdrgex(adhfs,adhfsd,adhfsx,advfs,advfsd,advfsx,axhfs,axhfsd,axhfsx,axlks,axlksd,axlksx,axvfs,axvfsd,axvfsx,cdrs,cdrsd,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,nbasp,nbaspd,nbtmax,ndrs,ndrsd,ndrsx,ndrsmx,ndrsr,ndrsrd,ndrsrx,nern1,nern2,noutpt,nst,nstmax,ntprmx,nttyo)
+subroutine mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, axhfsx, axlks, axlksd, axlksx, axvfs, axvfsd, axvfsx, cdrs, cdrsd, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, nbasp, nbaspd, nbtmax, ndrs, ndrsd, ndrsx, ndrsmx, ndrsr, ndrsrd, ndrsrx, nern1, nern2, noutpt, nst, nstmax, ntprmx, nttyo)
     !! This subroutine folds the reactions and reaction properties for
     !! generic ion exchangers into the 'd' set. This is generally done
     !! after those reactions and properties have been manipulated.

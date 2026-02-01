@@ -1,4 +1,4 @@
-subroutine multav(array1,nmax,avalue,array2)
+subroutine multav(array1, nmax, avalue, array2)
     !! This subroutine multiplies the first nmax elements of the real*8
     !! array array1 by the real*8 value avalue. The result is placed
     !! in the real*8 array array2. Normally, nmax would be the dimension

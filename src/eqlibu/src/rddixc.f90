@@ -1,4 +1,4 @@
-subroutine rddixc(nxcon,uoldvd,unewf,unewv)
+subroutine rddixc(nxcon, uoldvd, unewf, unewv)
     !! This subroutine reads user input from the IXCON control file used
     !! by XCON3 and XCON6. The IXCON file should look as follows:
     !! 1 (Column 1) (This line is not part of the IXCON file.)

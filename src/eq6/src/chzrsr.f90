@@ -1,4 +1,4 @@
-subroutine chzrsr(cbsr,elecsr,eps100,jcode,nbasp,nbt,nbtmax,nbt1mx,noutpt,nrct,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec,zchar)
+subroutine chzrsr(cbsr, elecsr, eps100, jcode, nbasp, nbt, nbtmax, nbt1mx, noutpt, nrct, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec, zchar)
     !! This subroutine checks the reactions for special reactants to
     !! ensure that they satisfy charge balance. Reactions made by
     !! EQ6/makrsr.f should satisfy this condition, but reactions

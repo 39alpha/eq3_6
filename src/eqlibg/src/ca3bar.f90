@@ -1,4 +1,4 @@
-subroutine ca3bar(azero,a3bar,a3bars,conc,jcsort,narn1,narn2,natmax,nstmax,sigmam)
+subroutine ca3bar(azero, a3bar, a3bars, conc, jcsort, narn1, narn2, natmax, nstmax, sigmam)
     !! This subroutine calculates the characteristic average cubed
     !! distance of closest approach for each aqueous solute species
     !! (a3bars) and the average cubed distance of closest approach for

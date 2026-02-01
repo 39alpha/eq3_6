@@ -1,4 +1,4 @@
-subroutine supprs(kxmod,jpflag,jsflag,ncmpra,noutpt,npta,nptmax,nsta,nstmax,nttyo,nxmdmx,nxmod,uphasa,uspeca,uxmod)
+subroutine supprs(kxmod, jpflag, jsflag, ncmpra, noutpt, npta, nptmax, nsta, nstmax, nttyo, nxmdmx, nxmod, uphasa, uspeca, uxmod)
     !! This subroutine suppresses phases/species as directed by what is
     !! on the input file. Here uxmod is the name of the associated
     !! species and kxmod = -1. EQLIB/alters.f handles the log K alter

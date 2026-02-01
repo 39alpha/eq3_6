@@ -1,4 +1,4 @@
-subroutine miidxz(ier,iindx1,ipndx1,jpflag,jsflag,kbt,kdim,kmax,km1,kmt,kx1,kxt,losp,ncmpr,noutpt,npt,nptmax,nstmax,nttyo,uspec,uzvec1,zvclg1,zvec1)
+subroutine miidxz(ier, iindx1, ipndx1, jpflag, jsflag, kbt, kdim, kmax, km1, kmt, kx1, kxt, losp, ncmpr, noutpt, npt, nptmax, nstmax, nttyo, uspec, uzvec1, zvclg1, zvec1)
     !! This subroutine modifies the matrix indexing originally read in
     !! from the input file. Modification occurs whenever a phase
     !! boundary is crossed.

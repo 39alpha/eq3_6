@@ -1,4 +1,4 @@
-subroutine prtnca(ctb,jflag,jsflag,mrmlra,mwtsp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,noutpt,nstmax,qrho,rho,uspec,wfh2o)
+subroutine prtnca(ctb, jflag, jsflag, mrmlra, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, noutpt, nstmax, qrho, rho, uspec, wfh2o)
     !! This subroutine computes and prints a table of the numerical
     !! composition of the aqueous solution in terms of mass balance
     !! totals for component (basis) species in the 'd' basis set.

@@ -1,4 +1,4 @@
-subroutine coasst(jassan,jassca,jassne,nat,natmax,uaqsp,zaqsp)
+subroutine coasst(jassan, jassca, jassne, nat, natmax, uaqsp, zaqsp)
     !! Get the numbers of aqueous solute cations, anions, and neutral
     !! species. These will be used to generate lists of species pairs
     !! and triplets for use with Pitzer's equations.

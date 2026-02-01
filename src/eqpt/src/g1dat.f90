@@ -1,4 +1,4 @@
-subroutine g1dat(ier,noutpt,nttyo,udastr,var)
+subroutine g1dat(ier, noutpt, nttyo, udastr, var)
     !! This subroutine reads a number (var) from a string (udastr)
     !! This subroutine is called by:
     !!   EQPT/gnenb.f

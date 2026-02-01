@@ -1,4 +1,4 @@
-subroutine platfd(uplatc,uplatm)
+subroutine platfd(uplatc, uplatm)
     !! This subroutine sets the platform designator strings that are
     !! written on the output and screen files of various codes.
     !! This subroutine is called by:

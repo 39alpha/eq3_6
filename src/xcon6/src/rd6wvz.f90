@@ -1,4 +1,4 @@
-subroutine rd6wvz(ninpt,ucode,urelno,ustage,ueqlrn,ueqlst)
+subroutine rd6wvz(ninpt, ucode, urelno, ustage, ueqlrn, ueqlst)
     !! This subroutine looks at the comments on the old EQ6 INPUT file
     !! in compact ("W") format, and tries to recover the code and
     !! version number data normally written on the bottom half of the
