@@ -430,9 +430,9 @@ program xcon6
     data ninpt  /9/,ninpts /10/,newin /11/,nxcon /12/
 
     ! Get configuration identification data.
-    call aaaxc6(ustxc6,uvexc6)
-    call aaaelu(ustelu,uveelu)
-    call platfd(uplatc,uplatm)
+    call aaaxc6(ustxc6, uvexc6)
+    call aaaelu(ustelu, uveelu)
+    call platfd(uplatc, uplatm)
 
     ! Set dimensioning variables.
     ietmax = ietpar
@@ -639,7 +639,7 @@ program xcon6
 
             ! Read the IXCON options file.
 790 continue
-            call rddixc(nxcon,uoldvd,unewf,unewv)
+            call rddixc(nxcon, uoldvd, unewf, unewv)
         else
             write (nttyo,1057)
 1057 format(/' * Error - (XCON6/xcon6) The IXCON options file'," doesn't exist.")
@@ -842,112 +842,112 @@ program xcon6
                     nprob = nprob + 1
 
                     ! Zero or null various variables.
-                    call initcb(utitl1,ntitmx)
-                    call initcb(utitl2,ntitmx)
+                    call initcb(utitl1, ntitmx)
+                    call initcb(utitl2, ntitmx)
 
-                    call initiz(iopt,noptmx)
-                    call initiz(iopg,nopgmx)
-                    call initiz(iopr,noprmx)
-                    call initiz(iodb,nodbmx)
+                    call initiz(iopt, noptmx)
+                    call initiz(iopg, nopgmx)
+                    call initiz(iopr, noprmx)
+                    call initiz(iodb, nodbmx)
 
-                    call initaz(ptk,nptkmx)
-                    call initaz(ttk,nttkmx)
+                    call initaz(ptk, nptkmx)
+                    call initaz(ttk, nttkmx)
 
-                    call initcb(uxopt,nxopmx)
-                    call initcb(uxcat,nxopmx)
-                    call initcb(uxct16,nxopmx)
-                    call initcb(uxopex,nxpemx)
+                    call initcb(uxopt, nxopmx)
+                    call initcb(uxcat, nxopmx)
+                    call initcb(uxct16, nxopmx)
+                    call initcb(uxopex, nxpemx)
 
-                    call initcb(uxmod,nxmdmx)
-                    call initcb(uxmd24,nxmdmx)
-                    call initiz(jxmod,nxmdmx)
-                    call initiz(kxmod,nxmdmx)
-                    call initaz(xlkmod,nxmdmx)
+                    call initcb(uxmod, nxmdmx)
+                    call initcb(uxmd24, nxmdmx)
+                    call initiz(jxmod, nxmdmx)
+                    call initiz(kxmod, nxmdmx)
+                    call initaz(xlkmod, nxmdmx)
 
-                    call initcb(uffg,nffgmx)
-                    call initaz(xlkffg,nffgmx)
-                    call initaz(moffg,nffgmx)
+                    call initcb(uffg, nffgmx)
+                    call initaz(xlkffg, nffgmx)
+                    call initaz(moffg, nffgmx)
 
-                    call initaz(sscrew,nsscmx)
+                    call initaz(sscrew, nsscmx)
 
-                    call initcb(ureac,nrctmx)
-                    call initiz(jcode,nrctmx)
-                    call initiz(jreac,nrctmx)
-                    call initaz(morr,nrctmx)
-                    call initaz(modr,nrctmx)
-                    call initiz(nsk,nrctmx)
-                    call initaz(sk,nrctmx)
-                    call initaz(sfcar,nrctmx)
-                    call initaz(ssfcar,nrctmx)
-                    call initaz(fk,nrctmx)
-                    call initaz(fkrc,nrctmx)
-                    call initiz(imech,nrctmx)
+                    call initcb(ureac, nrctmx)
+                    call initiz(jcode, nrctmx)
+                    call initiz(jreac, nrctmx)
+                    call initaz(morr, nrctmx)
+                    call initaz(modr, nrctmx)
+                    call initiz(nsk, nrctmx)
+                    call initaz(sk, nrctmx)
+                    call initaz(sfcar, nrctmx)
+                    call initaz(ssfcar, nrctmx)
+                    call initaz(fk, nrctmx)
+                    call initaz(fkrc, nrctmx)
+                    call initiz(imech, nrctmx)
 
                     nmax = nrctmx*2
-                    call initiz(nrk,nmax)
+                    call initiz(nrk, nmax)
 
                     nmax = nrctmx*2*imchmx
-                    call initiz(ndact,nmax)
-                    call initiz(iact,nmax)
-                    call initaz(rkb,nmax)
-                    call initaz(rk0,nmax)
-                    call initaz(csigma,nmax)
-                    call initaz(trkb,nmax)
-                    call initaz(trk0,nmax)
-                    call initaz(eact,nmax)
-                    call initaz(hact,nmax)
+                    call initiz(ndact, nmax)
+                    call initiz(iact, nmax)
+                    call initaz(rkb, nmax)
+                    call initaz(rk0, nmax)
+                    call initaz(csigma, nmax)
+                    call initaz(trkb, nmax)
+                    call initaz(trk0, nmax)
+                    call initaz(eact, nmax)
+                    call initaz(hact, nmax)
 
                     nmax = nrctmx*2*imchmx*ndctmx
-                    call initcb(udac,nmax)
-                    call initaz(cdac,nmax)
+                    call initcb(udac, nmax)
+                    call initaz(cdac, nmax)
 
-                    call initiz(iktbt,nxrtmx)
+                    call initiz(iktbt, nxrtmx)
 
                     nmax = iktmax*nxrtmx
-                    call initcb(uendb,nmax)
-                    call initcb(ucxri,nmax)
-                    call initaz(rxbarb,nmax)
-                    call initaz(rxbari,nmax)
+                    call initcb(uendb, nmax)
+                    call initcb(ucxri, nmax)
+                    call initaz(rxbarb, nmax)
+                    call initaz(rxbari, nmax)
 
-                    call initiz(iesrti,nsrtmx)
-                    call initiz(nesrbt,nsrtmx)
+                    call initiz(iesrti, nsrtmx)
+                    call initiz(nesrbt, nsrtmx)
 
                     nmax = nctmax*nsrtmx
-                    call initcb(uesrb,nmax)
-                    call initcb(uesri,nmax)
-                    call initaz(cesrb,nmax)
-                    call initaz(cesri,nmax)
+                    call initcb(uesrb, nmax)
+                    call initcb(uesri, nmax)
+                    call initaz(cesrb, nmax)
+                    call initaz(cesri, nmax)
 
                     nmax = nbt1mx*nsrtmx
-                    call initcb(ubsri,nmax)
-                    call initaz(cbsri,nmax)
+                    call initcb(ubsri, nmax)
+                    call initaz(cbsri, nmax)
 
-                    call initcb(uelemb,nctmax)
-                    call initaz(mteb,nctmax)
-                    call initaz(mteaqb,nctmax)
+                    call initcb(uelemb, nctmax)
+                    call initaz(mteb, nctmax)
+                    call initaz(mteaqb, nctmax)
 
-                    call initcb(unrms,kmax)
-                    call initcb(undms,kmax)
-                    call initaz(zvclgi,kmax)
+                    call initcb(unrms, kmax)
+                    call initcb(undms, kmax)
+                    call initaz(zvclgi, kmax)
 
-                    call initcb(uzveci,kmax)
+                    call initcb(uzveci, kmax)
 
                     nmax = 2*nbtmax
-                    call initcb(uobsw,nmax)
-                    call initcb(usbsw,nmax)
+                    call initcb(uobsw, nmax)
+                    call initcb(usbsw, nmax)
 
-                    call initcb(ubmtbi,nbtmax)
-                    call initaz(mtbi,nbtmax)
-                    call initaz(mtbaqi,nbtmax)
-                    call initiz(jflgi,nbtmax)
+                    call initcb(ubmtbi, nbtmax)
+                    call initaz(mtbi, nbtmax)
+                    call initaz(mtbaqi, nbtmax)
+                    call initiz(jflgi, nbtmax)
 
-                    call initcb(uprs,nprsmx)
-                    call initaz(mprs,nprsmx)
+                    call initcb(uprs, nprsmx)
+                    call initaz(mprs, nprsmx)
 
-                    call initcb(uprphi,nprpmx)
-                    call initaz(mprphi,nprpmx)
-                    call initcb(uprspi,nprsmx)
-                    call initaz(mprspi,nprsmx)
+                    call initcb(uprphi, nprpmx)
+                    call initaz(mprphi, nprpmx)
+                    call initcb(uprspi, nprsmx)
+                    call initaz(mprspi, nprsmx)
 
                     dlzmx1 = 0.
                     dlxmx0 = 0.
@@ -988,25 +988,25 @@ program xcon6
                     ! Read the current problem on the stripped input file.
                     if (uoldf(1:1) .eq. 'W') then
                         if (uoldv(1:3) .eq. '6.0') then
-                            call rd6w6(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzprlg,dzprnt,electr,fk,ifile,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksplmx,ksppmx,kstpmx,kxmod,kxt,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,nffg,nffgmx,ninpts,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,qend,qrderr,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,tstrt,ttk,uacion,udac,uelemb,uendb,uesrb,uffg,undms,unrms,uprs,ureac,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                            call rd6w6(cdac, cesrb, cplim, csigma, dlzmx1, dlzmx2, dlzidp, dzpllg, dzplot, dzprlg, dzprnt, electr, fk, ifile, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksplmx, ksppmx, kstpmx, kxmod, kxt, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, nffg, nffgmx, ninpts, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, qend, qrderr, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, tstrt, ttk, uacion, udac, uelemb, uendb, uesrb, uffg, undms, unrms, uprs, ureac, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
 
                             if (qrderr) then
                                 go to 990
                             end if
                         else if (uoldv(1:3) .eq. '7.0') then
-                            call rd6w7(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzprlg,dzprnt,eact,electr,fk,iact,ifile,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,nffg,nffgmx,ninpts,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,qend,qrderr,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,udac,uelemb,uendb,uesrb,uffg,undms,unrms,uprs,ureac,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                            call rd6w7(cdac, cesrb, cplim, csigma, dlzmx1, dlzmx2, dlzidp, dzpllg, dzplot, dzprlg, dzprnt, eact, electr, fk, iact, ifile, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, nffg, nffgmx, ninpts, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, qend, qrderr, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, udac, uelemb, uendb, uesrb, uffg, undms, unrms, uprs, ureac, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
 
                             if (qrderr) then
                                 go to 990
                             end if
                         else if (uoldv(1:3) .eq. '7.2') then
-                            call rd6w72(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzprlg,dzprnt,eact,electr,fk,iact,ifile,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,nffg,nffgmx,ninpts,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,qend,qrderr,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,udac,uelemb,uendb,uesrb,uffg,undms,unrms,uprs,ureac,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                            call rd6w72(cdac, cesrb, cplim, csigma, dlzmx1, dlzmx2, dlzidp, dzpllg, dzplot, dzprlg, dzprnt, eact, electr, fk, iact, ifile, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, nffg, nffgmx, ninpts, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, qend, qrderr, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, udac, uelemb, uendb, uesrb, uffg, undms, unrms, uprs, ureac, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
 
                             if (qrderr) then
                                 go to 990
                             end if
                         else if (uoldv(1:3) .eq. '8.0') then
-                            call rd6w8(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,igerti,itermx,ixrti,jcode,jgerti,jetmax,jflgi,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,nffg,nffgmx,ngexrt,ninpts,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,noutpt,nprob,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qend,qgexsh,qrderr,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+                            call rd6w8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, igerti, itermx, ixrti, jcode, jgerti, jetmax, jflgi, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, nffg, nffgmx, ngexrt, ninpts, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, noutpt, nprob, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qend, qgexsh, qrderr, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
 
                             if (qrderr) then
                                 go to 990
@@ -1020,7 +1020,7 @@ program xcon6
 
                         ! Try to recover the code and version data embedded in comments
                         ! on the old input file.
-                        call rd6wvz(ninpt,ucode,urelno,ustage,ueqlrn,ueqlst)
+                        call rd6wvz(ninpt, ucode, urelno, ustage, ueqlrn, ueqlst)
                     else if (uoldf(1:1) .eq. 'D') then
                         if (uoldv(1:3).eq.'8.0' .and. .not.q8bchk) then
                             ! Distinguish 8.0 from 8.0 beta. 8.0 will include the
@@ -1075,7 +1075,7 @@ program xcon6
 
                             go to 990
                         else if (uoldv(1:3) .eq. '7.0') then
-                            call rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,electr,fk,iact,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,nffg,nffgmx,ninpts,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,qend,qrderr,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,udac,uelemb,uendb,uesrb,uffg,undms,unrms,uprs,ureac,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                            call rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, eact, electr, fk, iact, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, nffg, nffgmx, ninpts, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, qend, qrderr, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, udac, uelemb, uendb, uesrb, uffg, undms, unrms, uprs, ureac, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
 
                             if (qrderr) then
                                 go to 990
@@ -1085,19 +1085,19 @@ program xcon6
                             ! '7.0' for this format. However, the line parsing capability
                             ! used to handle this format allows this subroutine to read an
                             ! input file in this format for either version level.
-                            call rd6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,electr,fk,iact,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,nffg,nffgmx,ninpts,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,qend,qrderr,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,udac,uelemb,uendb,uesrb,uffg,undms,unrms,uprs,ureac,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                            call rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, eact, electr, fk, iact, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, nffg, nffgmx, ninpts, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, qend, qrderr, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, udac, uelemb, uendb, uesrb, uffg, undms, unrms, uprs, ureac, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
 
                             if (qrderr) then
                                 go to 990
                             end if
                         else if (uoldv(1:3).eq.'8.0' .and. q8beta) then
-                            call rd6d8b(cbsri,cdac,cesri,cgexj,csigma,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,electr,fkrc,iact,ibsrti,iesrti,ietmax,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,igerti,itermx,ixrti,jcode,jgerti,jetmax,jflgi,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,nffg,nffgmx,ngexrt,ninpts,nobswt,nodbmx,nopgmx,noprmx,noptmx,noutpt,nprob,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,pressb,pressi,ptk,qend,qrderr,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+                            call rd6d8b(cbsri, cdac, cesri, cgexj, csigma, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, electr, fkrc, iact, ibsrti, iesrti, ietmax, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, igerti, itermx, ixrti, jcode, jgerti, jetmax, jflgi, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, nffg, nffgmx, ngexrt, ninpts, nobswt, nodbmx, nopgmx, noprmx, noptmx, noutpt, nprob, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, pressb, pressi, ptk, qend, qrderr, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
 
                             if (qrderr) then
                                 go to 990
                             end if
                         else if (uoldv(1:3) .eq. '8.0') then
-                            call rd6d8(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,igerti,itermx,ixrti,jcode,jgerti,jetmax,jflgi,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,nffg,nffgmx,ngexrt,ninpts,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,noutpt,nprob,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nttyo,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qend,qgexsh,qrderr,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+                            call rd6d8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, igerti, itermx, ixrti, jcode, jgerti, jetmax, jflgi, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, nffg, nffgmx, ngexrt, ninpts, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, noutpt, nprob, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qend, qgexsh, qrderr, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
 
                             if (qrderr) then
                                 go to 990
@@ -1111,7 +1111,7 @@ program xcon6
 
                         ! Try to recover the code and version data embedded in comments
                         ! on the old input file.
-                        call rd6dvz(ninpt,ucode,urelno,ustage,ueqlrn,ueqlst)
+                        call rd6dvz(ninpt, ucode, urelno, ustage, ueqlrn, ueqlst)
                     else
                         write (nttyo,1110) uoldf
 1110 format(/' * Error - (XCON6/xcon6) Have unknown format',/7x,'specifier "',a1,'" for the old input file.')
@@ -1186,12 +1186,12 @@ program xcon6
                             ! Calling sequence substitutions:
                             !   uoldv for ustr
                             !   verold for var
-                            call chreal(nttyo,qrderr,uoldv,verold)
+                            call chreal(nttyo, qrderr, uoldv, verold)
 
                             ! Calling sequence substitutions:
                             !   unewv for ustr
                             !   vernew for var
-                            call chreal(nttyo,qrderr,unewv,vernew)
+                            call chreal(nttyo, qrderr, unewv, vernew)
 
                             if (verold.lt.8.0 .and. vernew.lt.8.0) then
                                 mtaqsm = 0.
@@ -1447,23 +1447,23 @@ program xcon6
                                     end if
                                 end do
 
-                                call copyaa(fk,fkrc,nrctmx)
+                                call copyaa(fk, fkrc, nrctmx)
 
                                 nmax = imchmx*2*nrctmx
-                                call copyaa(rk0,rkb,nmax)
-                                call copyaa(trk0,trkb,nmax)
+                                call copyaa(rk0, rkb, nmax)
+                                call copyaa(trk0, trkb, nmax)
 
-                                call copyia(nesrbt,iesrti,nsrtmx)
+                                call copyia(nesrbt, iesrti, nsrtmx)
 
                                 nmax = nctmax*nsrtmx
-                                call copyaa(cesrb,cesri,nmax)
-                                call copyca(uesrb,uesri,nmax)
+                                call copyaa(cesrb, cesri, nmax)
+                                call copyca(uesrb, uesri, nmax)
 
-                                call copyia(iktbt,ixrti,nxrtmx)
+                                call copyia(iktbt, ixrti, nxrtmx)
 
                                 nmax = iktmax*nxrtmx
-                                call copyaa(rxbarb,rxbari,nmax)
-                                call copyca(uendb,ucxri,nmax)
+                                call copyaa(rxbarb, rxbari, nmax)
+                                call copyca(uendb, ucxri, nmax)
 
                                 ! Set the number of generic ion exchanger reactants.
                                 ! There is no provision for these prior to Version 8.0,
@@ -1724,7 +1724,7 @@ program xcon6
                                 !   imamax for kmax
                                 !   0 for noutpt
                                 !   yvec for rhsvec
-                                call msolvr(aamatr,xvec,gmmatr,ier,ipivot,3,imamax,0,nttyo,qpr,yvec)
+                                call msolvr(aamatr, xvec, gmmatr, ier, ipivot, 3, imamax, 0, nttyo, qpr, yvec)
 
                                 mtbi(nbbo) = xvec(1)
                                 mtbi(nbbh) = xvec(2)
@@ -1751,7 +1751,7 @@ program xcon6
                                     !   imamax for kmax
                                     !   0 for noutpt
                                     !   yvec for rhsvec
-                                    call msolvr(aamatr,xvec,gmmatr,ier,ipivot,3,imamax,0,nttyo,qpr,yvec)
+                                    call msolvr(aamatr, xvec, gmmatr, ier, ipivot, 3, imamax, 0, nttyo, qpr, yvec)
 
                                     mtbaqi(nbbo) = xvec(1)
                                     mtbaqi(nbbh) = xvec(2)
@@ -2112,23 +2112,23 @@ program xcon6
                                     end if
                                 end do
 
-                                call copyaa(fkrc,fk,nrctmx)
+                                call copyaa(fkrc, fk, nrctmx)
 
                                 nmax = imchmx*2*nrctmx
-                                call copyaa(rkb,rk0,nmax)
-                                call copyaa(trkb,trk0,nmax)
+                                call copyaa(rkb, rk0, nmax)
+                                call copyaa(trkb, trk0, nmax)
 
-                                call copyia(iesrti,nesrbt,nsrtmx)
+                                call copyia(iesrti, nesrbt, nsrtmx)
 
                                 nmax = nctmax*nsrtmx
-                                call copyaa(cesri,cesrb,nmax)
-                                call copyca(uesri,uesrb,nmax)
+                                call copyaa(cesri, cesrb, nmax)
+                                call copyca(uesri, uesrb, nmax)
 
-                                call copyia(ixrti,iktbt,nxrtmx)
+                                call copyia(ixrti, iktbt, nxrtmx)
 
                                 nmax = iktmax*nxrtmx
-                                call copyaa(rxbari,rxbarb,nmax)
-                                call copyca(ucxri,uendb,nmax)
+                                call copyaa(rxbari, rxbarb, nmax)
+                                call copyca(ucxri, uendb, nmax)
 
                                 do 250 n = 1,nxmod
                                     uxmd24(n) = uxmod(n)(1:24)
@@ -2496,13 +2496,13 @@ program xcon6
                                 ! Write the current problem on the new input file.
                                 if (unewf(1:1) .eq. 'W') then
                                     if (unewv(1:3) .eq. '6.0') then
-                                        call wr6w6(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzprlg,dzprnt,electr,fk,ifile,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksplmx,ksppmx,kstpmx,kxmod,kxt,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,newin,nffg,nffgmx,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,tstrt,ttk,uacion,ucode,udac,uelemb,uendb,ueqlrn,ueqlst,uesrb,uffg,undms,unrms,uprs,ureac,urelno,ustage,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                                        call wr6w6(cdac, cesrb, cplim, csigma, dlzmx1, dlzmx2, dlzidp, dzpllg, dzplot, dzprlg, dzprnt, electr, fk, ifile, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksplmx, ksppmx, kstpmx, kxmod, kxt, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, newin, nffg, nffgmx, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, tstrt, ttk, uacion, ucode, udac, uelemb, uendb, ueqlrn, ueqlst, uesrb, uffg, undms, unrms, uprs, ureac, urelno, ustage, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
                                     else if (unewv(1:3) .eq. '7.0') then
-                                        call wr6w7(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzprlg,dzprnt,eact,electr,fk,iact,ifile,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,newin,nffg,nffgmx,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,ucode,udac,uelemb,uendb,ueqlrn,ueqlst,uesrb,uffg,undms,unrms,uprs,ureac,urelno,ustage,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                                        call wr6w7(cdac, cesrb, cplim, csigma, dlzmx1, dlzmx2, dlzidp, dzpllg, dzplot, dzprlg, dzprnt, eact, electr, fk, iact, ifile, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, newin, nffg, nffgmx, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, ucode, udac, uelemb, uendb, ueqlrn, ueqlst, uesrb, uffg, undms, unrms, uprs, ureac, urelno, ustage, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
                                     else if (unewv(1:3) .eq. '7.2') then
-                                        call wr6w72(cdac,cesrb,cplim,csigma,dlzmx1,dlzmx2,dlzidp,dzpllg,dzplot,dzprlg,dzprnt,eact,electr,fk,iact,ifile,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,newin,nffg,nffgmx,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,ucode,udac,uelemb,uendb,ueqlrn,ueqlst,uesrb,uffg,undms,unrms,uprs,ureac,urelno,ustage,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                                        call wr6w72(cdac, cesrb, cplim, csigma, dlzmx1, dlzmx2, dlzidp, dzpllg, dzplot, dzprlg, dzprnt, eact, electr, fk, iact, ifile, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, newin, nffg, nffgmx, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, ucode, udac, uelemb, uendb, ueqlrn, ueqlst, uesrb, uffg, undms, unrms, uprs, ureac, urelno, ustage, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
                                     else if (unewv(1:3) .eq. '8.0') then
-                                        call wr6w8(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,newin,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+                                        call wr6w8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, newin, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
                                     else
                                         write (nttyo,1220) unewv
 1220 format(/' * Error - (XCON6/xcon6) Coding to implement',/7x,'writing an input file in "W" format has not been',/7x,'implemented for version level "',a3,'."')
@@ -2516,11 +2516,11 @@ program xcon6
 
                                         go to 990
                                     else if (unewv(1:3) .eq. '7.0') then
-                                        call wr6d7(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,electr,fk,iact,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,newin,nffg,nffgmx,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,ucode,udac,uelemb,uendb,uesrb,ueqlrn,ueqlst,uffg,undms,unrms,uprs,ureac,urelno,ustage,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                                        call wr6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, eact, electr, fk, iact, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, newin, nffg, nffgmx, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, ucode, udac, uelemb, uendb, uesrb, ueqlrn, ueqlst, uffg, undms, unrms, uprs, ureac, urelno, ustage, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
                                     else if (unewv(1:3) .eq. '7.2') then
-                                        call wr6d72(cdac,cesrb,csigma,dlzmx1,dlzmx2,dlzidp,dzprlg,dzprnt,eact,electr,fk,iact,iktbt,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,ioscan,itermx,jcode,jreac,jtemp,jxmod,kct,kdim,kmax,kmt,kprs,ksq,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprs,mteaqb,mteb,nctmax,ndact,ndctmx,nesrbt,newin,nffg,nffgmx,nmodl1,nmodl2,nodbmx,nopgmx,noprmx,noptmx,nordlm,npslmx,nprmn,nprmx,nprsmx,nrct,nrctmx,nrk,nsk,nsrtmx,nsscmx,nsslmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrtmx,rk0,rxbarb,sscrew,sk,tempci,tempc0,timemx,tolbt,toldl,tolsat,tolsst,tolx,trk0,tstrt,ttk,ucode,udac,uelemb,uendb,uesrb,ueqlrn,ueqlst,uffg,undms,unrms,uprs,ureac,urelno,ustage,utitl1,utitl2,uxct16,uxmd24,uxopex,uxopt,vreac,xlkffg,xlkmod,zimax,zistrt,zkfac,zklogl,zklogu,zvclgi)
+                                        call wr6d72(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, eact, electr, fk, iact, iktbt, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, ioscan, itermx, jcode, jreac, jtemp, jxmod, kct, kdim, kmax, kmt, kprs, ksq, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprs, mteaqb, mteb, nctmax, ndact, ndctmx, nesrbt, newin, nffg, nffgmx, nmodl1, nmodl2, nodbmx, nopgmx, noprmx, noptmx, nordlm, npslmx, nprmn, nprmx, nprsmx, nrct, nrctmx, nrk, nsk, nsrtmx, nsscmx, nsslmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, rk0, rxbarb, sscrew, sk, tempci, tempc0, timemx, tolbt, toldl, tolsat, tolsst, tolx, trk0, tstrt, ttk, ucode, udac, uelemb, uendb, uesrb, ueqlrn, ueqlst, uffg, undms, unrms, uprs, ureac, urelno, ustage, utitl1, utitl2, uxct16, uxmd24, uxopex, uxopt, vreac, xlkffg, xlkmod, zimax, zistrt, zkfac, zklogl, zklogu, zvclgi)
                                     else if (unewv(1:3) .eq. '8.0') then
-                                        call wr6d8(awmaxi,awmini,cbsri,cdac,cesri,cgexj,csigma,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eact,egersi,ehmaxi,ehmini,electr,fkrc,iact,ibsrti,iesrti,ietmax,igerti,iktmax,imchmx,imech,iodb,iopg,iopr,iopt,itermx,ixrti,jcode,jetmax,jflgi,jgerti,jgext,jpress,jreac,jtemp,kbt,kct,kdim,kmax,kmt,kprs,ksplmx,ksppmx,kstpmx,kxmod,kxt,hact,modr,moffg,morr,mprphi,mprspi,mtbaqi,mtbi,mwtges,nbti,nbtmax,nbt1mx,nctmax,ndact,ndctmx,nert,nertmx,net,netmax,newin,nffg,nffgmx,ngexrt,nobswt,nodbmx,nopgmx,noprmx,noptmx,nordmx,nprpmx,nprpti,nprsmx,nprsti,nptkmx,nrct,nrctmx,nrk,nsbswt,nsk,nsrt,nsrtmx,ntitl1,ntitl2,ntitmx,ntrymx,nttkmx,nxmdmx,nxmod,nxopex,nxopmx,nxopt,nxpemx,nxrt,nxrtmx,o2maxi,o2mini,phmaxi,phmini,pressb,pressi,ptk,qgexsh,rkb,rxbari,sfcar,ssfcar,tempcb,tempci,tgexp,timmxi,tistti,tolbt,toldl,tolsat,tolxsf,trkb,ttk,ubmtbi,ubsri,ucxri,udac,uesri,uffg,ugerji,ugermo,ugersi,ugexj,ugexmo,ugexp,ugexr,uhfgex,uobsw,uprphi,uprspi,ureac,usbsw,utitl1,utitl2,uvfgex,uxcat,uxkgex,uxmod,uxopex,uxopt,uzveci,vreac,xgersi,xhfgex,ximaxi,xistti,xlkffg,xlkgex,xlkmod,xvfgex,zgexj,zvclgi)
+                                        call wr6d8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, newin, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
                                     else
                                         write (nttyo,1240) unewv
 1240 format(/' * Error - (XCON6/xcon6) Coding to implement',/7x,'writing an input file in "D" format has not been',/7x,'implemented for version level "',a3,'."')

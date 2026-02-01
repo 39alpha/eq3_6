@@ -58,7 +58,7 @@ subroutine intbsw(nbasp, nbaspx, nbt, nbtmax, nobswt, noutpt, nst, nstmax, nttyo
         nerr = nerr + 1
 
         unam48 = uobsw(1,n)
-        call fmspnx(jlen,unam48,uspn56)
+        call fmspnx(jlen, unam48, uspn56)
         write (noutpt,1000) uspn56(1:jlen)
         write (nttyo,1000) uspn56(1:jlen)
 1000 format(/' * Error - (EQLIB/intbsw) The species ',a,/7x,'is specified to be replaced in an ordinary basis switch,',/7x,'but it is not in the active basis set.')
@@ -77,7 +77,7 @@ subroutine intbsw(nbasp, nbaspx, nbt, nbtmax, nobswt, noutpt, nst, nstmax, nttyo
         nerr = nerr + 1
 
         unam48 = uobsw(2,n)
-        call fmspnx(jlen,unam48,uspn56)
+        call fmspnx(jlen, unam48, uspn56)
         write (noutpt,1010) uspn56(1:jlen)
         write (nttyo,1010) uspn56(1:jlen)
 1010 format(/' * Error - (EQLIB/intbsw) The species ',a,/7x,'is specified to be put into the basis set by an ordinary',/7x,'basis switch but it is not in the set of active',' species.')

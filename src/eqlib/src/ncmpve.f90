@@ -212,7 +212,7 @@ subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, 
                 ! Make a tentative expansion to estimate the mole fractions,
                 ! activities, and numbers of moles of all species belonging
                 ! to the current site.
-                call ncmpvh(acflg,act,actlg,cdrs,cgxj,jflag,jsflag,losp,mosp,mtxj,nbasp,nbt,nbtmax,ndrs,ndrsmx,ndrsr,nrr1,nrr2,nstmax,xbar,xbarlg,xlks)
+                call ncmpvh(acflg, act, actlg, cdrs, cgxj, jflag, jsflag, losp, mosp, mtxj, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nrr1, nrr2, nstmax, xbar, xbarlg, xlks)
 
                 ! Check the sum of the mole fractions.
                 xbarsm = 0.
@@ -350,7 +350,7 @@ subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, 
                 ! Make a tentative expansion to estimate the mole fractions,
                 ! activities, and numbers of moles of all species belonging
                 ! to the current site.
-                call ncmpvh(acflg,act,actlg,cdrs,cgxj,jflag,jsflag,losp,mosp,mtxj,nbasp,nbt,nbtmax,ndrs,ndrsmx,ndrsr,nrr1,nrr2,nstmax,xbar,xbarlg,xlks)
+                call ncmpvh(acflg, act, actlg, cdrs, cgxj, jflag, jsflag, losp, mosp, mtxj, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nrr1, nrr2, nstmax, xbar, xbarlg, xlks)
 
                 ! Estimate the mole fractions and activities of the
                 ! basis species for the current site.

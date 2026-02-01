@@ -122,7 +122,7 @@ subroutine ckawpr(delxi, dlxmin, daw0, dxw0pr, dxw1pr, dxval0, eps100, iodb, nod
                 dxval0(n) = daw0(n)
             end do
 
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dxw0pr = delxi
 
@@ -204,7 +204,7 @@ subroutine ckawpr(delxi, dlxmin, daw0, dxw0pr, dxw1pr, dxval0, eps100, iodb, nod
                 dxval0(n) = daw0(n)
             end do
 
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dxw1pr = delxi
 

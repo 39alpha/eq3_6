@@ -258,7 +258,7 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
     chfsmi = 1./chfsgm
 
     ! Recompute sigma m and compute the associated residual.
-    call csigm(conc,jcsort,narn1,narn2,nstmax,sigmmc)
+    call csigm(conc, jcsort, narn1, narn2, nstmax, sigmmc)
     bsigmm = 0.
 
     if (sigmmo .gt. 0.) then
@@ -277,7 +277,7 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
 
     ! Recompute the ionic strength (the 2nd-order electrostatic
     ! moment function I) and compute the associated residual.
-    call cfxi(conc,fxic,jcsort,narn1,narn2,nstmax,zchsq2)
+    call cfxi(conc, fxic, jcsort, narn1, narn2, nstmax, zchsq2)
     bfxi = 0.
 
     if (fxio .gt. 0.) then
@@ -297,7 +297,7 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
     ! Recompute the 3rd-order electrostatic moment function J and
     ! the associated residual. Unlike sigma m and I, J can be zero
     ! or negative, so the treatment is slightly different.
-    call cfje(conc,fjec,jcsort,narn1,narn2,nstmax,zchcu6)
+    call cfje(conc, fjec, jcsort, narn1, narn2, nstmax, zchcu6)
     afjea = 0.5*(abs(fjeo) + abs(fjec))
     dfje = fjec - fjeo
     bfje = 0.
@@ -337,12 +337,12 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
     ! Compute the activity coefficients of aqueous species.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call gcoeff(abar,acflg,actwlc,adh,adhh,adhv,al10,aphi,azero,a3bar,a3bars,bdh,bdhh,bdhv,bdot,bdoth,bdotv,cco2,conc,delam,dgpit,dpelm,dpslm,dselm,elam,fje,fxi,gpit,ielam,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilzeta,insgf,iopg,ipbtmx,izmax,jcsort,nalpha,napmax,napt,narn1,narn2,natmax,nazmmx,nazpmx,nchlor,nhydr,nmut,nmutmx,nmux,nmxi,nmxmax,nmxx,nopgmx,noutpt,nslt,nsltmx,nslx,nstmax,nsxi,nsxmax,nsxx,nttyo,omega,palpha,pelm,pmu,press,pslamn,pslm,qhawep,qpit75,selm,sigmam,tempk,uspec,xbarwc,xbrwlc,zchar,zchsq2,zchcu6)
+    call gcoeff(abar, acflg, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, uspec, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
 
     ! Calculate the activity coefficients of exchanger species.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call lamgex(acflg,cgexj,jern1,jern2,jetmax,jgext,net,netmax,nstmax,xbarlg)
+    call lamgex(acflg, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
 
     ! Compute activity coefficient residual norms.
     bgamxo = bgamx
@@ -351,7 +351,7 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
     ! XX   EQLIB/betgam.f and EQLIB/betacf.f when the activity coefficients
     ! XX   of species in non-aqueous phases are updated numerically the same
     ! XX   as those of aqueous species.
-    call betgam(acflg,acflgo,bgamx,narn1,narn2,nstmax,ubgamx,uspec)
+    call betgam(acflg, acflgo, bgamx, narn1, narn2, nstmax, ubgamx, uspec)
 
     ubacmx = ubgamx
     bacfmx = bgamx
@@ -499,7 +499,7 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
 
             ! Calling sequence substitutions:
             !   acflg for acflgc
-            call lambda(acflg,afcnst,bpx,ibpxmx,ibpxt,iktmax,ixrn1,ixrn2,jsol,ncmpr,noutpt,np,nptmax,nstmax,nttyo,nxtmax,wfac,xbar,xbarlg,uphase,uspec)
+            call lambda(acflg, afcnst, bpx, ibpxmx, ibpxt, iktmax, ixrn1, ixrn2, jsol, ncmpr, noutpt, np, nptmax, nstmax, nttyo, nxtmax, wfac, xbar, xbarlg, uphase, uspec)
 
             if (qpracf) then
                 j2 = ilnobl(uphase(np))
@@ -512,6 +512,6 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
             end if
         end do
 
-        call betacf(acflg,acflgo,bacfmx,nst,nstmax,ubacmx,uspec)
+        call betacf(acflg, acflgo, bacfmx, nst, nstmax, ubacmx, uspec)
     end if
 end subroutine ngcadv

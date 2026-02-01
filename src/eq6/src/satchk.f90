@@ -155,7 +155,7 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
             ns = nr1
 
             if (jpflag(np) .le. 1) then
-                call afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+                call afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
                 affs(ns) = af
                 affp(np) = af
             else
@@ -177,7 +177,7 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
                     ns = nbasp(nb)
 
                     if (jsflag(ns) .le. 1) then
-                        call afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+                        call afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
                         affs(ns) = af
                         sidrsp(ns) = si
                         affp(np) = affp(np) + xbar(ns)*affs(ns)
@@ -202,7 +202,7 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
 
                 do ns = nr1,nr2
                     if (jsflag(ns) .le. 1) then
-                        call afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+                        call afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
                         affs(ns) = af
                         sidrsp(ns) = si
                         affp(np) = affp(np) + xbar(ns)*affs(ns)
@@ -220,7 +220,7 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
                 end if
             else if (jpflag(np) .le. 1) then
                 ! Case of non-aqueous solutions not in the ES.
-                call hpsat(acflg,act,actlg,afcnst,affp,affs,apx,bpx,cdrs,eps100,iapxmx,ibpxmx,ier,iktmax,ixrn1,jflag,jpflag,jsflag,jsol,ncmpr,ndrs,ndrsmx,ndrsr,noutpt,np,nptmax,nstmax,nttyo,nxrn1,nxrn2,nxtmax,sidrsp,sidrph,uphase,uspec,wfac,xbar,xbarlg,xlks)
+                call hpsat(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, iapxmx, ibpxmx, ier, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, noutpt, np, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, sidrsp, sidrph, uphase, uspec, wfac, xbar, xbarlg, xlks)
 
                 if (ier .le. 0) then
                     qxknph(np) = .true.

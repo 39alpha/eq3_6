@@ -222,7 +222,7 @@ subroutine chkinz(ier, imchmx, imech, iopt, jcode, kmax, kxt, nelect, noptmx, no
     do kcol = 1,kxt
         if (zvclgi(kcol) .le. -99999.) then
             if (uzveci(kcol)(1:8).ne.uspeca(no2gaq)(1:8) .and.      uzveci(kcol)(1:8).ne.uspeca(nelect)(1:8)) then
-                call fmspnx(jlen,uzveci(kcol),uspn56)
+                call fmspnx(jlen, uzveci(kcol), uspn56)
                 write (noutpt,1200) uspn56(1:jlen)
                 write (nttyo,1200) uspn56(1:jlen)
 1200 format(/' * Error - (EQ6/chkinz) The basis species ',a,/7x,'has a log number of moles (zvclgi) value less than',' or equal to -99999.',/7x,'on the input file.')

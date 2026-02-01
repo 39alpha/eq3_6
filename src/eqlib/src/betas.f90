@@ -175,7 +175,7 @@ subroutine betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cd
             if (krow.eq.kwater .and. jfl.eq.0) then
                 ! The residual for water is based on the equation which
                 ! defines the mole fraction of water.
-                call csigm(conc,jcsort,narn1,narn2,nstmax,sigmmc)
+                call csigm(conc, jcsort, narn1, narn2, nstmax, sigmmc)
                 xbarwc = omega/(omega + sigmmc)
                 xbrwlc = tlg(xbarwc)
                 ax = xbrwlc - xbrwlg
@@ -183,7 +183,7 @@ subroutine betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cd
                 beta(krow) = ax
             else if (nb .eq. iebal) then
                 ! Charge balance.
-                call gszm(conc,jcsort,narn1,narn2,nstmax,sigza,sigzc,sigzi,sigzm,zchar)
+                call gszm(conc, jcsort, narn1, narn2, nstmax, sigza, sigzc, sigzi, sigzm, zchar)
                 alpha(krow) = sigzi
 
                 if (sigzm .gt. 0.) then
@@ -315,7 +315,7 @@ subroutine betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cd
                 end if
             else if (jfl.ge.7 .and. jfl.le.11) then
                 ! Alkalinity balance.
-                call calk(alkc,conc,nstmax,ntfx,ntfxmx,ntfxt,tfx)
+                call calk(alkc, conc, nstmax, ntfx, ntfxmx, ntfxt, tfx)
                 atot = coval(nb)
                 dx = alkc - atot
                 alpha(krow) = dx
@@ -358,7 +358,7 @@ subroutine betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cd
                 ! Have found a bad jflag value.
                 ! Calling sequence substitutions:
                 !   uzvec1(krow) for unam48
-                call fmspnm(jlen,uzvec1(krow),uspn56)
+                call fmspnm(jlen, uzvec1(krow), uspn56)
                 write (noutpt,1000) jfl,uspn56(1:jlen)
                 write (nttyo,1000) jfl,uspn56(1:jlen)
 1000 format(/' * Error - (EQLIB/betas) Programming error trap:',/7x,'Have encountered a bad jflag value of ',i3,' for',/7x,'the species ',a,'.')
@@ -390,7 +390,7 @@ subroutine betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cd
                 ! Have found a bad jflag value.
                 ! Calling sequence substitutions:
                 !   uzvec1(krow) for unam48
-                call fmspnm(jlen,uzvec1(krow),uspn56)
+                call fmspnm(jlen, uzvec1(krow), uspn56)
                 write (noutpt,1000) jfl,uspn56(1:jlen)
                 write (nttyo,1000) jfl,uspn56(1:jlen)
             end if
@@ -455,7 +455,7 @@ subroutine betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cd
     ! Compute mass action elements.
     do krow = km1,kxt
         ns = iindx1(krow)
-        call afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+        call afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
         alpha(krow) = si
         beta(krow) = si
     end do

@@ -57,7 +57,7 @@ subroutine dfbasp(nbaspa, nbta, nbta_asv, ndrsa, ndrsa_asv, ndrsra, nerr, noutpt
 
         ! Calling sequence substitutions:
         !   ubasp(nb) for unam48
-        call fmspnm(jlen,ubasp(nb),uspn56)
+        call fmspnm(jlen, ubasp(nb), uspn56)
         write (noutpt,1000) uspn56(1:jlen)
         write (nttyo,1000) uspn56(1:jlen)
 1000 format(/" * Error - (EQLIB/dfbasp) Couldn't find a basis",' species named',/7x,a,' among the species read from the',' data file.',/7x,'It must be referenced erroneously in',' the associated reaction',/7x,'for another species.')

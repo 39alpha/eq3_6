@@ -34,7 +34,7 @@ subroutine gsmdez(delxia, dzvc0, dzvc0s, kdim, kmax, nord, nrd1mx)
 
     ! Zero the averaged derivative arrays.
     nmax = nrd1mx*kmax
-    call initaz(dzvc0s,nmax)
+    call initaz(dzvc0s, nmax)
 
     ! The averaged derivatives are calculated over the interval
     ! (-delxia,+delxia), about the base point (point 0).

@@ -471,7 +471,7 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
         ! summation to calculate Sigma m (sigmmc), has not been updated.
         ! This is extremely unlikely to cause a problem here. An unsorted
         ! calculation would almost certainly be adequate.
-        call csigm(conc,jcsort,narn1,narn2,nstmax,sigmmc)
+        call csigm(conc, jcsort, narn1, narn2, nstmax, sigmmc)
         xbarwc = omega/(omega + sigmmc)
 
         ! Calculate the alpha residual (axw) and the max norm (axwmax).
@@ -594,7 +594,7 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     ! Compute the mole fractions and activities of the basis and
     ! non-basis ion-exchanger species, and the numbers of moles
     ! of the non-basis species.
-    call ncmpve(acflg,act,actlg,cdrs,cgexj,eps100,iern1,iern2,ietmax,jern1,jern2,jetmax,jflag,jgext,jsflag,losp,mgext,moph,mosp,nbasp,nbt,nbtmax,ndrs,ndrsmx,ndrsr,netmax,noutpt,nptmax,nstmax,nttyo,ugexj,uphase,uspec,xbar,xbarlg,xlks)
+    call ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, jern1, jern2, jetmax, jflag, jgext, jsflag, losp, mgext, moph, mosp, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, netmax, noutpt, nptmax, nstmax, nttyo, ugexj, uphase, uspec, xbar, xbarlg, xlks)
 
     ! Compute the concentrations (mol/kg.H2O) and numbers of moles of
     ! the non-basis ion-exchanger species.
@@ -620,7 +620,7 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
 
     ! Compute the equivalent fractions (egexs) and mole ratios (mrgexs)
     ! of exchanger species of generic ion exchanger phases.
-    call gegexs(cegexs,cgexj,egexjc,egexjf,egexs,iern1,iern2,ietmax,jern1,jetmax,jgext,moph,mosp,mrgexs,netmax,ngexsa,ngext,noutpt,nptmax,nstmax,nttyo,zchar,zgexj)
+    call gegexs(cegexs, cgexj, egexjc, egexjf, egexs, iern1, iern2, ietmax, jern1, jetmax, jgext, moph, mosp, mrgexs, netmax, ngexsa, ngext, noutpt, nptmax, nstmax, nttyo, zchar, zgexj)
 
     if (q6mode) then
         ! Compute the numbers of moles and concentrations of the
@@ -638,7 +638,7 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     end if
 
     ! Sort species according to log masses.
-    call sortsp(iern1,iern2,istack,jcsort,jern1,jern2,jgext,jsitex,jetmax,jjsort,jssort,jstack,losp,lsort,ncmpr,nern1,nern2,netmax,noutpt,nphasx,npt,nptmax,nst,nstmax,nttyo)
+    call sortsp(iern1, iern2, istack, jcsort, jern1, jern2, jgext, jsitex, jetmax, jjsort, jssort, jstack, losp, lsort, ncmpr, nern1, nern2, netmax, noutpt, nphasx, npt, nptmax, nst, nstmax, nttyo)
 
     ! Compute the number of moles of water. The following coding
     ! assumes that the aqueous solution is the first phase (i.e.,
@@ -814,5 +814,5 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     ! Caution: the jgsort array from the last call is recycled as a
     ! good starting point. Set jgsort(1) to 0 to make a sort starting
     ! from scratch.
-    call qsortw(fsort,fugac,igstak,jgsort,jgstak,ngtmax,noutpt,nttyo,ngt)
+    call qsortw(fsort, fugac, igstak, jgsort, jgstak, ngtmax, noutpt, nttyo, ngt)
 end subroutine ncmpex

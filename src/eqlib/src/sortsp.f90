@@ -90,7 +90,7 @@ subroutine sortsp(iern1, iern2, istack, jcsort, jern1, jern2, jgext, jsitex, jet
     ! Caution: the jssort array from the last call is recycled as a
     ! good starting point. Set jssort(1) to 0 to make a sort starting
     ! from scratch.
-    call qsortw(lsort,losp,istack,jssort,jstack,nstmax,noutpt,nttyo,nst)
+    call qsortw(lsort, losp, istack, jssort, jstack, nstmax, noutpt, nttyo, nst)
 
     ! Compute the jcsort array using the jssort array already computed.
     ! In this array, the species belonging to a given phase are grouped

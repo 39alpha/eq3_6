@@ -74,7 +74,7 @@ subroutine tstrdx(cdrs, iodb, iopt, jflag, jsflag, narn1, narn2, ndrs, ndrsmx, n
                         if (iodb(1) .ge. 1) then
                             ! Calling sequence substitutions:
                             !   uspec(ns) for unam48
-                            call fmspnm(jlen,uspec(ns),uspn56)
+                            call fmspnm(jlen, uspec(ns), uspn56)
                             write (noutpt,1000) uspn56(1:jlen)
 1000 format(/' * Note - (EQ6/tstrdx) The reaction',' associated with the species',/7x,a,' is a redox',' reaction.')
 

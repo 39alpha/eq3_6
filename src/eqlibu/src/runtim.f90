@@ -87,7 +87,7 @@ subroutine runtim(iexec0, jexec0, texec0, noutpt, nttyo, trun, tuser, tcpu, udat
     ! Calling sequence substitutions:
     !   udate1 for udate
     !   utime1 for utime
-    call timdat(udate1,utime1)
+    call timdat(udate1, utime1)
 
     ! Compute the data needed to calculate the actual run time.
     ux = udate1(1:2)
@@ -137,7 +137,7 @@ subroutine runtim(iexec0, jexec0, texec0, noutpt, nttyo, trun, tuser, tcpu, udat
 
     ! Get the number of days in February of the current year.
     ndays(2) = 28
-    call tleapy(yy,qleapy)
+    call tleapy(yy, qleapy)
 
     if (qleapy) then
         ndays(2) = 29

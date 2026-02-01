@@ -131,7 +131,7 @@ subroutine rsetup(atwt, cbsr, cesr, iern1, ietmax, iindx1, iktmax, jcode, jern1,
 
                 ! Calling sequence substitutions:
                 !   uspec(nss) for unam48
-                call fmspnx(jlen,uspec(nss),uspn56)
+                call fmspnx(jlen, uspec(nss), uspn56)
 
                 write (noutpt,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
                 write (nttyo,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
@@ -175,7 +175,7 @@ subroutine rsetup(atwt, cbsr, cesr, iern1, ietmax, iindx1, iktmax, jcode, jern1,
 
                     ! Calling sequence substitutions:
                     !   uspec(nss) for unam48
-                    call fmspnx(jlen,uspec(nss),uspn56)
+                    call fmspnx(jlen, uspec(nss), uspn56)
 
                     write (noutpt,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
                     write (nttyo,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
@@ -211,7 +211,7 @@ subroutine rsetup(atwt, cbsr, cesr, iern1, ietmax, iindx1, iktmax, jcode, jern1,
 
                     ! Calling sequence substitutions:
                     !   uspec(nss) for unam48
-                    call fmspnx(jlen,uspec(nss),uspn56)
+                    call fmspnx(jlen, uspec(nss), uspn56)
 
                     write (noutpt,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
                     write (nttyo,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
@@ -245,7 +245,7 @@ subroutine rsetup(atwt, cbsr, cesr, iern1, ietmax, iindx1, iktmax, jcode, jern1,
 
                 ! Calling sequence substitutions:
                 !   uspec(nss) for unam48
-                call fmspnx(jlen,uspec(nss),uspn56)
+                call fmspnx(jlen, uspec(nss), uspn56)
 
                 write (noutpt,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
                 write (nttyo,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
@@ -291,7 +291,7 @@ subroutine rsetup(atwt, cbsr, cesr, iern1, ietmax, iindx1, iktmax, jcode, jern1,
 
                         ! Calling sequence substitutions:
                         !   uspec(nss) for unam48
-                        call fmspnx(jlen,uspec(nss),uspn56)
+                        call fmspnx(jlen, uspec(nss), uspn56)
 
                         write (noutpt,2100) ureac(nrc)(1:j2),uspn56(1:jlen)
                         write (nttyo,2100) ureac(nrc)(1:j2),uspn56(1:jlen)

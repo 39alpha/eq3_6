@@ -133,9 +133,9 @@ subroutine rxnchk(cdrs, cess, mtotr, nbt, nbtmx1, nbtmx2, nco, nct, nctmax, nerr
 1020 format(/9x,'The reaction is:')
 
         nfile = noutpt
-        call prrecy(cdrs,nbtmx1,nbtmx2,nbt,ns,nfile,uspec)
+        call prrecy(cdrs, nbtmx1, nbtmx2, nbt, ns, nfile, uspec)
         nfile = nttyo
-        call prrecy(cdrs,nbtmx1,nbtmx2,nbt,ns,nfile,uspec)
+        call prrecy(cdrs, nbtmx1, nbtmx2, nbt, ns, nfile, uspec)
         nerr = nerr + 1
     end if
 end subroutine rxnchk

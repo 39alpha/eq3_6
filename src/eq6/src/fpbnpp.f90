@@ -95,7 +95,7 @@ subroutine fpbnpp(affp, affp0, aftarg, daffp0, delxi, dlxmin, dxval0, eps100, io
 
     ! Estimate the affinities of formation of the various phases from
     ! Taylor's series expansions.
-    call ataylr(delxi,daffp0,nord,nordmx,npt,nptmax,affp0,affp)
+    call ataylr(delxi, daffp0, nord, nordmx, npt, nptmax, affp0, affp)
 
     ! Find any predicted supersaturations. Note that these count only
     ! if they exceed the tolerance tolsat.
@@ -131,7 +131,7 @@ subroutine fpbnpp(affp, affp0, aftarg, daffp0, delxi, dlxmin, dxval0, eps100, io
                     dxval0(n) = daffp0(n,npsst)
                 end do
 
-                call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+                call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
                 if (ier .le. 0) then
                     go to 100

@@ -87,29 +87,29 @@ subroutine cdrssd(adhfs, adhfsd, advfs, advfsd, axhfs, axhfsd, axlks, axlksd, ax
     jhmax = narxmx*ntprmx*ipchmx*nstmax
     jvmax = narxmx*ntprmx*ipcvmx*nstmax
 
-    call copyaa(axlks,axlksd,nmax)
+    call copyaa(axlks, axlksd, nmax)
 
     if (ipch .ge. 0) then
-        call copyaa(axhfs,axhfsd,nmax)
+        call copyaa(axhfs, axhfsd, nmax)
 
         if (ipch .ge. 1) then
-            call copyaa(adhfs,adhfsd,jhmax)
+            call copyaa(adhfs, adhfsd, jhmax)
         end if
     end if
 
     if (ipcv .ge. 0) then
-        call copyaa(axvfs,axvfsd,nmax)
+        call copyaa(axvfs, axvfsd, nmax)
 
         if (ipcv .ge. 1) then
-            call copyaa(advfs,advfsd,jvmax)
+            call copyaa(advfs, advfsd, jvmax)
         end if
     end if
 
     nmax = 2*nstmax
-    call copyia(ndrsr,ndrsrd,nmax)
+    call copyia(ndrsr, ndrsrd, nmax)
 
-    call copyaa(cdrs,cdrsd,ndrsmx)
-    call copyia(ndrs,ndrsd,ndrsmx)
+    call copyaa(cdrs, cdrsd, ndrsmx)
+    call copyia(ndrs, ndrsd, ndrsmx)
 
-    call copyia(nbasp,nbaspd,nbtmax)
+    call copyia(nbasp, nbaspd, nbtmax)
 end subroutine cdrssd

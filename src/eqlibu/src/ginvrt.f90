@@ -62,7 +62,7 @@ subroutine ginvrt(aimatr, delvec, gmmatr, ipivot, kdim, kmax)
         ! separate arrays would be used for the two vectors. This
         ! example of bad programming is made here to retain consistency
         ! with the original Linpack routine.
-        call dgesl(gmmatr,kmax,kdim,ipivot,delvec)
+        call dgesl(gmmatr, kmax, kdim, ipivot, delvec)
 
         ! Load the result in the inverted matrix.
         do j = 1,kdim

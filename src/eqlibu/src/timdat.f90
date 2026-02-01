@@ -34,7 +34,7 @@ subroutine timdat(udate, utime)
     data (umonth(mo), mo = 1,12) /'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'/
 
     ! Note: date_and_time is a Fortran 90 intrinsic subroutine.
-    call date_and_time(date,time,zone,values)
+    call date_and_time(date, time, zone, values)
 
     ! Note: date has the form ccyymmdd; udate has the form ddMmmccyy.
     udate(1:2) = date(7:8)

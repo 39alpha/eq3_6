@@ -42,7 +42,7 @@ subroutine gsmder(delxia, drer0, drer0s, drir0, drir0s, jreac, nord, nrct, nrctm
     end do
 
     nmax = nrd1mx*nrctmx
-    call initaz(drer0s,nmax)
+    call initaz(drer0s, nmax)
 
     ! The averaged derivatives are calculated over the interval
     ! (-delxia,+delxia), about the base point (point 0).

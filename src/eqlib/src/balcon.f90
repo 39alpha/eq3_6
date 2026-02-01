@@ -254,13 +254,13 @@ subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps10
                     !   jlen1 for jlen
                     !   uspec(nsi) for unam48
                     !   usp156 for uspn56
-                    call fmspnx(jlen1,uspec(nsi),usp156)
+                    call fmspnx(jlen1, uspec(nsi), usp156)
 
                     ! Calling sequence substitutions:
                     !   jlen2 for jlen
                     !   uspec(nsj) for unam48
                     !   usp256 for uspn56
-                    call fmspnx(jlen2,uspec(nsj),usp256)
+                    call fmspnx(jlen2, uspec(nsj), usp256)
 
                     write (noutpt,1110) usp156(1:jlen1),usp256(1:jlen2)
                     write (nttyo,1110) usp156(1:jlen1),usp256(1:jlen2)
@@ -302,7 +302,7 @@ subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps10
                 !   idim for kdim
                 !   ietmax for kmax
                 !   rhsgex for rhsvec
-                call msolvr(aamgex,dmlge,ggmgex,ier,ipvgex,idim,ietmax,noutpt,nttyo,qpr,rhsgex)
+                call msolvr(aamgex, dmlge, ggmgex, ier, ipvgex, idim, ietmax, noutpt, nttyo, qpr, rhsgex)
 
                 if (ier .ne. 0) then
                     ! The matrix is zero or it is computationally singular.
@@ -310,13 +310,13 @@ subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps10
                     !   jlen1 for jlen
                     !   uspec(nsi) for unam48
                     !   usp156 for uspn56
-                    call fmspnx(jlen1,uspec(nsi),usp156)
+                    call fmspnx(jlen1, uspec(nsi), usp156)
 
                     ! Calling sequence substitutions:
                     !   jlen2 for jlen
                     !   uspec(nsj) for unam48
                     !   usp256 for uspn56
-                    call fmspnx(jlen2,uspec(nsj),usp256)
+                    call fmspnx(jlen2, uspec(nsj), usp256)
 
                     write (noutpt,1120) usp156(1:jlen1),usp256(1:jlen2)
                     write (nttyo,1120) usp156(1:jlen1),usp256(1:jlen2)

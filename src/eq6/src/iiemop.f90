@@ -98,7 +98,7 @@ subroutine iiemop(iemop, iemos, iindx1, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr
                     if (nse .gt. nsetmx) then
                         ! Calling sequence substitutions:
                         !   uspec(ns) for unam48
-                        call fmspnm(jlen,uspec(ns),uspn56)
+                        call fmspnm(jlen, uspec(ns), uspn56)
                         write (ux8,'(i5)') nsetmx
                         call lejust(ux8)
                         j2 = ilnobl(ux8)

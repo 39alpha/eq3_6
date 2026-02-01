@@ -100,7 +100,7 @@ subroutine minvrt(aamatr, aimatr, delvec, gmmatr, ier, ipivot, kdim, kmax, noutp
 
     ! Factor the matrix (make the L-U decomposition).
 100 continue
-    call dgefa(gmmatr,kmax,kdim,ipivot,info)
+    call dgefa(gmmatr, kmax, kdim, ipivot, info)
 
     ! Test info.
     if (info .ne. 0) then
@@ -131,7 +131,7 @@ subroutine minvrt(aamatr, aimatr, delvec, gmmatr, ier, ipivot, kdim, kmax, noutp
         ! separate arrays would be used for the two vectors. This
         ! example of bad programming is made here to retain consistency
         ! with the original Linpack routine.
-        call dgesl(gmmatr,kmax,kdim,ipivot,delvec)
+        call dgesl(gmmatr, kmax, kdim, ipivot, delvec)
 
         ! Load the result in the inverted matrix.
         do j = 1,kdim

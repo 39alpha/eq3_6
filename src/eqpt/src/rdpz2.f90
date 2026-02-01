@@ -174,7 +174,7 @@ subroutine rdpz2(abeta, alpha, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr,
     ! Calling sequence substitutions:
     !   n1 for na
     !   unam1 for unams
-    call gspidx(ier,n1,nat,natmax,uaqsp,unam1)
+    call gspidx(ier, n1, nat, natmax, uaqsp, unam1)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>') then
@@ -209,7 +209,7 @@ subroutine rdpz2(abeta, alpha, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr,
     ! Calling sequence substitutions:
     !   n2 for na
     !   unam2 for unams
-    call gspidx(ier,n2,nat,natmax,uaqsp,unam2)
+    call gspidx(ier, n2, nat, natmax, uaqsp, unam2)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>') then

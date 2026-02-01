@@ -79,7 +79,7 @@ subroutine elim(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvf
     if (nt .lt. 2) then
         ! Calling sequence substitutions:
         !   uspec(nse) for unam48
-        call fmspnx(jlen,uspec(nse),uspn56)
+        call fmspnx(jlen, uspec(nse), uspn56)
         write (noutpt,1000) uspn56(1:jlen)
         write (nttyo,1000) uspn56(1:jlen)
 1000 format(/' * Error - (EQLIB/elim) The species ',a,/7x,'is in the strict basis and therefore can not be',' eliminated',/7x,'from the working basis set.')
@@ -109,7 +109,7 @@ subroutine elim(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvf
                 if (nnx .gt. ndrsmx) then
                     ! Calling sequence substitutions:
                     !   uspec(nse) for unam48
-                    call fmspnx(jlen,uspec(nse),uspn56)
+                    call fmspnx(jlen, uspec(nse), uspn56)
                     write (noutpt,1005) ndrsmx,uspn56(1:jlen),ndrsmx
                     write (nttyo,1005) ndrsmx,uspn56(1:jlen),ndrsmx
 1005 format(/' * Error - (EQLIB/elim) The maximum ',i7,' entries in the',/7x,'cdrs and ndrs arrays has been',' exceeded in trying to eliminate',/7x,'the species ',a,' from the working basis set.',/7x,'Increase the',' dimensioning  parameter ndrspa from its current',/7x,'value of ',i6,'.')
@@ -187,7 +187,7 @@ subroutine elim(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvf
                     if (nnx .gt. ndrsmx) then
                         ! Calling sequence substitutions:
                         !   uspec(nse) for unam48
-                        call fmspnx(jlen,uspec(nse),uspn56)
+                        call fmspnx(jlen, uspec(nse), uspn56)
                         write (noutpt,1005) ndrsmx,uspn56(1:jlen),ndrsmx
                         write (nttyo,1005) ndrsmx,uspn56(1:jlen),ndrsmx
                         stop
@@ -225,7 +225,7 @@ subroutine elim(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvf
                         if (nnx .gt. ndrsmx) then
                             ! Calling sequence substitutions:
                             !   uspec(nse) for unam48
-                            call fmspnx(jlen,uspec(nse),uspn56)
+                            call fmspnx(jlen, uspec(nse), uspn56)
                             write (noutpt,1005) ndrsmx,uspn56(1:jlen),ndrsmx
                             write (nttyo,1005) ndrsmx,uspn56(1:jlen),ndrsmx
                             stop
@@ -244,7 +244,7 @@ subroutine elim(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvf
                 if (nnx .gt. ndrsmx) then
                     ! Calling sequence substitutions:
                     !   uspec(nse) for unam48
-                    call fmspnx(jlen,uspec(nse),uspn56)
+                    call fmspnx(jlen, uspec(nse), uspn56)
                     write (noutpt,1005) ndrsmx,uspn56(1:jlen),ndrsmx
                     write (nttyo,1005) ndrsmx,uspn56(1:jlen),ndrsmx
                     stop
@@ -306,5 +306,5 @@ subroutine elim(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvf
     end do
 
     ! Copy the new reactions into the standard arrays.
-    call cdrscx(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,nstmax,ntprmx)
+    call cdrscx(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, nstmax, ntprmx)
 end subroutine elim

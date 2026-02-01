@@ -261,7 +261,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the block title ("Title") from a two-line header.
     uheadx = 'Title'
     nfldtx = 2
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -272,7 +272,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     do nn = 1,ntitmx + 1
         read (ninpts,1000,err=990) uline1
-        call parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+        call parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
         ustr = ufield(1)
 
         ! A separator line terminates the this block. It is not part
@@ -300,7 +300,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the block title from a two-line header.
     uheadx = 'Special Basis Switches'
     nfldtx = 2
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -314,7 +314,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! sub-block for that species follows. Otherwise, this line is
         ! the first line of the next block.
         nfldtx = 0
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -351,7 +351,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Read the name of the "with" species from a two-line header.
         uheadx = 'with'
         nfldtx = 3
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
@@ -371,14 +371,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the data from a two-line header.
     uheadx = 'Temperature (C)'
     nfldtx = 3
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
     end if
 
     ustr = ufield(2)
-    call chreal(nttyo,qrderr,ustr,var)
+    call chreal(nttyo, qrderr, ustr, var)
 
     if (qrderr) then
         go to 999
@@ -394,7 +394,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read a one-line header.
     uheadx = 'Pressure option (jpres3):'
     nfldtx = 1
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -402,7 +402,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the first option from a data line.
     nfldtx = 1
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -444,7 +444,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the second option from a data line.
     nfldtx = 1
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -483,7 +483,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the third (last) option from a two-line combination
     ! (a data line plus a separator line).
     nfldtx = 3
-    call rdd2l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,uline2,ulscr)
+    call rdd2l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -515,7 +515,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         jpres3 = 2
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -545,14 +545,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the data from a two-line header.
     uheadx = 'Density'
     nfldtx = 3
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
     end if
 
     ustr = ufield(2)
-    call chreal(nttyo,qrderr,ustr,var)
+    call chreal(nttyo, qrderr, ustr, var)
 
     if (qrderr) then
         go to 999
@@ -569,7 +569,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the data from a two-line header.
     uheadx = 'Total dissolved solutes option (itdsf3):'
     nfldtx = 1
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -577,7 +577,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the first option from a data line.
     nfldtx = 3
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -610,7 +610,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         itdsf3 = 0
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -623,7 +623,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the second (last) option from a two-line combination
     ! (a data line plus a separator line).
     nfldtx = 3
-    call rdd2l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,uline2,ulscr)
+    call rdd2l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -655,7 +655,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         itdsf3 = 1
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -687,7 +687,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read a one-line header.
     uheadx = 'Electrical balancing option (iebal3):'
     nfldtx = 1
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -695,7 +695,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the first option from a data line.
     nfldtx = 1
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -734,7 +734,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the second (last) option from a two-line combination
     ! (a data line plus a separator line).
     nfldtx = 3
-    call rdd2l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,uline2,ulscr)
+    call rdd2l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -796,7 +796,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read a one-line header.
     uheadx = 'Default redox constraint (irdxc3):'
     nfldtx = 1
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -804,7 +804,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the first option from a data line.
     nfldtx = 1
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -841,7 +841,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the second option from a data line.
     nfldtx = 3
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -874,7 +874,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         irdxc3 = -2
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -886,7 +886,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the third option from a data line.
     nfldtx = 3
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -919,7 +919,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         irdxc3 = -1
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -931,7 +931,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the fourth option from a data line.
     nfldtx = 3
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -964,7 +964,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     if (ux1.eq.'*' .or. ux1.eq.'x' .or. ux1.eq.'X') then
         irdxc3 = 0
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -977,7 +977,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the fifth (last) option from a two-line combination
     ! (a data line plus a separator line).
     nfldtx = 3
-    call rdd2l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,uline2,ulscr)
+    call rdd2l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -1028,7 +1028,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the first part of the block title from a one-line header.
     uheadx = 'Aqueous Basis Species/Constraint Species'
     nfldtx = 3
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -1037,7 +1037,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the second part of the block title from a two-line header.
     uheadx = '(uspeci(n)/ucospi(n))'
     nfldtx = 3
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -1047,7 +1047,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the first data line.
     nfldtx = 0
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -1088,7 +1088,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     uspeci(nbi) = ux48
 
     ustr = ufield(2)
-    call chreal(nttyo,qrderr,ustr,var)
+    call chreal(nttyo, qrderr, ustr, var)
 
     if (qrderr) then
         go to 999
@@ -1120,7 +1120,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Have an option that requires a second line of data to
         ! complete the constraint.
         nfldtx = 3
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -1143,7 +1143,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
     ! Read the next data line. Go back to process it.
     nfldtx = 0
-    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -1168,7 +1168,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read a two-line header for the block.
     uheadx = 'Create Ion Exchangers'
     nfldtx = 2
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -1183,7 +1183,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! for that phase follows. Otherwise, this line is the first line
         ! of the next block.
         nfldtx = 0
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -1230,7 +1230,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Read the separator line following the data line containing
         ! the name of an exchanger phase.
         nfldtx = 1
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -1253,7 +1253,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! from a two-line header.
         uheadx = '->'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
@@ -1273,7 +1273,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         end if
 
         ustr = ufield(3)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -1286,7 +1286,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Read the exchange model name from a two-line header.
         uheadx = '->'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
@@ -1313,14 +1313,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! data from a two-line header.
         uheadx = '->'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
         end if
 
         ustr = ufield(3)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -1353,7 +1353,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! follows. Otherwise, this line is the first line of the next
             ! sub-block (for the next exchanger phase).
             nfldtx = 0
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -1431,7 +1431,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! Read the separator line following the data line containing
             ! the name of an exchange site.
             nfldtx = 1
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -1452,7 +1452,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! of bare exchange ligand) from a two-line header.
             uheadx = '--->'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -1472,7 +1472,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             end if
 
             ustr = ufield(3)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 999
@@ -1486,7 +1486,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! number for one mole of site) from a two-line header.
             uheadx = '--->'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -1506,7 +1506,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             end if
 
             ustr = ufield(3)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 999
@@ -1528,7 +1528,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 ! sub-sub-block (for the next site) or the first line of the
                 ! next sub-block for the next exchanger phase).
                 nfldtx = 0
-                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -1628,7 +1628,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 ! the string containing an exchange reaction in condensed
                 ! format.
                 nfldtx = 1
-                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -1649,7 +1649,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 ! current exchange reaction from a two-line header.
                 uheadx = '----->'
                 nfldtx = 5
-                call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -1672,7 +1672,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 ! one-line header.
                 uheadx = '----->'
                 nfldtx = 5
-                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -1692,7 +1692,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 end if
 
                 ustr = ufield(3)
-                call chreal(nttyo,qrderr,ustr,var)
+                call chreal(nttyo, qrderr, ustr, var)
 
                 if (qrderr) then
                     go to 999
@@ -1707,7 +1707,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 ! header.
                 uheadx = '----->'
                 nfldtx = 5
-                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -1727,7 +1727,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 end if
 
                 ustr = ufield(3)
-                call chreal(nttyo,qrderr,ustr,var)
+                call chreal(nttyo, qrderr, ustr, var)
 
                 if (qrderr) then
                     go to 999
@@ -1742,7 +1742,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 ! header. The separator line completes the sub-sub-sub-block.
                 uheadx = '----->'
                 nfldtx = 5
-                call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -1762,7 +1762,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 end if
 
                 ustr = ufield(3)
-                call chreal(nttyo,qrderr,ustr,var)
+                call chreal(nttyo, qrderr, ustr, var)
 
                 if (qrderr) then
                     go to 999
@@ -1789,7 +1789,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read a two-line header for the block.
     uheadx = 'Ion Exchanger Compositions'
     nfldtx = 2
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -1804,7 +1804,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! for that phase follows. Otherwise, this line is the first line
         ! of the next block.
         nfldtx = 0
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
         ustr = ufield(1)
         uheadx = 'Exchanger phase'
         call locase(ustr)
@@ -1877,7 +1877,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Read the separator line following the data line containing
         ! the name of an exchanger phase.
         nfldtx = 1
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -1898,7 +1898,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! from a two-line header.
         uheadx = '->'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
@@ -1918,7 +1918,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         end if
 
         ustr = ufield(3)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -1938,7 +1938,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! follows. Otherwise, this line is the first line of the next
             ! sub-block (for the next exchanger phase).
             nfldtx = 0
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
             ustr = ufield(1)
             uheadx = '->'
             call locase(ustr)
@@ -2011,7 +2011,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! Read the separator line following the data line containing
             ! the name of an exchange site.
             nfldtx = 1
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -2032,7 +2032,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! from a two-line header.
             uheadx = '--->'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -2096,7 +2096,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
                 ! sub-sub-block (for the next site) or the first line of the
                 ! next sub-block for the next exchanger phase).
                 nfldtx = 0
-                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -2136,7 +2136,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
                         ugexsi(iei,jei,nei) = ufield(2)(1:24)
                         ustr = ufield(3)
-                        call chreal(nttyo,qrderr,ustr,var)
+                        call chreal(nttyo, qrderr, ustr, var)
 
                         if (qrderr) then
                             go to 999
@@ -2210,7 +2210,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read a two-line header for the block.
     uheadx = 'Solid Solution Compositions'
     nfldtx = 2
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -2225,7 +2225,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! for that phase follows. Otherwise, this line is the first line
         ! of the next block.
         nfldtx = 0
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
         ustr = ufield(1)
         uheadx = 'Solid Solution'
         call locase(ustr)
@@ -2267,7 +2267,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Read the separator line following the data line containing
         ! the name of a solid solution.
         nfldtx = 1
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -2288,7 +2288,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! from a two-line header.
         uheadx = '->'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
@@ -2315,7 +2315,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! Otherwise, this line is the first line of the next
             ! sub-block (for the next solid solution).
             nfldtx = 0
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
             ustr = ufield(1)
             uheadx = '->'
             call locase(ustr)
@@ -2351,7 +2351,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
                     umemi(nxic) = ufield(2)(1:24)
                     ustr = ufield(3)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 999
@@ -2386,7 +2386,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Nxmod options.
     uheadx = 'Alter/Suppress options'
     nfldtx = 2
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -2395,7 +2395,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the first part of a table header from a one-line header.
     uheadx = 'Species'
     nfldtx = 3
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
@@ -2404,7 +2404,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the second part of the table header from a two-line header.
     uheadx = '(uxmod(n))'
     nfldtx = 3
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -2417,7 +2417,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Read a line. This contains an alter/suppress option, else it is
         ! a separator line marking the end of the current block.
         nfldtx = 0
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -2479,7 +2479,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
 152 continue
         ustr = ufield(3)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -2497,7 +2497,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Note: iopt(1) = iopt1, etc.
     uheadx = 'Iopt Model Option Switches ("( 0)" marks default choices)'
     nfldtx = 1
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -2507,7 +2507,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     do nn = 1,noptmx
         ! Read the option title string from a one-line header.
         nfldtx = 1
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -2536,7 +2536,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
         ! Get the index of the option.
         ustr = uheadx(k1 + 1:k2 - 1)
-        call chrint(ivar,nttyo,qrderr,ustr)
+        call chrint(ivar, nttyo, qrderr, ustr)
 
         if (qrderr) then
             go to 999
@@ -2571,7 +2571,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! is a separator line marking the end of the option choice
             ! lines for the current option.
             nfldtx = 1
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -2606,7 +2606,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
             ! Get the index of the option choice.
             ustr = uheadx(k3 + 1:k4 - 1)
-            call chrint(ivar,nttyo,qrderr,ustr)
+            call chrint(ivar, nttyo, qrderr, ustr)
 
             if (qrderr) then
                 go to 999
@@ -2714,7 +2714,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Note: iopg(1) = iopg1, etc.
     uheadx = 'Iopg Activity Coefficient Option Switches ("( 0)" marksdefault choices)'
     nfldtx = 1
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -2724,7 +2724,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     do nn = 1,nopgmx
         ! Read the option title string from a one-line header.
         nfldtx = 1
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -2753,7 +2753,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
         ! Get the index of the option.
         ustr = uheadx(k1 + 1:k2 - 1)
-        call chrint(ivar,nttyo,qrderr,ustr)
+        call chrint(ivar, nttyo, qrderr, ustr)
 
         if (qrderr) then
             go to 999
@@ -2788,7 +2788,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! is a separator line marking the end of the option choice
             ! lines for the current option.
             nfldtx = 1
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -2823,7 +2823,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
             ! Get the index of the option choice.
             ustr = uheadx(k3 + 1:k4 - 1)
-            call chrint(ivar,nttyo,qrderr,ustr)
+            call chrint(ivar, nttyo, qrderr, ustr)
 
             if (qrderr) then
                 go to 999
@@ -2931,7 +2931,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Note: iopr(1) = iopt1, etc.
     uheadx = 'Iopr Print Option Switches ("( 0)" marks default choices)'
     nfldtx = 1
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -2941,7 +2941,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     do nn = 1,noprmx
         ! Read the option title string from a one-line header.
         nfldtx = 1
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -2970,7 +2970,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
         ! Get the index of the option.
         ustr = uheadx(k1 + 1:k2 - 1)
-        call chrint(ivar,nttyo,qrderr,ustr)
+        call chrint(ivar, nttyo, qrderr, ustr)
 
         if (qrderr) then
             go to 999
@@ -3005,7 +3005,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! is a separator line marking the end of the option choice
             ! lines for the current option.
             nfldtx = 1
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -3040,7 +3040,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
             ! Get the index of the option choice.
             ustr = uheadx(k3 + 1:k4 - 1)
-            call chrint(ivar,nttyo,qrderr,ustr)
+            call chrint(ivar, nttyo, qrderr, ustr)
 
             if (qrderr) then
                 go to 999
@@ -3148,7 +3148,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Note: iodb(1) = iodb1, etc.
     uheadx = 'Iodb Debugging Print Option Switches ("( 0)" marks default choices)'
     nfldtx = 1
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -3158,7 +3158,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     do nn = 1,nodbmx
         ! Read the option title string from a one-line header.
         nfldtx = 1
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -3187,7 +3187,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
         ! Get the index of the option.
         ustr = uheadx(k1 + 1:k2 - 1)
-        call chrint(ivar,nttyo,qrderr,ustr)
+        call chrint(ivar, nttyo, qrderr, ustr)
 
         if (qrderr) then
             go to 999
@@ -3222,7 +3222,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
             ! is a separator line marking the end of the option choice
             ! lines for the current option.
             nfldtx = 1
-            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -3257,7 +3257,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
 
             ! Get the index of the option choice.
             ustr = uheadx(k3 + 1:k4 - 1)
-            call chrint(ivar,nttyo,qrderr,ustr)
+            call chrint(ivar, nttyo, qrderr, ustr)
 
             if (qrderr) then
                 go to 999
@@ -3365,7 +3365,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the block title from a two-line header.
     uheadx = 'Numerical parameters'
     nfldtx = 1
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -3375,14 +3375,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! header.
     uheadx = 'Beta convergence tolerance'
     nfldtx = 3
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
     end if
 
     ustr = ufield(2)
-    call chreal(nttyo,qrderr,ustr,var)
+    call chreal(nttyo, qrderr, ustr, var)
 
     if (qrderr) then
         go to 999
@@ -3393,14 +3393,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the del convergence tolerance (toldl) from a one-line header.
     uheadx = 'Del convergence tolerance'
     nfldtx = 3
-    call rdd1lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,ulscr)
+    call rdd1lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, ulscr)
 
     if (qrderr) then
         go to 999
     end if
 
     ustr = ufield(2)
-    call chreal(nttyo,qrderr,ustr,var)
+    call chreal(nttyo, qrderr, ustr, var)
 
     if (qrderr) then
         go to 999
@@ -3413,14 +3413,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! current block).
     uheadx = 'Max. Number of N-R Iterations'
     nfldtx = 3
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
     end if
 
     ustr = ufield(2)
-    call chrint(ivar,nttyo,qrderr,ustr)
+    call chrint(ivar, nttyo, qrderr, ustr)
 
     if (qrderr) then
         go to 999
@@ -3432,7 +3432,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the block title from a two-line header.
     uheadx = 'Ordinary Basis Switches'
     nfldtx = 2
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
@@ -3446,7 +3446,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! sub-block for that species follows. Otherwise, this line is
         ! the first line of the next block.
         nfldtx = 0
-        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
         if (qrderr) then
             go to 999
@@ -3483,7 +3483,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
         ! Read the name of the "with" species from a two-line header.
         uheadx = 'with'
         nfldtx = 3
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
@@ -3503,14 +3503,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the data from a two-line header.
     uheadx = 'Sat. flag tolerance'
     nfldtx = 3
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
     end if
 
     ustr = ufield(2)
-    call chreal(nttyo,qrderr,ustr,var)
+    call chreal(nttyo, qrderr, ustr, var)
 
     if (qrderr) then
         go to 999
@@ -3525,14 +3525,14 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! Read the data from a two-line header.
     uheadx = 'Aq. Phase Scale Factor'
     nfldtx = 3
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999
     end if
 
     ustr = ufield(2)
-    call chreal(nttyo,qrderr,ustr,var)
+    call chreal(nttyo, qrderr, ustr, var)
 
     if (qrderr) then
         go to 999
@@ -3544,7 +3544,7 @@ subroutine rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! input.
     uheadx = 'End of problem'
     nfldtx = 1
-    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
     if (qrderr) then
         go to 999

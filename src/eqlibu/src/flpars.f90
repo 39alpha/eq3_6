@@ -60,5 +60,5 @@ subroutine flpars(eps100, irang, noutpt, nttyo, smp100)
     call cliefu()
 
     ! Test the adequacy of the machine epsilon and the exponent range.
-    call chump(eps,irang,noutpt,nttyo)
+    call chump(eps, irang, noutpt, nttyo)
 end subroutine flpars

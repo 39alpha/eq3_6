@@ -54,7 +54,7 @@ subroutine escalc(csts, iindx1, jcsort, kbt, kmax, moph, mosp, mtb, mtb0, nbaspd
     integer :: ns
     integer :: nss
 
-    call copyaa(mtb,mtb0,nbt)
+    call copyaa(mtb, mtb0, nbt)
 
     do nb = 1,nbt
         mtb(nb) = 0.
@@ -96,5 +96,5 @@ subroutine escalc(csts, iindx1, jcsort, kbt, kmax, moph, mosp, mtb, mtb0, nbaspd
 1020 format(1x)
     end if
 
-    call copyaa(mtb,mtb0,nbt)
+    call copyaa(mtb, mtb0, nbt)
 end subroutine escalc

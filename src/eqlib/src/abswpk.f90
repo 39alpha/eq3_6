@@ -85,7 +85,7 @@ subroutine abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, j
     qbswx = .false.
 
     ! Clear the ibswx array.
-    call initiz(ibswx,nbtmax)
+    call initiz(ibswx, nbtmax)
 
     ! Loop over all mass balance relations.
     do krow = 1,kbt
@@ -122,7 +122,7 @@ subroutine abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, j
                     end if
                 end do
 
-                call fbassw(jcsort,jflag,mosp,narn1,narn2,nse,nsi,nsj,nstmax,weight,wsi)
+                call fbassw(jcsort, jflag, mosp, narn1, narn2, nse, nsi, nsj, nstmax, weight, wsi)
 
                 if (nsi .gt. 0) then
                     ibswx(nb) = nsi

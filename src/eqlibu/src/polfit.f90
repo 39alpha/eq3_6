@@ -79,5 +79,5 @@ subroutine polfit(aamatr, cof, gmmatr, ier, ipivot, npfmax, npft, noutpt, nttyo,
     !   npft for kdim
     !   npfmax for kmax
     !   yvec for rhsvec
-    call msolvr(aamatr,cof,gmmatr,ier,ipivot,npft,npfmax,noutpt,nttyo,qpr,yvec)
+    call msolvr(aamatr, cof, gmmatr, ier, ipivot, npft, npfmax, noutpt, nttyo, qpr, yvec)
 end subroutine polfit

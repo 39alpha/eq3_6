@@ -96,20 +96,20 @@ subroutine prtsat(affpd, iern1, iern2, ilrn1, ilrn2, imrn1, imrn2, iopr, iopt, i
     ugroup = upusol
     ir1 = imrn1
     ir2 = imrn2
-    call prtsip(affpd,iopr,ir1,ir2,jpflag,kpsat,kpsst,noprmx,noutpt,nptmax,sidrph,tolspf,ugroup,uphase)
+    call prtsip(affpd, iopr, ir1, ir2, jpflag, kpsat, kpsst, noprmx, noutpt, nptmax, sidrph, tolspf, ugroup, uphase)
 
     ! Print a table for the pure liquids.
     ugroup = upuliq
     ir1 = ilrn1
     ir2 = ilrn2
-    call prtsip(affpd,iopr,ir1,ir2,jpflag,kpsat,kpsst,noprmx,noutpt,nptmax,sidrph,tolspf,ugroup,uphase)
+    call prtsip(affpd, iopr, ir1, ir2, jpflag, kpsat, kpsst, noprmx, noutpt, nptmax, sidrph, tolspf, ugroup, uphase)
 
     if (iopt(4) .ge. 1) then
         ! Print a table for the solid solutions.
         ugroup = usosol
         ir1 = ixrn1
         ir2 = ixrn2
-        call prtsip(affpd,iopr,ir1,ir2,jpflag,kpsat,kpsst,noprmx,noutpt,nptmax,sidrph,tolspf,ugroup,uphase)
+        call prtsip(affpd, iopr, ir1, ir2, jpflag, kpsat, kpsst, noprmx, noutpt, nptmax, sidrph, tolspf, ugroup, uphase)
 
         ! No table is presently printed for non-aqueous liquid
         ! solutions.
@@ -120,7 +120,7 @@ subroutine prtsat(affpd, iern1, iern2, ilrn1, ilrn2, imrn1, imrn2, iopr, iopt, i
         ugroup = ugexch
         ir1 = iern1
         ir2 = iern2
-        call prtsip(affpd,iopr,ir1,ir2,jpflag,kpsat,kpsst,noprmx,noutpt,nptmax,sidrph,tolspf,ugroup,uphase)
+        call prtsip(affpd, iopr, ir1, ir2, jpflag, kpsat, kpsst, noprmx, noutpt, nptmax, sidrph, tolspf, ugroup, uphase)
     end if
 
     write (noutpt,1150)

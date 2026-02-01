@@ -71,7 +71,7 @@ subroutine intbs6(jflag, jflgi, kmax, narn1a, narn2a, nbaspd, nbtd, nbti, nbtmax
                 if (jflgi(nbi).ne.0 .and. jflgi(nbi).ne.30) then
                     ! Calling sequence substitutions:
                     !   ubmtbi(nbi) for unam48
-                    call fmspnx(jlen,ubmtbi(nbi),uspn56)
+                    call fmspnx(jlen, ubmtbi(nbi), uspn56)
                     write (ux8,'(i5)') jflgi(nbi)
                     call lejust(ux8)
                     j2 = ilnobl(ux8)
@@ -96,7 +96,7 @@ subroutine intbs6(jflag, jflgi, kmax, narn1a, narn2a, nbaspd, nbtd, nbti, nbtmax
                     if (nbtd .gt. nbtmax) then
                         ! Calling sequence substitutions:
                         !   ubmtbi(nbi) for unam48
-                        call fmspnx(jlen,ubmtbi(nbi),uspn56)
+                        call fmspnx(jlen, ubmtbi(nbi), uspn56)
                         write (ux8,'(i5)') nbtmax
                         call lejust(ux8)
                         j2 = ilnobl(ux8)
@@ -119,7 +119,7 @@ subroutine intbs6(jflag, jflgi, kmax, narn1a, narn2a, nbaspd, nbtd, nbti, nbtmax
 
         ! Calling sequence substitutions:
         !   ubmtbi(nbi) for unam48
-        call fmspnx(jlen,ubmtbi(nbi),uspn56)
+        call fmspnx(jlen, ubmtbi(nbi), uspn56)
         write (noutpt,1010) uspn56(1:jlen)
         write (nttyo,1010) uspn56(1:jlen)
 1010 format(/' * Note - (EQ6/intbs6) The species "',a,'"',/7x,'appears as a basis species on the input file, but it'," wasn't",/7x,'read from the data file. If it is a species',' to be created by the code,',/7x,'such as a generic ion',' exchanger species, there is no problem.')
