@@ -1,4 +1,4 @@
-subroutine betgam(acflg,acflgo,bgamx,narn1,narn2,nstmax,ubgamx,uspec)
+subroutine betgam(acflg, acflgo, bgamx, narn1, narn2, nstmax, ubgamx, uspec)
     !! This subroutine finds the aqueous species activity coefficient
     !! residual with the largest magnitude (bgamx).
     !! This subroutine is called by:

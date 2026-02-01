@@ -1,4 +1,4 @@
-subroutine tpraac(amuaac,amua2c,apsi,iaactr,icapr,ipbtmx,jpfcmx,naactr,natmax,na2ctr,ncapr,ncvaac,nerr,noutpt,npx3mx,npx3t,nttyo,nwarn,pcvaac,qpdaac,qpdca,uaqsp,utripl,zaqsp)
+subroutine tpraac(amuaac, amua2c, apsi, iaactr, icapr, ipbtmx, jpfcmx, naactr, natmax, na2ctr, ncapr, ncvaac, nerr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvaac, qpdaac, qpdca, uaqsp, utripl, zaqsp)
     !! Test and process the Pitzer data for aa'c (anion, different
     !! anion, cation) triplets read from the DATA0 file. Find and flag
     !! errors, such as duplication of data (e.g., two data blocks for

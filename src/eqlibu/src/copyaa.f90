@@ -1,4 +1,4 @@
-subroutine copyaa(array1,array2,nmax)
+subroutine copyaa(array1, array2, nmax)
     !! This subroutine copies the first nmax elements of the real*8
     !! array array1 into the real*8 array array2. Normally, nmax would
     !! be the dimension of both arrays. However, nmax could be less

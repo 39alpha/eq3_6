@@ -1,4 +1,4 @@
-subroutine minvrt(aamatr,aimatr,delvec,gmmatr,ier,ipivot,kdim,kmax,noutpt,nttyo,qpr)
+subroutine minvrt(aamatr, aimatr, delvec, gmmatr, ier, ipivot, kdim, kmax, noutpt, nttyo, qpr)
     !! This subroutine inverts the matrix aamatr. The inverted matrix
     !! is returned in aimatr. Thus
     !!   [aamatr][aimatr] = I

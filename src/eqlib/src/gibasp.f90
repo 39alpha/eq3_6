@@ -1,4 +1,4 @@
-subroutine gibasp(cgexj,cjbasp,iern1,ixbasp,jern1,jern2,jetmax,jgext,narn1,narn2,nbasp,nbt,nbtmax,nern1,nern2,netmax,nphasx,nstmax)
+subroutine gibasp(cgexj, cjbasp, iern1, ixbasp, jern1, jern2, jetmax, jgext, narn1, narn2, nbasp, nbt, nbtmax, nern1, nern2, netmax, nphasx, nstmax)
     !! This subroutine sets up the ixbasp and cjbasp arrays. The former
     !! is a flag array, each member of which denotes whether the
     !! thermodynamic activity of the corresponding basis species is

@@ -1,4 +1,4 @@
-subroutine ckawpr(delxi,dlxmin,daw0,dxw0pr,dxw1pr,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,aw0prn,aw1prn,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckawpr(delxi, dlxmin, daw0, dxw0pr, dxw1pr, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, aw0prn, aw1prn, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the next aw-based print
     !! point is not exceeded. Because the activity of water might be
     !! decreasing or increasing, two potential target points (aw0prn

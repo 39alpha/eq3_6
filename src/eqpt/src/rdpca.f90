@@ -1,4 +1,4 @@
-subroutine rdpca(abeta,alpha,acphi,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxca,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+subroutine rdpca(abeta, alpha, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxca, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
     !! This subroutine reads from the DATA1 file the coefficients
     !! required to compute those Pitzer interaction parameters
     !! associated with cation-anion (ca) pairs. This particular

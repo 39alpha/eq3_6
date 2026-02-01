@@ -1,4 +1,4 @@
-subroutine chkinx(cdrs,coval,ier,irdxc3,jflag,jsflag,narn1,narn2,nbasp,nbt,nbtmax,ncosp,ndrs,ndrsmx,ndrsr,nelect,nhydr,nhydx,noutpt,no2gaq,nredox,nstmax,nttyo,tempc,ucospi,uredox,uspec,zchar)
+subroutine chkinx(cdrs, coval, ier, irdxc3, jflag, jsflag, narn1, narn2, nbasp, nbt, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nhydr, nhydx, noutpt, no2gaq, nredox, nstmax, nttyo, tempc, ucospi, uredox, uspec, zchar)
     !! This subroutine checks the code input for various kinds of
     !! errors and inconsistencies. Here ier accumulates the
     !! number of errors caught.

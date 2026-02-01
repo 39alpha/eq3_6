@@ -1,4 +1,4 @@
-subroutine gcsts(cdrs,csts,jflag,nbaspd,nbt,nbtmax,ndrs,ndrsmx,ndrsr,noutpt,nsts,nstsmx,nstsr,nst,nstmax,nttyo,uspec)
+subroutine gcsts(cdrs, csts, jflag, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, noutpt, nsts, nstsmx, nstsr, nst, nstmax, nttyo, uspec)
     !! This subroutine computes the stoichiometric factors which relate
     !! each aqueous species to the nb-th member of the data file
     !! basis set. These stoichiometric factors permit calculation of

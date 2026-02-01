@@ -1,4 +1,4 @@
-subroutine goback(acflg,acflg0,emop,emop0,emos,emos0,fje,fje0,fxi,fxi0,iemop,iemop0,iemos,iemos0,iindx0,iindx1,ipndx0,ipndx1,jpflag,jsflag,jreac,jreac0,kdim,kdim0,kmax,km1,km10,kmt,kmt0,kx1,kx10,kxt,kxt0,loph,losp,moph,moph0,mosp,mosp0,ncmpe,ncmpe0,npet,npetmx,npet0,npt,nptmax,nrct,nrctmx,nset,nsetmx,nset0,nst,nstmax,qreq,qriinf,sigmam,sigmm0,uzvec0,uzvec1,xi0,xi1)
+subroutine goback(acflg, acflg0, emop, emop0, emos, emos0, fje, fje0, fxi, fxi0, iemop, iemop0, iemos, iemos0, iindx0, iindx1, ipndx0, ipndx1, jpflag, jsflag, jreac, jreac0, kdim, kdim0, kmax, km1, km10, kmt, kmt0, kx1, kx10, kxt, kxt0, loph, losp, moph, moph0, mosp, mosp0, ncmpe, ncmpe0, npet, npetmx, npet0, npt, nptmax, nrct, nrctmx, nset, nsetmx, nset0, nst, nstmax, qreq, qriinf, sigmam, sigmm0, uzvec0, uzvec1, xi0, xi1)
     !! This subroutine sets up to go back to the previous point of
     !! reaction progress.
     !! This subroutine is called by:

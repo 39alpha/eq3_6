@@ -1,4 +1,4 @@
-subroutine switch(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,narn1,narxmx,nbasp,nbaspd,nbaspx,nb,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,ns2,nst,nstmax,ntprmx,nttyo,qbassw,qbswok,uspec)
+subroutine switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, narn1, narxmx, nbasp, nbaspd, nbaspx, nb, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, ns2, nst, nstmax, ntprmx, nttyo, qbassw, qbswok, uspec)
     !! This subroutine executes an ordinary basis switch. The ns2-th
     !! species (not in the current active basis set) is exchanged into
     !! that set for the ns1-th species. All reactions are rewritten where

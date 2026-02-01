@@ -1,4 +1,4 @@
-subroutine intnsp(coval,covali,ier,jflag,narn1,narn2,nbasp,nbt,nbti,nbtmax,nchlor,ncosp,ndecsp,nhydr,noutpt,nst,nstmax,nttyo,ucospi,uspec)
+subroutine intnsp(coval, covali, ier, jflag, narn1, narn2, nbasp, nbt, nbti, nbtmax, nchlor, ncosp, ndecsp, nhydr, noutpt, nst, nstmax, nttyo, ucospi, uspec)
     !! This subroutine finds the indices of species required to evaluate
     !! certain types of constraints, such as a mean activity or a
     !! heterogeneous equilibrium.

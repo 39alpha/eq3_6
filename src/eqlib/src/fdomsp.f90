@@ -1,4 +1,4 @@
-subroutine fdomsp(jssort,mosp,nsi,nst,nstmax,weight,wsi)
+subroutine fdomsp(jssort, mosp, nsi, nst, nstmax, weight, wsi)
     !! This subroutine finds the species that dominates a mass balance.
     !! The primary purpose of this subroutine is to support the
     !! pre-Newton-Raphson optimization algorithm. This subroutine is not

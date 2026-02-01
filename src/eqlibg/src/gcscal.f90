@@ -1,4 +1,4 @@
-subroutine gcscal(acflgc,delacf,narn1,narn2,nref,nstmax,zchar)
+subroutine gcscal(acflgc, delacf, narn1, narn2, nref, nstmax, zchar)
     !! This subroutine rescales the activity coefficients of aqeuous
     !! ionic species to make them consistent with a given pH scale,
     !! which has been used to define the correction parameter "delacf".

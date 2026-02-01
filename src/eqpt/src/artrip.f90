@@ -1,4 +1,4 @@
-subroutine artrip(iz1,iz2,iz3,na,nc,nn,n1,n2,n3,u1,u2,u3,z1,z2,z3)
+subroutine artrip(iz1, iz2, iz3, na, nc, nn, n1, n2, n3, u1, u2, u3, z1, z2, z3)
     !! This suboutine arranges the members of a species triplet
     !! according to the following rules:
     !!   If exactly one neutral is present:

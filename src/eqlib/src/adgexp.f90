@@ -1,4 +1,4 @@
-subroutine adgexp(ne,noutpt,nttyo,ugexpd)
+subroutine adgexp(ne, noutpt, nttyo, ugexpd)
     !! This subroutine assigns a default name to the ne-th generic ion
     !! exchange phase. The general model is "Exchanger(n)", where n
     !! is the index number ne.

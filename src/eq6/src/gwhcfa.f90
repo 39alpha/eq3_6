@@ -1,4 +1,4 @@
-subroutine gwhcfa(akmat1,delxi,dxsm11,hhcvec,nord,nordmx,nrd1mx,whcfac,xhcvec)
+subroutine gwhcfa(akmat1, delxi, dxsm11, hhcvec, nord, nordmx, nrd1mx, whcfac, xhcvec)
     !! This subroutine computes the w factor (whcfac), which is
     !! required for higher-order (stiff) ODE corrections. Logically,
     !! w = g dot FCh where g and h are vectors, and (FC) is the matrix

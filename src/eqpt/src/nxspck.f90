@@ -1,4 +1,4 @@
-subroutine nxspck(iktmax,issot,nerr,noutpt,nttyo,nxt,nxtmax,ussoph,ussosp)
+subroutine nxspck(iktmax, issot, nerr, noutpt, nttyo, nxt, nxtmax, ussoph, ussosp)
     !! Check the names of solid solution end-members for uniqueness
     !! within each solid solution.
     !! This subroutine is called by:

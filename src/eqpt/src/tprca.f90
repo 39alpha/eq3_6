@@ -1,4 +1,4 @@
-subroutine tprca(abeta,acphi,alamca,alpha,alphca,amua2c,amuc2a,icapr,ipbtmx,jpfcmx,natmax,na2ctr,ncapr,ncvca,nc2atr,nerr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvca,qpdca,uaqsp,upair,zaqsp)
+subroutine tprca(abeta, acphi, alamca, alpha, alphca, amua2c, amuc2a, icapr, ipbtmx, jpfcmx, natmax, na2ctr, ncapr, ncvca, nc2atr, nerr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvca, qpdca, uaqsp, upair, zaqsp)
     !! Test and process the Pitzer data for ca (cation, anion) pairs
     !! read from the DATA0 file. Find and flag errors, such as duplication
     !! of data (e.g., two data blocks for the same ca pair). Calculate

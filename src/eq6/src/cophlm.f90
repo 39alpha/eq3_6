@@ -1,4 +1,4 @@
-subroutine cophlm(actw,awmax,awmin,delxi,dlxmin,eh,ehmax,ehmin,fo2lg,iodb,nodbmx,noutpt,o2max,o2min,ph,phmax,phmin,qadjdx,qredox,tolxsu)
+subroutine cophlm(actw, awmax, awmin, delxi, dlxmin, eh, ehmax, ehmin, fo2lg, iodb, nodbmx, noutpt, o2max, o2min, ph, phmax, phmin, qadjdx, qredox, tolxsu)
     !! This subroutine checks for oversteps with regard to specified
     !! minimum and maximum values for the pH, Eh, log fO2, and
     !! activity of water.

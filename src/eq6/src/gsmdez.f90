@@ -1,4 +1,4 @@
-subroutine gsmdez(delxia,dzvc0,dzvc0s,kdim,kmax,nord,nrd1mx)
+subroutine gsmdez(delxia, dzvc0, dzvc0s, kdim, kmax, nord, nrd1mx)
     !! This subroutine computes smoothed or averaged derivatives of the
     !! elements of the z vector. The actual derivatives (of various
     !! orders) are averaged over the interval (-delxia,+delxia). The

@@ -1,4 +1,4 @@
-subroutine naqsck(nat,natmax,nerr,noutpt,nttyo,uaqsp)
+subroutine naqsck(nat, natmax, nerr, noutpt, nttyo, uaqsp)
     !! Check the names of aqueous species for uniqueness.
     !! This subroutine is called by:
     !!   EQPT/eqpt.f

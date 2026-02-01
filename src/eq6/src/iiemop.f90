@@ -1,4 +1,4 @@
-subroutine iiemop(iemop,iemos,iindx1,ipndx1,jsflag,kdim,kmax,ncmpe,ncmpr,noutpt,npet,npetmx,npt,nptmax,nset,nsetmx,nstmax,nttyo,uaqsln,uspec,uphase)
+subroutine iiemop(iemop, iemos, iindx1, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr, noutpt, npet, npetmx, npt, nptmax, nset, nsetmx, nstmax, nttyo, uaqsln, uspec, uphase)
     !! This subroutine initializes the indexing used for tracking the
     !! numbers of moles of phases present in the Equilibrium System (ES).
     !! This indexing must be re-initialized whenever a change occurs

@@ -1,4 +1,4 @@
-subroutine gpj0(dpj0,d2pj0,pj0,x)
+subroutine gpj0(dpj0, d2pj0, pj0, x)
     !! This subroutine evaluates the function J0(x) (pj0) and its
     !! first and second derivatives with respect to x (dpj0 and
     !! d2pj0). The evaluation here uses an approximation given by

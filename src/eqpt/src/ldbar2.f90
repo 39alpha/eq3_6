@@ -1,4 +1,4 @@
-subroutine ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,zdbval)
+subroutine ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, zdbval)
     !! This subroutine loads data on the temperature grid from the
     !! one-dimensional holding array (xdbval) into the two-dimensional
     !! proper data array (represented here by the dummy name zdbval).

@@ -1,4 +1,4 @@
-subroutine gmdsm(conc,musum,na,natmax,nmutmx,nmxi,nmxmax,nmxx,ns,nstmax,pmu,uspec)
+subroutine gmdsm(conc, musum, na, natmax, nmutmx, nmxi, nmxmax, nmxx, ns, nstmax, pmu, uspec)
     !! This subroutine computes the following second order sum used
     !! in Pitzer's equations:
     !!   SUM(jk) mu(ijk)*m(j)*m(k)

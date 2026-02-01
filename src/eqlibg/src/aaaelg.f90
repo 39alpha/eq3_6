@@ -1,4 +1,4 @@
-subroutine aaaelg(ustelg,uveelg)
+subroutine aaaelg(ustelg, uveelg)
     !! EQLIBG: EQ3/6 Library - Activity Coefficients
     !! EQ3/6 version 8.0a R43a (Patched 10/01/2009)
     !! Last revised 04/24/02 by TJW

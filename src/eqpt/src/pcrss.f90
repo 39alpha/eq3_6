@@ -1,4 +1,4 @@
-subroutine pcrss(apx,bpx,iapxmx,ibpxmx,iktmax,issot,nbtmx1,ndata1,ndat0s,ndat1f,nerr,nmodwr,nmt,nmtmax,noutpt,nslist,nttyo,nxt,nxtmax,uminsp,ussosp,ussoph)
+subroutine pcrss(apx, bpx, iapxmx, ibpxmx, iktmax, issot, nbtmx1, ndata1, ndat0s, ndat1f, nerr, nmodwr, nmt, nmtmax, noutpt, nslist, nttyo, nxt, nxtmax, uminsp, ussosp, ussoph)
     !! This subroutine reads data on solid solutions from the stripped
     !! DATA0 file, processes this data, and writes the results
     !! on the DATA1 and DATA1F files. The counter "nerr" is incremented

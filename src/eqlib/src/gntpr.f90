@@ -1,4 +1,4 @@
-subroutine gntpr(ntpr,ntprmx,ntprt,tempc,tempcu)
+subroutine gntpr(ntpr, ntprmx, ntprt, tempc, tempcu)
     !! This subroutine finds the value of ntpr, the temperature range
     !! flag.
     !! This subroutine is called by:

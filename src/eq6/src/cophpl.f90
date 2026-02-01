@@ -1,4 +1,4 @@
-subroutine cophpl(actw,aw0plo,aw1plo,delxi,dlxmin,eh,eh0plo,eh1plo,fo2lg,iodb,nodbmx,noutpt,o20plo,o21plo,ph,ph0plo,ph1plo,qadjdx,qredox,tolxsu)
+subroutine cophpl(actw, aw0plo, aw1plo, delxi, dlxmin, eh, eh0plo, eh1plo, fo2lg, iodb, nodbmx, noutpt, o20plo, o21plo, ph, ph0plo, ph1plo, qadjdx, qredox, tolxsu)
     !! This subroutine checks for oversteps with regard to currently
     !! defined lesser and greater plot point values for the pH, Eh,
     !! log fO2, and activity of water.

@@ -1,4 +1,4 @@
-subroutine gspidx(ier,n,nat,natmax,uaqsp,unams)
+subroutine gspidx(ier, n, nat, natmax, uaqsp, unams)
     !! Get the index (n) of the aqueous species whose name is unams.
     !! This subroutine is called by:
     !!   EQPT/rdpz2.f

@@ -1,4 +1,4 @@
-subroutine timeca(deltim,delxi,drir0,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qriinf,rirec0,time0,time1)
+subroutine timeca(deltim, delxi, drir0, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qriinf, rirec0, time0, time1)
     !! This subroutine calculates the interval (deltim) of model time
     !! that corresponds to the reaction progress interval (delxi).
     !! This subroutine is called by:

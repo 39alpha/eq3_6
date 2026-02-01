@@ -1,4 +1,4 @@
-subroutine integr(delxi,dlxrct,drer0,nord,nrc,nrctmx,nrd1mx,rrelr0)
+subroutine integr(delxi, dlxrct, drer0, nord, nrc, nrctmx, nrd1mx, rrelr0)
     !! This subroutine integrates a Taylor's series for the relative
     !! rate of a reaction to calculate the advancement in the
     !! corresponding reaction progress variable (dlxrct).

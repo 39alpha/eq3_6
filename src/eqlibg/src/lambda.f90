@@ -1,4 +1,4 @@
-subroutine lambda(acflgc,afcnst,bpx,ibpxmx,ibpxt,iktmax,ixrn1,ixrn2,jsol,ncmpr,noutpt,np,nptmax,nstmax,nttyo,nxtmax,wfac,xbar,xbarlg,uphase,uspec)
+subroutine lambda(acflgc, afcnst, bpx, ibpxmx, ibpxt, iktmax, ixrn1, ixrn2, jsol, ncmpr, noutpt, np, nptmax, nstmax, nttyo, nxtmax, wfac, xbar, xbarlg, uphase, uspec)
     !! This subroutine computes activity coefficients for the components
     !! of the np-th phase, which is a solid solution.
     !! This subroutine is called by:

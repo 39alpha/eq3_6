@@ -1,4 +1,4 @@
-subroutine vazpck(nat,natmax,nazt,naztmx,noutpt,nttyo,uaqsp,uazp)
+subroutine vazpck(nat, natmax, nazt, naztmx, noutpt, nttyo, uaqsp, uazp)
     !! Validate the aqueous species names used to specify hard core
     !! diameters. Write a note if such a name does not appear on the
     !! main list of aqueous species.

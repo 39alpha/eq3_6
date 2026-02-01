@@ -1,4 +1,4 @@
-subroutine intrct(cbsr,cbsri,cesr,cesri,egers,egersi,ibsrti,iern1,iern2,iesrti,ietmax,igerti,iktmax,imrn1,imrn2,ixrn1,ixrn2,ixrti,jcode,jetmax,jgerti,jgext,narn1,narn2,nbaspd,nbt,nbtmax,nbt1mx,ncmpr,nct,nctmax,nertmx,netmax,ngexsa,ngext,ngrn1,ngrn2,noutpt,nptmax,nrct,nrctmx,nrndex,nsrtmx,nstmax,nttyo,nxridx,nxrtmx,rxbar,rxbari,ubsri,ucxri,uelem,uesri,ugerji,ugermo,ugersi,ugexj,ugexmo,uphase,ureac,uspec,xgers,xgersi)
+subroutine intrct(cbsr, cbsri, cesr, cesri, egers, egersi, ibsrti, iern1, iern2, iesrti, ietmax, igerti, iktmax, imrn1, imrn2, ixrn1, ixrn2, ixrti, jcode, jetmax, jgerti, jgext, narn1, narn2, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nct, nctmax, nertmx, netmax, ngexsa, ngext, ngrn1, ngrn2, noutpt, nptmax, nrct, nrctmx, nrndex, nsrtmx, nstmax, nttyo, nxridx, nxrtmx, rxbar, rxbari, ubsri, ucxri, uelem, uesri, ugerji, ugermo, ugersi, ugexj, ugexmo, uphase, ureac, uspec, xgers, xgersi)
     !! This subroutine assigns phase or species indices corresponding to
     !! reactants.
     !! This subroutine is called by:

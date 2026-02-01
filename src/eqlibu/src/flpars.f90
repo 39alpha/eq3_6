@@ -1,4 +1,4 @@
-subroutine flpars(eps100,irang,noutpt,nttyo,smp100)
+subroutine flpars(eps100, irang, noutpt, nttyo, smp100)
     !! This subroutine obtains the following real*8 parameters: the
     !! real*8 machine epsilon (eps), the smallest positive real*8
     !! number (smpos), and the exponent range (irang). It returns

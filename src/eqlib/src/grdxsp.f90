@@ -1,4 +1,4 @@
-subroutine grdxsp(nbasp,nbt,nbtmax,nct,ndrsr,noutpt,nrdxsp,nstmax,nttyo,uspec)
+subroutine grdxsp(nbasp, nbt, nbtmax, nct, ndrsr, noutpt, nrdxsp, nstmax, nttyo, uspec)
     !! This subroutine finds the redox basis species (nrdxsp).
     !! This subroutine is called by:
     !!   EQ3NR/eq3nr.f

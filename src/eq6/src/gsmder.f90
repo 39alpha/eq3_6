@@ -1,4 +1,4 @@
-subroutine gsmder(delxia,drer0,drer0s,drir0,drir0s,jreac,nord,nrct,nrctmx,nrd1mx)
+subroutine gsmder(delxia, drer0, drer0s, drir0, drir0s, jreac, nord, nrct, nrctmx, nrd1mx)
     !! This subroutine computes smoothed or averaged derivatives of the
     !! elements of the r vector. The actual derivatives (of various
     !! orders) are averaged over the interval (-delxia,+delxia). The

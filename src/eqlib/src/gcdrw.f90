@@ -1,4 +1,4 @@
-subroutine gcdrw(cdrs,cdrw,narn1,ndrs,ndrsmx,ndrsr,nst,nstmax)
+subroutine gcdrw(cdrs, cdrw, narn1, ndrs, ndrsmx, ndrsr, nst, nstmax)
     !! This subroutine computes the cdrw array. Each element of this
     !! array contains the reaction coefficient for liquid water in the
     !! corresponding reaction.

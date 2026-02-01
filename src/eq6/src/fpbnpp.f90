@@ -1,4 +1,4 @@
-subroutine fpbnpp(affp,affp0,aftarg,daffp0,delxi,dlxmin,dxval0,eps100,iodb,iopt,jpflag,nodbmx,noptmx,nord,nordmx,noutpt,npchk,npt,nptmax,nrd1mx,nttyo,tolaft,tolsat,uphase,xi0,xi1,xval0)
+subroutine fpbnpp(affp, affp0, aftarg, daffp0, delxi, dlxmin, dxval0, eps100, iodb, iopt, jpflag, nodbmx, noptmx, nord, nordmx, noutpt, npchk, npt, nptmax, nrd1mx, nttyo, tolaft, tolsat, uphase, xi0, xi1, xval0)
     !! This subroutine finds the phase boundary at which a phase appears
     !! in the equilibrium system (ES). Note that the phase affinities
     !! are tracked using finite differences.

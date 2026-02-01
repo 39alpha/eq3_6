@@ -1,4 +1,4 @@
-subroutine gmsum(conc,musumw,nmut,nmutmx,nmux,nstmax,pmu,uspec)
+subroutine gmsum(conc, musumw, nmut, nmutmx, nmux, nstmax, pmu, uspec)
     !! This subroutine computes the following triple sum used in Pitzer's
     !! equations:
     !!   SUM(ijk) mu(ijk)*m(i)*m(j)*m(k)

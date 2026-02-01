@@ -1,4 +1,4 @@
-subroutine intsbs(nb1,nb2,nbaspd,nbtd,nbtmax,noutpt,ns1,ns2,nsbsw,nstmax,nttyo,usbsw,uspeca)
+subroutine intsbs(nb1, nb2, nbaspd, nbtd, nbtmax, noutpt, ns1, ns2, nsbsw, nstmax, nttyo, usbsw, uspeca)
     !! This subroutine interprets the nsbsw-th directive read from the
     !! input file for effecting special basis switching. The roles of
     !! a strict basis species and an auxiliary basis species are

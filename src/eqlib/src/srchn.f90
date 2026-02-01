@@ -1,4 +1,4 @@
-subroutine srchn(nrn1a,nrn2a,ns,nstmax,unam,uspeca)
+subroutine srchn(nrn1a, nrn2a, ns, nstmax, unam, uspeca)
     !! This subroutine matches the species name unam with the
     !! corresponding entry in the nrn1a-th through nrn2a-th range of
     !! the species name array uspeca. Only the first 24 characters are

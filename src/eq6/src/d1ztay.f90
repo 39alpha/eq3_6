@@ -1,4 +1,4 @@
-subroutine d1ztay(delxi,dzvc0,d1zvc1,kdim,kmax,nord,nrd1mx)
+subroutine d1ztay(delxi, dzvc0, d1zvc1, kdim, kmax, nord, nrd1mx)
     !! This subroutine computes the Taylor's series expansions for the
     !! first derivatives of the master variables. These expansions are
     !! used to find points of reaction progress at which such variables

@@ -1,4 +1,4 @@
-subroutine intchr(ivar,noutpt,nttyo,ustr)
+subroutine intchr(ivar, noutpt, nttyo, ustr)
     !! This subroutine converts writes the integer variable ivar into the
     !! character variable ustr, employing left justification and blank
     !! fill. If right justification is desired, one should just write

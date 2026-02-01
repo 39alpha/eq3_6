@@ -1,4 +1,4 @@
-subroutine gslam(dgpit,dpslm,gpit,ipbtmx,nalpha,napmax,nslt,nsltmx,pslamn,pslm)
+subroutine gslam(dgpit, dpslm, gpit, ipbtmx, nalpha, napmax, nslt, nsltmx, pslamn, pslm)
     !! This subroutine computes the S-lambda coefficients and their
     !! ionic strength derivatives. These coefficients are used
     !! in Pitzer's equations.

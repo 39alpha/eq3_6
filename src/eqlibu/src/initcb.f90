@@ -1,4 +1,4 @@
-subroutine initcb(uarray,nmax)
+subroutine initcb(uarray, nmax)
     !! This subroutine initializes the character array uarray to blanks
     !! over the first nmax positions. Normally, nmax would be the
     !! dimension of the 1D uarray. However, nmax could be less than the

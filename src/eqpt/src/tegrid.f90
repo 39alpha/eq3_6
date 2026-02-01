@@ -1,4 +1,4 @@
-subroutine tegrid(itgenf,nacdpr,narxt,nerr,noutpt,ntprmx,ntprt,nttyo,nwarn,ustrgr)
+subroutine tegrid(itgenf, nacdpr, narxt, nerr, noutpt, ntprmx, ntprt, nttyo, nwarn, ustrgr)
     !! This subroutine tests the contents of a "log K" temperature
     !! grid for sparse contents in any range. The response to an
     !! instance of sparseness is determined by the variable

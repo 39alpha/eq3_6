@@ -1,4 +1,4 @@
-subroutine tprcc(alamcc,atheta,iccpr,ipbtmx,jpfcmx,natmax,nccpr,ncvcc,nerr,noutpt,npx3mx,nthdt,nttyo,nwarn,pcvcc,qpdcc,uaqsp,uthdtr)
+subroutine tprcc(alamcc, atheta, iccpr, ipbtmx, jpfcmx, natmax, nccpr, ncvcc, nerr, noutpt, npx3mx, nthdt, nttyo, nwarn, pcvcc, qpdcc, uaqsp, uthdtr)
     !! Test and process the Pitzer data for cc' (cation, different
     !! cation) pairs read from the DATA0 file. Find and flag errors,
     !! such as duplication of data (e.g., two data blocks for the same

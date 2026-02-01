@@ -1,4 +1,4 @@
-subroutine dgesl(gmmatr,kmax,kdim,ipivot,delvec)
+subroutine dgesl(gmmatr, kmax, kdim, ipivot, delvec)
     !! This subroutine solves the real*8 system (gmmatr)*(x) = (b),
     !! where the matrix gmmatr has previously been factored by
     !! EQLIBU/dgefa.f. It is expected that singularity of the matrix

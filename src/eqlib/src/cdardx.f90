@@ -1,4 +1,4 @@
-subroutine cdardx(actlg,actwlg,ah,ahrc,cdrsd,eh,ehfac,ehrc,farad,fo2lg,fo2lrc,jsflag,mosp,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,no2gaq,nstmax,pe,perc,ph,xlke,xlksd)
+subroutine cdardx(actlg, actwlg, ah, ahrc, cdrsd, eh, ehfac, ehrc, farad, fo2lg, fo2lrc, jsflag, mosp, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, no2gaq, nstmax, pe, perc, ph, xlke, xlksd)
     !! This subroutine computes the default Eh, pe-, and Ah from the
     !! default log fO2, and also computes the Eh, pe-, log fO2, and Ah
     !! for each aqueous redox couple.

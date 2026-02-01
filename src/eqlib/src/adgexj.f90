@@ -1,4 +1,4 @@
-subroutine adgexj(je,noutpt,nttyo,ugexjd)
+subroutine adgexj(je, noutpt, nttyo, ugexjd)
     !! This subroutine assigns a default name for the je-th site of a
     !! generic exchange phase. The general model is "S(n)", where n
     !! is the site number. However, if n is larger than 99999, the S

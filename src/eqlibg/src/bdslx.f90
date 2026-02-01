@@ -1,4 +1,4 @@
-subroutine bdslx(narn1,narn2,natmax,noutpt,nslt,nsltmx,nslx,nsxi,nsxx,nsxmax,nttyo)
+subroutine bdslx(narn1, narn2, natmax, noutpt, nslt, nsltmx, nslx, nsxi, nsxx, nsxmax, nttyo)
     !! This subroutine builds the nsxi and nsxx arrays. These are
     !! pointer arrays used in connection with the S-lambda
     !! parts of Pitzer's equations.

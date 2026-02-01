@@ -1,4 +1,4 @@
-subroutine prrecy(cdrs,nbtmx1,nbtmx2,nbt,ns,nfile,uspec)
+subroutine prrecy(cdrs, nbtmx1, nbtmx2, nbt, ns, nfile, uspec)
     !! This subroutine writes the reaction associated with the ns-th
     !! species on the file whose unit number is nfile. This subroutine
     !! is virtually identical in function to EQLIB/prreac.f, but

@@ -1,4 +1,4 @@
-subroutine chrint(ivar,nttyo,qrderr,ustr)
+subroutine chrint(ivar, nttyo, qrderr, ustr)
     !! This subroutine reads the integer ivar from the character string
     !! ustr. The string may contain non-blank characters other than the
     !! integer. If there is more than one integer in the string, only the

@@ -1,4 +1,4 @@
-subroutine evratc(eact,hact,iact,imchmx,imech,nrct,nrctmx,nrk,rk,rkb,rtcnst,tempk,trkb)
+subroutine evratc(eact, hact, iact, imchmx, imech, nrct, nrctmx, nrk, rk, rkb, rtcnst, tempk, trkb)
     !! This subroutine evaluates rate constants as functions of
     !! temperature. There are two alternative treatments. One assumes
     !! a constant activation energy. The other assumes a constant

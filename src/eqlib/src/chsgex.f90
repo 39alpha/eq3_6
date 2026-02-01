@@ -1,4 +1,4 @@
-subroutine chsgex(adhfs,adhfsd,adhfsx,advfs,advfsd,advfsx,axhfs,axhfsd,axhfsx,axlks,axlksd,axlksx,axvfs,axvfsd,axvfsx,cdrs,cdrsd,cdrsx,eps100,iern1,ipch,ipchmx,ipcv,ipcvmx,jern1,jetmax,jflag,jgext,jsflag,narn1,narxmx,narxt,nbasp,nbaspd,nbaspx,nbt,nbtmax,nbw,ndrs,ndrsd,ndrsmx,ndrsr,ndrsrd,ndrsrx,ndrsx,nern1,nern2,net,netmax,ngext,noutpt,nphasx,nst,nstmax,ntprmx,ntprt,nttyo,qbassw,qbswok,ugexmo,uspec)
+subroutine chsgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, axhfsx, axlks, axlksd, axlksx, axvfs, axvfsd, axvfsx, cdrs, cdrsd, cdrsx, eps100, iern1, ipch, ipchmx, ipcv, ipcvmx, jern1, jetmax, jflag, jgext, jsflag, narn1, narxmx, narxt, nbasp, nbaspd, nbaspx, nbt, nbtmax, nbw, ndrs, ndrsd, ndrsmx, ndrsr, ndrsrd, ndrsrx, ndrsx, nern1, nern2, net, netmax, ngext, noutpt, nphasx, nst, nstmax, ntprmx, ntprt, nttyo, qbassw, qbswok, ugexmo, uspec)
     !! This subroutine changes the original setup of component species
     !! of generic ion exchanger phases for certain exchange models
     !! (e.g., Gapon, Vanselow). It switches bare site species out of

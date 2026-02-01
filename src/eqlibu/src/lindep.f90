@@ -1,4 +1,4 @@
-subroutine lindep(aamatr,eps100,irow1,irow2,jcol1,jcol2,kmax,qldep)
+subroutine lindep(aamatr, eps100, irow1, irow2, jcol1, jcol2, kmax, qldep)
     !! This subroutine determines whether the rows of a submatrix of
     !! matrix aamatr are linearly dependent or not. The submatrix runs
     !! from rows irow1 to irow2 and columns jcol1 to jcol2. If there is

@@ -1,4 +1,4 @@
-subroutine raff(acflg,actlg,afcnst,affp,afrc1,bpx,cdrs,cgexj,ibpxmx,ibpxt,iern1,ietmax,iktmax,ixrn1,ixrn2,jcode,jern1,jern2,jetmax,jflag,jgext,jpflag,jsflag,jsol,ncmpr,ndrs,ndrsmx,ndrsr,nertmx,net,netmax,ngext,noutpt,nptmax,nrct,nrctmx,nrndex,nstmax,nttyo,nxridx,nxrtmx,nxtmax,rxbar,uphase,uspec,wfac,xbar,xbarlg,xgers,xlks)
+subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibpxt, iern1, ietmax, iktmax, ixrn1, ixrn2, jcode, jern1, jern2, jetmax, jflag, jgext, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, nertmx, net, netmax, ngext, noutpt, nptmax, nrct, nrctmx, nrndex, nstmax, nttyo, nxridx, nxrtmx, nxtmax, rxbar, uphase, uspec, wfac, xbar, xbarlg, xgers, xlks)
     !! This subroutine calculates the affinities of irreversible
     !! reactions (afrc1).
     !! This subroutine is called by:

@@ -1,4 +1,4 @@
-subroutine gafscl(cdrsd,cscale,ndrsmx,ndrsrd,nst,nstmax)
+subroutine gafscl(cdrsd, cscale, ndrsmx, ndrsrd, nst, nstmax)
     !! This subroutine calculates the cscale array of affinity scaling
     !! factors. Affinity scaling is used to help make decisions on
     !! which phases are the best choices to precipitate when there

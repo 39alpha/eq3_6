@@ -1,4 +1,4 @@
-subroutine clones(axlksa,cdrsa,cessa,mwtspa,narx_asv,ndrsa,ndrsa_asv,ndrsn,ndrsra,nessa,nessa_asv,nessn,nessra,np,npta_asv,ns,nsc,nsta_asv,ntpr_asv,uphasa,uspeca,zchara)
+subroutine clones(axlksa, cdrsa, cessa, mwtspa, narx_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nessa, nessa_asv, nessn, nessra, np, npta_asv, ns, nsc, nsta_asv, ntpr_asv, uphasa, uspeca, zchara)
     !! This subroutine clones the nsc-th species into the ns-th. The
     !! ns-th species belongs to the np-th phase. Typically, the nsc-th
     !! species is a pure mineral or liquid and the ns-th species is the

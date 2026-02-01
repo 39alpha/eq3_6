@@ -1,4 +1,4 @@
-subroutine lamgex(acflgc,cgexj,jern1,jern2,jetmax,jgext,net,netmax,nstmax,xbarlg)
+subroutine lamgex(acflgc, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
     !! This subroutine computes the activity coefficients of generic ion
     !! exchanger species. The exchanger phase is taken to be ideal
     !! in the site-mixing sense. The activity (a) and activity coefficent

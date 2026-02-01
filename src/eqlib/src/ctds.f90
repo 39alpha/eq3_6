@@ -1,4 +1,4 @@
-subroutine ctds(jcsort,mosp,mwtsp,narn1,narn2,nstmax,wotds)
+subroutine ctds(jcsort, mosp, mwtsp, narn1, narn2, nstmax, wotds)
     !! This subroutine calculates the total dissolved solute mass
     !! (wotds, g). Note that a sorted summation is used.
     !! This subroutine is called by:

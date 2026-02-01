@@ -1,4 +1,4 @@
-subroutine ngasck(nerr,ngt,ngtmax,noutpt,nttyo,ugassp)
+subroutine ngasck(nerr, ngt, ngtmax, noutpt, nttyo, ugassp)
     !! Check the names of gas species for uniqueness.
     !! This subroutine is called by:
     !!   EQPT/eqpt.f

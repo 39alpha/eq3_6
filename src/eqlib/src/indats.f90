@@ -1,4 +1,4 @@
-subroutine indats(adhfsa,advfsa,axhfsa,axlksa,axvfsa,cdrsa,cdrsv,cessa,cessv,ipch,ipch_asv,ipcv,ipcv_asv,mwtspa,nad1,narxt,narx_asv,nata,nata_asv,nbta,nbta_asv,nbta1_asv,nbtafd,ncmpra,ncta,ncta_asv,ndrsa,ndrsa_asv,ndrsn,ndrsra,nerr,nessa,nessa_asv,nessn,nessra,ngta,ngta_asv,nlta,nlta_asv,nmta,nmta_asv,noutpt,np,npta_asv,ns,nsta_asv,ntprt,ntpr_asv,nttyo,uaqsln,ubasp,udrsv,uelema,uendit,uessv,uphasa,uphasv,uptgas,uptliq,uptsld,uptypa,usblkf,uspeca,vosp0a,zchara)
+subroutine indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
     !! This subroutine reads a superblock of species blocks from the
     !! supporting data file "data1".
     !! This subroutine is called by:

@@ -1,4 +1,4 @@
-subroutine initlv(qarray,nmax,qvalue)
+subroutine initlv(qarray, nmax, qvalue)
     !! This subroutine initializes the logical array qarray to qvalue
     !! over the first nmax positions. Normally, nmax would be the
     !! dimension of the 1D qarray. However, nmax could be less than the

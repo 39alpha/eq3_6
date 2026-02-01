@@ -1,4 +1,4 @@
-subroutine hpsat(acflg,act,actlg,afcnst,affp,affs,apx,bpx,cdrs,eps100,iapxmx,ibpxmx,ier,iktmax,ixrn1,jflag,jpflag,jsflag,jsol,ncmpr,ndrs,ndrsmx,ndrsr,noutpt,np,nptmax,nstmax,nttyo,nxrn1,nxrn2,nxtmax,sidrsp,sidrph,uphase,uspec,wfac,xbar,xbarlg,xlks)
+subroutine hpsat(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, iapxmx, ibpxmx, ier, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, noutpt, np, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, sidrsp, sidrph, uphase, uspec, wfac, xbar, xbarlg, xlks)
     !! This subroutine calculates the most stable (least soluble)
     !! composition of a given solid solution, given the composition
     !! of the aqueous phase it is in equilibrium with.

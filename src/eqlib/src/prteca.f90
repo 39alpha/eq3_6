@@ -1,4 +1,4 @@
-subroutine prteca(cteaq,mrmlra,nct,nctmax,noutpt,ppmwe,qrho,rho,uelem)
+subroutine prteca(cteaq, mrmlra, nct, nctmax, noutpt, ppmwe, qrho, rho, uelem)
     !! This subroutine prints a table of the elemental composition of the
     !! aqueous solution.
     !! This subroutine is called by:

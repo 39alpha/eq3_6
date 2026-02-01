@@ -1,4 +1,4 @@
-subroutine copyla(qarr1,qarr2,nmax)
+subroutine copyla(qarr1, qarr2, nmax)
     !! This subroutine copies the first nmax elements of the logical
     !! array qarr1 into the logical array qarr2. Normally, nmax would
     !! be the dimension of both arrays. However, nmax could be less

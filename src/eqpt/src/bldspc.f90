@@ -1,4 +1,4 @@
-subroutine bldspc(iaapr,icapr,iccpr,inapr,incpr,innpr,in2pr,iaactr,ia2ctr,iccatr,ic2atr,incatr,in2ntr,in3tr,jassan,jassca,jassne,nat,natmax,naapr,ncapr,nccpr,nnapr,nncpr,nnnpr,nn2pr,naactr,na2ctr,nncatr,nccatr,nc2atr,nn2ntr,nn3tr,uaqsp,zaqsp)
+subroutine bldspc(iaapr, icapr, iccpr, inapr, incpr, innpr, in2pr, iaactr, ia2ctr, iccatr, ic2atr, incatr, in2ntr, in3tr, jassan, jassca, jassne, nat, natmax, naapr, ncapr, nccpr, nnapr, nncpr, nnnpr, nn2pr, naactr, na2ctr, nncatr, nccatr, nc2atr, nn2ntr, nn3tr, uaqsp, zaqsp)
     !! Build index arrays for the pair and triplet combinations of
     !! aqueous solute species for use with Pitzer parameters.
     !! All pairs and triplets are distinct in the sense that the

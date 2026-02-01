@@ -1,4 +1,4 @@
-subroutine rsatch(csts,egers,egexs,iern1,ietmax,iindx1,iktmax,iopt,ipndx1,jcode,jern1,jern2,jetmax,jgext,jpflag,jreac,kmax,km1,kmt,kx1,kxt,loph,losp,moph,morr,mosp,mrgers,mtb,mtb0,nbaspd,nbtmax,ncmpr,nern1,nern2,nert,nertmx,netmax,ngext,noptmx,noutpt,nptmax,nrct,nrctmx,nrk,nrndex,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrt,nxrtmx,qreq,rxbar,tolxsf,uphase,ureac,uspec,xbar,xbarlg,zvclg1,zvec1)
+subroutine rsatch(csts, egers, egexs, iern1, ietmax, iindx1, iktmax, iopt, ipndx1, jcode, jern1, jern2, jetmax, jgext, jpflag, jreac, kmax, km1, kmt, kx1, kxt, loph, losp, moph, morr, mosp, mrgers, mtb, mtb0, nbaspd, nbtmax, ncmpr, nern1, nern2, nert, nertmx, netmax, ngext, noptmx, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrt, nxrtmx, qreq, rxbar, tolxsf, uphase, ureac, uspec, xbar, xbarlg, zvclg1, zvec1)
     !! This subroutine tests reactants for saturation.
     !! This subroutine is called by:
     !!   EQ6/path.f

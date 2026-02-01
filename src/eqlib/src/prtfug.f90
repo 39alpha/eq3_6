@@ -1,4 +1,4 @@
-subroutine prtfug(jgsort,fugac,fugalg,jsflag,ngrn1,ngt,ngtmax,noutpt,nstmax,uspec)
+subroutine prtfug(jgsort, fugac, fugalg, jsflag, ngrn1, ngt, ngtmax, noutpt, nstmax, uspec)
     !! This subroutine prints a table giving the equilibrium fugacities
     !! of gas species.
     !! This subroutine is called by:

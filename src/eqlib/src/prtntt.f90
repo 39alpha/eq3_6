@@ -1,4 +1,4 @@
-subroutine prtntt(nat,nata,natmax,nbt,nbta,nbtmax,nct,ncta,nctmax,ngt,ngta,ngtmax,nlt,nlta,nltmax,nmt,nmta,nmtmax,noutpt,npt,npta,nptmax,nst,nsta,nstmax,nxt,nxta,nxtmax)
+subroutine prtntt(nat, nata, natmax, nbt, nbta, nbtmax, nct, ncta, nctmax, ngt, ngta, ngtmax, nlt, nlta, nltmax, nmt, nmta, nmtmax, noutpt, npt, npta, nptmax, nst, nsta, nstmax, nxt, nxta, nxtmax)
     !! This subroutine prints a table of statistics for species, phases,
     !! and groups thereof showing for each entity the number on the data
     !! file, the number the software is dimensioned for, and the number

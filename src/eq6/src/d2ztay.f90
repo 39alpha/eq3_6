@@ -1,4 +1,4 @@
-subroutine d2ztay(delxi,dzvc0,d2zvc1,kcol,kmax,nord,nrd1mx)
+subroutine d2ztay(delxi, dzvc0, d2zvc1, kcol, kmax, nord, nrd1mx)
     !! This subroutine computes the Taylor's series expansion for the
     !! second derivative of the kcol-th master variables. This second
     !! derivative is used to test whether or not a critical point

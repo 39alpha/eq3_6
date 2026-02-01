@@ -1,4 +1,4 @@
-subroutine tleapy(yy,qleapy)
+subroutine tleapy(yy, qleapy)
     !! This subroutine determines if the year yy is a leap year. The
     !! logical flag qleapy is returned as true if this is the case.
     !! Modern era rules apply:

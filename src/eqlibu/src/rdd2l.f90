@@ -1,4 +1,4 @@
-subroutine rdd2l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,uline2,ulscr)
+subroutine rdd2l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, uline2, ulscr)
     !! This subroutine reads a "2 line" block containing an unknown
     !! header or tag string from an EQ3/6 input in menu-style ("D")
     !! format. The first line contains the header and data. The second

@@ -1,4 +1,4 @@
-subroutine wrazp(azero,insgf,nazt,naztmx,ndata1,ndat1f,noutpt,nttyo,uazp)
+subroutine wrazp(azero, insgf, nazt, naztmx, ndata1, ndat1f, noutpt, nttyo, uazp)
     !! This subroutine writes on the DATA1 and DATA1F files the "bdot"
     !! data read from the DATA0 file by EQPT/rdazp.f.
     !!   EQPT/eqpt.f

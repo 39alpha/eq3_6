@@ -1,4 +1,4 @@
-subroutine indath(ikta_asv,ipbt_asv,ipch_asv,ipcv_asv,jpfc_asv,nad1,napa_asv,narx_asv,nata_asv,nbta_asv,ncta_asv,ngta_asv,nlta_asv,nmta_asv,npta_asv,nmuta_asv,noutpt,nslta_asv,nsta_asv,ntid_asv,ntpr_asv,nttyo,nxta_asv,udakey)
+subroutine indath(ikta_asv, ipbt_asv, ipch_asv, ipcv_asv, jpfc_asv, nad1, napa_asv, narx_asv, nata_asv, nbta_asv, ncta_asv, ngta_asv, nlta_asv, nmta_asv, npta_asv, nmuta_asv, noutpt, nslta_asv, nsta_asv, ntid_asv, ntpr_asv, nttyo, nxta_asv, udakey)
     !! This subroutine reads the header section of the data1 file. This
     !! section consists of a record containing the string 'data1' (to
     !! ensure that the file is indeed a data1 file), a record containing

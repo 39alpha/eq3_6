@@ -1,4 +1,4 @@
-subroutine prtsca(ctb,jflag,jsflag,mrmlra,mwtsp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,nelect,nhydr,nhydx,noutpt,no2gaq,nstmax,qrho,rho,uspec,wfh2o)
+subroutine prtsca(ctb, jflag, jsflag, mrmlra, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, nelect, nhydr, nhydx, noutpt, no2gaq, nstmax, qrho, rho, uspec, wfh2o)
     !! This subroutine computes and prints a table of the sensible
     !! composition of the aqueous solution in terms of mass balance
     !! totals for component (basis) species that generally correspond to

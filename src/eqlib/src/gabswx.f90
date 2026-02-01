@@ -1,4 +1,4 @@
-subroutine gabswx(beta,ibswx,iindx1,kbt,kmax,nbt,nbtmax)
+subroutine gabswx(beta, ibswx, iindx1, kbt, kmax, nbt, nbtmax)
     !! This subroutine supports automatic basis switching as a
     !! pre-Newton-Raphson optimization technique. It resolves conflicts
     !! in the ibswx array, which contains candidate switches. This array

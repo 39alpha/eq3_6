@@ -1,4 +1,4 @@
-subroutine dscal(nmax,scfact,array,incx)
+subroutine dscal(nmax, scfact, array, incx)
     !! This subroutine multiplies the real*8 array "array" by the real*8
     !! constant scfact. The result is returned in "array". This
     !! subroutine is an adaptation of the 1979 Linpack subroutine of the

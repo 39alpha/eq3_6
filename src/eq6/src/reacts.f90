@@ -1,4 +1,4 @@
-subroutine reacts(cbsr,csts,delxi,drer0,iern1,ietmax,iktmax,iodb,jcode,jetmax,jgext,jreac,modr,modr0,morr,morr0,mrgers,mtb,mtb0,nbaspd,nbt,nbtmax,nbt1mx,ncmpr,nern1,nern2,nertmx,netmax,ngext,nodbmx,nord,noutpt,nptmax,nrct,nrctmx,nrd1mx,nrndex,nsrtmx,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrtmx,rrelr0,rxbar,ureac,xirct,xirct0)
+subroutine reacts(cbsr, csts, delxi, drer0, iern1, ietmax, iktmax, iodb, jcode, jetmax, jgext, jreac, modr, modr0, morr, morr0, mrgers, mtb, mtb0, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nern1, nern2, nertmx, netmax, ngext, nodbmx, nord, noutpt, nptmax, nrct, nrctmx, nrd1mx, nrndex, nsrtmx, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrtmx, rrelr0, rxbar, ureac, xirct, xirct0)
     !! This subroutine computes the destroyed and current masses of the
     !! reactants and the current mass balance totals for the equilibrium
     !! system.

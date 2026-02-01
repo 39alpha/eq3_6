@@ -1,4 +1,4 @@
-subroutine cfje(conc,fjec,jcsort,narn1,narn2,nstmax,zchcu6)
+subroutine cfje(conc, fjec, jcsort, narn1, narn2, nstmax, zchcu6)
     !! This subroutine calculates the ionic asymmetry (the 3-rd order
     !! electrostatic moment function J). This is defined as:
     !!   J = 1/6 SUM(i) m(i)z(i)**3

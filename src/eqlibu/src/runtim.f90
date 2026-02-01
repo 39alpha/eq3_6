@@ -1,4 +1,4 @@
-subroutine runtim(iexec0,jexec0,texec0,noutpt,nttyo,trun,tuser,tcpu,udate1,utime1)
+subroutine runtim(iexec0, jexec0, texec0, noutpt, nttyo, trun, tuser, tcpu, udate1, utime1)
     !! This subroutine gets the time and date at the end of execution,
     !! and also the run, user, and cpu times. The user and cpu times
     !! are not defined on all machines. In such cases, zero values are

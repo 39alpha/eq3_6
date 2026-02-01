@@ -1,4 +1,4 @@
-subroutine csfar(afrc1,morr,morr0,mwtrc,noutpt,nrc,nrctmx,nsk,nttyo,prcinf,sfcar,sfcar0,ssfcar,ureac)
+subroutine csfar(afrc1, morr, morr0, mwtrc, noutpt, nrc, nrctmx, nsk, nttyo, prcinf, sfcar, sfcar0, ssfcar, ureac)
     !! This subroutine calculates the surface area required to calculate
     !! the rate for the nrc-th irreversible reaction.
     !! This subroutine is called by:

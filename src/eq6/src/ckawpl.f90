@@ -1,4 +1,4 @@
-subroutine ckawpl(delxi,dlxmin,daw0,dxw0pl,dxw1pl,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,aw0plo,aw1plo,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckawpl(delxi, dlxmin, daw0, dxw0pl, dxw1pl, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, aw0plo, aw1plo, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the next aw-based plot
     !! point is not exceeded. Because the activity of water might be
     !! decreasing or increasing, two potential target points (aw0plo

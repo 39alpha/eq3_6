@@ -1,4 +1,4 @@
-subroutine gfdhc(adh,bt,fdhc,fdhcp,fdhcpp,fxi)
+subroutine gfdhc(adh, bt, fdhc, fdhcp, fdhcpp, fxi)
     !! This subroutine computes the Debye-Huckel function f and its
     !! derivatives with respect to ionic strength for the case of the
     !! Debye-Huckel-charging (DHC) model.
