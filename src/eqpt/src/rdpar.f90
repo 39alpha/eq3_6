@@ -303,7 +303,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
     ! Read the temperatures on the log K temperature grid.
     ! Return the data in the xdbval holding array.
     q500nd = .false.
-    call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+    call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
     if (qend) then
         go to 990
@@ -317,7 +317,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
     ! Load the data into the tempc array.
     ! Calling sequence substitutions:
     !   tempc for zdbval
-    call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,tempc)
+    call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, tempc)
 
     ! Read the standard pressure grid.
     ux24 = 'Pressures               '
@@ -345,7 +345,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
     ! Read the pressures on the log K temperature grid.
     ! Return the data in the xdbval holding array.
     q500nd = .false.
-    call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+    call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
     if (qend) then
         go to 990
@@ -358,7 +358,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
     ! Load the data into the presg array.
     ! Calling sequence substitutions:
     !   presg for zdbval
-    call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,presg)
+    call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, presg)
 
     if (ipcv .ge. 0) then
         ! Read the standard pressure envelope half-width.
@@ -381,7 +381,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Read the pressure half-widths on the log K temperature grid.
         ! Return the data in the xdbval holding array.
         q500nd = .false.
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -394,7 +394,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Load the data into the prehw array.
         ! Calling sequence substitutions:
         !   prehw for zdbval
-        call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,prehw)
+        call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, prehw)
     end if
 
     if (uakey(1:8) .eq. 'SEDH    ') then
@@ -431,7 +431,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Read the Debye-Huckel A(gamma,10) values on the log K
         ! temperature grid. Return the data in the xdbval holding array.
         q500nd = q500fl
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -444,7 +444,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Load the data into the adh array.
         ! Calling sequence substitutions:
         !   adh for zdbval
-        call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,adh)
+        call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, adh)
 
         if (ipch .ge. 0) then
             ! Read the grid for the Debye-Huckel A(H) parameter.
@@ -473,7 +473,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the Debye-Huckel A(H) values on the log K temperature
             ! grid. Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -486,7 +486,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the adhh array.
             ! Calling sequence substitutions:
             !   adhh for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,adhh)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, adhh)
 
             do ipc = 1,ipch
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -495,7 +495,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -509,7 +509,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dadhh for zdbval
                 !   ipchmx for ipcmax
-                call ldbar3(ipc,ipchmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dadhh)
+                call ldbar3(ipc, ipchmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dadhh)
             end do
         end if
 
@@ -540,7 +540,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the Debye-Huckel A(V) values on the log K temperature
             ! grid. Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -553,7 +553,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the adhv array.
             ! Calling sequence substitutions:
             !   adhv for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,adhv)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, adhv)
 
             do ipc = 1,ipcv
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -562,7 +562,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -576,7 +576,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dadhv for zdbval
                 !   ipcvmx for ipcmax
-                call ldbar3(ipc,ipcvmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dadhv)
+                call ldbar3(ipc, ipcvmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dadhv)
             end do
         end if
 
@@ -612,7 +612,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Read the Debye-Huckel B(gamma) values on the log K temperature
         ! grid. Return the data in the xdbval holding array.
         q500nd = q500fl
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -625,7 +625,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Load the data into the bdh array.
         ! Calling sequence substitutions:
         !   bdh for zdbval
-        call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,bdh)
+        call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, bdh)
 
         if (ipch .ge. 0) then
             ! Read the grid for the Debye-Huckel B(H) parameter.
@@ -654,7 +654,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the Debye-Huckel B(H) values on the log K temperature
             ! grid. Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -667,7 +667,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the bdhh array.
             ! Calling sequence substitutions:
             !   bdhh for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,bdhh)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, bdhh)
 
             do ipc = 1,ipch
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -676,7 +676,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -690,7 +690,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dbdhh for zdbval
                 !   ipchmx for ipcmax
-                call ldbar3(ipc,ipchmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dbdhh)
+                call ldbar3(ipc, ipchmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dbdhh)
             end do
         end if
 
@@ -721,7 +721,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the Debye-Huckel B(V) values on the log K temperature
             ! grid. Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -734,7 +734,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the bdhv array.
             ! Calling sequence substitutions:
             !   bdhv for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,bdhv)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, bdhv)
 
             do ipc = 1,ipcv
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -743,7 +743,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -757,7 +757,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dbdhv for zdbval
                 !   ipcvmx for ipcmax
-                call ldbar3(ipc,ipcvmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dbdhv)
+                call ldbar3(ipc, ipcvmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dbdhv)
             end do
         end if
 
@@ -788,7 +788,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Read the B-dot values on the log K temperature grid.
         ! Return the data in the xdbval holding array.
         q500nd = q500fl
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -801,7 +801,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Load the data into the bdot array.
         ! Calling sequence substitutions:
         !   bdot for zdbval
-        call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,bdot)
+        call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, bdot)
 
         if (ipch .ge. 0) then
             ! Read the grid for the B-dot(H) parameter.
@@ -824,7 +824,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the B-dot(H) values on the log K temperature grid
             ! Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -837,7 +837,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the bdoth array.
             ! Calling sequence substitutions:
             !   bdoth for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,bdoth)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, bdoth)
 
             do ipc = 1,ipch
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -846,7 +846,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -860,7 +860,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dbdth for zdbval
                 !   ipchmx for ipcmax
-                call ldbar3(ipc,ipchmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dbdth)
+                call ldbar3(ipc, ipchmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dbdth)
             end do
         end if
 
@@ -885,7 +885,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the B-dot(V) values on the log K temperature
             ! grid. Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -898,7 +898,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the bdotv array.
             ! Calling sequence substitutions:
             !   bdotv for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,bdotv)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, bdotv)
 
             do ipc = 1,ipcv
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -907,7 +907,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -921,7 +921,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dbdtv for zdbval
                 !   ipcvmx for ipcmax
-                call ldbar3(ipc,ipcvmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dbdtv)
+                call ldbar3(ipc, ipcvmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dbdtv)
             end do
         end if
 
@@ -981,7 +981,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Read the Debye-Huckel A(phi) values on the log K temperature
         ! grid. Return the data in the xdbval holding array.
         q500nd = q500fl
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -994,7 +994,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Load the data into the aphi array.
         ! Calling sequence substitutions:
         !   aphi for zdbval
-        call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,aphi)
+        call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, aphi)
 
         if (ipch .ge. 0) then
             ! Read the grid for the Debye-Huckel A(H) parameter.
@@ -1023,7 +1023,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the Debye-Huckel A(H) values on the log K temperature
             ! grid. Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -1036,7 +1036,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the adhh array.
             ! Calling sequence substitutions:
             !   adhh for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,adhh)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, adhh)
 
             do ipc = 1,ipch
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -1045,7 +1045,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -1059,7 +1059,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dadhh for zdbval
                 !   ipchmx for ipcmax
-                call ldbar3(ipc,ipchmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dadhh)
+                call ldbar3(ipc, ipchmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dadhh)
             end do
         end if
 
@@ -1090,7 +1090,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Read the Debye-Huckel A(V) values on the log K temperature
             ! grid. Return the data in the xdbval holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -1103,7 +1103,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Load the data into the adhv array.
             ! Calling sequence substitutions:
             !   adhv for zdbval
-            call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,adhv)
+            call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, adhv)
 
             do ipc = 1,ipcv
                 read (ndat0s,1000,end=990,err=995) ustr80
@@ -1112,7 +1112,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! log K temperature grid. Return the data in the xdbval
                 ! holding array.
                 q500nd = q500fl
-                call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+                call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
                 if (qend) then
                     go to 990
@@ -1126,7 +1126,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
                 ! Calling sequence substitutions:
                 !   dadhv for zdbval
                 !   ipcvmx for ipcmax
-                call ldbar3(ipc,ipcvmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dadhv)
+                call ldbar3(ipc, ipcvmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dadhv)
             end do
         end if
     end if
@@ -1164,7 +1164,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
     ! Read the "Eh" reaction log K values on the log K temperature
     ! grid. Return the data in the xdbval holding array.
     q500nd = q500fl
-    call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+    call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
     if (qend) then
         go to 990
@@ -1177,7 +1177,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
     ! Load the data into the xlke array.
     ! Calling sequence substitutions:
     !   xlke for zdbval
-    call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,xlke)
+    call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, xlke)
 
     if (ipch .ge. 0) then
         ! Read the grid for the enthalpy of reaction of the "Eh"
@@ -1208,7 +1208,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! log K temperature grid. Return the data in the xdbval
         ! holding array.
         q500nd = q500fl
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -1221,7 +1221,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Load the data into the xhfe array.
         ! Calling sequence substitutions:
         !   xhfe for zdbval
-        call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,xhfe)
+        call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, xhfe)
 
         do ipc = 1,ipch
             read (ndat0s,1000,end=990,err=995) ustr80
@@ -1230,7 +1230,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! the log K temperature grid. Return the data in the xdbval
             ! holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -1244,7 +1244,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Calling sequence substitutions:
             !   dhfe for zdbval
             !   ipchmx for ipcmax
-            call ldbar3(ipc,ipchmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dhfe)
+            call ldbar3(ipc, ipchmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dhfe)
         end do
     end if
 
@@ -1277,7 +1277,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! log K temperature grid. Return the data in the xdbval
         ! holding array.
         q500nd = q500fl
-        call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+        call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
         if (qend) then
             go to 990
@@ -1290,7 +1290,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
         ! Load the data into the xvfe array.
         ! Calling sequence substitutions:
         !   xvfe for zdbval
-        call ldbar2(nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,xvfe)
+        call ldbar2(nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, xvfe)
 
         do ipc = 1,ipcv
             read (ndat0s,1000,end=990,err=995) ustr80
@@ -1299,7 +1299,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! the log K temperature grid. Return the data in the xdbval
             ! holding array.
             q500nd = q500fl
-            call rdgrid(ndat0s,ndbmax,ndbptg,ndbptl,qend,qerr,q500nd,udbval,xdbval)
+            call rdgrid(ndat0s, ndbmax, ndbptg, ndbptl, qend, qerr, q500nd, udbval, xdbval)
 
             if (qend) then
                 go to 990
@@ -1313,7 +1313,7 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
             ! Calling sequence substitutions:
             !   dvfe for zdbval
             !   ipcvmx for ipcmax
-            call ldbar3(ipc,ipcvmx,nacdpr,narxmx,narxt,ndbmax,ntprmx,ntprt,xdbval,dvfe)
+            call ldbar3(ipc, ipcvmx, nacdpr, narxmx, narxt, ndbmax, ntprmx, ntprt, xdbval, dvfe)
         end do
     end if
 

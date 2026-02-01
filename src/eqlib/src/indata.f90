@@ -401,35 +401,35 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
 
     ! Zero some arrays.
     nmax = nbta_asv
-    call initiz(nbaspa,nmax)
+    call initiz(nbaspa, nmax)
 
     nmax = ndrsa_asv
-    call initiz(ndrsa,nmax)
-    call initaz(cdrsa,nmax)
+    call initiz(ndrsa, nmax)
+    call initaz(cdrsa, nmax)
 
     nmax = nsta_asv
-    call initaz(vosp0a,nmax)
+    call initaz(vosp0a, nmax)
 
     nmax = 2*nsta_asv
-    call initiz(ndrsra,nmax)
+    call initiz(ndrsra, nmax)
 
     nmax = narx_asv*ntpr_asv*nsta_asv
-    call initaz(axhfsa,nmax)
-    call initaz(axlksa,nmax)
-    call initaz(axvfsa,nmax)
+    call initaz(axhfsa, nmax)
+    call initaz(axlksa, nmax)
+    call initaz(axvfsa, nmax)
 
     ! SEDH arrays.
     nmax = nata_asv
-    call initaz(azeroa,nmax)
-    call initiz(insgfa,nmax)
+    call initaz(azeroa, nmax)
+    call initiz(insgfa, nmax)
 
     ! Pitzer arrays.
     nmax = ipbt_asv*napa_asv
-    call initaz(palpaa,nmax)
+    call initaz(palpaa, nmax)
     nmax = jpfc_asv*(ipbt_asv + 1)*nslta_asv
-    call initaz(aslma,nmax)
+    call initaz(aslma, nmax)
     nmax = jpfc_asv*nmuta_asv
-    call initaz(amua,nmax)
+    call initaz(amua, nmax)
 
     ! Don't rewind the DATA1 file (nad1). It should be positioned
     ! properly by the preceding call to subroutine indath.f.
@@ -578,14 +578,14 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     ! temperatures.
     ! Calling sequence substitutions:
     !   apresg for arr
-    call indatc(apresg,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+    call indatc(apresg, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
     if (ipcv .ge. 0) then
         ! Read interpolating polynomial coefficients for computing the
         ! recommended pressure envelope half width (bars).
         ! Calling sequence substitutions:
         !   aprehw for arr
-        call indatc(aprehw,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+        call indatc(aprehw, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
     end if
 
     if (udakey(1:8) .eq. usedh(1:8)) then
@@ -596,31 +596,31 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! A(gamma,10) parameter and related parameters.
         ! Calling sequence substitutions:
         !   aadh for arr
-        call indatc(aadh,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+        call indatc(aadh, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
         if (ipch .ge. 0) then
             ! Calling sequence substitutions:
             !   aadhh for arr
-            call indatc(aadhh,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(aadhh, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipch
                 ! Calling sequence substitutions:
                 !   adadhh for arr
                 !   ipch_asv for ipcx_asv
-                call indatd(adadhh,ipc,ipch_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adadhh, ipc, ipch_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
 
         if (ipcv .ge. 0) then
             ! Calling sequence substitutions:
             !   aadhv for arr
-            call indatc(aadhv,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(aadhv, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipcv
                 ! Calling sequence substitutions:
                 !   adadhv for arr
                 !   ipcv_asv for ipcx_asv
-                call indatd(adadhv,ipc,ipcv_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adadhv, ipc, ipcv_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
 
@@ -628,31 +628,31 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! B(gamma) and related parameters.
         ! Calling sequence substitutions:
         !   abdh for arr
-        call indatc(abdh,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+        call indatc(abdh, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
         if (ipch .ge. 0) then
             ! Calling sequence substitutions:
             !   abdhh for arr
-            call indatc(abdhh,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(abdhh, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipch
                 ! Calling sequence substitutions:
                 !   adbdhh for arr
                 !   ipch_asv for ipcx_asv
-                call indatd(adbdhh,ipc,ipch_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adbdhh, ipc, ipch_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
 
         if (ipcv .ge. 0) then
             ! Calling sequence substitutions:
             !   abdhv for arr
-            call indatc(abdhv,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(abdhv, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipcv
                 ! Calling sequence substitutions:
                 !   adbdhv for arr
                 !   ipcv_asv for ipcx_asv
-                call indatd(adbdhv,ipc,ipcv_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adbdhv, ipc, ipcv_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
 
@@ -660,31 +660,31 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! parameter and related parameters.
         ! Calling sequence substitutions:
         !   abdot for arr
-        call indatc(abdot,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+        call indatc(abdot, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
         if (ipch .ge. 0) then
             ! Calling sequence substitutions:
             !   abdoth for arr
-            call indatc(abdoth,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(abdoth, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipch
                 ! Calling sequence substitutions:
                 !   adbdth for arr
                 !   ipch_asv for ipcx_asv
-                call indatd(adbdth,ipc,ipch_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adbdth, ipc, ipch_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
 
         if (ipcv .ge. 0) then
             ! Calling sequence substitutions:
             !   abdotv for arr
-            call indatc(abdotv,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(abdotv, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipcv
                 ! Calling sequence substitutions:
                 !   adbdtv for arr
                 !   ipcv_asv for ipcx_asv
-                call indatd(adbdtv,ipc,ipcv_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adbdtv, ipc, ipcv_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
 
@@ -703,31 +703,31 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! related parameters.
         ! Calling sequence substitutions:
         !   aaphi for arr
-        call indatc(aaphi,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+        call indatc(aaphi, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
         if (ipch .ge. 0) then
             ! Calling sequence substitutions:
             !   aadhh for arr
-            call indatc(aadhh,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(aadhh, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipch
                 ! Calling sequence substitutions:
                 !   adadhh for arr
                 !   ipch_asv for ipcx_asv
-                call indatd(adadhh,ipc,ipch_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adadhh, ipc, ipch_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
 
         if (ipcv .ge. 0) then
             ! Calling sequence substitutions:
             !   aadhv for arr
-            call indatc(aadhv,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+            call indatc(aadhv, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
             do ipc = 1,ipcv
                 ! Calling sequence substitutions:
                 !   adadhv for arr
                 !   ipcv_asv for ipcx_asv
-                call indatd(adadhv,ipc,ipcv_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+                call indatd(adadhv, ipc, ipcv_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
             end do
         end if
     end if
@@ -737,31 +737,31 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     !   2 H2O(l) = 2 O2(g) + 4 H+ + 4 e-
     ! Calling sequence substitutions:
     !   axlke for arr
-    call indatc(axlke,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+    call indatc(axlke, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
     if (ipch .ge. 0) then
         ! Calling sequence substitutions:
         !   axhfe for arr
-        call indatc(axhfe,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+        call indatc(axhfe, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
         do ipc = 1,ipch
             ! Calling sequence substitutions:
             !   adhfe for arr
             !   ipch_asv for ipcx_asv
-            call indatd(adhfe,ipc,ipch_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+            call indatd(adhfe, ipc, ipch_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
         end do
     end if
 
     if (ipcv .ge. 0) then
         ! Calling sequence substitutions:
         !   axvfe for arr
-        call indatc(axvfe,nad1,narx_asv,narxt,ntpr_asv,ntprt,ux24)
+        call indatc(axvfe, nad1, narx_asv, narxt, ntpr_asv, ntprt, ux24)
 
         do ipc = 1,ipcv
             ! Calling sequence substitutions:
             !   advfe for arr
             !   ipcv_asv for ipcx_asv
-            call indatd(advfe,ipc,ipcv_asv,nad1,narxt,narx_asv,ntprt,ntpr_asv,ux24)
+            call indatd(advfe, ipc, ipcv_asv, nad1, narxt, narx_asv, ntprt, ntpr_asv, ux24)
         end do
     end if
 
@@ -772,7 +772,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     ! Initialize the qclnsa array to .false.
     qx = .false.
 
-    call initlv(qclnsa,nsta_asv,qx)
+    call initlv(qclnsa, nsta_asv, qx)
 
     ! Initialize the following variables, all of which are used
     ! below as counters.
@@ -810,7 +810,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     read (nad1) ustr,ustr2,ustr3
 
     ! Read the blocks in the current superblock.
-    call indats(adhfsa,advfsa,axhfsa,axlksa,axvfsa,cdrsa,cdrsv,cessa,cessv,ipch,ipch_asv,ipcv,ipcv_asv,mwtspa,nad1,narxt,narx_asv,nata,nata_asv,nbta,nbta_asv,nbta1_asv,nbtafd,ncmpra,ncta,ncta_asv,ndrsa,ndrsa_asv,ndrsn,ndrsra,nerr,nessa,nessa_asv,nessn,nessra,ngta,ngta_asv,nlta,nlta_asv,nmta,nmta_asv,noutpt,np,npta_asv,ns,nsta_asv,ntprt,ntpr_asv,nttyo,uaqsln,ubasp,udrsv,uelema,uendit,uessv,uphasa,uphasv,uptgas,uptliq,uptsld,uptypa,usblkf,uspeca,vosp0a,zchara)
+    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
 
     ncmpra(2,np) = ns
     narn2a = ns
@@ -844,7 +844,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     read (nad1) ustr,ustr2,ustr3
 
     ! Read the blocks in the current superblock.
-    call indats(adhfsa,advfsa,axhfsa,axlksa,axvfsa,cdrsa,cdrsv,cessa,cessv,ipch,ipch_asv,ipcv,ipcv_asv,mwtspa,nad1,narxt,narx_asv,nata,nata_asv,nbta,nbta_asv,nbta1_asv,nbtafd,ncmpra,ncta,ncta_asv,ndrsa,ndrsa_asv,ndrsn,ndrsra,nerr,nessa,nessa_asv,nessn,nessra,ngta,ngta_asv,nlta,nlta_asv,nmta,nmta_asv,noutpt,np,npta_asv,ns,nsta_asv,ntprt,ntpr_asv,nttyo,uaqsln,ubasp,udrsv,uelema,uendit,uessv,uphasa,uphasv,uptgas,uptliq,uptsld,uptypa,usblkf,uspeca,vosp0a,zchara)
+    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
 
     nmrn2a = ns
 
@@ -868,7 +868,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ncmpra(1,np) = ns
         ncmpra(2,np) = ns
         nsc = 1
-        call clones(axlksa,cdrsa,cessa,mwtspa,narx_asv,ndrsa,ndrsa_asv,ndrsn,ndrsra,nessa,nessa_asv,nessn,nessra,np,npta_asv,ns,nsc,nsta_asv,ntpr_asv,uphasa,uspeca,zchara)
+        call clones(axlksa, cdrsa, cessa, mwtspa, narx_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nessa, nessa_asv, nessn, nessra, np, npta_asv, ns, nsc, nsta_asv, ntpr_asv, uphasa, uspeca, zchara)
         qclnsa(ns) = .true.
         nlrn1a = ns
         nlrn2a = ns
@@ -890,7 +890,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     read (nad1) ustr,ustr2,ustr3
 
     ! Read the blocks in the current superblock.
-    call indats(adhfsa,advfsa,axhfsa,axlksa,axvfsa,cdrsa,cdrsv,cessa,cessv,ipch,ipch_asv,ipcv,ipcv_asv,mwtspa,nad1,narxt,narx_asv,nata,nata_asv,nbta,nbta_asv,nbta1_asv,nbtafd,ncmpra,ncta,ncta_asv,ndrsa,ndrsa_asv,ndrsn,ndrsra,nerr,nessa,nessa_asv,nessn,nessra,ngta,ngta_asv,nlta,nlta_asv,nmta,nmta_asv,noutpt,np,npta_asv,ns,nsta_asv,ntprt,ntpr_asv,nttyo,uaqsln,ubasp,udrsv,uelema,uendit,uessv,uphasa,uphasv,uptgas,uptliq,uptsld,uptypa,usblkf,uspeca,vosp0a,zchara)
+    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
 
     ngrn2a = ns
 
@@ -905,7 +905,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     nxrn1a = ns + 1
     ixrn1a = np + 1
 
-    call indatp(apxa,axlksa,bpxa,cdrsa,cessa,iapxa_asv,iapxta,ibpxa_asv,ibpxta,ikta_asv,jsola,mwtspa,nad1,narx_asv,ncmpra,ndrsa,ndrsa_asv,ndrsn,ndrsra,nerr,nessa,nessa_asv,nessn,nessra,nmrn1a,nmrn2a,noutpt,np,npta_asv,ns,nsta_asv,ntpr_asv,nttyo,nxta,nxta_asv,qclnsa,uendit,uspeca,uphasa,uptsld,uptypa,zchara)
+    call indatp(apxa, axlksa, bpxa, cdrsa, cessa, iapxa_asv, iapxta, ibpxa_asv, ibpxta, ikta_asv, jsola, mwtspa, nad1, narx_asv, ncmpra, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, nmrn1a, nmrn2a, noutpt, np, npta_asv, ns, nsta_asv, ntpr_asv, nttyo, nxta, nxta_asv, qclnsa, uendit, uspeca, uphasa, uptsld, uptypa, zchara)
 
     npta = np
     nsta = ns
@@ -922,21 +922,21 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     ! Set up the nbaspa array and expand the elements of the ubasp array
     ! to the full 48 characters. Convert basis species indices in the
     ! ndrsa array to species indices.
-    call dfbasp(nbaspa,nbta,nbta_asv,ndrsa,ndrsa_asv,ndrsra,nerr,noutpt,nsta,nsta_asv,nttyo,ubasp,uspeca)
+    call dfbasp(nbaspa, nbta, nbta_asv, ndrsa, ndrsa_asv, ndrsra, nerr, noutpt, nsta, nsta_asv, nttyo, ubasp, uspeca)
 
     if (udakey(1:8) .eq. usedh(1:8)) then
         ! The aqeuous species activity coefficient formalism is
         ! consistent with the B-dot equation, the Davies equation,
         ! or similar equations. Read the appropriate data for
         ! this formalism.
-        call inbdot(azeroa,insgfa,nad1,narn1a,narn2a,nata,nata_asv,nerr,noutpt,nsta_asv,nttyo,uspeca)
+        call inbdot(azeroa, insgfa, nad1, narn1a, narn2a, nata, nata_asv, nerr, noutpt, nsta_asv, nttyo, uspeca)
     end if
 
     if (udakey(1:8) .eq. upitz(1:8)) then
         ! The aqeuous species activity coefficient formalism is
         ! consistent with Pitzer's equations. Read the appropriate
         ! data for this formalism.
-        call inupt(amua,aslma,ielam,ipbt_asv,jpdblo,jpfc_asv,nad1,nalpaa,napa_asv,napta,narn1a,narn2a,nerr,nmuta,nmuta_asv,nmuxa,noutpt,nslta,nslta_asv,nslxa,nsta_asv,nttyo,palpaa,uspeca,zchara)
+        call inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, napa_asv, napta, narn1a, narn2a, nerr, nmuta, nmuta_asv, nmuxa, noutpt, nslta, nslta_asv, nslxa, nsta_asv, nttyo, palpaa, uspeca, zchara)
     end if
 
     ! The following is a bit of nonsense so compiler warnings will

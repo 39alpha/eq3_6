@@ -67,7 +67,7 @@ subroutine gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndr
 
     ! Compute affinities and saturation indices for reactions in the
     ! 'd' set.
-    call gafsir(actlg,afcnst,affsd,cdrsd,jflagd,ndrsd,ndrsmx,ndrsrd,nst,nstmax,sidrsp,uspec,xlksd)
+    call gafsir(actlg, afcnst, affsd, cdrsd, jflagd, ndrsd, ndrsmx, ndrsrd, nst, nstmax, sidrsp, uspec, xlksd)
 
     ! Compute affinities and saturation indices for phases.
     do np = 1,npt

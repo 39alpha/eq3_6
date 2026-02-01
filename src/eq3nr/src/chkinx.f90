@@ -361,12 +361,12 @@ subroutine chkinx(cdrs, coval, ier, irdxc3, jflag, jsflag, narn1, narn2, nbasp, 
         ! Calling sequence substitutions:
         !   noutpt for nf
         !   nredox for ns
-        call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,nredox,nstmax,uspec)
+        call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, nredox, nstmax, uspec)
 
         ! Calling sequence substitutions:
         !   nttyo for nf
         !   nredox for ns
-        call prreac(cdrs,ndrs,ndrsmx,ndrsr,nttyo,nredox,nstmax,uspec)
+        call prreac(cdrs, ndrs, ndrsmx, ndrsr, nttyo, nredox, nstmax, uspec)
     end if
 
     ! Check for the needed input constraints on the irdxc3 .eq. 1
@@ -519,12 +519,12 @@ subroutine chkinx(cdrs, coval, ier, irdxc3, jflag, jsflag, narn1, narn2, nbasp, 
                 ! Calling sequence substitutions:
                 !   noutpt for nf
                 !   ns1 for ns
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns1,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns1, nstmax, uspec)
 
                 ! Calling sequence substitutions:
                 !   nttyo for nf
                 !   ns1 for ns
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,nttyo,ns1,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, nttyo, ns1, nstmax, uspec)
             end if
         end if
     end do
@@ -598,7 +598,7 @@ subroutine chkinx(cdrs, coval, ier, irdxc3, jflag, jsflag, narn1, narn2, nbasp, 
 
                 ! Calling sequence substitutions:
                 !   uspec(ns) for unam48
-                call fmspnm(jlen,uspec(ns),uspn56)
+                call fmspnm(jlen, uspec(ns), uspn56)
                 write (noutpt,1800) jfl,uspn56(1:jlen)
                 write (nttyo,1800) jfl,uspn56(1:jlen)
 1800 format(/' * Error - (EQ3NR/chkinx) An jflag value of ',i3,' has been specified',/7x,'for ',a,'. This value may not',' be applied to non-aqueous species.')

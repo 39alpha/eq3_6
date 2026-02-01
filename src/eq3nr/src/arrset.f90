@@ -558,7 +558,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uzvec1(krow),uspn56)
+            call fmspnx(jlen, uzvec1(krow), uspn56)
             write (noutpt,1020) krow,uspn56,ujtp(1:j2)
 1020 format(1x,i4,2x,a32,2x,a)
         end do
@@ -597,13 +597,13 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
                     !   jlen1 for jlen
                     !   uspec(ns1) for unam48
                     !   usp156 for uspn56
-                    call fmspnx(jlen1,uspec(ns1),usp156)
+                    call fmspnx(jlen1, uspec(ns1), usp156)
 
                     ! Calling sequence substitutions:
                     !   jlen2 for jlen
                     !   uspec(ns2) for unam48
                     !   usp256 for uspn56
-                    call fmspnx(jlen2,uspec(ns2),usp256)
+                    call fmspnx(jlen2, uspec(ns2), usp256)
                     jlen2 = min(jlen2,32)
                     write (noutpt,1060) krow,usp156,usp256(1:jlen2)
 1060 format(1x,i4,2x,a32,2x,a)
@@ -692,19 +692,19 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
     ! Calculate a starting value for the SUM(i) m(i) function
     ! (sigmam). Treat the calculated charge imbalance among the
     ! basis species as the equivalent of a monovalent ion.
-    call csigm(conc,jcsort,narn1,narn2,nstmax,sigmmc)
+    call csigm(conc, jcsort, narn1, narn2, nstmax, sigmmc)
     sigmam = sigmmc + azdel
 
     ! Calculate a starting value for the ionic strength (fxi).
     ! Treat the calculated charge imbalance among the basis species
     ! as the equivalent of a monovalent ion.
-    call cfxi(conc,fxic,jcsort,narn1,narn2,nstmax,zchsq2)
+    call cfxi(conc, fxic, jcsort, narn1, narn2, nstmax, zchsq2)
     fxi = fxic + 0.5*azdel
 
     ! Calculate a starting value for the J electrostatic moment
     ! function (fje). Treat the calculated charge imbalance among
     ! the basis species as the equivalent of a monovalent ion.
-    call cfje(conc,fjec,jcsort,narn1,narn2,nstmax,zchcu6)
+    call cfje(conc, fjec, jcsort, narn1, narn2, nstmax, zchcu6)
     fje = fjec + (-zdel/6.)
 
     ! Calculate the activity coefficients of aqueous species.
@@ -712,12 +712,12 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
     ! fraction of water.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call gcoeff(abar,acflg,actwlc,adh,adhh,adhv,al10,aphi,azero,a3bar,a3bars,bdh,bdhh,bdhv,bdot,bdoth,bdotv,cco2,conc,delam,dgpit,dpelm,dpslm,dselm,elam,fje,fxi,gpit,ielam,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilzeta,insgf,iopg,ipbtmx,izmax,jcsort,nalpha,napmax,napt,narn1,narn2,natmax,nazmmx,nazpmx,nchlor,nhydr,nmut,nmutmx,nmux,nmxi,nmxmax,nmxx,nopgmx,noutpt,nslt,nsltmx,nslx,nstmax,nsxi,nsxmax,nsxx,nttyo,omega,palpha,pelm,pmu,press,pslamn,pslm,qhawep,qpit75,selm,sigmam,tempk,uspec,xbarwc,xbrwlc,zchar,zchsq2,zchcu6)
+    call gcoeff(abar, acflg, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, uspec, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
 
     ! Calculate the activity coefficients of exchanger species.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call lamgex(acflg,cgexj,jern1,jern2,jetmax,jgext,net,netmax,nstmax,xbarlg)
+    call lamgex(acflg, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
 
     ! Initialize the mole fraction of water.
     xbrwlg = xbrwlc
@@ -743,7 +743,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
 
     ! Determine whether the constraints fix the activity of water.
     ! If so, the variable qawfix is set to .true.
-    call dawfix(aamatr,cdrs,eps100,gmmatr,iindx1,iodb,irdxc3,jflag,jjndex,kbt,kkndex,kmax,narn1,nbasp,nbtmax,ncosp,ndrs,ndrsmx,ndrsr,nelect,nhydr,nodbmx,no2gaq,noutpt,nstmax,qawfix,uspec)
+    call dawfix(aamatr, cdrs, eps100, gmmatr, iindx1, iodb, irdxc3, jflag, jjndex, kbt, kkndex, kmax, narn1, nbasp, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nhydr, nodbmx, no2gaq, noutpt, nstmax, qawfix, uspec)
 
     ! XX   Need new coding to deal with phases assemblages that fix a(w).
     ! XX   Such assemblages are now merely trapped.
@@ -860,16 +860,16 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
     ! These include all cases of equilibrium constraints and compount
     ! activity constraints (e.g. pHCl) and any case in which log fO2
     ! log fO2 is constrained by Eh, pe-, or a redox couple.
-    call arrsim(aamatr,acflg,actlg,bbig,cdrs,cjbasp,cnufac,conc,conclg,coval,delvec,dlogxw,eh,ehfac,eps100,gmmatr,iction,iindx1,iodb,ipivot,irdxc3,ixbasp,jcsort,jflag,jjndex,kbt,ker,khydr,kkndex,kmax,kwater,narn1,narn2,nbasp,nbt,nbti,nbtmax,nbw,ncosp,ndecsp,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,nhydr,nodbmx,no2gaq,noutpt,npass,nredox,nstmax,nttyo,omega,qawfix,rhsvec,ucospi,uspec,xbar,xbarlg,xbarw,xbrwlg,xlke,xlks,zchar,zvclg1)
+    call arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg, coval, delvec, dlogxw, eh, ehfac, eps100, gmmatr, iction, iindx1, iodb, ipivot, irdxc3, ixbasp, jcsort, jflag, jjndex, kbt, ker, khydr, kkndex, kmax, kwater, narn1, narn2, nbasp, nbt, nbti, nbtmax, nbw, ncosp, ndecsp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, nhydr, nodbmx, no2gaq, noutpt, npass, nredox, nstmax, nttyo, omega, qawfix, rhsvec, ucospi, uspec, xbar, xbarlg, xbarw, xbrwlg, xlke, xlks, zchar, zvclg1)
 
     ! Recalculate the concentrations, etc., of dependent species.
-    call ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fo2,fo2lg,fsort,fugac,fugalg,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,istack,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,mrgexs,mtb,moph,mosp,narn1,narn2,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,noutpt,no2gaq,nphasx,npt,nptmax,nst,nstmax,nttyo,omega,omeglg,press,qxbarw,q6mode,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zgexj,zvclg1,zvec1)
+    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
     xbarw = xbar(narn1)
     xbrwlg = xbarlg(narn1)
 
     ! Compute the residuals.
-    call betas(acflg,actlg,afcnst,alpha,amtb,bbig,beta,betamx,bneg,cdrs,conc,conclg,coval,csts,eh,ehfac,fo2lg,ibetmx,iebal,iindx1,irdxc3,jcsort,jflag,jsflag,jssort,kbt,kdim,kelect,khydr,kmax,km1,ko2gaq,kwater,kxt,mtb,mosp,narn1,narn2,nbasp,nbtmax,ncosp,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,nhydr,noutpt,no2gaq,nredox,nst,nstmax,nsts,nstsmx,nstsr,ntfx,ntfxmx,ntfxt,nttyo,omega,qredox,q6mode,tfx,ubbig,ubneg,ubetmx,uspec,uzvec1,weight,xbrwlg,xlke,xlks,zchar)
+    call betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cdrs, conc, conclg, coval, csts, eh, ehfac, fo2lg, ibetmx, iebal, iindx1, irdxc3, jcsort, jflag, jsflag, jssort, kbt, kdim, kelect, khydr, kmax, km1, ko2gaq, kwater, kxt, mtb, mosp, narn1, narn2, nbasp, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, nhydr, noutpt, no2gaq, nredox, nst, nstmax, nsts, nstsmx, nstsr, ntfx, ntfxmx, ntfxt, nttyo, omega, qredox, q6mode, tfx, ubbig, ubneg, ubetmx, uspec, uzvec1, weight, xbrwlg, xlke, xlks, zchar)
 
     ! Calculate the beta convergence function.
     betfnc = 0.
@@ -901,7 +901,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (noutpt,1240) kcol,uspn56,zx1,zx2
 1240 format(1x,i4,2x,a32,2x,f10.4,2x,1pe12.5)
         end do
@@ -915,7 +915,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (noutpt,1260) krow,uspn56,beta(krow)
 1260 format(1x,i4,2x,a32,2x,1pe12.5)
         end do
@@ -926,7 +926,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
     ! Identify the dominant species in each mass balance and
     ! compute the corresponding exponent for a continued
     ! fraction correction.
-    call cfracf(cdrs,csts,efac,jcsort,jflag,jssort,kmax,mosp,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,ndrs,ndrsmx,ndrsr,nern1,nern2,nfac,nst,nstmax,nsts,nstsmx,nstsr,q6mode,weight)
+    call cfracf(cdrs, csts, efac, jcsort, jflag, jssort, kmax, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, nfac, nst, nstmax, nsts, nstsmx, nstsr, q6mode, weight)
 
     ! Filter the data obtained from EQLIB/cfracf. The following
     ! filters are specific to EQ3NR.
@@ -993,13 +993,13 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
                     !   jlen1 for jlen
                     !   uspec(ns) for unam48
                     !   usp156 for uspn56
-                    call fmspnx(jlen1,uspec(ns),usp156)
+                    call fmspnx(jlen1, uspec(ns), usp156)
 
                     ! Calling sequence substitutions:
                     !   jlen2 for jlen
                     !   uspec(ns2) for unam48
                     !   usp256 for uspn56
-                    call fmspnx(jlen2,uspec(ns2),usp256)
+                    call fmspnx(jlen2, uspec(ns2), usp256)
                     jlen2 = min(jlen2,32)
                     write (noutpt,1320) usp156,usp256(1:jlen2)
 1320 format(2x,a32,3x,a)
@@ -1019,7 +1019,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
     ! mass balance with the greatest bfac factor. This is usually nearly
     ! equivalent to finding the mass balance with the greater beta
     ! residual, as efac often has a value of unity.
-    call gbfac(beta,bfac,efac,iindx1,kbt,kmax,nbt,nbtmax,nfac)
+    call gbfac(beta, bfac, efac, iindx1, kbt, kmax, nbt, nbtmax, nfac)
 
     if (iodb(3).ge.3 .and. .not.qbswx) then
         ! Write a table containing the modified results.
@@ -1035,7 +1035,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
 
                 ! Calling sequence substitutions:
                 !   uspec(ns) for unam48
-                call fmspnx(jlen,uspec(ns),uspn56)
+                call fmspnx(jlen, uspec(ns), uspn56)
                 write (noutpt,1350) uspn56,bfac(nb),efac(nb)
 1350 format(2x,a32,3x,1pe12.5,3x,1pe12.5)
             end if
@@ -1048,7 +1048,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
         ! In automatic basis switching mode (iopt(11) .ge. 1), try to
         ! first reduce the magntiude of large positive mass balance
         ! residuals by making one or more basis switches.
-        call absswa(adhfs,adhfsx,advfs,advfsx,avcnst,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,beta,cdrs,cdrsx,cdrtw,cdrw,csts,dhfs,dvfs,efac,eps100,ibswx,iebal,iindx1,iodb,ipch,ipchmx,ipcv,ipcvmx,jcsort,jflag,jsflag,jssort,kbt,kmax,mosp,narn1,narn2,narxmx,narxt,nbasp,nbaspd,nbaspx,nbt,nbtmax,nbw,ncosp,ndrs,ndrsmx,ndrsr,ndrsrx,ndrsx,nelect,nhydr,nodbmx,no2gaq,noutpt,nst,nstmax,nsts,nstsmx,nstsr,nswtch,ntpr,ntprmx,nttyo,presg,press,qbassw,qbswx,q6mode,tempc,uspec,uzvec1,weight,xvfs,xlks,xhfs)
+        call absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, beta, cdrs, cdrsx, cdrtw, cdrw, csts, dhfs, dvfs, efac, eps100, ibswx, iebal, iindx1, iodb, ipch, ipchmx, ipcv, ipcvmx, jcsort, jflag, jsflag, jssort, kbt, kmax, mosp, narn1, narn2, narxmx, narxt, nbasp, nbaspd, nbaspx, nbt, nbtmax, nbw, ncosp, ndrs, ndrsmx, ndrsr, ndrsrx, ndrsx, nelect, nhydr, nodbmx, no2gaq, noutpt, nst, nstmax, nsts, nstsmx, nstsr, nswtch, ntpr, ntprmx, nttyo, presg, press, qbassw, qbswx, q6mode, tempc, uspec, uzvec1, weight, xvfs, xlks, xhfs)
 
         if (nswtch .le. 0) then
             ! No switches were made.
@@ -1062,7 +1062,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
         ! is defined in terms of molality (= 0) or mole fraction (= 1).
         ! The cjbasp array contains any site stoichiometric factors
         ! associated with the operational basis species.
-        call gibasp(cgexj,cjbasp,iern1,ixbasp,jern1,jern2,jetmax,jgext,narn1,narn2,nbasp,nbt,nbtmax,nern1,nern2,netmax,nphasx,nstmax)
+        call gibasp(cgexj, cjbasp, iern1, ixbasp, jern1, jern2, jetmax, jgext, narn1, narn2, nbasp, nbt, nbtmax, nern1, nern2, netmax, nphasx, nstmax)
 
         ! Null some arrays.
         do ns = 1,nstmax
@@ -1070,7 +1070,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
         end do
 
         av = -99999.
-        call initav(conclg,nstmax,av)
+        call initav(conclg, nstmax, av)
 
         write (noutpt,1370) nloop,nswtch
         write (nttyo,1370) nloop,nswtch
@@ -1090,7 +1090,7 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
         ns = nbaspd(iebal)
         cecorr = -alpha(kebal)/zchar(ns)
         xecorr = zchsq2(ns)*cecorr
-        call gszm(conc,jcsort,narn1,narn2,nstmax,sigza,sigzc,sigzi,sigzm,zchar)
+        call gszm(conc, jcsort, narn1, narn2, nstmax, sigza, sigzc, sigzi, sigzm, zchar)
         bxecor = abs(xecorr)/sigzm
     end if
 
@@ -1099,13 +1099,13 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
         !   jlen1 for jlen
         !   ubbig for unam48
         !   usp156 for uspn56
-        call fmspnx(jlen1,ubbig,usp156)
+        call fmspnx(jlen1, ubbig, usp156)
 
         ! Calling sequence substitutions:
         !   jlen2 for jlen
         !   ubneg for unam48
         !   usp256 for uspn56
-        call fmspnx(jlen2,ubneg,usp256)
+        call fmspnx(jlen2, ubneg, usp256)
 
         write (noutpt,1500) betamx,betfnc,bbig,usp156(1:jlen1),bneg,usp256(1:jlen2)
 1500 format(18x,'betamx= ',1pe12.5,', betfnc= ',1pe12.5,/18x,'  bbig= ',1pe12.5,', ubbig= ',a,/18x,'  bneg= ',1pe12.5,', ubneg= ',a,/)
@@ -1254,10 +1254,10 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, adhf
     rlxgam = 1.0
     qpracf = iodb(3) .ge. 4
 
-    call ngcadv(abar,acflg,acflgo,actwlc,adh,adhh,adhv,afcnst,al10,aphi,azero,a3bar,a3bars,bacfmx,bdh,bdhh,bdhv,bdot,bdoth,bdotv,bgamx,bpx,bsigmm,bfje,bfxi,cco2,cgexj,chfacf,chfsgm,conc,delam,dgpit,dpelm,dpslm,dselm,elam,eps100,fje,fjeo,fxi,fxio,gpit,ibpxt,ielam,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilzeta,insgf,iopg,iter,ipndx1,ixrn1,ixrn2,izmax,jcsort,jern1,jern2,jgext,jsol,kx1,kxt,nalpha,napt,narn1,narn2,nchlor,ncmpr,net,nhydr,nmut,nmux,nmxi,nmxx,noutpt,nslt,nslx,nst,nsxi,nsxx,nttyo,omega,palpha,pelm,pmu,press,pslamn,pslm,qhawep,qpit75,qpracf,q6mode,rlxgam,selm,sigmam,sigmmo,tempk,ubacmx,ubgamx,uphase,uspec,wfac,xbar,xbarlg,xbarwc,xbrwlc,zchar,zchcu6,zchsq2)
+    call ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, aphi, azero, a3bar, a3bars, bacfmx, bdh, bdhh, bdhv, bdot, bdoth, bdotv, bgamx, bpx, bsigmm, bfje, bfxi, cco2, cgexj, chfacf, chfsgm, conc, delam, dgpit, dpelm, dpslm, dselm, elam, eps100, fje, fjeo, fxi, fxio, gpit, ibpxt, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, iter, ipndx1, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jgext, jsol, kx1, kxt, nalpha, napt, narn1, narn2, nchlor, ncmpr, net, nhydr, nmut, nmux, nmxi, nmxx, noutpt, nslt, nslx, nst, nsxi, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, qpracf, q6mode, rlxgam, selm, sigmam, sigmmo, tempk, ubacmx, ubgamx, uphase, uspec, wfac, xbar, xbarlg, xbarwc, xbrwlc, zchar, zchcu6, zchsq2)
 
     ! Recalculate the concentrations, etc., of dependent species.
-    call ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fo2,fo2lg,fsort,fugac,fugalg,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,istack,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,mrgexs,mtb,moph,mosp,narn1,narn2,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,noutpt,no2gaq,nphasx,npt,nptmax,nst,nstmax,nttyo,omega,omeglg,press,qxbarw,q6mode,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zgexj,zvclg1,zvec1)
+    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
     xbarw = xbar(narn1)
     xbrwlg = xbarlg(narn1)

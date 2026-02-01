@@ -147,7 +147,7 @@ subroutine setffg(csts, iindx1, iffg, ipndx1, jpflag, jsflag, kbt, kdim, kmax, k
     !   2. Delete left over fixed fugacity phases from the matrix.
     !   3. Reset the zvec1 and zvclg1 array elements for fixed
     !      fugacity phases.
-    call miidxz(ier,iindx1,ipndx1,jpflag,jsflag,kbt,kdim,kmax,km1,kmt,kx1,kxt,losp,ncmpr,noutpt,npt,nptmax,nstmax,nttyo,uspec,uzvec1,zvclg1,zvec1)
+    call miidxz(ier, iindx1, ipndx1, jpflag, jsflag, kbt, kdim, kmax, km1, kmt, kx1, kxt, losp, ncmpr, noutpt, npt, nptmax, nstmax, nttyo, uspec, uzvec1, zvclg1, zvec1)
 
     if (ier .gt. 0) then
         write (noutpt,1020)

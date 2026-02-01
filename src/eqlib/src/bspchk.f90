@@ -61,11 +61,11 @@ subroutine bspchk(jsflag, nbaspd, nbtd, nbtmax, ndrsd, ndrsmx, ndrsrd, noutpt, n
                             !   jlene for jlen
                             !   uspeca(nse) for unam48
                             !   uspe56 for uspn56
-                            call fmspnx(jlene,uspeca(nse),uspe56)
+                            call fmspnx(jlene, uspeca(nse), uspe56)
 
                             ! Calling sequence substitutions:
                             !   uspeca(ns) for unam48
-                            call fmspnx(jlen,uspeca(ns),uspn56)
+                            call fmspnx(jlen, uspeca(ns), uspn56)
 
                             write (noutpt,1000) uspn56(1:jlen),uspe56(1:jlene)
                             write (nttyo,1000) uspn56(1:jlen),uspe56(1:jlene)

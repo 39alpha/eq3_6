@@ -139,7 +139,7 @@ subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, c
     ! Calculate the matrix M (mmmatr). This incorporates the
     ! dependency of rate laws on the thermodynamic activities of
     ! species (currently all such species must be of type aqueous).
-    call gmmmat(act,afrc1,cdac,cdacb,cdrs,csigma,eps100,fkrc,idirec,iindx1,iktmax,imchmx,imech,jcode,jreac,kbt,kdim,kmax,mmmatr,nbasp,nbt,nbtmax,ncmpr,ndac,ndacb,ndact,ndctmx,ndrs,ndrsmx,ndrsr,noutpt,nptmax,nrct,nrctmx,nrk,nrndex,nstmax,nttyo,nxridx,nxrtmx,rk,rtcnst,rxbar,sfcar,ureac,xlks)
+    call gmmmat(act, afrc1, cdac, cdacb, cdrs, csigma, eps100, fkrc, idirec, iindx1, iktmax, imchmx, imech, jcode, jreac, kbt, kdim, kmax, mmmatr, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nttyo, nxridx, nxrtmx, rk, rtcnst, rxbar, sfcar, ureac, xlks)
 
     ! Now calculate the matrix SIGMA (sgmatr) from matrix M and the
     ! array W-squiggle (dlogxw) array.
@@ -167,7 +167,7 @@ subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, c
 
     ! Calculate the matrix PHI (aimatr), which is the inverse of
     ! the Jacobian matrix J[z] used by the algebraic equation solver.
-    call ginvrt(aimatr,delvec,gmmatr,ipivot,kdim,kmax)
+    call ginvrt(aimatr, delvec, gmmatr, ipivot, kdim, kmax)
 
     ! Emulate the matrix multiplication PHI*THETA. Put the result
     ! in a scratch matrix (xxmatr). Note that xxmatr must have zero

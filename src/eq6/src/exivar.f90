@@ -304,7 +304,7 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
 
     ! Calculate the concentrations, etc., of basis and non-basis
     ! species. Here the activity coefficients are all zero.
-    call ncmpex(acflg,act,actlg,cdrs,cegexs,cgexj,conc,conclg,cpgexs,egexjc,egexjf,egexs,eps100,fo2,fo2lg,fsort,fugac,fugalg,iern1,iern2,ietmax,ifrn1,ifrn2,igas,igstak,iindx1,ilrn1,ilrn2,imrn1,imrn2,istack,ixrn1,ixrn2,jcsort,jern1,jern2,jetmax,jflag,jgext,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jssort,jstack,kbt,kdim,kelect,kmax,km1,ko2gaq,kwater,kxt,loph,losp,lsort,mgext,mrgexs,mtb,moph,mosp,narn1,narn2,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nelect,nern1,nern2,netmax,ngexsa,ngext,ngrn1,ngrn2,ngt,ngtmax,noutpt,no2gaq,nphasx,npt,nptmax,nst,nstmax,nttyo,omega,omeglg,press,qxbarw,q6mode,ugexj,ugexmo,uphase,uspec,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,xlks,zchar,zgexj,zvclg1,zvec1)
+    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
     ! Clamp estimates of concentrations and numbers of moles of
     ! dependent aqueous species.
@@ -349,13 +349,13 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
     ! coefficients.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call gcoeff(abar,acflg,actwlc,adh,adhh,adhv,al10,aphi,azero,a3bar,a3bars,bdh,bdhh,bdhv,bdot,bdoth,bdotv,cco2,conc,delam,dgpit,dpelm,dpslm,dselm,elam,fje,fxi,gpit,ielam,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifzeta,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilzeta,insgf,iopg,ipbtmx,izmax,jcsort,nalpha,napmax,napt,narn1,narn2,natmax,nazmmx,nazpmx,nchlor,nhydr,nmut,nmutmx,nmux,nmxi,nmxmax,nmxx,nopgmx,noutpt,nslt,nsltmx,nslx,nstmax,nsxi,nsxmax,nsxx,nttyo,omega,palpha,pelm,pmu,press,pslamn,pslm,qhawep,qpit75,selm,sigmam,tempk,uspec,xbarwc,xbrwlc,zchar,zchsq2,zchcu6)
+    call gcoeff(abar, acflg, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, uspec, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
 
     ! Make the first estimates of the exchanger species activity
     ! coefficients.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call lamgex(acflg,cgexj,jern1,jern2,jetmax,jgext,net,netmax,nstmax,xbarlg)
+    call lamgex(acflg, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
 
     if (iodb(3) .ge. 1) then
         ! Print the attempted phase assemblage.
@@ -368,7 +368,7 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (noutpt,1020) kcol,uspn56(1:jlen)
 1020 format(2x,i3,2x,a)
         end do
@@ -378,7 +378,7 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnm(jlen,uspec(ns),uspn56)
+            call fmspnm(jlen, uspec(ns), uspn56)
             write (noutpt,1020) kcol,uspn56(1:jlen)
         end do
 
@@ -398,7 +398,7 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (noutpt,1060) kcol,uspn56,zx1,zx2
 1060 format(1x,i4,2x,a32,2x,f10.4,2x,1pe12.5)
         end do
@@ -410,7 +410,7 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnm(jlen,uspec(ns),uspn56)
+            call fmspnm(jlen, uspec(ns), uspn56)
             write (noutpt,1060) kcol,uspn56,zx1,zx2
         end do
 

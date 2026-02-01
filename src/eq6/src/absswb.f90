@@ -168,7 +168,7 @@ subroutine absswb(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
             end do
 
             ! Find a candidate.
-            call fbassw(jcsort,jflag,mosp,narn1,narn2,nse,nsi,nsj,nstmax,weight,wsi)
+            call fbassw(jcsort, jflag, mosp, narn1, narn2, nse, nsi, nsj, nstmax, weight, wsi)
 
             ! If a candidate was found, apply a filter.
             if (nsi .gt. 0) then
@@ -207,19 +207,19 @@ subroutine absswb(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
                 !   jlen1 for jlen
                 !   uspec(nsj) for unam48
                 !   usp156 for uspn56
-                call fmspnx(jlen1,uspec(nsj),usp156)
+                call fmspnx(jlen1, uspec(nsj), usp156)
 
                 ! Calling sequence substitutions:
                 !   jlen2 for jlen
                 !   uspec(nsi) for unam48
                 !   usp256 for uspn56
-                call fmspnx(jlen2,uspec(nsi),usp256)
+                call fmspnx(jlen2, uspec(nsi), usp256)
 
                 ! Calling sequence substitutions:
                 !   jlen3 for jlen
                 !   uspec(nse) for unam48
                 !   usp356 for uspn56
-                call fmspnx(jlen3,uspec(nse),usp356)
+                call fmspnx(jlen3, uspec(nse), usp356)
 
                 write (noutpt,1010) usp156(1:jlen1),usp256(1:jlen2),usp356(1:jlen3)
 1010 format(/3x,'Could replace ',a,' in the active basis set',' with',/3x,a,' as the species associated with the mass',' balance',/3x,'of ',a,'.')
@@ -300,19 +300,19 @@ subroutine absswb(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
                 !   jlen1 for jlen
                 !   uspec(nsj) for unam48
                 !   usp156 for uspn56
-                call fmspnx(jlen1,uspec(nsj),usp156)
+                call fmspnx(jlen1, uspec(nsj), usp156)
 
                 ! Calling sequence substitutions:
                 !   jlen2 for jlen
                 !   uspec(nsi) for unam48
                 !   usp256 for uspn56
-                call fmspnx(jlen2,uspec(nsi),usp256)
+                call fmspnx(jlen2, uspec(nsi), usp256)
 
                 ! Calling sequence substitutions:
                 !   jlen3 for jlen
                 !   uspec(nse) for unam48
                 !   usp356 for uspn56
-                call fmspnx(jlen3,uspec(nse),usp356)
+                call fmspnx(jlen3, uspec(nse), usp356)
 
                 write (noutpt,1110) usp156(1:jlen1),usp256(1:jlen2),usp356(1:jlen3)
 1110 format(/3x,'Will replace ',a,' in the active basis set',' with',/3x,a,' as the species associated with the mass',' balance',/3x,'of ',a,'.')
@@ -320,22 +320,22 @@ subroutine absswb(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
         end do
     end if
 
-    call autosw(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ibswx,iindx1,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,kbt,kmax,narn1,narxmx,nbasp,nbaspd,nbaspx,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,nst,nstmax,ntprmx,nttyo,qbassw,uspec,uzvec1)
+    call autosw(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ibswx, iindx1, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, kbt, kmax, narn1, narxmx, nbasp, nbaspd, nbaspx, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, nst, nstmax, ntprmx, nttyo, qbassw, uspec, uzvec1)
 
     ! Recompute the cdrw array.
-    call gcdrw(cdrs,cdrw,narn1,ndrs,ndrsmx,ndrsr,nst,nstmax)
+    call gcdrw(cdrs, cdrw, narn1, ndrs, ndrsmx, ndrsr, nst, nstmax)
 
     ! Recompute the cdrtw array.
-    call gcdrtw(cdrs,cdrtw,narn1,narn2,ndrs,ndrsmx,ndrsr,nelect,no2gaq,nst,nstmax)
+    call gcdrtw(cdrs, cdrtw, narn1, narn2, ndrs, ndrsmx, ndrsr, nelect, no2gaq, nst, nstmax)
 
     ! Update the thermodynamic data to correspond to the new
     ! active basis set. First, recompute the log K, etc., data for
     ! the various reactions.
-    call evdatr(adhfs,advfs,axhfs,axlks,axvfs,dhfs,dvfs,ipch,ipchmx,ipcv,ipcvmx,narxmx,narxt,nst,nstmax,ntpr,ntprmx,tempc,xhfs,xlks,xvfs)
+    call evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, ipcv, ipcvmx, narxmx, narxt, nst, nstmax, ntpr, ntprmx, tempc, xhfs, xlks, xvfs)
 
     ! Then make pressure corrections to these thermodynamic data.
     if (ipcv .ge. 0) then
-        call pcorrx(avcnst,dhfs,dvfs,ipch,ipchmx,ipcv,ipcvmx,nbasp,nbt,nbtmax,ndrsr,nst,nstmax,presg,press,xhfs,xlks,xvfs)
+        call pcorrx(avcnst, dhfs, dvfs, ipch, ipchmx, ipcv, ipcvmx, nbasp, nbt, nbtmax, ndrsr, nst, nstmax, presg, press, xhfs, xlks, xvfs)
     end if
 
 999 continue

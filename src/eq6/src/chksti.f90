@@ -49,7 +49,7 @@ subroutine chksti(akmat0, drer0, drir0, deltim, delxi, dlxmin, fdri0, fdrr0, iod
 
 100 continue
     xi1 = xi0 + delxi
-    call timeca(deltim,delxi,drir0,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qriinf,rirec0,time0,time1)
+    call timeca(deltim, delxi, drir0, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qriinf, rirec0, time0, time1)
 
     if (deltim .le. smp100) then
         dxsv = delxi
@@ -80,7 +80,7 @@ subroutine chksti(akmat0, drer0, drir0, deltim, delxi, dlxmin, fdri0, fdrr0, iod
 1020 format(7x,'The step size is already at the  minimum value.',/7x,'Cutting the order to ',i2,'.')
             end if
 
-            call rderiv(akmat0,drer0,drir0,fdri0,fdrr0,jreac,nord,nrct,nrctmx,nrd1mx)
+            call rderiv(akmat0, drer0, drir0, fdri0, fdrr0, jreac, nord, nrct, nrctmx, nrd1mx)
         end if
 
         go to 100

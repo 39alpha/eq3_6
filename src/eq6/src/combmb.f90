@@ -157,7 +157,7 @@ subroutine combmb(cdrs, iindx1, ipndx1, jflag, kbt, kdim, km1, kmax, kmt, kx1, k
             if (nt .lt. 2) then
                 ! Calling sequence substitutions:
                 !   uspec(ns) for unam48
-                call fmspnm(jlen,uspec(ns),uspn56)
+                call fmspnm(jlen, uspec(ns), uspn56)
                 write (noutpt,1000) uspn56(1:jlen),jflag(ns)
                 write (nttyo,1000) uspn56(1:jlen),jflag(ns)
 1000 format(/' * Error- (combmb) The species ',a,/7x,'has jflag value of ',i2,", but it's a strict basis",' species.',/7x,"Its mass balance can't be combined into",' that of another basis species.')

@@ -99,7 +99,7 @@ subroutine msolvr(aamatr, delvec, gmmatr, ier, ipivot, kdim, kmax, noutpt, nttyo
 
     ! Factor the matrix (make the L-U decomposition).
 100 continue
-    call dgefa(gmmatr,kmax,kdim,ipivot,info)
+    call dgefa(gmmatr, kmax, kdim, ipivot, info)
 
     ! Test info.
     if (info .ne. 0) then
@@ -123,7 +123,7 @@ subroutine msolvr(aamatr, delvec, gmmatr, ier, ipivot, kdim, kmax, noutpt, nttyo
     ! call copyaa(rhsvec,delvec,kdim)
     ! Solve for the unknown vector (delvec). Note that delvec initially
     ! contains a copy of the right-hand-side vector.
-    call dgesl(gmmatr,kmax,kdim,ipivot,delvec)
+    call dgesl(gmmatr, kmax, kdim, ipivot, delvec)
 
 999 continue
 end subroutine msolvr

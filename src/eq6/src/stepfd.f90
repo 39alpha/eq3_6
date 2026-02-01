@@ -170,48 +170,48 @@ subroutine stepfd(acflg, acflg0, affp0, affp, afrc0, afrc1, aw0, aw1, delxi, dxs
     if (npts .eq. 1) then
         ! Zero all finite differences.
         nmax = nrd1mx*kmax
-        call initaz(fdzvm1,nmax)
-        call initaz(fdzv0,nmax)
+        call initaz(fdzvm1, nmax)
+        call initaz(fdzv0, nmax)
 
         nmax = nrd1mx*nrctmx
-        call initaz(fdrrm1,nmax)
-        call initaz(fdrr0,nmax)
+        call initaz(fdrrm1, nmax)
+        call initaz(fdrr0, nmax)
 
         if (iopt(2) .gt. 0) then
-            call initaz(fdrim1,nrd1mx)
-            call initaz(fdri0,nrd1mx)
+            call initaz(fdrim1, nrd1mx)
+            call initaz(fdri0, nrd1mx)
         end if
 
-        call initaz(fdawm1,nordmx)
-        call initaz(fdaw0,nordmx)
-        call initaz(fdehm1,nordmx)
-        call initaz(fdeh0,nordmx)
-        call initaz(fdo2m1,nordmx)
-        call initaz(fdo20,nordmx)
-        call initaz(fdphm1,nordmx)
-        call initaz(fdph0,nordmx)
+        call initaz(fdawm1, nordmx)
+        call initaz(fdaw0, nordmx)
+        call initaz(fdehm1, nordmx)
+        call initaz(fdeh0, nordmx)
+        call initaz(fdo2m1, nordmx)
+        call initaz(fdo20, nordmx)
+        call initaz(fdphm1, nordmx)
+        call initaz(fdph0, nordmx)
 
         if (iopt(2) .gt. 0) then
             nmax = nordmx*nrctmx
-            call initaz(fdrem1,nmax)
-            call initaz(fdre0,nmax)
+            call initaz(fdrem1, nmax)
+            call initaz(fdre0, nmax)
         end if
 
         nmax = nordmx*nptmax
-        call initaz(fdafm1,nmax)
-        call initaz(fdaf0,nmax)
+        call initaz(fdafm1, nmax)
+        call initaz(fdaf0, nmax)
 
         nmax = nordmx*npetmx
-        call initaz(fdpem1,nmax)
-        call initaz(fdpe0,nmax)
+        call initaz(fdpem1, nmax)
+        call initaz(fdpe0, nmax)
 
         nmax = nordmx*nsetmx
-        call initaz(fdsem1,nmax)
-        call initaz(fdse0,nmax)
+        call initaz(fdsem1, nmax)
+        call initaz(fdse0, nmax)
 
         nmax = nordmx*nrctmx
-        call initaz(fdarm1,nmax)
-        call initaz(fdar0,nmax)
+        call initaz(fdarm1, nmax)
+        call initaz(fdar0, nmax)
 
         go to 200
     end if
@@ -595,80 +595,80 @@ subroutine stepfd(acflg, acflg0, affp0, affp, afrc0, afrc1, aw0, aw1, delxi, dxs
     fxi0 = fxi
     sigmm0 = sigmam
 
-    call copyia(iindx1,iindx0,kdim)
-    call copyia(ipndx1,ipndx0,kdim)
-    call copyca(uzvec1,uzvec0,kdim)
+    call copyia(iindx1, iindx0, kdim)
+    call copyia(ipndx1, ipndx0, kdim)
+    call copyca(uzvec1, uzvec0, kdim)
 
-    call copyaa(zvclg1,zvclg0,kdim)
-    call copyaa(zvec1,zvec0,kdim)
+    call copyaa(zvclg1, zvclg0, kdim)
+    call copyaa(zvec1, zvec0, kdim)
 
-    call copyaa(moph,moph0,nptmax)
-    call copyaa(mosp,mosp0,nstmax)
-    call copyaa(acflg,acflg0,nstmax)
+    call copyaa(moph, moph0, nptmax)
+    call copyaa(mosp, mosp0, nstmax)
+    call copyaa(acflg, acflg0, nstmax)
 
-    call copyaa(sfcar,sfcar0,nrct)
-    call copyia(jreac,jreac0,nrct)
-    call copyaa(xirct,xirct0,nrct)
-    call copyaa(morr,morr0,nrct)
-    call copyaa(modr,modr0,nrct)
+    call copyaa(sfcar, sfcar0, nrct)
+    call copyia(jreac, jreac0, nrct)
+    call copyaa(xirct, xirct0, nrct)
+    call copyaa(morr, morr0, nrct)
+    call copyaa(modr, modr0, nrct)
 
-    call copyaa(mtb,mtb0,nbt)
+    call copyaa(mtb, mtb0, nbt)
 
-    call copyaa(affp,affp0,npt)
+    call copyaa(affp, affp0, npt)
 
     npet0 = npet
     nset0 = nset
 
-    call copyia(iemop,iemop0,npet)
-    call copyaa(emop,emop0,npet)
+    call copyia(iemop, iemop0, npet)
+    call copyaa(emop, emop0, npet)
 
     nmax = 2*npetmx
-    call copyia(ncmpe,ncmpe0,nmax)
+    call copyia(ncmpe, ncmpe0, nmax)
 
-    call copyia(iemos,iemos0,nset)
-    call copyaa(emos,emos0,nset)
+    call copyia(iemos, iemos0, nset)
+    call copyaa(emos, emos0, nset)
 
-    call copyaa(afrc1,afrc0,nrct)
+    call copyaa(afrc1, afrc0, nrct)
 
-    call copyaa(rrelr1,rrelr0,nrct)
+    call copyaa(rrelr1, rrelr0, nrct)
 
     if (iopt(2) .gt. 0) then
         rirec0 = rirec1
-        call copyaa(rreac1,rreac0,nrct)
+        call copyaa(rreac1, rreac0, nrct)
     end if
 
     if (npts .gt. 2) then
         ! Save the old finite differences.
         nmax = nrd1mx*kmax
-        call copyaa(fdzv0,fdzvm1,nmax)
+        call copyaa(fdzv0, fdzvm1, nmax)
 
         nmax = nrd1mx*nrctmx
-        call copyaa(fdrr0,fdrrm1,nmax)
+        call copyaa(fdrr0, fdrrm1, nmax)
 
         if (iopt(2) .gt. 0) then
-            call copyaa(fdri0,fdrim1,nrd1mx)
+            call copyaa(fdri0, fdrim1, nrd1mx)
         end if
 
-        call copyaa(fdaw0,fdawm1,nordmx)
-        call copyaa(fdeh0,fdehm1,nordmx)
-        call copyaa(fdo20,fdo2m1,nordmx)
-        call copyaa(fdph0,fdphm1,nordmx)
+        call copyaa(fdaw0, fdawm1, nordmx)
+        call copyaa(fdeh0, fdehm1, nordmx)
+        call copyaa(fdo20, fdo2m1, nordmx)
+        call copyaa(fdph0, fdphm1, nordmx)
 
         nmax = nordmx*nptmax
-        call copyaa(fdaf0,fdafm1,nmax)
+        call copyaa(fdaf0, fdafm1, nmax)
 
         nmax = nordmx*npetmx
-        call copyaa(fdpe0,fdpem1,nmax)
+        call copyaa(fdpe0, fdpem1, nmax)
 
         nmax = nordmx*nsetmx
-        call copyaa(fdse0,fdsem1,nmax)
+        call copyaa(fdse0, fdsem1, nmax)
 
         nmax = nordmx*nrctmx
-        call copyaa(fdar0,fdarm1,nmax)
+        call copyaa(fdar0, fdarm1, nmax)
 
         if (iopt(2) .gt. 0) then
             nmax = nordmx*nrctmx
-            call copyaa(fdre0,fdrem1,nmax)
+            call copyaa(fdre0, fdrem1, nmax)
         end if
     end if
 end subroutine stepfd

@@ -274,12 +274,12 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
 
     if (iopg(1) .eq. -1) then
         ! Use the Davies equation.
-        call gdavie(acflgc,actwlc,adh,al10,fxi,narn1,narn2,nstmax,omega,sigmam,xbrwlc,zchsq2)
+        call gdavie(acflgc, actwlc, adh, al10, fxi, narn1, narn2, nstmax, omega, sigmam, xbrwlc, zchsq2)
     end if
 
     if (iopg(1) .eq. 0) then
         ! Use the B-dot equation and associated approximations.
-        call gbdot(acflgc,actwlc,adh,al10,azero,bdh,bdot,cco2,fxi,insgf,narn1,narn2,natmax,nstmax,omega,sigmam,tempk,xbrwlc,zchar,zchsq2)
+        call gbdot(acflgc, actwlc, adh, al10, azero, bdh, bdot, cco2, fxi, insgf, narn1, narn2, natmax, nstmax, omega, sigmam, tempk, xbrwlc, zchar, zchsq2)
     end if
 
     if (iopg(1) .eq. 1) then
@@ -287,7 +287,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
         ! Compute the Debye-Huckel function f and its ionic strength
         ! derivatives.
         bt = btp
-        call gfdho(aphi,bt,f,fp,fpp,fxi)
+        call gfdho(aphi, bt, f, fp, fpp, fxi)
 
         elsumw = 0.
         elsums = 0.
@@ -296,7 +296,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
         if (ielam .ge. 0) then
             ! Get E-lambda (elam) and its derivatives (delam) for the
             ! various charge combinations.
-            call gelam(aphi,delam,dpelm,elam,fxi,izmax,nazpmx,pelm,qpit75)
+            call gelam(aphi, delam, dpelm, elam, fxi, izmax, nazpmx, pelm, qpit75)
 
             ! Compute the following second order sums in E-lambda and its
             ! ionic strength derivatives:
@@ -315,27 +315,27 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
             ! Note also that "flim" in EQ3/6 is 2 * F, as F is commonly
             ! defined in the Pitzer literature. This is because
             ! flim will be multipled by z(i)^2/2 instead of z(i)^2.
-            call gesum(conc,delam,elam,elsump,elsums,elsumw,fxi,narn1,narn2,nazpmx,nstmax,zchar)
+            call gesum(conc, delam, elam, elsump, elsums, elsumw, fxi, narn1, narn2, nazpmx, nstmax, zchar)
 
             ! Compute the following first order sum arrays in E-lambda
             ! and its ionic strength derivative:
             !   selm(i):  SUM(j) E-lambda(ij)*m(j)
             !   dselm(1,i): SUM(j) E-lambda'(ij)*m(j) [Not used]
-            call gselm(conc,delam,dselm,elam,izmax,narn1,narn2,nazmmx,nazpmx,nstmax,selm,zchar)
+            call gselm(conc, delam, dselm, elam, izmax, narn1, narn2, nazmmx, nazpmx, nstmax, selm, zchar)
         end if
 
         ! Compute the g(x) function (gpit) and its derivatives (dgpit)
         ! for pairs of alpha coefficients.
-        call gdd(dgpit,fxi,gpit,ipbtmx,napmax,napt,palpha)
+        call gdd(dgpit, fxi, gpit, ipbtmx, napmax, napt, palpha)
 
         ! Compute the S-lambda functions and their ionic strength
         ! derivatives.
-        call gslam(dgpit,dpslm,gpit,ipbtmx,nalpha,napmax,nslt,nsltmx,pslamn,pslm)
+        call gslam(dgpit, dpslm, gpit, ipbtmx, nalpha, napmax, nslt, nsltmx, pslamn, pslm)
 
         ! Compute the following second order sum in S-lambda and its
         ! ionic strength derivatives:
         !   ssumw: SUM(ij) [ S-lambda(ij) + I*S-lambda'(ij) ]*m(i)*m(j)
-        call gssum(conc,dpslm,fxi,nslt,nsltmx,nslx,nstmax,pslm,ssumw,uspec)
+        call gssum(conc, dpslm, fxi, nslt, nsltmx, nslx, nstmax, pslm, ssumw, uspec)
 
         if (qhawep) then
             ! Use the form corresponding to C (from Cphi), psi, zeta,
@@ -422,7 +422,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
             ! Use the original pure mu form.
             ! Compute the following third order sum in mu:
             !   musumw: SUM(ijk) mu(ijk)*m(i)*m(j)*m(k)
-            call gmsum(conc,musumw,nmut,nmutmx,nmux,nstmax,pmu,uspec)
+            call gmsum(conc, musumw, nmut, nmutmx, nmux, nstmax, pmu, uspec)
             muterm = 2.*musumw
         end if
 
@@ -443,7 +443,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
         ! Note also that "flim" in EQ3/6 is 2 * F, as F is commonly
         ! defined in the Pitzer literature. This is because
         ! flim will be multipled by z(i)^2/2 instead of z(i)^2.
-        call gsdsm(conc,dpslm,nslt,nsltmx,nslx,nstmax,spsum,spsump,uspec)
+        call gsdsm(conc, dpslm, nslt, nsltmx, nslx, nstmax, spsum, spsump, uspec)
 
         flsum = fp + elsums + spsum
 
@@ -469,7 +469,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
             ! and its ionic strength derivative:
             !   slsum(i):  SUM(j) S-lambda(ij)*m(j)
             !   slsump(i): SUM(j) S-lambda'(ij)*m(j)
-            call gsgsm(conc,dpslm,na,natmax,nsltmx,nstmax,nsxi,nsxmax,nsxx,pslm,slsum,slsump,uspec)
+            call gsgsm(conc, dpslm, na, natmax, nsltmx, nstmax, nsxi, nsxmax, nsxx, pslm, slsum, slsump, uspec)
 
             ! Compute the contributions from third-order terms.
             muterm = 0.
@@ -621,7 +621,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
                 ! Use the original pure mu form.
                 ! Compute the following second order sum in mu:
                 !   musum(i): SUM(jk) mu(ijk)*m(j)*m(k)
-                call gmdsm(conc,musum,na,natmax,nmutmx,nmxi,nmxmax,nmxx,ns,nstmax,pmu,uspec)
+                call gmdsm(conc, musum, na, natmax, nmutmx, nmxi, nmxmax, nmxx, ns, nstmax, pmu, uspec)
 
                 muterm = 3.*musum
             end if
@@ -636,14 +636,14 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
         ! Get the average ion size (abar), the characteristic average
         ! cube of the distance of closest approach (a3bars), and the
         ! average cube of the distance of closest approach (a3bar).
-        call cabar(abar,azero,conc,jcsort,fxi,narn1,narn2,natmax,nstmax,zchsq2)
+        call cabar(abar, azero, conc, jcsort, fxi, narn1, narn2, natmax, nstmax, zchsq2)
 
-        call ca3bar(azero,a3bar,a3bars,conc,jcsort,narn1,narn2,natmax,nstmax,sigmam)
+        call ca3bar(azero, a3bar, a3bars, conc, jcsort, narn1, narn2, natmax, nstmax, sigmam)
 
         ! Get the Debye-Huckel function f and its ionic strength
         ! derivatives.
         bt = bdh*abar
-        call gfdhc(adh,bt,f,fp,fpp,fxi)
+        call gfdhc(adh, bt, f, fp, fpp, fxi)
 
         ! Compute the activity of water.
         xx = 1. + (sigmam/omega)
@@ -683,15 +683,15 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
     !            = 1   Make consistent with the Mesmer pH scale
     !                  (log gamma H+ = 0)
     if (iopg(2) .eq. 0)  then
-        call nbsgam(acfnbs,adh,fxi,nchlor,noutpt,nttyo)
+        call nbsgam(acfnbs, adh, fxi, nchlor, noutpt, nttyo)
         delacf = acfnbs - acflgc(nchlor)
         nref = nchlor
-        call gcscal(acflgc,delacf,narn1,narn2,nref,nstmax,zchar)
+        call gcscal(acflgc, delacf, narn1, narn2, nref, nstmax, zchar)
     end if
 
     if (iopg(2) .eq. 1) then
         delacf = -acflgc(nhydr)
         nref = nhydr
-        call gcscal(acflgc,delacf,narn1,narn2,nref,nstmax,zchar)
+        call gcscal(acflgc, delacf, narn1, narn2, nref, nstmax, zchar)
     end if
 end subroutine gcoeff

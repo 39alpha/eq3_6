@@ -64,7 +64,7 @@ subroutine grdxsp(nbasp, nbt, nbtmax, nct, ndrsr, noutpt, nrdxsp, nstmax, nttyo,
     if (nrdxsp .gt. 0) then
         ! Calling sequence substitutions:
         !   uspec(nrdxsp) for unam48
-        call fmspnx(jlen,uspec(nrdxsp),uspn56)
+        call fmspnx(jlen, uspec(nrdxsp), uspn56)
 
         write (noutpt,1000) uspn56(1:jlen)
         write (nttyo,1000) uspn56(1:jlen)

@@ -140,7 +140,7 @@ subroutine chsgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
         ns2 = nbasp(nb)
 
         if (ns1 .ne. ns2) then
-            call switch(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,narn1,narxmx,nbasp,nbaspd,nbaspx,nb,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,ns2,nst,nstmax,ntprmx,nttyo,qbassw,qbswok,uspec)
+            call switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, narn1, narxmx, nbasp, nbaspd, nbaspx, nb, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, ns2, nst, nstmax, ntprmx, nttyo, qbassw, qbswok, uspec)
         end if
     end do
 
@@ -193,5 +193,5 @@ subroutine chsgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, a
     ! prior to making the eliminations. However, new arrays would be
     ! required to do that. It doesn't seem worthwhile at the present
     ! time.
-    call mdrgex(adhfs,adhfsd,adhfsx,advfs,advfsd,advfsx,axhfs,axhfsd,axhfsx,axlks,axlksd,axlksx,axvfs,axvfsd,axvfsx,cdrs,cdrsd,cdrsx,ipch,ipchmx,ipcv,ipcvmx,narxmx,nbasp,nbaspd,nbtmax,ndrs,ndrsd,ndrsx,ndrsmx,ndrsr,ndrsrd,ndrsrx,nern1,nern2,noutpt,nst,nstmax,ntprmx,nttyo)
+    call mdrgex(adhfs, adhfsd, adhfsx, advfs, advfsd, advfsx, axhfs, axhfsd, axhfsx, axlks, axlksd, axlksx, axvfs, axvfsd, axvfsx, cdrs, cdrsd, cdrsx, ipch, ipchmx, ipcv, ipcvmx, narxmx, nbasp, nbaspd, nbtmax, ndrs, ndrsd, ndrsx, ndrsmx, ndrsr, ndrsrd, ndrsrx, nern1, nern2, noutpt, nst, nstmax, ntprmx, nttyo)
 end subroutine chsgex

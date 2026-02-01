@@ -63,7 +63,7 @@ subroutine initim(iexec0, jexec0, texec0, noutpt, nttyo, udate0, utime0)
     ! Calling sequence substitutions:
     !   udate0 for udate
     !   utime0 for utime
-    call timdat(udate0,utime0)
+    call timdat(udate0, utime0)
 
     ! Compute the data needed to calculate the actual run time (this
     ! will be used by EQLIBU/runtim.f).
@@ -114,7 +114,7 @@ subroutine initim(iexec0, jexec0, texec0, noutpt, nttyo, udate0, utime0)
 
     ! Get the number of days in February of the current year.
     ndays(2) = 28
-    call tleapy(yy,qleapy)
+    call tleapy(yy, qleapy)
 
     if (qleapy) then
         ndays(2) = 29

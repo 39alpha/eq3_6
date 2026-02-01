@@ -169,9 +169,9 @@ subroutine setpk6(actwlg, awmax, awmaxi, awmin, awmini, eh, ehmax, ehmaxi, ehmin
     pressi = press
 
     ! Mass balance totals and jflag values.
-    call initaz(mtbi,nbtmax)
-    call initaz(mtbaqi,nbtmax)
-    call initiz(jflgi,nbtmax)
+    call initaz(mtbi, nbtmax)
+    call initaz(mtbaqi, nbtmax)
+    call initiz(jflgi, nbtmax)
 
     do krow = 1,kbt
         nb = iindx1(krow)
@@ -188,7 +188,7 @@ subroutine setpk6(actwlg, awmax, awmaxi, awmin, awmini, eh, ehmax, ehmaxi, ehmin
 
     ! Ordinary basis switching directives.
     nmax = 2*nbtmax
-    call initcb(uobsw,nmax)
+    call initcb(uobsw, nmax)
 
     n = 0
 
@@ -207,8 +207,8 @@ subroutine setpk6(actwlg, awmax, awmaxi, awmin, awmini, eh, ehmax, ehmaxi, ehmin
     nobswt = n
 
     ! Matrix column variables and corresponding values.
-    call initcb(uzveci,kmax)
-    call initaz(zvclgi,kmax)
+    call initcb(uzveci, kmax)
+    call initaz(zvclgi, kmax)
 
     do kcol = 1,kdim
         uzveci(kcol) = uzvec1(kcol)
@@ -220,10 +220,10 @@ subroutine setpk6(actwlg, awmax, awmaxi, awmin, awmini, eh, ehmax, ehmaxi, ehmin
     nprpti = 0
     nprsti = 0
 
-    call initcb(uprphi,nprpmx)
-    call initcb(uprspi,nprsmx)
-    call initaz(mprphi,nprpmx)
-    call initaz(mprspi,nprsmx)
+    call initcb(uprphi, nprpmx)
+    call initcb(uprspi, nprsmx)
+    call initaz(mprphi, nprpmx)
+    call initaz(mprspi, nprsmx)
 
     do np = 1,npt
         if (uphase(np)(1:24) .ne. uaqsln(1:24)) then

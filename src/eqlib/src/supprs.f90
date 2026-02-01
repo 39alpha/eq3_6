@@ -128,7 +128,7 @@ subroutine supprs(kxmod, jpflag, jsflag, ncmpra, noutpt, npta, nptmax, nsta, nst
         end if
 
         j2 = ilnobl(unam48(1:24))
-        call fmspnm(jlen,unam48,uspn56)
+        call fmspnm(jlen, unam48, uspn56)
 
         if (unam48(25:48) .eq. ublk24(1:24)) then
             nchar = nchar - 24
@@ -215,7 +215,7 @@ subroutine supprs(kxmod, jpflag, jsflag, ncmpra, noutpt, npta, nptmax, nsta, nst
                 end if
 
                 if (uspeca(ns)(1:24).ne.uspeca(ns)(25:48)) then
-                    call fmspnm(jlenx,uspeca(ns),ux56)
+                    call fmspnm(jlenx, uspeca(ns), ux56)
                     nhitsl = nhitsl + 1
 
                     if (nhitsl .le. nlsmax) then

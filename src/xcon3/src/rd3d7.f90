@@ -115,7 +115,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
     read (ninpts,1000,end=100,err=990) uline1
 1000 format(a80)
 
-    call parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+    call parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
     ustr = ufield(1)
 
     if (ustr(1:8) .ne. '--------') then
@@ -135,7 +135,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 105 continue
     do 110 n = 1,ntitmx + 1
         read (ninpts,1000,err=990) uline1
-        call parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+        call parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
         ustr = ufield(1)
 
         if (ustr(1:8) .eq. '--------') then
@@ -159,14 +159,14 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
         uheadx = 'Temperature (C)'
         nfldtx = 4
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
         end if
 
         ustr = ufield(2)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -174,7 +174,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
         tempc = var
         ustr = ufield(4)
-        call chreal(nttyo,qrderr,ustr,var)
+        call chreal(nttyo, qrderr, ustr, var)
 
         if (qrderr) then
             go to 999
@@ -188,7 +188,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
         uheadx = 'Total dissolved salts'
         nfldtx = 5
-        call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+        call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
         if (qrderr) then
             go to 999
@@ -223,7 +223,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
             end if
 
             ustr = ufield(2)
-            call chreal(nttyo,qrderr,ustr,var)
+            call chreal(nttyo, qrderr, ustr, var)
 
             if (qrderr) then
                 go to 999
@@ -240,7 +240,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
             uheadx = 'Electrical balancing'
             nfldtx = 4
-            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
             if (qrderr) then
                 go to 999
@@ -282,7 +282,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                 ! in the following block.
                 uheadx = 'SPECIES'
                 nfldtx = 4
-                call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -295,7 +295,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
                 nsq = 0
                 nfldtx = 0
-                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                 if (qrderr) then
                     go to 999
@@ -320,7 +320,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                 call locase(uheadr)
 
                 ustr = ufield(3)
-                call chreal(nttyo,qrderr,ustr,var)
+                call chreal(nttyo, qrderr, ustr, var)
 
                 if (qrderr) then
                     go to 999
@@ -350,7 +350,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                     end if
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -423,7 +423,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                         iktb = 0
 160 continue
                         nfldtx = 0
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -444,7 +444,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
                             umemb(iktb,nxtb) = ufield(2)(1:24)
                             ustr = ufield(3)
-                            call chreal(nttyo,qrderr,ustr,var)
+                            call chreal(nttyo, qrderr, ustr, var)
 
                             if (qrderr) then
                                 go to 999
@@ -459,7 +459,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                     end if
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -472,14 +472,14 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                     ! Mole fractions of solid solutions.
                     uheadx = 'input solid solutions'
                     nfldtx = 1
-                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                     if (qrderr) then
                         go to 999
                     end if
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -500,7 +500,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
                     if (ustr(1:4) .eq. 'none') then
                         nfldtx = 1
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -533,7 +533,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
 230 continue
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -577,7 +577,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
                     umemb(iktb,nxtb) = ufield(2)(1:24)
                     ustr = ufield(3)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 999
@@ -592,14 +592,14 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                     ! Nxmod options.
                     uheadx = 'suppressed species'
                     nfldtx = 1
-                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                     if (qrderr) then
                         go to 999
                     end if
 
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -674,7 +674,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                     end if
 
                     ustr = ufield(4)
-                    call chreal(nttyo,qrderr,ustr,var)
+                    call chreal(nttyo, qrderr, ustr, var)
 
                     if (qrderr) then
                         go to 999
@@ -684,7 +684,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
 560 continue
                     nfldtx = 0
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -716,7 +716,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                     ! Note: iopt(1) = iopt1, etc.
                     nfldtx = 1
                     uheadx = 'options'
-                    call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                    call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -724,7 +724,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
                     i = 0
                     nfldtx = 1
-                    call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                    call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                     if (qrderr) then
                         go to 999
@@ -795,7 +795,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 390 continue
                         jdesc = jdesc + 1
                         nfldtx = 1
-                        call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                        call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                         if (qrderr) then
                             go to 999
@@ -892,7 +892,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                             ! Note: iodb(1) = iodb, etc.
                             nfldtx = 1
                             uheadx = 'debugging switches'
-                            call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                            call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                             if (qrderr) then
                                 go to 999
@@ -916,7 +916,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 440 continue
                             i = i + 1
                             nfldtx = 1
-                            call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                            call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                             if (qrderr) then
                                 go to 999
@@ -963,7 +963,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                                 go to 990
 
 460 continue
-                                call chrint(ivar,nttyo,qrderr,ustr)
+                                call chrint(ivar, nttyo, qrderr, ustr)
 
                                 if (qrderr) then
                                     go to 999
@@ -977,7 +977,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                                 ! Development options. There are none.
                                 uheadx = 'development options'
                                 nfldtx = 1
-                                call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                 if (qrderr) then
                                     go to 999
@@ -995,7 +995,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
                                 nfldtx = 1
                                 uheadx = 'none'
-                                call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                 if (qrderr) then
                                     go to 999
@@ -1014,7 +1014,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                                 ! Tolerances.
                                 uheadx = 'tolerances'
                                 nfldtx = 1
-                                call rdd2lh(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uheadr,uheadx,uline1,uline2,ulscr)
+                                call rdd2lh(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uheadr, uheadx, uline1, uline2, ulscr)
 
                                 if (qrderr) then
                                     go to 999
@@ -1034,7 +1034,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 510 continue
                                 i = i + 1
                                 nfldtx = 0
-                                call rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+                                call rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
 
                                 if (qrderr) then
                                     go to 999
@@ -1077,7 +1077,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
 
                                     if (idescx .eq. 1) then
                                         ! Tolbt.
-                                        call chreal(nttyo,qrderr,ustr,var)
+                                        call chreal(nttyo, qrderr, ustr, var)
 
                                         if (qrderr) then
                                             go to 999
@@ -1086,7 +1086,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                                         tolbt = var
                                     else if (idescx .eq. 2) then
                                         ! Toldl.
-                                        call chreal(nttyo,qrderr,ustr,var)
+                                        call chreal(nttyo, qrderr, ustr, var)
 
                                         if (qrderr) then
                                             go to 999
@@ -1095,7 +1095,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                                         toldl = var
                                     else if (idescx .eq. 3) then
                                         ! Tolsat.
-                                        call chreal(nttyo,qrderr,ustr,var)
+                                        call chreal(nttyo, qrderr, ustr, var)
 
                                         if (qrderr) then
                                             go to 999
@@ -1104,7 +1104,7 @@ subroutine rd3d7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmo
                                         tolsat = var
                                     else if (idescx .eq. 4) then
                                         ! Itermx.
-                                        call chrint(ivar,nttyo,qrderr,ustr)
+                                        call chrint(ivar, nttyo, qrderr, ustr)
 
                                         if (qrderr) then
                                             go to 999

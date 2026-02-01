@@ -54,7 +54,7 @@ subroutine evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, i
             !   axlks for arr
             !   ns for k
             !   nstmax for nmax
-            call evdat3(axlks,ns,nstmax,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+            call evdat3(axlks, ns, nstmax, narxmx, narxt, ntpr, ntprmx, prop, tempc)
             xlks(ns) = prop
         else
             xlks(ns) = 9999999.
@@ -67,7 +67,7 @@ subroutine evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, i
                 !   axhfs for arr
                 !   ns for k
                 !   nstmax for nmax
-                call evdat3(axhfs,ns,nstmax,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat3(axhfs, ns, nstmax, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 xhfs(ns) = prop
             else
                 xhfs(ns) = 9999999.
@@ -81,7 +81,7 @@ subroutine evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, i
                 !   ipchmx for ipcxmx
                 !   ns for k
                 !   nstmax for nmax
-                call evdat4(adhfs,ipc,ipchmx,ns,nstmax,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat4(adhfs, ipc, ipchmx, ns, nstmax, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 dhfs(ipc,ns) = prop
             end do
         end if
@@ -93,7 +93,7 @@ subroutine evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, i
                 !   axvfs for arr
                 !   ns for k
                 !   nstmax for nmax
-                call evdat3(axvfs,ns,nstmax,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat3(axvfs, ns, nstmax, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 xvfs(ns) = prop
             else
                 xvfs(ns) = 9999999.
@@ -107,7 +107,7 @@ subroutine evdatr(adhfs, advfs, axhfs, axlks, axvfs, dhfs, dvfs, ipch, ipchmx, i
                 !   ipcvmx for ipcxmx
                 !   ns for k
                 !   nstmax for nmax
-                call evdat4(advfs,ipc,ipcvmx,ns,nstmax,narxmx,narxt,ntpr,ntprmx,prop,tempc)
+                call evdat4(advfs, ipc, ipcvmx, ns, nstmax, narxmx, narxt, ntpr, ntprmx, prop, tempc)
                 dvfs(ipc,ns) = prop
             end do
         end if

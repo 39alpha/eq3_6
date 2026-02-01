@@ -204,26 +204,26 @@ subroutine tpadv(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdoth, abdot, a
     data toldt / 1.e-4 /, toldp /1.e-4 /
 
     ! Compute the new temperature.
-    call gtemp(afcnst,al10,iopt,jtemp,noptmx,noutpt,nttkmx,nttyo,rconst,rtcnst,tempc,tempcb,tempk,time1,ttk,xi1)
+    call gtemp(afcnst, al10, iopt, jtemp, noptmx, noutpt, nttkmx, nttyo, rconst, rtcnst, tempc, tempcb, tempk, time1, ttk, xi1)
 
     dt = tempc - tempcd
     qnewt = .false.
 
     if (abs(dt) .gt. toldt) then
         ! Determine the corresponding temperature range flag.
-        call gntpr(ntpr,ntprmx,ntprt,tempc,tempcu)
+        call gntpr(ntpr, ntprmx, ntprt, tempc, tempcu)
 
         qnewt = .true.
 
         ! Compute thermodynamic data for the current temperature.
-        call evdata(aadh,aadhh,aadhv,aaphi,abdh,abdhh,abdhv,abdot,abdoth,abdotv,adadhh,adadhv,adbdhh,adbdhv,adbdth,adbdtv,adh,adhfe,adhh,adhv,adhfs,adhfsd,advfe,advfs,advfsd,afcnst,al10,amu,aslm,aphi,aprehw,apresg,apresh,apx,avcnst,axhfe,axhfs,axhfsd,axlke,axlks,axlksd,axvfe,axvfs,axvfsd,bdh,bdhh,bdhv,bdot,bdoth,bdotv,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,dhfe,dhfs,dhfsd,dvfe,dvfs,dvfsd,ehfac,farad,iapxmx,iktmax,iopg,iopt,ipbtmx,ipch,ipchmx,ipcv,ipcvmx,ixrn1,ixrn2,jpfcmx,jptffl,jsol,narxmx,narxt,narxth,ncmpr,nmut,nmutmx,nopgmx,noptmx,noutpt,nptmax,nslt,nsltmx,nst,nstmax,ntpr,ntprmx,nttyo,nxt,nxtmax,pmu,prehw,presg,presh,press,pslamn,rconst,rcnstv,rtcnst,tempc,tempk,uphase,uspec,wfac,xhfe,xhfs,xhfsd,xlke,xlks,xlksd,xvfe,xvfs,xvfsd)
+        call evdata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, abdotv, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adh, adhfe, adhh, adhv, adhfs, adhfsd, advfe, advfs, advfsd, afcnst, al10, amu, aslm, aphi, aprehw, apresg, apresh, apx, avcnst, axhfe, axhfs, axhfsd, axlke, axlks, axlksd, axvfe, axvfs, axvfsd, bdh, bdhh, bdhv, bdot, bdoth, bdotv, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dhfs, dhfsd, dvfe, dvfs, dvfsd, ehfac, farad, iapxmx, iktmax, iopg, iopt, ipbtmx, ipch, ipchmx, ipcv, ipcvmx, ixrn1, ixrn2, jpfcmx, jptffl, jsol, narxmx, narxt, narxth, ncmpr, nmut, nmutmx, nopgmx, noptmx, noutpt, nptmax, nslt, nsltmx, nst, nstmax, ntpr, ntprmx, nttyo, nxt, nxtmax, pmu, prehw, presg, presh, press, pslamn, rconst, rcnstv, rtcnst, tempc, tempk, uphase, uspec, wfac, xhfe, xhfs, xhfsd, xlke, xlks, xlksd, xvfe, xvfs, xvfsd)
 
         ! Compute kinetic data for the current temperature.
-        call evratc(eact,hact,iact,imchmx,imech,nrct,nrctmx,nrk,rk,rkb,rtcnst,tempk,trkb)
+        call evratc(eact, hact, iact, imchmx, imech, nrct, nrctmx, nrk, rk, rkb, rtcnst, tempk, trkb)
     end if
 
     ! Compute the new pressure.
-    call gpress(iopt,jpress,noptmx,noutpt,nptkmx,nttyo,presg,presh,press,pressb,time1,ptk,xi1)
+    call gpress(iopt, jpress, noptmx, noutpt, nptkmx, nttyo, presg, presh, press, pressb, time1, ptk, xi1)
 
     ! Skip pressure corrections if the pressure is tracking on the
     ! data file reference pressure curve.
@@ -287,7 +287,7 @@ subroutine tpadv(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdoth, abdot, a
         end if
 
         ! Make pressure corrections to the thermodynamic data.
-        call pcorrx(avcnst,dhfs,dvfs,ipch,ipchmx,ipcv,ipcvmx,nbasp,nbt,nbtmax,ndrsr,nst,nstmax,presg,press,xhfs,xlks,xvfs)
+        call pcorrx(avcnst, dhfs, dvfs, ipch, ipchmx, ipcv, ipcvmx, nbasp, nbt, nbtmax, ndrsr, nst, nstmax, presg, press, xhfs, xlks, xvfs)
 
         ! Calling sequence substitutions:
         !   dhfsd for dhfs
@@ -298,7 +298,7 @@ subroutine tpadv(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdoth, abdot, a
         !   xhfsd for xhfs
         !   xlksd for xlks
         !   xvfsd for xvfs
-        call pcorrx(avcnst,dhfsd,dvfsd,ipch,ipchmx,ipcv,ipcvmx,nbaspd,nbtd,nbtmax,ndrsrd,nst,nstmax,presg,press,xhfsd,xlksd,xvfsd)
+        call pcorrx(avcnst, dhfsd, dvfsd, ipch, ipchmx, ipcv, ipcvmx, nbaspd, nbtd, nbtmax, ndrsrd, nst, nstmax, presg, press, xhfsd, xlksd, xvfsd)
 
         ! Make pressure corrections to the kinetic data.
         !   Presently there are no such corrections.

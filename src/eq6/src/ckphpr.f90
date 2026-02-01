@@ -122,7 +122,7 @@ subroutine ckphpr(delxi, dlxmin, dph0, dxh0pr, dxh1pr, dxval0, eps100, iodb, nod
                 dxval0(n) = dph0(n)
             end do
 
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dxh0pr = delxi
 
@@ -204,7 +204,7 @@ subroutine ckphpr(delxi, dlxmin, dph0, dxh0pr, dxh1pr, dxval0, eps100, iodb, nod
                 dxval0(n) = dph0(n)
             end do
 
-            call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+            call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
             dxh1pr = delxi
 

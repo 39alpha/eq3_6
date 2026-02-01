@@ -124,18 +124,18 @@ subroutine intge3(cgexp, cgexpi, ier, iern1, iern2, ietmax, jern1, jern2, jetmax
         if (j4 .le. 0) then
             ! Calling sequence substitutions:
             !   nei for ne
-            call adgexp(nei,noutpt,nttyo,ugexpd)
+            call adgexp(nei, noutpt, nttyo, ugexpd)
             ugexpi(nei) = ugexpd
         end if
 
         do jei = 1,jgexti(nei)
-            call lejust(ugexji(jei,nei))
+            call lejust(ugexji(jei, nei))
             j3 = ilnobl(ugexji(jei,nei))
 
             if (j3 .le. 0) then
                 ! Calling sequence substitutions:
                 !   jei for je
-                call adgexj(jei,noutpt,nttyo,ugexjd)
+                call adgexj(jei, noutpt, nttyo, ugexjd)
                 ugexji(jei,nei) = ugexjd
             end if
         end do

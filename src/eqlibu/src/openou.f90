@@ -47,7 +47,7 @@ subroutine openou(noutpt, nttyo, ufiln, uform, nrecl, ilu)
 
     if (qex) then
         ustat = 'old'
-        call getlu(ilu,nerr)
+        call getlu(ilu, nerr)
 
         if (nerr .ne. 0) then
             if (noutpt .gt. 0) then
@@ -64,7 +64,7 @@ subroutine openou(noutpt, nttyo, ufiln, uform, nrecl, ilu)
         close(ilu,status='delete',err=15)
     else
         ustat = 'new'
-        call getlu(ilu,nerr)
+        call getlu(ilu, nerr)
 
         if (nerr .ne. 0) then
             if (noutpt .gt. 0) then

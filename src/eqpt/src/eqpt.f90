@@ -447,7 +447,7 @@ program eqpt
     ! END_MACHINE_DEPENDENT_CODE
     ! Get time and date at the start of execution. This information
     ! will be used for time and date stamping.
-    call initim(iexec0,jexec0,texec0,noutpt,nttyo,udate0,utime0)
+    call initim(iexec0, jexec0, texec0, noutpt, nttyo, udate0, utime0)
 
     ! Disable underflow trapping, if any.
     call undflw
@@ -464,17 +464,17 @@ program eqpt
     numargs = COMMAND_ARGUMENT_COUNT()
 
     if (numargs.eq.1) then
-        call GET_COMMAND_ARGUMENT(1,temppath)
+        call GET_COMMAND_ARGUMENT(1, temppath)
         data0path = TRIM(temppath)
     else
         write (0, *) 'usage: eqpt <data0>'
         stop
     end if
 
-    call getbasename(data0path,pathindices)
+    call getbasename(data0path, pathindices)
     basename = data0path(pathindices(1):pathindices(2))
 
-    call openin(noutpt,nttyo,data0path,'formatted',ndata0)
+    call openin(noutpt, nttyo, data0path, 'formatted', ndata0)
 
     ofile = basename // '.po'
     d1file = basename // '.d1'
@@ -482,22 +482,22 @@ program eqpt
     sfile = basename // '.s'
     d0sfile = basename // '.d0s'
 
-    call openou(noutpt,nttyo,ofile,'formatted',nrecl,noutpt)
-    call openou(noutpt,nttyo,d1file,'unformatted',nrecl,ndata1)
-    call openou(noutpt,nttyo,d1ffile,'formatted',nrecl,ndat1f)
-    call openou(noutpt,nttyo,sfile,'formatted',nrecl,nslist)
-    call openou(noutpt,nttyo,d0sfile,'formatted',nrecl,ndat0s)
+    call openou(noutpt, nttyo, ofile, 'formatted', nrecl, noutpt)
+    call openou(noutpt, nttyo, d1file, 'unformatted', nrecl, ndata1)
+    call openou(noutpt, nttyo, d1ffile, 'formatted', nrecl, ndat1f)
+    call openou(noutpt, nttyo, sfile, 'formatted', nrecl, nslist)
+    call openou(noutpt, nttyo, d0sfile, 'formatted', nrecl, ndat0s)
 
     ! Make a copy of the DATA0 file, stripped of comments.
-    call stripl(ndata0,ndat0s)
+    call stripl(ndata0, ndat0s)
     close(ndata0)
     ndata0 = 0
     rewind ndat0s
 
     ! Get configuration identification data.
-    call aaaeqt(usteqt,uveeqt)
-    call aaaelu(ustelu,uveelu)
-    call platfd(uplatc,uplatm)
+    call aaaeqt(usteqt, uveeqt)
+    call aaaelu(ustelu, uveelu)
+    call platfd(uplatc, uplatm)
 
     ! Write configuration identification data, the copyright statement,
     ! and any remaining statements or disclaimers.
@@ -561,7 +561,7 @@ program eqpt
 1040 format(' Copyright (c) 1987, 1990-1993, 1995, 1997, 2002 The',' Regents of the',/' University of California, Lawrence',' Livermore National Laboratory.',/' All rights reserved.',/)
 
     ! Write additional statements and disclaimers.
-    call prcndi(noutpt,nttyo)
+    call prcndi(noutpt, nttyo)
 
     ! Write the time and date on the output.
     j2 = ilnobl(udate0)
@@ -570,7 +570,7 @@ program eqpt
 1070 format(' Run',2x,a8,2x,a,//)
 
     ! Get the platform's real*8 floating-point parameters.
-    call flpars(eps100,irang,noutpt,nttyo,smp100)
+    call flpars(eps100, irang, noutpt, nttyo, smp100)
 
     ! Initialize array dimension variables.
     iapxmx = iapxpa
@@ -588,19 +588,19 @@ program eqpt
 
     ! Check the first line of the data file to ensure that the
     ! required header is present.
-    call hdrchk(ndat0s,noutpt,nttyo)
+    call hdrchk(ndat0s, noutpt, nttyo)
 
     ! Get the aqueous species activity coefficient model type
     ! (Extended Debye-Huckel, Pitzer, etc.) associated with this
     ! data file. This subroutine scans the data file and counts
     ! keywords to make the determination.
-    call gakey(ndat0s,noutpt,nttyo,uakey)
+    call gakey(ndat0s, noutpt, nttyo, uakey)
 
     ! Scan the data file to determine the necessary array dimensions
     ! and any corresponding structural information that will be
     ! required before "reading" the data file.
     ! First scan the data file title for embedded data.
-    call ggridp(ipch_asv,ipcv_asv,itgenf,jpdblo,jpfc_asv,jptffl,narx_asv,ndat0s,ndb_asv,noutpt,ntid_asv,ntpr_asv,nttyo,q500fl,uakey)
+    call ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv, ndat0s, ndb_asv, noutpt, ntid_asv, ntpr_asv, nttyo, q500fl, uakey)
 
     ! Set the number of parameters in a Pitzer alpha set.
     ipbt_asv = 1
@@ -612,7 +612,7 @@ program eqpt
     ! Rescan the data file to get other array dimensions.
     ! Also get the actual numbers of basis species and chemical
     ! elements on the data file.
-    call gnenb(ipbt_asv,ikt_asv,jpdblo,jpfc_asv,nap_asv,nat_asv,nazt_asv,nbt_asv,nct_asv,ndat0s,ngt_asv,nlt_asv,nmt_asv,noutpt,npt_asv,npx2_asv,npx3_asv,nsb,nst_asv,nttyo,nxt_asv,uakey)
+    call gnenb(ipbt_asv, ikt_asv, jpdblo, jpfc_asv, nap_asv, nat_asv, nazt_asv, nbt_asv, nct_asv, ndat0s, ngt_asv, nlt_asv, nmt_asv, noutpt, npt_asv, npx2_asv, npx3_asv, nsb, nst_asv, nttyo, nxt_asv, uakey)
 
     nbt = nbt_asv
     nct = nct_asv
@@ -782,24 +782,24 @@ program eqpt
     ! keystring for the type of aqueous species activity coefficient
     ! model, and the array dimensions necessary to read the rest of
     ! the DATA1 file.
-    call wrhdr(ikt_asv,ipch_asv,ipcv_asv,jpfc_asv,nap_asv,narx_asv,nat_asv,nbt_asv,nct_asv,ndata1,ndat1f,ngt_asv,nlat_asv,nlt_asv,nmt_asv,nmut_asv,npt_asv,nst_asv,ntid_asv,ntpr_asv,nxt_asv,uakey)
+    call wrhdr(ikt_asv, ipch_asv, ipcv_asv, jpfc_asv, nap_asv, narx_asv, nat_asv, nbt_asv, nct_asv, ndata1, ndat1f, ngt_asv, nlat_asv, nlt_asv, nmt_asv, nmut_asv, npt_asv, nst_asv, ntid_asv, ntpr_asv, nxt_asv, uakey)
 
     ! Write the data file title on the various output files. Determine
     ! certain embedded options apart from those that set dimensioning
     ! parameters.
     ntitld = ntid_asv
-    call rdwttl(ipch,ipcv,jpdblo,jpfcmx,jptffl,narxt,ndata1,ndat0s,ndat1f,noutpt,nslist,ntitld,ntidmx,ntprmx,ntprt,nttyo,uakey,utitld)
+    call rdwttl(ipch, ipcv, jpdblo, jpfcmx, jptffl, narxt, ndata1, ndat0s, ndat1f, noutpt, nslist, ntitld, ntidmx, ntprmx, ntprt, nttyo, uakey, utitld)
 
     ! Read the miscellaneous parameters (write them after the chemical
     ! elements block). Write the nominal temperature limits and the
     ! upper limits of the temperature ranges here, however.
-    call rdpar(adh,adhh,adhv,aphi,bdh,bdhh,bdhv,bdot,bdoth,bdotv,cco2,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,dhfe,dvfe,ipch,ipchmx,ipcv,ipcvmx,itgenf,nacdpr,narxmx,narxt,ndat0s,ndbmax,ndbptg,ndbptl,nerr,noutpt,ntprmx,ntprt,nttyo,nwarn,prehw,presg,q500fl,tdamax,tdamin,tempc,uakey,udbfmt,udbval,xdbval,xhfe,xlke,xvfe)
+    call rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dvfe, ipch, ipchmx, ipcv, ipcvmx, itgenf, nacdpr, narxmx, narxt, ndat0s, ndbmax, ndbptg, ndbptl, nerr, noutpt, ntprmx, ntprt, nttyo, nwarn, prehw, presg, q500fl, tdamax, tdamin, tempc, uakey, udbfmt, udbval, xdbval, xhfe, xlke, xvfe)
 
     ! Read and write the element data.
-    call rdwele(atwt,nch,nco,nct,nctmax,ndata1,ndat0s,ndat1f,nerr,noutpt,nslist,nttyo,uelem)
+    call rdwele(atwt, nch, nco, nct, nctmax, ndata1, ndat0s, ndat1f, nerr, noutpt, nslist, nttyo, uelem)
 
     ! Check the element names for uniqueness.
-    call neleck(nct,nctmax,nerr,noutpt,nttyo,uelem)
+    call neleck(nct, nctmax, nerr, noutpt, nttyo, uelem)
 
     if (nerr .gt. 0) then
         write (ux8,'(i5)') nerr
@@ -824,7 +824,7 @@ program eqpt
         !   tvec for avx
         !   tvecmx for avxmax
         !   tvecs for avxs
-        call scalx1(tvec,tvecmx,tvecs,ier,nmax)
+        call scalx1(tvec, tvecmx, tvecs, ier, nmax)
 
         do n = 1,nmax
             tempcs(n,ntpr) = tvecs(n)
@@ -847,36 +847,36 @@ program eqpt
     end if
 
     ! Interpolate and write the miscellaneous parameters.
-    call wrpar(aamatr,adh,adhh,adhv,aphi,apr,avgrid,bdh,bdhh,bdhv,bdot,bdoth,bdotv,cco2,cof,dadhh,dadhv,dbdhh,dbdhv,dbdth,dbdtv,dhfe,dvfe,eps100,gmmatr,ipch,ipchmx,ipcv,ipcvmx,ipivot,narxmx,narxt,ndata1,ndat1f,noutpt,ntprmx,ntprt,nttyo,presg,prehw,tdamax,tdamin,tempc,tempcs,tmpcmx,uakey,xhfe,xlke,xvfe,xvec,yvec)
+    call wrpar(aamatr, adh, adhh, adhv, aphi, apr, avgrid, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, cof, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dvfe, eps100, gmmatr, ipch, ipchmx, ipcv, ipcvmx, ipivot, narxmx, narxt, ndata1, ndat1f, noutpt, ntprmx, ntprt, nttyo, presg, prehw, tdamax, tdamin, tempc, tempcs, tmpcmx, uakey, xhfe, xlke, xvfe, xvec, yvec)
 
     ! Read and write aqueous species.
-    call pcraq(aamatr,apr,atwt,avgrid,cdrs,cdrsi,cess,cessi,cof,dhfe,dhfs,dvfe,dvfs,eps100,gmmatr,ipch,ipchmx,ipcv,ipcvmx,ipivot,itgenf,mtotr,nacdpr,narxmx,narxt,nat,natmax,nbt,nbtmx1,nbtmx2,nch,nco,nct,nctmax,ndata1,ndat0s,ndat1f,ndbmax,ndbptg,ndbptl,nentei,nentri,nerr,nmodwr,noutpt,nsb,nslist,ntprmx,ntprt,nttyo,nwarn,qelect,q500fl,tempc,tempcs,tmpcmx,uaqsp,udbfmt,udbval,udrsi,uelem,uessi,uspec,xdbval,xhfe,xhfs,xlke,xlks,xvfe,xvfs,xvec,yvec,zaqsp,zchar)
+    call pcraq(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe, dhfs, dvfe, dvfs, eps100, gmmatr, ipch, ipchmx, ipcv, ipcvmx, ipivot, itgenf, mtotr, nacdpr, narxmx, narxt, nat, natmax, nbt, nbtmx1, nbtmx2, nch, nco, nct, nctmax, ndata1, ndat0s, ndat1f, ndbmax, ndbptg, ndbptl, nentei, nentri, nerr, nmodwr, noutpt, nsb, nslist, ntprmx, ntprt, nttyo, nwarn, qelect, q500fl, tempc, tempcs, tmpcmx, uaqsp, udbfmt, udbval, udrsi, uelem, uessi, uspec, xdbval, xhfe, xhfs, xlke, xlks, xvfe, xvfs, xvec, yvec, zaqsp, zchar)
 
     ! Read and write minerals, liquids, gases.
-    call pcrsg(aamatr,apr,atwt,avgrid,cdrs,cdrsi,cess,cessi,cof,dhfe,dhfs,dvfe,dvfs,eps100,gmmatr,ipch,ipchmx,ipcv,ipcvmx,ipivot,itgenf,mtotr,nacdpr,narxmx,narxt,nat,natmax,nbt,nbtmx1,nbtmx2,nch,nco,nct,nctmax,ndata1,ndat0s,ndat1f,ndbmax,ndbptg,ndbptl,nentei,nentri,nerr,ngt,ngtmax,nlt,nltmax,nmodwr,nmt,nmtmax,noutpt,nsb,nslist,ntprmx,ntprt,nttyo,nwarn,qelect,q500fl,tempc,tempcs,tmpcmx,udbfmt,udbval,udrsi,uelem,uessi,ugassp,uliqsp,uminsp,uspec,xdbval,xhfe,xhfs,xlke,xlks,xvfe,xvfs,xvec,yvec,zchar)
+    call pcrsg(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe, dhfs, dvfe, dvfs, eps100, gmmatr, ipch, ipchmx, ipcv, ipcvmx, ipivot, itgenf, mtotr, nacdpr, narxmx, narxt, nat, natmax, nbt, nbtmx1, nbtmx2, nch, nco, nct, nctmax, ndata1, ndat0s, ndat1f, ndbmax, ndbptg, ndbptl, nentei, nentri, nerr, ngt, ngtmax, nlt, nltmax, nmodwr, nmt, nmtmax, noutpt, nsb, nslist, ntprmx, ntprt, nttyo, nwarn, qelect, q500fl, tempc, tempcs, tmpcmx, udbfmt, udbval, udrsi, uelem, uessi, ugassp, uliqsp, uminsp, uspec, xdbval, xhfe, xhfs, xlke, xlks, xvfe, xvfs, xvec, yvec, zchar)
 
     ! Read and write solid solutions.
-    call pcrss(apx,bpx,iapxmx,ibpxmx,iktmax,issot,nbtmx1,ndata1,ndat0s,ndat1f,nerr,nmodwr,nmt,nmtmax,noutpt,nslist,nttyo,nxt,nxtmax,uminsp,ussosp,ussoph)
+    call pcrss(apx, bpx, iapxmx, ibpxmx, iktmax, issot, nbtmx1, ndata1, ndat0s, ndat1f, nerr, nmodwr, nmt, nmtmax, noutpt, nslist, nttyo, nxt, nxtmax, uminsp, ussosp, ussoph)
 
     ! Make sure that all aqueous species names are unique.
-    call naqsck(nat,natmax,nerr,noutpt,nttyo,uaqsp)
+    call naqsck(nat, natmax, nerr, noutpt, nttyo, uaqsp)
 
     ! Make sure that all pure mineral names are unique.
-    call nminck(nerr,nmt,nmtmax,noutpt,nttyo,uminsp)
+    call nminck(nerr, nmt, nmtmax, noutpt, nttyo, uminsp)
 
     ! Make sure that all gas species names are unique.
-    call ngasck(nerr,ngt,ngtmax,noutpt,nttyo,ugassp)
+    call ngasck(nerr, ngt, ngtmax, noutpt, nttyo, ugassp)
 
     ! Make sure that all solid solution names are unique.
-    call nssock(nerr,noutpt,nttyo,nxt,nxtmax,ussoph)
+    call nssock(nerr, noutpt, nttyo, nxt, nxtmax, ussoph)
 
     ! Make sure that all solid solution end-member names are unique
     ! within each solid solution.
-    call nxspck(iktmax,issot,nerr,noutpt,nttyo,nxt,nxtmax,ussoph,ussosp)
+    call nxspck(iktmax, issot, nerr, noutpt, nttyo, nxt, nxtmax, ussoph, ussosp)
 
     ! Validate the end-member names for the solid solutions. Each
     ! end-member name must match that of a pure mineral.
-    call vxspck(iktmax,issot,nerr,nmt,nmtmax,noutpt,nttyo,nxt,nxtmax,uminsp,ussoph,ussosp)
+    call vxspck(iktmax, issot, nerr, nmt, nmtmax, noutpt, nttyo, nxt, nxtmax, uminsp, ussoph, ussosp)
 
     if (nerr .gt. 0) then
         write (ux8,'(i5)') nerr
@@ -932,36 +932,36 @@ program eqpt
     ! Zero arrays for activity coefficient parameters.
     if (uakey(1:8) .eq. 'SEDH    ') then
         ! Zero the azero array.
-        call initaz(azero,naztmx)
+        call initaz(azero, naztmx)
 
         ! Zero the insgf array.
-        call initiz(insgf,naztmx)
+        call initiz(insgf, naztmx)
     end if
 
     if (uakey(1:8) .eq. 'Pitzer  ') then
         ! Zero the alpha array.
         nmax = ipbtmx*npx2mx
-        call initaz(alpha,nmax)
+        call initaz(alpha, nmax)
 
         ! Zero the abeta array.
         nmax = jpfcmx*(ipbtmx + 1)*npx2mx
-        call initaz(abeta,nmax)
+        call initaz(abeta, nmax)
 
         ! Zero the acphi array.
         nmax = jpfcmx*npx2mx
-        call initaz(acphi,nmax)
+        call initaz(acphi, nmax)
 
         ! Zero the atheta and apsi arrays.
         nmax = jpfcmx*npx3mx
-        call initaz(atheta,nmax)
-        call initaz(apsi,nmax)
+        call initaz(atheta, nmax)
+        call initaz(apsi, nmax)
     end if
 
     ! Read the SEDH or Pitzer section.
     if (uakey(1:8) .eq. 'SEDH    ') then
         ! Read hard core diameters and related parameters used
         ! in the B-dot equation.
-        call rdazp(azero,insgf,nazt,naztmx,ndat0s,nerr,noutpt,nttyo,uazp)
+        call rdazp(azero, insgf, nazt, naztmx, ndat0s, nerr, noutpt, nttyo, uazp)
     end if
 
     if (uakey(1:8) .eq. 'Pitzer  ') then
@@ -980,7 +980,7 @@ program eqpt
             !     for nn, nn', nc, and na combinations.
             !   - mu values may be read in place of Cphi values for
             !     nnn combinations.
-            call rdpz2(abeta,alpha,acphi,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+            call rdpz2(abeta, alpha, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
 
             ! Read the S-theta and psi parameters.
             !   - normally for cc'a and aa'c combinations.
@@ -988,7 +988,7 @@ program eqpt
             !     nca combinations.
             !   - mu values may be read in place of psi values for
             !     nnn' and n'n'n combinations.
-            call rdpz3(apsi,atheta,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npx3mx,npx3t,nthdt,nttyo,nwarn,uaqsp,uethfl,uthdtr,utripl,zaqsp)
+            call rdpz3(apsi, atheta, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx3mx, npx3t, nthdt, nttyo, nwarn, uaqsp, uethfl, uthdtr, utripl, zaqsp)
         else
             ! Read the data according to the new Pitzer data block
             ! organization. There is one superblock for each allowed
@@ -1003,30 +1003,30 @@ program eqpt
             npx3t = 0
 
             ! Read ca (cation-anion) data.
-            call rdpca(abeta,alpha,acphi,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxca,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+            call rdpca(abeta, alpha, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxca, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
 
             ! Read cc' (cation-different cation) and aa' (anion-
             ! different anion) data.
-            call rdpth(abeta,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxth,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+            call rdpth(abeta, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxth, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
 
             ! Read nc (neutral-cation) and na (neutral-anion) data.
-            call rdpni(abeta,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxni,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+            call rdpni(abeta, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxni, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
 
             ! Read nn (neutral-same neutral) data.
-            call rdpn2(abeta,acphi,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxn2,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+            call rdpn2(abeta, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxn2, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
 
             ! Read nn'(neutral-different neutral) data.
-            call rdpnn(abeta,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxnn,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+            call rdpnn(abeta, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxnn, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
 
             ! Read cc'a (cation-different cation-anion) and aa'c
             ! (anion-different anion-cation) data.
-            call rdppsi(apsi,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxpsi,npx3mx,npx3t,nttyo,nwarn,uaqsp,utripl,zaqsp)
+            call rdppsi(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxpsi, npx3mx, npx3t, nttyo, nwarn, uaqsp, utripl, zaqsp)
 
             ! Read nca (neutral-cation--anion) data.
-            call rdpzet(apsi,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxzet,npx3mx,npx3t,nttyo,nwarn,uaqsp,utripl,zaqsp)
+            call rdpzet(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxzet, npx3mx, npx3t, nttyo, nwarn, uaqsp, utripl, zaqsp)
 
             ! Read nnn' (neutral-neutral-different neutral) data.
-            call rdpn2n(apsi,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxn2n,npx3mx,npx3t,nttyo,nwarn,uaqsp,utripl,zaqsp)
+            call rdpn2n(apsi, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxn2n, npx3mx, npx3t, nttyo, nwarn, uaqsp, utripl, zaqsp)
 
             ! Copy the theta data into arrays used with the old
             ! Pitzer data block organization.
@@ -1063,10 +1063,10 @@ program eqpt
         ! ('bdot') data. Each such name should correspond to an aqueous
         ! species for which there is a species block on the data file.
         ! Write a note for any exceptions.
-        call vazpck(nat,natmax,nazt,naztmx,noutpt,nttyo,uaqsp,uazp)
+        call vazpck(nat, natmax, nazt, naztmx, noutpt, nttyo, uaqsp, uazp)
 
         ! Test and process all azero and insgf ('bdot') data.
-        call tpraz(nat,natmax,nazt,naztmx,ncvaz,nerr,noutpt,nttyo,pcvaz,qpdaz,uaqsp,uazp)
+        call tpraz(nat, natmax, nazt, naztmx, ncvaz, nerr, noutpt, nttyo, pcvaz, qpdaz, uaqsp, uazp)
 
         ! Write the azero and insgf data summary.
         ux8 = ' '
@@ -1091,7 +1091,7 @@ program eqpt
 
         ! Write hard core diameters and related parameters used
         ! for example in the B-dot equation.
-        call wrazp(azero,insgf,nazt,naztmx,ndata1,ndat1f,noutpt,nttyo,uazp)
+        call wrazp(azero, insgf, nazt, naztmx, ndata1, ndat1f, noutpt, nttyo, uazp)
     end if
 
     ! Test and write the Pitzer data section of DATA1.
@@ -1100,12 +1100,12 @@ program eqpt
         ! neutrals, excluding any fictive redox species. These will
         ! be used to compute the species pairs and triplets relevant
         ! to Pitzer parameters.
-        call coasst(jassan,jassca,jassne,nat,natmax,uaqsp,zaqsp)
+        call coasst(jassan, jassca, jassne, nat, natmax, uaqsp, zaqsp)
 
         ! Compute the number of each of the relevant types of these
         ! species pairs and triplets (e.g., ca, cc', aa', nc, na, nn,
         ! nn', cca, aac, nnn, nnn', and nca).
-        call cpcomb(jassan,jassca,jassne,naapr,nat,ncapr,nccpr,nnapr,nncpr,nnnpr,nn2pr,naactr,na2ctr,nncatr,nccatr,nc2atr,nn2ntr,nn3tr)
+        call cpcomb(jassan, jassca, jassne, naapr, nat, ncapr, nccpr, nnapr, nncpr, nnnpr, nn2pr, naactr, na2ctr, nncatr, nccatr, nc2atr, nn2ntr, nn3tr)
 
         ! Allocate the associated arrays.
         ALLOCATE(alphca(ipbt_asv,ncapr))
@@ -1158,7 +1158,7 @@ program eqpt
         ALLOCATE(incatr(3,nncatr))
 
         ! Construct index arrays for those pairs and triplets.
-        call bldspc(iaapr,icapr,iccpr,inapr,incpr,innpr,in2pr,iaactr,ia2ctr,iccatr,ic2atr,incatr,in2ntr,in3tr,jassan,jassca,jassne,nat,natmax,naapr,ncapr,nccpr,nnapr,nncpr,nnnpr,nn2pr,naactr,na2ctr,nncatr,nccatr,nc2atr,nn2ntr,nn3tr,uaqsp,zaqsp)
+        call bldspc(iaapr, icapr, iccpr, inapr, incpr, innpr, in2pr, iaactr, ia2ctr, iccatr, ic2atr, incatr, in2ntr, in3tr, jassan, jassca, jassne, nat, natmax, naapr, ncapr, nccpr, nnapr, nncpr, nnnpr, nn2pr, naactr, na2ctr, nncatr, nccatr, nc2atr, nn2ntr, nn3tr, uaqsp, zaqsp)
 
         ! Note on subroutine and array naming for species pairs and
         ! triplets associated with Pitzer coefficients:
@@ -1173,17 +1173,17 @@ program eqpt
         ! cases. The basic transformations are:
         !   beta(n)(ca) -> lambda(n)(ca)   (n = 0,2)
         !   Cphi(ca)    -> mu(cca) and mu(aac)
-        call tprca(abeta,acphi,alamca,alpha,alphca,amua2c,amuc2a,icapr,ipbtmx,jpfcmx,natmax,na2ctr,ncapr,ncvca,nc2atr,nerr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvca,qpdca,uaqsp,upair,zaqsp)
+        call tprca(abeta, acphi, alamca, alpha, alphca, amua2c, amuc2a, icapr, ipbtmx, jpfcmx, natmax, na2ctr, ncapr, ncvca, nc2atr, nerr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvca, qpdca, uaqsp, upair, zaqsp)
 
         ! Test and process the cc' (cation-different cation) parameters.
         ! cases. The basic transformation is:
         !   theta(cc') -> lambda(cc')
-        call tprcc(alamcc,atheta,iccpr,ipbtmx,jpfcmx,natmax,nccpr,ncvcc,nerr,noutpt,npx3mx,nthdt,nttyo,nwarn,pcvcc,qpdcc,uaqsp,uthdtr)
+        call tprcc(alamcc, atheta, iccpr, ipbtmx, jpfcmx, natmax, nccpr, ncvcc, nerr, noutpt, npx3mx, nthdt, nttyo, nwarn, pcvcc, qpdcc, uaqsp, uthdtr)
 
         ! Test and process the aa' (anion-different anion) parameters.
         ! cases. The basic transformation is:
         !   theta(aa') -> lambda(aa')
-        call tpraa(alamaa,atheta,iaapr,ipbtmx,jpfcmx,naapr,natmax,ncvaa,nerr,noutpt,npx3mx,nthdt,nttyo,nwarn,pcvaa,qpdaa,uaqsp,uthdtr)
+        call tpraa(alamaa, atheta, iaapr, ipbtmx, jpfcmx, naapr, natmax, ncvaa, nerr, noutpt, npx3mx, nthdt, nttyo, nwarn, pcvaa, qpdaa, uaqsp, uthdtr)
 
         ! Test and process the nn (repeated-neutral) parameters. This
         ! includes the nnn (doubly repeated neutral) cases. Note on
@@ -1192,20 +1192,20 @@ program eqpt
         !   nn' is represented by "nn"
         !   lambda(nn) -> lambda(nn)
         !   mu(nnn)    -> mu(nnn)
-        call tprn2(abeta,acphi,alamn2,amun3,in2pr,ipbtmx,jpfcmx,natmax,ncvn2,nerr,nn2pr,nn3tr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvn2,qpdn2,uaqsp,upair)
+        call tprn2(abeta, acphi, alamn2, amun3, in2pr, ipbtmx, jpfcmx, natmax, ncvn2, nerr, nn2pr, nn3tr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvn2, qpdn2, uaqsp, upair)
 
         ! Test and process the nn' (neutral-different neutral) parameters.
         ! See the above note on subroutine and array naming.
         !   lambda(nn') -> lambda(nn')
-        call tprnn(abeta,acphi,alamnn,innpr,in2pr,ipbtmx,jpfcmx,natmax,ncvnn,nerr,nnnpr,nn2pr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvnn,qpdnn,qpdn2,uaqsp,upair)
+        call tprnn(abeta, acphi, alamnn, innpr, in2pr, ipbtmx, jpfcmx, natmax, ncvnn, nerr, nnnpr, nn2pr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvnn, qpdnn, qpdn2, uaqsp, upair)
 
         ! Test and process the nc (neutral-cation) parameters.
         !   lambda(nc) -> lambda(nc)
-        call tprnc(abeta,alamnc,incpr,ipbtmx,jpfcmx,natmax,ncvnc,nerr,nncpr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvnc,qpdnc,uaqsp,upair)
+        call tprnc(abeta, alamnc, incpr, ipbtmx, jpfcmx, natmax, ncvnc, nerr, nncpr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvnc, qpdnc, uaqsp, upair)
 
         ! Test and process the na (neutral-anion) parameters.
         !   lambda(na) -> lambda(na)
-        call tprna(abeta,alamna,inapr,ipbtmx,jpfcmx,natmax,ncvna,nerr,nnapr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvna,qpdna,uaqsp,upair)
+        call tprna(abeta, alamna, inapr, ipbtmx, jpfcmx, natmax, ncvna, nerr, nnapr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvna, qpdna, uaqsp, upair)
 
         ! Test and process the cc'a (cation-different cation-anion)
         ! parameters. Note that mu(cc'a) depends not only on psi(cc'a),
@@ -1214,7 +1214,7 @@ program eqpt
         !   cc'a is represented by "cca"
         !   cca  is represented by "c2a"
         !   psi(cc'a) -> mu(cc'a)
-        call tprcca(amucca,amuc2a,apsi,icapr,iccatr,ipbtmx,jpfcmx,natmax,ncapr,nccatr,ncvcca,nc2atr,nerr,noutpt,npx3mx,npx3t,nttyo,nwarn,pcvcca,qpdca,qpdcca,uaqsp,utripl,zaqsp)
+        call tprcca(amucca, amuc2a, apsi, icapr, iccatr, ipbtmx, jpfcmx, natmax, ncapr, nccatr, ncvcca, nc2atr, nerr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvcca, qpdca, qpdcca, uaqsp, utripl, zaqsp)
 
         ! Test and process the aa'c (anion-different anion-cation)
         ! parameters. Note that mu(aa'c) depends not only on psi(aa'c),
@@ -1223,7 +1223,7 @@ program eqpt
         !   aa'c is represented by "aac"
         !   aac  is represented by "a2c"
         !   psi(aa'c) -> mu(aa'c)
-        call tpraac(amuaac,amua2c,apsi,iaactr,icapr,ipbtmx,jpfcmx,naactr,natmax,na2ctr,ncapr,ncvaac,nerr,noutpt,npx3mx,npx3t,nttyo,nwarn,pcvaac,qpdaac,qpdca,uaqsp,utripl,zaqsp)
+        call tpraac(amuaac, amua2c, apsi, iaactr, icapr, ipbtmx, jpfcmx, naactr, natmax, na2ctr, ncapr, ncvaac, nerr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvaac, qpdaac, qpdca, uaqsp, utripl, zaqsp)
 
         ! Test and process the nnn' (repeated neutral-different neutral)
         ! parameters. These are not processed with the nn' parameters
@@ -1232,11 +1232,11 @@ program eqpt
         ! naming:
         !   nnn' is represented by "n2n"
         !   mu(nnn') -> mu(nnn')
-        call tprn2n(amun2n,apsi,innpr,in2pr,in2ntr,ipbtmx,jpfcmx,natmax,ncvn2n,nerr,nnnpr,nn2pr,nn2ntr,noutpt,npx3mx,npx3t,nttyo,nwarn,pcvn2n,qpdnn,qpdn2,qpdn2n,uaqsp,utripl)
+        call tprn2n(amun2n, apsi, innpr, in2pr, in2ntr, ipbtmx, jpfcmx, natmax, ncvn2n, nerr, nnnpr, nn2pr, nn2ntr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvn2n, qpdnn, qpdn2, qpdn2n, uaqsp, utripl)
 
         ! Test and process the nca (neutral-cation-anion) parameters.
         !   mu(nca) -> mu(nca)
-        call tprnca(amunca,apsi,inapr,incatr,incpr,ipbtmx,jpfcmx,natmax,ncvnca,nerr,nnapr,nncatr,nncpr,noutpt,npx3mx,npx3t,nttyo,nwarn,pcvnca,qpdna,qpdnca,qpdnc,uaqsp,utripl)
+        call tprnca(amunca, apsi, inapr, incatr, incpr, ipbtmx, jpfcmx, natmax, ncvnca, nerr, nnapr, nncatr, nncpr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvnca, qpdna, qpdnca, qpdnc, uaqsp, utripl)
 
         ! What about the following combinations?
         !   cc     (repeated cation)
@@ -1379,7 +1379,7 @@ program eqpt
         end if
 
         ! Write Pitzer parameters.
-        call wrpz23(alphca,alamaa,alamca,alamcc,alamna,alamnc,alamnn,alamn2,amuaac,amua2c,amucca,amuc2a,amunca,amun2n,amun3,ipbtmx,iaapr,icapr,iccpr,inapr,incpr,innpr,in2pr,iaactr,ia2ctr,iccatr,ic2atr,incatr,in2ntr,in3tr,jpdblo,jpfcmx,natmax,naapr,ncapr,nccpr,nnapr,nncpr,nnnpr,nn2pr,naactr,na2ctr,nccatr,nc2atr,nncatr,nn2ntr,nn3tr,ndata1,ndat1f,noutpt,nttyo,uaqsp,uethfl)
+        call wrpz23(alphca, alamaa, alamca, alamcc, alamna, alamnc, alamnn, alamn2, amuaac, amua2c, amucca, amuc2a, amunca, amun2n, amun3, ipbtmx, iaapr, icapr, iccpr, inapr, incpr, innpr, in2pr, iaactr, ia2ctr, iccatr, ic2atr, incatr, in2ntr, in3tr, jpdblo, jpfcmx, natmax, naapr, ncapr, nccpr, nnapr, nncpr, nnnpr, nn2pr, naactr, na2ctr, nccatr, nc2atr, nncatr, nn2ntr, nn3tr, ndata1, ndat1f, noutpt, nttyo, uaqsp, uethfl)
     end if
 
     j2 = ilnobl(uakey)
@@ -1407,7 +1407,7 @@ program eqpt
 
     ! Get end time and date. Also get the run time. Optionally, on
     ! a Unix platform, get the user and cpu times.
-    call runtim(iexec0,jexec0,texec0,noutpt,nttyo,trun,tuser,tcpu,udate1,utime1)
+    call runtim(iexec0, jexec0, texec0, noutpt, nttyo, trun, tuser, tcpu, udate1, utime1)
 
     j2 = ilnobl(udate0)
     j3 = ilnobl(udate1)

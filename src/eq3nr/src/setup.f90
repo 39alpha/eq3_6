@@ -131,7 +131,7 @@ subroutine setup(coval, eh, ehfac, ier, irdxc3, itdsf3, jflag, mwtsp, narn1, nba
             ! No match.
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (noutpt,1000) jfl,uspn56(1:jlen)
             write (nttyo,1000) jfl,uspn56(1:jlen)
 1000 format(/' * Error - (EQ3NR/setup) An undefined jflag value',' of ',i3,/7x,'was specified on the input file for the',' species',/7x,a,'.')

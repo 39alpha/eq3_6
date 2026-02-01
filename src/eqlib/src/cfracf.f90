@@ -101,7 +101,7 @@ subroutine cfracf(cdrs, csts, efac, jcsort, jflag, jssort, kmax, mosp, narn1, na
             ! Find the species (nfac) that makes the largest contribution
             ! to the mass balance. Get the exponent (efac) required for the
             ! continued fraction correction.
-            call fdomsp(jssort,mosp,nsi,nst,nstmax,weight,wsi)
+            call fdomsp(jssort, mosp, nsi, nst, nstmax, weight, wsi)
 
             ! Get the exponent (efac) required for the continued fraction
             ! correction.

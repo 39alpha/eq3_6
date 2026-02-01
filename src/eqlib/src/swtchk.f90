@@ -50,13 +50,13 @@ subroutine swtchk(cdrs, jflag, jsflag, nbaspx, nbt, nbtmax, ndrs, ndrsmx, ndrsr,
     !   jlen1 for jlen
     !   uspec(ns1) for unam48
     !   usp156 for uspn56
-    call fmspnx(jlen1,uspec(ns1),usp156)
+    call fmspnx(jlen1, uspec(ns1), usp156)
 
     ! Calling sequence substitutions:
     !   jlen2 for jlen
     !   uspec(ns2) for unam48
     !   usp256 for uspn56
-    call fmspnx(jlen2,uspec(ns2),usp256)
+    call fmspnx(jlen2, uspec(ns2), usp256)
 
     if (ns1 .eq. ns2) then
         write (noutpt,1000) usp156(1:jlen1)
@@ -109,7 +109,7 @@ subroutine swtchk(cdrs, jflag, jsflag, nbaspx, nbt, nbtmax, ndrs, ndrsmx, ndrsr,
             ! Calling sequence substitutions:
             !   noutpt for nf
             !   ns2 for ns
-            call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns2,nstmax,uspec)
+            call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns2, nstmax, uspec)
             nerr = nerr + 1
         end if
     end if

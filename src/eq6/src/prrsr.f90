@@ -93,7 +93,7 @@ subroutine prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrc
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (nf,1040) cx,uspn56(1:jlen)
 1040 format(4x,'+ ',1pe22.15,2x,a)
         end if
@@ -113,7 +113,7 @@ subroutine prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrc
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
 
             if (qfirst) then
                 write (nf,1030) cx,uspn56(1:jlen)

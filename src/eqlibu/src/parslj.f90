@@ -40,7 +40,7 @@ subroutine parslj(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
     integer :: i
 
     ! Do a simple parse.
-    call parsln(nfldmx,nfldt,nlchmx,ufield,uline1,ulscr)
+    call parsln(nfldmx, nfldt, nlchmx, ufield, uline1, ulscr)
 
     ! Left-justify the elements of the ufield array.
     do i = 1,nfldt

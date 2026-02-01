@@ -66,7 +66,7 @@ subroutine elmdd(aphi, el, elp, elpp, fxi, ijz, qpit75)
             ! of Harvie (1981). This is what should normally
             ! be used. Note that hj1 and hj2 are outputs
             ! that are not used.
-            call ghj0(dhj0,d2hj0,hj0,hj1,hj2,x)
+            call ghj0(dhj0, d2hj0, hj0, hj1, hj2, x)
         else
             ! Use the less accurate approximation of
             ! Pitzer (1975).
@@ -74,7 +74,7 @@ subroutine elmdd(aphi, el, elp, elpp, fxi, ijz, qpit75)
             !   dhj0 for dpj0
             !   d2hj0 for d2pj0
             !   hj0 for pj0
-            call gpj0(dhj0,d2hj0,hj0,x)
+            call gpj0(dhj0, d2hj0, hj0, x)
         end if
 
         ! Convert these to derivatives with respect to I.

@@ -399,7 +399,7 @@ subroutine cmpdat(adhfs, adhfsd, advfs, advfsd, amu, amua, apx, apxa, aslm, aslm
     !   narn1a for nlim1a
     !   narn2a for nlim2a
     !   nat for ntot
-    call cnvndx(narn1,narn1a,narn2,narn2a,nsmap,nstmax,nat)
+    call cnvndx(narn1, narn1a, narn2, narn2a, nsmap, nstmax, nat)
 
     ! Calling sequence substitutions:
     !   nmrn1 for nlim1
@@ -407,7 +407,7 @@ subroutine cmpdat(adhfs, adhfsd, advfs, advfsd, amu, amua, apx, apxa, aslm, aslm
     !   nmrn1a for nlim1a
     !   nmrn2a for nlim2a
     !   nmt for ntot
-    call cnvndx(nmrn1,nmrn1a,nmrn2,nmrn2a,nsmap,nstmax,nmt)
+    call cnvndx(nmrn1, nmrn1a, nmrn2, nmrn2a, nsmap, nstmax, nmt)
 
     ! Calling sequence substitutions:
     !   nlrn1 for nlim1
@@ -415,7 +415,7 @@ subroutine cmpdat(adhfs, adhfsd, advfs, advfsd, amu, amua, apx, apxa, aslm, aslm
     !   nlrn1a for nlim1a
     !   nlrn2a for nlim2a
     !   nlt for ntot
-    call cnvndx(nlrn1,nlrn1a,nlrn2,nlrn2a,nsmap,nstmax,nlt)
+    call cnvndx(nlrn1, nlrn1a, nlrn2, nlrn2a, nsmap, nstmax, nlt)
 
     ! Calling sequence substitutions:
     !   ngrn1 for nlim1
@@ -423,7 +423,7 @@ subroutine cmpdat(adhfs, adhfsd, advfs, advfsd, amu, amua, apx, apxa, aslm, aslm
     !   ngrn1a for nlim1a
     !   ngrn2a for nlim2a
     !   ngt for ntot
-    call cnvndx(ngrn1,ngrn1a,ngrn2,ngrn2a,nsmap,nstmax,ngt)
+    call cnvndx(ngrn1, ngrn1a, ngrn2, ngrn2a, nsmap, nstmax, ngt)
 
     ! Note- nxt is the number of solid solution phases, not the
     ! number of solid solution species. Hence the use of nqt below
@@ -435,7 +435,7 @@ subroutine cmpdat(adhfs, adhfsd, advfs, advfsd, amu, amua, apx, apxa, aslm, aslm
     !   nxrn1a for nlim1a
     !   nxrn2a for nlim2a
     !   nqt for ntot
-    call cnvndx(nxrn1,nxrn1a,nxrn2,nxrn2a,nsmap,nstmax,nqt)
+    call cnvndx(nxrn1, nxrn1a, nxrn2, nxrn2a, nsmap, nstmax, nqt)
 
     ! Get the phase index of the aqueous solution.
     iaqsln = nphasx(narn1)

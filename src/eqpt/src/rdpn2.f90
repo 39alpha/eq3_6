@@ -173,7 +173,7 @@ subroutine rdpn2(abeta, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt
     ! Calling sequence substitutions:
     !   n1 for na
     !   unam1 for unams
-    call gspidx(ier,n1,nat,natmax,uaqsp,unam1)
+    call gspidx(ier, n1, nat, natmax, uaqsp, unam1)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>') then
@@ -188,7 +188,7 @@ subroutine rdpn2(abeta, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt
     ! Calling sequence substitutions:
     !   n2 for na
     !   unam2 for unams
-    call gspidx(ier,n2,nat,natmax,uaqsp,unam2)
+    call gspidx(ier, n2, nat, natmax, uaqsp, unam2)
 
     if (ier .gt. 0) then
         if (unam1(1:7).ne.'<blank>' .and.    unam2(1:7).ne.'<blank>') then
@@ -280,7 +280,7 @@ subroutine rdpn2(abeta, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt
         if (ux80(1:j5) .eq. ustr16(1:j5)) then
             udastr = ux80
             udastr(1:j5) = ' '
-            call g1dat(ier,noutpt,nttyo,udastr,var)
+            call g1dat(ier, noutpt, nttyo, udastr, var)
 
             if (ier .gt. 0) then
                 write (noutpt,1320) uline(1:j4),unam1(1:j2),unam2(1:j3)
@@ -331,7 +331,7 @@ subroutine rdpn2(abeta, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt
         if (ux80(1:j5) .eq. ustr16(1:j5)) then
             udastr = ux80
             udastr(1:j5) = ' '
-            call g1dat(ier,noutpt,nttyo,udastr,var)
+            call g1dat(ier, noutpt, nttyo, udastr, var)
 
             if (ier .gt. 0) then
                 write (noutpt,1320) uline(1:j4),unam1(1:j2),unam2(1:j3)

@@ -574,7 +574,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
 
     kpsst = 0
     nsspt = 0
-    call initiz(nssp,nsspmx)
+    call initiz(nssp, nsspmx)
 
     ! Here is a return point if the phase assemblage has been modified.
 100 continue
@@ -594,7 +594,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnx(jlen,uspec(ns),uspn56)
+            call fmspnx(jlen, uspec(ns), uspn56)
             write (noutpt,1010) kcol,uspn56(1:jlen)
 1010 format(2x,i3,2x,a)
         end do
@@ -604,7 +604,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
 
             ! Calling sequence substitutions:
             !   uspec(ns) for unam48
-            call fmspnm(jlen,uspec(ns),uspn56)
+            call fmspnm(jlen, uspec(ns), uspn56)
             write (noutpt,1010) kcol,uspn56(1:jlen)
         end do
 
@@ -637,12 +637,12 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     kxts = kxt
     kdims = kdim
 
-    call copyia(nbasp,nbasps,nbt)
-    call copyia(iindx1,iindxs,kdim)
-    call copyia(ipndx1,ipndxs,kdim)
+    call copyia(nbasp, nbasps, nbt)
+    call copyia(iindx1, iindxs, kdim)
+    call copyia(ipndx1, ipndxs, kdim)
 
-    call copyaa(zvclg1,zvclgs,kdim)
-    call copyaa(acflg,acflgs,nst)
+    call copyaa(zvclg1, zvclgs, kdim)
+    call copyaa(acflg, acflgs, nst)
 
     xbarws = xbarwc
     xbrwls = xbrwlc
@@ -663,7 +663,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
         if (zvclg1(kcol) .le. -99999.) then
             ! Calling sequence substitutions:
             !   uzvec1 for unam48
-            call fmspnx(jlen,uzvec1(kcol),uspn56)
+            call fmspnx(jlen, uzvec1(kcol), uspn56)
 
             if (kcol .ne. krdxsp) then
                 write (noutpt,1050) uspn56(1:jlen),zvclg1(kcol)
@@ -706,7 +706,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
         end if
     end do
 
-    call eqcalc(aamatr,abar,acflg,acflgo,act,actlg,adh,adhh,adhv,afcnst,alpha,al10,amtb,aphi,apx,avcnst,azero,a3bar,a3bars,bacfmx,bbig,bdh,bdhh,bdhv,bdot,bdoth,bdotv,beta,betamx,betao,bfje,bfxi,bgamx,bneg,bpx,bsigmm,cco2,cegexs,cess,cdrs,cdrsd,cdrsx,cdrtw,cdrw,cjbasp,cnufac,conc,conclg,cpgexs,cscale,csts,delmax,delvco,delvec,dlogxw,egexjc,egexjf,egexs,eh,ehfac,eps100,farad,fje,fjeo,fo2,fo2lg,fsort,fugac,fugalg,fxi,fxio,gmmatr,iapxt,ibetmx,ibpxt,ibswx,idelmx,ielam,ier,iern1,iern2,ifcphi1,ifcphi2,ifnnn,ifn2n,ifpsi1,ifpsi2,ifrn1,ifrn2,ifzeta,igas,igstak,iindx1,ilcphi1,ilcphi2,ilnnn,iln2n,ilpsi1,ilpsi2,ilrn1,ilrn2,ilzeta,imrn1,imrn2,insgf,iodb,iopg,iopt,ipch,ipcv,ipivot,ipndx1,istack,iter,itermx,ixbasp,ixrn1,ixrn2,izmax,jcsort,jflag,jgsort,jgstak,jjsort,jpflag,jsflag,jsitex,jsol,jssort,jstack,kbt,kction,kdim,kelect,khydr,khydx,km1,kmt,ko2gaq,krdxsp,kwater,kx1,kxt,loph,losp,lsort,moph,mosp,mrgexs,mtb,narn1,narn2,narxt,nat,nbasp,nbaspd,nbaspx,nbt,nbtd,nbw,nchlor,ncmpr,nct,ndrs,ndrsd,ndrsx,ndrsr,ndrsrd,ndrsrx,nelect,nern1,nern2,ness,nessr,net,nfac,nfrn1,nfrn2,ngrn1,ngrn2,ngt,nhydr,nhydx,nlrn1,nlrn2,nlt,nmrn1,nmrn2,nmt,noutpt,no2gaq,nphasx,npt,nrdxsp,nst,nsts,nstsr,ntpr,nttyo,nxrn1,nxrn2,nxt,omega,omeglg,press,qbassw,qhawep,qoptmz,qpit75,qredox,q6mode,rhsvec,screwd,sigmam,sigmmo,smp100,tempc,tempk,tolbt,toldl,ubacmx,ubgamx,ulbeta,uldel,uphase,uspec,uzvec1,weight,wfac,xbar,xbarlg,xbarw,xbarwc,xbrwlc,xbrwlg,zchar,zchcu6,zchsq2,zvclg1,zvec1)
+    call eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcnst, alpha, al10, amtb, aphi, apx, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdhh, bdhv, bdot, bdoth, bdotv, beta, betamx, betao, bfje, bfxi, bgamx, bneg, bpx, bsigmm, cco2, cegexs, cess, cdrs, cdrsd, cdrsx, cdrtw, cdrw, cjbasp, cnufac, conc, conclg, cpgexs, cscale, csts, delmax, delvco, delvec, dlogxw, egexjc, egexjf, egexs, eh, ehfac, eps100, farad, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, iapxt, ibetmx, ibpxt, ibswx, idelmx, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipcv, ipivot, ipndx1, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcsort, jflag, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, khydx, km1, kmt, ko2gaq, krdxsp, kwater, kx1, kxt, loph, losp, lsort, moph, mosp, mrgexs, mtb, narn1, narn2, narxt, nat, nbasp, nbaspd, nbaspx, nbt, nbtd, nbw, nchlor, ncmpr, nct, ndrs, ndrsd, ndrsx, ndrsr, ndrsrd, ndrsrx, nelect, nern1, nern2, ness, nessr, net, nfac, nfrn1, nfrn2, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmt, noutpt, no2gaq, nphasx, npt, nrdxsp, nst, nsts, nstsr, ntpr, nttyo, nxrn1, nxrn2, nxt, omega, omeglg, press, qbassw, qhawep, qoptmz, qpit75, qredox, q6mode, rhsvec, screwd, sigmam, sigmmo, smp100, tempc, tempk, tolbt, toldl, ubacmx, ubgamx, ulbeta, uldel, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, zchar, zchcu6, zchsq2, zvclg1, zvec1)
 
     ! Were any basis switches made by EQ6/optmzr.f?
     nswtch = 0
@@ -741,11 +741,11 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     ifail = 0
     npadd = 0
     nsspt = 0
-    call initiz(nssp,nsspmx)
+    call initiz(nssp, nsspmx)
 
     ! Calculate the total number of moles of each basis species
     ! present in the aqueous phase.
-    call initaz(mtbaq,nbt)
+    call initaz(mtbaq, nbt)
 
     do nss = narn1,narn2
         ns = jcsort(nss)
@@ -762,7 +762,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     end do
 
     ! Check for supersaturations.
-    call satchk(acflg,act,actlg,afcnst,affp,affs,apx,bpx,cdrs,eps100,iindx1,iodb,iopt,iapxmx,ibpxmx,iktmax,ixrn1,jflag,jpflag,jsflag,jsol,kmax,km1,kpsat,kpsst,kxt,nbasp,nbt,nbtmax,ncmpr,ndrs,ndrsmx,ndrsr,nodbmx,noptmx,noutpt,npchk,npt,nptmax,nstmax,nttyo,nxrn1,nxrn2,nxtmax,qxknph,sidrph,sidrsp,tolsat,uphase,uspec,wfac,xbar,xbarlg,xlks)
+    call satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, iindx1, iodb, iopt, iapxmx, ibpxmx, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, kmax, km1, kpsat, kpsst, kxt, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nodbmx, noptmx, noutpt, npchk, npt, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, qxknph, sidrph, sidrsp, tolsat, uphase, uspec, wfac, xbar, xbarlg, xlks)
 
     if (kpsst .gt. 0) then
         if (iodb(4) .le. 0) then
@@ -800,10 +800,10 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     ! the greatest scaled affinity is added to the phase assemblage.
     ! In general, this algorithm picks the correct phase about four
     ! out of five times.
-    call initcb(ussp,nsspmx)
-    call initaz(afssp,nsspmx)
-    call initaz(afssps,nsspmx)
-    call initaz(msspmx,nsspmx)
+    call initcb(ussp, nsspmx)
+    call initaz(afssp, nsspmx)
+    call initaz(afssps, nsspmx)
+    call initaz(msspmx, nsspmx)
 
     isspt = 0
 
@@ -1014,7 +1014,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     kpsst = 0
 
     ! Modify the indexing of the Jacobian.
-    call miidxz(ier,iindx1,ipndx1,jpflag,jsflag,kbt,kdim,kmax,km1,kmt,kx1,kxt,losp,ncmpr,noutpt,npt,nptmax,nstmax,nttyo,uspec,uzvec1,zvclg1,zvec1)
+    call miidxz(ier, iindx1, ipndx1, jpflag, jsflag, kbt, kdim, kmax, km1, kmt, kx1, kxt, losp, ncmpr, noutpt, npt, nptmax, nstmax, nttyo, uspec, uzvec1, zvclg1, zvec1)
 
     if (ier .gt. 0) then
         ier = 8
@@ -1077,7 +1077,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
         ! XX     jcol2 = kxt
         !        Calling sequence substitutions:
         !          qphruv for qldep
-        call lindep(aamatr,eps100,irow1,irow2,jcol1,jcol2,kmax,qphruv)
+        call lindep(aamatr, eps100, irow1, irow2, jcol1, jcol2, kmax, qphruv)
 
         if (qphruv) then
             write (noutpt,1400)
@@ -1095,7 +1095,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
 
             ! Identify a phase which must be deleted in order to avoid the
             ! violation. Ordinarily, there would only be one.
-            call jgibbs(aamatr,afcnst,affp,cdrs,cscale,csts,delvec,eps100,gmmatr,iindx1,iodb,ipivot,ipndx1,jpflag,kbt,kdim,kmax,km1,kmt,kx1,kxt,mtb,nbasp,nbtmax,ndrs,ndrsmx,ndrsr,nodbmx,noutpt,npadd,npdel,nptmax,nstmax,nsts,nstsmx,nstsr,nttyo,rhsvec,uphase,uspec,xlks)
+            call jgibbs(aamatr, afcnst, affp, cdrs, cscale, csts, delvec, eps100, gmmatr, iindx1, iodb, ipivot, ipndx1, jpflag, kbt, kdim, kmax, km1, kmt, kx1, kxt, mtb, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nodbmx, noutpt, npadd, npdel, nptmax, nstmax, nsts, nstsmx, nstsr, nttyo, rhsvec, uphase, uspec, xlks)
 
             if (npdel .gt. 0) then
                 ! Go delete the offending phase and try again.
@@ -1110,7 +1110,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     !       negative (or was already very negative if iter .le. 1).
     !    2. Its derivative with respect to Xi is very negative
     !       (must have nord.ge.1 in order to apply this).
-    call phsdrp(d1zvc1,iindx0,iindx1,iodb,ipndx1,iter,kmax,km1,km1s,kxt,kxts,nodbmx,nord,noutpt,npadd,npdel,nptmax,ntry,uphase,zvclgs,zvclg1)
+    call phsdrp(d1zvc1, iindx0, iindx1, iodb, ipndx1, iter, kmax, km1, km1s, kxt, kxts, nodbmx, nord, noutpt, npadd, npdel, nptmax, ntry, uphase, zvclgs, zvclg1)
 
     if (npdel .le. 0) then
         ! Couldn't find a phase to delete.
@@ -1154,7 +1154,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
             ns2 = nbasps(nb)
 
             if (ns2 .ne. ns) then
-                call switch(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,narn1,narxmx,nbasp,nbaspd,nbaspx,nb,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,ns2,nst,nstmax,ntprmx,nttyo,qbassw,qbswok,uspec)
+                call switch(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, narn1, narxmx, nbasp, nbaspd, nbaspx, nb, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, ns2, nst, nstmax, ntprmx, nttyo, qbassw, qbswok, uspec)
             end if
         end do
 
@@ -1167,12 +1167,12 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
         kxt = kxts
         kdim = kdims
 
-        call copyia(nbasps,nbasp,nbt)
-        call copyia(iindxs,iindx1,kdim)
-        call copyia(ipndxs,ipndx1,kdim)
+        call copyia(nbasps, nbasp, nbt)
+        call copyia(iindxs, iindx1, kdim)
+        call copyia(ipndxs, ipndx1, kdim)
 
-        call copyaa(zvclgs,zvclg1,kdim)
-        call copyaa(acflgs,acflg,nst)
+        call copyaa(zvclgs, zvclg1, kdim)
+        call copyaa(acflgs, acflg, nst)
 
         xbarwc = xbarws
         xbrwlc = xbrwls
@@ -1183,7 +1183,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
         ! is defined in terms of molality (= 0) or mole fraction (= 1).
         ! The cjbasp array contains any site stoichiometric factors
         ! associated with the operational basis species.
-        call gibasp(cgexj,cjbasp,iern1,ixbasp,jern1,jern2,jetmax,jgext,narn1,narn2,nbasp,nbt,nbtmax,nern1,nern2,netmax,nphasx,nstmax)
+        call gibasp(cgexj, cjbasp, iern1, ixbasp, jern1, jern2, jetmax, jgext, narn1, narn2, nbasp, nbt, nbtmax, nern1, nern2, netmax, nphasx, nstmax)
     end if
 
     ! Reset the log number of moles variables (losp) for all mineral
@@ -1294,7 +1294,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
         if (zvclg1(kcol) .le. -99999.) then
             ! Calling sequence substitutions:
             !   uzvec1 for unam48
-            call fmspnx(jlen,uzvec1(kcol),uspn56)
+            call fmspnx(jlen, uzvec1(kcol), uspn56)
 
             if (kcol .ne. krdxsp) then
                 write (noutpt,2100) uspn56(1:jlen),zvclg1(kcol)

@@ -50,7 +50,7 @@ subroutine dgesl(gmmatr, kmax, kdim, ipivot, delvec)
                 delvec(k) = tx
             end if
 
-            call daxpy(kdim - k,tx,gmmatr(k + 1,k),1,delvec(k + 1),1)
+            call daxpy(kdim - k, tx, gmmatr(k + 1, k), 1, delvec(k + 1), 1)
         end do
     end if
 
@@ -59,6 +59,6 @@ subroutine dgesl(gmmatr, kmax, kdim, ipivot, delvec)
         k = kdim + 1 - kb
         delvec(k) = delvec(k)/gmmatr(k,k)
         tx = -delvec(k)
-        call daxpy(k - 1,tx,gmmatr(1,k),1,delvec(1),1)
+        call daxpy(k - 1, tx, gmmatr(1, k), 1, delvec(1), 1)
     end do
 end subroutine dgesl

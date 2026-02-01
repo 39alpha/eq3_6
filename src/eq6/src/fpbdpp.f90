@@ -93,7 +93,7 @@ subroutine fpbdpp(delxi, demop0, dlxmin, dxval0, emop, emop0, eps100, iemop, iod
 
     ! Make a Taylor's series expansion of the number of moles of the
     ! phases in the ES.
-    call ptaylr(delxi,demop0,emop0,emop,nord,nordmx,npet,npetmx)
+    call ptaylr(delxi, demop0, emop0, emop, nord, nordmx, npet, npetmx)
 
     ! Find any disappearing phases. Note that these count only if the
     ! predicted number of moles is less than or equal to zero.
@@ -130,7 +130,7 @@ subroutine fpbdpp(delxi, demop0, dlxmin, dxval0, emop, emop0, eps100, iemop, iod
                     dxval0(n) = demop0(n,npedis)
                 end do
 
-                call search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+                call search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
 
                 if (ier .le. 0) then
                     go to 100

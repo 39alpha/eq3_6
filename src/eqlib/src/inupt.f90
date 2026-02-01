@@ -165,7 +165,7 @@ subroutine inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, n
         !   narn1a for nrn1a
         !   narn2a for nrn2a
         !   unam1 for unam
-        call srchn(narn1a,narn2a,ns,nsta_asv,unam1,uspeca)
+        call srchn(narn1a, narn2a, ns, nsta_asv, unam1, uspeca)
         nslxa(1,nsl) = ns
         z1 = zchara(ns)
 
@@ -173,7 +173,7 @@ subroutine inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, n
         !   narn1a for nrn1a
         !   narn2a for nrn2a
         !   unam2 for unam
-        call srchn(narn1a,narn2a,ns,nsta_asv,unam2,uspeca)
+        call srchn(narn1a, narn2a, ns, nsta_asv, unam2, uspeca)
         nslxa(2,nsl) = ns
         z2 = zchara(ns)
 
@@ -290,21 +290,21 @@ subroutine inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, n
         !   narn1a for nrn1a
         !   narn2a for nrn2a
         !   unam1 for unam
-        call srchn(narn1a,narn2a,ns,nsta_asv,unam1,uspeca)
+        call srchn(narn1a, narn2a, ns, nsta_asv, unam1, uspeca)
         nmuxa(1,nmu) = ns
 
         ! Calling sequence substitutions:
         !   narn1a for nrn1a
         !   narn2a for nrn2a
         !   unam2 for unam
-        call srchn(narn1a,narn2a,ns,nsta_asv,unam2,uspeca)
+        call srchn(narn1a, narn2a, ns, nsta_asv, unam2, uspeca)
         nmuxa(2,nmu) = ns
 
         ! Calling sequence substitutions:
         !   narn1a for nrn1a
         !   narn2a for nrn2a
         !   unam3 for unam
-        call srchn(narn1a,narn2a,ns,nsta_asv,unam3,uspeca)
+        call srchn(narn1a, narn2a, ns, nsta_asv, unam3, uspeca)
         nmuxa(3,nmu) = ns
 
         ! Read the coefficients for calculating Pitzer mu

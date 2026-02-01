@@ -61,13 +61,13 @@ subroutine corrfd(delxi, dxsm11, fdlim, fdre0, fdre1, fdri0, fdri1, fdrr0, fdrr1
     if (npts .eq. 1) then
         ! Zero all finite differences.
         nmax = nrd1mx*nrctmx
-        call initaz(fdrr1,nmax)
+        call initaz(fdrr1, nmax)
 
         if (iopt(2) .gt. 0) then
-            call initaz(fdri1,nrd1mx)
+            call initaz(fdri1, nrd1mx)
 
             nmax = nrd1mx*nrctmx
-            call initaz(fdre1,nmax)
+            call initaz(fdre1, nmax)
         end if
 
         go to 999

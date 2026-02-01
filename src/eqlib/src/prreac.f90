@@ -64,7 +64,7 @@ subroutine prreac(cdrs, ndrs, ndrsmx, ndrsr, nf, ns, nstmax, uspec)
     if (nt .lt. 2) then
         ! Calling sequence substitutions:
         !   uspec(ns) for unam48
-        call fmspnx(jlen,uspec(ns),uspn56)
+        call fmspnx(jlen, uspec(ns), uspn56)
 
         write (nf,1010) uspn56(1:jlen)
 1010 format(3x,a,' is a strict basis species and has no reaction.',/)
@@ -88,7 +88,7 @@ subroutine prreac(cdrs, ndrs, ndrsmx, ndrsr, nf, ns, nstmax, uspec)
     if (qdtach) then
         ! Calling sequence substitutions:
         !   uspec(ns) for unam48
-        call fmspnx(jlen,uspec(ns),uspn56)
+        call fmspnx(jlen, uspec(ns), uspn56)
 
         write (nf,1020) uspn56(1:jlen)
 1020 format(3x,a,' is a detached auxiliary basis species and',' in effect',/3x,'has no reaction.',/)
@@ -106,7 +106,7 @@ subroutine prreac(cdrs, ndrs, ndrsmx, ndrsr, nf, ns, nstmax, uspec)
         if (cx .gt. 0.) then
             ! Calling sequence substitutions:
             !   uspec(nss) for unam48
-            call fmspnx(jlen,uspec(nss),uspn56)
+            call fmspnx(jlen, uspec(nss), uspn56)
 
             if (qfirst) then
                 write (nf,1030) cx,uspn56(1:jlen)
@@ -133,7 +133,7 @@ subroutine prreac(cdrs, ndrs, ndrsmx, ndrsr, nf, ns, nstmax, uspec)
         if (cx .gt. 0.) then
             ! Calling sequence substitutions:
             !   uspec(nss) for unam48
-            call fmspnx(jlen,uspec(nss),uspn56)
+            call fmspnx(jlen, uspec(nss), uspn56)
 
             if (qfirst) then
                 write (nf,1030) cx,uspn56(1:jlen)

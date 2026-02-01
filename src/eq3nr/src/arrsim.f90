@@ -374,7 +374,7 @@ subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg
             !     + sum over s' in irow (d log x(w)/d log m(s'))
             !       * (log m(s')(new) - log m(s')(old))
             ! Compute the dlogxw array (d log xw/d log ms').
-            call gdlgxw(cdrs,cjbasp,cnufac,conc,dlogxw,eps100,ixbasp,jcsort,jflag,narn1,narn2,nbasp,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsr,nern1,nern2,noutpt,nstmax,nttyo,omega,xbar,xbarw)
+            call gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jflag, narn1, narn2, nbasp, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, nern1, nern2, noutpt, nstmax, nttyo, omega, xbar, xbarw)
 
             do icol = 1,ibt
                 nb1 = jjndex(icol)
@@ -572,7 +572,7 @@ subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg
             if (iodb(3) .ge. 3) then
                 ! Calling sequence substitutions:
                 !   noutpt for nf
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns, nstmax, uspec)
             end if
 
             rx = xlks(ns)
@@ -606,7 +606,7 @@ subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg
                 ! Calling sequence substitutions:
                 !   noutpt for nf
                 !   ns1 for ns
-                call prreac(cdrs,ndrs,ndrsmx,ndrsr,noutpt,ns1,nstmax,uspec)
+                call prreac(cdrs, ndrs, ndrsmx, ndrsr, noutpt, ns1, nstmax, uspec)
             end if
 
             rx = xlks(ns1)
@@ -695,7 +695,7 @@ subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg
     ! Solve the matrix equation.
     ! Calling sequence substitutions:
     !   ibt for kdim
-    call msolvr(aamatr,delvec,gmmatr,ier,ipivot,ibt,kmax,noutpt,nttyo,qpr,rhsvec)
+    call msolvr(aamatr, delvec, gmmatr, ier, ipivot, ibt, kmax, noutpt, nttyo, qpr, rhsvec)
 
     if (ier .gt. 0) then
         write (noutpt,1220)

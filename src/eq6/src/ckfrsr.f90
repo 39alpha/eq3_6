@@ -85,12 +85,12 @@ subroutine ckfrsr(cbsr, csts, jcode, jflag, nbaspd, nbtd, nbtmax, nbt1mx, noutpt
 1000 format(/1x,'The reaction for special reactant ',a,' is written in terms of',/1x,'one or more species',' which are not in the active basis set. The',/1x,'currently written reaction is:')
 
                         nf = noutpt
-                        call prrsr(cbsr,jcode,nbaspd,nbtd,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+                        call prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
                         write (noutpt,1010)
 1010 format(/1x,'The following species are not in the',' active basis set and will be eliminated',/1x,'from the reaction:',/)
 
                         nf = nttyo
-                        call prrsr(cbsr,jcode,nbaspd,nbtd,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+                        call prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
                         write (nttyo,1010)
 
                         qcaught = .true.
@@ -98,7 +98,7 @@ subroutine ckfrsr(cbsr, csts, jcode, jflag, nbaspd, nbtd, nbtmax, nbt1mx, noutpt
 
                     ! Calling sequence substitutions:
                     !   uspec(ns) for unam48
-                    call fmspnx(jlen,uspec(ns),uspn56)
+                    call fmspnx(jlen, uspec(ns), uspn56)
 
                     write (noutpt,1020) uspn56(1:jlen)
                     write (nttyo,1020) uspn56(1:jlen)
@@ -126,12 +126,12 @@ subroutine ckfrsr(cbsr, csts, jcode, jflag, nbaspd, nbtd, nbtmax, nbt1mx, noutpt
 1070 format(//1x,'The modified reaction is:')
 
                 nf = noutpt
-                call prrsr(cbsr,jcode,nbaspd,nbtd,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+                call prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
                 write (noutpt,1030)
 1030 format(/1x)
 
                 nf = nttyo
-                call prrsr(cbsr,jcode,nbaspd,nbtd,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+                call prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
                 write (nttyo,1030)
             end if
         end if

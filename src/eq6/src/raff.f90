@@ -185,7 +185,7 @@ subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibp
 
             ! Calling sequence substitutions:
             !   acflg for acflgc
-            call lambda(acflg,afcnst,bpx,ibpxmx,ibpxt,iktmax,ixrn1,ixrn2,jsol,ncmpr,noutpt,np,nptmax,nstmax,nttyo,nxtmax,wfac,xbar,xbarlg,uphase,uspec)
+            call lambda(acflg, afcnst, bpx, ibpxmx, ibpxt, iktmax, ixrn1, ixrn2, jsol, ncmpr, noutpt, np, nptmax, nstmax, nttyo, nxtmax, wfac, xbar, xbarlg, uphase, uspec)
 
             do ns = nr1,nr2
                 actlg(ns) = xbarlg(ns) + acflg(ns)
@@ -199,7 +199,7 @@ subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibp
                 xx = xbar(ns)
 
                 if (xx .gt. 0.) then
-                    call afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+                    call afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
 
                     if (af .gt. -9999999.) then
                         affpr = affpr + xx*af
@@ -268,7 +268,7 @@ subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibp
             ! site-mixing.
             ! Calling sequence substitutions:
             !   acflg for acflgc
-            call lamgex(acflg,cgexj,jern1,jern2,jetmax,jgext,net,netmax,nstmax,xbarlg)
+            call lamgex(acflg, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
 
             do ns = nr1,nr2
                 actlg(ns) = xbarlg(ns) + acflg(ns)
@@ -284,7 +284,7 @@ subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibp
                     xx = xbar(ns)
 
                     if (xx .gt. 0.) then
-                        call afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+                        call afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
 
                         if (af .gt. -9999999.) then
                             affpr = affpr + xx*af
