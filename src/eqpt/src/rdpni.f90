@@ -1,4 +1,4 @@
-subroutine rdpni(abeta,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxni,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+subroutine rdpni(abeta, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxni, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
     !! This subroutine reads from the DATA1 file the coefficients
     !! required to compute those Pitzer interaction parameters
     !! associated with neutral-cation (nc) and neutral-anion (na)

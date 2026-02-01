@@ -1,4 +1,4 @@
-subroutine crrate(act,afrc1,cdac,csigma,eps100,fkrc,idirec,imchmx,imech,iodb,jreac,morr,ndac,ndact,ndctmx,nodbmx,noutpt,nrc,nrctmx,nrk,nstmax,nttyo,rk,rreac1,rrelr1,rrxfi1,rtcnst,sfcar,udac,ureac)
+subroutine crrate(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, jreac, morr, ndac, ndact, ndctmx, nodbmx, noutpt, nrc, nrctmx, nrk, nstmax, nttyo, rk, rreac1, rrelr1, rrxfi1, rtcnst, sfcar, udac, ureac)
     !! This subroutine calculates the rate (relative or absolute) from
     !! the specified rate law for the nrc-th irreversible reaction.
     !! This subroutine is called by:

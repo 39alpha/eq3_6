@@ -1,4 +1,4 @@
-subroutine prtsat(affpd,iern1,iern2,ilrn1,ilrn2,imrn1,imrn2,iopr,iopt,ixrn1,ixrn2,jpflag,noutpt,noprmx,noptmx,nptmax,sidrph,tolspf,uphase)
+subroutine prtsat(affpd, iern1, iern2, ilrn1, ilrn2, imrn1, imrn2, iopr, iopt, ixrn1, ixrn2, jpflag, noutpt, noprmx, noptmx, nptmax, sidrph, tolspf, uphase)
     !! This subroutine prints tables of saturation indices and affinities
     !! for the various non-aqueous phases. The level of printing is
     !! controlled by the print control flag iopr(7):

@@ -1,4 +1,4 @@
-subroutine cophpr(actw,aw0prn,aw1prn,delxi,dlxmin,eh,eh0prn,eh1prn,fo2lg,iodb,nodbmx,noutpt,o20prn,o21prn,ph,ph0prn,ph1prn,qadjdx,qredox,tolxsu)
+subroutine cophpr(actw, aw0prn, aw1prn, delxi, dlxmin, eh, eh0prn, eh1prn, fo2lg, iodb, nodbmx, noutpt, o20prn, o21prn, ph, ph0prn, ph1prn, qadjdx, qredox, tolxsu)
     !! This subroutine checks for oversteps with regard to currently
     !! defined lesser and greater print point values for the pH, Eh,
     !! log fO2, and activity of water.

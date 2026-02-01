@@ -1,4 +1,4 @@
-subroutine bdmlx(narn1,narn2,natmax,nmut,nmutmx,nmux,nmxi,nmxmax,nmxx,noutpt,nttyo)
+subroutine bdmlx(narn1, narn2, natmax, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, noutpt, nttyo)
     !! This subroutine builds the nmxi and nmxx arrays. These are
     !! pointer arrays used in connection with the mu parts of
     !! Pitzer's equations.

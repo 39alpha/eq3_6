@@ -1,4 +1,4 @@
-subroutine autosw(adhfs,adhfsx,advfs,advfsx,axhfs,axhfsx,axlks,axlksx,axvfs,axvfsx,cdrs,cdrsx,eps100,ibswx,iindx1,ipch,ipchmx,ipcv,ipcvmx,jflag,jsflag,kbt,kmax,narn1,narxmx,nbasp,nbaspd,nbaspx,nbt,nbtmax,nbw,ndrs,ndrsmx,ndrsx,ndrsr,ndrsrx,noutpt,nst,nstmax,ntprmx,nttyo,qbassw,uspec,uzvec1)
+subroutine autosw(adhfs, adhfsx, advfs, advfsx, axhfs, axhfsx, axlks, axlksx, axvfs, axvfsx, cdrs, cdrsx, eps100, ibswx, iindx1, ipch, ipchmx, ipcv, ipcvmx, jflag, jsflag, kbt, kmax, narn1, narxmx, nbasp, nbaspd, nbaspx, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsx, ndrsr, ndrsrx, noutpt, nst, nstmax, ntprmx, nttyo, qbassw, uspec, uzvec1)
     !! This subroutine executes automatic basis switching for the purpose
     !! of reducing mass balance residuals. EQLIB/fbassw.f finds
     !! candidates for basis switching, and EQLIB/gabswx.f resolves any

@@ -1,4 +1,4 @@
-subroutine gpress(iopt,jpress,noptmx,noutpt,nptkmx,nttyo,presg,presh,press,pressb,time1,ptk,xi1)
+subroutine gpress(iopt, jpress, noptmx, noutpt, nptkmx, nttyo, presg, presh, press, pressb, time1, ptk, xi1)
     !! This subroutine computes the pressure (press) as a function of
     !! reaction progress (xi1) or time (time1).
     !! This subroutine is called by:

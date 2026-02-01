@@ -1,4 +1,4 @@
-subroutine gcdrtw(cdrs,cdrtw,narn1,narn2,ndrs,ndrsmx,ndrsr,nelect,no2gaq,nst,nstmax)
+subroutine gcdrtw(cdrs, cdrtw, narn1, narn2, ndrs, ndrsmx, ndrsr, nelect, no2gaq, nst, nstmax)
     !! This subroutine computes the cdrtw array. Each element of this
     !! array contains the sum of the reaction coefficients of the
     !! aqueous solute species in the corresponding reaction. The sum

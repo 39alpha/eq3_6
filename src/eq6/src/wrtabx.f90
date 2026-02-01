@@ -1,4 +1,4 @@
-subroutine wrtabx(actlg,afrc1,aft1,alk,cteaq,dvoso,dwoso,eh,fo2lg,iindx1,iktmax,iopt,ipndx1,kmax,km1,kmt,kstep,kx1,kxt,loph,ncmpr,modr,mopht,narn1,mosp,nct,nctmax,noptmx,nptmax,nrct,nrctmx,nstmax,ntabx,ntidmx,ntitl2,ntitld,ntitmx,nxtmax,pe,ph,ppmwe,prcinf,press,prminf,qbye,qmod,qriinf,tempc,time1,uelem,uphase,uplatm,ureac,uspec,usteq6,utitl2,utitld,uveeq6,vodrt,vosoct,wodrt,woh2o,wosoct,xbar,xi1)
+subroutine wrtabx(actlg, afrc1, aft1, alk, cteaq, dvoso, dwoso, eh, fo2lg, iindx1, iktmax, iopt, ipndx1, kmax, km1, kmt, kstep, kx1, kxt, loph, ncmpr, modr, mopht, narn1, mosp, nct, nctmax, noptmx, nptmax, nrct, nrctmx, nstmax, ntabx, ntidmx, ntitl2, ntitld, ntitmx, nxtmax, pe, ph, ppmwe, prcinf, press, prminf, qbye, qmod, qriinf, tempc, time1, uelem, uphase, uplatm, ureac, uspec, usteq6, utitl2, utitld, uveeq6, vodrt, vosoct, wodrt, woh2o, wosoct, xbar, xi1)
     !! This subroutine writes the scratch tab file tabx. The length of
     !! any line should not exceed 129 characters.
     !! This subroutine is called by:

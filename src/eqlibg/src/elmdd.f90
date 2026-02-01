@@ -1,4 +1,4 @@
-subroutine elmdd(aphi,el,elp,elpp,fxi,ijz,qpit75)
+subroutine elmdd(aphi, el, elp, elpp, fxi, ijz, qpit75)
     !! This subroutine calculates the E-lambda function (el) and its
     !! first two derivatives (elp and elpp) with respect to ionic
     !! strength (fxi) for the charge pair product ijz. The E-lambda

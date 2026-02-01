@@ -1,4 +1,4 @@
-subroutine ssortw(asort,aval,jsort,nmax,noutpt,nttyo,nval)
+subroutine ssortw(asort, aval, jsort, nmax, noutpt, nttyo, nval)
     !! This subroutine sorts the first "nval" elements of the array
     !! "aval," using the shell sort method as taken from the "Numerical
     !! Recipes" book.

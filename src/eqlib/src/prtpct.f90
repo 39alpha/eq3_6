@@ -1,4 +1,4 @@
-subroutine prtpct(conc,csts,ctb,iopr,jcsort,jflag,narn1,narn2,nbasp,nbaspd,nbt,nbtmax,nelect,nhydr,noprmx,no2gaq,noutpt,nstmax,nsts,nstsmx,nstsr,uspec)
+subroutine prtpct(conc, csts, ctb, iopr, jcsort, jflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, nelect, nhydr, noprmx, no2gaq, noutpt, nstmax, nsts, nstsmx, nstsr, uspec)
     !! This subroutine prints tables giving the percentages of species
     !! making up solute mass totals in the aqueous solution. The
     !! level of printing is controlled by the print control flag

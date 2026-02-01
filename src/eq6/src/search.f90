@@ -1,4 +1,4 @@
-subroutine search(delxi,dlxmin,dxval0,eps100,ier,ilsign,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,tolsx,unam24,usearch,xtargv,xval0)
+subroutine search(delxi, dlxmin, dxval0, eps100, ier, ilsign, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, tolsx, unam24, usearch, xtargv, xval0)
     !! This subroutine finds the value of delxi at which occurs an event
     !! whose type is described by the string in the usearch variable.
     !! This subroutine is called by:

@@ -1,4 +1,4 @@
-subroutine rdwttl(ipch,ipcv,jpdblo,jpfcmx,jptffl,narxt,ndata1,ndat0s,ndat1f,noutpt,nslist,ntitld,ntidmx,ntprmx,ntprt,nttyo,uakey,utitld)
+subroutine rdwttl(ipch, ipcv, jpdblo, jpfcmx, jptffl, narxt, ndata1, ndat0s, ndat1f, noutpt, nslist, ntitld, ntidmx, ntprmx, ntprt, nttyo, uakey, utitld)
     !! This suboutine reads the title on the DATA0 file and writes it
     !! on the DATA1 and DATA1F files. It checks the DATA0 file
     !! header for validity. It also searches the title for embedded

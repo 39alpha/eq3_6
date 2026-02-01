@@ -1,4 +1,4 @@
-subroutine ataylr(delxi,daffp0,nord,nordmx,npt,nptmax,affp0,affp)
+subroutine ataylr(delxi, daffp0, nord, nordmx, npt, nptmax, affp0, affp)
     !! This subroutine evaluates Taylor's series expansions for phase
     !! affinities. These expansions are used to find phase boundaries
     !! at which new phases appear in the ES.

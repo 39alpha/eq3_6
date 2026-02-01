@@ -1,4 +1,4 @@
-subroutine tprcca(amucca,amuc2a,apsi,icapr,iccatr,ipbtmx,jpfcmx,natmax,ncapr,nccatr,ncvcca,nc2atr,nerr,noutpt,npx3mx,npx3t,nttyo,nwarn,pcvcca,qpdca,qpdcca,uaqsp,utripl,zaqsp)
+subroutine tprcca(amucca, amuc2a, apsi, icapr, iccatr, ipbtmx, jpfcmx, natmax, ncapr, nccatr, ncvcca, nc2atr, nerr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvcca, qpdca, qpdcca, uaqsp, utripl, zaqsp)
     !! Test and process the Pitzer data for cc'a (cation, different
     !! cation, anion) triplets read from the DATA0 file. Find and flag
     !! errors, such as duplication of data (e.g., two data blocks for

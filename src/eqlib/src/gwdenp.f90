@@ -1,4 +1,4 @@
-subroutine gwdenp(adwipp,bdwipp,jcsort,mlmrra,mosp,mrmlra,mwtsp,narn1,narn2,nstmax,qdwipp,rhoc,rhowc,tdsgks,tdsglw,tdspkc,tdsplc,tempc,vosol,wfh2o,wftds,wkgwi,woh2o,wosol,wotds)
+subroutine gwdenp(adwipp, bdwipp, jcsort, mlmrra, mosp, mrmlra, mwtsp, narn1, narn2, nstmax, qdwipp, rhoc, rhowc, tdsgks, tdsglw, tdspkc, tdsplc, tempc, vosol, wfh2o, wftds, wkgwi, woh2o, wosol, wotds)
     !! This subroutine gets the weights of solute, total dissolved
     !! solutes, and aqueous solution, and obtains the density of
     !! the aqueous solution by evaluating the WIPP brine density

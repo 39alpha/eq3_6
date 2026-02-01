@@ -1,4 +1,4 @@
-subroutine prtrdx(ah,ahrc,cdrsd,eh,ehrc,fo2lg,fo2lrc,jflgi,jsflag,narn1,nbasp,nbaspd,nbt,nbtmax,ndrsd,ndrsmx,ndrsrd,nelect,nhydr,no2gaq,noutpt,nstmax,pe,perc,uspec)
+subroutine prtrdx(ah, ahrc, cdrsd, eh, ehrc, fo2lg, fo2lrc, jflgi, jsflag, narn1, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nelect, nhydr, no2gaq, noutpt, nstmax, pe, perc, uspec)
     !! This subroutine prints a table of the Eh, pe-, log fO2, and Ah for
     !! the default redox constraint and each aqueous redox couple which
     !! is not required to satisfy the default redox constraint.

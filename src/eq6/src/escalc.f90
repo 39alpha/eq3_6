@@ -1,4 +1,4 @@
-subroutine escalc(csts,iindx1,jcsort,kbt,kmax,moph,mosp,mtb,mtb0,nbaspd,nbt,nbtmax,ncmpr,noutpt,npt,nptmax,nstmax,nsts,nstsmx,nstsr,qprflg,uspec)
+subroutine escalc(csts, iindx1, jcsort, kbt, kmax, moph, mosp, mtb, mtb0, nbaspd, nbt, nbtmax, ncmpr, noutpt, npt, nptmax, nstmax, nsts, nstsmx, nstsr, qprflg, uspec)
     !! This subroutine recomputes the mass balance totals for the
     !! Equilibrium System (ES). Normally, this is done immediately
     !! after a shift of material from the ES to the Physically Removed

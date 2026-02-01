@@ -1,4 +1,4 @@
-subroutine afcalc(actlg,af,afcnst,cdrs,jflag,jsflag,ndrs,ndrsmx,ndrsr,ns,nstmax,si,xlks)
+subroutine afcalc(actlg, af, afcnst, cdrs, jflag, jsflag, ndrs, ndrsmx, ndrsr, ns, nstmax, si, xlks)
     !! This subroutine computes the affinity function:
     !!   A = 2.303 RT log Q/K
     !! and the saturation index:

@@ -1,4 +1,4 @@
-subroutine cfjest(ctb,fjestc,nbaspd,nbt,nbtmax,nstmax,zchcu6)
+subroutine cfjest(ctb, fjestc, nbaspd, nbt, nbtmax, nstmax, zchcu6)
     !! This subroutine calculates the stoichiometric ionic asymmetry
     !! (fjestc). Note that a negative value of total concentration
     !! (ctb) for H+ is treated as a positive value for OH- (and vice

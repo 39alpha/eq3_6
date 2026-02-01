@@ -1,4 +1,4 @@
-subroutine phsdrp(d1zvc1,iindx0,iindx1,iodb,ipndx1,iter,kmax,km1,km1s,kxt,kxts,nodbmx,nord,noutpt,npadd,npdel,nptmax,ntry,uphase,zvclgs,zvclg1)
+subroutine phsdrp(d1zvc1, iindx0, iindx1, iodb, ipndx1, iter, kmax, km1, km1s, kxt, kxts, nodbmx, nord, noutpt, npadd, npdel, nptmax, ntry, uphase, zvclgs, zvclg1)
     !! This subroutine picks a phase to drop from the equilibrium
     !! system. Two independent algorithms are used to find candidates,
     !! and a final choice is made from these.

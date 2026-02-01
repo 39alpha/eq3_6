@@ -1,4 +1,4 @@
-subroutine tstari(afrc1,alphar,betar,delxi,iodb,modr,nodbmx,noutpt,nrct,nrctmx,nrct1,nsscmx,qodeok,rirec1,rirecp,rrelr1,rrelrp,sscrew,time1,tistrt,ureac)
+subroutine tstari(afrc1, alphar, betar, delxi, iodb, modr, nodbmx, noutpt, nrct, nrctmx, nrct1, nsscmx, qodeok, rirec1, rirecp, rrelr1, rrelrp, sscrew, time1, tistrt, ureac)
     !! This subroutine tests the accuracy of the rate law integration
     !! by comparing computed rates with predicted values.
     !! This subroutine is called by:

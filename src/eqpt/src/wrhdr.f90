@@ -1,4 +1,4 @@
-subroutine wrhdr(ikt_asv,ipch_asv,ipcv_asv,jpfc_asv,nap_asv,narx_asv,nat_asv,nbt_asv,nct_asv,ndata1,ndat1f,ngt_asv,nlat_asv,nlt_asv,nmt_asv,nmut_asv,npt_asv,nst_asv,ntid_asv,ntpr_asv,nxt_asv,uakey)
+subroutine wrhdr(ikt_asv, ipch_asv, ipcv_asv, jpfc_asv, nap_asv, narx_asv, nat_asv, nbt_asv, nct_asv, ndata1, ndat1f, ngt_asv, nlat_asv, nlt_asv, nmt_asv, nmut_asv, npt_asv, nst_asv, ntid_asv, ntpr_asv, nxt_asv, uakey)
     !! This suboutine writes a header on the DATA1 and DATA1F files.
     !! The header includes the string "data1', followed by the keystring
     !! for the type of aqueous species activity coefficient model, and

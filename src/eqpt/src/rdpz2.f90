@@ -1,4 +1,4 @@
-subroutine rdpz2(abeta,alpha,acphi,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+subroutine rdpz2(abeta, alpha, acphi, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
     !! This subroutine reads coefficients for computing the following
     !! Pitzer interaction parameters from the DATA0 file:
     !!   beta(MX)(0), beta(MX)(1), beta(MX)(2), and their

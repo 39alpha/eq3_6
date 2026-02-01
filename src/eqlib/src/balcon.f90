@@ -1,4 +1,4 @@
-subroutine balcon(aamatr,aamgex,al10,cdrs,cjbasp,cnufac,conc,dmlge,eps100,ggmgex,iern1,ietmax,iimgex,iindx1,ixbasp,jcsort,jern1,jern2,jetmax,jjsort,jsitex,kbt,kmax,krow,narn1,narn2,nbasp,nbtmax,ndrs,ndrsmx,ndrsr,nern1,nern2,netmax,noutpt,nphasx,nstmax,nttyo,rhsgex,uspec,weight,xbar)
+subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps100, ggmgex, iern1, ietmax, iimgex, iindx1, ixbasp, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
     !! This subroutine computes a row of the EQ3NR Jacobian matrix
     !! for one of the following:
     !!   Mass balance constraint

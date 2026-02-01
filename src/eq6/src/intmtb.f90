@@ -1,4 +1,4 @@
-subroutine intmtb(mtb,mtbaq,mtbaqi,mtbi,nbasp,nbt,nbti,nbtmax,noutpt,nstmax,nttyo,ubmtbi,uspec)
+subroutine intmtb(mtb, mtbaq, mtbaqi, mtbi, nbasp, nbt, nbti, nbtmax, noutpt, nstmax, nttyo, ubmtbi, uspec)
     !! This subroutine interprets the mass balance totals read from the
     !! input file. It constructs the mtb and mtbaq arrays.
     !! This subroutine is called by:

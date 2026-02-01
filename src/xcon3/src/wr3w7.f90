@@ -1,4 +1,4 @@
-subroutine wr3w7(cspb,fep,iktmax,iodb,iopg,iopr,iopt,itermx,jflagb,jxmod,kxmod,ncompb,newin,nodbmx,nopgmx,noprmx,noptmx,nsq,nsqmax,ntitl,ntitmx,nxmdmx,nxmod,nxtb,nxtmax,rho,tempc,tdspkg,tdspl,tolbt,toldl,tolsat,ubasis,uebal,umemb,uphas1,uphas2,uredox,usolb,uspecb,utitl,xbarb,uxmd24,xlkmod)
+subroutine wr3w7(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxmod, kxmod, ncompb, newin, nodbmx, nopgmx, noprmx, noptmx, nsq, nsqmax, ntitl, ntitmx, nxmdmx, nxmod, nxtb, nxtmax, rho, tempc, tdspkg, tdspl, tolbt, toldl, tolsat, ubasis, uebal, umemb, uphas1, uphas2, uredox, usolb, uspecb, utitl, xbarb, uxmd24, xlkmod)
     !! This subroutine writes the EQ3NR input file in compact ("W")
     !! format for versions 7.0-7.2. It thus encompasses two version
     !! levels.

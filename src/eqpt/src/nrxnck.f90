@@ -1,4 +1,4 @@
-subroutine nrxnck(nbtmx1,ndrsts,nentri,nerr,qduprs,udrsi)
+subroutine nrxnck(nbtmx1, ndrsts, nentri, nerr, qduprs, udrsi)
     !! Check the associated raection of a species to ensure that
     !! each species name appearing in the reaction is unique.
     !! This subroutine is called by:

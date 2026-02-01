@@ -1,4 +1,4 @@
-subroutine gelam(aphi,delam,dpelm,elam,fxi,izmax,nazpmx,pelm,qpit75)
+subroutine gelam(aphi, delam, dpelm, elam, fxi, izmax, nazpmx, pelm, qpit75)
     !! This subroutine calculates the E-lambda function (elam(i,j)) and
     !! its first two ionic strength derivatives (delam(1,i,j) and
     !! delam(2,i,j)). Here i, j refers to the charge pair zi, zj or

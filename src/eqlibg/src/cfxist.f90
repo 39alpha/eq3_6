@@ -1,4 +1,4 @@
-subroutine cfxist(ctb,fxistc,nbaspd,nbt,nbtmax,nstmax,zchsq2)
+subroutine cfxist(ctb, fxistc, nbaspd, nbt, nbtmax, nstmax, zchsq2)
     !! This subroutine calculates the stoichiometric ionic strength
     !! (fxistc). Note that a negative value of total concentration
     !! (ctb) for H+ is treated as a positive value for OH- (and vice

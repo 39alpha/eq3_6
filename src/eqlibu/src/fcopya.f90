@@ -1,4 +1,4 @@
-subroutine fcopya(nf1,nf2)
+subroutine fcopya(nf1, nf2)
     !! This subroutine appends the contents of the file whose unit number
     !! is nf1 to the file whose unit number is nf2. The line length
     !! is assumed to be 128 characters. The second file  must already

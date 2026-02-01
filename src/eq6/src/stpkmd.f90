@@ -1,4 +1,4 @@
-subroutine stpkmd(cbsri,cbsr1,cdac,cesri,cesr1,csigma,eact,fkrc,hact,iact,ibsrti,ibsrt1,iesrti,iesrt1,iktmax,imchmx,imech,iopt,ixrti,jcode,jreac,modr,morr,morrw1,nbt1mx,nctmax,ndact,ndctmx,noptmx,noutpt,nprob,nrct,nrctmx,nrk,nsk,nsrt,nsrtmx,ntitl1,ntitmx,nttyo,nxrt,nxrtmx,rkb,rxbari,sfcar,ssfcar,trkb,ubsri,ubsr1,ucxri,udac,uesri,uesr1,ureac,ureac1,utitl1,vreac)
+subroutine stpkmd(cbsri, cbsr1, cdac, cesri, cesr1, csigma, eact, fkrc, hact, iact, ibsrti, ibsrt1, iesrti, iesrt1, iktmax, imchmx, imech, iopt, ixrti, jcode, jreac, modr, morr, morrw1, nbt1mx, nctmax, ndact, ndctmx, noptmx, noutpt, nprob, nrct, nrctmx, nrk, nsk, nsrt, nsrtmx, ntitl1, ntitmx, nttyo, nxrt, nxrtmx, rkb, rxbari, sfcar, ssfcar, trkb, ubsri, ubsr1, ucxri, udac, uesri, uesr1, ureac, ureac1, utitl1, vreac)
     !! This subroutine sets up certain variables and arrays for writing
     !! the top half of an EQ6 input file when one of the advanced pickup
     !! file options is selected. Presently there is only one such option,

@@ -1,4 +1,4 @@
-subroutine initcv(uarray,nmax,uvalue)
+subroutine initcv(uarray, nmax, uvalue)
     !! This subroutine initializes the character array uarray to the
     !! string contained in uvalue over the first nmax positions.
     !! Normally, nmax would be the dimension of the 1D uarray. However,

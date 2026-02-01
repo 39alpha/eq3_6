@@ -1,4 +1,4 @@
-subroutine chktpr(delxi,dlxmin,dlxtpr,drir0,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,prcinf,qdump,qriinf,rirec0,tiprnl,tiprnt,time0,time1,tolxst,xi0,xi1,xval0)
+subroutine chktpr(delxi, dlxmin, dlxtpr, drir0, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, prcinf, qdump, qriinf, rirec0, tiprnl, tiprnt, time0, time1, tolxst, xi0, xi1, xval0)
     !! This subroutine checks to see that the next time-based print
     !! point is not exceeded.
     !! This subroutine is called by:

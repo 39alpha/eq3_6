@@ -1,4 +1,4 @@
-subroutine rtcalc(act,afrc1,cdac,csigma,eps100,fkrc,idirec,imchmx,imech,iodb,iopt,jcode,jreac,morr,morr0,mwtrc,ndac,ndact,ndctmx,nodbmx,noptmx,nord,noutpt,nrk,nrct,nrctmx,nsk,nstmax,nttyo,prcinf,prminf,qriinf,rirec1,rk,rreac1,rrelr1,rtcnst,rrxfi1,sfcar,sfcar0,ssfcar,udac,ureac)
+subroutine rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, iopt, jcode, jreac, morr, morr0, mwtrc, ndac, ndact, ndctmx, nodbmx, noptmx, nord, noutpt, nrk, nrct, nrctmx, nsk, nstmax, nttyo, prcinf, prminf, qriinf, rirec1, rk, rreac1, rrelr1, rtcnst, rrxfi1, sfcar, sfcar0, ssfcar, udac, ureac)
     !! This subroutine calculates the relative and absolute rates of
     !! the nrc-th irreversible reaction. This rate is computed from the
     !! specified rate expression.

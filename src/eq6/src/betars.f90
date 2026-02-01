@@ -1,4 +1,4 @@
-subroutine betars(alphar,betar,btrfnc,btrmax,btrmxo,ibtrmx,nrct,nrct1,nrctmx,rirec1,rirecp,rrelr1,rrelrp)
+subroutine betars(alphar, betar, btrfnc, btrmax, btrmxo, ibtrmx, nrct, nrct1, nrctmx, rirec1, rirecp, rrelr1, rrelrp)
     !! This subroutine calculates residual functions for the ODE
     !! integrator.
     !! This subroutine is called by:

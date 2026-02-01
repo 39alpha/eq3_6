@@ -1,4 +1,4 @@
-subroutine jflaux(jflag,nbaspd,nbtd,nbtmax,ndrsd,ndrsmx,ndrsrd,nstmax)
+subroutine jflaux(jflag, nbaspd, nbtd, nbtmax, ndrsd, ndrsmx, ndrsrd, nstmax)
     !! This subroutine sets jflag to -1 for auxiliary basis species that
     !! can not appear in the model.
     !! This subroutine is called by:

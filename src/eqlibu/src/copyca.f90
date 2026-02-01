@@ -1,4 +1,4 @@
-subroutine copyca(uarr1,uarr2,nmax)
+subroutine copyca(uarr1, uarr2, nmax)
     !! This subroutine copies the first nmax elements of the character
     !! array uarr1 into the character array uarr2. Normally, nmax would
     !! be the dimension of both arrays. However, nmax could be less

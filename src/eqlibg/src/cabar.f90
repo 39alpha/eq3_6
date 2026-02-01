@@ -1,4 +1,4 @@
-subroutine cabar(abar,azero,conc,jcsort,fxi,narn1,narn2,natmax,nstmax,zchsq2)
+subroutine cabar(abar, azero, conc, jcsort, fxi, narn1, narn2, natmax, nstmax, zchsq2)
     !! This subroutine calculates the average hard core diameter of
     !! aqueous ionic species (abar). This average is defined
     !! using "ionic strength weighting"; that is, the weighting factor

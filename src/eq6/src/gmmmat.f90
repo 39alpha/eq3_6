@@ -1,4 +1,4 @@
-subroutine gmmmat(act,afrc1,cdac,cdacb,cdrs,csigma,eps100,fkrc,idirec,iindx1,iktmax,imchmx,imech,jcode,jreac,kbt,kdim,kmax,mmmatr,nbasp,nbt,nbtmax,ncmpr,ndac,ndacb,ndact,ndctmx,ndrs,ndrsmx,ndrsr,noutpt,nptmax,nrct,nrctmx,nrk,nrndex,nstmax,nttyo,nxridx,nxrtmx,rk,rtcnst,rxbar,sfcar,ureac,xlks)
+subroutine gmmmat(act, afrc1, cdac, cdacb, cdrs, csigma, eps100, fkrc, idirec, iindx1, iktmax, imchmx, imech, jcode, jreac, kbt, kdim, kmax, mmmatr, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nttyo, nxridx, nxrtmx, rk, rtcnst, rxbar, sfcar, ureac, xlks)
     !! This subroutine calculates the matrix M (mmmatr) used in turn to
     !! calculate the Jacobian matrix J[r] (armatr) used by the higher-
     !! order (stiff) ODE integrator. The dependence of J[r] on exact

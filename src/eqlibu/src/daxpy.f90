@@ -1,4 +1,4 @@
-subroutine daxpy(nmax,scfact,array1,incx,array2,incy)
+subroutine daxpy(nmax, scfact, array1, incx, array2, incy)
     !! This subroutine multiplies the real*8 array "array1" by the
     !! real*8 constant scfact and adds that to the real*8 array "array2".
     !! The result is returned in "array2". The relevant equation is

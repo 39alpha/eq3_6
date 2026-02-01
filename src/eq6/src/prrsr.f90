@@ -1,4 +1,4 @@
-subroutine prrsr(cbsr,jcode,nbaspd,nbtd,nbtmax,nbt1mx,nf,noutpt,nrc,nrctmx,nrndex,nsrtmx,nstmax,nttyo,ureac,uspec)
+subroutine prrsr(cbsr, jcode, nbaspd, nbtd, nbtmax, nbt1mx, nf, noutpt, nrc, nrctmx, nrndex, nsrtmx, nstmax, nttyo, ureac, uspec)
     !! This subroutine writes the reaction for the nsr-th special
     !! reactant on the file whose unit number is nf.
     !! This subroutine is similar in function to EQLIB/prreac.f, which

@@ -1,4 +1,4 @@
-subroutine nminck(nerr,nmt,nmtmax,noutpt,nttyo,uminsp)
+subroutine nminck(nerr, nmt, nmtmax, noutpt, nttyo, uminsp)
     !! Check the names of pure minerals for uniqueness.
     !! This subroutine is called by:
     !!   EQPT/eqpt.f

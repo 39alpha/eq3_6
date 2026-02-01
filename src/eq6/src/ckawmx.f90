@@ -1,4 +1,4 @@
-subroutine ckawmx(delxi,dlxmin,daw0,dxw1mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,aw0,aw1,awmax,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckawmx(delxi, dlxmin, daw0, dxw1mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, aw0, aw1, awmax, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the requested maximum value of
     !! activity of water (aw) is not exceeded.
     !! This subroutine is called by:

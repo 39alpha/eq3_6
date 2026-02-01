@@ -1,4 +1,4 @@
-subroutine gbfac(beta,bfac,efac,iindx1,kbt,kmax,nbt,nbtmax,nfac)
+subroutine gbfac(beta, bfac, efac, iindx1, kbt, kmax, nbt, nbtmax, nfac)
     !! This subroutine calculates the bfac array, which is used in making
     !! continued fraction corrections. It resolves conflicts when the
     !! same aqueous species dominates more than one mass balance (the

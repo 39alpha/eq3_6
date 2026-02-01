@@ -1,4 +1,4 @@
-subroutine rdpnn(abeta,ipbtmx,jpfcmx,nat,natmax,ndat0s,nerr,noutpt,npxnn,npx2mx,npx2t,nttyo,nwarn,uaqsp,upair,zaqsp)
+subroutine rdpnn(abeta, ipbtmx, jpfcmx, nat, natmax, ndat0s, nerr, noutpt, npxnn, npx2mx, npx2t, nttyo, nwarn, uaqsp, upair, zaqsp)
     !! This subroutine reads from the DATA1 file the coefficients
     !! required to compute those Pitzer interaction parameters
     !! associated with neutral-different neutral (nn) pairs. This

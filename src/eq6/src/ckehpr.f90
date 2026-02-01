@@ -1,4 +1,4 @@
-subroutine ckehpr(delxi,dlxmin,deh0,dxe0pr,dxe1pr,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,eh0,eh1,eh0prn,eh1prn,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckehpr(delxi, dlxmin, deh0, dxe0pr, dxe1pr, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, eh0, eh1, eh0prn, eh1prn, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the next Eh-based print
     !! point is not exceeded. Because the Eh might be decreasing or
     !! increasing, two potential target points (eh0prn and eh1prn)

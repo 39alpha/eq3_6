@@ -1,4 +1,4 @@
-subroutine intbsw(nbasp,nbaspx,nbt,nbtmax,nobswt,noutpt,nst,nstmax,nttyo,uobsw,uspec)
+subroutine intbsw(nbasp, nbaspx, nbt, nbtmax, nobswt, noutpt, nst, nstmax, nttyo, uobsw, uspec)
     !! This subroutine interprets ordinary basis switching directives
     !! specified on the input file.
     !! This subroutine is called by:

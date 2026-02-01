@@ -1,4 +1,4 @@
-subroutine dscrax(nf1,nf2,nllnmx,ulinex)
+subroutine dscrax(nf1, nf2, nllnmx, ulinex)
     !! This subroutine descrambles a file of tables whose lines are
     !! interspersed, but which are marked 'a', 'b', 'c', etc., in
     !! column one. The contents of the scrambled file are copied to

@@ -1,4 +1,4 @@
-subroutine openou(noutpt,nttyo,ufiln,uform,nrecl,ilu)
+subroutine openou(noutpt, nttyo, ufiln, uform, nrecl, ilu)
     !! This subroutine opens an output type file. If a file of the
     !! same name already exists, it is first destroyed. An unused
     !! logical unit number is obtained.

@@ -1,4 +1,4 @@
-subroutine xderiv(akmat0,dxx0,fdxx0,nord,nordmx,nrd1mx)
+subroutine xderiv(akmat0, dxx0, fdxx0, nord, nordmx, nrd1mx)
     !! This subroutine computes estimates of the derivatives (dxx0)
     !! for some quantity (such as pH) from the corresponding finite
     !! differences (fdxx0). Note that (dxx0) = (akmat0)(fdxx0).

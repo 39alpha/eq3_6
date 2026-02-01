@@ -1,4 +1,4 @@
-subroutine nactop(iopg,nopgmx,noutpt,nttyo,uactop)
+subroutine nactop(iopg, nopgmx, noutpt, nttyo, uactop)
     !! This subroutine sets the name of the option ("uactop") for
     !! computing the activity coefficients of aqueous species. It
     !! also sets associated logical flags concerning the generic type

@@ -1,4 +1,4 @@
-subroutine intbs3(covali,ier,jflag,jflgi,narn1a,narn2a,nbaspd,nbtd,nbti,nbtmax,ndrsrd,ndecsp,noutpt,nrdxsp,nsta,nstmax,nttyo,uspeca,uspeci)
+subroutine intbs3(covali, ier, jflag, jflgi, narn1a, narn2a, nbaspd, nbtd, nbti, nbtmax, ndrsrd, ndecsp, noutpt, nrdxsp, nsta, nstmax, nttyo, uspeca, uspeci)
     !! This subroutine interprets the basis species listed on the input
     !! file. It sets up the jflag arrays.
     !! This subroutine is called by:

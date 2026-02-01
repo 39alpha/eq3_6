@@ -1,4 +1,4 @@
-subroutine aaaxc3(ustxc3,uvexc3)
+subroutine aaaxc3(ustxc3, uvexc3)
     !! XCON3: EQ3NR Input File Converter
     !! EQ3/6 version 8.0 R43a (Patched 10/01/2009)
     !! Last revised 04/24/02 by TJW

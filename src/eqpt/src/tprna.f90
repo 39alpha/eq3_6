@@ -1,4 +1,4 @@
-subroutine tprna(abeta,alamna,inapr,ipbtmx,jpfcmx,natmax,ncvna,nerr,nnapr,noutpt,npx2mx,npx2t,nttyo,nwarn,pcvna,qpdna,uaqsp,upair)
+subroutine tprna(abeta, alamna, inapr, ipbtmx, jpfcmx, natmax, ncvna, nerr, nnapr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvna, qpdna, uaqsp, upair)
     !! Test and process the na (neutral, anion) pair Pitzer data read
     !! from the DATA0 file. Find and flag errors, such as duplication of
     !! data (e.g., two data blocks for the same na pair). The

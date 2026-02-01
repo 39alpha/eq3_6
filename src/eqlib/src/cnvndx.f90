@@ -1,4 +1,4 @@
-subroutine cnvndx(nlim1,nlim1a,nlim2,nlim2a,nsmap,nstmax,ntot)
+subroutine cnvndx(nlim1, nlim1a, nlim2, nlim2a, nsmap, nstmax, ntot)
     !! This subroutine finds the first and last species in a reduced
     !! range corresponding to an original set defined by the species
     !! index limits nlim1a, nlim2a. Note that this is not a

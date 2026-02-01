@@ -1,4 +1,4 @@
-subroutine cko2mx(delxi,dlxmin,do20,dxo1mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,fo2lg0,fo2lg1,o2max,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine cko2mx(delxi, dlxmin, do20, dxo1mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, fo2lg0, fo2lg1, o2max, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the requested maximum value of
     !! log fO2 is not exceeded.
     !! This subroutine is called by:

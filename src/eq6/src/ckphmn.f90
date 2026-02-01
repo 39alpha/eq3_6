@@ -1,4 +1,4 @@
-subroutine ckphmn(delxi,dlxmin,dph0,dxh0mx,dxval0,eps100,iodb,nodbmx,nord,noutpt,nrd1mx,nttyo,ph0,ph1,phmin,prcinf,qdump,tolxsu,xi0,xi1,xval0)
+subroutine ckphmn(delxi, dlxmin, dph0, dxh0mx, dxval0, eps100, iodb, nodbmx, nord, noutpt, nrd1mx, nttyo, ph0, ph1, phmin, prcinf, qdump, tolxsu, xi0, xi1, xval0)
     !! This subroutine checks to see that the requested minimum value of
     !! pH is not exceeded.
     !! This subroutine is called by:

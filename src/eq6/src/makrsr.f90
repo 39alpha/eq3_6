@@ -1,4 +1,4 @@
-subroutine makrsr(cbsri,cesri,cess,eps100,ibsrti,iesrti,jcode,nbt1mx,nct,nctmax,ness,nessmx,nessr,noutpt,nrct,nrctmx,nsrtmx,nstmax,nttyo,ubsri,uelem,uesri,ureac,uspec,zchar)
+subroutine makrsr(cbsri, cesri, cess, eps100, ibsrti, iesrti, jcode, nbt1mx, nct, nctmax, ness, nessmx, nessr, noutpt, nrct, nrctmx, nsrtmx, nstmax, nttyo, ubsri, uelem, uesri, ureac, uspec, zchar)
     !! This subroutine makes a reaction for a special reactant. The
     !! reaction is written in terms of the special reactant and strict
     !! basis species only, and is charge balanced.

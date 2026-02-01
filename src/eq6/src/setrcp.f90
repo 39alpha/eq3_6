@@ -1,4 +1,4 @@
-subroutine setrcp(aftarg,dlxmax,dlxmin,dlxmx0,npslmx,nsscmx,nsslmx,prcinf,sscrew,tolaft,tolsat,tolsst,zkfac,zklgmn,zklogl,zklogu)
+subroutine setrcp(aftarg, dlxmax, dlxmin, dlxmx0, npslmx, nsscmx, nsslmx, prcinf, sscrew, tolaft, tolsat, tolsst, zkfac, zklgmn, zklogl, zklogu)
     use iso_fortran_env, only: dp => real64
     !! This subroutine sets the values of various run control parameters
     !! which are not read from the input file.

@@ -1,4 +1,4 @@
-subroutine rdd1l(nfldmx,nfldt,nfldtx,ninpts,nlchmx,nttyo,qrderr,ufield,uline1,ulscr)
+subroutine rdd1l(nfldmx, nfldt, nfldtx, ninpts, nlchmx, nttyo, qrderr, ufield, uline1, ulscr)
     !! This subroutine reads single line containing an unknown header
     !! or tag string from an EQ3/6 input in menu-style ("D")
     !! format. The line generally contains both the header and data.

@@ -1,4 +1,4 @@
-subroutine indatp(apxa,axlksa,bpxa,cdrsa,cessa,iapxa_asv,iapxta,ibpxa_asv,ibpxta,ikta_asv,jsola,mwtspa,nad1,narx_asv,ncmpra,ndrsa,ndrsa_asv,ndrsn,ndrsra,nerr,nessa,nessa_asv,nessn,nessra,nmrn1a,nmrn2a,noutpt,np,npta_asv,ns,nsta_asv,ntpr_asv,nttyo,nxta,nxta_asv,qclnsa,uendit,uspeca,uphasa,uptsld,uptypa,zchara)
+subroutine indatp(apxa, axlksa, bpxa, cdrsa, cessa, iapxa_asv, iapxta, ibpxa_asv, ibpxta, ikta_asv, jsola, mwtspa, nad1, narx_asv, ncmpra, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, nmrn1a, nmrn2a, noutpt, np, npta_asv, ns, nsta_asv, ntpr_asv, nttyo, nxta, nxta_asv, qclnsa, uendit, uspeca, uphasa, uptsld, uptypa, zchara)
     !! This subroutine reads the solid solution superblock from the
     !! supporting data file "data1".
     !! This subroutine is called by:

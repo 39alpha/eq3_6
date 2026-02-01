@@ -1,4 +1,4 @@
-subroutine wterm(apx,iapxmx,iktmax,ixrn1,ixrn2,jsol,ncmpr,noutpt,nptmax,nstmax,nttyo,nxt,nxtmax,press,tempk,uphase,uspec,wfac)
+subroutine wterm(apx, iapxmx, iktmax, ixrn1, ixrn2, jsol, ncmpr, noutpt, nptmax, nstmax, nttyo, nxt, nxtmax, press, tempk, uphase, uspec, wfac)
     !! This subroutine computes the wfac(i,nx) array, which contains
     !! the coefficients for the excess free energy function of
     !! solid solutions. If non-zero coefficients are lacking, the

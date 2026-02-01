@@ -1,4 +1,4 @@
-subroutine intbs6(jflag,jflgi,kmax,narn1a,narn2a,nbaspd,nbtd,nbti,nbtmax,ndrsrd,ndecsp,noutpt,nsta,nstmax,nttyo,uspeca,ubmtbi)
+subroutine intbs6(jflag, jflgi, kmax, narn1a, narn2a, nbaspd, nbtd, nbti, nbtmax, ndrsrd, ndecsp, noutpt, nsta, nstmax, nttyo, uspeca, ubmtbi)
     !! This subroutine interprets the data file basis species read from
     !! the input file. "Data file" species to be created according to
     !! directives read from the input file are ignored. This subroutine

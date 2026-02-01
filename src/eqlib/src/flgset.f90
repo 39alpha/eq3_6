@@ -1,4 +1,4 @@
-subroutine flgset(axlksd,iopt,jflag,jpflag,jsflag,kxmod,narn1a,narn2a,narxmx,nbaspd,nbtd,nbtmax,ncmpra,ncta,ndrsd,ndrsmx,ndrsrd,noptmx,noutpt,npta,nptmax,nrdxsp,nsta,nstmax,ntpr,ntprmx,nttyo,nxmdmx,nxmod,uphasa,uptypa,uspeca,uxmod)
+subroutine flgset(axlksd, iopt, jflag, jpflag, jsflag, kxmod, narn1a, narn2a, narxmx, nbaspd, nbtd, nbtmax, ncmpra, ncta, ndrsd, ndrsmx, ndrsrd, noptmx, noutpt, npta, nptmax, nrdxsp, nsta, nstmax, ntpr, ntprmx, nttyo, nxmdmx, nxmod, uphasa, uptypa, uspeca, uxmod)
     !! This subroutine sets up the status arrays jpflag and jsflag.
     !! These flags denote the statuses, respectively, of phases
     !! and species. The relevant values and their meanings are

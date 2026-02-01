@@ -1,4 +1,4 @@
-subroutine gselm(conc,delam,dselm,elam,izmax,narn1,narn2,nazmmx,nazpmx,nstmax,selm,zchar)
+subroutine gselm(conc, delam, dselm, elam, izmax, narn1, narn2, nazmmx, nazpmx, nstmax, selm, zchar)
     !! This subroutine computes the following first order sums used
     !! in Pitzer's equations:
     !!   selm(i):  SUM(j) E-lambda(ij)*m(j)

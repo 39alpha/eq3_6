@@ -1,4 +1,4 @@
-subroutine rsetup(atwt,cbsr,cesr,iern1,ietmax,iindx1,iktmax,jcode,jern1,jern2,jetmax,jgext,kbt,kmax,mwtges,mwtrc,mwtsp,nbaspd,nbt,nbtmax,nbt1mx,ncmpr,nct,nctmax,nertmx,netmax,ngext,noutpt,nptmax,nrct,nrctmx,nrndex,nsrtmx,nstmax,nsts,nstsmx,nstsr,nttyo,nxridx,nxrtmx,rxbar,ureac,uspec,vosp0,vreac,xgers)
+subroutine rsetup(atwt, cbsr, cesr, iern1, ietmax, iindx1, iktmax, jcode, jern1, jern2, jetmax, jgext, kbt, kmax, mwtges, mwtrc, mwtsp, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nct, nctmax, nertmx, netmax, ngext, noutpt, nptmax, nrct, nrctmx, nrndex, nsrtmx, nstmax, nsts, nstsmx, nstsr, nttyo, nxridx, nxrtmx, rxbar, ureac, uspec, vosp0, vreac, xgers)
     !! This subroutine assigns the molecular weights and molar volumes
     !! of the reactants. Volumes are treated only for solid reactants
     !! for later comparison with the volume of solid products.

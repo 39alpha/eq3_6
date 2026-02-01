@@ -1,4 +1,4 @@
-subroutine sippdp(actw,aw0plo,aw0prn,aw1plo,aw1prn,dlaplo,dlaprn,dleplo,dleprn,dlhplo,dlhprn,dloplo,dloprn,dltpll,dltplo,dltprl,dltprn,dlxdmp,dlxmx0,dlxpll,dlxplo,dlxprl,dlxprn,eh,eh0plo,eh0prn,eh1plo,eh1prn,eps100,fo2lg,lprcin,o20plo,o20prn,o21plo,o21prn,ph,ph0plo,ph0prn,ph1plo,ph1prn,prcinf,qredox,tiplol,tiplot,tiprnl,tiprnt,tistsv,xidump,xiplol,xiplot,xiprnl,xiprnt,xistsv)
+subroutine sippdp(actw, aw0plo, aw0prn, aw1plo, aw1prn, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eh, eh0plo, eh0prn, eh1plo, eh1prn, eps100, fo2lg, lprcin, o20plo, o20prn, o21plo, o21prn, ph, ph0plo, ph0prn, ph1plo, ph1prn, prcinf, qredox, tiplol, tiplot, tiprnl, tiprnt, tistsv, xidump, xiplol, xiplot, xiprnl, xiprnt, xistsv)
     !! This subroutine advances the print, plot, and dump points.
     !! This subroutine is called by:
     !!   EQ6/path.f

@@ -1,4 +1,4 @@
-subroutine fpexrc(delxi,dlxmin,drer0,dxval0,eps100,iodb,jreac,morr,morr0,nodbmx,nord,noutpt,nrct,nrctmx,nrd1mx,nttyo,qdump,rrelr0,ureac,xi0,xi1,xval0)
+subroutine fpexrc(delxi, dlxmin, drer0, dxval0, eps100, iodb, jreac, morr, morr0, nodbmx, nord, noutpt, nrct, nrctmx, nrd1mx, nttyo, qdump, rrelr0, ureac, xi0, xi1, xval0)
     !! This subroutine finds the point of reaction progress at which a
     !! reactant becomes exhausted.
     !! This subroutine is called by:

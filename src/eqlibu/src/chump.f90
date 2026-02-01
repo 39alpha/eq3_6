@@ -1,4 +1,4 @@
-subroutine chump(eps,irang,noutpt,nttyo)
+subroutine chump(eps, irang, noutpt, nttyo)
     !! This subroutine tests the floating point precision and exponent
     !! range for adequacy for EQ3/6 calculations. This is essentially
     !! a trap to insure that most floating point variables are real*8
