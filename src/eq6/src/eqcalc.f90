@@ -38,7 +38,7 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, afcnst, alpha, a
 
     implicit none
 
-    include 'eqlib/eqlpar.h'
+    include 'eqlib/eqlparg.h'
     include 'eqlib/eqldv.h'
     include 'eqlib/eqlge.h'
 

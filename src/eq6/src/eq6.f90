@@ -15,7 +15,7 @@ program eq6
 
     implicit none
 
-    include 'eqlib/eqlpar.h'
+    include 'eqlib/eqlpar6.h'
 
     include 'eqlib/eqldv.h'
     include 'eqlib/eqlge.h'

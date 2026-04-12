@@ -7,7 +7,9 @@ subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, ibpxmx, ibpxt, ier
     !! Principal output:
     implicit none
 
-    include 'eqlib/eqlpar.h'
+    integer, parameter :: iet_par = 10
+    integer, parameter :: jet_par = 4
+    integer, parameter :: net_par = 12
 
     ! Calling sequence variable declarations.
     integer :: ibpxmx

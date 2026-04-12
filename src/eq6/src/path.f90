@@ -90,11 +90,13 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     implicit none
 
-    include 'eqlib/eqlpar.h'
+    include 'eqlib/eqlparg.h'
     include 'eqlib/eqldv.h'
     include 'eqlib/eqlge.h'
     include 'eqlib/eql1s.h'
     include 'eqlib/eqlwd.h'
+
+    integer, parameter :: jso_par = 12
 
     ! Calling sequence variable declarations.
     integer :: nbkupa

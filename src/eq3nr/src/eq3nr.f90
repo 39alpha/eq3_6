@@ -7,7 +7,7 @@ program eq3nr
     implicit none
 
     include 'eqlib/eqldef.h'
-    include 'eqlib/eqlpar.h'
+    include 'eqlib/eqlpar3.h'
     include 'eqlib/eqldv.h'
     include 'eqlib/eqlge.h'
     include 'eqlib/eql1s.h'

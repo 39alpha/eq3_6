@@ -8,7 +8,6 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, afcnst, affpd, affsd
     !! Principal output:
     implicit none
 
-    include 'eqlib/eqlpar.h'
     include 'eqlib/eqldv.h'
 
     ! Calling sequence variable declarations.
