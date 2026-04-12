@@ -1,4 +1,4 @@
-subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibpxt, iern1, ietmax, iktmax, ixrn1, ixrn2, jcode, jern1, jern2, jetmax, jflag, jgext, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, nertmx, net, netmax, ngext, noutpt, nptmax, nrct, nrctmx, nrndex, nstmax, nttyo, nxridx, nxrtmx, nxtmax, rxbar, uphase, uspec, wfac, xbar, xbarlg, xgers, xlks)
+subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, ibpxmx, ibpxt, iern1, ietmax, iktmax, ixrn1, ixrn2, jcode, jern1, jern2, jetmax, jflag, jgext, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, nertmx, net, netmax, ngext, noutpt, nptmax, nrct, nrctmx, nrndex, nstmax, nttyo, nxridx, nxrtmx, nxtmax, rxbar, uphase, uspec, wfac, xbar, xbarlg, xgers, xlks)
     !! This subroutine calculates the affinities of irreversible
     !! reactions (afrc1).
     !! This subroutine is called by:
@@ -57,7 +57,6 @@ subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibp
     real(kind=8) :: afrc1(nrctmx)
     real(kind=8) :: bpx(ibpxmx,nxtmax)
     real(kind=8) :: cdrs(ndrsmx)
-    real(kind=8) :: cgexj(jetmax,netmax)
     real(kind=8) :: rxbar(iktmax,nxrtmx)
     real(kind=8) :: wfac(iktmax,nxtmax)
     real(kind=8) :: xbar(nstmax)
@@ -268,7 +267,7 @@ subroutine raff(acflg, actlg, afcnst, affp, afrc1, bpx, cdrs, cgexj, ibpxmx, ibp
             ! site-mixing.
             ! Calling sequence substitutions:
             !   acflg for acflgc
-            call lamgex(acflg, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
+            call lamgex(acflg, jern1, jern2, jetmax, jgext, net, netmax, nstmax)
 
             do ns = nr1,nr2
                 actlg(ns) = xbarlg(ns) + acflg(ns)

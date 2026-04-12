@@ -1,4 +1,4 @@
-subroutine abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, jssort, kbt, kmax, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nelect, nhydr, no2gaq, nstmax, nsts, nstsmx, nstsr, qbswx, q6mode, weight)
+subroutine abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, jssort, kbt, kmax, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nelect, nhydr, no2gaq, nstmax, nsts, nstsmx, nstsr, qbswx, weight)
     !! This subroutine determines the dominant species and the associated
     !! factors required for continued fraction corrections.
     !! This subroutine is called by:
@@ -44,7 +44,6 @@ subroutine abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, j
     integer :: no2gaq
 
     logical :: qbswx
-    logical :: q6mode
 
     real(kind=8) :: beta(kmax)
     real(kind=8) :: cdrs(ndrsmx)

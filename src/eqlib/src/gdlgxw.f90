@@ -1,4 +1,4 @@
-subroutine gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jflag, narn1, narn2, nbasp, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, nern1, nern2, noutpt, nstmax, nttyo, omega, xbar, xbarw)
+subroutine gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jflag, narn1, narn2, nbasp, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, noutpt, nstmax, nttyo, omega, xbar, xbarw)
     !! This subroutine computes the array dlogxw, which contains the
     !! partial derivatives:
     !!   d log x(w)/d log m(s')
@@ -29,8 +29,6 @@ subroutine gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jf
     integer :: narn2
     integer :: nbt
     integer :: nbw
-    integer :: nern1
-    integer :: nern2
 
     real(kind=8) :: cdrs(ndrsmx)
     real(kind=8) :: cjbasp(nbtmax)

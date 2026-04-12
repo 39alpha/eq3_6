@@ -1,4 +1,4 @@
-subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, ielam, iern1, iern2, ietmax, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, ipbtmx, istack, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, moph, mosp, mrgexs, mtb, napmax, narn1, narn2, natmax, nazmmx, nazpmx, nbasp, nbaspd, nbt, nbtmax, nchlor, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, net, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, nhydr, nmutmx, nmxmax, nodbmx, nopgmx, noutpt, no2gaq, nphasx, npt, nptmax, nsltmx, nst, nstmax, nsxmax, nttyo, omega, omeglg, press, qhawep, qpit75, q6mode, sigmam, sigmmo, tempk, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zchcu6, zchsq2, zgexj, zvclg1, zvec1)
+subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, al10, aphi, azero, a3bar, a3bars, bdh, bdot, cco2, cdrs, cegexs, cgexj, conc, conclg, egexjc, egexjf, egexs, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, ielam, iern1, iern2, ietmax, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, ipbtmx, istack, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, moph, mosp, mrgexs, napmax, narn1, narn2, natmax, nazmmx, nazpmx, nbasp, nbaspd, nbt, nbtmax, nchlor, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, net, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, nhydr, nmutmx, nmxmax, nodbmx, nopgmx, noutpt, no2gaq, nphasx, npt, nptmax, nsltmx, nst, nstmax, nsxmax, nttyo, omega, omeglg, press, qhawep, qpit75, q6mode, sigmam, sigmmo, tempk, ugexj, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zchcu6, zchsq2, zgexj, zvclg1, zvec1)
     !! This subroutine expands the system description from the data
     !! read from the input file. This includes estimating the numbers
     !! of moles of all phases and species present, the concentrations,
@@ -198,7 +198,6 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
     logical :: q6mode
 
     character(len=48) :: uspec(nstmax)
-    character(len=24) :: ugexmo(netmax)
     character(len=24) :: uphase(nptmax)
     character(len=8) :: ugexj(jetmax,netmax)
 
@@ -214,7 +213,6 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
     real(kind=8) :: cgexj(jetmax,netmax)
     real(kind=8) :: conc(nstmax)
     real(kind=8) :: conclg(nstmax)
-    real(kind=8) :: cpgexs(ietmax,jetmax,netmax)
     real(kind=8) :: egexjc(jetmax,netmax)
     real(kind=8) :: egexjf(jetmax,netmax)
     real(kind=8) :: egexs(ietmax,jetmax,netmax)
@@ -228,7 +226,6 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
     real(kind=8) :: moph(nptmax)
     real(kind=8) :: mosp(nstmax)
     real(kind=8) :: mrgexs(ietmax,jetmax,netmax)
-    real(kind=8) :: mtb(nbtmax)
     real(kind=8) :: xbar(nstmax)
     real(kind=8) :: xbarlg(nstmax)
     real(kind=8) :: xlks(nstmax)
@@ -240,15 +237,9 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
     real(kind=8) :: zvec1(kmax)
 
     real(kind=8) :: adh
-    real(kind=8) :: adhh
-    real(kind=8) :: adhv
     real(kind=8) :: aphi
     real(kind=8) :: bdh
-    real(kind=8) :: bdhh
-    real(kind=8) :: bdhv
     real(kind=8) :: bdot
-    real(kind=8) :: bdoth
-    real(kind=8) :: bdotv
 
     real(kind=8) :: abar
     real(kind=8) :: actwlc
@@ -304,7 +295,7 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
 
     ! Calculate the concentrations, etc., of basis and non-basis
     ! species. Here the activity coefficients are all zero.
-    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
+    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
     ! Clamp estimates of concentrations and numbers of moles of
     ! dependent aqueous species.
@@ -349,13 +340,13 @@ subroutine exivar(abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, al10
     ! coefficients.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call gcoeff(abar, acflg, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, uspec, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
+    call gcoeff(abar, acflg, actwlc, adh, al10, aphi, azero, a3bar, a3bars, bdh, bdot, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
 
     ! Make the first estimates of the exchanger species activity
     ! coefficients.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call lamgex(acflg, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
+    call lamgex(acflg, jern1, jern2, jetmax, jgext, net, netmax, nstmax)
 
     if (iodb(3) .ge. 1) then
         ! Print the attempted phase assemblage.

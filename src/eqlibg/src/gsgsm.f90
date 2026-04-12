@@ -1,4 +1,4 @@
-subroutine gsgsm(conc, dpslm, na, natmax, nsltmx, nstmax, nsxi, nsxmax, nsxx, pslm, slsum, slsump, uspec)
+subroutine gsgsm(conc, dpslm, na, natmax, nsltmx, nstmax, nsxi, nsxmax, nsxx, pslm, slsum, slsump)
     !! This subroutine computes the following first-order sums used
     !! in Pitzer's equations:
     !!   SUM(j) S-lambda(ij)*m(j)
@@ -36,7 +36,6 @@ subroutine gsgsm(conc, dpslm, na, natmax, nsltmx, nstmax, nsxi, nsxmax, nsxx, ps
     integer :: nsxx(2,nsxmax)
     integer :: na
 
-    character(len=48) :: uspec(nstmax)
 
     real(kind=8) :: conc(nstmax)
     real(kind=8) :: dpslm(2,nsltmx)

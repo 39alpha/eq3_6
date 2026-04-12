@@ -1,4 +1,4 @@
-subroutine crrate(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, jreac, morr, ndac, ndact, ndctmx, nodbmx, noutpt, nrc, nrctmx, nrk, nstmax, nttyo, rk, rreac1, rrelr1, rrxfi1, rtcnst, sfcar, udac, ureac)
+subroutine crrate(act, afrc1, cdac, csigma, fkrc, idirec, imchmx, imech, iodb, jreac, ndac, ndact, ndctmx, nodbmx, noutpt, nrc, nrctmx, nrk, nstmax, nttyo, rk, rreac1, rrelr1, rrxfi1, rtcnst, sfcar, ureac)
     !! This subroutine calculates the rate (relative or absolute) from
     !! the specified rate law for the nrc-th irreversible reaction.
     !! This subroutine is called by:
@@ -27,7 +27,6 @@ subroutine crrate(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech,
     integer :: ndact(imchmx,2,nrctmx)
     integer :: nrk(2,nrctmx)
 
-    character(len=24) :: udac(ndctmx,imchmx,2,nrctmx)
     character(len=24) :: ureac(nrctmx)
 
     real(kind=8) :: act(nstmax)
@@ -35,14 +34,12 @@ subroutine crrate(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech,
     real(kind=8) :: cdac(ndctmx,imchmx,2,nrctmx)
     real(kind=8) :: csigma(imchmx,2,nrctmx)
     real(kind=8) :: fkrc(nrctmx)
-    real(kind=8) :: morr(nrctmx)
     real(kind=8) :: rk(imchmx,2,nrctmx)
     real(kind=8) :: rreac1(nrctmx)
     real(kind=8) :: rrelr1(nrctmx)
     real(kind=8) :: rrxfi1(imchmx,nrctmx)
     real(kind=8) :: sfcar(nrctmx)
 
-    real(kind=8) :: eps100
     real(kind=8) :: rtcnst
 
     ! Local variable declarations.

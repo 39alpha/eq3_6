@@ -1,4 +1,4 @@
-subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
+subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
     use iso_fortran_env, only: dp => real64
     !! This subroutine computes all parameters necessary to write the
     !! Jacobian matrix from the zvclg1 array. It thus "expands" the
@@ -128,7 +128,6 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     logical :: q6mode
 
     character(len=48) :: uspec(nstmax)
-    character(len=24) :: ugexmo(netmax)
     character(len=24) :: uphase(nptmax)
     character(len=8) :: ugexj(jetmax,netmax)
 
@@ -140,7 +139,6 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     real(kind=8) :: cgexj(jetmax,netmax)
     real(kind=8) :: conc(nstmax)
     real(kind=8) :: conclg(nstmax)
-    real(kind=8) :: cpgexs(ietmax,jetmax,netmax)
     real(kind=8) :: egexjc(jetmax,netmax)
     real(kind=8) :: egexjf(jetmax,netmax)
     real(kind=8) :: egexs(ietmax,jetmax,netmax)
@@ -152,7 +150,6 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     real(kind=8) :: lsort(nstmax)
     real(kind=8) :: mgext(jetmax,netmax)
     real(kind=8) :: mrgexs(ietmax,jetmax,netmax)
-    real(kind=8) :: mtb(nbtmax)
     real(kind=8) :: moph(nptmax)
     real(kind=8) :: mosp(nstmax)
     real(kind=8) :: xbar(nstmax)
@@ -594,7 +591,7 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     ! Compute the mole fractions and activities of the basis and
     ! non-basis ion-exchanger species, and the numbers of moles
     ! of the non-basis species.
-    call ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, jern1, jern2, jetmax, jflag, jgext, jsflag, losp, mgext, moph, mosp, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, netmax, noutpt, nptmax, nstmax, nttyo, ugexj, uphase, uspec, xbar, xbarlg, xlks)
+    call ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, jern1, jern2, jetmax, jflag, jgext, jsflag, losp, mgext, moph, mosp, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, netmax, noutpt, nptmax, nstmax, nttyo, ugexj, uphase, xbar, xbarlg, xlks)
 
     ! Compute the concentrations (mol/kg.H2O) and numbers of moles of
     ! the non-basis ion-exchanger species.
@@ -620,7 +617,7 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
 
     ! Compute the equivalent fractions (egexs) and mole ratios (mrgexs)
     ! of exchanger species of generic ion exchanger phases.
-    call gegexs(cegexs, cgexj, egexjc, egexjf, egexs, iern1, iern2, ietmax, jern1, jetmax, jgext, moph, mosp, mrgexs, netmax, ngexsa, ngext, noutpt, nptmax, nstmax, nttyo, zchar, zgexj)
+    call gegexs(cegexs, cgexj, egexjc, egexjf, egexs, iern1, iern2, ietmax, jern1, jetmax, jgext, moph, mosp, mrgexs, netmax, ngexsa, ngext, nptmax, nstmax, zchar, zgexj)
 
     if (q6mode) then
         ! Compute the numbers of moles and concentrations of the
@@ -638,7 +635,7 @@ subroutine ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, 
     end if
 
     ! Sort species according to log masses.
-    call sortsp(iern1, iern2, istack, jcsort, jern1, jern2, jgext, jsitex, jetmax, jjsort, jssort, jstack, losp, lsort, ncmpr, nern1, nern2, netmax, noutpt, nphasx, npt, nptmax, nst, nstmax, nttyo)
+    call sortsp(iern1, iern2, istack, jcsort, jern1, jgext, jsitex, jetmax, jjsort, jssort, jstack, losp, lsort, ncmpr, nern1, nern2, netmax, noutpt, nphasx, npt, nptmax, nst, nstmax, nttyo)
 
     ! Compute the number of moles of water. The following coding
     ! assumes that the aqueous solution is the first phase (i.e.,

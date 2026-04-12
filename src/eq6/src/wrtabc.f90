@@ -1,4 +1,4 @@
-subroutine wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvoso, dwoso, eh, fje, fo2lg, fugac, fxi, iktmax, iopt, jflag, jsflag, kmax, kstep, kx1, kxt, mrmlra, modr, mosp, mospt, moph, mopht, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ncmpr, nct, nctmax, nelect, ngrn1, ngrn2, ngtmax, nhydr, nhydx, nllnmx, no2gaq, noptmx, noutpt, npt, nptmax, nrct, nrctmx, nstmax, ntabx, ntidmx, ntitl2, ntitld, ntitmx, nttyo, nxrn1, nxrn2, nxtmax, pe, ph, phmes, ppmwb, ppmwe, prcinf, press, prminf, qrho, qriinf, rho, rhowc, sidrph, sigmam, tdsgks, tdsglw, tempc, time1, uelem, ulinex, uphase, uplatm, ureac, uspec, usteq6, utitl2, utitld, uveeq6, vodrt, vosoct, wkgh2o, wodrt, wosoct, xbar, xbarlg, xi1)
+subroutine wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvoso, dwoso, eh, fje, fo2lg, fugac, fxi, iktmax, iopt, jflag, jsflag, kmax, kstep, mrmlra, modr, mospt, moph, mopht, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ncmpr, nct, nctmax, nelect, ngrn1, ngrn2, ngtmax, nllnmx, no2gaq, noptmx, noutpt, npt, nptmax, nrct, nrctmx, nstmax, ntabx, ntidmx, ntitl2, ntitld, ntitmx, nttyo, nxrn1, nxrn2, nxtmax, pe, ph, phmes, ppmwb, ppmwe, press, qrho, qriinf, rho, rhowc, sidrph, sigmam, tdsgks, tdsglw, tempc, time1, uelem, ulinex, uphase, uplatm, ureac, uspec, usteq6, utitl2, utitld, uveeq6, vodrt, vosoct, wkgh2o, wodrt, wosoct, xbar, xbarlg, xi1)
     use iso_fortran_env, only: dp => real64
     !! This subroutine writes to TABX (the scrambled TAB file) using
     !! a csv (comma separated value) format. A .csv file can be opened
@@ -37,8 +37,6 @@ subroutine wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvos
     integer :: ncmpr(2,nptmax)
 
     integer :: kstep
-    integer :: kx1
-    integer :: kxt
     integer :: narn1
     integer :: narn2
     integer :: nbt
@@ -46,8 +44,6 @@ subroutine wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvos
     integer :: nelect
     integer :: ngrn1
     integer :: ngrn2
-    integer :: nhydr
-    integer :: nhydx
     integer :: no2gaq
     integer :: npt
     integer :: nrct
@@ -80,7 +76,6 @@ subroutine wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvos
     real(kind=8) :: modr(nrctmx)
     real(kind=8) :: moph(nptmax)
     real(kind=8) :: mopht(nptmax)
-    real(kind=8) :: mosp(nstmax)
     real(kind=8) :: mospt(nstmax)
     real(kind=8) :: ppmwb(nbtmax)
     real(kind=8) :: ppmwe(nctmax)
@@ -101,9 +96,7 @@ subroutine wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvos
     real(kind=8) :: pe
     real(kind=8) :: ph
     real(kind=8) :: phmes
-    real(kind=8) :: prcinf
     real(kind=8) :: press
-    real(kind=8) :: prminf
     real(kind=8) :: rho
     real(kind=8) :: rhowc
     real(kind=8) :: sigmam

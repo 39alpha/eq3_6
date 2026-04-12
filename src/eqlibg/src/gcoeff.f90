@@ -1,4 +1,4 @@
-subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, uspec, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
+subroutine gcoeff(abar, acflgc, actwlc, adh, al10, aphi, azero, a3bar, a3bars, bdh, bdot, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
     !! This subroutine computes activity coefficients of aqueous species
     !! using various models. The model used is determined by the option
     !! flag iopg(1):
@@ -107,18 +107,11 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
     real(kind=8) :: zchsq2(nstmax)
     real(kind=8) :: zchcu6(nstmax)
 
-    character(len=48) :: uspec(nstmax)
 
     real(kind=8) :: adh
-    real(kind=8) :: adhh
-    real(kind=8) :: adhv
     real(kind=8) :: aphi
     real(kind=8) :: bdh
-    real(kind=8) :: bdhh
-    real(kind=8) :: bdhv
     real(kind=8) :: bdot
-    real(kind=8) :: bdoth
-    real(kind=8) :: bdotv
 
     real(kind=8) :: abar
     real(kind=8) :: actwlc
@@ -335,7 +328,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
         ! Compute the following second order sum in S-lambda and its
         ! ionic strength derivatives:
         !   ssumw: SUM(ij) [ S-lambda(ij) + I*S-lambda'(ij) ]*m(i)*m(j)
-        call gssum(conc, dpslm, fxi, nslt, nsltmx, nslx, nstmax, pslm, ssumw, uspec)
+        call gssum(conc, dpslm, fxi, nslt, nsltmx, nslx, nstmax, pslm, ssumw)
 
         if (qhawep) then
             ! Use the form corresponding to C (from Cphi), psi, zeta,
@@ -422,7 +415,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
             ! Use the original pure mu form.
             ! Compute the following third order sum in mu:
             !   musumw: SUM(ijk) mu(ijk)*m(i)*m(j)*m(k)
-            call gmsum(conc, musumw, nmut, nmutmx, nmux, nstmax, pmu, uspec)
+            call gmsum(conc, musumw, nmut, nmutmx, nmux, nstmax, pmu)
             muterm = 2.*musumw
         end if
 
@@ -443,7 +436,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
         ! Note also that "flim" in EQ3/6 is 2 * F, as F is commonly
         ! defined in the Pitzer literature. This is because
         ! flim will be multipled by z(i)^2/2 instead of z(i)^2.
-        call gsdsm(conc, dpslm, nslt, nsltmx, nslx, nstmax, spsum, spsump, uspec)
+        call gsdsm(conc, dpslm, nslt, nsltmx, nslx, nstmax, spsum, spsump)
 
         flsum = fp + elsums + spsum
 
@@ -469,7 +462,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
             ! and its ionic strength derivative:
             !   slsum(i):  SUM(j) S-lambda(ij)*m(j)
             !   slsump(i): SUM(j) S-lambda'(ij)*m(j)
-            call gsgsm(conc, dpslm, na, natmax, nsltmx, nstmax, nsxi, nsxmax, nsxx, pslm, slsum, slsump, uspec)
+            call gsgsm(conc, dpslm, na, natmax, nsltmx, nstmax, nsxi, nsxmax, nsxx, pslm, slsum, slsump)
 
             ! Compute the contributions from third-order terms.
             muterm = 0.
@@ -621,7 +614,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, adhh, adhv, al10, aphi, azero, a3ba
                 ! Use the original pure mu form.
                 ! Compute the following second order sum in mu:
                 !   musum(i): SUM(jk) mu(ijk)*m(j)*m(k)
-                call gmdsm(conc, musum, na, natmax, nmutmx, nmxi, nmxmax, nmxx, ns, nstmax, pmu, uspec)
+                call gmdsm(conc, musum, na, natmax, nmutmx, nmxi, nmxmax, nmxx, nstmax, pmu)
 
                 muterm = 3.*musum
             end if

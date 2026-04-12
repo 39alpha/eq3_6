@@ -1,4 +1,4 @@
-subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx0, iindx1, imrn1, imrn2, iodb, ipndx0, ipndx1, ixrn1, ixrn2, jcsort, jern1, jetmax, jgext, jpflag, jsflag, kbt, kdim, kdim0, kmax, km1, km10, kmt, kmt0, kord, kstep, kx1, kx10, kxt, kxt0, loph, losp, moph, mosp, mprph, mprsp, mrgexs, mtb, mtb0, nbasp, nbaspd, nbt, nbtmax, ncmpe, ncmpr, ndelay, netmax, ngext, nodbmx, nordmx, noutpt, npet, npetmx, npet0, npt, nptmax, npts, nset, nsetmx, nset0, nstmax, nsts, nstsmx, nstsr, nttyo, qbye, uaqsln, ufixf, uspec, uphase, uzvec0, uzvec1, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
+subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx0, iindx1, imrn1, imrn2, iodb, ipndx0, ipndx1, ixrn1, ixrn2, jcsort, jern1, jetmax, jgext, jpflag, jsflag, kbt, kdim, kdim0, kmax, km1, km10, kmt, kmt0, kord, kx1, kx10, kxt, kxt0, loph, losp, moph, mosp, mprph, mprsp, mrgexs, mtb, mtb0, nbaspd, nbt, nbtmax, ncmpe, ncmpr, ndelay, netmax, ngext, nodbmx, nordmx, noutpt, npet, npetmx, npet0, npt, nptmax, npts, nset, nsetmx, nset0, nstmax, nsts, nstsmx, nstsr, nttyo, qbye, uaqsln, ufixf, uspec, uphase, uzvec0, uzvec1, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
     !! This subroutine transfers the entire mass of eligible phases
     !! in the Equilibrium System (ES) to the Physically Removed System
     !! (PRS). The eligible phases exclude the aqueous solution phase
@@ -40,7 +40,6 @@ subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1,
     integer :: jgext(netmax)
     integer :: jpflag(nptmax)
     integer :: jsflag(nstmax)
-    integer :: nbasp(nbtmax)
     integer :: nbaspd(nbtmax)
     integer :: ncmpe(2,npetmx)
     integer :: ncmpr(2,nptmax)
@@ -62,7 +61,6 @@ subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1,
     integer :: kmt
     integer :: kmt0
     integer :: kord
-    integer :: kstep
     integer :: kx1
     integer :: kx10
     integer :: kxt
@@ -153,7 +151,7 @@ subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1,
 1010 format(/'   Mass= ',1pe12.5,' moles',/'   Two-point relative rate= ',1pe12.5,' mol/mol',/)
                     end if
 
-                    call shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, ipndx1, ixrn1, ixrn2, jern1, jetmax, jgext, jpflag, jsflag, kbt, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, nbtmax, ncmpe, ncmpr, netmax, ngext, nordmx, noutpt, np, npet, npetmx, nptmax, nsetmx, nstmax, nttyo, qshftd, qtotsh, uphase, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
+                    call shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, ipndx1, ixrn1, ixrn2, jern1, jetmax, jgext, jpflag, jsflag, kbt, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, ncmpe, ncmpr, netmax, ngext, nordmx, noutpt, np, npet, npetmx, nptmax, nsetmx, nstmax, nttyo, qshftd, qtotsh, uphase, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
 
                     jpflag(np) = 0
                     nr1 = ncmpr(1,np)
@@ -205,7 +203,7 @@ subroutine dumpdp(csts, demop0, demos0, emop, emop0, emos, emos0, fdpe0, fdpem1,
         ! The ES phase assemblage has changed. Re-set the index arrays
         ! associated with finite-difference description of the numbers
         ! of mole of phases and species in the Equilibrium System (ES).
-        call iiemop(iemop, iemos, iindx1, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr, noutpt, npet, npetmx, npt, nptmax, nset, nsetmx, nstmax, nttyo, uaqsln, uspec, uphase)
+        call iiemop(iemop, iemos, ipndx1, jsflag, kdim, kmax, ncmpe, ncmpr, noutpt, npet, npetmx, nptmax, nset, nsetmx, nstmax, nttyo, uaqsln, uspec, uphase)
 
         npet0 = npet
         nset0 = nset

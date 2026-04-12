@@ -1,4 +1,4 @@
-subroutine suprdx(jflag, jsflag, narn1a, narn2a, ndrsd, ndrsmx, ndrsrd, nrdxsp, nsta, nstmax, uspeca)
+subroutine suprdx(jflag, jsflag, narn1a, narn2a, ndrsd, ndrsmx, ndrsrd, nrdxsp, nsta, nstmax)
     !! This subroutine executes the option to suppress all redox
     !! reactions. This is not the same as suppressing all redox
     !! species. An auxiliary basis species (say Oxalate-) that is
@@ -30,7 +30,6 @@ subroutine suprdx(jflag, jsflag, narn1a, narn2a, ndrsd, ndrsmx, ndrsrd, nrdxsp, 
     integer :: nrdxsp
     integer :: nsta
 
-    character(len=48) :: uspeca(nstmax)
 
     ! Local variable declarations.
     integer :: kcount

@@ -1,4 +1,4 @@
-subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, afrc1, aft1, ah, ahmes, ahnbs, ahrc, alki, alk1, alk2, awmax, awmin, a3bar, cbsr, cdrsd, cegexs, cesr, conc, conclg, csts, ctb, cteaq, dvoso, dwoso, egers, egexjc, egexjf, egexpa, egexpc, egexs, egexw, eh, ehmax, ehmes, ehmin, ehnbs, ehrc, elecsr, electr, fje, fjest, fo2, fo2lg, fo2lrc, fugac, fugalg, fxi, fxist, iaqsln, iemop, iemop0, iemos, iemos0, iern1, iern2, iexr, iexrt, ifrn1, ifrn2, ilrn1, ilrn2, imech, imrn1, imrn2, iopg, iopr, iopt, ipndx1, ixrn1, ixrn2, jcode, jcsort, jern1, jern2, jexr, jexrt, jflag, jflagd, jflgi, jgext, jgsort, jpflag, jreac, jsca, jscat, jscr, jscrt, jsflag, jsol, jssort, kbt, kern1, kern2, kgexsa, km1, kmt, kx1, kxt, kstep, kstpmx, loph, losp, mlmrra, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mprph, mprsp, mrgers, mrmlra, mwtrc, mwtsp, narn1, narn2, nat, nbasp, nbaspd, nbt, ncmpe, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nelect, nern1, nern2, nert, net, nfrn1, nfrn2, ngext, ngexsa, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmrt, nmt, noutpt, no2gaq, npet, npet0, npt, npts, nrct, nrdxsp, nrk, nrndex, nst, nsts, nstsr, ntf1t, ntf2t, nxridx, nxrn1, nxrn2, nxrt, nxt, osc, oscst, omega, o2max, o2min, pch, pe, pemes, penbs, perc, ph, phcl, phmax, phmes, phmin, phnbs, ppmwe, presg, press, qaft1, qftpr2, qmod, qphcl, qredox, qrho, qriinf, qstopx, qvhfxi, qvlsow, qzprnt, rho, rhoc, rhowc, rk, rreacn, rreac1, rrelr1, rxbar, sfcar, sidrph, sidrsp, sigmst, sigmam, ssfcar, tdays, tdsglw, tdspkc, tdsplc, tempc, thours, time1, timemx, tmins, tolsat, tolxsf, tolxst, tolxsu, tyears, uelem, ugermo, ugexj, ugexmo, uphase, ureac, uspec, uxtype, vodrt, voph, vophg, vophj, vopht, vosoct, vosol, vosp, vospg, vospj, vospt, vreac, wfh2o, wftds, wkgwi, woh2o, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosol, wosp, wospg, wospj, wospt, wotds, xbar, xbarlg, xbarw, xbrwlg, xgers, xgexw, xi1, xidump, ximax, xistsv, xirct, zchar)
+subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, afrc1, aft1, ah, ahmes, ahnbs, ahrc, alki, alk1, alk2, awmax, awmin, a3bar, cdrsd, cegexs, conc, conclg, csts, ctb, cteaq, dvoso, dwoso, egexjc, egexjf, egexpa, egexpc, egexs, egexw, eh, ehmax, ehmes, ehmin, ehnbs, ehrc, elecsr, electr, fje, fjest, fo2, fo2lg, fo2lrc, fugac, fugalg, fxi, fxist, iaqsln, iemop0, iemos0, iern1, iern2, iexr, iexrt, ifrn1, ifrn2, ilrn1, ilrn2, imech, imrn1, imrn2, iopg, iopr, iopt, ipndx1, ixrn1, ixrn2, jcode, jcsort, jern1, jern2, jexr, jexrt, jflag, jflagd, jgext, jgsort, jpflag, jsca, jscat, jscr, jscrt, jsflag, jsol, kern1, kern2, kgexsa, km1, kmt, kx1, kxt, kstep, kstpmx, loph, losp, mlmrra, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mrmlra, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nelect, nert, net, ngext, ngexsa, ngrn1, ngt, nhydr, nhydx, nmrt, noutpt, no2gaq, npet0, npt, npts, nrct, nrdxsp, nrk, nrndex, nsts, nstsr, ntf1t, ntf2t, nxrt, osc, oscst, omega, o2max, o2min, pch, pe, pemes, penbs, perc, ph, phcl, phmax, phmes, phmin, phnbs, ppmwe, presg, press, qaft1, qftpr2, qmod, qphcl, qredox, qrho, qriinf, qstopx, qvlsow, qzprnt, rho, rhoc, rhowc, rk, rreacn, rreac1, rrelr1, sfcar, sidrph, sidrsp, sigmst, sigmam, tdays, tdsglw, tdspkc, tdsplc, tempc, thours, time1, timemx, tmins, tolsat, tolxst, tolxsu, tyears, uelem, ugexj, ugexmo, uphase, ureac, uspec, uxtype, vodrt, voph, vophg, vophj, vopht, vosoct, vosol, vosp, vospg, vospj, vospt, wfh2o, wftds, wkgwi, woh2o, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosol, wosp, wospg, wospj, wospt, wotds, xbar, xbarlg, xbarw, xbrwlg, xgexw, xi1, xidump, ximax, xistsv, xirct, zchar)
     !! This subroutine writes a detailed description on the output file
     !! of the modeled system at the current value of reaction progress
     !! (xi1).
@@ -29,13 +29,9 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     integer :: noutpt
 
     integer :: jcode(nrctmx)
-    integer :: jreac(nrctmx)
     integer :: nrndex(nrctmx)
-    integer :: nxridx(nrctmx)
 
-    integer :: iemop(npetmx)
     integer :: iemop0(npetmx)
-    integer :: iemos(nsetmx)
     integer :: iemos0(nsetmx)
     integer :: iexr(nrctmx)
     integer :: imech(2,nrctmx)
@@ -49,7 +45,6 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     integer :: jexr(nrctmx)
     integer :: jflag(nstmax)
     integer :: jflagd(nstmax)
-    integer :: jflgi(nbtmax)
     integer :: jgext(netmax)
     integer :: jgsort(ngtmax)
     integer :: jpflag(nptmax)
@@ -57,13 +52,11 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     integer :: jscr(nrctmx)
     integer :: jsflag(nstmax)
     integer :: jsol(nxtmax)
-    integer :: jssort(nstmax)
     integer :: kern1(netmax)
     integer :: kern2(netmax)
     integer :: kgexsa(ketmax,netmax)
     integer :: nbasp(nbtmax)
     integer :: nbaspd(nbtmax)
-    integer :: ncmpe(2,npetmx)
     integer :: ncmpe0(2,npetmx)
     integer :: ncmpr(2,nptmax)
     integer :: ndrsd(ndrsmx)
@@ -85,38 +78,21 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     integer :: ixrn1
     integer :: ixrn2
 
-    integer :: nat
     integer :: nbt
     integer :: nct
     integer :: net
     integer :: ngt
-    integer :: nlt
-    integer :: nmt
     integer :: npt
-    integer :: nst
-    integer :: nxt
 
     integer :: narn1
     integer :: narn2
-    integer :: nern1
-    integer :: nern2
-    integer :: nfrn1
-    integer :: nfrn2
     integer :: ngrn1
-    integer :: ngrn2
-    integer :: nlrn1
-    integer :: nlrn2
-    integer :: nmrn1
-    integer :: nmrn2
-    integer :: nxrn1
-    integer :: nxrn2
 
     integer :: iaqsln
     integer :: iexrt
     integer :: jexrt
     integer :: jscat
     integer :: jscrt
-    integer :: kbt
     integer :: km1
     integer :: kmt
     integer :: kx1
@@ -129,7 +105,6 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     integer :: nhydx
     integer :: nmrt
     integer :: no2gaq
-    integer :: npet
     integer :: npet0
     integer :: npts
     integer :: nrct
@@ -146,37 +121,26 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     logical :: qrho
     logical :: qriinf
     logical :: qstopx
-    logical :: qvhfxi
     logical :: qvlsow
     logical :: qzprnt
 
     character(len=48) :: uspec(nstmax)
     character(len=32) :: uxtype(jsomax)
-    character(len=24) :: ugermo(nertmx)
     character(len=24) :: ureac(nrctmx)
     character(len=24) :: ugexmo(netmax)
     character(len=24) :: uphase(nptmax)
     character(len=8) :: uelem(nctmax)
     character(len=8) :: ugexj(jetmax,netmax)
 
-    real(kind=8) :: cbsr(nbt1mx,nsrtmx)
-    real(kind=8) :: cesr(nctmax,nsrtmx)
-    real(kind=8) :: egers(ietmax,jetmax,nertmx)
     real(kind=8) :: elecsr(nsrtmx)
     real(kind=8) :: modr(nrctmx)
-    real(kind=8) :: mrgers(ietmax,jetmax,nertmx)
     real(kind=8) :: morr(nrctmx)
-    real(kind=8) :: mwtrc(nrctmx)
     real(kind=8) :: rreacn(nrctmx)
     real(kind=8) :: rreac1(nrctmx)
     real(kind=8) :: rrelr1(nrctmx)
-    real(kind=8) :: rxbar(iktmax,nxrtmx)
     real(kind=8) :: sfcar(nrctmx)
-    real(kind=8) :: ssfcar(nrctmx)
-    real(kind=8) :: vreac(nrctmx)
     real(kind=8) :: wodr(nrctmx)
     real(kind=8) :: worr(nrctmx)
-    real(kind=8) :: xgers(ietmax,jetmax,nertmx)
 
     real(kind=8) :: acflg(nstmax)
     real(kind=8) :: actlg(nstmax)
@@ -211,8 +175,6 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     real(kind=8) :: mospg(nstmax)
     real(kind=8) :: mospj(nstmax)
     real(kind=8) :: mospt(nstmax)
-    real(kind=8) :: mprph(nptmax)
-    real(kind=8) :: mprsp(nstmax)
     real(kind=8) :: mwtsp(nstmax)
 
     real(kind=8) :: perc(nbtmax)
@@ -298,7 +260,6 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     real(kind=8) :: timemx
     real(kind=8) :: tmins
     real(kind=8) :: tolsat
-    real(kind=8) :: tolxsf
     real(kind=8) :: tolxst
     real(kind=8) :: tolxsu
     real(kind=8) :: tyears
@@ -1063,7 +1024,7 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
     ! the aqueous phase not constrained to be at equilibrium. The
     ! data correspond to the reactions and thermodynamic data in
     ! the 'd' set.
-    call prtsia(affsd, jflagd, jflgi, jsflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
+    call prtsia(affsd, jflagd, jsflag, narn1, narn2, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
 
     if (iopr(7) .ge. 0) then
         ! Print saturation index and affinity tables for the
@@ -1105,7 +1066,7 @@ subroutine scripz(abar, acflg, acfw, acfwlg, actlg, actw, actwlg, affpd, affsd, 
         do np = iern1,iern2
             ncount = ncount + 1
 
-            call prtgex(acflg, actlg, affpd, affsd, cegexs, conc, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
+            call prtgex(acflg, actlg, affpd, affsd, cegexs, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
         end do
 
         if (ncount .le. 0) then

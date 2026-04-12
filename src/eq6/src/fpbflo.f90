@@ -1,4 +1,4 @@
-subroutine fpbflo(al10, delxi, demop0, dlxmin, dxval0, d1emp1, d2emp1, emop, emop0, eps100, fdpe0, iemop, ier, iodb, nodbmx, nord, nordmx, noutpt, npet, npetmx, nptmax, nrd1mx, nttyo, qdump, toldl, uaqsln, ufixf, uphase, xim1, xi0, xi1, xval0, zklogu)
+subroutine fpbflo(delxi, demop0, dlxmin, dxval0, d1emp1, emop, emop0, eps100, fdpe0, iemop, ier, iodb, nodbmx, nord, nordmx, noutpt, npet, npetmx, nptmax, nrd1mx, nttyo, qdump, uaqsln, ufixf, uphase, xi0, xi1, xval0, zklogu)
     !! This subroutine limits delxi by approximate position of
     !! significant maxima in the masses of non-aqeuous species that are
     !! in partial equilibrium with the aqueous solution. The numbers of
@@ -35,17 +35,13 @@ subroutine fpbflo(al10, delxi, demop0, dlxmin, dxval0, d1emp1, d2emp1, emop, emo
     real(kind=8) :: demop0(nordmx,npetmx)
     real(kind=8) :: dxval0(nrd1mx)
     real(kind=8) :: d1emp1(npetmx)
-    real(kind=8) :: d2emp1(npetmx)
     real(kind=8) :: emop(npetmx)
     real(kind=8) :: emop0(npetmx)
     real(kind=8) :: fdpe0(nordmx,npetmx)
 
-    real(kind=8) :: al10
     real(kind=8) :: delxi
     real(kind=8) :: dlxmin
     real(kind=8) :: eps100
-    real(kind=8) :: toldl
-    real(kind=8) :: xim1
     real(kind=8) :: xi0
     real(kind=8) :: xi1
     real(kind=8) :: xval0

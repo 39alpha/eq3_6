@@ -1,4 +1,4 @@
-subroutine prtsia(affsd, jflagd, jflgi, jsflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
+subroutine prtsia(affsd, jflagd, jsflag, narn1, narn2, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
     !! This subroutine prints tables of saturation indices and affinities
     !! for reactions among aqueous species which are not constrained
     !! to be at equilibrium.
@@ -39,9 +39,7 @@ subroutine prtsia(affsd, jflagd, jflgi, jsflag, narn1, narn2, nbasp, nbaspd, nbt
     integer :: noutpt
 
     integer :: jflagd(nstmax)
-    integer :: jflgi(nbtmax)
     integer :: jsflag(nstmax)
-    integer :: nbasp(nbtmax)
     integer :: nbaspd(nbtmax)
     integer :: ndrsd(ndrsmx)
     integer :: ndrsrd(2,nstmax)
