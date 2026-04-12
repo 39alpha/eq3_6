@@ -3233,6 +3233,8 @@ program eq6
 
     ! Initialize non-aqueous phases in the physically removed system
     ! (PRS).
+    nr1 = 0
+    nr2 = 0
     if (nprpti .gt. 0) then
         nerr = 0
         npi = 0

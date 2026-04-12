@@ -226,6 +226,8 @@ subroutine wrtabc(acflg, actlg, actw, afrc1, aft1, alk, conclg, cteaq, ctb, dvos
     data sidrcv/-10./
 
     ! Allocate or reallocate local work arrays as needed.
+    jts = 0
+
     if (.not.ALLOCATED(uphasx)) then
         ! Local work arrays are not allocated. Note that only one array
         ! is tested to see if all are allocated or not.

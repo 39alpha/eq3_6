@@ -122,6 +122,7 @@ subroutine rsatch(csts, egers, egexs, iern1, ietmax, iindx1, iktmax, iopt, ipndx
     real(kind=8) :: texp
     real(kind=8) :: tlg
 
+    nt = 0
     qreq = .false.
 
     ! Pure minerals.

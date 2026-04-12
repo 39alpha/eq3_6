@@ -171,6 +171,7 @@ subroutine shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop,
     end if
 
     ! Save the current numbers of moles values.
+    j2 = ilnobl(uphase(np))
     lold = loph(np)
     mold = moph(np)
 

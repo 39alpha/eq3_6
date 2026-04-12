@@ -106,6 +106,7 @@ subroutine alters(afcnst, apresg, axlks, cdrs, kxmod, narxmx, narxt, ndrs, ndrsm
     data ublk24 /'                        '/
     data ufix   /'fix_    '/
 
+    cds = 0.
     nerr = 0
 
     if (nxmod .le. 0) then

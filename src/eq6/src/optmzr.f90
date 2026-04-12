@@ -424,6 +424,9 @@ subroutine optmzr(aamatr, abar, acflg, acflgo, act, actlg, adh, afcnst, al10, al
     data qxbarw/.false./
 
     ! Allocate or reallocate local work arrays as needed.
+    ns = 0
+    qsclim = .false.
+
     if (.not.ALLOCATED(iastak)) then
         ! Local work arrays are not allocated. Zero the saved
         ! array size variables. Note that only one array is tested

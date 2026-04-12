@@ -155,6 +155,11 @@ subroutine betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cd
     data unone  /'None    '/
     data uptgas /'Gas     '/
 
+    belect = 0.
+    bo2gaq = 0.
+    bwater = 0.
+    cde = 0.
+
     do krow = 1,kdim
         alpha(krow) = 0.
         beta(krow) = 0.

@@ -122,6 +122,7 @@ subroutine echox(azero, cdrs, covali, eh, fo2lg, iebal3, iodb, iopg, iopr, iopt,
 
     character(len=24) :: ux24
 
+    nss = 0
     j2 = ilnobl(uactop)
     write (noutpt,1000) uactop(1:j2)
 1000 format(/' The activity coefficients of aqueous species will be',/' calculated using ',a,'.'/)

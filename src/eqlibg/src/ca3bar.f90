@@ -150,6 +150,8 @@ subroutine ca3bar(azero, a3bar, a3bars, conc, jcsort, narn1, narn2, natmax, nstm
     ! can be safely made by looping from narn1 to narn2. Note the use
     ! of a local variable (sx) within the loop. Note also that the loop
     ! is unrolled.
+    sx = 0.
+
     do nss = narn1,ileft,8
         ns0 = jcsort(nss)
         ns1 = jcsort(nss + 1)

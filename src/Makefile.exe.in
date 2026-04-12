@@ -1,6 +1,6 @@
 all: $(TARGET)
 
-FIXED_FLAGS := -std=f2008 -Wall -Wextra -Werror -pedantic -Wno-maybe-uninitialized -Wno-compare-reals -ffree-line-length-3000 -fmax-errors=0
+FIXED_FLAGS := -std=f2008 -Wall -Wextra -Werror -pedantic -Wno-compare-reals -ffree-line-length-3000 -fmax-errors=0
 
 $(TARGET): $(MODOBJECTS) $(OBJECTS) $(LIBRARIES)
 	gfortran $(FIXED_FLAGS) $(FFLAGS) -Jmod -o $(TARGET) $^

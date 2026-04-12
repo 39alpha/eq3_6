@@ -104,6 +104,7 @@ subroutine gpheh(acflg, actlg, actwlg, adh, ah, ahmes, ahnbs, conc, eh, ehfac, e
     real(kind=8) :: eterm1
 
     ! Compute pH, Eh, and pe for the operational pH scale.
+    eterm = 0.
     ph = -actlg(nhydr)
     eh = -99999.
     pe = -99999.
