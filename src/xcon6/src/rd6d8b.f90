@@ -1248,7 +1248,7 @@ subroutine rd6d8b(cbsri, cdac, cesri, cgexj, csigma, dlxdmp, dlxmx0, dlxpll, dlx
         ustr = ufield(3)
         call locase(ustr)
 
-        do jrex = -1,3
+        do jrex = -1,2
             uheadx = urcjre(jrex)
             call locase(uheadx)
 
@@ -1262,7 +1262,7 @@ subroutine rd6d8b(cbsri, cdac, cesri, cgexj, csigma, dlxdmp, dlxmx0, dlxpll, dlx
         write (nttyo,1065) ustr(1:j2)
 1065 format(/" * Error - (XCON6/rd6d8b) Don't recognize the",' jreac option string',/7x,' "',a,'". This should',' be one of the strings',/7x,'defined in the urcjre array.',' The valid strings are:',/)
 
-        do jrex = -1,3
+        do jrex = -1,2
             j3 = ilnobl(urcjre(jrex))
             write (nttyo,1067) urcjre(jrex)(1:j3)
 1067 format(9x,a)

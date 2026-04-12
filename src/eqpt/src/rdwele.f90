@@ -105,7 +105,7 @@ subroutine rdwele(atwt, nch, nco, nct, nctmax, ndata1, ndat0s, ndat1f, nerr, nou
 1050 format(/' * Error - (EQPT/rdwele) Have encountered a blank',' name for chemical',/7x,'element number ',a,' in the list',' of elements on the data file.')
 
             if (nc .gt. 1) then
-                ux8b = uelem(nc - 1)
+                ux8b = uelem(max(1,nc - 1))
 
                 if (ux8b(1:7) .ne. '<blank>') then
                     j4 = ilnobl(ux8b)
