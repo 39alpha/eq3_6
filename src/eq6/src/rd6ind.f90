@@ -1395,7 +1395,7 @@ subroutine rd6ind(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dla
         ustr = ufield(3)
         call locase(ustr)
 
-        do jrex = -1,3
+        do jrex = -1,2
             uheadx = urcjre(jrex)
             call locase(uheadx)
 
@@ -1410,7 +1410,7 @@ subroutine rd6ind(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dla
         write (nttyo,1065) ustr(1:j2)
 1065 format(/" * Error - (EQ6/rd6ind) Don't recognize the",' jreac option string',/7x,' "',a,'". This should',' be one of the strings',/7x,'defined in the urcjre array.',' The valid strings are:',/)
 
-        do jrex = -1,3
+        do jrex = -1,2
             j3 = ilnobl(urcjre(jrex))
             write (noutpt,1067) urcjre(jrex)(1:j3)
             write (nttyo,1067) urcjre(jrex)(1:j3)

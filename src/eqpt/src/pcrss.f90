@@ -307,7 +307,7 @@ subroutine pcrss(apx, bpx, iapxmx, ibpxmx, iktmax, issot, ndata1, ndat0s, ndat1f
 1210 format(/' * Error - (EQPT/pcrss) Solid solution "',a,'"',/7x,'has a blank name for end-member number ',a,'.')
 
             if (i .gt. 1) then
-                ux24a = ussosp(i - 1,nxt)
+                ux24a = ussosp(max(1,i - 1),nxt)
 
                 if (ux24a(1:7) .ne. '<blank>') then
                     j5 = ilnobl(ux24a)
