@@ -89,7 +89,7 @@ subroutine eqshel(aadh, aadhh, aadhv, aamatr, aaphi, abar, abdh, abdhh, abdhv, a
 
     implicit none
 
-    include 'eqlib/eqlpar.h'
+    include 'eqlib/eqlparg.h'
     include 'eqlib/eqldv.h'
     include 'eqlib/eqlge.h'
     include 'eqlib/eql1s.h'
