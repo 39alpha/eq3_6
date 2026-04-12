@@ -1035,16 +1035,18 @@ program eqpt
             npx2r1 = npxca + 1
             npx2r2 = npxca + npxth
 
-            do npx2 = npx2r1,npx2r2
-                nthd = nthd + 1
-                uthdtr(1,nthd) = upair(1,npx2)
-                uthdtr(2,nthd) = upair(2,npx2)
-                uthdtr(3,nthd) = '<dummy>'
+            if (allocated(abeta) .and. allocated(atheta)) then
+                do npx2 = npx2r1,npx2r2
+                    nthd = nthd + 1
+                    uthdtr(1,nthd) = upair(1,npx2)
+                    uthdtr(2,nthd) = upair(2,npx2)
+                    uthdtr(3,nthd) = '<dummy>'
 
-                do j = 1,jpfcmx
-                    atheta(j,nthd) = abeta(j,0,npx2)
+                    do j = 1,jpfcmx
+                        atheta(j,nthd) = abeta(j,0,npx2)
+                    end do
                 end do
-            end do
+            end if
         end if
     end if
 

@@ -149,6 +149,7 @@ subroutine rd3inw(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, io
     ! qend   = .true if the end of the input file has been encountered
     ! qrderr = .true if the current problem can't be read because of
     !            a read format error or a dimensional overflow
+    j3 = 0
     qend = .false.
     qrderr = .false.
 

@@ -268,6 +268,8 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     data uinput /'Input   '/,ufinal /'Final   '/,uadj   /'Adj     '/
 
+    ctebal = 0.
+
     write (noutpt,1000)
 1000 format(/' - - - - - - - - - - - - - - - - - - - - - - - - - - -',' - - - - - - - - - - - -',/)
 

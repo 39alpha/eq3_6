@@ -1165,6 +1165,8 @@ subroutine path(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, ab
 
     data qxbarw/.false./
 
+    dlrmxo = 0.
+
     ! Allocate additional arrays needed to compute the reaction path.
     ALLOCATE(ctb(nbtmax))
     ALLOCATE(ppmwb(nbtmax))

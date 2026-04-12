@@ -307,6 +307,7 @@ subroutine wr3d72(cspb, fep, iktmax, iodb, iopg, iopr, iopt, itermx, jflagb, jxm
 160 continue
 
                                 j3 = ilnobl(uphas2(ns))
+                                j2 = ilnobl(uphas1(ns))
                                 write (nttyo,1170) uphas2(ns)(1:j3),uphas1(ns)(1:j2)
                                 write (newin,1170) uphas2(ns)(1:j3),uphas1(ns)(1:j2)
 1170 format(" * Error - (XCON3/wr3d72) Can't find the end-member",/7x,'"',a,'" in the set of components used to,'    /7x,'specify the composition of solid solution "',a,'".')

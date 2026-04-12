@@ -448,6 +448,7 @@ subroutine eqphas(aamatr, abar, acflg, acflgo, act, actlg, adh, afcnst, affp, af
     real(kind=8) :: tlg
 
     ! Local dimensioning variables.
+    mxmadd = 0.
     nsspmx = nssppa
 
     ! Allocate or reallocate local work arrays as needed.
