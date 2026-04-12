@@ -146,6 +146,7 @@ subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, jern1, j
     data icycmx /10/
     data itvemx /100/
 
+    cxs = 0.
     qprint = .false.
 
     ! Loop over all generic ion exchanger phases.

@@ -30,5 +30,7 @@ real(kind=8) function fctrl(i)
         end do
 
         fctrl = ifactr
+    else
+        fctrl = 0.
     end if
 end function fctrl

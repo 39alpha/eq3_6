@@ -133,6 +133,8 @@ subroutine intrct(cbsr, cbsri, cesr, cesri, egers, egersi, ibsrti, iern1, iern2,
 
     data uaq    /'aqueous species         '/,umn    /'minerals                '/,ugs    /'gases                   '/,uss    /'solid solutions         '/,uge    /'generic ion exchangers  '/
 
+    j3 = 0
+
     if (nrct .eq. 0) then
         go to 999
     end if

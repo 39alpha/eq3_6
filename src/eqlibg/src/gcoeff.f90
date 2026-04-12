@@ -237,6 +237,8 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, al10, aphi, azero, a3bar, a3bars, b
     ! Note: the following statements don't actually do anything except
     ! cause the compiler not to complain that fje, press, and zchcu6
     ! are not used.
+    csumca = 0.
+
     xx = fje
     xy = xx
     fje = xy

@@ -83,6 +83,8 @@ subroutine gegexw(cegexs, egexpc, egexpa, egexw, iern1, iern2, ietmax, jern1, je
     ! analogously (expac being analogous to expcc). The formally
     ! declared exchange capacities for the sites and the phases are
     ! not used here.
+    ex = 0.
+
     do np = iern1,iern2
         ne = np - iern1 + 1
 

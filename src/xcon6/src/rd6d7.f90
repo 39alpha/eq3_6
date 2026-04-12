@@ -188,6 +188,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
     real(kind=8) :: var
 
+    nrc = 0
     nfldmx = nfldpa
     nlchmx = nlchpa
 

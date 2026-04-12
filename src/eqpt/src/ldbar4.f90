@@ -47,6 +47,7 @@ subroutine ldbar4(ipc, ipcmax, nacdpr, narxmx, narxt, nbtmx1, ndbmax, ns, ntprmx
     ! Load the data from the xdbval array into the zdbval array.
     ! Note that a point which comprises the boundary between two
     ! ranges is a member of both ranges.
+    i = 0
     ntpr = 1
     k = 0
 

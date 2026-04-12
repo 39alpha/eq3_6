@@ -823,6 +823,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
 
     if (nwatra .eq. 0) then
         j3 = ilnobl(uwater)
+        j2 = ilnobl(uaqsln)
         write (noutpt,1150) uwater(1:j3),uaqsln(1:j2)
         write (nttyo,1150) uwater(1:j3),uaqsln(1:j2)
 1150 format(/' * Error - (EQLIB/indata) The species ',/7x,a,' (',a,') must be listed on the',/7x,'data file as the first species in its phase.')

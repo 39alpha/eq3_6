@@ -97,6 +97,7 @@ subroutine inbdot(azeroa, insgfa, nad1, narn1a, narn2a, nata, nata_asv, nerr, no
     end if
 
     ! Compute the aqueous species index na.
+    j2 = ilnobl(unam)
     na = ns - narn1a + 1
 
     ! Test for duplicate input.

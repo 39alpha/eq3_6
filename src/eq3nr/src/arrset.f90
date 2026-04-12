@@ -425,6 +425,8 @@ subroutine arrset(aamatr, abar, acflg, acflgo, act, actlg, adh, adhfs, adhfsx, a
     ! The following is needed for ncmpex.f, but is only relevant to EQ6.
     data qxbarw/.false./
 
+    cecorr = 0.
+
     write (noutpt,1000)
     write (nttyo,1000)
 1000 format(/' Starting Pre-Newton-Raphson Optimization.',/)

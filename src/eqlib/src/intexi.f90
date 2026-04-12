@@ -324,6 +324,7 @@ subroutine intexi(al10, axhfs, axlks, axvfs, cegexs, cess, cdrs, cgexj, cpgexs, 
     real(kind=8) :: zxjt
 
     ! Initialize some constants.
+    j2 = 0
     nerr = 0
     arcnst = -al10*0.001*rconst
     tfx0 = 273.15

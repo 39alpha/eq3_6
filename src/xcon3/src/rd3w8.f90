@@ -148,6 +148,7 @@ subroutine rd3w8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iod
     ! warnings. Here noutpt and nprob are not actually used. They are
     ! included in the calling sequence to allow it to match that of
     ! EQ3NR/rd3inw.f.
+    j3 = 0
     noutpt = nttyo
     n = nprob
     nprob = n
