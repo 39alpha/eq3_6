@@ -84,7 +84,7 @@ subroutine rxnsck(nbtmx1, cdrsi, nct, ndrsts, nentri, nerr, noutpt, ns, nsb, ntt
     end if
 
     ! Check for a species appearing more than once in the reaction
-    call nrxnck(nbtmx1, ndrsts, nentri, nerr, qduprs, udrsi)
+    call nrxnck(nbtmx1, ndrsts, nentri, qduprs, udrsi)
 
     if (qduprs) then
         ! Make an exception for the reaction O2(g) = O2(g) when

@@ -1,4 +1,4 @@
-subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki, apx, atwt, a3bar, a3bars, bpx, cdrsd, cegexs, cess, conc, conclg, coval, csts, ctb, cteaq, egexjc, egexjf, egexpa, egexpc, egexs, egexw, ehfac, ehrc, eps100, eh, farad, fje, fo2, fo2lg, fo2lrc, fugac, fugalg, fxi, iapxmx, ibpxmx, iebal, iern1, iern2, ietmax, igas, iktmax, iopg, iopr, iopt, ilrn1, ilrn2, imrn1, imrn2, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jflagd, jflgi, jfleba, jgext, jgsort, jpflag, jsflag, jsol, jsomax, kern1, kern2, ketmax, kgexsa, mlmrra, mrmlra, moph, mosp, mte, mteaq, mwtsp, narn1, narn2, natmax, nbasp, nbaspd, nbt, nbtmax, nchlor, ncmpr, nct, nctmax, ndrsd, ndrsmx, ndrsrd, nelect, ness, nessmx, nessr, net, neti, netmax, ngexpi, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, nhydr, nhydx, nopgmx, noprmx, noptmx, noutpt, no2gaq, npnxp, npt, nptmax, nrdxsp, nst, nstmax, nsts, nstsmx, nstsr, ntf1, ntf1mx, ntf1t, ntf2, ntf2mx, ntf2t, nttyo, nxrn1, nxrn2, nxt, nxti, nxtimx, nxtmax, omega, pe, perc, ppmwe, qrho, qxknph, rho, rhoc, rhowc, sidrph, sidrsp, sigmam, sigzi, tdsglw, tdspkc, tdspkg, tdspl, tdsplc, tempc, tf1, tf2, tolspf, uelem, ugexj, ugexmo, uphase, uspec, uxtype, vosol, wfac, wfh2o, wftds, wkgwi, woh2o, wosol, wotds, xbar, xbarlg, xbarw, xbrwlg, xgexw, xlke, xlksd, zchar, zchcu6, zchsq2)
+subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki, a3bar, bpx, cdrsd, cegexs, conc, conclg, coval, csts, ctb, cteaq, egexjc, egexjf, egexpa, egexpc, egexs, egexw, ehfac, ehrc, eps100, eh, farad, fje, fo2, fo2lg, fo2lrc, fugac, fugalg, fxi, ibpxmx, iebal, iern1, iern2, ietmax, iopg, iopr, iopt, ilrn1, ilrn2, imrn1, imrn2, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jflagd, jflgi, jfleba, jgext, jgsort, jpflag, jsflag, jsol, jsomax, kern1, kern2, ketmax, kgexsa, mlmrra, mrmlra, moph, mosp, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, nchlor, ncmpr, nct, nctmax, ndrsd, ndrsmx, ndrsrd, nelect, net, neti, netmax, ngexpi, ngexsa, ngext, ngrn1, ngt, ngtmax, nhydr, nhydx, nopgmx, noprmx, noptmx, noutpt, no2gaq, npnxp, npt, nptmax, nrdxsp, nst, nstmax, nsts, nstsmx, nstsr, ntf1, ntf1mx, ntf1t, ntf2, ntf2mx, ntf2t, nttyo, nxrn1, nxrn2, nxt, nxti, nxtimx, nxtmax, omega, pe, perc, ppmwe, qrho, qxknph, rho, rhoc, rhowc, sidrph, sidrsp, sigmam, sigzi, tdsglw, tdspkc, tdsplc, tempc, tf1, tf2, tolspf, uelem, ugexj, ugexmo, uphase, uspec, uxtype, vosol, wfh2o, wftds, wkgwi, woh2o, wosol, wotds, xbar, xbarlg, xbarw, xbrwlg, xgexw, xlke, xlksd, zchar, zchcu6, zchsq2)
     !! This subroutine writes a description of the computed aqueous
     !! solution model on the output file.
     !! This subroutine is called by:
@@ -8,18 +8,14 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     implicit none
 
     ! Calling sequence variable declarations.
-    integer :: iapxmx
     integer :: ibpxmx
     integer :: ietmax
-    integer :: iktmax
     integer :: jetmax
     integer :: jsomax
     integer :: ketmax
-    integer :: natmax
     integer :: nbtmax
     integer :: nctmax
     integer :: ndrsmx
-    integer :: nessmx
     integer :: netmax
     integer :: ngtmax
     integer :: nopgmx
@@ -58,8 +54,6 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     integer :: ncmpr(2,nptmax)
     integer :: ndrsd(ndrsmx)
     integer :: ndrsrd(2,nstmax)
-    integer :: ness(nessmx)
-    integer :: nessr(2,nstmax)
     integer :: ngexpi(netmax)
     integer :: ngexsa(ietmax,jetmax,netmax)
     integer :: ngext(jetmax,netmax)
@@ -72,7 +66,6 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     integer :: iebal
     integer :: iern1
     integer :: iern2
-    integer :: igas
     integer :: ilrn1
     integer :: ilrn2
     integer :: imrn1
@@ -89,7 +82,6 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     integer :: net
     integer :: neti
     integer :: ngrn1
-    integer :: ngrn2
     integer :: ngt
     integer :: nhydr
     integer :: nhydx
@@ -119,15 +111,11 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     real(kind=8) :: act(nstmax)
     real(kind=8) :: actlg(nstmax)
     real(kind=8) :: ahrc(nbtmax)
-    real(kind=8) :: atwt(nctmax)
-    real(kind=8) :: a3bars(natmax)
     real(kind=8) :: affpd(nptmax)
     real(kind=8) :: affsd(nstmax)
-    real(kind=8) :: apx(iapxmx,nxtmax)
     real(kind=8) :: bpx(ibpxmx,nxtmax)
     real(kind=8) :: cdrsd(ndrsmx)
     real(kind=8) :: cegexs(ietmax,jetmax,netmax)
-    real(kind=8) :: cess(nessmx)
     real(kind=8) :: conc(nstmax)
     real(kind=8) :: conclg(nstmax)
     real(kind=8) :: coval(nbtmax)
@@ -147,8 +135,6 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     real(kind=8) :: moph(nptmax)
     real(kind=8) :: mosp(nstmax)
-    real(kind=8) :: mte(nctmax)
-    real(kind=8) :: mteaq(nctmax)
     real(kind=8) :: mwtsp(nstmax)
     real(kind=8) :: perc(nbtmax)
     real(kind=8) :: ppmwe(nctmax)
@@ -156,7 +142,6 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     real(kind=8) :: sidrsp(nstmax)
     real(kind=8) :: tf1(ntf1mx)
     real(kind=8) :: tf2(ntf2mx)
-    real(kind=8) :: wfac(iktmax,nxtmax)
     real(kind=8) :: xbar(nstmax)
     real(kind=8) :: xbarlg(nstmax)
     real(kind=8) :: xgexw(ketmax,netmax)
@@ -183,8 +168,6 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
     real(kind=8) :: rho
     real(kind=8) :: sigmam
     real(kind=8) :: sigzi
-    real(kind=8) :: tdspkg
-    real(kind=8) :: tdspl
     real(kind=8) :: tempc
     real(kind=8) :: tolspf
     real(kind=8) :: vosol
@@ -553,12 +536,12 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
 
     ! Calculate affinities and saturation indices using the 'd' set
     ! of reactions.
-    call gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndrsd, ndrsmx, ndrsrd, npt, nptmax, nst, nstmax, qxknph, sidrph, sidrsp, uphase, uspec, xbar, xlksd)
+    call gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndrsd, ndrsmx, ndrsrd, npt, nptmax, nst, nstmax, qxknph, sidrph, sidrsp, xbar, xlksd)
 
     ! Compute and print saturation index and affinity tables for
     ! reactions in the aqueous phase not constrained to be at
     ! equilibrium.
-    call prtsia(affsd, jflagd, jflgi, jsflag, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
+    call prtsia(affsd, jflagd, jsflag, narn1, narn2, nbaspd, nbt, nbtmax, ndrsd, ndrsmx, ndrsrd, nhydr, noutpt, nrdxsp, nstmax, sidrsp, uspec)
 
     if (iopr(7) .ge. 0) then
         ! Print saturation index and affinity tables for the
@@ -610,7 +593,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
                 !   ndrsd for ndrs
                 !   ndrsrd for ndrsr
                 !   xlksd for xlks
-                call hpsat(acflg, act, actlg, afcnst, affpd, affsd, apx, bpx, cdrsd, eps100, iapxmx, ibpxmx, ier, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, ncmpr, ndrsd, ndrsmx, ndrsrd, noutpt, np, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, sidrsp, sidrph, uphase, uspec, wfac, xbar, xbarlg, xlksd)
+                call hpsat(acflg, act, actlg, afcnst, affpd, affsd, bpx, cdrsd, eps100, ibpxmx, ier, ixrn1, jflag, jsflag, ncmpr, ndrsd, ndrsmx, ndrsrd, np, nptmax, nstmax, nxtmax, sidrsp, sidrph, xbar, xbarlg, xlksd)
 
                 ! Check to see if the hypothetical affinity calculation
                 ! converged.
@@ -657,7 +640,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
             np = ngexpi(nei)
             ncount = ncount + 1
 
-            call prtgex(acflg, actlg, affpd, affsd, cegexs, conc, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
+            call prtgex(acflg, actlg, affpd, affsd, cegexs, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
         end do
 
         if (ncount .le. 0) then
@@ -683,7 +666,7 @@ subroutine scripx(abar, acflg, act, actlg, adh, afcnst, affpd, affsd, ahrc, alki
                 ier = 0
                 ncount = ncount + 1
 
-                call prtgex(acflg, actlg, affpd, affsd, cegexs, conc, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
+                call prtgex(acflg, actlg, affpd, affsd, cegexs, egexjc, egexjf, egexpa, egexpc, egexs, egexw, iern1, iern2, ietmax, jern1, jern2, jetmax, jgext, kern1, kern2, ketmax, kgexsa, moph, mosp, netmax, ngexsa, ngext, noutpt, np, nptmax, nstmax, sidrph, sidrsp, tolspf, ugexj, ugexmo, uspec, uphase, xbar, xbarlg, xgexw, wkgwi)
             end if
         end do
 

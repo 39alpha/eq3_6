@@ -1,4 +1,4 @@
-subroutine tprnn(abeta, acphi, alamnn, innpr, in2pr, ipbtmx, jpfcmx, natmax, ncvnn, nerr, nnnpr, nn2pr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvnn, qpdnn, qpdn2, uaqsp, upair)
+subroutine tprnn(abeta, alamnn, innpr, in2pr, ipbtmx, jpfcmx, natmax, ncvnn, nerr, nnnpr, nn2pr, noutpt, npx2mx, npx2t, nttyo, nwarn, pcvnn, qpdnn, qpdn2, uaqsp, upair)
     !! Test and process the Pitzer data for nn' (neutral, different
     !! neutral) pairs read from the DATA0 file. Find and flag errors,
     !! such as duplication of data (e.g., two data blocks for the same
@@ -47,7 +47,6 @@ subroutine tprnn(abeta, acphi, alamnn, innpr, in2pr, ipbtmx, jpfcmx, natmax, ncv
     character(len=24) :: upair(2,npx2mx)
 
     real(kind=8) :: abeta(jpfcmx,0:ipbtmx,npx2mx)
-    real(kind=8) :: acphi(jpfcmx,npx2mx)
     real(kind=8) :: alamnn(jpfcmx,0:ipbtmx,nnnpr)
 
     real(kind=8) :: pcvnn

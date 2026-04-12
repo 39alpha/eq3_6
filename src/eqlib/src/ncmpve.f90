@@ -1,4 +1,4 @@
-subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, jern1, jern2, jetmax, jflag, jgext, jsflag, losp, mgext, moph, mosp, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, netmax, noutpt, nptmax, nstmax, nttyo, ugexj, uphase, uspec, xbar, xbarlg, xlks)
+subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, jern1, jern2, jetmax, jflag, jgext, jsflag, losp, mgext, moph, mosp, nbasp, nbt, nbtmax, ndrs, ndrsmx, ndrsr, netmax, noutpt, nptmax, nstmax, nttyo, ugexj, uphase, xbar, xbarlg, xlks)
     !! This subroutine computes part of the "expansion" of the
     !! basis set variable data that yields the "total" system
     !! description. This part is the expansion giving the mole
@@ -43,7 +43,6 @@ subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, 
     implicit none
 
     ! Calling sequence variable declarations.
-    integer :: ietmax
     integer :: jetmax
     integer :: nbtmax
     integer :: ndrsmx
@@ -67,7 +66,6 @@ subroutine ncmpve(acflg, act, actlg, cdrs, cgexj, eps100, iern1, iern2, ietmax, 
     integer :: iern2
     integer :: nbt
 
-    character(len=48) :: uspec(nstmax)
     character(len=24) :: uphase(nptmax)
     character(len=8) :: ugexj(jetmax,netmax)
 

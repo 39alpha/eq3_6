@@ -1,4 +1,4 @@
-subroutine cfracf(cdrs, csts, efac, jcsort, jflag, jssort, kmax, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, nfac, nst, nstmax, nsts, nstsmx, nstsr, q6mode, weight)
+subroutine cfracf(cdrs, csts, efac, jcsort, jflag, jssort, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, nfac, nst, nstmax, nsts, nstsmx, nstsr, q6mode, weight)
     !! This subroutine determines the dominant species and the associated
     !! exponents required for continued fraction corrections. The data
     !! are returned without any filtering as to their applicability.
@@ -25,7 +25,6 @@ subroutine cfracf(cdrs, csts, efac, jcsort, jflag, jssort, kmax, mosp, narn1, na
     implicit none
 
     ! Calling sequence variable declarations.
-    integer :: kmax
     integer :: nbtmax
     integer :: ndrsmx
     integer :: nstmax

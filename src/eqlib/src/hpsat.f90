@@ -1,4 +1,4 @@
-subroutine hpsat(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, iapxmx, ibpxmx, ier, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, noutpt, np, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, sidrsp, sidrph, uphase, uspec, wfac, xbar, xbarlg, xlks)
+subroutine hpsat(acflg, act, actlg, afcnst, affp, affs, bpx, cdrs, eps100, ibpxmx, ier, ixrn1, jflag, jsflag, ncmpr, ndrs, ndrsmx, ndrsr, np, nptmax, nstmax, nxtmax, sidrsp, sidrph, xbar, xbarlg, xlks)
     !! This subroutine calculates the most stable (least soluble)
     !! composition of a given solid solution, given the composition
     !! of the aqueous phase it is in equilibrium with.
@@ -36,21 +36,15 @@ subroutine hpsat(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, 
     implicit none
 
     ! Calling sequence variable declarations.
-    integer :: iapxmx
     integer :: ibpxmx
-    integer :: iktmax
     integer :: ndrsmx
     integer :: nptmax
     integer :: nstmax
     integer :: nxtmax
 
-    integer :: noutpt
-    integer :: nttyo
 
     integer :: jflag(nstmax)
-    integer :: jpflag(nptmax)
     integer :: jsflag(nstmax)
-    integer :: jsol(nxtmax)
     integer :: ncmpr(2,nptmax)
     integer :: ndrs(ndrsmx)
     integer :: ndrsr(2,nstmax)
@@ -58,23 +52,17 @@ subroutine hpsat(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, 
     integer :: ier
     integer :: ixrn1
     integer :: np
-    integer :: nxrn1
-    integer :: nxrn2
 
-    character(len=48) :: uspec(nstmax)
-    character(len=24) :: uphase(nptmax)
 
     real(kind=8) :: acflg(nstmax)
     real(kind=8) :: actlg(nstmax)
     real(kind=8) :: act(nstmax)
     real(kind=8) :: affp(nptmax)
     real(kind=8) :: affs(nstmax)
-    real(kind=8) :: apx(iapxmx,nxtmax)
     real(kind=8) :: bpx(ibpxmx,nxtmax)
     real(kind=8) :: cdrs(ndrsmx)
     real(kind=8) :: sidrsp(nstmax)
     real(kind=8) :: sidrph(nptmax)
-    real(kind=8) :: wfac(iktmax,nxtmax)
     real(kind=8) :: xbar(nstmax)
     real(kind=8) :: xbarlg(nstmax)
     real(kind=8) :: xlks(nstmax)

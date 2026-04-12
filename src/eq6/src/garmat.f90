@@ -1,4 +1,4 @@
-subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, csts, delvec, dlogxw, dvjdte, eact, eps100, fkrc, gmmatr, hact, iact, idirec, iindx1, iktmax, imchmx, imech, ipivot, jcode, jreac, jtemp, kbt, kdim, kmax, mmmatr, morr, mwtrc, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrct1, nrk, nrndex, nsk, nstmax, nsts, nstsmx, nstsr, nttkmx, nttyo, nxridx, nxrtmx, rirec1, rk, rkb, rreac1, rrelr1, rrxfi1, rtcnst, rxbar, sfcar, sgmatr, ssfcar, tempc, tempcb, tempk, ttk, ureac, whcfac, xi1, xlks, xxmatr, xymatr)
+subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdrs, csigma, csts, delvec, dlogxw, dvjdte, eact, eps100, fkrc, gmmatr, iact, idirec, iindx1, iktmax, imchmx, imech, ipivot, jcode, jreac, jtemp, kbt, kdim, kmax, mmmatr, morr, mwtrc, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrct1, nrk, nrndex, nsk, nstmax, nsts, nstsmx, nstsr, nttkmx, nttyo, nxridx, nxrtmx, rirec1, rk, rreac1, rrelr1, rrxfi1, rtcnst, rxbar, sfcar, sgmatr, ssfcar, tempc, tempk, ttk, ureac, whcfac, xi1, xlks, xxmatr, xymatr)
     !! This subroutine calculates the Jacobian matrix J[r] (armatr)
     !! used by the higher-order (stiff) ODE integrator.
     !! This subroutine is called by:
@@ -60,7 +60,6 @@ subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, c
     real(kind=8) :: aimatr(kmax,kmax)
     real(kind=8) :: armatr(nrct1,nrct1)
     real(kind=8) :: cdac(ndctmx,imchmx,2,nrctmx)
-    real(kind=8) :: cdacb(nbt,imchmx,2,nrct)
     real(kind=8) :: cdrs(ndrsmx)
     real(kind=8) :: csigma(imchmx,2,nrctmx)
     real(kind=8) :: csts(nstsmx)
@@ -70,12 +69,10 @@ subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, c
     real(kind=8) :: eact(imchmx,2,nrctmx)
     real(kind=8) :: fkrc(nrctmx)
     real(kind=8) :: gmmatr(kmax,kmax)
-    real(kind=8) :: hact(imchmx,2,nrctmx)
     real(kind=8) :: mmmatr(nrct,kmax)
     real(kind=8) :: morr(nrctmx)
     real(kind=8) :: mwtrc(nrctmx)
     real(kind=8) :: rk(imchmx,2,nrctmx)
-    real(kind=8) :: rkb(imchmx,2,nrctmx)
     real(kind=8) :: rreac1(nrctmx)
     real(kind=8) :: rrelr1(nrctmx)
     real(kind=8) :: rrxfi1(imchmx,nrctmx)
@@ -93,7 +90,6 @@ subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, c
     real(kind=8) :: rirec1
     real(kind=8) :: rtcnst
     real(kind=8) :: tempc
-    real(kind=8) :: tempcb
     real(kind=8) :: tempk
     real(kind=8) :: whcfac
     real(kind=8) :: xi1
@@ -139,7 +135,7 @@ subroutine garmat(act, afrc1, aimatr, al10, armatr, cdac, cdacb, cdrs, csigma, c
     ! Calculate the matrix M (mmmatr). This incorporates the
     ! dependency of rate laws on the thermodynamic activities of
     ! species (currently all such species must be of type aqueous).
-    call gmmmat(act, afrc1, cdac, cdacb, cdrs, csigma, eps100, fkrc, idirec, iindx1, iktmax, imchmx, imech, jcode, jreac, kbt, kdim, kmax, mmmatr, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nttyo, nxridx, nxrtmx, rk, rtcnst, rxbar, sfcar, ureac, xlks)
+    call gmmmat(act, afrc1, cdac, cdrs, csigma, eps100, fkrc, idirec, iindx1, iktmax, imchmx, imech, jcode, jreac, kbt, kmax, mmmatr, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nttyo, nxridx, nxrtmx, rk, rtcnst, rxbar, sfcar, ureac, xlks)
 
     ! Now calculate the matrix SIGMA (sgmatr) from matrix M and the
     ! array W-squiggle (dlogxw) array.

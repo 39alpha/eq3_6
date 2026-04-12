@@ -1,4 +1,4 @@
-subroutine indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
+subroutine indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, nlta, nmta, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
     !! This subroutine reads a superblock of species blocks from the
     !! supporting data file "data1".
     !! This subroutine is called by:
@@ -12,15 +12,11 @@ subroutine indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, c
     integer :: ipch_asv
     integer :: ipcv_asv
     integer :: narx_asv
-    integer :: nata_asv
     integer :: nbta_asv
     integer :: nbta1_asv
     integer :: ncta_asv
     integer :: ndrsa_asv
     integer :: nessa_asv
-    integer :: ngta_asv
-    integer :: nlta_asv
-    integer :: nmta_asv
     integer :: npta_asv
     integer :: nsta_asv
     integer :: ntpr_asv

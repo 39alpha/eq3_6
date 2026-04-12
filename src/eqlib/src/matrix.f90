@@ -319,7 +319,7 @@ subroutine matrix(aamatr, al10, bpx, cdrs, cdrtw, cdrw, cjbasp, cnufac, conc, cs
                     weight(ns) = zchar(ns)
                 end do
 
-                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps100, ggmgex, iern1, ietmax, iimgex, iindx1, ixbasp, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
+                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, ggmgex, iern1, ietmax, iimgex, iindx1, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
             else if (jfl .eq. 17) then
                 ! Log activity combination.
                 ns1 = ncosp(nb)
@@ -428,7 +428,7 @@ subroutine matrix(aamatr, al10, bpx, cdrs, cdrtw, cdrw, cjbasp, cnufac, conc, cs
                     weight(ns) = 0.
                 end do
 
-                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps100, ggmgex, iern1, ietmax, iimgex, iindx1, ixbasp, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
+                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, ggmgex, iern1, ietmax, iimgex, iindx1, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
             else if (jfl.ge.7 .and. jfl.le.11) then
                 ! Alkalinity balance.
                 ! Calling sequence substitutions.
@@ -443,7 +443,7 @@ subroutine matrix(aamatr, al10, bpx, cdrs, cdrtw, cdrw, cjbasp, cnufac, conc, cs
                     weight(ns) = tfx(n)
                 end do
 
-                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps100, ggmgex, iern1, ietmax, iimgex, iindx1, ixbasp, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
+                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, ggmgex, iern1, ietmax, iimgex, iindx1, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
             else if (jfl .eq. 16) then
                 ! Log activity.
                 aamatr(krow,krow) = 1.0
@@ -499,7 +499,7 @@ subroutine matrix(aamatr, al10, bpx, cdrs, cdrtw, cdrw, cjbasp, cnufac, conc, cs
                     weight(ns) = coefst(csts,nsts,nstsmx,nstsr,nb,ns,nstmax)
                 end do
 
-                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps100, ggmgex, iern1, ietmax, iimgex, iindx1, ixbasp, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
+                call balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, ggmgex, iern1, ietmax, iimgex, iindx1, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
             else
                 ! Have found a bad jflag value.
                 ! Calling sequence substitutions:
@@ -517,7 +517,7 @@ subroutine matrix(aamatr, al10, bpx, cdrs, cdrtw, cdrw, cjbasp, cnufac, conc, cs
 
     ! Write the matrix for EQ6.
     ! Compute the dlogxw array (d log x(w)/d log m(s')).
-    call gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jflag, narn1, narn2, nbasp, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, nern1, nern2, noutpt, nstmax, nttyo, omega, xbar, xbarw)
+    call gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jflag, narn1, narn2, nbasp, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, noutpt, nstmax, nttyo, omega, xbar, xbarw)
 
     ! Change the dlogxw array from derivatives with respect to
     ! molalities to ones with respect to numbers of moles.

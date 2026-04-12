@@ -1,4 +1,4 @@
-subroutine nelcck(nctmax, ncts, nentei, nerr, qdupes, uessi)
+subroutine nelcck(nctmax, ncts, nentei, qdupes, uessi)
     !! Check the elemental composition of a species to ensure that
     !! each chemical element name appearing in the composition is unique.
     !! This subroutine is called by:
@@ -13,7 +13,6 @@ subroutine nelcck(nctmax, ncts, nentei, nerr, qdupes, uessi)
     integer :: nentei(nctmax)
 
     integer :: ncts
-    integer :: nerr
 
     logical :: qdupes
 

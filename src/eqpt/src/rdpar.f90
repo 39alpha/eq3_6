@@ -1,4 +1,4 @@
-subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dvfe, ipch, ipchmx, ipcv, ipcvmx, itgenf, nacdpr, narxmx, narxt, ndat0s, ndbmax, ndbptg, ndbptl, nerr, noutpt, ntprmx, ntprt, nttyo, nwarn, prehw, presg, q500fl, tdamax, tdamin, tempc, uakey, udbfmt, udbval, xdbval, xhfe, xlke, xvfe)
+subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, dadhh, dadhv, dbdhh, dbdhv, dbdth, dbdtv, dhfe, dvfe, ipch, ipchmx, ipcv, ipcvmx, nacdpr, narxmx, narxt, ndat0s, ndbmax, ndbptg, ndbptl, noutpt, ntprmx, ntprt, nttyo, prehw, presg, q500fl, tdamax, tdamin, tempc, uakey, udbfmt, udbval, xdbval, xhfe, xlke, xvfe)
     !! This subroutine reads the data describing the temperature grid
     !! and data for miscellaneous parameters which are represented
     !! on this grid from the DATA0 file. Such parameters include the
@@ -122,12 +122,9 @@ subroutine rdpar(adh, adhh, adhv, aphi, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco
 
     integer :: ipch
     integer :: ipcv
-    integer :: itgenf
     integer :: ndbptg
     integer :: ndbptl
-    integer :: nerr
     integer :: ntprt
-    integer :: nwarn
 
     logical :: q500fl
 

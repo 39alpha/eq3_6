@@ -1,4 +1,4 @@
-subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmax, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, ehmaxi, ehmini, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, jcode, jpress, jtemp, jsflag, ksplmx, ksppmx, kstpmx, kxmod, mwtrc, narn1, narn2, narxmx, nat, nata, natmax, nbaspd, nbt, nbta, nbtd, nbtmax, nbt1mx, ncmpr, nct, ncta, nctmax, ndact, ndctmx, ndrs, ndrsmx, ndrsr, nffgmx, ngt, ngta, ngtmax, nlt, nlta, nltmax, nmt, nmta, nmtmax, nodbmx, nopgmx, noprmx, noptmx, nordmx, noutpt, npslmx, npt, npta, nptkmx, nptmax, nrct, nrctmx, nrk, nrndex, nsk, nsrt, nsrtmx, nsscmx, nsslmx, nst, nsta, nstmax, ntprmx, ntrymx, nttkmx, nttyo, nxmdmx, nxmod, nxopmx, nxopex, nxopt, nxpemx, nxridx, nxrt, nxrtmx, nxt, nxta, nxtmax, o2maxi, o2mini, phmaxi, phmini, press, pressb, ptk, qredox, rkb, rxbar, sscrew, tempc, tempcb, tempk, timmxi, tistti, tolbt, toldl, tolsat, tolsst, tolxsf, tolxst, tolxsu, trkb, ttk, uactop, udac, uelem, uffg, ureac, uspec, uxcat, uxmod, uxopex, uxopt, vreac, xistti, ximaxi, xlkmod, xlks, zkfac, zklgmn, zklogl, zklogu)
+subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmax, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, ehmaxi, ehmini, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, jcode, jpress, jtemp, jsflag, ksplmx, ksppmx, kstpmx, mwtrc, narn1, narn2, narxmx, nat, nata, natmax, nbaspd, nbt, nbta, nbtd, nbtmax, nbt1mx, ncmpr, nct, ncta, nctmax, ndact, ndctmx, ndrs, ndrsmx, ndrsr, ngt, ngta, ngtmax, nlt, nlta, nltmax, nmt, nmta, nmtmax, nodbmx, nopgmx, noprmx, noptmx, nordmx, noutpt, npslmx, npt, npta, nptkmx, nptmax, nrct, nrctmx, nrk, nrndex, nsrt, nsrtmx, nsscmx, nsslmx, nst, nsta, nstmax, ntprmx, ntrymx, nttkmx, nttyo, nxridx, nxrt, nxrtmx, nxt, nxta, nxtmax, o2maxi, o2mini, phmaxi, phmini, press, pressb, ptk, qredox, rkb, rxbar, sscrew, tempc, tempcb, timmxi, tistti, tolbt, toldl, tolsat, tolsst, tolxsf, tolxst, tolxsu, ttk, uactop, udac, uelem, ureac, uspec, vreac, xistti, ximaxi, xlks, zkfac, zklgmn, zklogl, zklogu)
     !! This subroutine writes an echo of various parameters after any
     !! default values or range corrections have been applied.
     !! This subroutine is called by:
@@ -17,7 +17,6 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     integer :: nctmax
     integer :: ndctmx
     integer :: ndrsmx
-    integer :: nffgmx
     integer :: ngtmax
     integer :: nltmax
     integer :: nmtmax
@@ -34,9 +33,6 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     integer :: nstmax
     integer :: ntprmx
     integer :: nttkmx
-    integer :: nxmdmx
-    integer :: nxopmx
-    integer :: nxpemx
     integer :: nxrtmx
     integer :: nxtmax
 
@@ -50,7 +46,6 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     integer :: iopt(noptmx)
     integer :: jcode(nrctmx)
     integer :: jsflag(nstmax)
-    integer :: kxmod(nxmdmx)
     integer :: nbaspd(nbtmax)
     integer :: ncmpr(2,nptmax)
     integer :: ndact(imchmx,2,nrctmx)
@@ -58,7 +53,6 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     integer :: ndrsr(2,nstmax)
     integer :: nrk(2,nrctmx)
     integer :: nrndex(nrctmx)
-    integer :: nsk(nrctmx)
     integer :: nxridx(nrctmx)
 
     integer :: itermx
@@ -91,9 +85,6 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     integer :: nst
     integer :: nsta
     integer :: ntrymx
-    integer :: nxmod
-    integer :: nxopex
-    integer :: nxopt
     integer :: nxrt
     integer :: nxt
     integer :: nxta
@@ -101,15 +92,10 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     logical :: qredox
 
     character(len=48) :: uspec(nstmax)
-    character(len=48) :: uxmod(nxmdmx)
     character(len=32) :: uactop
     character(len=24) :: udac(ndctmx,imchmx,2,nrctmx)
-    character(len=24) :: uffg(nffgmx)
     character(len=24) :: ureac(nrctmx)
-    character(len=24) :: uxcat(nxopmx)
-    character(len=24) :: uxopex(nxpemx)
     character(len=8) :: uelem(nctmax)
-    character(len=8) :: uxopt(nxopmx)
 
     real(kind=8) :: axlks(narxmx,ntprmx,nstmax)
     real(kind=8) :: azero(natmax)
@@ -118,16 +104,13 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     real(kind=8) :: cdrs(ndrsmx)
     real(kind=8) :: cesr(nctmax,nsrtmx)
     real(kind=8) :: csigma(imchmx,2,nrctmx)
-    real(kind=8) :: eact(imchmx,2,nrctmx)
     real(kind=8) :: mwtrc(nrctmx)
     real(kind=8) :: ptk(nptkmx)
     real(kind=8) :: rkb(imchmx,2,nrctmx)
     real(kind=8) :: rxbar(iktmax,nxrtmx)
     real(kind=8) :: sscrew(nsscmx)
-    real(kind=8) :: trkb(imchmx,2,nrctmx)
     real(kind=8) :: ttk(nttkmx)
     real(kind=8) :: vreac(nrctmx)
-    real(kind=8) :: xlkmod(nxmdmx)
     real(kind=8) :: xlks(nstmax)
 
     real(kind=8) :: awmaxi
@@ -161,7 +144,6 @@ subroutine echoz(axlks, awmaxi, awmini, azero, cbsr, cdac, cdrs, cesr, csigma, d
     real(kind=8) :: pressb
     real(kind=8) :: tempc
     real(kind=8) :: tempcb
-    real(kind=8) :: tempk
     real(kind=8) :: timmxi
     real(kind=8) :: tistti
     real(kind=8) :: tolbt

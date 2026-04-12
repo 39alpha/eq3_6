@@ -130,7 +130,7 @@ subroutine absswa(adhfs, adhfsx, advfs, advfsx, avcnst, axhfs, axhfsx, axlks, ax
     ! a search similar to the one above, but with a variety of special
     ! constraints. The indices of candidates are stored in the array
     ! ibswx.
-    call abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, jssort, kbt, kmax, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nelect, nhydr, no2gaq, nstmax, nsts, nstsmx, nstsr, qbswx, q6mode, weight)
+    call abswpk(beta, cdrs, csts, efac, ibswx, iebal, iindx1, jcsort, jflag, jssort, kbt, kmax, mosp, narn1, narn2, nbasp, nbaspd, nbt, nbtmax, ndrs, ndrsmx, ndrsr, nelect, nhydr, no2gaq, nstmax, nsts, nstsmx, nstsr, qbswx, weight)
 
     if (.not.qbswx) then
         nswtch = 0

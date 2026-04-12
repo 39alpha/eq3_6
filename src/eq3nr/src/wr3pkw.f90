@@ -1,4 +1,4 @@
-subroutine wr3pkw(electr, cgexj, ietmax, iopg, jetmax, jflgi, jgext, kbt, kct, kdim, kmax, kmt, kxmod, kxt, mtbi, mtbaqi, mwtges, nbti, nbtmax, net, netmax, newin, ngexrt, nobswt, nopgmx, nsbswt, ntitl2, ntitmx, nxmdmx, nxmod, qgexsh, pressi, tempci, tgexp, ubmtbi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, usbsw, utitl2, uvfgex, uxkgex, uxmod, uzveci, xhfgex, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
+subroutine wr3pkw(electr, cgexj, ietmax, iopg, jetmax, jflgi, jgext, kbt, kct, kdim, kmax, kmt, kxmod, kxt, mtbi, mtbaqi, mwtges, nbti, nbtmax, net, netmax, newin, ngexrt, nobswt, nopgmx, nsbswt, ntitl2, ntitmx, nxmdmx, nxmod, pressi, tempci, tgexp, ubmtbi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, usbsw, utitl2, uvfgex, uxkgex, uxmod, uzveci, xhfgex, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
     !! This subroutine writes the pickup file in compact ("W") format.
     !! This file is used to communicate data from EQ3NR to EQ6 (it
     !! comprises the bottom half of an EQ6 input file).
@@ -42,7 +42,6 @@ subroutine wr3pkw(electr, cgexj, ietmax, iopg, jetmax, jflgi, jgext, kbt, kct, k
     integer :: ntitl2
     integer :: nxmod
 
-    logical :: qgexsh
 
     character(len=80) :: utitl2(ntitmx)
     character(len=56) :: ugexr(ietmax,jetmax,netmax)

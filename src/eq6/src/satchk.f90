@@ -1,4 +1,4 @@
-subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, iindx1, iodb, iopt, iapxmx, ibpxmx, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, kmax, km1, kpsat, kpsst, kxt, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nodbmx, noptmx, noutpt, npchk, npt, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, qxknph, sidrph, sidrsp, tolsat, uphase, uspec, wfac, xbar, xbarlg, xlks)
+subroutine satchk(acflg, act, actlg, afcnst, affp, affs, bpx, cdrs, eps100, iindx1, iopt, ibpxmx, ixrn1, jflag, jpflag, jsflag, kmax, km1, kpsat, kpsst, kxt, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, noptmx, noutpt, npchk, npt, nptmax, nstmax, nttyo, nxtmax, qxknph, sidrph, sidrsp, tolsat, uphase, xbar, xbarlg, xlks)
     !! This subroutine checks for newly saturated phases and
     !! supersaturated phases.
     !! This subroutine is called by:
@@ -17,13 +17,10 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
     implicit none
 
     ! Calling sequence variable declarations.
-    integer :: iapxmx
     integer :: ibpxmx
-    integer :: iktmax
     integer :: kmax
     integer :: nbtmax
     integer :: ndrsmx
-    integer :: nodbmx
     integer :: noptmx
     integer :: nptmax
     integer :: nstmax
@@ -33,12 +30,10 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
     integer :: nttyo
 
     integer :: iindx1(kmax)
-    integer :: iodb(nodbmx)
     integer :: iopt(noptmx)
     integer :: jflag(nstmax)
     integer :: jpflag(nptmax)
     integer :: jsflag(nstmax)
-    integer :: jsol(nxtmax)
     integer :: nbasp(nbtmax)
     integer :: ncmpr(2,nptmax)
     integer :: ndrs(ndrsmx)
@@ -52,12 +47,9 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
     integer :: kxt
     integer :: nbt
     integer :: npt
-    integer :: nxrn1
-    integer :: nxrn2
 
     logical :: qxknph(nptmax)
 
-    character(len=48) :: uspec(nstmax)
     character(len=24) :: uphase(nptmax)
 
     real(kind=8) :: acflg(nstmax)
@@ -65,12 +57,10 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
     real(kind=8) :: actlg(nstmax)
     real(kind=8) :: affp(nptmax)
     real(kind=8) :: affs(nstmax)
-    real(kind=8) :: apx(iapxmx,nxtmax)
     real(kind=8) :: bpx(ibpxmx,nxtmax)
     real(kind=8) :: cdrs(ndrsmx)
     real(kind=8) :: sidrph(nptmax)
     real(kind=8) :: sidrsp(nstmax)
-    real(kind=8) :: wfac(iktmax,nxtmax)
     real(kind=8) :: xbar(nstmax)
     real(kind=8) :: xbarlg(nstmax)
     real(kind=8) :: xlks(nstmax)
@@ -220,7 +210,7 @@ subroutine satchk(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100,
                 end if
             else if (jpflag(np) .le. 1) then
                 ! Case of non-aqueous solutions not in the ES.
-                call hpsat(acflg, act, actlg, afcnst, affp, affs, apx, bpx, cdrs, eps100, iapxmx, ibpxmx, ier, iktmax, ixrn1, jflag, jpflag, jsflag, jsol, ncmpr, ndrs, ndrsmx, ndrsr, noutpt, np, nptmax, nstmax, nttyo, nxrn1, nxrn2, nxtmax, sidrsp, sidrph, uphase, uspec, wfac, xbar, xbarlg, xlks)
+                call hpsat(acflg, act, actlg, afcnst, affp, affs, bpx, cdrs, eps100, ibpxmx, ier, ixrn1, jflag, jsflag, ncmpr, ndrs, ndrsmx, ndrsr, np, nptmax, nstmax, nxtmax, sidrsp, sidrph, xbar, xbarlg, xlks)
 
                 if (ier .le. 0) then
                     qxknph(np) = .true.

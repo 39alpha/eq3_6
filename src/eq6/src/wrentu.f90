@@ -1,4 +1,4 @@
-subroutine wrentu(actw, eh, fo2lg, iopg, iopt, kstep, nopgmx, noptmx, nttyo, ph, qredox, time1, xi1)
+subroutine wrentu(actw, fo2lg, iopg, iopt, kstep, nopgmx, noptmx, nttyo, ph, qredox, time1, xi1)
     !! This subroutine writes entertainment for the user while the
     !! run is underway. This output gives an idea of how the
     !! calculation is progressing. In that respect, it is somewhat
@@ -22,7 +22,6 @@ subroutine wrentu(actw, eh, fo2lg, iopg, iopt, kstep, nopgmx, noptmx, nttyo, ph,
     logical :: qredox
 
     real(kind=8) :: actw
-    real(kind=8) :: eh
     real(kind=8) :: fo2lg
     real(kind=8) :: ph
     real(kind=8) :: time1
