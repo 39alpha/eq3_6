@@ -1,4 +1,4 @@
-subroutine sippdp(actw, aw0plo, aw0prn, aw1plo, aw1prn, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eh, eh0plo, eh0prn, eh1plo, eh1prn, eps100, fo2lg, lprcin, o20plo, o20prn, o21plo, o21prn, ph, ph0plo, ph0prn, ph1plo, ph1prn, prcinf, qredox, tiplol, tiplot, tiprnl, tiprnt, tistsv, xidump, xiplol, xiplot, xiprnl, xiprnt, xistsv)
+subroutine sippdp(actw, aw0plo, aw0prn, aw1plo, aw1prn, dlaprn, dlhprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eh0plo, eh0prn, eh1plo, eh1prn, eps100, lprcin, o20plo, o20prn, o21plo, o21prn, ph, ph0plo, ph0prn, ph1plo, ph1prn, prcinf, tiplol, tiplot, tiprnl, tiprnt, tistsv, xidump, xiplol, xiplot, xiprnl, xiprnt, xistsv)
     !! This subroutine advances the print, plot, and dump points.
     !! This subroutine is called by:
     !!   EQ6/path.f
@@ -7,21 +7,14 @@ subroutine sippdp(actw, aw0plo, aw0prn, aw1plo, aw1prn, dlaplo, dlaprn, dleplo, 
     implicit none
 
     ! Calling sequence variable declarations.
-    logical :: qredox
 
     real(kind=8) :: actw
     real(kind=8) :: aw0plo
     real(kind=8) :: aw0prn
     real(kind=8) :: aw1plo
     real(kind=8) :: aw1prn
-    real(kind=8) :: dlaplo
     real(kind=8) :: dlaprn
-    real(kind=8) :: dleplo
-    real(kind=8) :: dleprn
-    real(kind=8) :: dlhplo
     real(kind=8) :: dlhprn
-    real(kind=8) :: dloplo
-    real(kind=8) :: dloprn
     real(kind=8) :: dltpll
     real(kind=8) :: dltplo
     real(kind=8) :: dltprl
@@ -32,13 +25,11 @@ subroutine sippdp(actw, aw0plo, aw0prn, aw1plo, aw1prn, dlaplo, dlaprn, dleplo, 
     real(kind=8) :: dlxplo
     real(kind=8) :: dlxprl
     real(kind=8) :: dlxprn
-    real(kind=8) :: eh
     real(kind=8) :: eh0plo
     real(kind=8) :: eh0prn
     real(kind=8) :: eh1plo
     real(kind=8) :: eh1prn
     real(kind=8) :: eps100
-    real(kind=8) :: fo2lg
     real(kind=8) :: lprcin
     real(kind=8) :: o20plo
     real(kind=8) :: o20prn

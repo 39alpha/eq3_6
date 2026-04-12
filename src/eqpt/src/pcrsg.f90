@@ -1,4 +1,4 @@
-subroutine pcrsg(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe, dhfs, dvfe, dvfs, eps100, gmmatr, ipch, ipchmx, ipcv, ipcvmx, ipivot, itgenf, mtotr, nacdpr, narxmx, narxt, nat, natmax, nbt, nbtmx1, nbtmx2, nch, nco, nct, nctmax, ndata1, ndat0s, ndat1f, ndbmax, ndbptg, ndbptl, nentei, nentri, nerr, ngt, ngtmax, nlt, nltmax, nmodwr, nmt, nmtmax, noutpt, nsb, nslist, ntprmx, ntprt, nttyo, nwarn, qelect, q500fl, tempc, tempcs, tmpcmx, udbfmt, udbval, udrsi, uelem, uessi, ugassp, uliqsp, uminsp, uspec, xdbval, xhfe, xhfs, xlke, xlks, xvfe, xvfs, xvec, yvec, zchar)
+subroutine pcrsg(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe, dhfs, dvfe, dvfs, eps100, gmmatr, ipch, ipchmx, ipcv, ipcvmx, ipivot, itgenf, mtotr, nacdpr, narxmx, narxt, nbt, nbtmx1, nbtmx2, nco, nct, nctmax, ndata1, ndat0s, ndat1f, ndbmax, ndbptg, ndbptl, nentei, nentri, nerr, ngt, ngtmax, nlt, nltmax, nmodwr, nmt, nmtmax, noutpt, nsb, nslist, ntprmx, ntprt, nttyo, nwarn, qelect, q500fl, tempc, tempcs, tmpcmx, udbval, udrsi, uelem, uessi, ugassp, uliqsp, uminsp, uspec, xdbval, xhfe, xhfs, xlke, xlks, xvfe, xvfs, xvec, yvec, zchar)
     !! This subroutine reads data on solid and gas species from the
     !! stripped DATA0 file, processes this data, and writes the results
     !! on the DATA1 and DATA1F files. The counter nerr is incremented
@@ -66,7 +66,6 @@ subroutine pcrsg(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
     integer :: ipchmx
     integer :: ipcvmx
     integer :: narxmx
-    integer :: natmax
     integer :: nbtmx1
     integer :: nbtmx2
     integer :: nctmax
@@ -92,9 +91,7 @@ subroutine pcrsg(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
     integer :: ipch
     integer :: ipcv
     integer :: itgenf
-    integer :: nat
     integer :: nbt
-    integer :: nch
     integer :: nco
     integer :: nct
     integer :: ndbptg
@@ -120,7 +117,6 @@ subroutine pcrsg(aamatr, apr, atwt, avgrid, cdrs, cdrsi, cess, cessi, cof, dhfe,
     character(len=8) :: uelem(nctmax)
     character(len=8) :: uessi(nctmax)
 
-    character(len=16) :: udbfmt
 
     real(kind=8) :: atwt(nctmax)
     real(kind=8) :: cdrs(nbtmx2,nbtmx1)

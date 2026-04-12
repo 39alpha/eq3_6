@@ -1,4 +1,4 @@
-subroutine gmmmat(act, afrc1, cdac, cdacb, cdrs, csigma, eps100, fkrc, idirec, iindx1, iktmax, imchmx, imech, jcode, jreac, kbt, kdim, kmax, mmmatr, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nttyo, nxridx, nxrtmx, rk, rtcnst, rxbar, sfcar, ureac, xlks)
+subroutine gmmmat(act, afrc1, cdac, cdrs, csigma, eps100, fkrc, idirec, iindx1, iktmax, imchmx, imech, jcode, jreac, kbt, kmax, mmmatr, nbasp, nbt, nbtmax, ncmpr, ndac, ndacb, ndact, ndctmx, ndrs, ndrsmx, ndrsr, noutpt, nptmax, nrct, nrctmx, nrk, nrndex, nstmax, nttyo, nxridx, nxrtmx, rk, rtcnst, rxbar, sfcar, ureac, xlks)
     !! This subroutine calculates the matrix M (mmmatr) used in turn to
     !! calculate the Jacobian matrix J[r] (armatr) used by the higher-
     !! order (stiff) ODE integrator. The dependence of J[r] on exact
@@ -36,7 +36,6 @@ subroutine gmmmat(act, afrc1, cdac, cdacb, cdrs, csigma, eps100, fkrc, idirec, i
     integer :: nttyo
 
     integer :: kbt
-    integer :: kdim
     integer :: nbt
     integer :: nrct
 
@@ -61,7 +60,6 @@ subroutine gmmmat(act, afrc1, cdac, cdacb, cdrs, csigma, eps100, fkrc, idirec, i
     real(kind=8) :: act(nstmax)
     real(kind=8) :: afrc1(nrctmx)
     real(kind=8) :: cdac(ndctmx,imchmx,2,nrctmx)
-    real(kind=8) :: cdacb(nbt,imchmx,2,nrct)
     real(kind=8) :: cdrs(ndrsmx)
     real(kind=8) :: csigma(imchmx,2,nrctmx)
     real(kind=8) :: fkrc(nrctmx)

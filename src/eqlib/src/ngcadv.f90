@@ -1,4 +1,4 @@
-subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, aphi, azero, a3bar, a3bars, bacfmx, bdh, bdhh, bdhv, bdot, bdoth, bdotv, bgamx, bpx, bsigmm, bfje, bfxi, cco2, cgexj, chfacf, chfsgm, conc, delam, dgpit, dpelm, dpslm, dselm, elam, eps100, fje, fjeo, fxi, fxio, gpit, ibpxt, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, iter, ipndx1, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jgext, jsol, kx1, kxt, nalpha, napt, narn1, narn2, nchlor, ncmpr, net, nhydr, nmut, nmux, nmxi, nmxx, noutpt, nslt, nslx, nst, nsxi, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, qpracf, q6mode, rlxgam, selm, sigmam, sigmmo, tempk, ubacmx, ubgamx, uphase, uspec, wfac, xbar, xbarlg, xbarwc, xbrwlc, zchar, zchcu6, zchsq2)
+subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, afcnst, al10, aphi, azero, a3bar, a3bars, bacfmx, bdh, bdot, bgamx, bpx, bsigmm, bfje, bfxi, cco2, chfacf, chfsgm, conc, delam, dgpit, dpelm, dpslm, dselm, elam, eps100, fje, fjeo, fxi, fxio, gpit, ibpxt, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, iter, ipndx1, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jgext, jsol, kx1, kxt, nalpha, napt, narn1, narn2, nchlor, ncmpr, net, nhydr, nmut, nmux, nmxi, nmxx, noutpt, nslt, nslx, nst, nsxi, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, qpracf, q6mode, rlxgam, selm, sigmam, sigmmo, tempk, ubacmx, ubgamx, uphase, uspec, wfac, xbar, xbarlg, xbarwc, xbrwlc, zchar, zchcu6, zchsq2)
     !! This subroutine recalculates the ionic strength, etc., and the
     !! activity of water and the molal activity coefficients of aqueous
     !! species. If necessary, it also recalculates the mole fraction
@@ -177,7 +177,6 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
     real(kind=8) :: a3bars(natmax)
     real(kind=8) :: bpx(ibpxmx,nxtmax)
     real(kind=8) :: cco2(5)
-    real(kind=8) :: cgexj(jetmax,netmax)
     real(kind=8) :: conc(nstmax)
     real(kind=8) :: wfac(iktmax,nxtmax)
     real(kind=8) :: xbar(nstmax)
@@ -187,15 +186,9 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
     real(kind=8) :: zchcu6(nstmax)
 
     real(kind=8) :: adh
-    real(kind=8) :: adhh
-    real(kind=8) :: adhv
     real(kind=8) :: aphi
     real(kind=8) :: bdh
-    real(kind=8) :: bdhh
-    real(kind=8) :: bdhv
     real(kind=8) :: bdot
-    real(kind=8) :: bdoth
-    real(kind=8) :: bdotv
 
     real(kind=8) :: abar
     real(kind=8) :: actwlc
@@ -337,12 +330,12 @@ subroutine ngcadv(abar, acflg, acflgo, actwlc, adh, adhh, adhv, afcnst, al10, ap
     ! Compute the activity coefficients of aqueous species.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call gcoeff(abar, acflg, actwlc, adh, adhh, adhv, al10, aphi, azero, a3bar, a3bars, bdh, bdhh, bdhv, bdot, bdoth, bdotv, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, uspec, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
+    call gcoeff(abar, acflg, actwlc, adh, al10, aphi, azero, a3bar, a3bars, bdh, bdot, cco2, conc, delam, dgpit, dpelm, dpslm, dselm, elam, fje, fxi, gpit, ielam, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifzeta, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilzeta, insgf, iopg, ipbtmx, izmax, jcsort, nalpha, napmax, napt, narn1, narn2, natmax, nazmmx, nazpmx, nchlor, nhydr, nmut, nmutmx, nmux, nmxi, nmxmax, nmxx, nopgmx, noutpt, nslt, nsltmx, nslx, nstmax, nsxi, nsxmax, nsxx, nttyo, omega, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, selm, sigmam, tempk, xbarwc, xbrwlc, zchar, zchsq2, zchcu6)
 
     ! Calculate the activity coefficients of exchanger species.
     ! Calling sequence substitutions:
     !   acflg for acflgc
-    call lamgex(acflg, cgexj, jern1, jern2, jetmax, jgext, net, netmax, nstmax, xbarlg)
+    call lamgex(acflg, jern1, jern2, jetmax, jgext, net, netmax, nstmax)
 
     ! Compute activity coefficient residual norms.
     bgamxo = bgamx

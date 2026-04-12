@@ -1,4 +1,4 @@
-subroutine chdxtz(delxi, dlxmx0, dzvc0, iodb, iopt, jordlm, kdim, kmax, km1, kord, kxt, nodbmx, noptmx, nordmx, nordzs, noutpt, nrd1mx, nsscmx, scalim, scfczs, sscrew, qmin, smp100, uzvec1, zklogu, zvec0, zvclg0)
+subroutine chdxtz(delxi, dlxmx0, dzvc0, iodb, jordlm, kdim, kmax, km1, kord, kxt, nodbmx, nordmx, nordzs, noutpt, nrd1mx, nsscmx, scalim, scfczs, sscrew, qmin, smp100, uzvec1, zklogu, zvec0, zvclg0)
     !! This subroutine chooses a step size and order according to the
     !! Taylor's series accuracy criterion, examining the z vector and
     !! its associated smoothed or average derivatives. Subroutine
@@ -13,7 +13,6 @@ subroutine chdxtz(delxi, dlxmx0, dzvc0, iodb, iopt, jordlm, kdim, kmax, km1, kor
     ! Calling sequence variable declarations.
     integer :: kmax
     integer :: nodbmx
-    integer :: noptmx
     integer :: nordmx
     integer :: nrd1mx
     integer :: nsscmx
@@ -21,7 +20,6 @@ subroutine chdxtz(delxi, dlxmx0, dzvc0, iodb, iopt, jordlm, kdim, kmax, km1, kor
     integer :: noutpt
 
     integer :: iodb(nodbmx)
-    integer :: iopt(noptmx)
 
     integer :: jordlm
     integer :: kdim

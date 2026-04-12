@@ -1,4 +1,4 @@
-subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg, coval, delvec, dlogxw, eh, ehfac, eps100, gmmatr, iction, iindx1, iodb, ipivot, irdxc3, ixbasp, jcsort, jflag, jjndex, kbt, ker, khydr, kkndex, kmax, kwater, narn1, narn2, nbasp, nbt, nbti, nbtmax, nbw, ncosp, ndecsp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, nhydr, nodbmx, no2gaq, noutpt, npass, nredox, nstmax, nttyo, omega, qawfix, rhsvec, ucospi, uspec, xbar, xbarlg, xbarw, xbrwlg, xlke, xlks, zchar, zvclg1)
+subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg, coval, delvec, dlogxw, eh, ehfac, eps100, gmmatr, iction, iindx1, iodb, ipivot, irdxc3, ixbasp, jcsort, jflag, jjndex, kbt, ker, khydr, kkndex, kmax, kwater, narn1, narn2, nbasp, nbt, nbti, nbtmax, nbw, ncosp, ndecsp, ndrs, ndrsmx, ndrsr, nelect, nhydr, nodbmx, no2gaq, noutpt, npass, nredox, nstmax, nttyo, omega, qawfix, rhsvec, ucospi, uspec, xbar, xbarlg, xbarw, xbrwlg, xlke, xlks, zchar, zvclg1)
     !! This subroutine computes starting estimates of species
     !! concentrations that must be evaluated simultaneously. These
     !! include cases of mean activity constraints, cases of equilibrium
@@ -45,8 +45,6 @@ subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg
     integer :: nbti
     integer :: nbw
     integer :: nelect
-    integer :: nern1
-    integer :: nern2
     integer :: nhydr
     integer :: no2gaq
     integer :: npass
@@ -374,7 +372,7 @@ subroutine arrsim(aamatr, acflg, actlg, bbig, cdrs, cjbasp, cnufac, conc, conclg
             !     + sum over s' in irow (d log x(w)/d log m(s'))
             !       * (log m(s')(new) - log m(s')(old))
             ! Compute the dlogxw array (d log xw/d log ms').
-            call gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jflag, narn1, narn2, nbasp, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, nern1, nern2, noutpt, nstmax, nttyo, omega, xbar, xbarw)
+            call gdlgxw(cdrs, cjbasp, cnufac, conc, dlogxw, eps100, ixbasp, jcsort, jflag, narn1, narn2, nbasp, nbt, nbtmax, nbw, ndrs, ndrsmx, ndrsr, noutpt, nstmax, nttyo, omega, xbar, xbarw)
 
             do icol = 1,ibt
                 nb1 = jjndex(icol)

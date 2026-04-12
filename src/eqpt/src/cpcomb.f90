@@ -1,4 +1,4 @@
-subroutine cpcomb(jassan, jassca, jassne, naapr, nat, ncapr, nccpr, nnapr, nncpr, nnnpr, nn2pr, naactr, na2ctr, nncatr, nccatr, nc2atr, nn2ntr, nn3tr)
+subroutine cpcomb(jassan, jassca, jassne, naapr, ncapr, nccpr, nnapr, nncpr, nnnpr, nn2pr, naactr, na2ctr, nncatr, nccatr, nc2atr, nn2ntr, nn3tr)
     !! Compute all the pair and triplet combinations of aqueous
     !! solute species for use with Pitzer's equations. parameters.
     !! All pairs and triplets are distinct in the sense that the
@@ -33,7 +33,6 @@ subroutine cpcomb(jassan, jassca, jassne, naapr, nat, ncapr, nccpr, nnapr, nncpr
     integer :: jassan
     integer :: jassca
     integer :: jassne
-    integer :: nat
 
     integer :: naapr
     integer :: ncapr

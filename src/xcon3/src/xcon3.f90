@@ -744,13 +744,13 @@ program xcon3
                 go to 990
             end if
         else if (uoldv(1:3).eq.'8.0' .and. q8beta) then
-            call rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, noutpt, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
+            call rd3d8b(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
 
             if (qrderr) then
                 go to 990
             end if
         else if (uoldv(1:3) .eq. '8.0') then
-            call rd3d8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, noutpt, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qgexsh, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
+            call rd3d8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qgexsh, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
 
             if (qrderr) then
                 go to 990

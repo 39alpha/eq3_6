@@ -1,4 +1,4 @@
-subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps100, ggmgex, iern1, ietmax, iimgex, iindx1, ixbasp, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
+subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, ggmgex, iern1, ietmax, iimgex, iindx1, jcsort, jern1, jern2, jetmax, jjsort, jsitex, kbt, kmax, krow, narn1, narn2, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nern1, nern2, netmax, noutpt, nphasx, nstmax, nttyo, rhsgex, uspec, weight, xbar)
     !! This subroutine computes a row of the EQ3NR Jacobian matrix
     !! for one of the following:
     !!   Mass balance constraint
@@ -29,7 +29,6 @@ subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps10
     integer :: iimgex(ietmax)
     integer :: iindx1(kmax)
     integer :: ipvgex(ietmax)
-    integer :: ixbasp(nbtmax)
     integer :: jcsort(nstmax)
     integer :: jern1(jetmax,netmax)
     integer :: jern2(jetmax,netmax)
@@ -63,7 +62,6 @@ subroutine balcon(aamatr, aamgex, al10, cdrs, cjbasp, cnufac, conc, dmlge, eps10
     real(kind=8) :: xbar(nstmax)
 
     real(kind=8) :: al10
-    real(kind=8) :: eps100
 
     ! Local variable declarations.
     integer :: icol

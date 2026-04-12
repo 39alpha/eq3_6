@@ -1,4 +1,4 @@
-subroutine inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, napa_asv, napta, narn1a, narn2a, nerr, nmuta, nmuta_asv, nmuxa, noutpt, nslta, nslta_asv, nslxa, nsta_asv, nttyo, palpaa, uspeca, zchara)
+subroutine inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, napa_asv, napta, narn1a, narn2a, nmuta, nmuta_asv, nmuxa, noutpt, nslta, nslta_asv, nslxa, nsta_asv, nttyo, palpaa, uspeca, zchara)
     !! This subroutine reads the parameters for Pitzer's equations from
     !! the data file.
     !! This subroutine is called by:
@@ -57,7 +57,6 @@ subroutine inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, n
     integer :: napta
     integer :: narn1a
     integer :: narn2a
-    integer :: nerr
     integer :: nmuta
     integer :: nslta
 

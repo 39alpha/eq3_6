@@ -1,4 +1,4 @@
-subroutine gegexs(cegexs, cgexj, egexjc, egexjf, egexs, iern1, iern2, ietmax, jern1, jetmax, jgext, moph, mosp, mrgexs, netmax, ngexsa, ngext, noutpt, nptmax, nstmax, nttyo, zchar, zgexj)
+subroutine gegexs(cegexs, cgexj, egexjc, egexjf, egexs, iern1, iern2, ietmax, jern1, jetmax, jgext, moph, mosp, mrgexs, netmax, ngexsa, ngext, nptmax, nstmax, zchar, zgexj)
     !! This subroutine computes the equivalent fractions (egexs) and
     !! mole ratios (mrgexs) of exchanger species belonging to generic
     !! ion exchange phases.
@@ -36,8 +36,6 @@ subroutine gegexs(cegexs, cgexj, egexjc, egexjf, egexs, iern1, iern2, ietmax, je
     integer :: nptmax
     integer :: nstmax
 
-    integer :: noutpt
-    integer :: nttyo
 
     integer :: jern1(jetmax,netmax)
     integer :: jgext(netmax)

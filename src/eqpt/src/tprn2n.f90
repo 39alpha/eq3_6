@@ -1,4 +1,4 @@
-subroutine tprn2n(amun2n, apsi, innpr, in2pr, in2ntr, ipbtmx, jpfcmx, natmax, ncvn2n, nerr, nnnpr, nn2pr, nn2ntr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvn2n, qpdnn, qpdn2, qpdn2n, uaqsp, utripl)
+subroutine tprn2n(amun2n, apsi, innpr, in2pr, in2ntr, jpfcmx, natmax, ncvn2n, nerr, nnnpr, nn2pr, nn2ntr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvn2n, qpdnn, qpdn2, qpdn2n, uaqsp, utripl)
     !! Test and process the Pitzer data for nnn' (neutral, same neutral,
     !! different neutral) triplets read from the DATA0 file. Find and
     !! flag errors, such as duplication of data (e.g., two data blocks
@@ -23,7 +23,6 @@ subroutine tprn2n(amun2n, apsi, innpr, in2pr, in2ntr, ipbtmx, jpfcmx, natmax, nc
     implicit none
 
     ! Calling sequence variable declarations.
-    integer :: ipbtmx
     integer :: jpfcmx
     integer :: natmax
     integer :: nnnpr

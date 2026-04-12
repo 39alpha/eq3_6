@@ -1,4 +1,4 @@
-subroutine jgibbs(aamatr, afcnst, affp, cdrs, cscale, csts, delvec, eps100, gmmatr, iindx1, iodb, ipivot, ipndx1, jpflag, kbt, kdim, kmax, km1, kmt, kx1, kxt, mtb, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nodbmx, noutpt, npadd, npdel, nptmax, nstmax, nsts, nstsmx, nstsr, nttyo, rhsvec, uphase, uspec, xlks)
+subroutine jgibbs(aamatr, afcnst, affp, cdrs, cscale, csts, delvec, eps100, gmmatr, iindx1, iodb, ipivot, ipndx1, kbt, kdim, kmax, km1, kmt, kx1, kxt, mtb, nbasp, nbtmax, ndrs, ndrsmx, ndrsr, nodbmx, noutpt, npadd, npdel, nptmax, nstmax, nsts, nstsmx, nstsr, nttyo, rhsvec, uphase, uspec, xlks)
     !! This subroutine determines which one of a set of phases should be
     !! removed from the equilibrium system when there is a mineralogic
     !! phase rule violation. It has not yet been extended to handle
@@ -33,7 +33,6 @@ subroutine jgibbs(aamatr, afcnst, affp, cdrs, cscale, csts, delvec, eps100, gmma
     integer :: iodb(nodbmx)
     integer :: ipivot(kmax)
     integer :: ipndx1(kmax)
-    integer :: jpflag(nptmax)
     integer :: nbasp(nbtmax)
     integer :: ndrs(ndrsmx)
     integer :: ndrsr(2,nstmax)

@@ -1,4 +1,4 @@
-subroutine rd3d8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, noutpt, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qgexsh, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
+subroutine rd3d8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iodb, iopg, iopr, iopt, irdxc3, itdsf3, itermx, jgext, jetmax, jflgi, jgexti, jpres3, kxmod, mwtges, nbti, nbtmax, ncmpri, net, neti, netmax, ngexti, ninpts, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nprob, nsbswt, ntitl, ntitmx, nttyo, nxicmx, nxmdmx, nxmod, nxti, nxtimx, pei, press, qend, qgexsh, qrderr, rho, scamas, tdspkg, tdspl, tempc, tgexp, tolbt, toldl, tolspf, ucospi, uebal, ugexj, ugexji, ugexmo, ugexp, ugexpi, ugexr, ugexsi, umemi, uobsw, uredox, usbsw, usoli, uspeci, utitl, uhfgex, uvfgex, uxkgex, uxmod, xbari, xgexsi, xhfgex, xlkgex, xvfgex, xlkmod, zgexj)
     !! This subroutine reads the EQ3NR input file in menu-style ("D")
     !! format for version 8.0.
     !! This subroutine is a near-clone of EQ3NR/rd3ind.f. However, the
@@ -33,7 +33,6 @@ subroutine rd3d8(cgexj, cgexpi, covali, ehi, egexsi, fo2lgi, iebal3, ietmax, iod
     integer :: nxtimx
 
     integer :: ninpts
-    integer :: noutpt
     integer :: nttyo
 
     integer :: iodb(nodbmx)

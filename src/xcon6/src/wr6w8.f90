@@ -1,4 +1,4 @@
-subroutine wr6w8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nert, nertmx, net, netmax, newin, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrt, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrt, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xgersi, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
+subroutine wr6w8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlaprn, dleplo, dleprn, dlhplo, dlhprn, dloplo, dloprn, dltpll, dltplo, dltprl, dltprn, dlxdmp, dlxmx0, dlxpll, dlxplo, dlxprl, dlxprn, eact, egersi, ehmaxi, ehmini, electr, fkrc, iact, ibsrti, iesrti, ietmax, igerti, iktmax, imchmx, imech, iodb, iopg, iopr, iopt, itermx, ixrti, jcode, jetmax, jflgi, jgerti, jgext, jpress, jreac, jtemp, kbt, kct, kdim, kmax, kmt, kprs, ksplmx, ksppmx, kstpmx, kxmod, kxt, hact, modr, moffg, morr, mprphi, mprspi, mtbaqi, mtbi, mwtges, nbti, nbtmax, nbt1mx, nctmax, ndact, ndctmx, nertmx, net, netmax, newin, nffg, nffgmx, ngexrt, nobswt, nodbmx, nopgmx, noprmx, noptmx, nordmx, nprpmx, nprpti, nprsmx, nprsti, nptkmx, nrct, nrctmx, nrk, nsbswt, nsk, nsrtmx, ntitl1, ntitl2, ntitmx, ntrymx, nttkmx, nxmdmx, nxmod, nxopex, nxopmx, nxopt, nxpemx, nxrtmx, o2maxi, o2mini, phmaxi, phmini, pressb, pressi, ptk, qgexsh, rkb, rxbari, sfcar, ssfcar, tempcb, tempci, tgexp, timmxi, tistti, tolbt, toldl, tolsat, tolxsf, trkb, ttk, ubmtbi, ubsri, ucxri, udac, uesri, uffg, ugerji, ugermo, ugersi, ugexj, ugexmo, ugexp, ugexr, uhfgex, uobsw, uprphi, uprspi, ureac, usbsw, utitl1, utitl2, uvfgex, uxcat, uxkgex, uxmod, uxopex, uxopt, uzveci, vreac, xhfgex, ximaxi, xistti, xlkffg, xlkgex, xlkmod, xvfgex, zgexj, zvclgi)
     !! This subroutine writes the EQ6 INPUT file in compact ("W") format
     !! for version 8.0.
     !! This subroutine is a near-clone of EQLIB/wr6pkw.f.
@@ -82,21 +82,18 @@ subroutine wr6w8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlap
     integer :: kxt
     integer :: nbti
     integer :: nffg
-    integer :: nert
     integer :: net
     integer :: nobswt
     integer :: nprpti
     integer :: nprsti
     integer :: nrct
     integer :: nsbswt
-    integer :: nsrt
     integer :: ntitl1
     integer :: ntitl2
     integer :: ntrymx
     integer :: nxmod
     integer :: nxopex
     integer :: nxopt
-    integer :: nxrt
 
     logical :: qgexsh
 
@@ -155,7 +152,6 @@ subroutine wr6w8(awmaxi, awmini, cbsri, cdac, cesri, cgexj, csigma, dlaplo, dlap
     real(kind=8) :: trkb(imchmx,2,nrctmx)
     real(kind=8) :: ttk(nttkmx)
     real(kind=8) :: vreac(nrctmx)
-    real(kind=8) :: xgersi(ietmax,jetmax,nertmx)
     real(kind=8) :: xhfgex(ietmax,jetmax,netmax)
     real(kind=8) :: xlkffg(nffgmx)
     real(kind=8) :: xlkgex(ietmax,jetmax,netmax)

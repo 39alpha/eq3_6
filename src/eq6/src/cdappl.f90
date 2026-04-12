@@ -1,4 +1,4 @@
-subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affpd, affsd, ah, ahrc, alk, alk1, alk2, alki, atwt, bdwipp, cdrsd, cess, conc, csts, ctb, cteaq, dvoso, dwoso, eh, ehfac, ehrc, eps100, farad, fdpe0, fdse0, fjest, fo2lg, fo2lrc, fxist, iaqsln, iemop0, iemos0, iern1, iern2, ifrn1, ifrn2, ilrn1, ilrn2, imrn1, imrn2, iopt, ixrn1, ixrn2, jcode, jcsort, jern1, jflag, jflagd, jgext, jpflag, jsflag, jssort, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mprph, mprsp, mrgers, mrmlra, mtb, mtbaq, mte, mteaq, mwtges, mwtrc, mwtsp, narn1, narn2, nat, nbasp, nbaspd, nbt, nchlor, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nelect, nern1, nern2, nert, ness, nessr, net, nfrn1, nfrn2, ngext, ngrn1, ngrn2, ngt, nhydr, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmrt, nmt, no2gaq, npchk, npet, npet0, npt, npts, nrct, nrndex, nst, nsts, nstsr, ntf1, ntf1t, ntf2, ntf2t, nxridx, nxrn1, nxrn2, nxrt, nxt, osc, oscst, omega, pe, perc, ph, phmes, ppmwb, ppmwe, qriinf, qxknph, rreacn, rreac1, rxbar, sfcar, sidrsp, sidrph, sigmam, sigmst, tdays, tempc, tf1, tf2, thours, time1, tmins, tyears, uphase, uspec, vodrt, voph, vophg, vophj, vopht, vosoct, vosp, vospg, vospj, vospt, vosp0, vreac, wfh2o, wkgwi, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosp, wospg, wospj, wospt, xbar, xlke, xlksd, zchcu6, zchsq2)
+subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, afcnst, affpd, affsd, ah, ahrc, alk, alk1, alk2, alki, atwt, cdrsd, cess, conc, csts, ctb, cteaq, dvoso, dwoso, eh, ehfac, ehrc, eps100, farad, fdpe0, fdse0, fjest, fo2lg, fo2lrc, fxist, iaqsln, iemop0, iemos0, iern1, iern2, ifrn1, ifrn2, imrn1, imrn2, iopt, ixrn1, ixrn2, jcode, jcsort, jern1, jflagd, jgext, jpflag, jsflag, jssort, modr, moph, mophg, mophj, mopht, morr, mosp, mospg, mospj, mospt, mprph, mprsp, mrgers, mtbaq, mte, mteaq, mwtges, mwtrc, mwtsp, narn1, narn2, nbasp, nbaspd, nbt, ncmpe0, ncmpr, nct, ndrsd, ndrsrd, nert, ness, nessr, ngext, nmrt, no2gaq, npchk, npet, npet0, npt, npts, nrct, nrndex, nst, nsts, nstsr, ntf1, ntf1t, ntf2, ntf2t, nxridx, nxrt, osc, oscst, omega, pe, perc, ph, ppmwb, ppmwe, qriinf, qxknph, rreacn, rreac1, rxbar, sfcar, sidrsp, sidrph, sigmam, sigmst, tdays, tf1, tf2, thours, time1, tmins, tyears, vodrt, voph, vophg, vophj, vopht, vosoct, vosp, vospg, vospj, vospt, vosp0, vreac, wfh2o, wkgwi, wodr, wodrt, woph, wophg, wophj, wopht, worr, worrt, wosoct, wosp, wospg, wospj, wospt, xbar, xlke, xlksd, zchcu6, zchsq2)
     !! This subroutine computes various data pertaining to the modeled
     !! system for printing and plotting at the current point of
     !! reaction progress (xi1).
@@ -18,7 +18,6 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     integer :: jcode(nrctmx)
     integer :: jcsort(nstmax)
     integer :: jern1(jetmax,netmax)
-    integer :: jflag(nstmax)
     integer :: jflagd(nstmax)
     integer :: jgext(netmax)
     integer :: jpflag(nptmax)
@@ -45,44 +44,21 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     integer :: iern2
     integer :: ifrn1
     integer :: ifrn2
-    integer :: ilrn1
-    integer :: ilrn2
     integer :: imrn1
     integer :: imrn2
     integer :: ixrn1
     integer :: ixrn2
 
-    integer :: nat
     integer :: nbt
     integer :: nct
-    integer :: net
-    integer :: nlt
-    integer :: nmt
     integer :: nst
     integer :: npt
-    integer :: ngt
-    integer :: nxt
 
     integer :: narn1
     integer :: narn2
-    integer :: nern1
-    integer :: nern2
-    integer :: nfrn1
-    integer :: nfrn2
-    integer :: ngrn1
-    integer :: ngrn2
-    integer :: nlrn1
-    integer :: nlrn2
-    integer :: nmrn1
-    integer :: nmrn2
-    integer :: nxrn1
-    integer :: nxrn2
 
     integer :: iaqsln
-    integer :: nchlor
-    integer :: nelect
     integer :: nert
-    integer :: nhydr
     integer :: nmrt
     integer :: no2gaq
     integer :: npet
@@ -97,8 +73,6 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
 
     logical :: qriinf
 
-    character(len=48) :: uspec(nstmax)
-    character(len=24) :: uphase(nptmax)
 
     real(kind=8) :: acflg(nstmax)
     real(kind=8) :: actlg(nstmax)
@@ -130,7 +104,6 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     real(kind=8) :: mprph(nptmax)
     real(kind=8) :: mprsp(nstmax)
     real(kind=8) :: mrgers(ietmax,jetmax,nertmx)
-    real(kind=8) :: mtb(nbtmax)
     real(kind=8) :: mtbaq(nbtmax)
     real(kind=8) :: mte(nctmax)
     real(kind=8) :: mteaq(nctmax)
@@ -178,14 +151,12 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     real(kind=8) :: acfwlg
     real(kind=8) :: actw
     real(kind=8) :: actwlg
-    real(kind=8) :: adwipp
     real(kind=8) :: afcnst
     real(kind=8) :: ah
     real(kind=8) :: alk
     real(kind=8) :: alki
     real(kind=8) :: alk1
     real(kind=8) :: alk2
-    real(kind=8) :: bdwipp
     real(kind=8) :: dvoso
     real(kind=8) :: dwoso
     real(kind=8) :: eh
@@ -195,17 +166,14 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
     real(kind=8) :: fjest
     real(kind=8) :: fo2lg
     real(kind=8) :: fxist
-    real(kind=8) :: mrmlra
     real(kind=8) :: osc
     real(kind=8) :: oscst
     real(kind=8) :: omega
     real(kind=8) :: pe
     real(kind=8) :: ph
-    real(kind=8) :: phmes
     real(kind=8) :: sigmam
     real(kind=8) :: sigmst
     real(kind=8) :: tdays
-    real(kind=8) :: tempc
     real(kind=8) :: thours
     real(kind=8) :: time1
     real(kind=8) :: tmins
@@ -434,7 +402,7 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, adwipp, afcnst, affp
 
     ! Calculate affinities and saturation indices using the 'd' set
     ! of reactions.
-    call gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndrsd, ndrsmx, ndrsrd, npt, nptmax, nst, nstmax, qxknph, sidrph, sidrsp, uphase, uspec, xbar, xlksd)
+    call gaffsd(actlg, afcnst, affpd, affsd, cdrsd, jflagd, jpflag, ncmpr, ndrsd, ndrsmx, ndrsrd, npt, nptmax, nst, nstmax, qxknph, sidrph, sidrsp, xbar, xlksd)
 
     vosoct = 0.
     wosoct = 0.

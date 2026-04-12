@@ -1,4 +1,4 @@
-subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcnst, alpha, al10, amtb, aphi, apx, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdhh, bdhv, bdot, bdoth, bdotv, beta, betamx, betao, bfje, bfxi, bgamx, bneg, bpx, bsigmm, cco2, cegexs, cess, cdrs, cdrsd, cdrsx, cdrtw, cdrw, cjbasp, cnufac, conc, conclg, cpgexs, cscale, csts, delmax, delvco, delvec, dlogxw, egexjc, egexjf, egexs, eh, ehfac, eps100, farad, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, iapxt, ibetmx, ibpxt, ibswx, idelmx, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipcv, ipivot, ipndx1, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcsort, jflag, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, khydx, km1, kmt, ko2gaq, krdxsp, kwater, kx1, kxt, loph, losp, lsort, moph, mosp, mrgexs, mtb, narn1, narn2, narxt, nat, nbasp, nbaspd, nbaspx, nbt, nbtd, nbw, nchlor, ncmpr, nct, ndrs, ndrsd, ndrsx, ndrsr, ndrsrd, ndrsrx, nelect, nern1, nern2, ness, nessr, net, nfac, nfrn1, nfrn2, ngrn1, ngrn2, ngt, nhydr, nhydx, nlrn1, nlrn2, nlt, nmrn1, nmrn2, nmt, noutpt, no2gaq, nphasx, npt, nrdxsp, nst, nsts, nstsr, ntpr, nttyo, nxrn1, nxrn2, nxt, omega, omeglg, press, qbassw, qhawep, qoptmz, qpit75, qredox, q6mode, rhsvec, screwd, sigmam, sigmmo, smp100, tempc, tempk, tolbt, toldl, ubacmx, ubgamx, ulbeta, uldel, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, zchar, zchcu6, zchsq2, zvclg1, zvec1)
+subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, afcnst, alpha, al10, amtb, aphi, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdot, beta, betamx, betao, bfje, bfxi, bgamx, bneg, bpx, bsigmm, cco2, cegexs, cdrs, cdrsx, cdrtw, cdrw, cjbasp, cnufac, conc, conclg, cscale, csts, delmax, delvco, delvec, dlogxw, egexjc, egexjf, egexs, eh, ehfac, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, ibetmx, ibpxt, ibswx, idelmx, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipcv, ipivot, ipndx1, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcsort, jflag, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, km1, kmt, ko2gaq, kwater, kx1, kxt, loph, losp, lsort, moph, mosp, mrgexs, mtb, narn1, narn2, narxt, nbasp, nbaspd, nbaspx, nbt, nbw, nchlor, ncmpr, ndrs, ndrsx, ndrsr, ndrsrx, nelect, nern1, nern2, net, nfac, ngrn1, ngrn2, ngt, nhydr, noutpt, no2gaq, nphasx, npt, nst, nsts, nstsr, ntpr, nttyo, omega, omeglg, press, qbassw, qhawep, qoptmz, qpit75, qredox, q6mode, rhsvec, screwd, sigmam, sigmmo, smp100, tempc, tempk, tolbt, toldl, ubacmx, ubgamx, ulbeta, uldel, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, zchar, zchcu6, zchsq2, zvclg1, zvec1)
     !! This subroutine attempts to calculate the chemical equilibrium
     !! state of a system for a pre-defined phase assemblage. Unlike in
     !! previous versions of EQ6, this subroutine no longer has the
@@ -48,7 +48,6 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
 
     integer :: nfac(nbtmax)
 
-    integer :: iapxt(nxtmax)
     integer :: ibpxt(nxtmax)
     integer :: ibswx(nbtmax)
     integer :: igstak(ngtmax)
@@ -80,13 +79,9 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     integer :: nbaspx(nbtmax)
     integer :: ncmpr(2,nptmax)
     integer :: ndrs(ndrsmx)
-    integer :: ndrsd(ndrsmx)
     integer :: ndrsx(ndrsmx)
     integer :: ndrsr(2,nstmax)
-    integer :: ndrsrd(2,nstmax)
     integer :: ndrsrx(2,nstmax)
-    integer :: ness(nessmx)
-    integer :: nessr(2,nstmax)
     integer :: nphasx(nstmax)
     integer :: nsts(nstsmx)
     integer :: nstsr(2,nstmax)
@@ -117,31 +112,18 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     integer :: ilpsi2
     integer :: ilzeta
 
-    integer :: nat
     integer :: nbt
-    integer :: nct
     integer :: net
     integer :: ngt
-    integer :: nlt
-    integer :: nmt
     integer :: npt
     integer :: nst
-    integer :: nxt
 
     integer :: narn1
     integer :: narn2
     integer :: nern1
     integer :: nern2
-    integer :: nfrn1
-    integer :: nfrn2
     integer :: ngrn1
     integer :: ngrn2
-    integer :: nlrn1
-    integer :: nlrn2
-    integer :: nmrn1
-    integer :: nmrn2
-    integer :: nxrn1
-    integer :: nxrn2
 
     integer :: ibetmx
     integer :: idelmx
@@ -157,22 +139,17 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     integer :: kdim
     integer :: kelect
     integer :: khydr
-    integer :: khydx
     integer :: km1
     integer :: kmt
     integer :: ko2gaq
-    integer :: krdxsp
     integer :: kwater
     integer :: kx1
     integer :: kxt
-    integer :: nbtd
     integer :: nbw
     integer :: nchlor
     integer :: nelect
     integer :: nhydr
-    integer :: nhydx
     integer :: no2gaq
-    integer :: nrdxsp
     integer :: ntpr
 
     logical :: qbassw
@@ -197,7 +174,6 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     real(kind=8) :: actlg(nstmax)
     real(kind=8) :: alpha(kmax)
     real(kind=8) :: amtb(nbtmax)
-    real(kind=8) :: apx(iapxmx,nxtmax)
     real(kind=8) :: azero(natmax)
     real(kind=8) :: a3bars(natmax)
     real(kind=8) :: beta(kmax)
@@ -205,9 +181,7 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     real(kind=8) :: bpx(ibpxmx,nxtmax)
     real(kind=8) :: cco2(5)
     real(kind=8) :: cegexs(ietmax,jetmax,netmax)
-    real(kind=8) :: cess(nessmx)
     real(kind=8) :: cdrs(ndrsmx)
-    real(kind=8) :: cdrsd(ndrsmx)
     real(kind=8) :: cdrsx(ndrsmx)
     real(kind=8) :: cdrtw(nstmax)
     real(kind=8) :: cdrw(nstmax)
@@ -215,7 +189,6 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     real(kind=8) :: cnufac(nstmax)
     real(kind=8) :: conc(nstmax)
     real(kind=8) :: conclg(nstmax)
-    real(kind=8) :: cpgexs(ietmax,jetmax,netmax)
     real(kind=8) :: cscale(nstmax)
     real(kind=8) :: csts(nstsmx)
     real(kind=8) :: delvco(kmax)
@@ -248,15 +221,9 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     real(kind=8) :: zvec1(kmax)
 
     real(kind=8) :: adh
-    real(kind=8) :: adhh
-    real(kind=8) :: adhv
     real(kind=8) :: aphi
     real(kind=8) :: bdh
-    real(kind=8) :: bdhh
-    real(kind=8) :: bdhv
     real(kind=8) :: bdot
-    real(kind=8) :: bdoth
-    real(kind=8) :: bdotv
 
     real(kind=8) :: abar
     real(kind=8) :: afcnst
@@ -275,7 +242,6 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     real(kind=8) :: eh
     real(kind=8) :: ehfac
     real(kind=8) :: eps100
-    real(kind=8) :: farad
     real(kind=8) :: fje
     real(kind=8) :: fjeo
     real(kind=8) :: fo2
@@ -444,7 +410,7 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
     qblamx = kxt .ge. kx1
 
     ! Expand the system description.
-    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, cpgexs, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, mtb, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, ugexmo, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
+    call ncmpex(acflg, act, actlg, cdrs, cegexs, cgexj, conc, conclg, egexjc, egexjf, egexs, eps100, fo2, fo2lg, fsort, fugac, fugalg, iern1, iern2, ietmax, ifrn1, ifrn2, igas, igstak, iindx1, ilrn1, ilrn2, imrn1, imrn2, istack, ixrn1, ixrn2, jcsort, jern1, jern2, jetmax, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jssort, jstack, kbt, kdim, kelect, kmax, km1, ko2gaq, kwater, kxt, loph, losp, lsort, mgext, mrgexs, moph, mosp, narn1, narn2, nbasp, nbt, nbtmax, ncmpr, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, netmax, ngexsa, ngext, ngrn1, ngrn2, ngt, ngtmax, noutpt, no2gaq, nphasx, npt, nptmax, nst, nstmax, nttyo, omega, omeglg, press, qxbarw, q6mode, ugexj, uphase, uspec, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlks, zchar, zgexj, zvclg1, zvec1)
 
     ! Compute the residual functions prior to iteration.
     call betas(acflg, actlg, afcnst, alpha, amtb, bbig, beta, betamx, bneg, cdrs, conc, conclg, coval, csts, eh, ehfac, fo2lg, ibetmx, iebal, iindx1, irdxc3, jcsort, jflag, jsflag, jssort, kbt, kdim, kelect, khydr, kmax, km1, ko2gaq, kwater, kxt, mtb, mosp, narn1, narn2, nbasp, nbtmax, ncosp, ndrs, ndrsmx, ndrsr, nelect, nern1, nern2, nhydr, noutpt, no2gaq, nredox, nst, nstmax, nsts, nstsmx, nstsr, ntfx, ntfxmx, ntfxt, nttyo, omega, qredox, q6mode, tfx, ubbig, ubneg, ubetmx, uspec, uzvec1, weight, xbrwlg, xlke, xlks, zchar)
@@ -480,7 +446,7 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
             !          Optimize the iteration variables before starting hybrid
             !          Newton-Raphson iteration. The phase assemblage is fixed
             !          in this process.
-            call optmzr(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcnst, al10, alpha, amtb, aphi, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdhh, bdhv, bdot, bdoth, bdotv, beta, betamx, bgamx, bneg, bpx, cco2, cdrs, cdrsx, cdrtw, cdrw, cegexs, cgexj, cjbasp, cnufac, conc, conclg, cpgexs, cscale, csts, coval, delvec, dlogxw, egexjc, egexjf, egexs, ehfac, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, ibetmx, ibpxt, ibswx, ielam, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipcv, ipivot, ipndx1, irdxc3, istack, ixbasp, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, km1, kmt, ko2gaq, kwater, kx1, kxt, loph, losp, lsort, mgext, moph, mosp, mrgexs, mtb, narn1, narn2, narxt, nat, nbasp, nbaspd, nbaspx, nbw, nbt, nbtd, nchlor, ncmpr, ncosp, ndrs, ndrsx, ndrsr, ndrsrd, ndrsrx, nelect, nern1, nern2, net, ngexsa, nfac, ngext, nhydr, nhydx, ngrn1, ngrn2, ngt, noutpt, no2gaq, nphasx, npt, nst, nsts, nstsr, ntfx, ntfxt, ntpr, nttyo, omega, omeglg, press, qbassw, qblamx, qhawep, qpit75, qredox, q6mode, rhsvec, sigmam, sigmmo, smp100, tempc, tempk, tfx, tolbig, tolneg, tolxpt, ubacmx, ubbig, ubetmx, ubgamx, ubneg, ugexj, ugexmo, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, zchar, zchcu6, zchsq2, zgexj, zvclg1, zvec1)
+            call optmzr(aamatr, abar, acflg, acflgo, act, actlg, adh, afcnst, al10, alpha, amtb, aphi, avcnst, azero, a3bar, a3bars, bacfmx, bbig, bdh, bdot, beta, betamx, bgamx, bneg, bpx, cco2, cdrs, cdrsx, cdrtw, cdrw, cegexs, cgexj, cjbasp, cnufac, conc, conclg, cscale, csts, coval, delvec, dlogxw, egexjc, egexjf, egexs, ehfac, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, ibetmx, ibpxt, ibswx, ielam, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, iopt, ipch, ipcv, ipndx1, irdxc3, istack, ixbasp, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, km1, kmt, ko2gaq, kwater, kx1, kxt, loph, losp, lsort, mgext, moph, mosp, mrgexs, mtb, narn1, narn2, narxt, nbasp, nbaspd, nbaspx, nbw, nbt, nchlor, ncmpr, ncosp, ndrs, ndrsx, ndrsr, ndrsrx, nelect, nern1, nern2, net, ngexsa, nfac, ngext, nhydr, ngrn1, ngrn2, ngt, noutpt, no2gaq, nphasx, npt, nst, nsts, nstsr, ntfx, ntfxt, ntpr, nttyo, omega, omeglg, press, qbassw, qhawep, qpit75, qredox, q6mode, sigmam, sigmmo, smp100, tempc, tempk, tfx, tolbig, tolneg, tolxpt, ubacmx, ubbig, ubetmx, ubgamx, ubneg, ugexj, ugexmo, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, zchar, zchcu6, zchsq2, zgexj, zvclg1, zvec1)
         end if
     end if
 
@@ -490,7 +456,7 @@ subroutine eqcalc(aamatr, abar, acflg, acflgo, act, actlg, adh, adhh, adhv, afcn
 1600 format(/,' Starting hybrid Newton-Raphson iteration.',/)
     end if
 
-    call newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, adhh, adhv, afcnst, alpha, al10, amtb, aphi, azero, a3bar, a3bars, bacfmx, bbig, beta, betamx, betao, bdh, bdhh, bdhv, bdot, bdoth, bdotv, bfje, bfxi, bgamx, bneg, bpx, bsigmm, cco2, cdrs, cdrtw, cdrw, cegexs, cgexj, cjbasp, cnufac, conc, conclg, coval, cpgexs, csts, delam, delmax, delvco, delvec, dgpit, dlogxw, dpelm, dpslm, dselm, egexjc, egexjf, egexs, eh, ehfac, elam, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, gpit, ibpxt, idelmx, iebal, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, ipivot, ipndx1, irdxc3, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, km1, kmt, ko2gaq, kwater, kx1, kxt, loph, losp, lsort, mgext, moph, mosp, mrgexs, mtb, nalpha, napt, narn1, narn2, nbasp, nbt, nbw, nchlor, ncmpr, ncosp, ndrs, ndrsr, nelect, nern1, nern2, net, ngexsa, ngext, ngrn1, ngrn2, ngt, nhydr, nmut, nmux, nmxi, nmxx, noutpt, no2gaq, nphasx, npt, nredox, nslt, nslx, nst, nsts, nstsr, nsxi, nsxx, ntfx, ntfxt, nttyo, omega, omeglg, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, qredox, q6mode, rhsvec, screwd, screwn, selm, sigmam, sigmmo, tempk, tfx, tolbt, toldl, ubacmx, ubbig, ubetmx, ubgamx, ubneg, ugexj, ugexmo, ulbeta, uldel, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlke, xlks, zchar, zchsq2, zchcu6, zgexj, zvclg1, zvec1)
+    call newton(aamatr, abar, acflg, acflgo, act, actlg, actwlc, adh, afcnst, alpha, al10, amtb, aphi, azero, a3bar, a3bars, bacfmx, bbig, beta, betamx, betao, bdh, bdot, bfje, bfxi, bgamx, bneg, bpx, bsigmm, cco2, cdrs, cdrtw, cdrw, cegexs, cgexj, cjbasp, cnufac, conc, conclg, coval, csts, delam, delmax, delvco, delvec, dgpit, dlogxw, dpelm, dpslm, dselm, egexjc, egexjf, egexs, eh, ehfac, elam, eps100, fje, fjeo, fo2, fo2lg, fsort, fugac, fugalg, fxi, fxio, gmmatr, gpit, ibpxt, idelmx, iebal, ielam, ier, iern1, iern2, ifcphi1, ifcphi2, ifnnn, ifn2n, ifpsi1, ifpsi2, ifrn1, ifrn2, ifzeta, igas, igstak, iindx1, ilcphi1, ilcphi2, ilnnn, iln2n, ilpsi1, ilpsi2, ilrn1, ilrn2, ilzeta, imrn1, imrn2, insgf, iodb, iopg, ipivot, ipndx1, irdxc3, istack, iter, itermx, ixbasp, ixrn1, ixrn2, izmax, jcsort, jern1, jern2, jflag, jgext, jgsort, jgstak, jjsort, jpflag, jsflag, jsitex, jsol, jssort, jstack, kbt, kction, kdim, kelect, khydr, km1, kmt, ko2gaq, kwater, kx1, kxt, loph, losp, lsort, mgext, moph, mosp, mrgexs, mtb, nalpha, napt, narn1, narn2, nbasp, nbt, nbw, nchlor, ncmpr, ncosp, ndrs, ndrsr, nelect, nern1, nern2, net, ngexsa, ngext, ngrn1, ngrn2, ngt, nhydr, nmut, nmux, nmxi, nmxx, noutpt, no2gaq, nphasx, npt, nredox, nslt, nslx, nst, nsts, nstsr, nsxi, nsxx, ntfx, ntfxt, nttyo, omega, omeglg, palpha, pelm, pmu, press, pslamn, pslm, qhawep, qpit75, qredox, q6mode, rhsvec, screwd, screwn, selm, sigmam, sigmmo, tempk, tfx, tolbt, toldl, ubacmx, ubbig, ubetmx, ubgamx, ubneg, ugexj, ugexmo, ulbeta, uldel, uphase, uspec, uzvec1, weight, wfac, xbar, xbarlg, xbarw, xbarwc, xbrwlc, xbrwlg, xlke, xlks, zchar, zchsq2, zchcu6, zgexj, zvclg1, zvec1)
 
     if (ier .gt. 0) then
         if (iodb(4) .gt. 0) then

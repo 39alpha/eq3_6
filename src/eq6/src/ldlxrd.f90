@@ -1,4 +1,4 @@
-subroutine ldlxrd(delxi, dlxmin, dzvc0, fdzv0, iodb, ipndx1, kdim, km1, kmax, kxt, loph, nodbmx, nord, noutpt, nptmax, nrd1mx, nttyo, uphase, zklogu, zvec0)
+subroutine ldlxrd(delxi, dlxmin, dzvc0, fdzv0, iodb, ipndx1, km1, kmax, kxt, loph, nodbmx, nord, noutpt, nptmax, nrd1mx, nttyo, uphase, zklogu, zvec0)
     !! This subroutine limits delxi when a phase is rapidly disappearing
     !! from the equilibrium system. The particular mechanism here is
     !! only designed to slow things down enough so that other mechanisms
@@ -23,7 +23,6 @@ subroutine ldlxrd(delxi, dlxmin, dzvc0, fdzv0, iodb, ipndx1, kdim, km1, kmax, kx
     integer :: iodb(nodbmx)
     integer :: ipndx1(kmax)
 
-    integer :: kdim
     integer :: km1
     integer :: kxt
     integer :: nord

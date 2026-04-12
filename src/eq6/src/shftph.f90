@@ -1,4 +1,4 @@
-subroutine shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, ipndx1, ixrn1, ixrn2, jern1, jetmax, jgext, jpflag, jsflag, kbt, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, nbtmax, ncmpe, ncmpr, netmax, ngext, nordmx, noutpt, np, npet, npetmx, nptmax, nsetmx, nstmax, nttyo, qshftd, qtotsh, uphase, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
+subroutine shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop, iemos, iern1, iern2, ietmax, iindx1, imrn1, imrn2, ipndx1, ixrn1, ixrn2, jern1, jetmax, jgext, jpflag, jsflag, kbt, kmax, km1, kmt, kx1, kxt, loph, losp, moph, mosp, mprph, mprsp, mrgexs, ncmpe, ncmpr, netmax, ngext, nordmx, noutpt, np, npet, npetmx, nptmax, nsetmx, nstmax, nttyo, qshftd, qtotsh, uphase, xbar, xbarlg, zklgmn, zklogl, zvclg0, zvclg1, zvec0, zvec1)
     !! This subroutine shifts mass of a single phase from the equilibrium
     !! system (ES) to the physically removed subsystem (PRS), which is
     !! a system conceptually out of contact with the aqueous solution.
@@ -39,7 +39,6 @@ subroutine shftph(emop, emop0, emos, emos0, fdpe0, fdpem1, fdse0, fdsem1, iemop,
     integer :: ietmax
     integer :: jetmax
     integer :: kmax
-    integer :: nbtmax
     integer :: netmax
     integer :: nordmx
     integer :: npetmx

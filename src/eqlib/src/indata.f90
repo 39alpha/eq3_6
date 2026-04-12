@@ -1,4 +1,4 @@
-subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, abdotv, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adhfe, adhfsa, advfe, advfsa, amua, aprehw, apresg, apxa, aslma, atwta, axhfe, axhfsa, axlke, axlksa, axvfe, axvfsa, azeroa, bpxa, cco2, cdrsa, cessa, eps100, iapxa_asv, iapxta, iaqsla, ibpxa_asv, ibpxta, ielam, igas, ikta_asv, insgfa, ipbt_asv, ipch, ipch_asv, ipcv, ipcv_asv, ixrn1a, ixrn2a, jpdblo, jpfc_asv, jptffl, jsola, mwtspa, nad1, nalpaa, napa_asv, napta, narn1a, narn2a, narx_asv, narxt, nata, nata_asv, nbaspa, nbta, nbta_asv, nbtafd, nbta1_asv, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsra, nessa, nessa_asv, nessra, ngrn1a, ngrn2a, ngta, ngta_asv, nlrn1a, nlrn2a, nlta, nlta_asv, nmrn1a, nmrn2a, nmta, nmta_asv, nmuta, nmuta_asv, nmuxa, noutpt, npta, npta_asv, nslta, nslta_asv, nslxa, nsta, nsta_asv, ntid_asv, ntitld, ntpr_asv, ntprt, nttyo, nxrn1a, nxrn2a, nxta, nxta_asv, qclnsa, palpaa, tdamax, tdamin, tempcu, ubasp, udakey, udatfi, uelema, uspeca, uphasa, uptypa, utitld, vosp0a, zchara)
+subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, abdotv, adadhh, adadhv, adbdhh, adbdhv, adbdth, adbdtv, adhfe, adhfsa, advfe, advfsa, amua, aprehw, apresg, apxa, aslma, atwta, axhfe, axhfsa, axlke, axlksa, axvfe, axvfsa, azeroa, bpxa, cco2, cdrsa, cessa, iapxa_asv, iapxta, iaqsla, ibpxa_asv, ibpxta, ielam, igas, ikta_asv, insgfa, ipbt_asv, ipch, ipch_asv, ipcv, ipcv_asv, ixrn1a, ixrn2a, jpdblo, jpfc_asv, jptffl, jsola, mwtspa, nad1, nalpaa, napa_asv, napta, narn1a, narn2a, narx_asv, narxt, nata, nata_asv, nbaspa, nbta, nbta_asv, nbtafd, nbta1_asv, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsra, nessa, nessa_asv, nessra, ngrn1a, ngrn2a, ngta, nlrn1a, nlrn2a, nlta, nmrn1a, nmrn2a, nmta, nmuta, nmuta_asv, nmuxa, noutpt, npta, npta_asv, nslta, nslta_asv, nslxa, nsta, nsta_asv, ntid_asv, ntitld, ntpr_asv, ntprt, nttyo, nxrn1a, nxrn2a, nxta, nxta_asv, qclnsa, palpaa, tdamax, tdamin, tempcu, ubasp, udakey, udatfi, uelema, uspeca, uphasa, uptypa, utitld, vosp0a, zchara)
     !! This subroutine reads the supporting data file DATA1, starting
     !! with its title. This subroutine should be called after subroutine
     !! indath.f has been called to read the header section (which
@@ -210,9 +210,6 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     integer :: ncta_asv
     integer :: ndrsa_asv
     integer :: nessa_asv
-    integer :: ngta_asv
-    integer :: nlta_asv
-    integer :: nmta_asv
     integer :: nmuta_asv
     integer :: npta_asv
     integer :: nslta_asv
@@ -332,7 +329,6 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     real(kind=8) :: vosp0a(nsta_asv)
     real(kind=8) :: zchara(nsta_asv)
 
-    real(kind=8) :: eps100
 
     real(kind=8) :: tdamax
     real(kind=8) :: tdamin
@@ -810,7 +806,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     read (nad1) ustr,ustr2,ustr3
 
     ! Read the blocks in the current superblock.
-    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
+    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, nlta, nmta, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
 
     ncmpra(2,np) = ns
     narn2a = ns
@@ -844,7 +840,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     read (nad1) ustr,ustr2,ustr3
 
     ! Read the blocks in the current superblock.
-    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
+    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, nlta, nmta, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
 
     nmrn2a = ns
 
@@ -890,7 +886,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
     read (nad1) ustr,ustr2,ustr3
 
     ! Read the blocks in the current superblock.
-    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nata_asv, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, ngta_asv, nlta, nlta_asv, nmta, nmta_asv, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
+    call indats(adhfsa, advfsa, axhfsa, axlksa, axvfsa, cdrsa, cdrsv, cessa, cessv, ipch, ipch_asv, ipcv, ipcv_asv, mwtspa, nad1, narxt, narx_asv, nata, nbta, nbta_asv, nbta1_asv, nbtafd, ncmpra, ncta, ncta_asv, ndrsa, ndrsa_asv, ndrsn, ndrsra, nerr, nessa, nessa_asv, nessn, nessra, ngta, nlta, nmta, noutpt, np, npta_asv, ns, nsta_asv, ntprt, ntpr_asv, nttyo, uaqsln, ubasp, udrsv, uelema, uendit, uessv, uphasa, uphasv, uptgas, uptliq, uptsld, uptypa, usblkf, uspeca, vosp0a, zchara)
 
     ngrn2a = ns
 
@@ -936,7 +932,7 @@ subroutine indata(aadh, aadhh, aadhv, aaphi, abdh, abdhh, abdhv, abdot, abdoth, 
         ! The aqeuous species activity coefficient formalism is
         ! consistent with Pitzer's equations. Read the appropriate
         ! data for this formalism.
-        call inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, napa_asv, napta, narn1a, narn2a, nerr, nmuta, nmuta_asv, nmuxa, noutpt, nslta, nslta_asv, nslxa, nsta_asv, nttyo, palpaa, uspeca, zchara)
+        call inupt(amua, aslma, ielam, ipbt_asv, jpdblo, jpfc_asv, nad1, nalpaa, napa_asv, napta, narn1a, narn2a, nmuta, nmuta_asv, nmuxa, noutpt, nslta, nslta_asv, nslxa, nsta_asv, nttyo, palpaa, uspeca, zchara)
     end if
 
     ! The following is a bit of nonsense so compiler warnings will

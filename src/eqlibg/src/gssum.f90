@@ -1,4 +1,4 @@
-subroutine gssum(conc, dpslm, fxi, nslt, nsltmx, nslx, nstmax, pslm, ssumw, uspec)
+subroutine gssum(conc, dpslm, fxi, nslt, nsltmx, nslx, nstmax, pslm, ssumw)
     !! This subroutine computes the following second order sum used
     !! in Pitzer's equations:
     !!   SUM(ij) [ S-lambda(ij) + I*S-lambda'(ij) ]*m(i)*m(j)
@@ -27,7 +27,6 @@ subroutine gssum(conc, dpslm, fxi, nslt, nsltmx, nslx, nstmax, pslm, ssumw, uspe
     integer :: nslx(2,nsltmx)
     integer :: nslt
 
-    character(len=48) :: uspec(nstmax)
 
     real(kind=8) :: conc(nstmax)
     real(kind=8) :: dpslm(2,nsltmx)

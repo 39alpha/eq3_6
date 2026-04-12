@@ -1,4 +1,4 @@
-subroutine tprnca(amunca, apsi, inapr, incatr, incpr, ipbtmx, jpfcmx, natmax, ncvnca, nerr, nnapr, nncatr, nncpr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvnca, qpdna, qpdnca, qpdnc, uaqsp, utripl)
+subroutine tprnca(amunca, apsi, inapr, incatr, incpr, jpfcmx, natmax, ncvnca, nerr, nnapr, nncatr, nncpr, noutpt, npx3mx, npx3t, nttyo, nwarn, pcvnca, qpdna, qpdnca, qpdnc, uaqsp, utripl)
     !! Test and process the Pitzer data for nca (neutral, cation,
     !! anion) triplets read from the DATA0 file. Find and flag errors,
     !! such as duplication of data (e.g., two data blocks for the
@@ -20,7 +20,6 @@ subroutine tprnca(amunca, apsi, inapr, incatr, incpr, ipbtmx, jpfcmx, natmax, nc
     implicit none
 
     ! Calling sequence variable declarations.
-    integer :: ipbtmx
     integer :: jpfcmx
     integer :: natmax
     integer :: nnapr

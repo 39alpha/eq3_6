@@ -1,4 +1,4 @@
-subroutine intrct(cbsr, cbsri, cesr, cesri, egers, egersi, ibsrti, iern1, iern2, iesrti, ietmax, igerti, iktmax, imrn1, imrn2, ixrn1, ixrn2, ixrti, jcode, jetmax, jgerti, jgext, narn1, narn2, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nct, nctmax, nertmx, netmax, ngexsa, ngext, ngrn1, ngrn2, noutpt, nptmax, nrct, nrctmx, nrndex, nsrtmx, nstmax, nttyo, nxridx, nxrtmx, rxbar, rxbari, ubsri, ucxri, uelem, uesri, ugerji, ugermo, ugersi, ugexj, ugexmo, uphase, ureac, uspec, xgers, xgersi)
+subroutine intrct(cbsr, cbsri, cesr, cesri, egers, egersi, ibsrti, iern1, iern2, iesrti, ietmax, igerti, iktmax, imrn1, imrn2, ixrn1, ixrn2, ixrti, jcode, jetmax, jgerti, jgext, narn1, narn2, nbaspd, nbt, nbtmax, nbt1mx, ncmpr, nct, nctmax, nertmx, netmax, ngexsa, ngext, ngrn1, ngrn2, noutpt, nptmax, nrct, nrctmx, nrndex, nsrtmx, nstmax, nttyo, nxridx, nxrtmx, rxbar, rxbari, ubsri, ucxri, uelem, uesri, ugerji, ugermo, ugersi, ugexj, ugexmo, uphase, ureac, uspec)
     !! This subroutine assigns phase or species indices corresponding to
     !! reactants.
     !! This subroutine is called by:
@@ -80,8 +80,6 @@ subroutine intrct(cbsr, cbsri, cesr, cesri, egers, egersi, ibsrti, iern1, iern2,
     real(kind=8) :: egersi(ietmax,jetmax,nertmx)
     real(kind=8) :: rxbar(iktmax,nxrtmx)
     real(kind=8) :: rxbari(iktmax,nxrtmx)
-    real(kind=8) :: xgers(ietmax,jetmax,netmax)
-    real(kind=8) :: xgersi(ietmax,jetmax,nertmx)
 
     ! Local variable declarations.
     integer :: ie

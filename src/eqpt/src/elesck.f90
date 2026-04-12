@@ -81,7 +81,7 @@ subroutine elesck(cessi, nbtmx1, nctmax, ncts, nentei, nerr, noutpt, ns, nttyo, 
 
     ! Check for a chemical element appearing more than once in the
     ! composition.
-    call nelcck(nctmax, ncts, nentei, nerr, qdupes, uessi)
+    call nelcck(nctmax, ncts, nentei, qdupes, uessi)
 
     if (qdupes)  then
         j2 = ilnobl(uspec(ns))

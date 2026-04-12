@@ -1,4 +1,4 @@
-subroutine rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, iopt, jcode, jreac, morr, morr0, mwtrc, ndac, ndact, ndctmx, nodbmx, noptmx, nord, noutpt, nrk, nrct, nrctmx, nsk, nstmax, nttyo, prcinf, prminf, qriinf, rirec1, rk, rreac1, rrelr1, rtcnst, rrxfi1, sfcar, sfcar0, ssfcar, udac, ureac)
+subroutine rtcalc(act, afrc1, cdac, csigma, fkrc, idirec, imchmx, imech, iodb, iopt, jcode, jreac, morr, morr0, mwtrc, ndac, ndact, ndctmx, nodbmx, noptmx, nord, noutpt, nrk, nrct, nrctmx, nsk, nstmax, nttyo, prcinf, prminf, qriinf, rirec1, rk, rreac1, rrelr1, rtcnst, rrxfi1, sfcar, sfcar0, ssfcar, ureac)
     !! This subroutine calculates the relative and absolute rates of
     !! the nrc-th irreversible reaction. This rate is computed from the
     !! specified rate expression.
@@ -40,7 +40,6 @@ subroutine rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech,
 
     logical :: qriinf
 
-    character(len=24) :: udac(ndctmx,imchmx,2,nrctmx)
     character(len=24) :: ureac(nrctmx)
 
     real(kind=8) :: act(nstmax)
@@ -59,7 +58,6 @@ subroutine rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech,
     real(kind=8) :: sfcar0(nrctmx)
     real(kind=8) :: ssfcar(nrctmx)
 
-    real(kind=8) :: eps100
     real(kind=8) :: prcinf
     real(kind=8) :: prminf
     real(kind=8) :: rirec1
@@ -109,7 +107,7 @@ subroutine rtcalc(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech,
     ! Loop over all kinetically-governed reactions. Calculate the
     ! net rate (relative or absolute) for each one.
     do nrc = 1,nrct
-        call crrate(act, afrc1, cdac, csigma, eps100, fkrc, idirec, imchmx, imech, iodb, jreac, morr, ndac, ndact, ndctmx, nodbmx, noutpt, nrc, nrctmx, nrk, nstmax, nttyo, rk, rreac1, rrelr1, rrxfi1, rtcnst, sfcar, udac, ureac)
+        call crrate(act, afrc1, cdac, csigma, fkrc, idirec, imchmx, imech, iodb, jreac, ndac, ndact, ndctmx, nodbmx, noutpt, nrc, nrctmx, nrk, nstmax, nttyo, rk, rreac1, rrelr1, rrxfi1, rtcnst, sfcar, ureac)
     end do
 
     ! If in time mode, calculate the inverse rate. Calculate relative

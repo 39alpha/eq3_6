@@ -1,4 +1,4 @@
-subroutine sortsp(iern1, iern2, istack, jcsort, jern1, jern2, jgext, jsitex, jetmax, jjsort, jssort, jstack, losp, lsort, ncmpr, nern1, nern2, netmax, noutpt, nphasx, npt, nptmax, nst, nstmax, nttyo)
+subroutine sortsp(iern1, iern2, istack, jcsort, jern1, jgext, jsitex, jetmax, jjsort, jssort, jstack, losp, lsort, ncmpr, nern1, nern2, netmax, noutpt, nphasx, npt, nptmax, nst, nstmax, nttyo)
     !! This subroutine sorts the species in order of increasing mass.
     !! This subroutine is called by:
     !!   EQLIB/ncmpex.f
@@ -53,7 +53,6 @@ subroutine sortsp(iern1, iern2, istack, jcsort, jern1, jern2, jgext, jsitex, jet
     integer :: istack(nstmax)
     integer :: jcsort(nstmax)
     integer :: jern1(jetmax,netmax)
-    integer :: jern2(jetmax,netmax)
     integer :: jgext(netmax)
     integer :: jjsort(nstmax)
     integer :: jsitex(nstmax)

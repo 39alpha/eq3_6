@@ -1,4 +1,4 @@
-subroutine gnenb(ipbt_asv, ikt_asv, jpdblo, jpfc_asv, nap_asv, nat_asv, nazt_asv, nbt_asv, nct_asv, ndat0s, ngt_asv, nlt_asv, nmt_asv, noutpt, npt_asv, npx2_asv, npx3_asv, nsb, nst_asv, nttyo, nxt_asv, uakey)
+subroutine gnenb(ipbt_asv, ikt_asv, jpdblo, nap_asv, nat_asv, nazt_asv, nbt_asv, nct_asv, ndat0s, ngt_asv, nlt_asv, nmt_asv, noutpt, npt_asv, npx2_asv, npx3_asv, nsb, nst_asv, nttyo, nxt_asv, uakey)
     !! This subroutine makes a first pass through the DATA0 file to
     !! determine the necessary dimensioning of arrays. The arrays are
     !! then allocated back in the main program, and the data file is
@@ -51,7 +51,6 @@ subroutine gnenb(ipbt_asv, ikt_asv, jpdblo, jpfc_asv, nap_asv, nat_asv, nazt_asv
     ! Calling sequence variable declarations.
     integer :: ipbt_asv
     integer :: ikt_asv
-    integer :: jpfc_asv
     integer :: nap_asv
     integer :: nat_asv
     integer :: nazt_asv
