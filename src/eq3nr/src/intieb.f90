@@ -75,6 +75,7 @@ subroutine intieb(iebal, iebal3, ier, jsflag, nbasp, nbt, nbtmax, noutpt, nstmax
 1000 format(/' * Error - (EQ3NR/intieb) The input file specifies',/7x,'that the concentration of ',a,' is to be adjusted',/7x,'to achieve electrical balance. However, this species',/7x,"isn't in the basis set.")
 
     ier = 1
+    go to 999
 100 continue
 
     ! Test the specified ion to see if it is okay.
