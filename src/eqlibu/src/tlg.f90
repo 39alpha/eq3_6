@@ -14,7 +14,7 @@ real(kind=8) function tlg(x)
 
     ! Local variable declarations.
     !   None
-    if (x .eq. 0.) then
+    if (x .le. 0.) then
         tlg = -99999.
     else
         tlg = log10(x)
