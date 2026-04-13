@@ -395,6 +395,7 @@ subroutine gcoeff(abar, acflgc, actwlc, adh, al10, aphi, azero, a3bar, a3bars, b
 
             ! The following involves sums in mu(nnn) and mu(nnn').
             do n = ifnnn,ilnnn
+                ns1 = nmux(1,n)
                 musum = musum + 2.*pmu(n)*conc(ns1)*conc(ns1)*conc(ns1)
             end do
 
