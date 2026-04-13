@@ -104,7 +104,7 @@ subroutine tstari(afrc1, alphar, betar, delxi, iodb, modr, nodbmx, noutpt, nrct,
         if (abs(atx) .gt. 0.) then
             etx = time1 - tistrt
 
-            if (etx.eq. 0.) then
+            if (etx.le. 0.) then
                 qbad = .true.
             else
                 rdelti = atx/etx
