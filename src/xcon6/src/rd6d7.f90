@@ -1566,7 +1566,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                     ! Put the option header string minus the preceding "- " string
                     ! into the variable uheadr.
-                    uheadr = ulscr(3:nlchmx)
+                    uheadr(1:nlchmx-2) = ulscr(3:nlchmx)
                     call locase(uheadr)
 
                     ! Remove the succeeding " -" string, if any.
@@ -2353,7 +2353,7 @@ subroutine rd6d7(cdac, cesrb, csigma, dlzmx1, dlzmx2, dlzidp, dzprlg, dzprnt, ea
 
                                             ! Put the option header string minus the preceding "- " string
                                             ! into the variable uheadr.
-                                            uheadr = ulscr(3:nlchmx)
+                                            uheadr(1:nlchmx-2) = ulscr(3:nlchmx)
                                             call locase(uheadr)
 
                                             ! Remove the succeeding " -" string, if any.
