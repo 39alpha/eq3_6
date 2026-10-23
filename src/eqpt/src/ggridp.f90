@@ -748,7 +748,7 @@ subroutine ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv
     write (nttyo,2000)
 2000 format(/' * Error - (EQPT/ggridp) Unexpectedly encountered',/7x,'end-of-file while reading the title of the DATA0 file.')
 
-    if (n .le. 1) then
+    if ((n .le. 1) .or. (.not. allocated(ux80ar))) then
         write (noutpt,2010)
         write (nttyo,2010)
 2010 format(/7x,'This occurred while trying to read the first line',/7x,'of the title.')
@@ -769,7 +769,7 @@ subroutine ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv
     write (nttyo,2030)
 2030 format(/' * Error - (EQPT/ggridp) Encountered a read format',/7x,'error while reading the DATA0 file.')
 
-    if (n .le. 1) then
+    if ((n .le. 1) .or. (.not. allocated(ux80ar))) then
         write (noutpt,2010)
         write (nttyo,2010)
     else
@@ -783,13 +783,15 @@ subroutine ggridp(ipch_asv, ipcv_asv, itgenf, jpdblo, jpfc_asv, jptffl, narx_asv
     stop
 
 997 continue
-    ulbufa = ux80ar(n)
-    call lejust(ulbufa)
-    j2 = ilnobl(ulbufa)
-    j2 = min(j2,70)
-    write (noutpt,2050) ulbufa(1:j2)
-    write (nttyo,2050) ulbufa(1:j2)
+    if ((n .le. 1) .or. (.not. allocated(ux80ar))) then
+        ulbufa = ux80ar(n)
+        call lejust(ulbufa)
+        j2 = ilnobl(ulbufa)
+        j2 = min(j2,70)
+        write (noutpt,2050) ulbufa(1:j2)
+        write (nttyo,2050) ulbufa(1:j2)
 2050 format(/' * Error - (EQPT/ggridp) Encountered a read format',/7x,'error while reading data embedded in the title of the',/7x,'DATA0 file. This occurred while attempting to process',' the line:',/7x,'"',a,'"')
+    end if
 
     stop
 
