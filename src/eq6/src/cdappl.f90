@@ -707,10 +707,6 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, afcnst, affpd, affsd
                 if (mophx.ne.0. .or. qrct) then
                     mophg(np) = mophx
 
-                    if (qrct) then
-                        ner = nxridx(nrc)
-                    end if
-
                     vophx = 0.
                     wophx = 0.
                     ne = np - iern1 + 1
@@ -723,6 +719,7 @@ subroutine cdappl(acflg, acfw, acfwlg, actlg, actw, actwlg, afcnst, affpd, affsd
                             mospx = mosp(ns) + mprsp(ns)
 
                             if (qrct) then
+                                ner = nxridx(nrc)
                                 mospx = mospx + morr(nrc)*mrgers(ie,je,ner)
                             end if
 
