@@ -90,6 +90,8 @@ snapshot build="release":
     SNAPSHOTS_DIR="${DATA_DIR}/snapshots"
     OUTPUT_DIR="${SNAPSHOTS_DIR}/${ARCH}"
 
+    printf "OUTPUT_DIR: %s\n" "${OUTPUT_DIR}"
+
     [ -d "${BUILD_DIR}" ] || meson setup "${BUILD_DIR}" "--buildtype={{build}}" >/dev/null
     meson compile -C "${BUILD_DIR}" >/dev/null
     export PATH="${BUILD_DIR}:${PATH}"
