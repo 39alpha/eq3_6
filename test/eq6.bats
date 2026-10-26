@@ -1,28 +1,45 @@
+setup_file() {
+  load 'test_helper/common-setup'
+  _suite_setup
+}
+
 setup() {
   load 'test_helper/common-setup'
   _common_setup
+}
 
-  cp "${TEST_TMPDIR}/bin/eqpt" .
-  cp "${TEST_TMPDIR}/bin/eq6" .
+function is_setup {
+  run which eqpt
+  assert_output "${BATS_TEST_TMPDIR}/bin/eqpt"
+
+  run which eq6
+  assert_output "${BATS_TEST_TMPDIR}/bin/eq6"
+
+  run pwd
+  assert_output "${BATS_TEST_TMPDIR}"
 }
 
 @test "Binary Exists" {
-  assert_exists eq6
+  is_setup
 }
 
 @test "Correctly replaces extension" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/crisqtz.6i" .
-  ./eq6 cmp.d1 crisqtz.6i
+  eq6 cmp.d1 crisqtz.6i
   assert_exists crisqtz.6o
   assert_exists crisqtz.6p
   assert_exists crisqtz.6tx
 }
 
 @test "Actual extension is not relevant" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/crisqtz.6i" crisqtz.prob
-  ./eq6 cmp.d1 crisqtz.prob
+  eq6 cmp.d1 crisqtz.prob
   assert_exists crisqtz.6o
   assert_exists crisqtz.6p
   assert_exists crisqtz.6tx
@@ -31,13 +48,15 @@ setup() {
 @test "Handles no extension" {
   cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/cmp/crisqtz.6i" crisqtz
-  ./eq6 cmp.d1 crisqtz
+  eq6 cmp.d1 crisqtz
   assert_exists crisqtz.6o
   assert_exists crisqtz.6p
   assert_exists crisqtz.6tx
 }
 
 check_output() {
+  is_setup
+
   local -r DIR="${1}"
   local -r PROBLEM="${2}"
   local -r SNAPSHOT_DIR="$(_snapshot_dir eq6)"
@@ -49,8 +68,8 @@ check_output() {
     cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
-  run ./eqpt "${DIR}.d0"
-  run ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
+  run eqpt "${DIR}.d0"
+  run eq6 "${DIR}.d1" "${PROBLEM}.6i"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
@@ -71,6 +90,8 @@ check_output() {
 }
 
 check_snapshot_only() {
+  is_setup
+
   local -r DIR="${1}"
   local -r PROBLEM="${2}"
   local -r SNAPSHOT_DIR="$(_snapshot_dir eq6)"
@@ -79,8 +100,8 @@ check_snapshot_only() {
   cp "${BATS_TEST_DIRNAME}/data/eqpt/${DIR}.d0" .
   cp "${BATS_TEST_DIRNAME}/data/eq6/${DIR}/${PROBLEM}.6i" .
 
-  run ./eqpt "${DIR}.d0"
-  run ./eq6 "${DIR}.d1" "${PROBLEM}.6i"
+  run eqpt "${DIR}.d0"
+  run eq6 "${DIR}.d1" "${PROBLEM}.6i"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o

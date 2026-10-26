@@ -1,17 +1,30 @@
+setup_file() {
+  load 'test_helper/common-setup'
+  _suite_setup
+}
+
 setup() {
   load 'test_helper/common-setup'
   _common_setup
+}
 
-  cp "${TEST_TMPDIR}/bin/eqpt" .
+function is_setup {
+  run which eqpt
+  assert_output "${BATS_TEST_TMPDIR}/bin/eqpt"
+
+  run pwd
+  assert_output "${BATS_TEST_TMPDIR}"
 }
 
 @test "Binary Exists" {
-  assert_exists eqpt
+  is_setup
 }
 
 @test "Correctly replaces extension" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/1kb.d0" 1kb.d0
-  ./eqpt 1kb.d0
+  eqpt 1kb.d0
   assert_exists 1kb.d1
   assert_exists 1kb.d1f
   assert_exists 1kb.po
@@ -19,8 +32,10 @@ setup() {
 }
 
 @test "Actual extension is not relevant" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/1kb.d0" data0.1kb
-  ./eqpt data0.1kb
+  eqpt data0.1kb
   assert_exists data0.d1
   assert_exists data0.d1f
   assert_exists data0.po
@@ -28,8 +43,10 @@ setup() {
 }
 
 @test "Handles no extension" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/1kb.d0" 1kb
-  ./eqpt 1kb
+  eqpt 1kb
   assert_exists 1kb.d1
   assert_exists 1kb.d1f
   assert_exists 1kb.po
@@ -37,12 +54,14 @@ setup() {
 }
 
 check_output() {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/${1}.d0" .
   for ext in d1 d1f s po; do
     cp "${BATS_TEST_DIRNAME}/data/eqpt/${1}.${ext}" "expected.${ext}"
   done
 
-  ./eqpt "${1}.d0"
+  eqpt "${1}.d0"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.po
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.po

@@ -1,40 +1,61 @@
+setup_file() {
+  load 'test_helper/common-setup'
+  _suite_setup
+}
+
 setup() {
   load 'test_helper/common-setup'
   _common_setup
+}
 
-  cp "${TEST_TMPDIR}/bin/eqpt" .
-  cp "${TEST_TMPDIR}/bin/eq3nr" .
+function is_setup {
+  run which eqpt
+  assert_output "${BATS_TEST_TMPDIR}/bin/eqpt"
+
+  run which eq3nr
+  assert_output "${BATS_TEST_TMPDIR}/bin/eq3nr"
+
+  run pwd
+  assert_output "${BATS_TEST_TMPDIR}"
 }
 
 @test "Binary Exists" {
-  assert_exists eq3nr
+  is_setup
 }
 
 @test "Correctly replaces extension" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/acidmwb.3i" .
-  ./eq3nr cmp.d1 acidmwb.3i
+  eq3nr cmp.d1 acidmwb.3i
   assert_exists acidmwb.3o
   assert_exists acidmwb.3p
 }
 
 @test "Actual extension is not relevant" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/acidmwb.3i" acidmwb.prob
-  ./eq3nr cmp.d1 acidmwb.prob
+  eq3nr cmp.d1 acidmwb.prob
   assert_exists acidmwb.3o
   assert_exists acidmwb.3p
 }
 
 @test "Handles no extension" {
+  is_setup
+
   cp "${BATS_TEST_DIRNAME}/data/eqpt/cmp.d1" .
   cp "${BATS_TEST_DIRNAME}/data/eq3nr/cmp/acidmwb.3i" acidmwb
-  ./eq3nr cmp.d1 acidmwb
+  eq3nr cmp.d1 acidmwb
   assert_exists acidmwb.3o
   assert_exists acidmwb.3p
 }
 
 check_output() {
+  is_setup
+
   local -r DIR="${1}"
   local -r PROBLEM="${2}"
   local -r SNAPSHOT_DIR="$(_snapshot_dir eq3nr)"
@@ -46,8 +67,8 @@ check_output() {
     cp "${BATS_TEST_DIRNAME}/data/eq3nr/${DIR}/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
-  run ./eqpt "${DIR}.d0"
-  run ./eq3nr "${DIR}.d1" "${PROBLEM}.3i"
+  run eqpt "${DIR}.d0"
+  run eq3nr "${DIR}.d1" "${PROBLEM}.3i"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.3o
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.3o
