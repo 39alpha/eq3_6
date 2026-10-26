@@ -56,19 +56,28 @@ function is_setup {
 check_output() {
   is_setup
 
-  cp "${BATS_TEST_DIRNAME}/data/eqpt/${1}.d0" .
+  local -r PROBLEM="${1}"
+  local -r SNAPSHOT_DIR="$(_snapshot_dir eqpt)"
+
+  cp "${BATS_TEST_DIRNAME}/data/eqpt/${PROBLEM}.d0" .
   for ext in d1 d1f s po; do
-    cp "${BATS_TEST_DIRNAME}/data/eqpt/${1}.${ext}" "expected.${ext}"
+    cp "${BATS_TEST_DIRNAME}/data/eqpt/${PROBLEM}.${ext}" "expected.${ext}"
   done
 
-  eqpt "${1}.d0"
+  eqpt "${PROBLEM}.d0"
 
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.po
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.po
 
   for ext in d1 d1f s po; do
-    assert_files_equal "${1}.${ext}" "expected.${ext}"
+    assert_files_equal "${PROBLEM}.${ext}" "expected.${ext}"
   done
+
+  for ext in d1f s po; do
+    assert_files_almost_same "${SNAPSHOT_DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}" 0 0
+    assert_files_equal "${SNAPSHOT_DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
+  done
+  assert_files_equal "${SNAPSHOT_DIR}/${PROBLEM}.d1" "${PROBLEM}.d1"
 }
 
 @test "Correct output (1kb)" {
