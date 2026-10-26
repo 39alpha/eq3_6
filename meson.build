@@ -14,7 +14,7 @@ project(
 fc = meson.get_compiler('fortran')
 
 add_project_arguments(
-  fc.get_supported_arguments('-ffp-contract=off', '-Wno-compare-reals', '-fmax-errors=0'),
+  fc.get_supported_arguments('-ffp-contract=off', '-Wno-compare-reals', '-fmax-errors=0', '-ffree-line-length-3000'),
   language: 'fortran',
 )
 
