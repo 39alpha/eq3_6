@@ -1,0 +1,747 @@
+
+ EQ3/6, Version 8.0a (EQ3/6-V8-REL-V8.0a-PC)
+ EQPT Data File Preprocessor Code (EQ3/6-V8-EQPT-EXE-R43a-PC)
+ Supported by the following EQ3/6 libraries:
+   EQLIBU (EQ3/6-V8-EQLIBU-LIB-R43a-PC)
+
+ Copyright (c) 1987, 1990-1993, 1995, 1997, 2002 The Regents of the
+ University of California, Lawrence Livermore National Laboratory.
+ All rights reserved.
+
+ This work is subject to additional statements and
+ disclaimers which may be found in the README.txt file
+ included in the EQ3/6 software transmittal package.
+
+
+
+
+           Number of elements =    18
+           Number of basis species =    28
+
+ data0.fmt.R1
+ PITZER THERMODYNAMIC DATABASE (12/04/2008)
+ data0.fmt.R1
+ 
+  This file contains two revisions to data0.fmt.R0:
+ 
+  ***** Aphi = 0.392, not 0.39 *****
+  ***** beta(1) for NaCl = 0.2664, not 0.2644 *****
+ 
+ Revision 1: Harvie et al. (1984) gave Aphi = 0.39. As documented by L.N.
+ Plummer, D.L. Parkhurst, G.W. Fleming, and S.A. Dunkle, A Computer
+ Program Incorporating Pitzer's Equations for Calculation of Geochemical
+ Reactions in Brines, U.S. Geological Survey, Water-Resources Investigations
+ Report 88-4153 (see p. 3, the results of Harvie et al. (1984) are actually
+ consistent with an Aphi value of 0.392 (see Plummer et al.,1988, p. 3).
+ 
+ Revision 2: the beta(1) for NaCl of 0.2644 given by Harvie et al. (1984)
+ appears to be a typographical error. The value of 0.2664 is given in the
+ earlier paper by C.E. Harvie and J.H. Weare (1980, The prediction of mineral
+ solubilities in natural waters: the Na-K-Mg-Ca-Cl-SO4-H2O system from zero
+ to high concentration at 25C, Geochimica et Cosmochimica Acta, v. 44,
+ p. 981-997; see Table 1, p. 987). There appears to be nothing of substance
+ in the subsequent Weare and company literature describing a revision, just a
+ different value appearing in a table in the 1984 paper. The 0.2664 value
+ is also cited by Pitzer (1991, Chapter 3, Ion Interaction Approach: Theory
+ and Correlation, p. 75-153 in Pitzer, K.S., ed., Activity Coefficients in
+ Electrolyte Solutions, 2nd edition, CRC Press, Boca Raton; see Table 2,
+ p. 100). This is also the value given by Plummer et al. (1988, p. 150).
+ There may be no practical difference between the 0.2644 and 0.2664
+ values.
+ 
+  ************************************************************
+ 
+ This datafile is a corrected translation of the "fmt_050405.chemdat"
+ datafile used with the WIPP code FMT. The purpose of this datafile
+ is to transfer the WIPP geochemistry model from FMT to EQ3/6.
+ 
+ This datafile uses the standard form of Pitzer's equations relevant to
+ the temperature range.
+ 
+ Pitzer parameters are represented by the 25C-centric four-term temperature
+ function given by:
+ 
+ x(T) = a1 + a2*(1/T - 1/298.15) + a3*ln(T/298.15) + a4*(T - 298.15)
+ 
+ where T is temperature in Kelvin and a1 through a4 denote the temperature
+ function fitting coefficients for the temperature-dependent Pitzer
+ parameters. This is the form used by the Yucca Mountain Project. The form
+ itself is sufficient to accurately describe data up to a temperature of at
+ least 250C, although the YMP database is only qualified up to 140C. At the
+ present time, this WIPP database is for 25C only. The form of the equation
+ is that a1 is the 25C value. Consequently, the a2, a3,and a4 constants
+ can simply be assigned a value of zero.
+ 
+ Some data blocks provide comments on the gathered Pitzer parameters and
+ solid phase solubility data to make the user aware of any convention
+ adopted in the data extraction/compilation process.
+ 
+ The following comments apply to data0.fmt.R0:
+ 
+   Data for O2(aq) and H2(aq) were added from YMP DTN: SN0302T0510102.002
+   (data0.ypf.R1). Pitzer data were not included for H2(aq) because they
+   were not available from the YMP DTN source. The O2(aq) data were added
+   to allow calculations involving the oxygen fugacity, and this can be
+   accomplished for essentially non-redox problems by adding a trace amount
+   of O2(aq) or H2(aq). Until the requisite set of Pitzer data for H2(aq)
+   have been added, this database should not be used to model systems with
+   non-trace amounts of that species.
+ 
+   Data for uranium and plutonium were removed, as these elements
+   are not included in the present WIPP geochemistry model. These data
+   are not needed for the EQ3/6-FMT code comparison study.
+ 
+   The thermodynamic data for CO2(g) are based on data hard-wired into
+   FMT v. 2.4.
+ 
+ 
+ BEGIN CONFIGURATION DATA BLOCK
+ Do not change the data in this block unless you know what you
+ are doing.
+ INTERPRET 500 AS NO DATA= NO
+ SPARSE GRID RANGE CONDITION=IGNORE
+ Pitzer data parameters:
+    PITZER DATA BLOCK ORG.= NEW
+    PITZER TEMP FUNCTION= LIVERMORE
+    NO. OF PITZER TEMP FUNC TERMS= 4
+ END CONFIGURATION DATA
+ +--------------------------------------------------------------------
+
+ Number of logK temperature grid ranges= 2
+
+ Enthalpy functions flag= -1 (Not present)
+ Volume functions flag  = -1 (Not present)
+
+
+ element = O       , atwt =   15.99940
+ element = Am      , atwt =  243.00000
+ element = B       , atwt =   10.81100
+ element = Br      , atwt =   79.90400
+ element = C       , atwt =   12.01100
+ element = Ca      , atwt =   40.07800
+ element = Cl      , atwt =   35.45270
+ element = H       , atwt =    1.00794
+ element = K       , atwt =   39.09830
+ element = Mg      , atwt =   24.30500
+ element = N       , atwt =   14.00674
+ element = Na      , atwt =   22.98977
+ element = Np      , atwt =  237.00000
+ element = P       , atwt =   30.97376
+ element = S       , atwt =   32.06600
+ element = Th      , atwt =  232.03810
+ element = Null-   , atwt =    0.00000
+ element = Null+   , atwt =    0.00000
+
+
+ The minimum temperature is     25.000C
+ The maximum temperature is     25.000C
+
+ The maximum temperatures (C) by range are:
+      100.000
+      300.000
+
+
+       presg
+       aphi
+       xlke
+
+
+ aqueous
+
+     1 H2O
+     2 Am+++
+     3 B(OH)4-
+     4 Br-
+     5 HCO3-
+     6 Ca++
+     7 Cl-
+     8 H+
+     9 K+
+    10 Mg++
+    11 NO3-
+    12 Na+
+    13 NpO2+
+    14 HPO4--
+    15 SO4--
+    16 Th++++
+    17 NegIon
+    18 PosIon
+    19 O2(g)
+    20 O2(aq)
+    21 H2(aq)
+    22 ClO4-
+    23 Acetate-
+    24 Citrate---
+    25 EDTA----
+    26 Oxalate--
+    27 Lactate-
+    28 NH3(aq)
+    29 MgOH+
+    30 HSO4-
+    31 OH-
+    32 CO3--
+    33 CO2(aq)
+    34 CaCO3(aq)
+    35 MgCO3(aq)
+    36 B(OH)3(aq)
+    37 B3O3(OH)4-
+    38 B4O5(OH)4--
+    39 CaB(OH)4+
+    40 MgB(OH)4+
+    41 H3PO4(aq)
+    42 H2PO4-
+    43 PO4---
+    44 AmCO3+
+    45 Am(CO3)2-
+    46 Am(CO3)3---
+    47 AmOH++
+    48 Am(OH)2+
+    49 Am(OH)3(aq)
+    50 AmCl++
+    51 AmCl2+
+    52 Am(CO3)4(5-)
+    53 Am(SO4)2-
+    54 AmSO4+
+    55 Th(CO3)5(6-)
+    56 Th(OH)3(CO3)-
+    57 Th(OH)4(aq)
+    58 Th(SO4)2(aq)
+    59 Th(SO4)3--
+    60 NpO2CO3-
+    61 NpO2(CO3)2---
+    62 NpO2(CO3)3(5-)
+    63 NpO2OH(aq)
+    64 NpO2(OH)2-
+    65 HAcetate(aq)
+    66 H3Citrate(aq)
+    67 H2Citrate-
+    68 HCitrate--
+    69 H4EDTA(aq)
+    70 H3EDTA-
+    71 H2EDTA--
+    72 HEDTA---
+    73 H2Oxalate(aq)
+    74 HOxalate-
+    75 HLactate(aq)
+    76 AmAcetate++
+    77 AmCitrate(aq)
+    78 AmEDTA-
+    79 AmOxalate+
+    80 AmLactate++
+    81 Th(Acetate)2++
+    82 NpO2H2EDTA-
+    83 Th(Lactate)2++
+    84 ThAcetate+++
+    85 ThCitrate+
+    86 ThEDTA(aq)
+    87 ThOxalate++
+    88 ThLactate+++
+    89 NpO2Acetate(aq)
+    90 NpO2Citrate--
+    91 NpO2EDTA---
+    92 NpO2Oxalate-
+    93 NpO2Lactate(aq)
+    94 MgAcetate+
+    95 MgCitrate-
+    96 MgEDTA--
+    97 MgOxalate(aq)
+    98 CaAcetate+
+    99 CaCitrate-
+   100 CaEDTA--
+   101 CaOxalate(aq)
+   102 NpO2HEDTA--
+
+
+ minerals
+
+     1 AmOHCO3(c)
+     2 Am(OH)3(s)
+     3 NaAm(CO3)2.6H2O(c)
+     4 AmPO4(c)
+     5 ThO2(am)
+     6 Th(SO4)2.9H2O(s)
+     7 Th(SO4)2.8H2O(s)
+     8 Th(SO4)2.Na2SO4.6H2O
+     9 Th(SO4)2.K2SO4.4H2O
+    10 Th(SO4)2.2K2SO4.2H2O
+    11 2[Th(SO4)2.7/2K2SO4]
+    12 NpO2OH(aged)
+    13 NpO2OH(am)
+    14 2[NaNpO2CO3.7/2H2O]
+    15 Na3NpO2(CO3)2
+    16 KNpO2CO3
+    17 K3NpO2(CO3)2
+    18 H2Oxalate.2H2O
+    19 NaHOxalate.H2O
+    20 Na2Oxalate
+    21 Anhydrite
+    22 Aphthitalite/Glaserite
+    23 Whewellite
+    24 Aragonite
+    25 Arcanite
+    26 Bischofite
+    27 Bloedite
+    28 Brucite
+    29 Burkeite
+    30 Calcite
+    31 CaCl2.4H2O
+    32 CaOxychloride_A
+    33 CaOxychloride_B
+    34 Carnallite
+    35 Epsomite
+    36 Gaylussite
+    37 Glauberite
+    38 Gypsum
+    39 Halite
+    40 Hexahydrite
+    41 Kainite
+    42 Kalicinite
+    43 Kieserite
+    44 Leonite
+    45 Labile_Salt
+    46 Magnesite
+    47 Mg2Cl(OH)3.4H2O
+    48 Mercallite
+    49 Mirabilite
+    50 Misenite
+    51 Nahcolite
+    52 Natron
+    53 Nesquehonite
+    54 Picromerite/Schoenite
+    55 Pirssonite
+    56 Polyhalite
+    57 Portlandite
+    58 K2CO3.3/2H2O
+    59 K8H4(CO3)6.3H2O
+    60 KNaCO3.6H2O
+    61 K_Trona
+    62 K3H(SO4)2
+    63 Na3H(SO4)2
+    64 Na2CO3.7H2O
+    65 Sylvite
+    66 Syngenite
+    67 Tachyhydrite
+    68 Thenardite
+    69 Thermonatrite
+    70 Trona
+    71 Borax
+    72 B(OH)3
+    73 K-Pentaborate(30C)
+    74 K-Tetraborate(30C)
+    75 Na_Metaborate
+    76 Na_Pentaborate
+    77 Teepleite(20C)
+    78 Dolomite
+    79 Hydromagnesite5424
+    80 Hydromagnesite4323
+
+
+ liquids
+
+     0 none
+
+ * Note - (EQPT/pcrsg) The pure liquids block has
+       not been written on the DATA1 and DATA1F files,
+       because the EQ3NR and EQ6 codes presently do not
+       treat non-aqeuous liquids.
+
+
+ gases
+
+     1 CH4(g)
+     2 CO2(g)
+     3 H2(g)
+     4 H2O(g)
+     5 O2(g)
+
+
+ solid solutions
+
+     0  none
+
+ * Warning - (EQPT/tprca) Did not find a data block on the DATA0 file
+       for any of the following ca pairs:
+
+         Am+++, B(OH)4-
+         Am+++, Br-
+         Am+++, HCO3-
+         Am+++, NO3-
+         Am+++, HPO4--
+         Am+++, NegIon
+         Am+++, Acetate-
+         Am+++, Citrate---
+         Am+++, EDTA----
+         Am+++, Oxalate--
+         Am+++, Lactate-
+         Am+++, HSO4-
+         Am+++, OH-
+         Am+++, CO3--
+         Am+++, B3O3(OH)4-
+         Am+++, B4O5(OH)4--
+         Am+++, PO4---
+         Am+++, Am(CO3)2-
+         Am+++, Am(CO3)3---
+         Am+++, Am(CO3)4(5-)
+
+         plus 1235 others
+
+
+ * Warning - (EQPT/tprcc) Did not find a data block on the DATA0 file
+       for any of the following cc' pairs:
+
+         Am+++, H+
+         Am+++, NpO2+
+         Am+++, Th++++
+         Am+++, PosIon
+         Am+++, MgOH+
+         Am+++, CaB(OH)4+
+         Am+++, MgB(OH)4+
+         Am+++, AmCO3+
+         Am+++, AmOH++
+         Am(OH)2+, Am+++
+         Am+++, AmCl++
+         Am+++, AmCl2+
+         Am+++, AmSO4+
+         Am+++, AmAcetate++
+         Am+++, AmOxalate+
+         Am+++, AmLactate++
+         Am+++, Th(Acetate)2++
+         Am+++, Th(Lactate)2++
+         Am+++, ThAcetate+++
+         Am+++, ThCitrate+
+
+         plus 364 others
+
+
+ * Warning - (EQPT/tpraa) Did not find a data block on the DATA0 file
+       for any of the following aa' pairs:
+
+         B(OH)4-, Br-
+         B(OH)4-, HCO3-
+         B(OH)4-, NO3-
+         B(OH)4-, HPO4--
+         B(OH)4-, NegIon
+         B(OH)4-, ClO4-
+         Acetate-, B(OH)4-
+         B(OH)4-, Citrate---
+         B(OH)4-, EDTA----
+         B(OH)4-, Oxalate--
+         B(OH)4-, Lactate-
+         B(OH)4-, HSO4-
+         B(OH)4-, OH-
+         B(OH)4-, CO3--
+         B(OH)4-, B3O3(OH)4-
+         B(OH)4-, B4O5(OH)4--
+         B(OH)4-, H2PO4-
+         B(OH)4-, PO4---
+         Am(CO3)2-, B(OH)4-
+         Am(CO3)3---, B(OH)4-
+
+         plus 1078 others
+
+
+ * Warning - (EQPT/tprn2) Did not find a data block on the DATA0 file
+       for any of the following nn pairs:
+
+         O2(aq), O2(aq)
+         H2(aq), H2(aq)
+         NH3(aq), NH3(aq)
+         CaCO3(aq), CaCO3(aq)
+         MgCO3(aq), MgCO3(aq)
+         H3PO4(aq), H3PO4(aq)
+         Am(OH)3(aq), Am(OH)3(aq)
+         Th(OH)4(aq), Th(OH)4(aq)
+         Th(SO4)2(aq), Th(SO4)2(aq)
+         NpO2OH(aq), NpO2OH(aq)
+         HAcetate(aq), HAcetate(aq)
+         H3Citrate(aq), H3Citrate(aq)
+         H4EDTA(aq), H4EDTA(aq)
+         H2Oxalate(aq), H2Oxalate(aq)
+         HLactate(aq), HLactate(aq)
+         AmCitrate(aq), AmCitrate(aq)
+         ThEDTA(aq), ThEDTA(aq)
+         NpO2Acetate(aq), NpO2Acetate(aq)
+         NpO2Lactate(aq), NpO2Lactate(aq)
+         MgOxalate(aq), MgOxalate(aq)
+
+         plus 1 others
+
+
+ * Warning - (EQPT/tprnn) Did not find a data block on the DATA0 file
+       for any of the following nn' pairs:
+
+         H2(aq), O2(aq)
+         NH3(aq), O2(aq)
+         CO2(aq), O2(aq)
+         CaCO3(aq), O2(aq)
+         MgCO3(aq), O2(aq)
+         B(OH)3(aq), O2(aq)
+         H3PO4(aq), O2(aq)
+         Am(OH)3(aq), O2(aq)
+         O2(aq), Th(OH)4(aq)
+         O2(aq), Th(SO4)2(aq)
+         NpO2OH(aq), O2(aq)
+         HAcetate(aq), O2(aq)
+         H3Citrate(aq), O2(aq)
+         H4EDTA(aq), O2(aq)
+         H2Oxalate(aq), O2(aq)
+         HLactate(aq), O2(aq)
+         AmCitrate(aq), O2(aq)
+         O2(aq), ThEDTA(aq)
+         NpO2Acetate(aq), O2(aq)
+         NpO2Lactate(aq), O2(aq)
+
+         plus 232 others
+
+
+ * Warning - (EQPT/tprnc) Did not find a data block on the DATA0 file
+       for any of the following nc pairs:
+
+         O2(aq), Am+++
+         O2(aq), NpO2+
+         O2(aq), Th++++
+         O2(aq), PosIon
+         O2(aq), MgOH+
+         O2(aq), CaB(OH)4+
+         O2(aq), MgB(OH)4+
+         O2(aq), AmCO3+
+         O2(aq), AmOH++
+         O2(aq), Am(OH)2+
+         O2(aq), AmCl++
+         O2(aq), AmCl2+
+         O2(aq), AmSO4+
+         O2(aq), AmAcetate++
+         O2(aq), AmOxalate+
+         O2(aq), AmLactate++
+         O2(aq), Th(Acetate)2++
+         O2(aq), Th(Lactate)2++
+         O2(aq), ThAcetate+++
+         O2(aq), ThCitrate+
+
+         plus 627 others
+
+
+ * Warning - (EQPT/tprna) Did not find a data block on the DATA0 file
+       for any of the following na pairs:
+
+         O2(aq), B(OH)4-
+         O2(aq), HPO4--
+         O2(aq), NegIon
+         O2(aq), ClO4-
+         O2(aq), Acetate-
+         O2(aq), Citrate---
+         O2(aq), EDTA----
+         O2(aq), Oxalate--
+         O2(aq), Lactate-
+         O2(aq), HSO4-
+         O2(aq), B3O3(OH)4-
+         O2(aq), B4O5(OH)4--
+         O2(aq), H2PO4-
+         O2(aq), PO4---
+         O2(aq), Am(CO3)2-
+         O2(aq), Am(CO3)3---
+         O2(aq), Am(CO3)4(5-)
+         O2(aq), Am(SO4)2-
+         O2(aq), Th(CO3)5(6-)
+         O2(aq), Th(OH)3(CO3)-
+
+         plus 1059 others
+
+
+ * Warning - (EQPT/tprcca) Did not find a data block on the DATA0 file
+       for any of the following cc'a triplets:
+
+         Am+++, Ca++, B(OH)4-
+         Am+++, Ca++, Br-
+         Am+++, Ca++, HCO3-
+         Am+++, Ca++, Cl-
+         Am+++, Ca++, NO3-
+         Am+++, Ca++, HPO4--
+         Am+++, Ca++, SO4--
+         Am+++, Ca++, NegIon
+         Am+++, Ca++, ClO4-
+         Am+++, Ca++, Acetate-
+         Am+++, Ca++, Citrate---
+         Am+++, Ca++, EDTA----
+         Am+++, Ca++, Oxalate--
+         Am+++, Ca++, Lactate-
+         Am+++, Ca++, HSO4-
+         Am+++, Ca++, OH-
+         Am+++, Ca++, CO3--
+         Am+++, Ca++, B3O3(OH)4-
+         Am+++, Ca++, B4O5(OH)4--
+         Am+++, Ca++, H2PO4-
+
+         plus 19440 others
+
+
+ * Warning - (EQPT/tpraac) Did not find a data block on the DATA0 file
+       for any of the following aa'c triplets:
+
+         B(OH)4-, Br-, Am+++
+         B(OH)4-, Br-, Ca++
+         B(OH)4-, Br-, H+
+         B(OH)4-, Br-, K+
+         B(OH)4-, Br-, Mg++
+         B(OH)4-, Br-, Na+
+         B(OH)4-, Br-, NpO2+
+         B(OH)4-, Br-, Th++++
+         B(OH)4-, Br-, PosIon
+         B(OH)4-, Br-, MgOH+
+         B(OH)4-, Br-, CaB(OH)4+
+         B(OH)4-, Br-, MgB(OH)4+
+         B(OH)4-, Br-, AmCO3+
+         B(OH)4-, Br-, AmOH++
+         B(OH)4-, Br-, Am(OH)2+
+         B(OH)4-, Br-, AmCl++
+         B(OH)4-, Br-, AmCl2+
+         B(OH)4-, Br-, AmSO4+
+         B(OH)4-, Br-, AmAcetate++
+         B(OH)4-, Br-, AmOxalate+
+
+         plus 32658 others
+
+
+ * Warning - (EQPT/tprn2n) Did not find a data block on the DATA0 file
+       for any of the following nnn' triplets:
+
+         H2(aq), H2(aq), O2(aq)
+         O2(aq), O2(aq), H2(aq)
+         NH3(aq), NH3(aq), O2(aq)
+         O2(aq), O2(aq), NH3(aq)
+         CO2(aq), CO2(aq), O2(aq)
+         O2(aq), O2(aq), CO2(aq)
+         CaCO3(aq), CaCO3(aq), O2(aq)
+         O2(aq), O2(aq), CaCO3(aq)
+         MgCO3(aq), MgCO3(aq), O2(aq)
+         O2(aq), O2(aq), MgCO3(aq)
+         B(OH)3(aq), B(OH)3(aq), O2(aq)
+         O2(aq), O2(aq), B(OH)3(aq)
+         H3PO4(aq), H3PO4(aq), O2(aq)
+         O2(aq), O2(aq), H3PO4(aq)
+         Am(OH)3(aq), Am(OH)3(aq), O2(aq)
+         O2(aq), O2(aq), Am(OH)3(aq)
+         O2(aq), O2(aq), Th(OH)4(aq)
+         Th(OH)4(aq), Th(OH)4(aq), O2(aq)
+         O2(aq), O2(aq), Th(SO4)2(aq)
+         Th(SO4)2(aq), Th(SO4)2(aq), O2(aq)
+
+         plus 26 others
+
+
+ * Warning - (EQPT/tprnca) Did not find a data block on the DATA0 file
+       for any of the following nca triplets:
+
+         O2(aq), Am+++, B(OH)4-
+         O2(aq), Am+++, Br-
+         O2(aq), Am+++, HCO3-
+         O2(aq), Am+++, Cl-
+         O2(aq), Am+++, NO3-
+         O2(aq), Am+++, HPO4--
+         O2(aq), Am+++, SO4--
+         O2(aq), Am+++, NegIon
+         O2(aq), Am+++, ClO4-
+         O2(aq), Am+++, Acetate-
+         O2(aq), Am+++, Citrate---
+         O2(aq), Am+++, EDTA----
+         O2(aq), Am+++, Oxalate--
+         O2(aq), Am+++, Lactate-
+         O2(aq), Am+++, HSO4-
+         O2(aq), Am+++, OH-
+         O2(aq), Am+++, CO3--
+         O2(aq), Am+++, B3O3(OH)4-
+         O2(aq), Am+++, B4O5(OH)4--
+         O2(aq), Am+++, H2PO4-
+
+         plus 31979 others
+
+
+
+  Cation-anion (ca) pair coverage:
+
+      137 pairs have Pitzer parameters specified on the data file
+     1392 pairs can be constructed from the species present on this file
+    Coverage is 9.84 per cent
+
+
+  Cation-distinct cation (cc') pair coverage:
+
+       22 pairs have Pitzer parameters specified on the data file
+      406 pairs can be constructed from the species present on this file
+    Coverage is 5.42 per cent
+
+
+  Anion-distinct anion (aa') pair coverage:
+
+       30 pairs have Pitzer parameters specified on the data file
+     1128 pairs can be constructed from the species present on this file
+    Coverage is 2.66 per cent
+
+
+  Repeated-neutral (nn) pair coverage:
+
+        2 pairs have Pitzer parameters specified on the data file
+       23 pairs can be constructed from the species present on this file
+    Coverage is 8.70 per cent
+
+
+  Neutral-distinct neutral (nn') pair coverage:
+
+        1 pairs have Pitzer parameters specified on the data file
+      253 pairs can be constructed from the species present on this file
+    Coverage is 0.40 per cent
+
+
+  Neutral-cation (nc) pair coverage:
+
+       20 pairs have Pitzer parameters specified on the data file
+      667 pairs can be constructed from the species present on this file
+    Coverage is 3.00 per cent
+
+
+  Neutral-anion (na) pair coverage:
+
+       25 pairs have Pitzer parameters specified on the data file
+     1104 pairs can be constructed from the species present on this file
+    Coverage is 2.26 per cent
+
+
+  Cation-distinct cation-anion (cc'a) triplet coverage:
+
+       28 triplets have Pitzer parameters specified on the data file
+    19488 triplets can be constructed from the species present on this file
+    Coverage is 0.14 per cent
+
+
+  Anion-distinct anion-cation (aa'c) triplet coverage:
+
+       34 triplets have Pitzer parameters specified on the data file
+    32712 triplets can be constructed from the species present on this file
+    Coverage is 0.10 per cent
+
+
+  Repeated neutral-distinct neutral (nnn') triplet coverage:
+
+        0 triplets have Pitzer parameters specified on the data file
+       46 triplets can be constructed from the species present on this file
+    Coverage is 0.00 per cent
+
+
+  Neutral-cation-anion (nca) triplet coverage:
+
+       17 triplets have Pitzer parameters specified on the data file
+    32016 triplets can be constructed from the species present on this file
+    Coverage is 0.05 per cent
+
+
+ Completed processing the Pitzer data file data0.fmt.R1.
+
+
+ No errors were encountered.
+
+ 11 warning(s) were encountered.
+
+
+
+
+ Normal exit

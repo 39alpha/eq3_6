@@ -1,0 +1,155 @@
+* Start of the bottom half of the input file                                   *
+*------------------------------------------------------------------------------*
+| Secondary Title        | (utitl2(n))                                         |
+|------------------------------------------------------------------------------|
+|EQ3NR input file name= oxcalhem.3i                                            |
+|Description= "Oxygenated, calcite and hematite saturated solution"            |
+|Version level= 8.0                                                            |
+|Revised 02/14/97    Revisor= T.J. Wolery                                      |
+|This is part of the EQ3/6 Test Case Library                                   |
+|                                                                              |
+|  Oxygenated, calcite and hematite saturated solution. This problem is part   |
+|of Example 4 from INTERA (1983), who report a comparison study of EQ3/6 with  |
+|PHREEQE (Parkhurst, Thorstenson, and Plummer, 1980).                          |
+|                                                                              |
+|  Purpose: to provide a PICKUP file for construction of the EQ6 test case     |
+|methane.6i.                                                                   |
+|                                                                              |
+|  In the orginal problem, uranium was specified in terms of U++++.            |
+|                                                                              |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|INTERA Environmental Consultants, Inc., 1983, Geochemical Models Suitable     |
+|  for Performance Assessment of Nuclear Waste Storage: Comparison of          |
+|  PHREEQE and EQ3/EQ6: Office of Nuclear Waste Isolation, Battelle Project    |
+|  Management Division, Columbus, Ohio, ONWI-473, 114 p.                       |
+|                                                                              |
+|Parkhurst, D.L., Thorstenson, D.C., and Plummer, L.N., 1980, PHREEQE-         |
+|  A Computer Program for Geochemical Calculations: Water Resources            |
+|  Investigations Report 80-96, U.S. Geological Survey, Reston, Virginia,      |
+|  210 p.                                                                      |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (usbsw(1,n))       |
+|   with |None                                            | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Original temperature (C) | 2.50000E+01| (tempci)                              |
+|------------------------------------------------------------------------------|
+|Original pressure (bars) | 1.01320E+00| (pressi)                              |
+|------------------------------------------------------------------------------|
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: no exchanger creation blocks follow on this file.                   |
+|Option: on further processing (writing a pickup file or running XCON6 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|None                                            |None            | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [x] ( 0) The B-dot equation                                                 |
+|  [ ] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [ ] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [x] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Matrix Index Limits                                                           |
+|------------------------------------------------------------------------------|
+|No. of chem. elements   |    9| (kct)                                         |
+|No. of basis species    |   12| (kbt)                                         |
+|Index of last pure min. |   12| (kmt)                                         |
+|Index of last sol-sol.  |   12| (kxt)                                         |
+|Matrix size             |   12| (kdim)                                        |
+|PRS data flag           |    0| (kprs)                                        |
+|------------------------------------------------------------------------------|
+|Mass Balance Species (Matrix Row Variables)     |Units/Constraint| --         |
+| (ubmtbi(n))                                    |(ujf6(jflgi(n)))| --         |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        |Moles           | --         |
+|Ca++                    Aqueous solution        |Moles           | --         |
+|Cl-                     Aqueous solution        |Moles           | --         |
+|Fe++                    Aqueous solution        |Moles           | --         |
+|H+                      Aqueous solution        |Moles           | --         |
+|HCO3-                   Aqueous solution        |Moles           | --         |
+|Na+                     Aqueous solution        |Moles           | --         |
+|SO4--                   Aqueous solution        |Moles           | --         |
+|UO2++                   Aqueous solution        |Moles           | --         |
+|O2(g)                   Aqueous solution        |Moles           | --         |
+|H2(aq)                  Aqueous solution        |Make non-basis  | --         |
+|O2(aq)                  Aqueous solution        |Make non-basis  | --         |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf6(jflgi(n))) are:                                    *
+*    Moles               Make non-basis                                        *
+*------------------------------------------------------------------------------*
+|Mass Balance Totals (moles)                                                   |
+|------------------------------------------------------------------------------|
+|Basis species (info. only)      |Equilibrium System    |Aqueous Solution      |
+| (ubmtbi(n))                    | (mtbi(n))            | (mtbaqi(n))          |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous | 5.550810201369982E+01| 5.550810201369982E+01|
+|Ca++                    Aqueous | 1.852532867230823E-03| 1.852532867230823E-03|
+|Cl-                     Aqueous | 5.000000000189405E-03| 5.000000000189405E-03|
+|Fe++                    Aqueous | 1.272801260354880E-12| 1.272801260354880E-12|
+|H+                      Aqueous | 2.341693393947801E-04| 2.341693393947801E-04|
+|HCO3-                   Aqueous | 4.019235046032971E-03| 4.019235046032971E-03|
+|Na+                     Aqueous | 7.000000002357547E-03| 7.000000002357547E-03|
+|SO4--                   Aqueous | 1.000000010017211E-03| 1.000000010017211E-03|
+|UO2++                   Aqueous | 3.999999831064331E-05| 3.999999831064331E-05|
+|O2(g)                   Aqueous | 3.182003970140968E-13| 3.182003970140968E-13|
+|H2(aq)                  Aqueous | 4.908776751657666E-45| 4.908776751657666E-45|
+|O2(aq)                  Aqueous | 2.513701337543798E-04| 2.513701337543798E-04|
+|Electrical imbalance            | 9.124063483911815E-12| 9.124063483911815E-12|
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Matrix Column Variables and Values                                            |
+|------------------------------------------------------------------------------|
+|Basis species (uzveci(n))                       |Log moles (zvclgi(n)) | --   |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        | 1.744358983526984E+00| --   |
+|Ca++                    Aqueous solution        |-2.764265322036941E+00| --   |
+|Cl-                     Aqueous solution        |-2.301525131294758E+00| --   |
+|Fe++                    Aqueous solution        |-2.196266532203694E+01| --   |
+|H+                      Aqueous solution        |-7.265482436329620E+00| --   |
+|HCO3-                   Aqueous solution        |-2.454598168268995E+00| --   |
+|Na+                     Aqueous solution        |-2.158507648437763E+00| --   |
+|SO4--                   Aqueous solution        |-3.048608087424251E+00| --   |
+|UO2++                   Aqueous solution        |-1.049129496868139E+01| --   |
+|O2(g)                   Aqueous solution        |-7.000000000000000E-01| --   |
+|H2(aq)                  Aqueous solution        |-4.430902671891416E+01| --   |
+|O2(aq)                  Aqueous solution        |-3.599686323770942E+00| --   |
+|------------------------------------------------------------------------------|
+|Phases and Species in the PRS                                                 |
+|------------------------------------------------------------------------------|
+|Phase           |None                    | (uprphi(n))                        |
+|------------------------------------------------------------------------------|
+|->|No. of Moles    | 0.000000000000000E+00| (mprphi(n))                       |
+|------------------------------------------------------------------------------|
+|--->|Species                 |No. of Moles          | --                      |
+|--->| (uprspi(i,n))          | (mprspi(i,n))        | --                      |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.000000000000000E+00| --                      |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|

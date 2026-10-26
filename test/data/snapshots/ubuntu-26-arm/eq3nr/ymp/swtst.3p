@@ -1,0 +1,272 @@
+* Start of the bottom half of the input file                                   *
+*------------------------------------------------------------------------------*
+| Secondary Title        | (utitl2(n))                                         |
+|------------------------------------------------------------------------------|
+|EQ3NR input file name= swtst.3i                                               |
+|Description= "Sea water, full benchmark test case"                            |
+|Version level= 8.0                                                            |
+|Revised 06/03/10    Revisor= T.J. Wolery                                      |
+|This is part of the EQ3/6 Test Case Library                                   |
+|                                                                              |
+|  Sea water, the full benchmark test case (insofar as the data file permits)  |
+|of Nordstrom et al. (1979, Table III). Successively more pared-down versions  |
+|of this test case are in swpar.3i, swgeo.3i, and swmaj.3i.                    |
+|                                                                              |
+|  The basis species N2(aq) and N3- have each been suppressed to prevent them  |
+|from being included in the mass balance for NH3(aq).                          |
+|                                                                              |
+|  Purpose: to test the code on a large problem involving a moderately         |
+|concentrated solution. This test case has been used previously in inter-code  |
+|comparisons (See Nordstrom et al., 1979).                                     |
+|                                                                              |
+|  Data for the following were originally specified as:                        |
+|                                                                              |
+|    H2AsO4-    :   As       = 0.004   mg/kg                                   |
+|    CrO4--     :   Cr       = 0.0003  mg/kg                                   |
+|    MoO4--     :   Mo       = 0.005   mg/kg                                   |
+|    SbO2-      :   Sb       = 0.00033 mg/kg                                   |
+|    NH3(aq)    :   NH4+     = 0.003   mg/kg                                   |
+|                                                                              |
+|                                                                              |
+|  The original test problem permits specification of the total alkalinity     |
+|instead of total HCO3-. This was expressed in the following equivalent        |
+|units:                                                                        |
+|                                                                              |
+|    141.682 mg/L HCO3- (total alkalinity expressed as HCO3-;                  |
+|                        not the conventional HCO3 alkalinity)                 |
+|    0.00240659 eq/kg                                                          |
+|    0.00237625 eq/L                                                           |
+|                                                                              |
+|                                                                              |
+|This is equivalent to:                                                        |
+|                                                                              |
+|    116.208 mg/L CaCO3 (total alkalinity)                                     |
+|                                                                              |
+|                                                                              |
+|This is the more standard way of reporting alkalinity (see Standard           |
+|Methods, 1976).                                                               |
+|                                                                              |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|Nordstrom, D.K., et al., 1979, A comparison of computerized chemical models   |
+|  for equilibrium calculations in aqueous systems, in Jenne, E.A., editor,    |
+|  Chemical Modeling in Aqueous Systems, ACS Symposium Series, v. 93,          |
+|  American Chemical Society, Washington, DC, p. 857-892.                      |
+|                                                                              |
+|Standard Methods for the Examination of Water and Wastewater, 1976, Prepared  |
+|  and jointly published by the American Public Health Association, the        |
+|  American Water Works Association, and the Water Pollution Control           |
+|  Federation: American Public Health Association, 1015 Eighteenth Street NW,  |
+|  Washington, DC.                                                             |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (usbsw(1,n))       |
+|   with |None                                            | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Original temperature (C) | 2.50000E+01| (tempci)                              |
+|------------------------------------------------------------------------------|
+|Original pressure (bars) | 1.01320E+00| (pressi)                              |
+|------------------------------------------------------------------------------|
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: no exchanger creation blocks follow on this file.                   |
+|Option: on further processing (writing a pickup file or running XCON6 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|None                                            |None            | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [x] ( 0) The B-dot equation                                                 |
+|  [ ] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [ ] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [x] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Matrix Index Limits                                                           |
+|------------------------------------------------------------------------------|
+|No. of chem. elements   |   36| (kct)                                         |
+|No. of basis species    |   41| (kbt)                                         |
+|Index of last pure min. |   41| (kmt)                                         |
+|Index of last sol-sol.  |   41| (kxt)                                         |
+|Matrix size             |   41| (kdim)                                        |
+|PRS data flag           |    0| (kprs)                                        |
+|------------------------------------------------------------------------------|
+|Mass Balance Species (Matrix Row Variables)     |Units/Constraint| --         |
+| (ubmtbi(n))                                    |(ujf6(jflgi(n)))| --         |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        |Moles           | --         |
+|Ag+                     Aqueous solution        |Moles           | --         |
+|Al+++                   Aqueous solution        |Moles           | --         |
+|B(OH)3(aq)              Aqueous solution        |Moles           | --         |
+|Ba++                    Aqueous solution        |Moles           | --         |
+|Br-                     Aqueous solution        |Moles           | --         |
+|Ca++                    Aqueous solution        |Moles           | --         |
+|Cd++                    Aqueous solution        |Moles           | --         |
+|Cl-                     Aqueous solution        |Moles           | --         |
+|Co++                    Aqueous solution        |Moles           | --         |
+|CrO4--                  Aqueous solution        |Moles           | --         |
+|Cs+                     Aqueous solution        |Moles           | --         |
+|Cu++                    Aqueous solution        |Moles           | --         |
+|F-                      Aqueous solution        |Moles           | --         |
+|Fe++                    Aqueous solution        |Moles           | --         |
+|H+                      Aqueous solution        |Moles           | --         |
+|H2AsO4-                 Aqueous solution        |Moles           | --         |
+|HCO3-                   Aqueous solution        |Moles           | --         |
+|HPO4--                  Aqueous solution        |Moles           | --         |
+|Hg++                    Aqueous solution        |Moles           | --         |
+|I-                      Aqueous solution        |Moles           | --         |
+|K+                      Aqueous solution        |Moles           | --         |
+|Li+                     Aqueous solution        |Moles           | --         |
+|Mg++                    Aqueous solution        |Moles           | --         |
+|Mn++                    Aqueous solution        |Moles           | --         |
+|MoO4--                  Aqueous solution        |Moles           | --         |
+|NH3(aq)                 Aqueous solution        |Moles           | --         |
+|Na+                     Aqueous solution        |Moles           | --         |
+|Ni++                    Aqueous solution        |Moles           | --         |
+|Pb++                    Aqueous solution        |Moles           | --         |
+|Rb+                     Aqueous solution        |Moles           | --         |
+|SO4--                   Aqueous solution        |Moles           | --         |
+|SbO2-                   Aqueous solution        |Moles           | --         |
+|SiO2(aq)                Aqueous solution        |Moles           | --         |
+|Sr++                    Aqueous solution        |Moles           | --         |
+|Zn++                    Aqueous solution        |Moles           | --         |
+|O2(g)                   Aqueous solution        |Moles           | --         |
+|H2(aq)                  Aqueous solution        |Make non-basis  | --         |
+|NO2-                    Aqueous solution        |Make non-basis  | --         |
+|NO3-                    Aqueous solution        |Make non-basis  | --         |
+|O2(aq)                  Aqueous solution        |Make non-basis  | --         |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf6(jflgi(n))) are:                                    *
+*    Moles               Make non-basis                                        *
+*------------------------------------------------------------------------------*
+|Mass Balance Totals (moles)                                                   |
+|------------------------------------------------------------------------------|
+|Basis species (info. only)      |Equilibrium System    |Aqueous Solution      |
+| (ubmtbi(n))                    | (mtbi(n))            | (mtbaqi(n))          |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous | 5.550847166957655E+01| 5.550847166957655E+01|
+|Ag+                     Aqueous | 3.708229291543225E-10| 3.708229291543225E-10|
+|Al+++                   Aqueous | 7.412475710536881E-08| 7.412475710536881E-08|
+|B(OH)3(aq)              Aqueous | 4.266500000144753E-04| 4.266500000144753E-04|
+|Ba++                    Aqueous | 1.456377911908667E-07| 1.456377911908667E-07|
+|Br-                     Aqueous | 8.422607528637664E-04| 8.422607528637664E-04|
+|Ca++                    Aqueous | 1.028743998426232E-02| 1.028743998426232E-02|
+|Cd++                    Aqueous | 8.895926991135489E-10| 8.895926991135489E-10|
+|Cl-                     Aqueous | 5.458822859659846E-01| 5.458822859659846E-01|
+|Co++                    Aqueous | 8.484182509401248E-10| 8.484182509401248E-10|
+|CrO4--                  Aqueous | 5.769279125295401E-09| 5.769279125295401E-09|
+|Cs+                     Aqueous | 3.009658513052490E-09| 3.009658513052490E-09|
+|Cu++                    Aqueous | 1.101564274481628E-08| 1.101564274481628E-08|
+|F-                      Aqueous | 7.316405941246589E-05| 7.316405941246589E-05|
+|Fe++                    Aqueous | 3.581341385645470E-08| 3.581341385645470E-08|
+|H+                      Aqueous |-2.736126815253533E-04|-2.736126815253533E-04|
+|H2AsO4-                 Aqueous | 5.217042213496671E-08| 5.217042213496671E-08|
+|HCO3-                   Aqueous | 2.022000000424921E-03| 2.022000000424921E-03|
+|HPO4--                  Aqueous | 6.550000011204813E-07| 6.550000011204813E-07|
+|Hg++                    Aqueous | 1.495588087661211E-10| 1.495588087661211E-10|
+|I-                      Aqueous | 4.885564940698606E-07| 4.885564940698606E-07|
+|K+                      Aqueous | 1.020760541940748E-02| 1.020760541940748E-02|
+|Li+                     Aqueous | 2.607693539868115E-05| 2.607693539868115E-05|
+|Mg++                    Aqueous | 5.314956024565556E-02| 5.314956024565556E-02|
+|Mn++                    Aqueous | 3.640464296442670E-09| 3.640464296442670E-09|
+|MoO4--                  Aqueous | 5.211407696433856E-08| 5.211407696433856E-08|
+|NH3(aq)                 Aqueous | 1.663128008351483E-06| 1.663128008351483E-06|
+|Na+                     Aqueous | 4.683822635830874E-01| 4.683822635830874E-01|
+|Ni++                    Aqueous | 2.896407570236914E-08| 2.896407570236914E-08|
+|Pb++                    Aqueous | 2.413127530167861E-10| 2.413127530167861E-10|
+|Rb+                     Aqueous | 1.368936670400461E-06| 1.368936670400461E-06|
+|SO4--                   Aqueous | 2.823129813123103E-02| 2.823129813123103E-02|
+|SbO2-                   Aqueous | 2.731551105525206E-09| 2.731551105525206E-09|
+|SiO2(aq)                Aqueous | 7.123325399885808E-05| 7.123325399885808E-05|
+|Sr++                    Aqueous | 9.290116856208315E-05| 9.290116856208315E-05|
+|Zn++                    Aqueous | 7.493500896703759E-08| 7.493500896703759E-08|
+|O2(g)                   Aqueous | 1.672064944591376E-06| 1.672064944591376E-06|
+|H2(aq)                  Aqueous | 3.068204545783768E-37| 3.068204545783768E-37|
+|NO2-                    Aqueous | 4.347302727008327E-07| 4.347302727008327E-07|
+|NO3-                    Aqueous | 4.677046922030182E-06| 4.677046922030182E-06|
+|O2(aq)                  Aqueous | 2.015495470428457E-04| 2.015495470428457E-04|
+|Electrical imbalance            | 1.149469717854901E-04| 1.149469717854901E-04|
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Matrix Column Variables and Values                                            |
+|------------------------------------------------------------------------------|
+|Basis species (uzveci(n))                       |Log moles (zvclgi(n)) | --   |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        | 1.744358983526984E+00| --   |
+|Ag+                     Aqueous solution        |-1.414987919278112E+01| --   |
+|Al+++                   Aqueous solution        |-1.645825434336887E+01| --   |
+|B(OH)3(aq)              Aqueous solution        |-3.488429331049181E+00| --   |
+|Ba++                    Aqueous solution        |-6.851699347656644E+00| --   |
+|Br-                     Aqueous solution        |-3.078393902839373E+00| --   |
+|Ca++                    Aqueous solution        |-2.041594778579606E+00| --   |
+|Cd++                    Aqueous solution        |-1.042076428786566E+01| --   |
+|Cl-                     Aqueous solution        |-2.802804227621529E-01| --   |
+|Co++                    Aqueous solution        |-1.079315739544176E+01| --   |
+|CrO4--                  Aqueous solution        |-8.309506300226220E+00| --   |
+|Cs+                     Aqueous solution        |-8.590490654865494E+00| --   |
+|Cu++                    Aqueous solution        |-8.970728727538406E+00| --   |
+|F-                      Aqueous solution        |-4.223101157332978E+00| --   |
+|Fe++                    Aqueous solution        |-1.485162838858500E+01| --   |
+|H+                      Aqueous solution        |-8.059727354188798E+00| --   |
+|H2AsO4-                 Aqueous solution        |-4.373753147301449E+01| --   |
+|HCO3-                   Aqueous solution        |-2.872951969590281E+00| --   |
+|HPO4--                  Aqueous solution        |-6.575723907572371E+00| --   |
+|Hg++                    Aqueous solution        |-2.342374236447278E+01| --   |
+|I-                      Aqueous solution        |-6.313633496614815E+00| --   |
+|K+                      Aqueous solution        |-2.000670411776470E+00| --   |
+|Li+                     Aqueous solution        |-4.594084150072073E+00| --   |
+|Mg++                    Aqueous solution        |-1.342550308452448E+00| --   |
+|Mn++                    Aqueous solution        |-8.488225300407187E+00| --   |
+|MoO4--                  Aqueous solution        |-7.283056098376667E+00| --   |
+|NH3(aq)                 Aqueous solution        |-2.103279957581351E+01| --   |
+|Na+                     Aqueous solution        |-3.525798482702326E-01| --   |
+|Ni++                    Aqueous solution        |-7.556924906611647E+00| --   |
+|Pb++                    Aqueous solution        |-1.119339474307347E+01| --   |
+|Rb+                     Aqueous solution        |-5.874855240899916E+00| --   |
+|SO4--                   Aqueous solution        |-1.773458326895749E+00| --   |
+|SbO2-                   Aqueous solution        |-1.115393108199870E+01| --   |
+|SiO2(aq)                Aqueous solution        |-4.439018260996957E+00| --   |
+|Sr++                    Aqueous solution        |-4.099867864415524E+00| --   |
+|Zn++                    Aqueous solution        |-7.495909657207436E+00| --   |
+|O2(g)                   Aqueous solution        |-1.643182784683756E+01| --   |
+|H2(aq)                  Aqueous solution        |-3.651311569096033E+01| --   |
+|NO2-                    Aqueous solution        |-6.361782982013152E+00| --   |
+|NO3-                    Aqueous solution        |-5.333797010662891E+00| --   |
+|O2(aq)                  Aqueous solution        |-3.695618173531837E+00| --   |
+|------------------------------------------------------------------------------|
+|Phases and Species in the PRS                                                 |
+|------------------------------------------------------------------------------|
+|Phase           |None                    | (uprphi(n))                        |
+|------------------------------------------------------------------------------|
+|->|No. of Moles    | 0.000000000000000E+00| (mprphi(n))                       |
+|------------------------------------------------------------------------------|
+|--->|Species                 |No. of Moles          | --                      |
+|--->| (uprspi(i,n))          | (mprspi(i,n))        | --                      |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.000000000000000E+00| --                      |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|
