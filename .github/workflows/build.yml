@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+    - name: install meson
+      run: python -m pip install meson
     - uses: actions/checkout@v2
       with:
         submodules: recursive
@@ -21,6 +24,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+    - name: install meson
+      run: python -m pip install meson
     - uses: actions/checkout@v2
       with:
         submodules: recursive
@@ -35,6 +41,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+    - name: install meson
+      run: python -m pip install meson
     - uses: actions/checkout@v2
       with:
         submodules: recursive
@@ -45,6 +54,9 @@ jobs:
     runs-on: macos-14
     steps:
     - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+    - name: install meson
+      run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
     - uses: actions/checkout@v2
@@ -57,6 +69,9 @@ jobs:
     runs-on: macos-15-intel
     steps:
     - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+    - name: install meson
+      run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
     - uses: actions/checkout@v2
@@ -69,6 +84,9 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+    - name: install meson
+      run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
     - uses: actions/checkout@v2
