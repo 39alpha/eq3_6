@@ -208,7 +208,7 @@ check_output() {
 }
 @test "Correct output (fmt/c4pgwbN2)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output fmt c4pgwbN2 1e-8
       ;;
     "x86_64"|"amd64")
@@ -239,7 +239,7 @@ check_output() {
 }
 @test "Correct output (fmt/swmajm)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output fmt swmajm 1e-16
       ;;
     "i386")
@@ -261,7 +261,7 @@ check_output() {
 }
 @test "Correct output (hmw/epsomite)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output hmw epsomite 1e-14
       ;;
     "i386")
@@ -376,7 +376,7 @@ check_output() {
 }
 @test "Correct output (ymp/swg1sx)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp swg1sx 1e-16
       ;;
     "i386")
@@ -416,7 +416,7 @@ check_output() {
 }
 @test "Correct output (ymp/swv1sxca)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp swv1sxca 1e-27
       ;;
     "i386")
@@ -435,7 +435,7 @@ check_output() {
 }
 @test "Correct output (ypf/arcmir)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ypf arcmir 1e-14
       ;;
     "x86_64"|"amd64")

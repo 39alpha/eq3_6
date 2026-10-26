@@ -78,6 +78,9 @@ snapshot build="release":
       "x86_64")
         ARCH="amd64"
         ;;
+      "aarch64")
+        ARCH="arm64"
+        ;;
       *)
         ARCH="$(arch)"
         ;;

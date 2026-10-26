@@ -114,7 +114,7 @@ check_snapshot_only() {
 
 @test "Correct output (cmp/crisqtz)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp crisqtz 1e-8
       ;;
     "x86_64"|"amd64")
@@ -130,7 +130,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/dedolo)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp dedolo 1e-7
       ;;
     "i386")
@@ -146,7 +146,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/heatsw)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp heatsw 1e-15
       ;;
     "x86_64"|"amd64")
@@ -162,7 +162,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/heatswfl)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp heatswfl 1e-5
       ;;
     "x86_64"|"amd64")
@@ -181,7 +181,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/j13wtitr)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp j13wtitr 1e-14
       ;;
     "x86_64"|"amd64")
@@ -197,7 +197,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/j13wtuff)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp j13wtuff 1e-9
       ;;
     "x86_64"|"amd64")
@@ -213,7 +213,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/methane)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp methane 1e-3
       ;;
     "i386")
@@ -229,7 +229,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/micro)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp micro 1e-7
       ;;
     "i386")
@@ -242,7 +242,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/microft)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp microft 1e-3
       ;;
     "i386")
@@ -255,7 +255,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/pptcal)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp pptcal 1e-15
       ;;
     "i386")
@@ -277,7 +277,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/pyrsw)" {
   case "$(arch)" in
-    "x86_64"|"amd64")
+    "aarch64"|"arm64")
       check_output cmp pyrsw 1e-19
       ;;
     *)
@@ -287,7 +287,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/rwssdiag)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp rwssdiag 1e-8
       ;;
     "x86_64"|"amd64")
@@ -303,7 +303,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/rwtitr)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp rwtitr 1e-15
       ;;
     "x86_64"|"amd64")
@@ -319,7 +319,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/swtitr)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output cmp swtitr 1e-9
       ;;
     "x86_64"|"amd64")
@@ -335,7 +335,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/swxrca)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_snapshot_only cmp swxrca
       ;;
     "x86_64"|"amd64")
@@ -351,7 +351,7 @@ check_snapshot_only() {
 }
 @test "Correct output (cmp/swxrcaft)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_snapshot_only cmp swxrcaft
       ;;
     "x86_64"|"amd64")
@@ -367,7 +367,7 @@ check_snapshot_only() {
 }
 @test "Correct output (fmt/c4pgwbN2)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output fmt c4pgwbN2 1e-11
       ;;
     "x86_64"|"amd64")
@@ -383,7 +383,7 @@ check_snapshot_only() {
 }
 @test "Correct output (fmt/f24vc7b3)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output fmt f24vc7b3 1e-13
       ;;
     "x86_64"|"amd64")
@@ -399,7 +399,7 @@ check_snapshot_only() {
 }
 @test "Correct output (fmt/f24vc7k4)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output fmt f24vc7k4 1e-11
       ;;
     "x86_64"|"amd64")
@@ -415,7 +415,7 @@ check_snapshot_only() {
 }
 @test "Correct output (fmt/f24vc7m)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output fmt f24vc7m 1e-13
       ;;
     "x86_64"|"amd64")
@@ -431,7 +431,7 @@ check_snapshot_only() {
 }
 @test "Correct output (fmt/gypnaclx)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output fmt gypnaclx 1e-13
       ;;
     "i386")
@@ -444,7 +444,7 @@ check_snapshot_only() {
 }
 @test "Correct output (hmw/calhal)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output hmw calhal 1e-14
       ;;
     "x86_64"|"amd64")
@@ -460,7 +460,7 @@ check_snapshot_only() {
 }
 @test "Correct output (hmw/evapsw)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output hmw evapsw 1e-6
       ;;
     "x86_64"|"amd64")
@@ -476,7 +476,7 @@ check_snapshot_only() {
 }
 @test "Correct output (hmw/evswgyha)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output hmw evswgyha 1e-13
       ;;
     "x86_64"|"amd64")
@@ -492,7 +492,7 @@ check_snapshot_only() {
 }
 @test "Correct output (hmw/fwbrmix)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output hmw fwbrmix 1e-13
       ;;
     "x86_64"|"amd64")
@@ -508,7 +508,7 @@ check_snapshot_only() {
 }
 @test "Correct output (hmw/gypanhy)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output hmw gypanhy 1e-14
       ;;
     "i386")
@@ -521,7 +521,7 @@ check_snapshot_only() {
 }
 @test "Correct output (hmw/mgso4)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_snapshot_only hmw mgso4
       ;;
     "x86_64"|"amd64")
@@ -537,7 +537,7 @@ check_snapshot_only() {
 }
 @test "Correct output (hmw/swv1sxk)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output hmw swv1sxk 1e-15
       ;;
     "i386")
@@ -550,7 +550,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/crisqtz)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp crisqtz 1e-13
       ;;
     *)
@@ -560,7 +560,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/dedolo)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp dedolo 1e-9
       ;;
     "x86_64"|"amd64")
@@ -576,7 +576,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/heatqf)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp heatqf 1e-18
       ;;
     "i386")
@@ -589,7 +589,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/heatsw)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp heatsw 1e-16
       ;;
     "x86_64"|"amd64")
@@ -605,7 +605,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/j13wsf)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp j13wsf 1e-6
       ;;
     "x86_64"|"amd64")
@@ -621,7 +621,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/j13wtitr)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp j13wtitr 1e-15
       ;;
     "i386")
@@ -634,7 +634,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/j13wtuff)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp j13wtuff 1e-6
       ;;
     "x86_64"|"amd64")
@@ -650,7 +650,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/methane)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp methane 1e-3
       ;;
     "x86_64"|"amd64")
@@ -666,7 +666,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/micro)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp micro 1e-13
       ;;
     "x86_64"|"amd64")
@@ -682,7 +682,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/microft)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp microft 1e-4
       ;;
     "x86_64"|"amd64")
@@ -698,7 +698,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/pptcal)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp pptcal 1e-15
       ;;
     "i386")
@@ -723,7 +723,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/rwssdiag)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp rwssdiag 1e-9
       ;;
     "i386")
@@ -736,7 +736,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/rwtitr)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp rwtitr 1e-14
       ;;
     "i386")
@@ -749,7 +749,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/swtitr)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ymp swtitr 1e-13
       ;;
     "x86_64"|"amd64")
@@ -765,7 +765,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/swxrca)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_snapshot_only ymp swxrca
       ;;
     "x86_64"|"amd64")
@@ -781,7 +781,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ymp/swxrcaft)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_snapshot_only ymp swxrcaft
       ;;
     "x86_64"|"amd64")
@@ -797,7 +797,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ypf/calhal90)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ypf calhal90 1e-13
       ;;
     "i386")
@@ -810,7 +810,7 @@ check_snapshot_only() {
 }
 @test "Correct output (ypf/evapsw60)" {
   case "$(arch)" in
-    "arm64")
+    "aarch64"|"arm64")
       check_output ypf evapsw60 1e-11
       ;;
     "x86_64"|"amd64")

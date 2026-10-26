@@ -69,6 +69,9 @@ function _common_setup() {
 
 function _snapshot_dir() {
   case "$(arch)" in
+    "aarch64")
+      local -r ARCH="arm64"
+      ;;
     "x86_64")
       local -r ARCH="amd64"
       ;;
