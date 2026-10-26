@@ -15,7 +15,7 @@ jobs:
       with:
         submodules: recursive
     - name: just test
-      run: just test
+      run: TERM=dumb just test
 
   ubuntu-24:
     runs-on: ubuntu-24.04
@@ -29,7 +29,7 @@ jobs:
     - name: git submodule update
       run: git submodule update
     - name: just test
-      run: just test
+      run: TERM=dumb just test
 
   ubuntu-latest:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
       with:
         submodules: recursive
     - name: just test
-      run: just test
+      run: TERM=dumb just test
 
   macos-14:
     runs-on: macos-14
@@ -51,7 +51,7 @@ jobs:
       with:
         submodules: recursive
     - name: just test
-      run: just test
+      run: TERM=dumb just test
 
   macos-15-intel:
     runs-on: macos-15-intel
@@ -63,7 +63,7 @@ jobs:
       with:
         submodules: recursive
     - name: just test
-      run: just test
+      run: TERM=dumb just test
 
   macos-latest:
     runs-on: macos-latest
@@ -75,4 +75,4 @@ jobs:
       with:
         submodules: recursive
     - name: just test
-      run: just test
+      run: TERM=dumb just test
