@@ -9,14 +9,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
-    - name: make FFLAGS="-O0" -j4
-      run: make FFLAGS="-O0" -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
-    - name: make snapshot
-      run: make BATS_FLAGS="-T -j 4" snapshot
+    - name: just snapshot
+      run: just snapshot
     - name: archive snapshots
       uses: actions/upload-artifact@v4
       with:
@@ -28,18 +26,33 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v2
-    - name: make FFLAGS="-O0" -j4
-      run: make FFLAGS="-O0" -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
-    - name: make snapshot
-      run: make BATS_FLAGS="-T -j 4" snapshot
+    - name: just snapshot
+      run: just snapshot
     - name: archive snapshots
       uses: actions/upload-artifact@v4
       with:
         name: ubuntu-24
+        path: test/data/snapshots/amd64
+        retention-days: 2
+
+  ubuntu-latest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: git submodule init
+      run: git submodule init
+    - name: git submodule update
+      run: git submodule update
+    - name: just snapshot
+      run: just snapshot
+    - name: archive snapshots
+      uses: actions/upload-artifact@v4
+      with:
+        name: ubuntu-latest
         path: test/data/snapshots/amd64
         retention-days: 2
 
@@ -49,14 +62,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - name: make FFLAGS="-O0" -j4
-      run: make FFLAGS="-O0" -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
-    - name: make snapshot
-      run: make BATS_FLAGS="-T -j 4" snapshot
+    - name: just snapshot
+      run: just snapshot
     - name: archive snapshots
       uses: actions/upload-artifact@v4
       with:
@@ -70,14 +81,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - name: make FFLAGS="-O0" -j4
-      run: make FFLAGS="-O0" -j4
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
-    - name: make snapshot
-      run: make BATS_FLAGS="-T -j 4" snapshot
+    - name: just snapshot
+      run: just snapshot
     - name: archive snapshots
       uses: actions/upload-artifact@v4
       with:
@@ -91,14 +100,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - name: make FFLAGS="-O0" -j3
-      run: make FFLAGS="-O0" -j3
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
       run: git submodule update
     - name: make snapshot
-      run: make BATS_FLAGS="-T -j 3" snapshot
+      run: just snapshot
     - name: archive snapshots
       uses: actions/upload-artifact@v4
       with:
