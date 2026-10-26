@@ -4,7 +4,8 @@ project(
   version: '9.1.1',
   meson_version: '>= 0.60',
   default_options: [
-    'buildtype=release',
+    'fortran_std=f2008',
+    'buildtype=debugoptimized',
     'warning_level=everything',
     'default_library=static',
   ]
