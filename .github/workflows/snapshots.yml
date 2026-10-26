@@ -60,7 +60,7 @@ jobs:
     - name: install meson
       run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
-      run: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel fd
     - uses: actions/checkout@v7
       with:
         submodules: recursive
@@ -84,7 +84,7 @@ jobs:
     - name: install meson
       run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
-      run: brew reinstall gcc coreutils parallel
+      run: brew reinstall gcc coreutils parallel fd
     - uses: actions/checkout@v7
       with:
         submodules: recursive
