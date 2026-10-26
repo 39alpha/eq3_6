@@ -10,15 +10,18 @@ jobs:
     steps:
     - uses: extractions/setup-just@v4
     - uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+        cache: 'pip'
     - name: install meson
       run: python -m pip install meson
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
     - name: just snapshot
       run: just snapshot
     - name: archive snapshots
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ubuntu-latest
         path: test/data/snapshots/amd64
@@ -29,15 +32,18 @@ jobs:
     steps:
     - uses: extractions/setup-just@v4
     - uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+        cache: 'pip'
     - name: install meson
       run: python -m pip install meson
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
     - name: just snapshot
       run: just snapshot
     - name: archive snapshots
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ubuntu-26-arm
         path: test/data/snapshots/arm64
@@ -48,17 +54,20 @@ jobs:
     steps:
     - uses: extractions/setup-just@v4
     - uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+        cache: 'pip'
     - name: install meson
       run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
     - name: just snapshot
       run: just snapshot
     - name: archive snapshots
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: macos-26-intel
         path: test/data/snapshots/i386
@@ -69,17 +78,20 @@ jobs:
     steps:
     - uses: extractions/setup-just@v4
     - uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+        cache: 'pip'
     - name: install meson
       run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
     - name: make snapshot
       run: just snapshot
     - name: archive snapshots
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: macos-latest
         path: test/data/snapshots/arm64
