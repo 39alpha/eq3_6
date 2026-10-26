@@ -10,18 +10,20 @@ jobs:
   ubuntu-22:
     runs-on: ubuntu-22.04
     steps:
+    - uses: extractions/setup-just@v4
     - uses: actions/checkout@v2
-    - name: git submodule init
-      run: git submodule init
-    - name: git submodule update
-      run: git submodule update
+      with:
+        submodules: recursive
     - name: just test
       run: just test
 
   ubuntu-24:
     runs-on: ubuntu-24.04
     steps:
+    - uses: extractions/setup-just@v4
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - name: git submodule init
       run: git submodule init
     - name: git submodule update
@@ -32,49 +34,45 @@ jobs:
   ubuntu-latest:
     runs-on: ubuntu-latest
     steps:
+    - uses: extractions/setup-just@v4
     - uses: actions/checkout@v2
-    - name: git submodule init
-      run: git submodule init
-    - name: git submodule update
-      run: git submodule update
+      with:
+        submodules: recursive
     - name: just test
       run: just test
 
   macos-14:
     runs-on: macos-14
     steps:
-    - uses: actions/checkout@v2
+    - uses: extractions/setup-just@v4
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - name: git submodule init
-      run: git submodule init
-    - name: git submodule update
-      run: git submodule update
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - name: just test
       run: just test
 
   macos-15-intel:
     runs-on: macos-15-intel
     steps:
-    - uses: actions/checkout@v2
+    - uses: extractions/setup-just@v4
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - name: git submodule init
-      run: git submodule init
-    - name: git submodule update
-      run: git submodule update
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - name: just test
       run: just test
 
   macos-latest:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: extractions/setup-just@v4
     - name: brew reinstall gcc coreutils parallel
       run: brew reinstall gcc coreutils parallel
-    - name: git submodule init
-      run: git submodule init
-    - name: git submodule update
-      run: git submodule update
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - name: just test
       run: just test
