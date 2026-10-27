@@ -57,8 +57,11 @@ test-unit *args: (_setup builddir)
     meson test -C "{{builddir}}" {{args}}
 
 [group('test')]
-[doc('CLI tests (bats); optional [suite] [name-regex]')]
-test-cli suite="" filter="" jobs="20":
+[doc('Regression test against legacy EQ3/6 outputs')]
+[arg("suite", long="suite")]
+[arg("filter", long="filter")]
+[arg("jobs", long="jobs")]
+test suite="" filter="" jobs="20":
     #!/usr/bin/env bash
     set -euo pipefail
     target="test"
@@ -70,28 +73,46 @@ test-cli suite="" filter="" jobs="20":
     fi
 
 [group('test')]
-[doc('Generate test snapshots')]
-snapshot build="release":
+[doc('Test against pre-generated snapshots')]
+[arg("suite", long="suite")]
+[arg("filter", long="filter")]
+[arg("jobs", long="jobs")]
+test-snapshots dir="" suite="" filter="" jobs="20":
     #!/usr/bin/env bash
     set -euo pipefail
-    case "$(arch)" in
-      "x86_64")
-        ARCH="amd64"
-        ;;
-      "aarch64")
-        ARCH="arm64"
-        ;;
-      *)
-        ARCH="$(arch)"
-        ;;
-    esac
+
+    if [ -n "{{dir}}" ]; then
+        export EQ36_SNAPSHOTS="{{dir}}"
+    else
+        export EQ36_SNAPSHOTS=$(hostname)
+    fi
+
+    target="test/snapshots"
+    if [ -n "{{suite}}" ]; then target="test/snapshots/{{suite}}.bats"; fi
+    if [ -n "{{filter}}" ]; then
+        {{bats_run}} "{{jobs}}" -f "{{filter}}" "$target"
+    else
+        {{bats_run}} "{{jobs}}" "$target"
+    fi
+
+[group('test')]
+[doc('Generate test snapshots')]
+[arg("build", long="build")]
+snapshot dir build="release":
+    #!/usr/bin/env bash
+    set -euo pipefail
 
     BUILD_DIR="{{justfile_directory()}}/{{snapshotdir}}"
 
     TEST_DIR="{{justfile_directory()}}/test"
     DATA_DIR="${TEST_DIR}/data"
     SNAPSHOTS_DIR="${DATA_DIR}/snapshots"
-    OUTPUT_DIR="${SNAPSHOTS_DIR}/${ARCH}"
+
+    if [ -n "{{dir}}" ]; then
+        OUTPUT_DIR="${SNAPSHOTS_DIR}/{{dir}}"
+    else
+        OUTPUT_DIR="${SNAPSHOTS_DIR}/$(hostname)"
+    fi
 
     printf "OUTPUT_DIR: %s\n" "${OUTPUT_DIR}"
 
@@ -130,9 +151,6 @@ snapshot build="release":
         rm -f *.6ba *.6bb *.6t
         popd >/dev/null 2>&1 || exit 10
     done
-
-[group('test')]
-test: test-cli
 
 [group('test')]
 ci: build test

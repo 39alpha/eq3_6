@@ -33,4 +33,5 @@ bin/
 *.out
 *.app
 
+build/
 tmp/

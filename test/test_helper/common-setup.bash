@@ -1,26 +1,37 @@
 #!/usr/bin/env bash
 
-function _cli_build_dir() {
-  if [ -n "${EQ36_TEST_BUILD_DIR:-}" ]; then
-    echo "${EQ36_TEST_BUILD_DIR}"
-    return
-  fi
-  local root
-  root="$(cd "${BATS_TEST_DIRNAME}/../.." >/dev/null 2>&1 && pwd)"
-  echo "${root}/build/test"
+function find_project_root() {
+  local root="${BATS_TEST_DIRNAME}"
+  while [ ! -f "${root}/meson.build" ]; do
+    root="${root}/.."
+  done
+  realpath "${root}"
 }
 
 function _suite_setup() {
-  local build root
-  build="$(_cli_build_dir)"
+  EQ36_ROOT_DIR=$(find_project_root)
+  export EQ36_ROOT_DIR
+
+  EQ36_TEST_DIR="${EQ36_ROOT_DIR}/test"
+  export EQ36_TEST_DIR
+
+  EQ36_TEST_DATA_DIR="${EQ36_TEST_DIR}/data"
+  export EQ36_TEST_DATA_DIR
+
+  if [ -n "${EQ36_SNAPSHOTS:-}" ]; then
+    EQ36_TEST_SNAPSHOTS_DIR="${EQ36_TEST_DATA_DIR}/snapshots/${EQ36_SNAPSHOTS}"
+    export EQ36_TEST_SNAPSHOTS_DIR
+  fi
 
   if [ -z "${EQ36_TEST_BUILD_DIR:-}" ]; then
-    root="$(cd "${BATS_TEST_DIRNAME}/../.." >/dev/null 2>&1 && pwd)"
-    mkdir -p "${root}/build"
-    exec 9>"${root}/build/.cli-test.lock"
+    EQ36_TEST_BUILD_DIR="${EQ36_ROOT_DIR}/build/test"
+    export EQ36_TEST_BUILD_DIR
+
+    mkdir -p "${EQ36_ROOT_DIR}/build"
+    exec 9>"${EQ36_ROOT_DIR}/build/.cli-test.lock"
     flock 9
-    [ -d "${build}" ] || meson setup "${build}" --buildtype=debug >/dev/null
-    meson compile -C "${build}" >/dev/null
+    [ -d "${EQ36_TEST_BUILD_DIR}" ] || meson setup --buildtype=debug "${EQ36_TEST_BUILD_DIR}" "${EQ36_ROOT_DIR}" >/dev/null
+    meson compile -C "${EQ36_TEST_BUILD_DIR}" >/dev/null
     flock -u 9
     exec 9>&-
   fi
@@ -46,67 +57,18 @@ function _suite_setup() {
 }
 
 function _common_setup() {
-  load 'test_helper/bats-support/load'
-  load 'test_helper/bats-assert/load'
-  load 'test_helper/bats-file/load'
-  load 'test_helper/almost-same'
+  load "${EQ36_TEST_DIR}/test_helper/bats-support/load"
+  load "${EQ36_TEST_DIR}/test_helper/bats-assert/load"
+  load "${EQ36_TEST_DIR}/test_helper/bats-file/load"
+  load "${EQ36_TEST_DIR}/test_helper/almost-same"
 
-  TEST_TMPDIR="$(cd "${BATS_TEST_DIRNAME}/.." >/dev/null 2>&1 && pwd)"
-  export TEST_TMPDIR
-
-  local build
-  build="$(_cli_build_dir)"
   mkdir -p "${BATS_TEST_TMPDIR}/bin"
-  cp "${build}/eqpt" "${BATS_TEST_TMPDIR}/bin/eqpt"
-  cp "${build}/eq3nr" "${BATS_TEST_TMPDIR}/bin/eq3nr"
-  cp "${build}/eq6" "${BATS_TEST_TMPDIR}/bin/eq6"
+  cp "${EQ36_TEST_BUILD_DIR}/eqpt" "${BATS_TEST_TMPDIR}/bin/eqpt"
+  cp "${EQ36_TEST_BUILD_DIR}/eq3nr" "${BATS_TEST_TMPDIR}/bin/eq3nr"
+  cp "${EQ36_TEST_BUILD_DIR}/eq6" "${BATS_TEST_TMPDIR}/bin/eq6"
 
   PATH="${BATS_TEST_TMPDIR}/bin:${PATH}"
   export PATH
 
   cd "${BATS_TEST_TMPDIR}" || return 2
-}
-
-function _snapshot_dir() {
-  case "$(arch)" in
-    "aarch64")
-      local -r ARCH="arm64"
-      ;;
-    "x86_64")
-      local -r ARCH="amd64"
-      ;;
-    *)
-      local -r ARCH="$(arch)"
-      ;;
-  esac
-
-  if [[ -d "${BATS_TEST_DIRNAME}/data" ]]; then
-    echo "${BATS_TEST_DIRNAME}/data/snapshots/${ARCH}/${*}"
-  else
-    echo "${BATS_TEST_DIRNAME}/${ARCH}/${*}"
-  fi
-}
-
-function _create_snapshot_dir() {
-  SNAPSHOT_DIR="$(_snapshot_dir "${@}")"
-
-  rm -rf "${SNAPSHOT_DIR}"
-  mkdir -p "${SNAPSHOT_DIR}"
-
-  export SNAPSHOT_DIR
-}
-
-function _snapshot_setup() {
-  load '../../test_helper/bats-support/load'
-  load '../../test_helper/bats-assert/load'
-  load '../../test_helper/bats-file/load'
-
-  TEST_TMPDIR="$(cd "${BATS_TEST_DIRNAME}/../../.." >/dev/null 2>&1 && pwd)"
-  export TEST_TMPDIR
-
-  cd "${BATS_TEST_TMPDIR}" || return 1
-
-  cp "${TEST_TMPDIR}/bin/eqpt" .
-  cp "${TEST_TMPDIR}/bin/eq3nr" .
-  cp "${TEST_TMPDIR}/bin/eq6" .
 }

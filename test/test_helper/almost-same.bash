@@ -10,7 +10,7 @@ function _compare() {
   local atol=${atol:=${TEST_ATOL}}
   local rtol=${rtol:=${TEST_RTOL}}
 
-  diff "${file1}" "${file2}" | "${PYTHON}" "${BATS_TEST_DIRNAME}/test_helper/almost-same.py" -a "${atol}" -r "${rtol}"
+  diff "${file1}" "${file2}" | "${PYTHON}" "${EQ36_TEST_DIR}/test_helper/almost-same.py" -a "${atol}" -r "${rtol}"
 }
 
 assert_files_almost_same() {

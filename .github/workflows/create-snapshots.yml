@@ -1,4 +1,4 @@
-name: snapshots
+name: Create Snapshots
 
 on:
   push:
@@ -23,12 +23,12 @@ jobs:
       with:
         submodules: recursive
     - name: just snapshot
-      run: just snapshot
+      run: just snapshot ubuntu-latest
     - name: archive snapshots
       uses: actions/upload-artifact@v7
       with:
         name: ubuntu-latest
-        path: test/data/snapshots/amd64
+        path: test/data/snapshots/ubuntu-latest
         retention-days: 2
 
   ubuntu-26-arm:
@@ -49,12 +49,12 @@ jobs:
       with:
         submodules: recursive
     - name: just snapshot
-      run: just snapshot
+      run: just snapshot ubuntu-26-arm
     - name: archive snapshots
       uses: actions/upload-artifact@v7
       with:
         name: ubuntu-26-arm
-        path: test/data/snapshots/arm64
+        path: test/data/snapshots/ubuntu-26-arm
         retention-days: 2
 
   macos-26-intel:
@@ -71,13 +71,13 @@ jobs:
     - uses: actions/checkout@v7
       with:
         submodules: recursive
-    - name: just snapshot
-      run: just snapshot
+    - name: just snapshot macos-26-intel
+      run: just snapshot macos-26-intel
     - name: archive snapshots
       uses: actions/upload-artifact@v7
       with:
         name: macos-26-intel
-        path: test/data/snapshots/i386
+        path: test/data/snapshots/macos-26-intel
         retention-days: 2
 
   macos-latest:
@@ -95,10 +95,10 @@ jobs:
       with:
         submodules: recursive
     - name: make snapshot
-      run: just snapshot
+      run: just snapshot macos-latest
     - name: archive snapshots
       uses: actions/upload-artifact@v7
       with:
         name: macos-latest
-        path: test/data/snapshots/arm64
+        path: test/data/snapshots/macos-latest
         retention-days: 2
