@@ -98,7 +98,7 @@ test-snapshots dir="" suite="" filter="" jobs="20":
 [group('test')]
 [doc('Generate test snapshots')]
 [arg("build", long="build")]
-snapshot dir build="release":
+snapshot dir="" build="release":
     #!/usr/bin/env bash
     set -euo pipefail
 

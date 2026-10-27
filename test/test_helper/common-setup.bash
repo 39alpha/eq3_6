@@ -9,6 +9,9 @@ function find_project_root() {
 }
 
 function _suite_setup() {
+  local build_type="${1}"
+  [ -n "${build_type}" ] || build_type="debugoptimized"
+
   EQ36_ROOT_DIR=$(find_project_root)
   export EQ36_ROOT_DIR
 
@@ -30,7 +33,7 @@ function _suite_setup() {
     mkdir -p "${EQ36_ROOT_DIR}/build"
     exec 9>"${EQ36_ROOT_DIR}/build/.cli-test.lock"
     flock 9
-    [ -d "${EQ36_TEST_BUILD_DIR}" ] || meson setup --buildtype=debug "${EQ36_TEST_BUILD_DIR}" "${EQ36_ROOT_DIR}" >/dev/null
+    meson setup --reconfigure "--buildtype=${build_type}" "${EQ36_TEST_BUILD_DIR}" "${EQ36_ROOT_DIR}" >/dev/null
     meson compile -C "${EQ36_TEST_BUILD_DIR}" >/dev/null
     flock -u 9
     exec 9>&-
