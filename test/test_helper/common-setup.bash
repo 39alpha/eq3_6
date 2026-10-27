@@ -9,9 +9,6 @@ function find_project_root() {
 }
 
 function _suite_setup() {
-  local build_type="${1}"
-  [ -n "${build_type}" ] || build_type="debugoptimized"
-
   EQ36_ROOT_DIR=$(find_project_root)
   export EQ36_ROOT_DIR
 
@@ -21,22 +18,12 @@ function _suite_setup() {
   EQ36_TEST_DATA_DIR="${EQ36_TEST_DIR}/data"
   export EQ36_TEST_DATA_DIR
 
+  EQ36_TEST_BUILD_DIR="${EQ36_ROOT_DIR}/build/test"
+  export EQ36_TEST_BUILD_DIR
+
   if [ -n "${EQ36_SNAPSHOTS:-}" ]; then
     EQ36_TEST_SNAPSHOTS_DIR="${EQ36_TEST_DATA_DIR}/snapshots/${EQ36_SNAPSHOTS}"
     export EQ36_TEST_SNAPSHOTS_DIR
-  fi
-
-  if [ -z "${EQ36_TEST_BUILD_DIR:-}" ]; then
-    EQ36_TEST_BUILD_DIR="${EQ36_ROOT_DIR}/build/test"
-    export EQ36_TEST_BUILD_DIR
-
-    mkdir -p "${EQ36_ROOT_DIR}/build"
-    exec 9>"${EQ36_ROOT_DIR}/build/.cli-test.lock"
-    flock 9
-    meson setup --reconfigure "--buildtype=${build_type}" "${EQ36_TEST_BUILD_DIR}" "${EQ36_ROOT_DIR}" >/dev/null
-    meson compile -C "${EQ36_TEST_BUILD_DIR}" >/dev/null
-    flock -u 9
-    exec 9>&-
   fi
 
   if ! which python3 >/dev/null; then

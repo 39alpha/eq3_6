@@ -64,8 +64,14 @@ test-unit *args: (_setup builddir)
 test suite="" filter="" jobs="20":
     #!/usr/bin/env bash
     set -euo pipefail
-    target="test"
-    if [ -n "{{suite}}" ]; then target="test/{{suite}}.bats"; fi
+
+    BUILD_DIR="{{justfile_directory()}}/{{testdir}}"
+
+    meson setup --reconfigure --buildtype=debugoptimized "${BUILD_DIR}"
+    meson compile -C "${BUILD_DIR}"
+
+    target="{{justfile_directory()}}/test"
+    if [ -n "{{suite}}" ]; then target="{{justfile_directory()}}/test/{{suite}}.bats"; fi
     if [ -n "{{filter}}" ]; then
         {{bats_run}} "{{jobs}}" -f "{{filter}}" "$target"
     else
@@ -81,14 +87,19 @@ test-snapshots dir="" suite="" filter="" jobs="20":
     #!/usr/bin/env bash
     set -euo pipefail
 
+    BUILD_DIR="{{justfile_directory()}}/{{testdir}}"
+
+    meson setup --reconfigure --buildtype=release "${BUILD_DIR}"
+    meson compile -C "${BUILD_DIR}"
+
     if [ -n "{{dir}}" ]; then
         export EQ36_SNAPSHOTS="{{dir}}"
     else
         export EQ36_SNAPSHOTS=$(hostname)
     fi
 
-    target="test/snapshots"
-    if [ -n "{{suite}}" ]; then target="test/snapshots/{{suite}}.bats"; fi
+    target="{{justfile_directory()}}/test/snapshots"
+    if [ -n "{{suite}}" ]; then target="{{justfile_directory()}}/test/snapshots/{{suite}}.bats"; fi
     if [ -n "{{filter}}" ]; then
         {{bats_run}} "{{jobs}}" -f "{{filter}}" "$target"
     else
@@ -116,7 +127,7 @@ snapshot dir="" build="release":
 
     printf "OUTPUT_DIR: %s\n" "${OUTPUT_DIR}"
 
-    [ -d "${BUILD_DIR}" ] || meson setup "${BUILD_DIR}" "--buildtype={{build}}" >/dev/null
+    meson setup --reconfigure "--buildtype={{build}}" "${BUILD_DIR}"
     meson compile -C "${BUILD_DIR}" >/dev/null
     export PATH="${BUILD_DIR}:${PATH}"
 

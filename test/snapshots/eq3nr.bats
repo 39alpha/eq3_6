@@ -1,11 +1,11 @@
 setup_file() {
   load '../test_helper/common-setup'
-  _suite_setup release
+  _suite_setup
 }
 
 setup() {
   load '../test_helper/common-setup'
-  _common_setup release
+  _common_setup
 }
 
 function is_setup {
