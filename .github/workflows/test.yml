@@ -61,4 +61,4 @@ jobs:
       with:
         submodules: recursive
     - name: just test
-      run: just test
+      run: just test --jobs=1
