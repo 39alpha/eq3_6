@@ -1,7 +1,7 @@
 project(
   'eq36',
   'fortran',
-  version: '9.1.1',
+  version: '10.0.0',
   meson_version: '>= 0.60',
   default_options: [
     'fortran_std=f2008',
