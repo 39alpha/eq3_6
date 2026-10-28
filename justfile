@@ -133,14 +133,14 @@ snapshot dir="" build="release":
 
     mkdir -p "${OUTPUT_DIR}/eqpt"
     pushd "${OUTPUT_DIR}/eqpt" >/dev/null 2>&1 || exit 2
-    for DATA0 in $(fd -e d0 . "${DATA_DIR}/eqpt"); do
+    for DATA0 in $(find "${DATA_DIR}/eqpt" -name '*.d0'); do
         eqpt "${DATA0}" >/dev/null 2>&1 || exit 3
         perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.po
         perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.po
     done
     popd >/dev/null 2>&1 || exit 4
 
-    for INPUT in $(fd -e 3i . "${DATA_DIR}/eq3nr"); do
+    for INPUT in $(find "${DATA_DIR}/eq3nr" -name '*.3i'); do
         THERMO=$(basename "$(dirname "${INPUT}")")
         DATA1="${OUTPUT_DIR}/eqpt/${THERMO}.d1"
         mkdir -p "${OUTPUT_DIR}/eq3nr/${THERMO}"
@@ -151,7 +151,7 @@ snapshot dir="" build="release":
         popd >/dev/null 2>&1 || exit 7
     done
 
-    for INPUT in $(fd -e 6i . "${DATA_DIR}/eq6"); do
+    for INPUT in $(find "${DATA_DIR}/eq6" -name '*.6i'); do
         THERMO=$(basename "$(dirname "${INPUT}")")
         DATA1="${OUTPUT_DIR}/eqpt/${THERMO}.d1"
         mkdir -p "${OUTPUT_DIR}/eq6/${THERMO}"
