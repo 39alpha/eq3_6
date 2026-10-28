@@ -17,11 +17,6 @@ jobs:
         python-version: '3.14'
     - name: install meson
       run: python -m pip install meson
-    - name: apt-get install fd-find
-      run: |
-        sudo apt-get install fd-find
-        mkdir -p ~/.local/bin
-        ln -s $(which fdfind) ~/.local/bin/fd
     - uses: actions/checkout@v7
       with:
         submodules: recursive
@@ -47,7 +42,31 @@ jobs:
     - name: install meson
       run: python -m pip install meson
     - name: brew reinstall gcc coreutils parallel
-      run: brew reinstall gcc coreutils parallel fd
+      run: brew reinstall gcc coreutils parallel
+    - uses: actions/checkout@v7
+      with:
+        submodules: recursive
+    - name: just snapshot
+      run: just snapshot ${{matrix.os}}
+    - name: archive snapshots
+      uses: actions/upload-artifact@v7
+      with:
+        name: ${{matrix.os}}
+        path: test/data/snapshots/${{matrix.os}}
+        retention-days: 2
+
+  windows:
+    strategy:
+      matrix:
+        os: [windows-latest, windows-11-arm]
+    runs-on: ${{matrix.os}}
+    steps:
+    - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+    - name: install meson
+      run: python -m pip install meson
     - uses: actions/checkout@v7
       with:
         submodules: recursive

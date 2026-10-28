@@ -44,3 +44,21 @@ jobs:
         submodules: recursive
     - name: just test
       run: TERM=dumb just test-snapshots ${{matrix.os}}
+
+  windows:
+    strategy:
+      matrix:
+        os: [windows-latest, windows-11-arm]
+    runs-on: ${{matrix.os}}
+    steps:
+    - uses: extractions/setup-just@v4
+    - uses: actions/setup-python@v7
+      with:
+        python-version: '3.14'
+    - name: install meson
+      run: python -m pip install meson
+    - uses: actions/checkout@v7
+      with:
+        submodules: recursive
+    - name: just test
+      run: just test-snapshots ${{matrix.os}}
