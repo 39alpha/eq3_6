@@ -1098,7 +1098,7 @@ program eq3nr
     data ifrn1,ifrn2 /0,0/
 
     ! Maximum allowed pressure (bars):
-    data presmx /10000./
+    data presmx /90000./
 
     ! BEGIN_MACHINE_DEPENDENT_CODE
     !   Define the console output device number. A value of 6 applies

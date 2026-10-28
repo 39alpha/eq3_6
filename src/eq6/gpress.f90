@@ -35,7 +35,7 @@ subroutine gpress(iopt, jpress, noptmx, noutpt, nptkmx, nttyo, presg, presh, pre
     real(kind=8) :: presmx
 
     ! Maximum allowed pressure (bars):
-    data presmx /10000./
+    data presmx /90000./
 
     if (jpress .eq. 0) then
         ! The pressure corresponds to the data file reference presssure
