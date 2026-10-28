@@ -28,15 +28,6 @@ integer function idamax(nmax,array,incx)
 
     real(kind=8) :: array(nmax)
 
-    ! Local variable declarations.
-    integer :: i
-    integer :: ileft
-    integer :: ix
-    integer :: j
-
-    real(kind=8) :: aax
-    real(kind=8) :: arrmxn
-
     ! Trap illegal value of incx.
     if (incx .ne. 1) then
         write (6,1000) incx
@@ -45,93 +36,5 @@ integer function idamax(nmax,array,incx)
         stop
     end if
 
-    idamax = 0
-    arrmxn = 0.
-
-    if (nmax .le. 0) then
-        go to 999
-    end if
-
-    ! Note the use of a local variable (ix) within the loop.
-    ! Note also that the loop is unrolled.
-    ix = 0
-    ileft = (nmax/8)*8
-
-    do i = 1,ileft,8
-        aax = abs(array(i))
-
-        if (aax .gt. arrmxn) then
-            ix = i
-            arrmxn = aax
-        end if
-
-        j = i + 1
-        aax = abs(array(j))
-
-        if (aax .gt. arrmxn) then
-            ix = j
-            arrmxn = aax
-        end if
-
-        j = i + 2
-        aax = abs(array(j))
-
-        if (aax .gt. arrmxn) then
-            ix = j
-            arrmxn = aax
-        end if
-
-        j = i + 3
-        aax = abs(array(j))
-
-        if (aax .gt. arrmxn) then
-            ix = j
-            arrmxn = aax
-        end if
-
-        j = i + 4
-        aax = abs(array(j))
-
-        if (aax .gt. arrmxn) then
-            ix = j
-            arrmxn = aax
-        end if
-
-        j = i + 5
-        aax = abs(array(j))
-
-        if (aax .gt. arrmxn) then
-            ix = j
-            arrmxn = aax
-        end if
-
-        j = i + 6
-        aax = abs(array(j))
-
-        if (aax .gt. arrmxn) then
-            ix = j
-            arrmxn = aax
-        end if
-
-        j = i + 7
-        aax = abs(array(j))
-
-        if (aax .gt. arrmxn) then
-            ix = j
-            arrmxn = aax
-        end if
-    end do
-
-    do i = ileft + 1,nmax
-        aax = abs(array(i))
-
-        if (aax .gt. arrmxn) then
-            ix = i
-            arrmxn = aax
-        end if
-    end do
-
-    idamax = ix
-
-999 continue
+    idamax = maxloc(abs(array), 1)
 end function idamax

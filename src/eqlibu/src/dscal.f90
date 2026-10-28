@@ -26,12 +26,6 @@ subroutine dscal(nmax, scfact, array, incx)
     real(kind=8) :: array(nmax)
     real(kind=8) :: scfact
 
-    ! Local variable declarations.
-    integer :: i
-    integer :: ileft
-
-    real(kind=8) :: scx
-
     ! Trap illegal value of incx.
     if (incx .ne. 1) then
         write (6,1000) incx
@@ -40,22 +34,5 @@ subroutine dscal(nmax, scfact, array, incx)
         stop
     end if
 
-    ! Note that the loop is unrolled.
-    ileft = (nmax/8)*8
-    scx = scfact
-
-    do i = 1,ileft,8
-        array(i) = scx*array(i)
-        array(i + 1) = scx*array(i + 1)
-        array(i + 2) = scx*array(i + 2)
-        array(i + 3) = scx*array(i + 3)
-        array(i + 4) = scx*array(i + 4)
-        array(i + 5) = scx*array(i + 5)
-        array(i + 6) = scx*array(i + 6)
-        array(i + 7) = scx*array(i + 7)
-    end do
-
-    do i = ileft + 1,nmax
-        array(i) = scx*array(i)
-    end do
+    array = scfact*array
 end subroutine dscal
