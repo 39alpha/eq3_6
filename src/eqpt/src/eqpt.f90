@@ -1035,7 +1035,7 @@ program eqpt
             npx2r1 = npxca + 1
             npx2r2 = npxca + npxth
 
-            if (allocated(abeta) .and. allocated(atheta)) then
+            if (allocated(abeta) .and. allocated(atheta) .and. size(abeta, 2) >= 1) then
                 do npx2 = npx2r1,npx2r2
                     nthd = nthd + 1
                     uthdtr(1,nthd) = upair(1,npx2)
