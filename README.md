@@ -7,7 +7,8 @@ A Software Package for Geochemical Modeling
 This is an updated version of [EQ3/6 Version 8.0a](https://www-gs.llnl.gov/energy-homeland-security/geochemistry)
 developed at Lawrence Livermore National Laboratories. The changes include:
 
-1. **Transitioning to Fortran 2008** though legacy `go to` and `COMMON` still linger, for example.
+1. **Transitioning to Fortran 2008** though global state, per-routine files, `go to` and `COMMON`
+   still linger.
 2. **Modernizing the build system and directory structure** using [`meson`](https://mesonbuild.com) for builds.
 3. **Adding integration tests** against legacy outputs and CI-driven snapshots
 4. **Minor bug fixes,** e.g. [b84f80c](https://github.com/39alpha/eq3_6/commit/b84f80c4b329145238336d0a536a6ec97811eefe)
