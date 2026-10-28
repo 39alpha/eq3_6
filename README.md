@@ -1,4 +1,4 @@
-# eq3_6
+# eq36
 
 [![Eq3/6](https://github.com/39alpha/eq3_6/actions/workflows/build.yml/badge.svg)](https://github.com/39alpha/eq3_6/actions/workflows/build.yml)
 

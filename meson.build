@@ -1,5 +1,5 @@
 project(
-  'eq3_6',
+  'eq36',
   'fortran',
   version: '9.1.1',
   meson_version: '>= 0.60',
