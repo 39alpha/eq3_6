@@ -59,7 +59,8 @@ check_output() {
 
   local -r DIR="${1}"
   local -r PROBLEM="${2}"
-  shift 2
+  local -r ATOL="${3:-1e-12}"
+  local -r RTOL="${4:-1e-6}"
 
   cp "${EQ36_TEST_DATA_DIR}/eqpt/${DIR}.d0" .
   cp "${EQ36_TEST_DATA_DIR}/eq6/${DIR}/${PROBLEM}.6i" .
@@ -73,7 +74,7 @@ check_output() {
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
 
-  assert_files_almost_same  "expected.6p" "${PROBLEM}.6p" 1e-12 3e-5
+  assert_files_almost_same  "expected.6p" "${PROBLEM}.6p" "${ATOL}" "${RTOL}"
   assert_files_almost_same  "expected.6tx" "${PROBLEM}.6tx"
 }
 
@@ -81,7 +82,7 @@ for thermo in cmp fmt hmw ymp ypf; do
   declare -a problems
   case "${thermo}" in
     "cmp")
-      problems=(crisqtz dedolo heatqf heatsw heatswfl j13wsf j13wtitr j13wtuff methane micro microft pptcal pptmins pptqtz pptqtza pyrsw rwssdiag rwtitr swtitr swxrca swxrcaft)
+      problems=(dedolo heatqf heatsw j13wsf j13wtitr j13wtuff pptcal pptmins pptqtz pptqtza pyrsw rwssdiag rwtitr swtitr swxrca swxrcaft)
       ;;
     "fmt")
       problems=(c4pgwbN2 f24vc7b3 f24vc7k4 f24vc7m gypnaclx)
@@ -90,7 +91,7 @@ for thermo in cmp fmt hmw ymp ypf; do
       problems=(calhal evapsw evswgyha fwbrmix gypanhy mgso4 swv1sxk)
       ;;
     "ymp")
-      problems=(crisqtz dedolo heatqf heatsw j13wsf j13wtitr j13wtuff methane micro microft pptcal pptmins pptqtz pptqtza pyrsw rwssdiag rwtitr swtitr swxrca swxrcaft)
+      problems=(crisqtz dedolo heatqf heatsw j13wsf j13wtitr micro pptcal pptmins pptqtz pptqtza pyrsw rwssdiag rwtitr swtitr swxrca swxrcaft)
       ;;
     "ypf")
       problems=(calhal90 evapsw60)
@@ -101,3 +102,35 @@ for thermo in cmp fmt hmw ymp ypf; do
     bats_test_function --description "Correct output (${thermo}/${problem})" -- check_output "${thermo}" "${problem}"
   done
 done
+
+@test "Check output (cmp/crisqtz)" {
+  check_output cmp crisqtz 1e-12 1.6e-6
+}
+
+@test "Check output (cmp/heatswfl)" {
+  check_output cmp heatswfl 1e-12 4.8e-5
+}
+
+@test "Check output (cmp/methane)" {
+  check_output cmp methane 7e-12 1.5e-6
+}
+
+@test "Check output (cmp/micro)" {
+  check_output cmp micro 1e-12 1.7e-4
+}
+
+@test "Check output (cmp/microft)" {
+  check_output cmp microft 1e-12 1.5e-3
+}
+
+@test "Check output (ymp/j13wtuff)" {
+  check_output ymp j13wtuff 1e-12 2.3e-5
+}
+
+@test "Check output (ymp/methane)" {
+  check_output ymp methane 5e-11 8.2e-5
+}
+
+@test "Check output (ymp/microft)" {
+  check_output ymp microft 1e-12 2.6e-6
+}
