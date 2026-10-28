@@ -1,4 +1,4 @@
-name: snapshots
+name: Create Snapshots (v9.x.x)
 
 on:
   push:
