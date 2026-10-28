@@ -15,7 +15,6 @@
  included in the EQ3/6 software transmittal package.
 
 
- Run  13:09:03  07Sep2011
 
  Reading the data1 file header section ...
 
@@ -162,7 +161,7 @@
 |------------------------------------------------------------------------------|
 |Starting Xi value        | 0.00000E+00| (xistti)                              |
 |------------------------------------------------------------------------------|
-|Maximum Xi value         | 1.00000E+00| (ximaxi)                              |
+|Maximum Xi value         | 1.10000E+00| (ximaxi)                              |
 |------------------------------------------------------------------------------|
 |Starting time (seconds)  | 0.00000E+00| (tistti)                              |
 |------------------------------------------------------------------------------|
@@ -686,10 +685,10 @@
      Log K=       0.0000
 
        Coefficients for temperature range  1:
-       -24.0000        0.00000        0.00000        0.00000    
+       -24.0000        0.00000       -0.00000        0.00000    
 
        Coefficients for temperature range  2:
-       -24.0000        0.00000        0.00000        0.00000        0.00000    
+       -24.0000        0.00000       -0.00000        0.00000       -0.00000    
 
 
       1.000  Na+ Site A (Exchanger 1)
@@ -700,10 +699,10 @@
      Log K=       0.0000
 
        Coefficients for temperature range  1:
-       -15.0000        0.00000        0.00000        0.00000    
+       -15.0000        0.00000       -0.00000        0.00000    
 
        Coefficients for temperature range  2:
-       -15.0000        0.00000        0.00000        0.00000        0.00000    
+       -15.0000        0.00000       -0.00000        0.00000       -0.00000    
 
 
 
@@ -765,7 +764,7 @@
 
 
  xistti=  0.00000E+00 (Initial value of Xi)
- ximaxi=  1.00000E+00 (Maximum value of Xi)
+ ximaxi=  1.10000E+00 (Maximum value of Xi)
  tistti=  0.00000E+00 (Initial value of time, sec)
  timmxi=  1.00000E+38 (Maximum value of time, sec)
  phmini= -1.00000E+38 (Minimum value of pH)
@@ -1464,7 +1463,7 @@
              Component                    e           Log e
 
           Ca++                        5.0585E-08     -7.2960
-          Na+                         1.0000E+00      0.0000
+          Na+                         1.0000E+00     -0.0000
 
 
       Whole-Phase Equivalent Fractions
@@ -1472,7 +1471,7 @@
     Component                    e           Log e
 
  Ca++                        5.0585E-08     -7.2960
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Whole-Phase Mole Fractions
@@ -1480,7 +1479,7 @@
     Component                    x           Log x
 
  Ca++                        2.5293E-08     -7.5970
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Thermodynamic Summary
@@ -1488,7 +1487,7 @@
     Component                    x           Log x   Log lambda  Log activity
 
  Ca++ Site A                 2.5293E-08     -7.5970      0.0000     -7.5970
- Na+ Site A                  1.0000E+00      0.0000      0.0000      0.0000
+ Na+ Site A                  1.0000E+00     -0.0000      0.0000     -0.0000
 
 
     Exchanger                     Log Q/K         Aff, kcal    State
@@ -2001,9 +2000,9 @@
      Brucite                      -5.33511     -7.27862
      CaSO4:0.5H2O(beta)           -1.06590     -1.45419
      Calcite                      -0.58662     -0.80032
-     Dolomite                      0.00000      0.00000     SATD
+     Dolomite                     -0.00000     -0.00000     SATD
      Dolomite-dis                 -1.54440     -2.10700
-     Dolomite-ord                  0.00000      0.00000     SATD
+     Dolomite-ord                 -0.00000     -0.00000     SATD
      Epsomite                     -2.65529     -3.62257
      Glauberite                   -3.02032     -4.12058
      Gypsum                       -0.08799     -0.12004
@@ -2048,7 +2047,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -2099,7 +2098,7 @@
     Component                    e           Log e
 
  Ca++                        4.7763E-07     -6.3209
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Whole-Phase Mole Fractions
@@ -2107,7 +2106,7 @@
     Component                    x           Log x
 
  Ca++                        2.3881E-07     -6.6219
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Thermodynamic Summary
@@ -2115,15 +2114,15 @@
     Component                    x           Log x   Log lambda  Log activity
 
  Ca++ Site A                 2.3881E-07     -6.6219      0.0000     -6.6219
- Na+ Site A                  1.0000E+00      0.0000      0.0000      0.0000
+ Na+ Site A                  1.0000E+00     -0.0000      0.0000     -0.0000
 
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2631,7 +2630,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -2682,7 +2681,7 @@
     Component                    e           Log e
 
  Ca++                        7.1058E-07     -6.1484
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Whole-Phase Mole Fractions
@@ -2690,7 +2689,7 @@
     Component                    x           Log x
 
  Ca++                        3.5529E-07     -6.4494
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Thermodynamic Summary
@@ -2698,15 +2697,15 @@
     Component                    x           Log x   Log lambda  Log activity
 
  Ca++ Site A                 3.5529E-07     -6.4494      0.0000     -6.4494
- Na+ Site A                  1.0000E+00      0.0000      0.0000      0.0000
+ Na+ Site A                  1.0000E+00     -0.0000      0.0000     -0.0000
 
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3192,12 +3191,12 @@
      Brucite                      -5.48793     -7.48710
      CaSO4:0.5H2O(beta)           -0.97862     -1.33512
      Calcite                      -0.47528     -0.64842
-     Dolomite                      0.00000      0.00000     SATD
+     Dolomite                     -0.00000     -0.00000     SATD
      Dolomite-dis                 -1.54440     -2.10700
-     Dolomite-ord                  0.00000      0.00000     SATD
+     Dolomite-ord                 -0.00000     -0.00000     SATD
      Epsomite                     -2.78759     -3.80307
      Glauberite                   -3.35321     -4.57473
-     Gypsum                        0.00000      0.00000     SATD
+     Gypsum                       -0.00000     -0.00000     SATD
      Halite                       -2.83100     -3.86229
      Hexahydrite                  -3.01624     -4.11501
      Huntite                      -5.50733     -7.51357
@@ -3238,7 +3237,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -3289,7 +3288,7 @@
     Component                    e           Log e
 
  Ca++                        1.5348E-06     -5.8140
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Whole-Phase Mole Fractions
@@ -3297,7 +3296,7 @@
     Component                    x           Log x
 
  Ca++                        7.6739E-07     -6.1150
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Thermodynamic Summary
@@ -3305,15 +3304,15 @@
     Component                    x           Log x   Log lambda  Log activity
 
  Ca++ Site A                 7.6739E-07     -6.1150      0.0000     -6.1150
- Na+ Site A                  1.0000E+00      0.0000      0.0000      0.0000
+ Na+ Site A                  1.0000E+00     -0.0000      0.0000     -0.0000
 
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3747,12 +3746,12 @@
      Brucite                      -5.58334     -7.61727
      CaSO4:0.5H2O(beta)           -0.97931     -1.33606
      Calcite                      -0.40217     -0.54868
-     Dolomite                      0.00000      0.00000     SATD
+     Dolomite                     -0.00000     -0.00000     SATD
      Dolomite-dis                 -1.54440     -2.10700
-     Dolomite-ord                  0.00000      0.00000     SATD
+     Dolomite-ord                 -0.00000     -0.00000     SATD
      Epsomite                     -2.93151     -3.99941
      Glauberite                   -3.90720     -5.33053
-     Gypsum                        0.00000      0.00000     SATD
+     Gypsum                       -0.00000     -0.00000     SATD
      Halite                       -3.02878     -4.13212
      Hexahydrite                  -3.16062     -4.31198
      Huntite                      -5.65355     -7.71306
@@ -3842,7 +3841,7 @@
     Component                    e           Log e
 
  Ca++                        5.4725E-06     -5.2618
- Na+                         9.9999E-01      0.0000
+ Na+                         9.9999E-01     -0.0000
 
 
       Whole-Phase Mole Fractions
@@ -3850,7 +3849,7 @@
     Component                    x           Log x
 
  Ca++                        2.7363E-06     -5.5628
- Na+                         1.0000E+00      0.0000
+ Na+                         1.0000E+00     -0.0000
 
 
       Thermodynamic Summary
@@ -3858,7 +3857,7 @@
     Component                    x           Log x   Log lambda  Log activity
 
  Ca++ Site A                 2.7363E-06     -5.5628      0.0000     -5.5628
- Na+ Site A                  1.0000E+00      0.0000      0.0000      0.0000
+ Na+ Site A                  1.0000E+00     -0.0000      0.0000     -0.0000
 
 
     Exchanger                     Log Q/K         Aff, kcal    State
@@ -4065,15 +4064,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -3.6284E-12 eq
+               Charge discrepancy= -3.6285E-12 eq
               Sigma |equivalents|=  1.0867E+00 eq
 
           Actual Charge imbalance=  9.2247E-04 eq/kg.solu
         Expected Charge imbalance=  9.2196E-04 eq/kg.solu
-               Charge discrepancy= -3.5169E-12 eq/kg.solu
+               Charge discrepancy= -3.5170E-12 eq/kg.solu
               Sigma |equivalents|=  1.0532E+00 eq/kg.solu
 
-      Relative charge discrepancy= -3.3391E-12
+      Relative charge discrepancy= -3.3392E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -4299,12 +4298,12 @@
      Brucite                      -5.65360     -7.71313
      CaSO4:0.5H2O(beta)           -0.97997     -1.33695
      Calcite                      -0.34539     -0.47121
-     Dolomite                      0.00000      0.00000     SATD
+     Dolomite                     -0.00000     -0.00000     SATD
      Dolomite-dis                 -1.54440     -2.10700
-     Dolomite-ord                  0.00000      0.00000     SATD
+     Dolomite-ord                 -0.00000     -0.00000     SATD
      Epsomite                     -3.04291     -4.15140
      Glauberite                   -4.77617     -6.51606
-     Gypsum                        0.00000      0.00000     SATD
+     Gypsum                       -0.00000     -0.00000     SATD
      Halite                       -3.40353     -4.64339
      Hexahydrite                  -3.27245     -4.46456
      Huntite                      -5.76713     -7.86801
@@ -4342,7 +4341,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -4393,7 +4392,7 @@
     Component                    e           Log e
 
  Ca++                        4.0309E-05     -4.3946
- Na+                         9.9996E-01      0.0000
+ Na+                         9.9996E-01     -0.0000
 
 
       Whole-Phase Mole Fractions
@@ -4401,7 +4400,7 @@
     Component                    x           Log x
 
  Ca++                        2.0155E-05     -4.6956
- Na+                         9.9998E-01      0.0000
+ Na+                         9.9998E-01     -0.0000
 
 
       Thermodynamic Summary
@@ -4409,15 +4408,15 @@
     Component                    x           Log x   Log lambda  Log activity
 
  Ca++ Site A                 2.0155E-05     -4.6956      0.0000     -4.6956
- Na+ Site A                  9.9998E-01      0.0000      0.0000      0.0000
+ Na+ Site A                  9.9998E-01     -0.0000      0.0000     -0.0000
 
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -4632,15 +4631,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy=  2.1560E-12 eq
+               Charge discrepancy=  2.1559E-12 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
         Expected Charge imbalance=  9.2231E-04 eq/kg.solu
-               Charge discrepancy=  2.0905E-12 eq/kg.solu
+               Charge discrepancy=  2.0904E-12 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy=  1.9854E-12
+      Relative charge discrepancy=  1.9853E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -5206,15 +5205,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy=  1.0087E-12 eq
+               Charge discrepancy=  1.0088E-12 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
         Expected Charge imbalance=  9.2232E-04 eq/kg.solu
-               Charge discrepancy=  9.7807E-13 eq/kg.solu
+               Charge discrepancy=  9.7817E-13 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy=  9.2887E-13
+      Relative charge discrepancy=  9.2898E-13
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -5992,11 +5991,11 @@
      Brucite                      -5.69418     -7.76848
      CaSO4:0.5H2O(beta)           -0.98042     -1.33758
      Calcite                      -0.31146     -0.42492
-     Dolomite                      0.00000      0.00000     SATD
+     Dolomite                     -0.00000     -0.00000     SATD
      Dolomite-dis                 -1.54440     -2.10700
-     Dolomite-ord                  0.00000      0.00000     SATD
+     Dolomite-ord                 -0.00000     -0.00000     SATD
      Epsomite                     -3.10923     -4.24188
-     Gypsum                        0.00000      0.00000     SATD
+     Gypsum                       -0.00000     -0.00000     SATD
      Halite                       -5.45058     -7.43615
      Hexahydrite                  -3.33908     -4.55546
      Huntite                      -5.83498     -7.96057
@@ -6306,15 +6305,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy=  6.9016E-13 eq
+               Charge discrepancy=  6.9027E-13 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
         Expected Charge imbalance=  9.2232E-04 eq/kg.solu
-               Charge discrepancy=  6.6920E-13 eq/kg.solu
+               Charge discrepancy=  6.6931E-13 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy=  6.3555E-13
+      Relative charge discrepancy=  6.3565E-13
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -6852,15 +6851,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -5.7857E-13 eq
+               Charge discrepancy= -5.7846E-13 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
         Expected Charge imbalance=  9.2232E-04 eq/kg.solu
-               Charge discrepancy= -5.6100E-13 eq/kg.solu
+               Charge discrepancy= -5.6089E-13 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy= -5.3278E-13
+      Relative charge discrepancy= -5.3268E-13
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -7084,11 +7083,11 @@
      Brucite                      -5.69429     -7.76863
      CaSO4:0.5H2O(beta)           -0.98042     -1.33758
      Calcite                      -0.31137     -0.42480
-     Dolomite                      0.00000      0.00000     SATD
+     Dolomite                     -0.00000     -0.00000     SATD
      Dolomite-dis                 -1.54440     -2.10700
-     Dolomite-ord                  0.00000      0.00000     SATD
+     Dolomite-ord                 -0.00000     -0.00000     SATD
      Epsomite                     -3.10941     -4.24213
-     Gypsum                        0.00000      0.00000     SATD
+     Gypsum                       -0.00000     -0.00000     SATD
      Halite                       -5.61981     -7.66703
      Hexahydrite                  -3.33926     -4.55571
      Huntite                      -5.83516     -7.96083
@@ -7124,7 +7123,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                   0.00000      0.00000     SATD
+     Exchanger 1                  -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -7196,10 +7195,10 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                         0.0000          0.0000   SATD
+ Exchanger 1                        -0.0000         -0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                        0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -7218,7 +7217,7 @@
 
 
                     Xi=  1.00000E+00
-                Log Xi=      0.00000
+                Log Xi=     -0.00000
 
 
  Temperature=  25.00 C
@@ -7228,9 +7227,6 @@
 
  Required print point.
 
- Exhaustion of the following reactant(s):
-     Exchanger 1
-
 
                      --- Reactant Summary ---
 
@@ -7238,10 +7234,10 @@
 
      Reactant                  Moles     Delta moles    Mass, g    Delta mass, g
 
-  Exchanger 1                0.0000E+00   1.0000E+00   0.0000E+00   1.3974E+02
+  Exchanger 1                2.7756E-17   1.0000E+00   3.8786E-15   1.3974E+02
 
 
-                    Mass remaining=  0.0000E+00 grams
+                    Mass remaining=  3.8786E-15 grams
                     Mass destroyed=  1.3974E+02 grams
 
 
@@ -7755,15 +7751,558 @@
 
 
 
+ Stepping to Xi=  1.0000E+00, delxi=  2.2232E-14, nord= 6
+ Steps completed=    68, iter=   1, ncorr= 0
+ Most rapidly changing is zvclg1(Na+)=     -3.4337
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+                    Xi=  1.00000E+00
+                Log Xi=      0.00000
+
+
+ Temperature=  25.00 C
+
+ Pressure=   1.0132     bars
+
+
+ Exhaustion of the following reactant(s):
+     Exchanger 1
+
+
+                     --- Reactant Summary ---
+
+
+
+     Reactant                  Moles     Delta moles    Mass, g    Delta mass, g
+
+  Exchanger 1                0.0000E+00   1.0000E+00   0.0000E+00   1.3974E+02
+
+
+                    Mass remaining=  0.0000E+00 grams
+                    Mass destroyed=  1.3974E+02 grams
+
+
+     Reactant                   Affinity     Rel. Rate
+                                kcal/mol      mol/mol
+
+  Exchanger 1                     -0.0469   1.0000E+00
+
+
+   Affinity of the overall irreversible reaction= 0.0469 kcal.
+   Contributions from irreversible reactions with no thermodynamic data
+   are not included.
+
+
+           --- Elemental Composition of the Aqueous Solution ---
+
+   Element        mg/L       mg/kg.sol    Molarity     Molality
+
+     O         8.79817E+05  8.61894E+05  5.49906E+01  5.55573E+01
+     Ca        9.00572E+03  8.82226E+03  2.24705E-01  2.27020E-01
+     Cl        1.91673E+04  1.87768E+04  5.40644E-01  5.46215E-01
+     H         1.10758E+05  1.08502E+05  1.09886E+02  1.11018E+02
+     C         1.72695E+01  1.69177E+01  1.43781E-03  1.45263E-03
+     K         3.95270E+02  3.87218E+02  1.01097E-02  1.02138E-02
+     Mg        1.27254E+03  1.24662E+03  5.23572E-02  5.28967E-02
+     Na        8.73427E+00  8.55634E+00  3.79920E-04  3.83834E-04
+     S         3.52881E+02  3.45692E+02  1.10048E-02  1.11182E-02
+
+
+           --- Numerical Composition of the Aqueous Solution ---
+
+   Species                    mg/L       mg/kg.sol    Molarity     Molality
+
+ H2O                       9.89793E+05  9.69630E+05  5.49419E+01  5.55080E+01
+ Ca++                      9.00572E+03  8.82226E+03  2.24705E-01  2.27020E-01
+ Cl-                       1.91673E+04  1.87768E+04  5.40644E-01  5.46215E-01
+ H+                        4.23741E-01  4.15108E-01  4.20403E-04  4.24735E-04
+ HCO3-                     8.77311E+01  8.59439E+01  1.43781E-03  1.45263E-03
+ K+                        3.95270E+02  3.87218E+02  1.01097E-02  1.02138E-02
+ Mg++                      1.27254E+03  1.24662E+03  5.23572E-02  5.28967E-02
+ Na+                       8.73427E+00  8.55634E+00  3.79920E-04  3.83834E-04
+ SO4--                     1.05716E+03  1.03563E+03  1.10048E-02  1.11182E-02
+ O2(g)                     6.92520E+00  6.78412E+00  2.16420E-04  2.18650E-04
+
+   Some of the above data may not be physically significant.
+
+
+           --- Sensible Composition of the Aqueous Solution ---
+
+   Species                    mg/L       mg/kg.sol    Molarity     Molality
+
+ Ca++                      9.00572E+03  8.82226E+03  2.24705E-01  2.27020E-01
+ Cl-                       1.91673E+04  1.87768E+04  5.40644E-01  5.46215E-01
+ H+                        4.23741E-01  4.15108E-01  4.20403E-04  4.24735E-04
+ HCO3-                     8.77311E+01  8.59439E+01  1.43781E-03  1.45263E-03
+ K+                        3.95270E+02  3.87218E+02  1.01097E-02  1.02138E-02
+ Mg++                      1.27254E+03  1.24662E+03  5.23572E-02  5.28967E-02
+ Na+                       8.73427E+00  8.55634E+00  3.79920E-04  3.83834E-04
+ SO4--                     1.05716E+03  1.03563E+03  1.10048E-02  1.11182E-02
+
+   The above data have physical significance, but some may be
+   inconsistent with certain analytical methods or reporting schemes.
+
+
+           --- The pH, Eh, pe-, and Ah on various pH scales ---
+
+                               pH     Eh, volts        pe-       Ah, kcal
+
+ NBS pH scale                6.2506     0.8494     1.4358E+01     19.5884
+ Mesmer pH (pmH) scale       6.1434     0.8557     1.4465E+01     19.7346
+
+
+      pcH=      6.1478
+     pHCl=      6.7192
+
+
+   The single ion activities and activity coefficients listed below
+   are consistent with the NBS pH scale.
+
+
+
+                    Oxygen fugacity= 0.20802 bars
+                Log oxygen fugacity= -0.68189
+
+                  Activity of water= 0.98707
+              Log activity of water= -5.65011E-03
+
+             Mole fraction of water= 0.98527
+         Log mole fraction of water= -6.44292E-03
+
+      Activity coefficient of water= 1.0018
+  Log activity coefficient of water= 7.92814E-04
+
+                Osmotic coefficient= 0.87046
+ Stoichiometric osmotic coefficient= 0.84987
+
+                  Sum of molalities= 0.82963
+   Sum of stoichiometric molalities= 0.84973
+
+                 Ionic strength (I)= 0.80900 molal
+      Stoichiometric ionic strength= 0.86142 molal
+
+                Ionic asymmetry (J)= 0.25725 molal
+     Stoichiometric ionic asymmetry= 0.26896 molal
+
+                       Solvent mass= 999.39 g
+                 Solutes (TDS) mass= 31.294 g
+              Aqueous solution mass= 1030.7 g
+
+            Aqueous solution volume= 1.0097 L
+
+                   Solvent fraction= 0.96964 kg.H2O/kg.sol
+                    Solute fraction= 3.03628E-02 kg.tds/kg.sol
+
+      Total dissolved solutes (TDS)= 30363. mg/kg.sol
+                                TDS= 30994. mg/L
+                                TDS= 30.994 g/L
+
+                   Solution density= 1.0208 g/mL
+                   Solution density= 1020.8 g/L
+
+                  Molarity/molality= 0.98980 kg.H2O/L
+                  Molality/molarity= 1.0103 L/kg.H2O
+
+
+
+           --- More Precise Aqueous Phase Masses ---
+
+                       Solvent mass= 999.39072 g
+                 Solutes (TDS) mass= 31.294460 g
+              Aqueous solution mass= 1030.6852 g
+
+
+
+           --- HCO3-CO3-OH Total Alkalinity ---
+
+                 1.02871E-03 eq/kg.H2O
+                 1.01821E-03 eq/L
+                  49.874     mg/kg.sol CaCO3
+                  60.806     mg/kg.sol HCO3-
+                  50.911     mg/L CaCO3
+                  62.070     mg/L HCO3-
+
+
+           --- Extended Total Alkalinity ---
+
+                 1.02871E-03 eq/kg.H2O
+                 1.01821E-03 eq/L
+                  49.874     mg/kg.sol CaCO3
+                  60.806     mg/kg.sol HCO3-
+                  50.911     mg/L CaCO3
+                  62.070     mg/L HCO3-
+
+
+
+        --- Aqueous Solution Charge Balance ---
+
+          Actual Charge imbalance=  9.5120E-04 eq
+        Expected Charge imbalance=  9.5120E-04 eq
+               Charge discrepancy= -2.2459E-13 eq
+              Sigma |equivalents|=  1.0859E+00 eq
+
+          Actual Charge imbalance=  9.2288E-04 eq/kg.solu
+        Expected Charge imbalance=  9.2232E-04 eq/kg.solu
+               Charge discrepancy= -2.1777E-13 eq/kg.solu
+              Sigma |equivalents|=  1.0530E+00 eq/kg.solu
+
+      Relative charge discrepancy= -2.0682E-13
+
+
+                --- Distribution of Aqueous Solute Species ---
+
+    Species                  Molality    Log Molality   Log Gamma  Log Activity
+
+ Cl-                        5.3356E-01      -0.2728      -0.1958      -0.4686
+ Ca++                       2.1603E-01      -0.6655      -0.6595      -1.3250
+ Mg++                       4.5369E-02      -1.3432      -0.5430      -1.8862
+ K+                         1.0101E-02      -1.9956      -0.2253      -2.2210
+ CaCl+                      5.0475E-03      -2.2969      -0.1923      -2.4892
+ MgCl+                      5.0415E-03      -2.2974      -0.1923      -2.4897
+ CaSO4(aq)                  4.3662E-03      -2.3599       0.0000      -2.3599
+ SO4--                      4.3070E-03      -2.3658      -0.7802      -3.1460
+ MgSO4(aq)                  2.3960E-03      -2.6205       0.0000      -2.6205
+ CaCl2(aq)                  1.2421E-03      -2.9058       0.0000      -2.9058
+ HCO3-                      5.9504E-04      -3.2255      -0.1628      -3.3882
+ CO2(aq)                    4.2800E-04      -3.3686       0.0801      -3.2885
+ Na+                        3.6862E-04      -3.4334      -0.1923      -3.6257
+ CaHCO3+                    3.3555E-04      -3.4742      -0.1923      -3.6665
+ O2(aq)                     2.1865E-04      -3.6602       0.0801      -3.5802
+ MgHCO3+                    8.9855E-05      -4.0465      -0.1923      -4.2388
+ KCl(aq)                    6.5437E-05      -4.1842       0.0000      -4.1842
+ KSO4-                      4.7363E-05      -4.3246      -0.1628      -4.4873
+ NaCl(aq)                   1.3448E-05      -4.8713       0.0000      -4.8713
+ CaCO3(aq)                  3.4329E-06      -5.4643       0.0000      -5.4643
+ NaSO4-                     1.6258E-06      -5.7889      -0.1628      -5.9517
+ H+                         7.1880E-07      -6.1434      -0.1072      -6.2506
+ MgCO3(aq)                  4.2291E-07      -6.3738       0.0000      -6.3738
+ CO3--                      1.8208E-07      -6.7397      -0.7267      -7.4664
+ NaHCO3(aq)                 1.3808E-07      -6.8599       0.0000      -6.8599
+ HSO4-                      5.5628E-08      -7.2547      -0.1628      -7.4175
+ HCl(aq)                    4.0811E-08      -7.3892       0.0000      -7.3892
+ OH-                        2.6788E-08      -7.5721      -0.1781      -7.7501
+ CaOH+                      1.8291E-08      -7.7378      -0.1923      -7.9301
+ NaCO3-                     3.8462E-11     -10.4150      -0.1628     -10.5778
+ KOH(aq)                    3.6643E-11     -10.4360       0.0000     -10.4360
+ KHSO4(aq)                  1.5705E-11     -10.8039       0.0000     -10.8039
+ NaOH(aq)                   6.6747E-13     -12.1756       0.0000     -12.1756
+ HClO(aq)                   9.0873E-17     -16.0416       0.0000     -16.0416
+ H2SO4(aq)                  2.1474E-17     -16.6681       0.0000     -16.6681
+ ClO-                       6.3478E-18     -17.1974      -0.1628     -17.3602
+ Mg4(OH)4++++               3.2568E-20     -19.4872      -2.8279     -22.3151
+ ClO3-                      1.1977E-23     -22.9217      -0.1781     -23.0997
+ ClO4-                      6.9184E-24     -23.1600      -0.1781     -23.3381
+ HO2-                       2.0687E-24     -23.6843      -0.1628     -23.8471
+ ClO2-                      1.0139E-27     -26.9940      -0.1628     -27.1568
+ HSO5-                      4.8927E-29     -28.3105      -0.1628     -28.4732
+ HClO2(aq)                  5.7862E-31     -30.2376       0.0000     -30.2376
+ S2O8--                     5.0418E-43     -42.2974      -0.7802     -43.0776
+ Ca(For)+                   7.8307E-45     -44.1062      -0.1923     -44.2985
+ Formate                    5.9498E-45     -44.2255      -0.1781     -44.4036
+ H2(aq)                     3.9603E-45     -44.4023       0.0801     -44.3222
+ Mg(For)+                   2.1507E-45     -44.6674      -0.1923     -44.8597
+ K(For)(aq)                 2.5442E-47     -46.5945       0.0000     -46.5945
+ HSO3-                      1.3719E-47     -46.8627      -0.1628     -47.0254
+ Formic_acid(aq)            1.2555E-47     -46.9012       0.0000     -46.9012
+ SO3--                      5.5776E-48     -47.2536      -0.7267     -47.9802
+ Na(For)(aq)                1.0485E-48     -47.9794       0.0000     -47.9794
+ CO(aq)                     2.8619E-50     -49.5433       0.0000     -49.5433
+ H2SO3(aq)                  5.3920E-52     -51.2683       0.0000     -51.2683
+ SO2(aq)                    3.8886E-52     -51.4102       0.0000     -51.4102
+ Oxalate                    2.1616E-52     -51.6652      -0.7802     -52.4454
+ H-Oxalate                  5.2893E-55     -54.2766      -0.1628     -54.4394
+ Oxalic_acid(aq)            3.8046E-60     -59.4197       0.0000     -59.4197
+ S2O6--                     2.3055E-68     -67.6372      -0.7802     -68.4174
+ Ca(For)2(aq)               1.4723E-88     -87.8320       0.0000     -87.8320
+ Mg(For)2(aq)               4.0438E-89     -88.3932       0.0000     -88.3932
+ K(For)2-                   7.3272E-92     -91.1351      -0.1628     -91.2978
+ Na(For)2-                  3.1599E-93     -92.5003      -0.1628     -92.6631
+ Formaldehyde(aq)           2.3383E-93     -92.6311       0.0000     -92.6311
+ S2O5--                     8.2683E-99     -98.0826      -0.7802     -98.8627
+
+    Species with molalities less than  1.000-100 are not listed.
+
+
+
+      --- Major Species by Contribution to Aqueous Mass Balances ---
+
+
+ Species Accounting for 99% or More of Aqueous Ca++
+
+     Species                   Factor    Molality     Per Cent
+
+   Ca++                         1.00    2.1603E-01     95.16
+   CaCl+                        1.00    5.0475E-03      2.22
+   CaSO4(aq)                    1.00    4.3662E-03      1.92
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             2.2544E-01     99.30
+
+
+ Species Accounting for 99% or More of Aqueous Cl-
+
+     Species                   Factor    Molality     Per Cent
+
+   Cl-                          1.00    5.3356E-01     97.68
+   CaCl+                        1.00    5.0475E-03    9.241E-01
+   MgCl+                        1.00    5.0415E-03    9.230E-01
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             5.4365E-01     99.53
+
+
+ Species Accounting for 99% or More of Aqueous HCO3-
+
+     Species                   Factor    Molality     Per Cent
+
+   HCO3-                        1.00    5.9504E-04     40.96
+   CO2(aq)                      1.00    4.2800E-04     29.46
+   CaHCO3+                      1.00    3.3555E-04     23.10
+   MgHCO3+                      1.00    8.9855E-05      6.19
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.4484E-03     99.71
+
+
+ Species Accounting for 99% or More of Aqueous K+
+
+     Species                   Factor    Molality     Per Cent
+
+   K+                           1.00    1.0101E-02     98.90
+   KCl(aq)                      1.00    6.5437E-05    6.407E-01
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.0166E-02     99.54
+
+
+ Species Accounting for 99% or More of Aqueous Mg++
+
+     Species                   Factor    Molality     Per Cent
+
+   Mg++                         1.00    4.5369E-02     85.77
+   MgCl+                        1.00    5.0415E-03      9.53
+   MgSO4(aq)                    1.00    2.3960E-03      4.53
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             5.2806E-02     99.83
+
+
+ Species Accounting for 99% or More of Aqueous Na+
+
+     Species                   Factor    Molality     Per Cent
+
+   Na+                          1.00    3.6862E-04     96.04
+   NaCl(aq)                     1.00    1.3448E-05      3.50
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             3.8207E-04     99.54
+
+
+ Species Accounting for 99% or More of Aqueous SO4--
+
+     Species                   Factor    Molality     Per Cent
+
+   CaSO4(aq)                    1.00    4.3662E-03     39.27
+   SO4--                        1.00    4.3070E-03     38.74
+   MgSO4(aq)                    1.00    2.3960E-03     21.55
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             1.1069E-02     99.56
+
+
+
+                --- Aqueous Redox Reactions ---
+
+   Couple                           Eh, volts      pe-      log fO2   Ah, kcal
+
+ DEFAULT                              0.849    1.4358E+01    -0.682    19.588
+
+    Couples required to satisfy the default redox constraint are not listed.
+
+
+
+                     --- Summary of Solid Phases (ES) ---
+
+   Phase/End-member            Log moles     Moles        Grams     Volume, cm3
+
+ Dolomite-ord                    -3.5450   2.8513E-04   5.2578E-02   0.0000E+00
+ Gypsum                          -1.7665   1.7120E-02   2.9476E+00   0.0000E+00
+
+ Exchanger 1                    -12.0000   1.0000E-12   0.0000E+00   0.0000E+00
+   Ca++ Site A                   -0.5834   2.6100E-01   0.0000E+00   0.0000E+00
+   Na+ Site A                    -0.3206   4.7800E-01   0.0000E+00   0.0000E+00
+
+
+            --- Grand Summary of Solid Phases (ES + PRS + Reactants) ---
+
+   Phase/End-member            Log moles     Moles        Grams     Volume, cm3
+
+ Dolomite-ord                    -3.5450   2.8513E-04   5.2578E-02   0.0000E+00
+ Gypsum                          -1.7665   1.7120E-02   2.9476E+00   0.0000E+00
+
+ Exchanger 1                    -12.0000   1.0000E-12   2.1449E+01   0.0000E+00
+   Ca++ Site A                   -0.5834   2.6100E-01   1.0460E+01   0.0000E+00
+   Na+ Site A                    -0.3206   4.7800E-01   1.0989E+01   0.0000E+00
+
+
+                          Mass, grams       Volume, cm3
+
+           Created         3.00014E+00       0.00000E+00
+           Destroyed       1.39740E+02       0.00000E+00
+           Net            -1.36739E+02       0.00000E+00
+
+          These volume totals may be incomplete because of missing
+          partial molar volume data in the data base.
+
+
+
+      --- Saturation States of Aqueous Reactions Not Fixed at Equilibrium ---
+
+   Reaction                           Log Q/K    Affinity, kcal
+
+ None
+
+
+
+           --- Saturation States of Pure Solids ---
+
+       Phase                      Log Q/K    Affinity, kcal
+
+     Anhydrite                    -0.16460     -0.22456
+     Antarcticite                 -6.38945     -8.71703
+     Aragonite                    -0.45574     -0.62176
+     Arcanite                     -5.78710     -7.89526
+     Bassanite                    -0.81232     -1.10824
+     Bischofite                   -7.24966     -9.89061
+     Brucite                      -5.69432     -7.76867
+     CaSO4:0.5H2O(beta)           -0.98042     -1.33758
+     Calcite                      -0.31134     -0.42476
+     Dolomite                     -0.00000     -0.00000     SATD
+     Dolomite-dis                 -1.54440     -2.10700
+     Dolomite-ord                 -0.00000     -0.00000     SATD
+     Epsomite                     -3.10946     -4.24219
+     Gypsum                       -0.00000     -0.00000     SATD
+     Halite                       -5.67984     -7.74892
+     Hexahydrite                  -3.33931     -4.55577
+     Huntite                      -5.83521     -7.96089
+     Ice                          -0.14435     -0.19693
+     Kalicinite                   -5.89289     -8.03959
+     Kieserite                    -4.77086     -6.50882
+     Lansfordite                  -3.89301     -5.31117
+     Magnesite                    -1.31746     -1.79739
+     Monohydrocalcite             -1.15069     -1.56988
+     Nahcolite                    -6.90216     -9.41651
+     Nesquehonite                 -4.03631     -5.50667
+     Pentahydrite                 -3.67326     -5.01138
+     Polyhalite                   -7.26102     -9.90610
+     Starkeyite                   -4.05491     -5.53206
+     Sylvite                      -3.53548     -4.82340
+     Syngenite                    -4.46445     -6.09079
+
+        Phases with affinities less than -10 kcal are not listed.
+
+
+
+           --- Saturation States of Pure Liquids ---
+
+       Phase                      Log Q/K    Affinity, kcal
+
+     H2O                          -0.00565     -0.00771
+
+        Phases with affinities less than -10 kcal are not listed.
+
+
+
+           --- Saturation States of Generic Ion Exchangers ---
+
+       Phase                      Log Q/K    Affinity, kcal
+
+     Exchanger 1                  -0.00000     -0.00000     SATD
+
+        Phases with affinities less than -10 kcal are not listed.
+
+
+           --- Summary of Saturated and Supersaturated Phases ---
+
+                There are    4 saturated phases.
+                There are no supersaturated phases.
+
+
+
+           --- Generic Ion Exchange Phases ---
+
+
+                --- Exchanger 1 ---
+
+
+     Exchanger model= Vanselow
+     Amount of substrate (Z)=  1.0000E-12 mol
+     Concentration of substrate=  1.0006E-12
+
+     Apparent cation exchange capacity=  1.0000E+12 eq/mol
+     Total exchangeable cations=  1.0000E+00 eq
+     Total exchangeable cations=  1.0006E+00 eq/kg.H2O
+
+       Site: Site A
+
+         Formal exchange capacity=  1.0000E+00 eq/mol
+         Apparent exchange capacity=  1.0000E+12 eq/mol
+         Total exchangeable ions=  1.0000E+00 eq
+         Total exchangeable ions=  1.0006E+00 eq/kg.H2O
+
+
+             Component                   eq          eq/kg.H2O
+
+          Ca++                        5.2200E-01    5.2232E-01
+          Na+                         4.7800E-01    4.7829E-01
+
+
+             Component                    e           Log e
+
+          Ca++                        5.2200E+11     11.7177
+          Na+                         4.7800E+11     11.6794
+
+
+      Whole-Phase Equivalent Fractions
+
+    Component                    e           Log e
+
+ Ca++                        5.2200E-01     -0.2823
+ Na+                         4.7800E-01     -0.3206
+
+
+      Whole-Phase Mole Fractions
+
+    Component                    x           Log x
+
+ Ca++                        3.5318E-01     -0.4520
+ Na+                         6.4682E-01     -0.1892
+
+
+      Thermodynamic Summary
+
+    Component                    x           Log x   Log lambda  Log activity
+
+ Ca++ Site A                 3.5318E-01     -0.4520      0.0000     -0.4520
+ Na+ Site A                  6.4682E-01     -0.1892      0.0000     -0.1892
+
+
+    Exchanger                     Log Q/K         Aff, kcal    State
+
+ Exchanger 1                        -0.0000         -0.0000   SATD
+
+   Ca++ Site A                       0.0000          0.0000   SATD
+   Na+ Site A                       -0.0000         -0.0000   SATD
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
    Each reactant is now saturated or exhausted.
 
  ---  The reaction path has terminated normally ---
 
 
-          67 steps were taken
+          68 steps were taken
        Xi increased from 
                0.00000E+00 to  1.00000E+00
-       The average value of delxi was  1.49254E-02
+       The average value of delxi was  1.47059E-02
        The average matrix dimension was   13
 
        The pH decreased from 6.7319 to 6.2506
@@ -7774,9 +8313,6 @@
 
  No further input found.
 
-          Start time = 13:09:03  07Sep2011
-            End time = 13:09:07  07Sep2011
 
-           Run time =   4.17     seconds
 
  Normal exit

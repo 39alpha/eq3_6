@@ -15,7 +15,6 @@
  included in the EQ3/6 software transmittal package.
 
 
- Run  13:11:41  07Sep2011
 
  Reading the data1 file header section ...
 
@@ -340,7 +339,7 @@
 |------------------------------------------------------------------------------|
 |Starting Xi value        | 0.00000E+00| (xistti)                              |
 |------------------------------------------------------------------------------|
-|Maximum Xi value         | 6.50000E+00| (ximaxi)                              |
+|Maximum Xi value         | 6.60000E+00| (ximaxi)                              |
 |------------------------------------------------------------------------------|
 |Starting time (seconds)  | 0.00000E+00| (tistti)                              |
 |------------------------------------------------------------------------------|
@@ -864,7 +863,7 @@
 
 
  xistti=  0.00000E+00 (Initial value of Xi)
- ximaxi=  6.50000E+00 (Maximum value of Xi)
+ ximaxi=  6.60000E+00 (Maximum value of Xi)
  tistti=  0.00000E+00 (Initial value of time, sec)
  timmxi=  1.00000E+38 (Maximum value of time, sec)
  phmini= -1.00000E+38 (Minimum value of pH)
@@ -1099,7 +1098,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Calcite                          0.0000   0.0000E+00
+  Calcite                         -0.0000   0.0000E+00
   Halite                          35.9336   1.0000E+00
 
 
@@ -1551,7 +1550,7 @@
 
  Stepping to Xi=  1.0000E+00, delxi=  6.6330E-02, nord= 6
  Steps completed=    37, iter=  18, ncorr= 0
- Most rapidly changing is zvclg1(Cl-)=      0.0000
+ Most rapidly changing is zvclg1(Cl-)=     -0.0000
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1719,8 +1718,8 @@
 
     Species                  Molality    Log Molality   Log Gamma  Log Activity
 
- Na+                        9.9999E-01       0.0000      -0.1640      -0.1641
- Cl-                        9.9998E-01       0.0000      -0.2342      -0.2342
+ Na+                        9.9999E-01      -0.0000      -0.1640      -0.1641
+ Cl-                        9.9998E-01      -0.0000      -0.2342      -0.2342
  HCO3-                      2.5157E-03      -2.5993      -0.3392      -2.9385
  Ca++                       1.3093E-03      -2.8830      -0.7163      -3.5992
  CO2(aq)                    9.6303E-05      -4.0164       0.0836      -3.9328
@@ -1788,7 +1787,7 @@
  H+/HCO3-                     -5.1476     -3.6337      -1.5138      3.0631E-02
  H+/Cl-                       -3.7954     -2.3471      -1.4483      3.5624E-02
  Na+/HCO3-                    -1.5513     -1.2866      -0.2647      5.4359E-01
- Na+/Cl-                      -0.1991      0.0000      -0.1991      6.3220E-01
+ Na+/Cl-                      -0.1991     -0.0000      -0.1991      6.3220E-01
 
    The stoichiometric mean molalities and activity coefficients given
    above are consistent with the sensible composition of the
@@ -1808,7 +1807,7 @@
  H+/OH-                       -6.2203     -6.0418      -0.1785      6.6302E-01
  H+/CO3--                     -6.7936     -6.2698      -0.5237      2.9940E-01
  Na+/HCO3-                    -1.5513     -1.2997      -0.2516      5.6025E-01
- Na+/Cl-                      -0.1991      0.0000      -0.1991      6.3221E-01
+ Na+/Cl-                      -0.1991     -0.0000      -0.1991      6.3221E-01
  Na+/OH-                      -2.6241     -2.4048      -0.2192      6.0361E-01
  Na+/CO3--                    -1.9985     -1.4205      -0.5781      2.6418E-01
 
@@ -1858,7 +1857,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Aragonite                    -0.23450     -0.38967
-     Calcite                       0.00000      0.00000     SATD
+     Calcite                      -0.00000     -0.00000     SATD
      Halite                       -1.97905     -3.28861
      Na2CO3:7H2O                  -5.89196     -9.79076
      Nahcolite                    -2.96986     -4.93506
@@ -2219,7 +2218,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Aragonite                    -0.23450     -0.38967
-     Calcite                       0.00000      0.00000     SATD
+     Calcite                      -0.00000     -0.00000     SATD
      Gaylussite                   -5.92013     -9.83757
      Halite                       -1.35440     -2.25062
      Na2CO3:7H2O                  -5.42251     -9.01066
@@ -2578,7 +2577,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Aragonite                    -0.23450     -0.38967
-     Calcite                       0.00000      0.00000     SATD
+     Calcite                      -0.00000     -0.00000     SATD
      Gaylussite                   -5.67001     -9.42193
      Halite                       -0.94417     -1.56894
      Na2CO3:7H2O                  -5.20897     -8.65581
@@ -2933,7 +2932,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Aragonite                    -0.23450     -0.38967
-     Calcite                       0.00000      0.00000     SATD
+     Calcite                      -0.00000     -0.00000     SATD
      Gaylussite                   -5.53482     -9.19730
      Halite                       -0.62225     -1.03400
      Na2CO3:7H2O                  -5.11419     -8.49833
@@ -3284,7 +3283,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Aragonite                    -0.23450     -0.38967
-     Calcite                       0.00000      0.00000     SATD
+     Calcite                      -0.00000     -0.00000     SATD
      Gaylussite                   -5.47041     -9.09027
      Halite                       -0.35054     -0.58250
      Na2CO3:7H2O                  -5.09371     -8.46430
@@ -3635,7 +3634,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Aragonite                    -0.23450     -0.38967
-     Calcite                       0.00000      0.00000     SATD
+     Calcite                      -0.00000     -0.00000     SATD
      Gaylussite                   -5.45649     -9.06713
      Halite                       -0.11268     -0.18725
      Na2CO3:7H2O                  -5.12684     -8.51935
@@ -3695,8 +3694,6 @@
 
  Exhaustion of the following reactant(s):
      Halite
-
- Maximum value of Xi.
 
 
                      --- Reactant Summary ---
@@ -3990,7 +3987,7 @@
 
      Antarcticite                 -5.93697     -9.86554
      Aragonite                    -0.23450     -0.38967
-     Calcite                       0.00000      0.00000     SATD
+     Calcite                      -0.00000     -0.00000     SATD
      Gaylussite                   -5.46489     -9.08109
      Halite                       -0.00364     -0.00606
      Na2CO3:7H2O                  -5.15978     -8.57409
@@ -4032,8 +4029,6 @@
 
 
 
-   Have reached the maximum value of Xi.
-
    Each reactant is now saturated or exhausted.
 
  ---  The reaction path has terminated normally ---
@@ -4051,9 +4046,6 @@
 
  No further input found.
 
-          Start time = 13:11:41  07Sep2011
-            End time = 13:11:41  07Sep2011
 
-           Run time =  0.172     seconds
 
  Normal exit

@@ -15,7 +15,6 @@
  included in the EQ3/6 software transmittal package.
 
 
- Run  13:10:41  07Sep2011
 
  Reading the data1 file header section ...
 
@@ -200,7 +199,7 @@
 |------------------------------------------------------------------------------|
 |Starting Xi value        | 0.00000E+00| (xistti)                              |
 |------------------------------------------------------------------------------|
-|Maximum Xi value         | 8.00000E+00| (ximaxi)                              |
+|Maximum Xi value         | 8.10000E+00| (ximaxi)                              |
 |------------------------------------------------------------------------------|
 |Starting time (seconds)  | 0.00000E+00| (tistti)                              |
 |------------------------------------------------------------------------------|
@@ -652,7 +651,7 @@
 
 
  xistti=  0.00000E+00 (Initial value of Xi)
- ximaxi=  8.00000E+00 (Maximum value of Xi)
+ ximaxi=  8.10000E+00 (Maximum value of Xi)
  tistti=  0.00000E+00 (Initial value of time, sec)
  timmxi=  1.00000E+38 (Maximum value of time, sec)
  phmini= -1.00000E+38 (Minimum value of pH)
@@ -1144,7 +1143,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Brucite                      -2.55793     -3.48975
-     Epsomite                      0.00000      0.00000     SATD
+     Epsomite                     -0.00000     -0.00000     SATD
      Hexahydrite                  -0.20352     -0.27767
      Kieserite                    -1.50355     -2.05127
 
@@ -1266,7 +1265,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Epsomite                         0.0000   0.0000E+00
+  Epsomite                        -0.0000   0.0000E+00
   H2SO4                      9999999.0000   1.0000E+00
 
 
@@ -1723,7 +1722,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Epsomite                         0.0000   0.0000E+00
+  Epsomite                        -0.0000   0.0000E+00
   H2SO4                      9999999.0000   1.0000E+00
 
 
@@ -2040,7 +2039,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Epsomite                         0.0000   0.0000E+00
+  Epsomite                        -0.0000   0.0000E+00
   H2SO4                      9999999.0000   1.0000E+00
 
 
@@ -2357,7 +2356,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Epsomite                         0.0000   0.0000E+00
+  Epsomite                        -0.0000   0.0000E+00
   H2SO4                      9999999.0000   1.0000E+00
 
 
@@ -2674,7 +2673,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Epsomite                         0.0000   0.0000E+00
+  Epsomite                        -0.0000   0.0000E+00
   H2SO4                      9999999.0000   1.0000E+00
 
 
@@ -2819,7 +2818,7 @@
 
           Actual Charge imbalance= -2.3020E-07 eq/kg.solu
         Expected Charge imbalance=  1.9598E-13 eq/kg.solu
-               Charge discrepancy= -2.2263E-07 eq/kg.solu
+               Charge discrepancy= -2.2262E-07 eq/kg.solu
               Sigma |equivalents|=  9.2362E+00 eq/kg.solu
 
       Relative charge discrepancy= -2.4104E-08
@@ -3003,7 +3002,7 @@
      Reactant                   Affinity     Rel. Rate
                                 kcal/mol      mol/mol
 
-  Epsomite                         0.0000   0.0000E+00
+  Epsomite                        -0.0000   0.0000E+00
   H2SO4                      9999999.0000   1.0000E+00
 
 
@@ -3306,7 +3305,7 @@
  Steps completed=    61, iter=  11, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1294
 
- Stepping to Xi=  4.2689E+00, delxi=  6.4853E-07, nord= 4
+ Stepping to Xi=  4.2689E+00, delxi=  6.4852E-07, nord= 4
  Steps completed=    62, iter=  15, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1294
 
@@ -3322,113 +3321,113 @@
  Steps completed=    65, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1292
 
- Stepping to Xi=  4.2689E+00, delxi=  4.2092E-06, nord= 1
+ Stepping to Xi=  4.2689E+00, delxi=  4.2093E-06, nord= 1
  Steps completed=    66, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1290
 
- Stepping to Xi=  4.2689E+00, delxi=  8.9576E-06, nord= 1
+ Stepping to Xi=  4.2689E+00, delxi=  8.9579E-06, nord= 1
  Steps completed=    67, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1285
 
- Stepping to Xi=  4.2689E+00, delxi=  3.6892E-05, nord= 1
+ Stepping to Xi=  4.2689E+00, delxi=  3.6893E-05, nord= 1
  Steps completed=    68, iter=   4, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1268
 
- Stepping to Xi=  4.2690E+00, delxi=  6.7130E-05, nord= 2
+ Stepping to Xi=  4.2690E+00, delxi=  6.7129E-05, nord= 2
  Steps completed=    69, iter=   6, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1236
 
- Stepping to Xi=  4.2691E+00, delxi=  1.3543E-04, nord= 3
+ Stepping to Xi=  4.2691E+00, delxi=  1.3539E-04, nord= 3
  Steps completed=    70, iter=  11, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1173
 
- Stepping to Xi=  4.2693E+00, delxi=  1.5072E-04, nord= 4
+ Stepping to Xi=  4.2693E+00, delxi=  1.5076E-04, nord= 4
  Steps completed=    71, iter=  10, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1104
 
- Stepping to Xi=  4.2694E+00, delxi=  1.8900E-04, nord= 4
+ Stepping to Xi=  4.2694E+00, delxi=  1.8903E-04, nord= 4
  Steps completed=    72, iter=  20, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.1019
 
- Stepping to Xi=  4.2697E+00, delxi=  2.2071E-04, nord= 5
+ Stepping to Xi=  4.2697E+00, delxi=  2.2069E-04, nord= 5
  Steps completed=    73, iter=  20, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.0921
 
- Stepping to Xi=  4.2701E+00, delxi=  4.0476E-04, nord= 1
+ Stepping to Xi=  4.2701E+00, delxi=  4.0488E-04, nord= 1
  Steps completed=    74, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.0748
 
- Stepping to Xi=  4.2718E+00, delxi=  1.7421E-03, nord= 1
+ Stepping to Xi=  4.2718E+00, delxi=  1.7417E-03, nord= 1
  Steps completed=    75, iter=   5, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.0073
 
- Stepping to Xi=  4.2756E+00, delxi=  3.8083E-03, nord= 1
+ Stepping to Xi=  4.2756E+00, delxi=  3.8066E-03, nord= 1
  Steps completed=    76, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -0.8885
+ Most rapidly changing is zvclg1(Hexahydrite)=     -0.8886
 
- Stepping to Xi=  4.2879E+00, delxi=  1.2263E-02, nord= 1
+ Stepping to Xi=  4.2879E+00, delxi=  1.2255E-02, nord= 1
  Steps completed=    77, iter=   6, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -0.6404
+ Most rapidly changing is zvclg1(Hexahydrite)=     -0.6405
 
- Stepping to Xi=  4.3393E+00, delxi=  5.1375E-02, nord= 1
+ Stepping to Xi=  4.3392E+00, delxi=  5.1319E-02, nord= 1
  Steps completed=    78, iter=   8, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -0.1896
+ Most rapidly changing is zvclg1(Hexahydrite)=     -0.1900
 
- Stepping to Xi=  4.4841E+00, delxi=  1.4479E-01, nord= 1
+ Stepping to Xi=  4.4840E+00, delxi=  1.4485E-01, nord= 1
  Steps completed=    79, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -0.8491
+ Most rapidly changing is zvclg1(Epsomite)=     -0.8489
 
- Stepping to Xi=  4.4985E+00, delxi=  1.4479E-02, nord= 1
+ Stepping to Xi=  4.4985E+00, delxi=  1.4485E-02, nord= 1
  Steps completed=    80, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -1.8492
+ Most rapidly changing is zvclg1(Epsomite)=     -1.8490
 
- Stepping to Xi=  4.5000E+00, delxi=  1.4477E-03, nord= 2
+ Stepping to Xi=  4.5000E+00, delxi=  1.4483E-03, nord= 2
  Steps completed=    81, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -2.8493
+ Most rapidly changing is zvclg1(Epsomite)=     -2.8491
 
- Stepping to Xi=  4.5001E+00, delxi=  1.4472E-04, nord= 3
+ Stepping to Xi=  4.5001E+00, delxi=  1.4478E-04, nord= 3
  Steps completed=    82, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -3.8497
+ Most rapidly changing is zvclg1(Epsomite)=     -3.8495
 
- Stepping to Xi=  4.5001E+00, delxi=  1.4457E-05, nord= 3
+ Stepping to Xi=  4.5001E+00, delxi=  1.4463E-05, nord= 3
  Steps completed=    83, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -4.8509
+ Most rapidly changing is zvclg1(Epsomite)=     -4.8508
 
- Stepping to Xi=  4.5001E+00, delxi=  1.4411E-06, nord= 3
+ Stepping to Xi=  4.5001E+00, delxi=  1.4417E-06, nord= 3
  Steps completed=    84, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -5.8544
+ Most rapidly changing is zvclg1(Epsomite)=     -5.8542
 
- Stepping to Xi=  4.5001E+00, delxi=  1.4282E-07, nord= 3
+ Stepping to Xi=  4.5001E+00, delxi=  1.4288E-07, nord= 3
  Steps completed=    85, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -6.8641
+ Most rapidly changing is zvclg1(Epsomite)=     -6.8639
 
- Stepping to Xi=  4.5001E+00, delxi=  1.3928E-08, nord= 4
+ Stepping to Xi=  4.5001E+00, delxi=  1.3934E-08, nord= 4
  Steps completed=    86, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -7.8920
+ Most rapidly changing is zvclg1(Epsomite)=     -7.8918
 
- Stepping to Xi=  4.5001E+00, delxi=  1.4416E-09, nord= 1
+ Stepping to Xi=  4.5001E+00, delxi=  1.4423E-09, nord= 1
  Steps completed=    87, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=     -8.2317
+ Most rapidly changing is zvclg1(Epsomite)=     -8.2315
 
- Stepping to Xi=  4.5001E+00, delxi=  1.2151E-09, nord= 1
+ Stepping to Xi=  4.5001E+00, delxi=  1.2157E-09, nord= 1
  Steps completed=    88, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=    -10.6523
+ Most rapidly changing is zvclg1(Epsomite)=    -10.6519
 
- Stepping to Xi=  4.5001E+00, delxi=  4.6355E-12, nord= 1
+ Stepping to Xi=  4.5001E+00, delxi=  4.6394E-12, nord= 1
  Steps completed=    89, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=    -22.6523
+ Most rapidly changing is zvclg1(Epsomite)=    -22.6519
 
  Stepping to Xi=  4.5001E+00, delxi=  1.0000E-08, nord= 0
  Steps completed=    90, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=    -34.6523
+ Most rapidly changing is zvclg1(Epsomite)=    -34.6519
 
  Stepping to Xi=  4.5001E+00, delxi=  1.0000E-07, nord= 1
  Steps completed=    91, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=    -46.6523
+ Most rapidly changing is zvclg1(Epsomite)=    -46.6519
 
  Stepping to Xi=  4.5001E+00, delxi=  1.0000E-06, nord= 1
  Steps completed=    92, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Epsomite)=    -58.6523
+ Most rapidly changing is zvclg1(Epsomite)=    -58.6519
 
  Stepping to Xi=  4.5002E+00, delxi=  1.0000E-05, nord= 1
   Hybrid Newton-Raphson iteration has gone sour (iter=  11).
@@ -3617,17 +3616,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance= -2.6118E-08 eq
+          Actual Charge imbalance= -2.6116E-08 eq
         Expected Charge imbalance=  3.4195E-13 eq
-               Charge discrepancy= -2.6118E-08 eq
+               Charge discrepancy= -2.6117E-08 eq
               Sigma |equivalents|=  1.7927E+01 eq
 
-          Actual Charge imbalance= -1.4137E-08 eq/kg.solu
+          Actual Charge imbalance= -1.4136E-08 eq/kg.solu
         Expected Charge imbalance=  1.9269E-13 eq/kg.solu
-               Charge discrepancy= -1.4718E-08 eq/kg.solu
+               Charge discrepancy= -1.4717E-08 eq/kg.solu
               Sigma |equivalents|=  1.0102E+01 eq/kg.solu
 
-      Relative charge discrepancy= -1.4569E-09
+      Relative charge discrepancy= -1.4568E-09
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -3730,7 +3729,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Epsomite                      0.00000      0.00000     SATD
+     Epsomite                     -0.00000     -0.00000     SATD
      Hexahydrite                   0.00000      0.00000     SATD
      Kieserite                    -0.28240     -0.38527
 
@@ -3789,7 +3788,7 @@
  Steps completed=   101, iter=  35, ncorr= 0
  Most rapidly changing is zvclg1(H+)=      0.4623
 
- Stepping to Xi=  4.5095E+00, delxi=  7.3324E-03, nord= 1
+ Stepping to Xi=  4.5095E+00, delxi=  7.3325E-03, nord= 1
  Steps completed=   102, iter=  44, ncorr= 0
  Most rapidly changing is zvclg1(H+)=      0.4630
 
@@ -3984,7 +3983,7 @@
                Charge discrepancy= -8.7467E-07 eq
               Sigma |equivalents|=  1.9042E+01 eq
 
-          Actual Charge imbalance= -4.5503E-07 eq/kg.solu
+          Actual Charge imbalance= -4.5504E-07 eq/kg.solu
         Expected Charge imbalance=  1.8736E-13 eq/kg.solu
                Charge discrepancy= -4.7926E-07 eq/kg.solu
               Sigma |equivalents|=  1.0434E+01 eq/kg.solu
@@ -4475,19 +4474,19 @@
  Steps completed=   113, iter=   8, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7435
 
- Stepping to Xi=  5.4372E+00, delxi=  1.5882E-06, nord= 1
+ Stepping to Xi=  5.4372E+00, delxi=  1.5881E-06, nord= 1
  Steps completed=   114, iter=  10, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7430
 
- Stepping to Xi=  5.4372E+00, delxi=  4.8326E-07, nord= 2
+ Stepping to Xi=  5.4372E+00, delxi=  4.8323E-07, nord= 2
  Steps completed=   115, iter=   5, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7425
 
- Stepping to Xi=  5.4372E+00, delxi=  6.5982E-07, nord= 3
+ Stepping to Xi=  5.4372E+00, delxi=  6.5979E-07, nord= 3
  Steps completed=   116, iter=   5, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7422
 
- Stepping to Xi=  5.4372E+00, delxi=  9.6608E-07, nord= 4
+ Stepping to Xi=  5.4372E+00, delxi=  9.6602E-07, nord= 4
  Steps completed=   117, iter=  11, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7423
 
@@ -4495,15 +4494,15 @@
  Steps completed=   118, iter=  20, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7416
 
- Stepping to Xi=  5.4372E+00, delxi=  1.4458E-06, nord= 6
+ Stepping to Xi=  5.4372E+00, delxi=  1.4457E-06, nord= 6
  Steps completed=   119, iter=  21, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.7411
+ Most rapidly changing is zvclg1(Kieserite)=     -2.7412
 
- Stepping to Xi=  5.4372E+00, delxi=  2.1306E-06, nord= 4
+ Stepping to Xi=  5.4372E+00, delxi=  2.1310E-06, nord= 4
  Steps completed=   120, iter=  15, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7401
 
- Stepping to Xi=  5.4372E+00, delxi=  1.9299E-06, nord= 6
+ Stepping to Xi=  5.4372E+00, delxi=  1.9298E-06, nord= 6
  Steps completed=   121, iter=  21, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7397
 
@@ -4515,99 +4514,99 @@
  Steps completed=   123, iter=  20, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7381
 
- Stepping to Xi=  5.4372E+00, delxi=  5.4879E-06, nord= 1
+ Stepping to Xi=  5.4372E+00, delxi=  5.4876E-06, nord= 1
  Steps completed=   124, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.7362
+ Most rapidly changing is zvclg1(Kieserite)=     -2.7363
 
- Stepping to Xi=  5.4372E+00, delxi=  7.2152E-06, nord= 1
+ Stepping to Xi=  5.4372E+00, delxi=  7.2145E-06, nord= 1
  Steps completed=   125, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7338
 
- Stepping to Xi=  5.4373E+00, delxi=  3.7392E-05, nord= 1
+ Stepping to Xi=  5.4373E+00, delxi=  3.7387E-05, nord= 1
  Steps completed=   126, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7212
 
- Stepping to Xi=  5.4373E+00, delxi=  3.9099E-05, nord= 1
+ Stepping to Xi=  5.4373E+00, delxi=  3.9093E-05, nord= 1
  Steps completed=   127, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.7083
 
- Stepping to Xi=  5.4374E+00, delxi=  6.6067E-05, nord= 2
+ Stepping to Xi=  5.4374E+00, delxi=  6.6056E-05, nord= 2
  Steps completed=   128, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.6874
 
- Stepping to Xi=  5.4375E+00, delxi=  1.0322E-04, nord= 2
+ Stepping to Xi=  5.4375E+00, delxi=  1.0320E-04, nord= 2
  Steps completed=   129, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.6566
 
- Stepping to Xi=  5.4377E+00, delxi=  1.8493E-04, nord= 3
+ Stepping to Xi=  5.4377E+00, delxi=  1.8491E-04, nord= 3
  Steps completed=   130, iter=   6, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.6068
 
- Stepping to Xi=  5.4379E+00, delxi=  1.8404E-04, nord= 4
+ Stepping to Xi=  5.4379E+00, delxi=  1.8401E-04, nord= 4
  Steps completed=   131, iter=   3, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -2.5622
 
- Stepping to Xi=  5.4381E+00, delxi=  2.6445E-04, nord= 4
+ Stepping to Xi=  5.4381E+00, delxi=  2.6443E-04, nord= 4
  Steps completed=   132, iter=  14, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.5049
+ Most rapidly changing is zvclg1(Kieserite)=     -2.5050
 
- Stepping to Xi=  5.4385E+00, delxi=  3.7280E-04, nord= 2
+ Stepping to Xi=  5.4385E+00, delxi=  3.7402E-04, nord= 2
  Steps completed=   133, iter=  10, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.4355
+ Most rapidly changing is zvclg1(Kieserite)=     -2.4353
 
- Stepping to Xi=  5.4388E+00, delxi=  3.1863E-04, nord= 4
+ Stepping to Xi=  5.4388E+00, delxi=  3.1850E-04, nord= 4
  Steps completed=   134, iter=  10, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.3839
+ Most rapidly changing is zvclg1(Kieserite)=     -2.3837
 
- Stepping to Xi=  5.4393E+00, delxi=  5.3367E-04, nord= 1
+ Stepping to Xi=  5.4393E+00, delxi=  5.3419E-04, nord= 1
  Steps completed=   135, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.3090
+ Most rapidly changing is zvclg1(Kieserite)=     -2.3088
 
- Stepping to Xi=  5.4401E+00, delxi=  7.2214E-04, nord= 6
+ Stepping to Xi=  5.4401E+00, delxi=  7.3054E-04, nord= 6
  Steps completed=   136, iter=  22, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.2245
+ Most rapidly changing is zvclg1(Kieserite)=     -2.2235
 
- Stepping to Xi=  5.4412E+00, delxi=  1.1625E-03, nord= 4
+ Stepping to Xi=  5.4412E+00, delxi=  1.1689E-03, nord= 4
  Steps completed=   137, iter=  20, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.1160
+ Most rapidly changing is zvclg1(Kieserite)=     -2.1146
 
- Stepping to Xi=  5.4427E+00, delxi=  1.5098E-03, nord= 3
- Steps completed=   138, iter=  14, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -2.0064
+ Stepping to Xi=  5.4428E+00, delxi=  1.5728E-03, nord= 3
+ Steps completed=   138, iter=  15, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -2.0013
 
- Stepping to Xi=  5.4445E+00, delxi=  1.7318E-03, nord= 1
- Steps completed=   139, iter=  20, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -1.9073
+ Stepping to Xi=  5.4444E+00, delxi=  1.5584E-03, nord= 1
+ Steps completed=   139, iter=  10, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -1.9122
 
- Stepping to Xi=  5.4469E+00, delxi=  2.4410E-03, nord= 3
- Steps completed=   140, iter=  11, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -1.7976
+ Stepping to Xi=  5.4469E+00, delxi=  2.5521E-03, nord= 3
+ Steps completed=   140, iter=   6, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -1.7970
 
- Stepping to Xi=  5.4515E+00, delxi=  4.5522E-03, nord= 1
- Steps completed=   141, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -1.6465
+ Stepping to Xi=  5.4539E+00, delxi=  7.0065E-03, nord= 4
+ Steps completed=   141, iter=  16, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -1.5823
 
- Stepping to Xi=  5.4604E+00, delxi=  8.9681E-03, nord= 2
- Steps completed=   142, iter=   7, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -1.4482
+ Stepping to Xi=  5.4598E+00, delxi=  5.8767E-03, nord= 3
+ Steps completed=   142, iter=  15, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -1.4593
 
- Stepping to Xi=  5.4750E+00, delxi=  1.4601E-02, nord= 3
- Steps completed=   143, iter=   6, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -1.2449
+ Stepping to Xi=  5.4697E+00, delxi=  9.9192E-03, nord= 1
+ Steps completed=   143, iter=  19, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -1.3083
 
- Stepping to Xi=  5.5008E+00, delxi=  2.5724E-02, nord= 3
- Steps completed=   144, iter=  15, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -1.0252
+ Stepping to Xi=  5.4842E+00, delxi=  1.4431E-02, nord= 1
+ Steps completed=   144, iter=   3, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -1.1537
 
- Stepping to Xi=  5.5457E+00, delxi=  4.4944E-02, nord= 1
- Steps completed=   145, iter=   8, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -0.7963
+ Stepping to Xi=  5.5311E+00, delxi=  4.6922E-02, nord= 1
+ Steps completed=   145, iter=   3, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -0.8584
 
- Stepping to Xi=  5.6861E+00, delxi=  1.4039E-01, nord= 1
- Steps completed=   146, iter=   2, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=     -0.4385
+ Stepping to Xi=  5.6723E+00, delxi=  1.4120E-01, nord= 1
+ Steps completed=   146, iter=   3, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=     -0.4631
 
- Stepping to Xi=  6.0000E+00, delxi=  3.1391E-01, nord= 1
+ Stepping to Xi=  6.0000E+00, delxi=  3.2772E-01, nord= 1
  Steps completed=   147, iter=   2, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=     -0.0853
 
@@ -4739,7 +4738,7 @@
                     Solute fraction= 0.46504 kg.tds/kg.sol
 
       Total dissolved solutes (TDS)= 4.65036E+05 mg/kg.sol
-                                TDS= 6.62707E+05 mg/L
+                                TDS= 6.62708E+05 mg/L
                                 TDS= 662.71 g/L
 
                    Solution density= 1.4251 g/mL
@@ -4752,9 +4751,9 @@
 
            --- More Precise Aqueous Phase Masses ---
 
-                       Solvent mass= 1179.7935 g
-                 Solutes (TDS) mass= 1025.5748 g
-              Aqueous solution mass= 2205.3683 g
+                       Solvent mass= 1179.7936 g
+                 Solutes (TDS) mass= 1025.5749 g
+              Aqueous solution mass= 2205.3685 g
 
 
 
@@ -4781,17 +4780,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance=  1.2843E-06 eq
+          Actual Charge imbalance=  7.3379E-07 eq
         Expected Charge imbalance=  3.4195E-13 eq
-               Charge discrepancy=  1.2843E-06 eq
+               Charge discrepancy=  7.3379E-07 eq
               Sigma |equivalents|=  2.2247E+01 eq
 
-          Actual Charge imbalance=  5.8233E-07 eq/kg.solu
+          Actual Charge imbalance=  3.3273E-07 eq/kg.solu
         Expected Charge imbalance=  1.8293E-13 eq/kg.solu
-               Charge discrepancy=  6.8703E-07 eq/kg.solu
+               Charge discrepancy=  3.9255E-07 eq/kg.solu
               Sigma |equivalents|=  1.1901E+01 eq/kg.solu
 
-      Relative charge discrepancy=  5.7727E-08
+      Relative charge discrepancy=  3.2984E-08
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -4897,8 +4896,8 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Epsomite                     -0.05648     -0.07705
-     Hexahydrite                   0.00000      0.00000     SATD
-     Kieserite                     0.00000      0.00000     SATD
+     Hexahydrite                  -0.00000     -0.00000     SATD
+     Kieserite                    -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -4928,55 +4927,31 @@
  Most rapidly changing is zvclg1(Hexahydrite)=     -1.2732
 
  Stepping to Xi=  6.2559E+00, delxi=  2.3267E-02, nord= 1
- Steps completed=   149, iter=   3, ncorr= 0
+ Steps completed=   149, iter=   2, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -2.2732
 
- Stepping to Xi=  6.2583E+00, delxi=  2.3267E-03, nord= 2
- Steps completed=   150, iter=   3, ncorr= 0
+ Stepping to Xi=  6.2583E+00, delxi=  2.3267E-03, nord= 1
+ Steps completed=   150, iter=   2, ncorr= 0
  Most rapidly changing is zvclg1(Hexahydrite)=     -3.2732
 
- Stepping to Xi=  6.2585E+00, delxi=  2.3266E-04, nord= 2
- Steps completed=   151, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -4.2733
+ Stepping to Xi=  6.2585E+00, delxi=  2.3267E-04, nord= 1
+ Steps completed=   151, iter=   2, ncorr= 0
+ Most rapidly changing is zvclg1(Hexahydrite)=     -4.2732
 
- Stepping to Xi=  6.2585E+00, delxi=  2.3262E-05, nord= 3
+ Stepping to Xi=  6.2585E+00, delxi=  2.5853E-05, nord= 2
  Steps completed=   152, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -5.2738
+ Most rapidly changing is zvclg1(Hexahydrite)=    -12.2732
 
- Stepping to Xi=  6.2585E+00, delxi=  2.3234E-06, nord= 3
+ Stepping to Xi=  6.2585E+00, delxi=  2.6930E-13, nord= 1
  Steps completed=   153, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -6.2762
-
- Stepping to Xi=  6.2585E+00, delxi=  2.3090E-07, nord= 3
- Steps completed=   154, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -7.2870
-
- Stepping to Xi=  6.2585E+00, delxi=  2.4959E-08, nord= 1
- Steps completed=   155, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=     -7.6203
-
- Stepping to Xi=  6.2585E+00, delxi=  2.1621E-08, nord= 1
- Steps completed=   156, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=    -10.0184
-
- Stepping to Xi=  6.2585E+00, delxi=  8.6807E-11, nord= 1
- Steps completed=   157, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=    -22.0184
+ Most rapidly changing is zvclg1(Hexahydrite)=     -8.4891
 
  Stepping to Xi=  6.2585E+00, delxi=  1.0000E-08, nord= 0
- Steps completed=   158, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=    -34.0184
+ Steps completed=   154, iter=   3, ncorr= 0
+ Most rapidly changing is zvclg1(Hexahydrite)=    -17.2872
 
- Stepping to Xi=  6.2585E+00, delxi=  1.0000E-07, nord= 1
- Steps completed=   159, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=    -46.0184
-
- Stepping to Xi=  6.2585E+00, delxi=  1.0000E-06, nord= 1
- Steps completed=   160, iter=   3, ncorr= 0
- Most rapidly changing is zvclg1(Hexahydrite)=    -58.0184
-
- Stepping to Xi=  6.2585E+00, delxi=  1.0000E-05, nord= 1
-  Hybrid Newton-Raphson iteration has gone sour (iter=  12).
+ Stepping to Xi=  6.2585E+00, delxi=  1.0000E-07, nord= 2
+  Hybrid Newton-Raphson iteration has gone sour (iter=  27).
 
    The phase to be dropped is Hexahydrite (4)
 
@@ -4990,12 +4965,12 @@
     5  O2(g)
     6  Kieserite
 
- Steps completed=   161, iter=  18, ncorr= 0
+ Steps completed=   155, iter=  26, ncorr= 0
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-                    Xi=  6.25854E+00
+                    Xi=  6.25853E+00
                 Log Xi=      0.79647
 
 
@@ -5039,9 +5014,9 @@
 
      O         1.07535E+06  7.54594E+05  6.72118E+01  8.81627E+01
      Cl        0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
-     H         9.31226E+04  6.53461E+04  9.23891E+01  1.21188E+02
-     Mg        5.70319E+04  4.00205E+04  2.34651E+00  3.07795E+00
-     S         1.99565E+05  1.40039E+05  6.22359E+00  8.16357E+00
+     H         9.31226E+04  6.53461E+04  9.23890E+01  1.21188E+02
+     Mg        5.70321E+04  4.00206E+04  2.34652E+00  3.07796E+00
+     S         1.99565E+05  1.40039E+05  6.22358E+00  8.16357E+00
 
 
            --- Numerical Composition of the Aqueous Solution ---
@@ -5049,9 +5024,9 @@
    Species                    mg/L       mg/kg.sol    Molarity     Molality
 
  H2O                       7.62361E+05  5.34964E+05  4.23175E+01  5.55084E+01
- H+                        7.81572E+03  5.48445E+03  7.75415E+00  1.01712E+01
- Mg++                      5.70319E+04  4.00205E+04  2.34651E+00  3.07795E+00
- SO4--                     5.97860E+05  4.19531E+05  6.22359E+00  8.16357E+00
+ H+                        7.81570E+03  5.48444E+03  7.75414E+00  1.01712E+01
+ Mg++                      5.70321E+04  4.00206E+04  2.34652E+00  3.07796E+00
+ SO4--                     5.97860E+05  4.19531E+05  6.22358E+00  8.16357E+00
  O2(g)                     0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
 
    Some of the above data may not be physically significant.
@@ -5061,9 +5036,9 @@
 
    Species                    mg/L       mg/kg.sol    Molarity     Molality
 
- H+                        7.81572E+03  5.48445E+03  7.75415E+00  1.01712E+01
- Mg++                      5.70319E+04  4.00205E+04  2.34651E+00  3.07795E+00
- SO4--                     5.97860E+05  4.19531E+05  6.22359E+00  8.16357E+00
+ H+                        7.81570E+03  5.48444E+03  7.75414E+00  1.01712E+01
+ Mg++                      5.70321E+04  4.00206E+04  2.34652E+00  3.07796E+00
+ SO4--                     5.97860E+05  4.19531E+05  6.22358E+00  8.16357E+00
 
    The above data have physical significance, but some may be
    inconsistent with certain analytical methods or reporting schemes.
@@ -5073,7 +5048,7 @@
 
                                         pH
 
-      NBS pH scale                   -2.8132
+      NBS pH scale                   -2.8131
       Mesmer pH (pmH) scale          -0.5149
 
 
@@ -5133,15 +5108,15 @@
 
            --- More Precise Aqueous Phase Masses ---
 
-                       Solvent mass= 1230.6289 g
-                 Solutes (TDS) mass= 1069.7654 g
-              Aqueous solution mass= 2300.3943 g
+                       Solvent mass= 1230.6291 g
+                 Solutes (TDS) mass= 1069.7656 g
+              Aqueous solution mass= 2300.3947 g
 
 
 
            --- HCO3-CO3-OH Total Alkalinity ---
 
-                 4.75449E-12 eq/kg.H2O
+                 4.75450E-12 eq/kg.H2O
                  3.62464E-12 eq/L
                  1.27174E-07 mg/kg.sol CaCO3
                  1.55051E-07 mg/kg.sol HCO3-
@@ -5151,7 +5126,7 @@
 
            --- Extended Total Alkalinity ---
 
-                 4.75449E-12 eq/kg.H2O
+                 4.75450E-12 eq/kg.H2O
                  3.62464E-12 eq/L
                  1.27174E-07 mg/kg.sol CaCO3
                  1.55051E-07 mg/kg.sol HCO3-
@@ -5162,17 +5137,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance=  2.3948E-07 eq
+          Actual Charge imbalance= -1.4305E-06 eq
         Expected Charge imbalance=  3.4195E-13 eq
-               Charge discrepancy=  2.3948E-07 eq
+               Charge discrepancy= -1.4305E-06 eq
               Sigma |equivalents|=  2.3206E+01 eq
 
-          Actual Charge imbalance=  1.0410E-07 eq/kg.solu
+          Actual Charge imbalance= -6.2184E-07 eq/kg.solu
         Expected Charge imbalance=  1.8293E-13 eq/kg.solu
-               Charge discrepancy=  1.2811E-07 eq/kg.solu
+               Charge discrepancy= -7.6526E-07 eq/kg.solu
               Sigma |equivalents|=  1.2414E+01 eq/kg.solu
 
-      Relative charge discrepancy=  1.0320E-08
+      Relative charge discrepancy= -6.1644E-08
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -5180,11 +5155,11 @@
     Species                  Molality    Log Molality   Log Gamma  Log Activity
 
  HSO4-                      6.8987E+00       0.8388      -0.1133       0.7255
- H+                         3.2725E+00       0.5149       2.2983       2.8132
+ H+                         3.2725E+00       0.5149       2.2983       2.8131
  Mg++                       3.0780E+00       0.4883       3.7578       4.2460
- SO4--                      1.2649E+00       0.1020      -4.1683      -4.0663
+ SO4--                      1.2649E+00       0.1020      -4.1683      -4.0662
  MgOH+                      4.7536E-12     -11.3230       0.6443     -10.6787
- OH-                        8.8172E-16     -15.0547      -2.0577     -17.1123
+ OH-                        8.8173E-16     -15.0547      -2.0577     -17.1123
 
     Species with molalities less than  1.000-100 are not listed.
 
@@ -5254,8 +5229,8 @@
 
                           Mass, grams       Volume, cm3
 
-           Created         1.65814E+02       0.00000E+00
-           Destroyed       6.14333E+02       0.00000E+00
+           Created         1.65813E+02       0.00000E+00
+           Destroyed       6.14332E+02       0.00000E+00
            Net            -4.48519E+02       0.00000E+00
 
           These volume totals may be incomplete because of missing
@@ -5276,7 +5251,7 @@
        Phase                      Log Q/K    Affinity, kcal
 
      Epsomite                     -0.05648     -0.07706
-     Hexahydrite                   0.00000      0.00000     SATD
+     Hexahydrite                  -0.00000     -0.00000     SATD
      Kieserite                     0.00000      0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
@@ -5303,55 +5278,55 @@
 
 
  Stepping to Xi=  6.2585E+00, delxi=  1.0000E-08, nord= 0
- Steps completed=   162, iter=   1, ncorr= 0
+ Steps completed=   156, iter=   1, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0785
 
  Stepping to Xi=  6.2585E+00, delxi=  1.0000E-08, nord= 0
- Steps completed=   163, iter=   1, ncorr= 0
+ Steps completed=   157, iter=   1, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0785
 
  Stepping to Xi=  6.2585E+00, delxi=  1.0000E-07, nord= 1
- Steps completed=   164, iter=   1, ncorr= 0
+ Steps completed=   158, iter=   1, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0785
 
  Stepping to Xi=  6.2585E+00, delxi=  1.0000E-06, nord= 1
- Steps completed=   165, iter=   4, ncorr= 0
+ Steps completed=   159, iter=   6, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0785
 
- Stepping to Xi=  6.2585E+00, delxi=  7.0649E-06, nord= 1
- Steps completed=   166, iter=  18, ncorr= 0
+ Stepping to Xi=  6.2585E+00, delxi=  4.7103E-06, nord= 1
+ Steps completed=   160, iter=  18, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0785
 
- Stepping to Xi=  6.2586E+00, delxi=  2.1085E-05, nord= 1
- Steps completed=   167, iter=  20, ncorr= 0
+ Stepping to Xi=  6.2586E+00, delxi=  4.7103E-05, nord= 1
+ Steps completed=   161, iter=  21, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0785
 
- Stepping to Xi=  6.2587E+00, delxi=  1.0004E-04, nord= 1
- Steps completed=   168, iter=  23, ncorr= 0
+ Stepping to Xi=  6.2588E+00, delxi=  1.7581E-04, nord= 1
+ Steps completed=   162, iter=  25, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0786
 
- Stepping to Xi=  6.2597E+00, delxi=  1.0004E-03, nord= 1
- Steps completed=   169, iter=  30, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=      0.0788
+ Stepping to Xi=  6.2605E+00, delxi=  1.7581E-03, nord= 1
+ Steps completed=   163, iter=  31, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=      0.0790
 
- Stepping to Xi=  6.2697E+00, delxi=  1.0004E-02, nord= 1
- Steps completed=   170, iter=  37, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=      0.0812
+ Stepping to Xi=  6.2733E+00, delxi=  1.2790E-02, nord= 1
+ Steps completed=   164, iter=  38, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=      0.0820
 
- Stepping to Xi=  6.3179E+00, delxi=  4.8184E-02, nord= 1
- Steps completed=   171, iter=  42, ncorr= 0
+ Stepping to Xi=  6.3178E+00, delxi=  4.4539E-02, nord= 1
+ Steps completed=   165, iter=  42, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.0923
 
- Stepping to Xi=  6.3841E+00, delxi=  6.6219E-02, nord= 2
- Steps completed=   172, iter=  43, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=      0.1071
+ Stepping to Xi=  6.4352E+00, delxi=  1.1741E-01, nord= 2
+ Steps completed=   166, iter=  45, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=      0.1180
 
- Stepping to Xi=  6.6526E+00, delxi=  2.6850E-01, nord= 2
- Steps completed=   173, iter=  47, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=      0.1610
+ Stepping to Xi=  6.7004E+00, delxi=  2.6516E-01, nord= 2
+ Steps completed=   167, iter=  47, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=      0.1697
 
- Stepping to Xi=  7.0000E+00, delxi=  3.4742E-01, nord= 3
- Steps completed=   174, iter=  47, ncorr= 0
+ Stepping to Xi=  7.0000E+00, delxi=  2.9959E-01, nord= 3
+ Steps completed=   168, iter=  46, ncorr= 0
  Most rapidly changing is zvclg1(Kieserite)=      0.2196
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -5524,17 +5499,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance=  8.6414E-08 eq
+          Actual Charge imbalance=  1.1401E-07 eq
         Expected Charge imbalance=  3.4195E-13 eq
-               Charge discrepancy=  8.6414E-08 eq
+               Charge discrepancy=  1.1401E-07 eq
               Sigma |equivalents|=  2.3144E+01 eq
 
-          Actual Charge imbalance=  3.7417E-08 eq/kg.solu
+          Actual Charge imbalance=  4.9364E-08 eq/kg.solu
         Expected Charge imbalance=  1.8098E-13 eq/kg.solu
-               Charge discrepancy=  4.5737E-08 eq/kg.solu
+               Charge discrepancy=  6.0340E-08 eq/kg.solu
               Sigma |equivalents|=  1.2250E+01 eq/kg.solu
 
-      Relative charge discrepancy=  3.7338E-09
+      Relative charge discrepancy=  4.9259E-09
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -5639,7 +5614,7 @@
 
      Epsomite                     -0.17682     -0.24123
      Hexahydrite                  -0.10028     -0.13682
-     Kieserite                     0.00000      0.00000     SATD
+     Kieserite                    -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -5664,12 +5639,12 @@
 
 
 
- Stepping to Xi=  7.8074E+00, delxi=  8.0744E-01, nord= 3
- Steps completed=   175, iter=  53, ncorr= 0
- Most rapidly changing is zvclg1(Kieserite)=      0.3236
+ Stepping to Xi=  7.8245E+00, delxi=  8.2447E-01, nord= 3
+ Steps completed=   169, iter=  53, ncorr= 0
+ Most rapidly changing is zvclg1(Kieserite)=      0.3255
 
- Stepping to Xi=  8.0000E+00, delxi=  1.9256E-01, nord= 4
- Steps completed=   176, iter=  48, ncorr= 0
+ Stepping to Xi=  8.0000E+00, delxi=  1.7553E-01, nord= 4
+ Steps completed=   170, iter=  48, ncorr= 0
  Most rapidly changing is zvclg1(SO4--)=     -0.0329
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -5688,8 +5663,6 @@
 
  Exhaustion of the following reactant(s):
      H2SO4
-
- Maximum value of Xi.
 
 
                      --- Reactant Summary ---
@@ -5828,7 +5801,7 @@
 
                  3.45907E-12 eq/kg.H2O
                  2.59872E-12 eq/L
-                 8.99357E-08 mg/kg.sol CaCO3
+                 8.99356E-08 mg/kg.sol CaCO3
                  1.09650E-07 mg/kg.sol HCO3-
                  1.29936E-07 mg/L CaCO3
                  1.58418E-07 mg/L HCO3-
@@ -5838,7 +5811,7 @@
 
                  3.45907E-12 eq/kg.H2O
                  2.59872E-12 eq/L
-                 8.99357E-08 mg/kg.sol CaCO3
+                 8.99356E-08 mg/kg.sol CaCO3
                  1.09650E-07 mg/kg.sol HCO3-
                  1.29936E-07 mg/L CaCO3
                  1.58418E-07 mg/L HCO3-
@@ -5847,17 +5820,17 @@
 
         --- Aqueous Solution Charge Balance ---
 
-          Actual Charge imbalance=  8.4706E-08 eq
+          Actual Charge imbalance=  7.7057E-08 eq
         Expected Charge imbalance=  3.4195E-13 eq
-               Charge discrepancy=  8.4706E-08 eq
+               Charge discrepancy=  7.7057E-08 eq
               Sigma |equivalents|=  2.3413E+01 eq
 
-          Actual Charge imbalance=  3.6329E-08 eq/kg.solu
+          Actual Charge imbalance=  3.3048E-08 eq/kg.solu
         Expected Charge imbalance=  1.7781E-13 eq/kg.solu
-               Charge discrepancy=  4.4047E-08 eq/kg.solu
+               Charge discrepancy=  4.0069E-08 eq/kg.solu
               Sigma |equivalents|=  1.2175E+01 eq/kg.solu
 
-      Relative charge discrepancy=  3.6179E-09
+      Relative charge discrepancy=  3.2912E-09
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -5962,7 +5935,7 @@
 
      Epsomite                     -0.36095     -0.49244
      Hexahydrite                  -0.25373     -0.34616
-     Kieserite                     0.00000      0.00000     SATD
+     Kieserite                    -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -5987,17 +5960,15 @@
 
 
 
-   Have reached the maximum value of Xi.
-
    Each reactant is now saturated or exhausted.
 
  ---  The reaction path has terminated normally ---
 
 
-         176 steps were taken
+         170 steps were taken
        Xi increased from 
                0.00000E+00 to  8.00000E+00
-       The average value of delxi was  4.54545E-02
+       The average value of delxi was  4.70588E-02
        The average matrix dimension was    6
 
        The pH decreased from 7.0000 to -3.2745
@@ -6006,9 +5977,6 @@
 
  No further input found.
 
-          Start time = 13:10:41  07Sep2011
-            End time = 13:10:41  07Sep2011
 
-           Run time =  0.242     seconds
 
  Normal exit
