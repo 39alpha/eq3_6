@@ -122,7 +122,7 @@ snapshot dir="" build="release":
     if [ -n "{{dir}}" ]; then
         OUTPUT_DIR="${SNAPSHOTS_DIR}/{{dir}}"
     else
-        OUTPUT_DIR="${SNAPSHOTS_DIR}/$(hostname)"
+        OUTPUT_DIR="${SNAPSHOTS_DIR}/$(hostname)_$(date +%+4Y%m%d%H%M%S)"
     fi
 
     printf "OUTPUT_DIR: %s\n" "${OUTPUT_DIR}"
