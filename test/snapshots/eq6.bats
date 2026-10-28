@@ -42,7 +42,7 @@ check_output() {
   perl -ni -e 'print unless /^\s*(Start|End|Run)\s+time/' ./*.6o
   perl -ni -e 'print unless /^\s*Run\s+[0-9]+/' ./*.6o
 
-  for ext in 6o 6p 6tx; do
+  for ext in 6p 6tx 6o; do
     assert_files_almost_same "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}" 0 0
     assert_files_equal "${SNAPSHOT_DIR}/${DIR}/${PROBLEM}.${ext}" "${PROBLEM}.${ext}"
   done
