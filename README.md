@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/39alpha/eq36/actions/workflows/build.yml/badge.svg)](https://github.com/39alpha/eq36/actions/workflows/build.yml)
 [![Tests](https://github.com/39alpha/eq36/actions/workflows/test.yml/badge.svg)](https://github.com/39alpha/eq36/actions/workflows/test.yml)
-[![Snapshot Tests](https://github.com/39alpha/eq36/actions/workflows/test-snapshots.yml/badge.svg)](https://github.com/39alpha/eq36/actions/workflows/test-snapshots.yml)
+[![Snapshot Tests](https://github.com/39alpha/eq36/actions/workflows/snapshot-tests.yml/badge.svg)](https://github.com/39alpha/eq36/actions/workflows/snapshot-tests.yml)
 
 A Software Package for Geochemical Modeling
 
