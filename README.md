@@ -4,45 +4,57 @@
 
 A Software Package for Geochemical Modeling
 
-This is a slightly updated version of [EQ3/6 Version 8.0a](https://www-gs.llnl.gov/energy-homeland-security/geochemistry)
-developed at Lawrence Livermore National Laboratories. At this point, the only changes made have been to directory
-structure and adding a meson-based build system for easy building and installation. Further changes will be made to
-address bug fixes and enhancements.
+This is an updated version of [EQ3/6 Version 8.0a](https://www-gs.llnl.gov/energy-homeland-security/geochemistry)
+developed at Lawrence Livermore National Laboratories. The changes include:
+
+1. **Transitioning to Fortran 2008** though legacy `go to` and `COMMON` still linger, for example.
+2. **Modernizing the build system and directory structure** using [`meson`](https://mesonbuild.com) for builds.
+3. **Adding integration tests** against legacy outputs and CI-driven snapshots
+4. **Minor bug fixes,** e.g. [b84f80c](https://github.com/39alpha/eq3_6/commit/b84f80c4b329145238336d0a536a6ec97811eefe)
+5. **Usability features.** For example, the primary executables now take their inputs at the command line rather than
+   relying on specifically named input files, e.g.
+
+```bash
+$ eqpt test/data/eqpt/cmp.d0
+$ eq3nr cmp.d1 test/data/eq3nr/cmp/cristoba.3i
+$ eq6 cmp.d1 test/data/eq6/cmp/crisqtz.6i
+```
+
+> **NOTE**: We will continue to apply bug fixes to the FORTRAN 77 sources, but those changes will be maintained on the
+[v9.x.x](https://github.com/39alpha/eq3_6/tree/v9.x.x) branch and continue to use Makefile-based builds.
 
 ## Installation
-```bash
-$ meson setup build
-$ meson compile -C build
-$ sudo meson install
-```
-This will build all of the executables and libraries and install the following directories:
-- `bin` - contains the executable files `eq3nr`, `eq6`, `eqpt`, `xcon3` and `xcon6`
-- `lib` - contains the library files `libeqlib.a`, `libeqlibu.a` and `libeqlibg.a`
-- `include` - contains the various header files you may need to use the libraries
 
-By default `make install` will place all installation files in `/usr/local`, e.g. `/usr/local/bin/eq3nr`. If you wish to
+```bash
+$ git clone https://github.com/39alpha/eq3_6
+$ just install
+```
+This will build all of the executables and libraries and install the following
+directories:
+- `bin` - contains the executable files `eq3nr`, `eq6`, `eqpt`, `xcon3` and `xcon6`.
+- `lib` - contains both shared and static libraries, e.g. `libeq.a` and `libeq.so`.
+- `include` - contains the various header files you may need to use the libraries.
+
+By default `just install` will place all installation files in `/usr/local`, e.g. `/usr/local/bin/eq3nr`. If you wish to
 change that, you can specify an installation prefix:
 ```bash
-$ meson setup --prefix=/opt/eq3_6 -C build
+$ just install --prefix=/opt/eq3_6 -C build
 ```
 which will place the files in `/opt/eq3_6`, e.g. `/opt/eq3_6/bin/eq3nr`.
 
-By default, `meson` will compile all of the targets with the release profile. If you'd like to change the
-compilation flags, e.g. to enable an optimized debugging build:
-```bash
-$ meson setup --buildtype=debugoptimized build
-```
-
-**NOTE** GCC supports floating-point expression contraction which defaults to `-ffp-contract=fast`. However, this can
-cause some difference between the outputs on different platforms when other optimization flags (e.g. `-O3` are enabled).
-As such, the default build disables it: `-ffp-contract=off`.
-
 ## Build Dependencies
 
-- [`meson`](https://mesonbuild.com/)
+- [`meson`](https://mesonbuild.com/) `pip install meson`
+- [`ninja`](https://ninja-build.org/) `pip install ninja`
 - `gfortran` (pretty much any version as far as we can tell)
 - `coreutils` (MacOS, testing only - `brew install coreutils`)
 - `parallel` (MacOS, testing only - `brew install parallel`)
+
+## Licensing
+
+This repo includes the source files for [EQ3/6 v8.0a](https://www-gs.llnl.gov/energy-homeland-security/geochemistry),
+a software package for geochemical modeling developed by Thomas Wolery at Lawrence Livermore National Laboratory under
+the [BSD 3-Clause License](https://github.com/39alpha/eq3_6/blob/main/EQ36_LICENSE).
 
 ## References
 
