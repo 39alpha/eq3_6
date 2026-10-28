@@ -218,7 +218,7 @@
 |------------------------------------------------------------------------------|
 |Starting Xi value        | 0.00000E+00| (xistti)                              |
 |------------------------------------------------------------------------------|
-|Maximum Xi value         | 1.00000E+00| (ximaxi)                              |
+|Maximum Xi value         | 1.10000E+00| (ximaxi)                              |
 |------------------------------------------------------------------------------|
 |Starting time (seconds)  | 0.00000E+00| (tistti)                              |
 |------------------------------------------------------------------------------|
@@ -821,7 +821,7 @@
 
 
  xistti=  0.00000E+00 (Initial value of Xi)
- ximaxi=  1.00000E+00 (Maximum value of Xi)
+ ximaxi=  1.10000E+00 (Maximum value of Xi)
  tistti=  0.00000E+00 (Initial value of time, sec)
  timmxi=  1.00000E+38 (Maximum value of time, sec)
  phmini= -1.00000E+38 (Minimum value of pH)
@@ -7655,7 +7655,7 @@
 
 
 
- Stepping to Xi=  1.0000E+00, delxi=  1.1102E-16, nord= 0
+ Stepping to Xi=  1.0000E+00, delxi=  2.2246E-14, nord= 6
  Steps completed=    67, iter=   1, ncorr= 0
  Most rapidly changing is zvclg1(Na+)=     -3.5011
 
@@ -7673,8 +7673,6 @@
 
  Exhaustion of the following reactant(s):
      Exchanger 1
-
- Maximum value of Xi.
 
 
                      --- Reactant Summary ---
@@ -7846,15 +7844,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -3.9866E-13 eq
+               Charge discrepancy= -3.9877E-13 eq
               Sigma |equivalents|=  1.0869E+00 eq
 
           Actual Charge imbalance=  9.2281E-04 eq/kg.solu
         Expected Charge imbalance=  9.2226E-04 eq/kg.solu
-               Charge discrepancy= -3.8653E-13 eq/kg.solu
+               Charge discrepancy= -3.8664E-13 eq/kg.solu
               Sigma |equivalents|=  1.0538E+00 eq/kg.solu
 
-      Relative charge discrepancy= -3.6679E-13
+      Relative charge discrepancy= -3.6689E-13
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -8185,8 +8183,6 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-
-   Have reached the maximum value of Xi.
 
    Each reactant is now saturated or exhausted.
 

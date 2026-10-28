@@ -199,7 +199,7 @@
 |------------------------------------------------------------------------------|
 |Starting Xi value        | 0.00000E+00| (xistti)                              |
 |------------------------------------------------------------------------------|
-|Maximum Xi value         | 8.00000E+00| (ximaxi)                              |
+|Maximum Xi value         | 8.10000E+00| (ximaxi)                              |
 |------------------------------------------------------------------------------|
 |Starting time (seconds)  | 0.00000E+00| (tistti)                              |
 |------------------------------------------------------------------------------|
@@ -651,7 +651,7 @@
 
 
  xistti=  0.00000E+00 (Initial value of Xi)
- ximaxi=  8.00000E+00 (Maximum value of Xi)
+ ximaxi=  8.10000E+00 (Maximum value of Xi)
  tistti=  0.00000E+00 (Initial value of time, sec)
  timmxi=  1.00000E+38 (Maximum value of time, sec)
  phmini= -1.00000E+38 (Minimum value of pH)
@@ -5680,8 +5680,6 @@
  Exhaustion of the following reactant(s):
      H2SO4
 
- Maximum value of Xi.
-
 
                      --- Reactant Summary ---
 
@@ -5977,8 +5975,6 @@
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-
-   Have reached the maximum value of Xi.
 
    Each reactant is now saturated or exhausted.
 

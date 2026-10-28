@@ -1,0 +1,205 @@
+* Start of the bottom half of the input file                                   *
+*------------------------------------------------------------------------------*
+| Secondary Title        | (utitl2(n))                                         |
+|------------------------------------------------------------------------------|
+|EQ3NR input file name= swv1sxk.3i                                             |
+|Description= "Sea water, with a Vanselow one-site Na-K ion exchanger"         |
+|Version level= 8.0                                                            |
+|Revised 08/04/97    Revisor= T.J. Wolery                                      |
+|This is part of the EQ3/6 Test Case Library                                   |
+|                                                                              |
+|  Sea water, with a Vanselow one-site Na-K ion exchanger present. If a        |
+|composition is specified for the exchange phase, it is ignored. This          |
+|problem calculates the equilibrium composition for the case of a fixed        |
+|aqueous solution composition. The concentration of the exchanger ligand       |
+|(cgexpi) is specified in mol/kg.H2O. This does not affect either the          |
+|calculated exchanger phase composition or the aqueous solution composition.   |
+|It affects only the amount of exchanger substrate present in the system,      |
+|which is of interest only to a subsequent EQ6 calculation.                    |
+|                                                                              |
+|  To equilibrate an exchanger phase of specified composition with a given     |
+|aqueous solution, first set up the solution in EQ3NR with say 1.e-12          |
+|mol/kg.H2O (or other suitable trace amount) of exchanger substrate. Never     |
+|mind that the exchanger phase will not likely have the desired composition.   |
+|Then add the exchanger phase of desired composition as a reactant in a        |
+|subsequent EQ6 run.                                                           |
+|                                                                              |
+|  The seawater is modified from the swmaj.3i test case (based on Nordstrom et |
+|al., 1979) by fixing the redox state to correspond to the atmopsheric value   |
+|of the oxygen fugacity, instead of using an Eh of 500mV.                      |
+|                                                                              |
+|  This test case uses Pitzer's equations. It is intended to be used with      |
+|the Harvie-Moller-Weare (HMW) data file (after Harvie, Moller, and Weare,     |
+|1984).                                                                        |
+|                                                                              |
+|  Purpose: to initialize the EQ6 test case input file swv1sxk.6i.             |
+|                                                                              |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|Harvie, C.E., Moller, N., and Weare, J.H., 1984, The prediction of mineral    |
+|  solubilities in natural waters: The Na-K-Mg-Ca-H-Cl-SO4-OH-HCO3-CO3-CO2-    |
+|  H2O system to high ionic strengths at 25C: Geochimica et Cosmochimica       |
+|  Acta, v. 48, p. 723-751.                                                    |
+|                                                                              |
+|Nordstrom, D.K., et al., 1979, A comparison of computerized chemical models   |
+|  for equilibrium calculations in aqueous systems, in Jenne, E.A., editor,    |
+|  Chemical Modeling in Aqueous Systems, ACS Symposium Series, v. 93,          |
+|  American Chemical Society, Washington, DC, p. 857-892.                      |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (usbsw(1,n))       |
+|   with |None                                            | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Original temperature (C) | 2.50000E+01| (tempci)                              |
+|------------------------------------------------------------------------------|
+|Original pressure (bars) | 1.01320E+00| (pressi)                              |
+|------------------------------------------------------------------------------|
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: at least one exchanger creation block follows on this file.         |
+|Option: on further processing (writing a pickup file or running XCON6 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Exchanger phase |Exchanger 1             | (ugexp(n))                         |
+|------------------------------------------------------------------------------|
+|->|Mol. wt. (Z)    |  100.00    | (mwtges(n))                                 |
+|------------------------------------------------------------------------------|
+|->|Exchange model  |Vanselow                | (ugexmo(n))                     |
+|------------------------------------------------------------------------------|
+|->|Ref. temp. (C)  |  25.000    | (tgexp(n))                                  |
+|------------------------------------------------------------------------------|
+|->|Exchange site   |Site A  | (ugexj(j,n))                                    |
+|------------------------------------------------------------------------------|
+|--->|Stoich. number  |  1.0000    | (cgexj(j,n))                              |
+|------------------------------------------------------------------------------|
+|--->|Electr. charge  | -1.0000    | (zgexj(j,n))                              |
+|------------------------------------------------------------------------------|
+|--->|Reaction        |Na+ = __                | (ugexr(i,j,n)                 |
+|------------------------------------------------------------------------------|
+|----->|Parameter |Value       |Units   | (this is a table header)             |
+|------------------------------------------------------------------------------|
+|----->|K func.   |-1.20000E+01|LogK/eq | (xlkgex(i,j,n), uxkgex(i,j,n))       |
+|----->|DelH0r    | 0.00000E+00|kcal/eq | (xhfgex(i,j,n), uhfgex(i,j,n))       |
+|----->|DelV0r    | 0.00000E+00|cm3/eq  | (xvfgex(i,j,n), uvfgex(i,j,n))       |
+|------------------------------------------------------------------------------|
+|--->|Reaction        |K+ = __                 | (ugexr(i,j,n)                 |
+|------------------------------------------------------------------------------|
+|----->|Parameter |Value       |Units   | (this is a table header)             |
+|------------------------------------------------------------------------------|
+|----->|K func.   |-1.15000E+01|LogK/eq | (xlkgex(i,j,n), uxkgex(i,j,n))       |
+|----->|DelH0r    | 0.00000E+00|kcal/eq | (xhfgex(i,j,n), uhfgex(i,j,n))       |
+|----->|DelV0r    | 0.00000E+00|cm3/eq  | (xvfgex(i,j,n), uvfgex(i,j,n))       |
+|------------------------------------------------------------------------------|
+*    Vanselow                    Gapon                                         *
+*------------------------------------------------------------------------------*
+* Valid units strings (uxkgex(i,j,n)/uhfgex(i,j,n)/uvfgex(i,j,n)) are:         *
+*    LogK/eq             kcal/eq             kJ/eq                             *
+*    cm3/eq                                                                    *
+*------------------------------------------------------------------------------*
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|None                                            |None            | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [ ] ( 0) The B-dot equation                                                 |
+|  [x] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [ ] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [x] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Matrix Index Limits                                                           |
+|------------------------------------------------------------------------------|
+|No. of chem. elements   |    9| (kct)                                         |
+|No. of basis species    |   11| (kbt)                                         |
+|Index of last pure min. |   11| (kmt)                                         |
+|Index of last sol-sol.  |   11| (kxt)                                         |
+|Matrix size             |   11| (kdim)                                        |
+|PRS data flag           |    0| (kprs)                                        |
+|------------------------------------------------------------------------------|
+|Mass Balance Species (Matrix Row Variables)     |Units/Constraint| --         |
+| (ubmtbi(n))                                    |(ujf6(jflgi(n)))| --         |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        |Moles           | --         |
+|Ca++                    Aqueous solution        |Moles           | --         |
+|Cl-                     Aqueous solution        |Moles           | --         |
+|H+                      Aqueous solution        |Moles           | --         |
+|HCO3-                   Aqueous solution        |Moles           | --         |
+|K+                      Aqueous solution        |Moles           | --         |
+|Mg++                    Aqueous solution        |Moles           | --         |
+|Na+                     Aqueous solution        |Moles           | --         |
+|SO4--                   Aqueous solution        |Moles           | --         |
+|O2(g)                   Aqueous solution        |Moles           | --         |
+|__ Site A               Exchanger 1             |Moles           | --         |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf6(jflgi(n))) are:                                    *
+*    Moles               Make non-basis                                        *
+*------------------------------------------------------------------------------*
+|Mass Balance Totals (moles)                                                   |
+|------------------------------------------------------------------------------|
+|Basis species (info. only)      |Equilibrium System    |Aqueous Solution      |
+| (ubmtbi(n))                    | (mtbi(n))            | (mtbaqi(n))          |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous | 5.550842921990161E+01| 5.550842921990161E+01|
+|Ca++                    Aqueous | 1.028743998161613E-02| 1.028743998161613E-02|
+|Cl-                     Aqueous | 5.458822859533455E-01| 5.458822859533455E-01|
+|H+                      Aqueous |-1.881390447476469E-04|-1.881390447476469E-04|
+|HCO3-                   Aqueous | 2.022000000001079E-03| 2.022000000001079E-03|
+|K+                      Aqueous | 1.084109282157503E-02| 1.020760541906509E-02|
+|Mg++                    Aqueous | 5.314956022864539E-02| 5.314956022864539E-02|
+|Na+                     Aqueous | 5.677487761630911E-01| 4.683822635656014E-01|
+|SO4--                   Aqueous | 2.823129810680723E-02| 2.823129810680723E-02|
+|O2(g)                   Aqueous | 0.000000000000000E+00| 0.000000000000000E+00|
+|__ Site A               Exchange| 9.999999999999967E-02| 0.000000000000000E+00|
+|Electrical imbalance            | 9.088481934808046E-04| 9.088481934808046E-04|
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Matrix Column Variables and Values                                            |
+|------------------------------------------------------------------------------|
+|Basis species (uzveci(n))                       |Log moles (zvclgi(n)) | --   |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        | 1.744358983526984E+00| --   |
+|Ca++                    Aqueous solution        |-1.988730783920047E+00| --   |
+|Cl-                     Aqueous solution        |-2.629009984537654E-01| --   |
+|H+                      Aqueous solution        |-8.113341457078540E+00| --   |
+|HCO3-                   Aqueous solution        |-2.740938303084359E+00| --   |
+|K+                      Aqueous solution        |-1.991076126204687E+00| --   |
+|Mg++                    Aqueous solution        |-1.275206002198013E+00| --   |
+|Na+                     Aqueous solution        |-3.293995589058859E-01| --   |
+|SO4--                   Aqueous solution        |-1.549269187893633E+00| --   |
+|O2(g)                   Aqueous solution        |-7.000000000000000E-01| --   |
+|Na+ Site A              Exchanger 1             |-1.002759952066219E+00| --   |
+|------------------------------------------------------------------------------|
+|Phases and Species in the PRS                                                 |
+|------------------------------------------------------------------------------|
+|Phase           |None                    | (uprphi(n))                        |
+|------------------------------------------------------------------------------|
+|->|No. of Moles    | 0.000000000000000E+00| (mprphi(n))                       |
+|------------------------------------------------------------------------------|
+|--->|Species                 |No. of Moles          | --                      |
+|--->| (uprspi(i,n))          | (mprspi(i,n))        | --                      |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.000000000000000E+00| --                      |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|

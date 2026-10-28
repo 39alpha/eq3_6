@@ -199,7 +199,7 @@
 |------------------------------------------------------------------------------|
 |Starting Xi value        | 0.00000E+00| (xistti)                              |
 |------------------------------------------------------------------------------|
-|Maximum Xi value         | 8.00000E+00| (ximaxi)                              |
+|Maximum Xi value         | 8.10000E+00| (ximaxi)                              |
 |------------------------------------------------------------------------------|
 |Starting time (seconds)  | 0.00000E+00| (tistti)                              |
 |------------------------------------------------------------------------------|
@@ -651,7 +651,7 @@
 
 
  xistti=  0.00000E+00 (Initial value of Xi)
- ximaxi=  8.00000E+00 (Maximum value of Xi)
+ ximaxi=  8.10000E+00 (Maximum value of Xi)
  tistti=  0.00000E+00 (Initial value of time, sec)
  timmxi=  1.00000E+38 (Maximum value of time, sec)
  phmini= -1.00000E+38 (Minimum value of pH)
@@ -5653,8 +5653,6 @@
 
  Required print point.
 
- Maximum value of Xi.
-
 
                      --- Reactant Summary ---
 
@@ -5951,15 +5949,330 @@
 
 
 
-   Have reached the maximum value of Xi.
+ Stepping to Xi=  8.0000E+00, delxi=  2.8422E-14, nord= 5
+ Steps completed=   169, iter=   1, ncorr= 0
+ Most rapidly changing is zvclg1(SO4--)=     -0.0329
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+                    Xi=  8.00000E+00
+                Log Xi=      0.90309
+
+
+ Temperature=  25.00 C
+
+ Pressure=   1.0132     bars
+
+
+ Exhaustion of the following reactant(s):
+     H2SO4
+
+
+                     --- Reactant Summary ---
+
+
+
+     Reactant                  Moles     Delta moles    Mass, g    Delta mass, g
+
+  Epsomite                   0.0000E+00   2.0221E-03   0.0000E+00   4.9841E-01
+  H2SO4                      0.0000E+00   8.0000E+00   0.0000E+00   7.8464E+02
+
+
+                    Mass remaining=  0.0000E+00 grams
+                    Mass destroyed=  7.8513E+02 grams
+
+
+     Reactant                   Affinity     Rel. Rate
+                                kcal/mol      mol/mol
+
+  Epsomite                         0.4924   0.0000E+00
+  H2SO4                      9999999.0000   1.0000E+00
+
+
+   Affinity of the overall irreversible reaction= 9999999.0000 kcal.
+   Contributions from irreversible reactions with no thermodynamic data
+   are not included.
+
+
+           --- Elemental Composition of the Aqueous Solution ---
+
+   Element        mg/L       mg/kg.sol    Molarity     Molality
+
+     O         1.09467E+06  7.57679E+05  6.84194E+01  9.10707E+01
+     Cl        0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+     H         9.40595E+04  6.51036E+04  9.33186E+01  1.24213E+02
+     Mg        4.18599E+04  2.89734E+04  1.72227E+00  2.29246E+00
+     S         2.14178E+05  1.48244E+05  6.67929E+00  8.89056E+00
+
+
+           --- Numerical Composition of the Aqueous Solution ---
+
+   Species                    mg/L       mg/kg.sol    Molarity     Molality
+
+ H2O                       7.51278E+05  5.20000E+05  4.17023E+01  5.55084E+01
+ H+                        9.99275E+03  6.91651E+03  9.91403E+00  1.31962E+01
+ Mg++                      4.18599E+04  2.89734E+04  1.72227E+00  2.29246E+00
+ SO4--                     6.41636E+05  4.44111E+05  6.67929E+00  8.89056E+00
+ O2(g)                     0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+   Some of the above data may not be physically significant.
+
+
+           --- Sensible Composition of the Aqueous Solution ---
+
+   Species                    mg/L       mg/kg.sol    Molarity     Molality
+
+ H+                        9.99275E+03  6.91651E+03  9.91403E+00  1.31962E+01
+ Mg++                      4.18599E+04  2.89734E+04  1.72227E+00  2.29246E+00
+ SO4--                     6.41636E+05  4.44111E+05  6.67929E+00  8.89056E+00
+
+   The above data have physical significance, but some may be
+   inconsistent with certain analytical methods or reporting schemes.
+
+
+           --- The pH on various pH scales ---
+
+                                        pH
+
+      NBS pH scale                   -3.2745
+      Mesmer pH (pmH) scale          -0.7050
+
+
+      pcH=     -0.5808
+     The pHCl is undefined because no Cl- is present.
+
+
+   The single ion activities and activity coefficients listed below
+   are consistent with the NBS pH scale.
+
+
+
+                    Oxygen fugacity= 1.0000 bars
+                Log oxygen fugacity= 0.0000
+
+                  Activity of water= 0.44338
+              Log activity of water= -0.35323
+
+             Mole fraction of water= 0.77351
+         Log mole fraction of water= -0.11153
+
+      Activity coefficient of water= 0.57320
+  Log activity coefficient of water= -0.24169
+
+                Osmotic coefficient= 2.7777
+ Stoichiometric osmotic coefficient= 1.8519
+
+                  Sum of molalities= 16.253
+   Sum of stoichiometric molalities= 24.379
+
+                 Ionic strength (I)= 12.712 molal
+      Stoichiometric ionic strength= 28.964 molal
+
+                Ionic asymmetry (J)= 1.5278 molal
+     Stoichiometric ionic asymmetry= -6.5981 molal
+
+                       Solvent mass= 1212.5 g
+                 Solutes (TDS) mass= 1119.2 g
+              Aqueous solution mass= 2331.7 g
+
+            Aqueous solution volume= 1.6139 L
+
+                   Solvent fraction= 0.52000 kg.H2O/kg.sol
+                    Solute fraction= 0.48000 kg.tds/kg.sol
+
+      Total dissolved solutes (TDS)= 4.80000E+05 mg/kg.sol
+                                TDS= 6.93489E+05 mg/L
+                                TDS= 693.49 g/L
+
+                   Solution density= 1.4448 g/mL
+                   Solution density= 1444.8 g/L
+
+                  Molarity/molality= 0.75128 kg.H2O/L
+                  Molality/molarity= 1.3311 L/kg.H2O
+
+
+
+           --- More Precise Aqueous Phase Masses ---
+
+                       Solvent mass= 1212.4642 g
+                 Solutes (TDS) mass= 1119.1998 g
+              Aqueous solution mass= 2331.6639 g
+
+
+
+           --- HCO3-CO3-OH Total Alkalinity ---
+
+                 3.45907E-12 eq/kg.H2O
+                 2.59872E-12 eq/L
+                 8.99356E-08 mg/kg.sol CaCO3
+                 1.09650E-07 mg/kg.sol HCO3-
+                 1.29936E-07 mg/L CaCO3
+                 1.58418E-07 mg/L HCO3-
+
+
+           --- Extended Total Alkalinity ---
+
+                 3.45907E-12 eq/kg.H2O
+                 2.59872E-12 eq/L
+                 8.99356E-08 mg/kg.sol CaCO3
+                 1.09650E-07 mg/kg.sol HCO3-
+                 1.29936E-07 mg/L CaCO3
+                 1.58418E-07 mg/L HCO3-
+
+
+
+        --- Aqueous Solution Charge Balance ---
+
+          Actual Charge imbalance=  5.2031E-08 eq
+        Expected Charge imbalance=  3.4195E-13 eq
+               Charge discrepancy=  5.2031E-08 eq
+              Sigma |equivalents|=  2.3413E+01 eq
+
+          Actual Charge imbalance=  2.2315E-08 eq/kg.solu
+        Expected Charge imbalance=  1.7781E-13 eq/kg.solu
+               Charge discrepancy=  2.7056E-08 eq/kg.solu
+              Sigma |equivalents|=  1.2175E+01 eq/kg.solu
+
+      Relative charge discrepancy=  2.2223E-09
+
+
+                --- Distribution of Aqueous Solute Species ---
+
+    Species                  Molality    Log Molality   Log Gamma  Log Activity
+
+ HSO4-                      8.1259E+00       0.9099      -0.1866       0.7233
+ H+                         5.0703E+00       0.7050       2.5695       3.2745
+ Mg++                       2.2925E+00       0.3603       4.4000       4.7603
+ SO4--                      7.6468E-01      -0.1165      -4.4133      -4.5298
+ MgOH+                      3.4587E-12     -11.4611       0.7846     -10.6765
+ OH-                        3.4128E-16     -15.4669      -2.1576     -17.6245
+
+    Species with molalities less than  1.000-100 are not listed.
+
+
+
+      --- Major Species by Contribution to Aqueous Mass Balances ---
+
+
+ Species Accounting for 99% or More of Aqueous Mg++
+
+     Species                   Factor    Molality     Per Cent
+
+   Mg++                         1.00    2.2925E+00    100.00
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             2.2925E+00    100.00
+
+
+ Species Accounting for 99% or More of Aqueous SO4--
+
+     Species                   Factor    Molality     Per Cent
+
+   HSO4-                        1.00    8.1259E+00     91.40
+   SO4--                        1.00    7.6468E-01      8.60
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   Subtotal                             8.8906E+00    100.00
+
+
+
+                --- Stoichiometric Mean Ionic Properties ---
+
+   Species                  Log a(+/-)  Log m(+/-)  Log gamma(+/-)  gamma(+/-)
+
+ H+/SO4--                      0.6731      1.0633      -0.3902      4.0720E-01
+ Mg++/SO4--                    0.1153      0.6546      -0.5394      2.8883E-01
+
+   The stoichiometric mean molalities and activity coefficients given
+   above are consistent with the sensible composition of the
+   aqueous solution.
+
+
+                     --- Mean Ionic Properties ---
+
+   Species                  Log a(+/-)  Log m(+/-)  Log gamma(+/-)  gamma(+/-)
+
+ H+/SO4--                      0.6731      0.4312       0.2419      1.7454E+00
+ Mg++/SO4--                    0.1153      0.1219      -0.0066      9.8486E-01
+
+   The mean molalities and activity coefficients given above are
+   consistent with the speciation in the model employed.
+
+
+
+                     --- Summary of Solid Phases (ES) ---
+
+   Phase/End-member            Log moles     Moles        Grams     Volume, cm3
+
+ Kieserite                        0.3437   2.2065E+00   3.0535E+02   0.0000E+00
+
+
+            --- Grand Summary of Solid Phases (ES + PRS + Reactants) ---
+
+   Phase/End-member            Log moles     Moles        Grams     Volume, cm3
+
+ Epsomite                    -99999.0000   0.0000E+00   0.0000E+00   0.0000E+00
+ Kieserite                        0.3437   2.2065E+00   3.0535E+02   0.0000E+00
+
+
+                          Mass, grams       Volume, cm3
+
+           Created         3.05346E+02       0.00000E+00
+           Destroyed       7.85134E+02       0.00000E+00
+           Net            -4.79788E+02       0.00000E+00
+
+          These volume totals may be incomplete because of missing
+          partial molar volume data in the data base.
+
+
+
+      --- Saturation States of Aqueous Reactions Not Fixed at Equilibrium ---
+
+   Reaction                           Log Q/K    Affinity, kcal
+
+ None
+
+
+
+           --- Saturation States of Pure Solids ---
+
+       Phase                      Log Q/K    Affinity, kcal
+
+     Epsomite                     -0.36095     -0.49244
+     Hexahydrite                  -0.25373     -0.34616
+     Kieserite                    -0.00000     -0.00000     SATD
+
+        Phases with affinities less than -10 kcal are not listed.
+
+
+
+           --- Saturation States of Pure Liquids ---
+
+       Phase                      Log Q/K    Affinity, kcal
+
+     H2O                          -0.35323     -0.48190
+
+        Phases with affinities less than -10 kcal are not listed.
+
+
+           --- Summary of Saturated and Supersaturated Phases ---
+
+                There is 1 saturated phase.
+                There are no supersaturated phases.
+
+
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+   Each reactant is now saturated or exhausted.
 
  ---  The reaction path has terminated normally ---
 
 
-         168 steps were taken
+         169 steps were taken
        Xi increased from 
                0.00000E+00 to  8.00000E+00
-       The average value of delxi was  4.76190E-02
+       The average value of delxi was  4.73373E-02
        The average matrix dimension was    6
 
        The pH decreased from 7.0000 to -3.2745

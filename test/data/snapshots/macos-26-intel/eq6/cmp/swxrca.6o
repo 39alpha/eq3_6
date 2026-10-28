@@ -161,7 +161,7 @@
 |------------------------------------------------------------------------------|
 |Starting Xi value        | 0.00000E+00| (xistti)                              |
 |------------------------------------------------------------------------------|
-|Maximum Xi value         | 1.00000E+00| (ximaxi)                              |
+|Maximum Xi value         | 1.10000E+00| (ximaxi)                              |
 |------------------------------------------------------------------------------|
 |Starting time (seconds)  | 0.00000E+00| (tistti)                              |
 |------------------------------------------------------------------------------|
@@ -764,7 +764,7 @@
 
 
  xistti=  0.00000E+00 (Initial value of Xi)
- ximaxi=  1.00000E+00 (Maximum value of Xi)
+ ximaxi=  1.10000E+00 (Maximum value of Xi)
  tistti=  0.00000E+00 (Initial value of time, sec)
  timmxi=  1.00000E+38 (Maximum value of time, sec)
  phmini= -1.00000E+38 (Minimum value of pH)
@@ -7751,7 +7751,7 @@
 
 
 
- Stepping to Xi=  1.0000E+00, delxi=  1.1102E-16, nord= 0
+ Stepping to Xi=  1.0000E+00, delxi=  2.2371E-14, nord= 6
  Steps completed=    68, iter=   1, ncorr= 0
  Most rapidly changing is zvclg1(Na+)=     -3.4337
 
@@ -7767,7 +7767,8 @@
  Pressure=   1.0132     bars
 
 
- Maximum value of Xi.
+ Exhaustion of the following reactant(s):
+     Exchanger 1
 
 
                      --- Reactant Summary ---
@@ -7776,10 +7777,10 @@
 
      Reactant                  Moles     Delta moles    Mass, g    Delta mass, g
 
-  Exchanger 1                5.5511E-17   1.0000E+00   7.7571E-15   1.3974E+02
+  Exchanger 1                0.0000E+00   1.0000E+00   0.0000E+00   1.3974E+02
 
 
-                    Mass remaining=  7.7571E-15 grams
+                    Mass remaining=  0.0000E+00 grams
                     Mass destroyed=  1.3974E+02 grams
 
 
@@ -7939,15 +7940,15 @@
 
           Actual Charge imbalance=  9.5120E-04 eq
         Expected Charge imbalance=  9.5120E-04 eq
-               Charge discrepancy= -2.2415E-13 eq
+               Charge discrepancy= -2.2393E-13 eq
               Sigma |equivalents|=  1.0859E+00 eq
 
           Actual Charge imbalance=  9.2288E-04 eq/kg.solu
         Expected Charge imbalance=  9.2232E-04 eq/kg.solu
-               Charge discrepancy= -2.1734E-13 eq/kg.solu
+               Charge discrepancy= -2.1713E-13 eq/kg.solu
               Sigma |equivalents|=  1.0530E+00 eq/kg.solu
 
-      Relative charge discrepancy= -2.0641E-13
+      Relative charge discrepancy= -2.0621E-13
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -8134,7 +8135,7 @@
  Dolomite-ord                    -3.5450   2.8513E-04   5.2578E-02   0.0000E+00
  Gypsum                          -1.7665   1.7120E-02   2.9476E+00   0.0000E+00
 
- Exchanger 1                    -12.0000   1.0001E-12   2.1449E+01   0.0000E+00
+ Exchanger 1                    -12.0000   1.0000E-12   2.1449E+01   0.0000E+00
    Ca++ Site A                   -0.5834   2.6100E-01   1.0460E+01   0.0000E+00
    Na+ Site A                    -0.3206   4.7800E-01   1.0989E+01   0.0000E+00
 
@@ -8211,7 +8212,7 @@
 
        Phase                      Log Q/K    Affinity, kcal
 
-     Exchanger 1                  -0.00000     -0.00000     SATD
+     Exchanger 1                   0.00000      0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -8283,17 +8284,17 @@
 
     Exchanger                     Log Q/K         Aff, kcal    State
 
- Exchanger 1                        -0.0000         -0.0000   SATD
+ Exchanger 1                         0.0000          0.0000   SATD
 
    Ca++ Site A                       0.0000          0.0000   SATD
-   Na+ Site A                       -0.0000         -0.0000   SATD
+   Na+ Site A                        0.0000          0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-   Have reached the maximum value of Xi.
+   Each reactant is now saturated or exhausted.
 
  ---  The reaction path has terminated normally ---
 

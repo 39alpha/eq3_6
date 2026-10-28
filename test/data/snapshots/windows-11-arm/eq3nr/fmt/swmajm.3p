@@ -1,0 +1,211 @@
+* Start of the bottom half of the input file                                   *
+*------------------------------------------------------------------------------*
+| Secondary Title        | (utitl2(n))                                         |
+|------------------------------------------------------------------------------|
+|EQ3NR input file name= swmajm.3i                                              |
+|Description= "Sea water, major ions, Pitzer's equations, Pitzer pH = 8.2526"  |
+|Version level= 8.0                                                            |
+|Revised 08/28/09    Revisor= T.J. Wolery                                      |
+|This is part of the WIPP EQ3/6-FMT comparison study.                          |
+|                                                                              |
+|  Sea water, including only the major ions. This is a considerably            |
+|pared-down version the full benchmark sea water test case of Nordstrom        |
+|et al. (1979, Table III). This problem is modified from the EQ3/6 test case   |
+|swmajp.3i, which was intended to be used with the data0.hmw data file         |
+|based on the model of Harvie, Moller, and Weare (1984). The changes are:      |
+|                                                                              |
+|    (a) Only molality inputs are used, apart from the pH input. The           |
+|        molality values are taken from Nordstrom et al. (1979, Table III),    |
+|        where concentrations are given in a variety of units. The             |
+|        swmajp.3i problem used some concentration values with units of        |
+|        mg/kgH2O.                                                             |
+|    (b) To reduce the calculated charge imbalance, inputs for the components  |
+|        Br and B(OH)4- are included. They were not in the original            |
+|        Harvie-Moller-Weare model (Harvie et al., 1984) and thus were not     |
+|        represented on the data0.hmw data file that the swmajp.3i test case   |
+|        was intended to be run with. Consequently, Br and B(OH)4- had been    |
+|        omitted from that test case.                                          |
+|    (c) The original problem specifies an NBS pH of 8.22 and when run         |
+|        using the data0.fmt data file (preliminary test case input file       |
+|        swmajt.3i) yields a calculated Pitzer pH of 8.2526. Here the          |
+|        problem is modified to specify the same Pitzer pH value. This         |
+|        This done because FMT cannot accept an NBS pH or pmH as an input.     |
+|    (d) The Cl molality has been adjusted very slightly from the original     |
+|        0.5657625 value to 0.5658134 to further minimize the charge           |
+|        imbalance. This was obtained using the preliminary run using the      |
+|        swmajt.3i input file. This minimization is necessary to mitigate      |
+|        issues with the way that FMT deals with charge balance. It forces     |
+|        adjustment in the mole total for elemental oxygen, and that tends     |
+|        to have undesired effects (e.g., the mass of solvent water is not     |
+|        exactly 1 kg.)                                                        |
+|    (e) The oxygen fugacity has been set to the atmospheric value. In the     |
+|        original problem, the Eh was set to +500 mV, which corresponds to a   |
+|        lower oxygen fugacity (but still in the "oxidizing" range).           |
+|        Essentially, there are no redox reactions represented in the FMT      |
+|        model, so this change has no effect on the results.                   |
+|                                                                              |
+|  The present test case is the only one in the WIPP EQ3/6-FMT comparison      |
+|study that uses a pmH as a formal input. The remaining test cases in this     |
+|series will either use the Pitzer pH as an input or will use charge balance   |
+|to constrain the pH. In future usage of EQ3/6 on WIPP, the pmH is expected    |
+|to be used as the usual pH input.                                             |
+|                                                                              |
+|  The switch iopg(2) is set to -1, so that the reported ionic activities      |
+|and activity coefficients are unrescaled (i.e., are on the "Pitzer" scale).   |
+|They can therefore be directly compared with corresponding results from FMT.  |
+|The "pmH" option still causes the input pH to be interpreted as pmH (pH on    |
+|the Mesmer scale).                                                            |
+|                                                                              |
+|  The density and TDS inputs used here are from the "Seawater" worksheet of   |
+|an example of the spreadsheet density calculator, specifically the file       |
+|Conc_density_calcs_EV2008.xls. They are included here mainly for illustrative |
+|purposes. They do not affect the results, as none of the principal inputs     |
+|have a volumetric basis. Similar values were given by Nordstrom et al.        |
+|(1979). Note that EQ3/6 will compute the density and TDS for output using     |
+|the WIPP brine density model (the model used in FMT).                         |
+|                                                                              |
+|     Density = 1.02400 g/cm3   from the conc_density spreadsheet              |
+|             = 1.02336 g/cm3   from Nordstrom et al. (1979)                   |
+|                                                                              |
+|  ClO4-, O2(aq), and H2(aq) are suppressed in this problem. ClO4- is treated  |
+|as a pseudo-element on the original FMT database, and thus cannot form from   |
+|Cl and O in the FMT calculations. The original FMT database lacks O2(aq)      |
+|and H2(aq).                                                                   |
+|                                                                              |
+|                            References                                        |
+|                                                                              |
+|Harvie, C.E., Moller, N., and Weare, J.H., 1984, The prediction of mineral    |
+|  solubilities in natural waters: The Na-K-Mg-Ca-H-Cl-SO4-OH-HCO3-CO3-CO2-    |
+|  H2O system to high ionic strengths at 25C: Geochimica et Cosmochimica       |
+|  Acta, v. 48, p. 723-751.                                                    |
+|                                                                              |
+|Nordstrom, D.K., et al., 1979, A comparison of computerized chemical models   |
+|  for equilibrium calculations in aqueous systems, in Jenne, E.A., editor,    |
+|  Chemical Modeling in Aqueous Systems, ACS Symposium Series, v. 93,          |
+|  American Chemical Society, Washington, DC, p. 857-892.                      |
+|                                                                              |
+|------------------------------------------------------------------------------|
+|Special Basis Switches (for model definition only)       | (nsbswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (usbsw(1,n))       |
+|   with |None                                            | (usbsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Original temperature (C) | 2.50000E+01| (tempci)                              |
+|------------------------------------------------------------------------------|
+|Original pressure (bars) | 1.01320E+00| (pressi)                              |
+|------------------------------------------------------------------------------|
+|Create Ion Exchangers  | (net)                                                |
+|------------------------------------------------------------------------------|
+|Advisory: no exchanger creation blocks follow on this file.                   |
+|Option: on further processing (writing a pickup file or running XCON6 on the  |
+|present file), force the inclusion of at least one such block (qgexsh):       |
+|  [ ] (.true.)                                                                |
+|------------------------------------------------------------------------------|
+|Alter/Suppress Options  | (nxmod)                                             |
+|------------------------------------------------------------------------------|
+|Species                                         |Option          |Alter value |
+| (uxmod(n))                                     |(ukxm(kxmod(n)))| (xlkmod(n))|
+|------------------------------------------------------------------------------|
+|ClO4-                                           |Suppress        | 0.00000E+00|
+|O2(aq)                                          |Suppress        | 0.00000E+00|
+|H2(aq)                                          |Suppress        | 0.00000E+00|
+|------------------------------------------------------------------------------|
+* Valid alter/suppress strings (ukxm(kxmod(n))) are:                           *
+*    Suppress            Replace             AugmentLogK                       *
+*    AugmentG                                                                  *
+*------------------------------------------------------------------------------*
+|Iopg Activity Coefficient Option Switches ("( 0)" marks default choices)      |
+|------------------------------------------------------------------------------|
+|iopg(1) - Aqueous Species Activity Coefficient Model:                         |
+|  [ ] (-1) The Davies equation                                                |
+|  [ ] ( 0) The B-dot equation                                                 |
+|  [x] ( 1) Pitzer's equations                                                 |
+|  [ ] ( 2) HC + DH equations                                                  |
+|------------------------------------------------------------------------------|
+|iopg(2) - Choice of pH Scale (Rescales Activity Coefficients):                |
+|  [x] (-1) "Internal" pH scale (no rescaling)                                 |
+|  [ ] ( 0) NBS pH scale (uses the Bates-Guggenheim equation)                  |
+|  [ ] ( 1) Mesmer pH scale (numerically, pH = -log m(H+))                     |
+|------------------------------------------------------------------------------|
+|Matrix Index Limits                                                           |
+|------------------------------------------------------------------------------|
+|No. of chem. elements   |   11| (kct)                                         |
+|No. of basis species    |   12| (kbt)                                         |
+|Index of last pure min. |   12| (kmt)                                         |
+|Index of last sol-sol.  |   12| (kxt)                                         |
+|Matrix size             |   12| (kdim)                                        |
+|PRS data flag           |    0| (kprs)                                        |
+|------------------------------------------------------------------------------|
+|Mass Balance Species (Matrix Row Variables)     |Units/Constraint| --         |
+| (ubmtbi(n))                                    |(ujf6(jflgi(n)))| --         |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        |Moles           | --         |
+|B(OH)4-                 Aqueous solution        |Moles           | --         |
+|Br-                     Aqueous solution        |Moles           | --         |
+|HCO3-                   Aqueous solution        |Moles           | --         |
+|Ca++                    Aqueous solution        |Moles           | --         |
+|Cl-                     Aqueous solution        |Moles           | --         |
+|H+                      Aqueous solution        |Moles           | --         |
+|K+                      Aqueous solution        |Moles           | --         |
+|Mg++                    Aqueous solution        |Moles           | --         |
+|Na+                     Aqueous solution        |Moles           | --         |
+|SO4--                   Aqueous solution        |Moles           | --         |
+|O2(g)                   Aqueous solution        |Moles           | --         |
+|------------------------------------------------------------------------------|
+* Valid jflag strings (ujf6(jflgi(n))) are:                                    *
+*    Moles               Make non-basis                                        *
+*------------------------------------------------------------------------------*
+|Mass Balance Totals (moles)                                                   |
+|------------------------------------------------------------------------------|
+|Basis species (info. only)      |Equilibrium System    |Aqueous Solution      |
+| (ubmtbi(n))                    | (mtbi(n))            | (mtbaqi(n))          |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous | 5.550809579274208E+01| 5.550809579274208E+01|
+|B(OH)4-                 Aqueous | 4.266500000118149E-04| 4.266500000118149E-04|
+|Br-                     Aqueous | 8.729399999999996E-04| 8.729399999999996E-04|
+|HCO3-                   Aqueous | 2.022000000006408E-03| 2.022000000006408E-03|
+|Ca++                    Aqueous | 1.066170000000335E-02| 1.066170000000335E-02|
+|Cl-                     Aqueous | 5.658130000000000E-01| 5.658130000000000E-01|
+|H+                      Aqueous | 1.392133538947895E-04| 1.392133538947895E-04|
+|K+                      Aqueous | 1.057940000000000E-02| 1.057940000000000E-02|
+|Mg++                    Aqueous | 5.508560000000774E-02| 5.508560000000774E-02|
+|Na+                     Aqueous | 4.854430000000000E-01| 4.854430000000000E-01|
+|SO4--                   Aqueous | 2.926149999999999E-02| 2.926149999999999E-02|
+|O2(g)                   Aqueous | 0.000000000000000E+00| 0.000000000000000E+00|
+|Electrical imbalance            |-1.376646101225454E-06|-1.376646101225454E-06|
+|------------------------------------------------------------------------------|
+|Ordinary Basis Switches (for numerical purposes only)    | (nobswt)           |
+|------------------------------------------------------------------------------|
+|Replace |None                                            | (uobsw(1,n))       |
+|   with |None                                            | (uobsw(2,n))       |
+|------------------------------------------------------------------------------|
+|Matrix Column Variables and Values                                            |
+|------------------------------------------------------------------------------|
+|Basis species (uzveci(n))                       |Log moles (zvclgi(n)) | --   |
+|------------------------------------------------------------------------------|
+|H2O                     Aqueous solution        | 1.744358983526984E+00| --   |
+|B(OH)4-                 Aqueous solution        |-4.143976043173791E+00| --   |
+|Br-                     Aqueous solution        |-3.059015605738197E+00| --   |
+|HCO3-                   Aqueous solution        |-2.742331914449609E+00| --   |
+|Ca++                    Aqueous solution        |-1.973417699139817E+00| --   |
+|Cl-                     Aqueous solution        |-2.473270785060949E-01| --   |
+|H+                      Aqueous solution        |-8.118512585435999E+00| --   |
+|K+                      Aqueous solution        |-1.975538962175897E+00| --   |
+|Mg++                    Aqueous solution        |-1.259789643531325E+00| --   |
+|Na+                     Aqueous solution        |-3.138617569789357E-01| --   |
+|SO4--                   Aqueous solution        |-1.533703449598033E+00| --   |
+|O2(g)                   Aqueous solution        |-7.000000000000000E-01| --   |
+|------------------------------------------------------------------------------|
+|Phases and Species in the PRS                                                 |
+|------------------------------------------------------------------------------|
+|Phase           |None                    | (uprphi(n))                        |
+|------------------------------------------------------------------------------|
+|->|No. of Moles    | 0.000000000000000E+00| (mprphi(n))                       |
+|------------------------------------------------------------------------------|
+|--->|Species                 |No. of Moles          | --                      |
+|--->| (uprspi(i,n))          | (mprspi(i,n))        | --                      |
+|------------------------------------------------------------------------------|
+|--->|None                    | 0.000000000000000E+00| --                      |
+|------------------------------------------------------------------------------|
+|End of problem                                                                |
+|------------------------------------------------------------------------------|
