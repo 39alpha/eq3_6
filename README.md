@@ -1,6 +1,8 @@
 # eq36
 
-[![Eq3/6](https://github.com/39alpha/eq3_6/actions/workflows/build.yml/badge.svg)](https://github.com/39alpha/eq3_6/actions/workflows/build.yml)
+[![Build](https://github.com/39alpha/eq36/actions/workflows/build.yml/badge.svg)](https://github.com/39alpha/eq36/actions/workflows/build.yml)
+[![Tests](https://github.com/39alpha/eq36/actions/workflows/test.yml/badge.svg)](https://github.com/39alpha/eq36/actions/workflows/test.yml)
+[![Snapshot Tests](https://github.com/39alpha/eq36/actions/workflows/test-snapshots.yml/badge.svg)](https://github.com/39alpha/eq36/actions/workflows/test-snapshots.yml)
 
 A Software Package for Geochemical Modeling
 
@@ -11,7 +13,7 @@ developed at Lawrence Livermore National Laboratories. The changes include:
    still linger.
 2. **Modernizing the build system and directory structure** using [`meson`](https://mesonbuild.com) for builds.
 3. **Adding integration tests** against legacy outputs and CI-driven snapshots
-4. **Minor bug fixes,** e.g. [b84f80c](https://github.com/39alpha/eq3_6/commit/b84f80c4b329145238336d0a536a6ec97811eefe)
+4. **Minor bug fixes,** e.g. [b84f80c](https://github.com/39alpha/eq36/commit/b84f80c4b329145238336d0a536a6ec97811eefe)
 5. **Usability features.** For example, the primary executables now take their inputs at the command line rather than
    relying on specifically named input files, e.g.
 
@@ -22,12 +24,12 @@ $ eq6 cmp.d1 test/data/eq6/cmp/crisqtz.6i
 ```
 
 > **NOTE**: We will continue to apply bug fixes to the FORTRAN 77 sources, but those changes will be maintained on the
-[v9.x.x](https://github.com/39alpha/eq3_6/tree/v9.x.x) branch and continue to use Makefile-based builds.
+[v9.x.x](https://github.com/39alpha/eq36/tree/v9.x.x) branch and continue to use Makefile-based builds.
 
 ## Installation
 
 ```bash
-$ git clone https://github.com/39alpha/eq3_6
+$ git clone https://github.com/39alpha/eq36
 $ just install
 ```
 This will build all of the executables and libraries and install the following
@@ -39,9 +41,9 @@ directories:
 By default `just install` will place all installation files in `/usr/local`, e.g. `/usr/local/bin/eq3nr`. If you wish to
 change that, you can specify an installation prefix:
 ```bash
-$ just install --prefix=/opt/eq3_6 -C build
+$ just install --prefix=/opt/eq36
 ```
-which will place the files in `/opt/eq3_6`, e.g. `/opt/eq3_6/bin/eq3nr`.
+which will place the files in `/opt/eq36`, e.g. `/opt/eq36/bin/eq3nr`.
 
 ## Build Dependencies
 
@@ -55,7 +57,7 @@ which will place the files in `/opt/eq3_6`, e.g. `/opt/eq3_6/bin/eq3nr`.
 
 This repo includes the source files for [EQ3/6 v8.0a](https://www-gs.llnl.gov/energy-homeland-security/geochemistry),
 a software package for geochemical modeling developed by Thomas Wolery at Lawrence Livermore National Laboratory under
-the [BSD 3-Clause License](https://github.com/39alpha/eq3_6/blob/main/EQ36_LICENSE).
+the [BSD 3-Clause License](https://github.com/39alpha/eq36/blob/main/EQ36_LICENSE).
 
 ## References
 
