@@ -1005,7 +1005,7 @@
    22  Saponite-Mg (Saponite-tri)
    23  Saponite-Na (Saponite-tri)
 
-  Hybrid Newton-Raphson iteration has gone sour (iter=  20).
+  Hybrid Newton-Raphson iteration has gone sour (iter=  10).
 
    The phase to be dropped is Biotite (272)
 
@@ -2257,7 +2257,7 @@
      Amesite-7A                   -5.35518     -7.54202
      Analcime                     -3.72798     -5.25034
      Anhydrite                    -0.92106     -1.29719
-     Antigorite                    0.00000      0.00000     SATD
+     Antigorite                   -0.00000     -0.00000     SATD
      Antigorite(am)               -3.81754     -5.37648
      Aragonite                    -0.03502     -0.04932
      Arcanite                     -5.23658     -7.37500
@@ -2294,7 +2294,7 @@
      Goethite                     -0.49959     -0.70360
      Gypsum                       -0.85347     -1.20200
      Halite                       -2.58938     -3.64679
-     Hematite                      0.00000      0.00000     SATD
+     Hematite                     -0.00000     -0.00000     SATD
      Hexahydrite                  -2.95653     -4.16385
      Huntite                      -0.00000     -0.00000     SATD
      Hydromagnesite               -6.05217     -8.52364
@@ -2378,7 +2378,7 @@
      Orthopyroxene                -2.78018     -3.91549
      Plagioclase                  -6.06118     -8.53632
      Sanidine-ss                  -4.68326     -6.59571
-     Saponite-tri                  0.00000      0.00000     SATD
+     Saponite-tri                 -0.00000     -0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -2408,12 +2408,12 @@
 
     Mineral                       Log Q/K         Aff, kcal    State
 
- Saponite-tri                        0.0000          0.0000   SATD
-   Saponite-Ca                       0.0000          0.0000   SATD
-   Saponite-H                        0.0000          0.0000   SATD
+ Saponite-tri                       -0.0000         -0.0000   SATD
+   Saponite-Ca                      -0.0000         -0.0000   SATD
+   Saponite-H                       -0.0000         -0.0000   SATD
    Saponite-K                        0.0000          0.0000   SATD
-   Saponite-Mg                       0.0000          0.0000   SATD
-   Saponite-Na                       0.0000          0.0000   SATD
+   Saponite-Mg                      -0.0000         -0.0000   SATD
+   Saponite-Na                      -0.0000         -0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2617,10 +2617,10 @@
 
           Actual Charge imbalance=  9.0475E-04 eq/kg.solu
         Expected Charge imbalance=  9.0475E-04 eq/kg.solu
-               Charge discrepancy=  9.6771E-12 eq/kg.solu
+               Charge discrepancy=  9.6770E-12 eq/kg.solu
               Sigma |equivalents|=  1.0866E+00 eq/kg.solu
 
-      Relative charge discrepancy=  8.9056E-12
+      Relative charge discrepancy=  8.9055E-12
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -3654,7 +3654,7 @@
      Orthopyroxene                -2.51822     -3.85653
      Plagioclase                  -5.67451     -8.69023
      Sanidine-ss                  -4.64155     -7.10830
-     Saponite-tri                 -0.00000     -0.00000     SATD
+     Saponite-tri                  0.00000      0.00000     SATD
 
         Phases with affinities less than -10 kcal are not listed.
 
@@ -3683,7 +3683,7 @@
 
  Chlorite-ss                         0.0000          0.0000   SATD
    Clinochlore-14A                   0.0000          0.0000   SATD
-   Daphnite-14A                     -0.0000         -0.0000   SATD
+   Daphnite-14A                      0.0000          0.0000   SATD
 
 
                 --- Saponite-tri ---
@@ -3701,12 +3701,12 @@
 
     Mineral                       Log Q/K         Aff, kcal    State
 
- Saponite-tri                       -0.0000         -0.0000   SATD
-   Saponite-Ca                      -0.0000         -0.0000   SATD
+ Saponite-tri                        0.0000          0.0000   SATD
+   Saponite-Ca                       0.0000          0.0000   SATD
    Saponite-H                       -0.0000         -0.0000   SATD
-   Saponite-K                       -0.0000         -0.0000   SATD
-   Saponite-Mg                      -0.0000         -0.0000   SATD
-   Saponite-Na                      -0.0000         -0.0000   SATD
+   Saponite-K                        0.0000          0.0000   SATD
+   Saponite-Mg                       0.0000          0.0000   SATD
+   Saponite-Na                       0.0000          0.0000   SATD
 
 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3714,7 +3714,7 @@
 
 
  Stepping to Xi=  3.7532E-01, delxi=  1.0000E-02, nord= 0
-  Hybrid Newton-Raphson iteration has gone sour (iter=   9).
+  Hybrid Newton-Raphson iteration has gone sour (iter=   6).
 
    The phase to be dropped is Saponite-tri (281)
 
@@ -5123,15 +5123,15 @@
 
           Actual Charge imbalance=  9.3647E-04 eq
         Expected Charge imbalance=  9.3647E-04 eq
-               Charge discrepancy= -9.5290E-14 eq
+               Charge discrepancy= -9.5206E-14 eq
               Sigma |equivalents|=  1.0998E+00 eq
 
           Actual Charge imbalance=  9.0477E-04 eq/kg.solu
         Expected Charge imbalance=  9.0478E-04 eq/kg.solu
-               Charge discrepancy= -9.2065E-14 eq/kg.solu
+               Charge discrepancy= -9.1984E-14 eq/kg.solu
               Sigma |equivalents|=  1.0626E+00 eq/kg.solu
 
-      Relative charge discrepancy= -8.6644E-14
+      Relative charge discrepancy= -8.6568E-14
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -6776,7 +6776,7 @@
 
           Actual Charge imbalance=  9.0479E-04 eq/kg.solu
         Expected Charge imbalance=  9.0480E-04 eq/kg.solu
-               Charge discrepancy=  2.4900E-11 eq/kg.solu
+               Charge discrepancy=  2.4899E-11 eq/kg.solu
               Sigma |equivalents|=  1.0385E+00 eq/kg.solu
 
       Relative charge discrepancy=  2.3975E-11
@@ -7302,15 +7302,15 @@
 
           Actual Charge imbalance=  9.3647E-04 eq
         Expected Charge imbalance=  9.3647E-04 eq
-               Charge discrepancy= -5.1716E-17 eq
+               Charge discrepancy= -1.6231E-16 eq
               Sigma |equivalents|=  1.0743E+00 eq
 
           Actual Charge imbalance=  9.0479E-04 eq/kg.solu
         Expected Charge imbalance=  9.0480E-04 eq/kg.solu
-               Charge discrepancy= -4.9967E-17 eq/kg.solu
+               Charge discrepancy= -1.5682E-16 eq/kg.solu
               Sigma |equivalents|=  1.0380E+00 eq/kg.solu
 
-      Relative charge discrepancy= -4.8140E-17
+      Relative charge discrepancy= -1.5108E-16
 
 
                 --- Distribution of Aqueous Solute Species ---
@@ -7560,8 +7560,8 @@
 
      Amesite-14A                  -1.72626     -3.15017
      Amesite-7A                   -3.53970     -6.45943
-     Anhydrite                    -0.00000     -0.00000     SATD
-     Antigorite                    0.00000      0.00000     SATD
+     Anhydrite                     0.00000      0.00000     SATD
+     Antigorite                   -0.00000     -0.00000     SATD
      Aragonite                    -0.67386     -1.22970
      Artinite                     -3.04534     -5.55730
      Bassanite                    -1.09681     -2.00151
@@ -7589,7 +7589,7 @@
      Goethite                     -0.61928     -1.13009
      Gypsum                       -0.93743     -1.71068
      Halite                       -2.61910     -4.77947
-     Hematite                     -0.00000     -0.00000     SATD
+     Hematite                      0.00000      0.00000     SATD
      Huntite                       0.00000      0.00000     SATD
      Hydromagnesite               -4.21568     -7.69298
      Kalsilite                    -5.33647     -9.73826
