@@ -1,14 +1,1 @@
-*.3i
-*.3o
-*.3p
-*.6i
-*.6o
-*.6p
-*.6tx
-*.6ba
-*.6bb
-*.d0
-*.d1
-*.d1f
-*.po
-*.s
+test/data/** linguist-vendored
